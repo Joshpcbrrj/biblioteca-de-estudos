@@ -131,9 +131,15 @@ class Conv:
         if n == 'details':
             summ = el.find('summary')
             stext = inline(summ).strip() if summ else ''
-            stext_plain = re.sub(r'\*\*(.*?)\*\*', r'\1', stext)
+            extra = ''
+            if '<br>' in stext:
+                # título do toggle com texto embaixo: o resto vai para o corpo
+                stext, extra = stext.split('<br>', 1)
+                extra = extra.replace('<br>', '\n\n').strip()
+            stext_plain = re.sub(r'\*\*(.*?)\*\*', r'\1', stext).strip()
             body = el.find('div', class_='indented')
             parts = self.blocks(body) if body else []
+            if extra: parts = [extra] + parts
             if not parts: return ''
             content = '\n\n'.join(parts)
             h = self.last_h2.lower()
@@ -143,6 +149,8 @@ class Conv:
                 low = stext_plain.lower()
                 if low in ('resolução', 'código', 'código resposta', 'resposta'):
                     label = 'Ver resposta'
+                elif low == 'uma resposta possível':
+                    label = 'Ver uma resposta possível'
                 elif low.startswith('resolução'):
                     label = 'Ver resposta ' + stext_plain[len('Resolução'):].strip()
                 else:
@@ -217,7 +225,7 @@ if __name__ == '__main__':
     pages = []
     for i, rel in enumerate(order, start=1):
         title = None
-        is_list = 'Lista de exerc' in rel or os.path.basename(rel).startswith('Desafio')
+        is_list = 'Lista de exerc' in rel or os.path.basename(rel).startswith(('Desafio', 'Exercícios', 'Exercicios'))
         t, md = convert_page(os.path.join(SRC, rel), is_list, os.path.join(OUT,'img'))
         fn = f'{i:02d}-{slug(t)}.md'
         md = polir_summaries(md)
