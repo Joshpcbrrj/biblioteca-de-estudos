@@ -28,31 +28,43 @@ Resumo da seção **Introdução à lógica de programação**: como os conceito
 
 ## Teste rápido
 
-****
+**1. Qual a diferença entre algoritmo e programa?**
 
-1. Qual a diferença entre algoritmo e programa?
+<details>
+<summary>Ver resposta</summary>
 
 O algoritmo é a sequência de passos que resolve o problema, independente de linguagem. O programa é esse algoritmo escrito em uma linguagem de programação específica, pronto para ser executado.
 
-****
+</details>
 
-2. Por que "mexa até ficar bom" não é um passo válido de algoritmo?
+**2. Por que "mexa até ficar bom" não é um passo válido de algoritmo?**
+
+<details>
+<summary>Ver resposta</summary>
 
 Porque é ambíguo: não há um critério objetivo para saber quando parar. Um passo válido precisa ser bem definido, como "mexa por 5 minutos".
 
-****
+</details>
 
-3. O código abaixo dá erro. Qual princípio foi violado?
+**3. O código abaixo dá erro. Qual princípio foi violado?**
 
 ```python
 print(total)
 total = 10 * 2
 ```
 
+<details>
+<summary>Ver resposta</summary>
+
 A sequência lógica: `total` é usado antes de ser criado. A instrução de atribuição precisa vir antes da instrução de saída.
 
-****
+</details>
 
-4. Quais são as três estruturas básicas da lógica de programação?
+**4. Quais são as três estruturas básicas da lógica de programação?**
+
+<details>
+<summary>Ver resposta</summary>
 
 Sequência (passos em ordem), decisão (escolher um caminho com `se/senão`) e repetição (repetir passos com laços como `enquanto`).
+
+</details>

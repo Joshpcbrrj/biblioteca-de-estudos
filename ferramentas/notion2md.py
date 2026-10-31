@@ -156,7 +156,7 @@ class Conv:
                 else:
                     label = 'Ver resposta: ' + stext_plain
                 return f'<details>\n<summary>{label}</summary>\n\n{content}\n\n</details>'
-            return f'**{stext_plain}**\n\n{content}'
+            return f'**{stext_plain}**\n\n{content}' if stext_plain else content
         if n == 'table':
             rows = el.find_all('tr')
             if not rows: return ''

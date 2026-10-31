@@ -84,7 +84,7 @@ nomeDoMes(4) // retornará "abril"
 <details>
 <summary>Ver resposta</summary>
 
-**Solução 1: **`switch` (a abordagem da seção de estruturas de controle)
+**Solução 1:** `switch` (a abordagem da seção de estruturas de controle)
 
 ```jsx
 function nomeDoMes(numero) {
