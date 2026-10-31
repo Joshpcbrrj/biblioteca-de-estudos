@@ -1,0 +1,12 @@
+body { font-family: serif; line-height: 1.5; }
+h1, h2, h3 { font-family: sans-serif; }
+h1 { font-size: 1.6em; margin-top: 0; }
+pre, code { font-family: monospace; font-size: 0.85em; }
+pre { background: #f3f4f6; padding: 0.6em; white-space: pre-wrap; border-radius: 4px; }
+blockquote { margin: 1em 0; padding: 0.5em 0.8em; background: #f3f4f6; border-left: 4px solid #2563eb; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9em; }
+th, td { border: 1px solid #9ca3af; padding: 4px 6px; }
+th { background: #dbeafe; }
+img { max-width: 100%; }
+details { margin: 1em 0; padding: 0.4em 0.8em; border: 1px solid #16a34a; border-radius: 4px; background: #f0fdf4; }
+summary { font-weight: bold; font-family: sans-serif; cursor: pointer; }

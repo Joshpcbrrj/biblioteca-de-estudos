@@ -1,0 +1,64 @@
+name: Gerar EPUBs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'programacao/**'
+      - 'matematica/**'
+      - 'epub/**'
+      - '.github/workflows/gerar-epubs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  epub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Instalar Pandoc
+        run: |
+          wget -q https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-1-amd64.deb
+          sudo dpkg -i pandoc-3.5-1-amd64.deb
+
+      - name: Descobrir cursos a gerar
+        run: |
+          todos() { ls -d programacao/*/ matematica/*/ 2>/dev/null | sed 's#/$##'; }
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || ! git rev-parse HEAD~1 >/dev/null 2>&1; then
+            todos > cursos.txt
+          elif git diff --name-only HEAD~1 HEAD | grep -qE '^(epub/|\.github/)'; then
+            todos > cursos.txt
+          else
+            git diff --name-only HEAD~1 HEAD | grep -E '^(programacao|matematica)/[^/]+/' | cut -d/ -f1-2 | sort -u > cursos.txt
+          fi
+          cat cursos.txt
+
+      - name: Gerar EPUBs
+        run: |
+          mkdir -p saida
+          while read -r d; do
+            [ -f "$d/metadata.yaml" ] || continue
+            nome=$(basename "$d")
+            arquivos=$(ls "$d"/[0-9]*.md | sort)
+            capa=""
+            [ -f "$d/capa.png" ] && capa="--epub-cover-image=$d/capa.png"
+            pandoc --metadata-file="$d/metadata.yaml" --resource-path="$d" \
+              --css=epub/estilo.css --toc --toc-depth=2 --split-level=1 --mathml \
+              $capa -o "saida/$nome.epub" $arquivos
+            echo "Gerado: saida/$nome.epub"
+          done < cursos.txt
+
+      - name: Publicar na release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ls saida/*.epub >/dev/null 2>&1 || { echo "Nenhum EPUB gerado"; exit 0; }
+          gh release view epubs >/dev/null 2>&1 || \
+            gh release create epubs --title "EPUBs da Biblioteca de Estudos" \
+              --notes "Livros gerados automaticamente a partir dos resumos em Markdown."
+          gh release upload epubs saida/*.epub --clobber
