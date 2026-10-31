@@ -1,3 +1,5 @@
+<p align="center"><img src="capa.png" alt="Capa do livro" width="260"></p>
+
 # Udemy/ YouTube: Lógica de programação com Portugol Studio - Bóson Treinamentos
 
 📥 **[Baixar o EPUB](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/boson-logica-portugol.epub)**
