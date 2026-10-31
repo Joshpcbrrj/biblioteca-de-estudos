@@ -16,7 +16,7 @@ Resumos dos cursos de programação e matemática que fiz, revisados e organizad
 
 ## Como os livros são gerados
 
-Cada curso fica numa pasta própria (`programacao/<curso>/` ou `matematica/<curso>/`), com uma aula por arquivo Markdown e os diagramas em SVG. A cada atualização, uma GitHub Action usa o [Pandoc](https://pandoc.org) para gerar o EPUB do curso e publicá-lo na [release `epubs`](../../releases/tag/epubs).
+Cada curso fica numa pasta própria (`programacao/<curso>/` ou `matematica/<curso>/`), com as aulas em Markdown na pasta `aulas/` e os diagramas em SVG na pasta `img/`. A cada atualização, uma GitHub Action usa o [Pandoc](https://pandoc.org) para gerar o EPUB do curso e publicá-lo na [release `epubs`](../../releases/tag/epubs).
 
 Nos exercícios, as respostas ficam recolhidas: tente resolver primeiro e depois clique em **Ver resposta** para conferir.
 

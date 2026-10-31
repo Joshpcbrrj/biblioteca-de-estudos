@@ -21,10 +21,11 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Instalar Pandoc
+      - name: Instalar Pandoc e rsvg-convert
         run: |
           wget -q https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-1-amd64.deb
           sudo dpkg -i pandoc-3.5-1-amd64.deb
+          sudo apt-get update -q && sudo apt-get install -y -q librsvg2-bin
 
       - name: Descobrir cursos a gerar
         run: |
@@ -44,12 +45,19 @@ jobs:
           while read -r d; do
             [ -f "$d/metadata.yaml" ] || continue
             nome=$(basename "$d")
-            arquivos=$(ls "$d"/[0-9]*.md | sort)
+            tmp=$(mktemp -d)
+            cp -r "$d"/. "$tmp"/
+            # SVG -> PNG (2x) para o EPUB: Kindle e alguns leitores não exibem SVG bem
+            for s in "$tmp"/img/*.svg; do
+              [ -e "$s" ] || continue
+              rsvg-convert -z 2 -b white -o "${s%.svg}.png" "$s"
+            done
+            sed -i -E 's#(\.\./img/[^)]+)\.svg\)#\1.png)#g' "$tmp"/aulas/*.md
             capa=""
             [ -f "$d/capa.png" ] && capa="--epub-cover-image=$d/capa.png"
-            pandoc --metadata-file="$d/metadata.yaml" --resource-path="$d" \
+            pandoc --metadata-file="$d/metadata.yaml" --resource-path="$tmp/aulas" \
               --css=epub/estilo.css --toc --toc-depth=2 --split-level=1 --mathml \
-              $capa -o "saida/$nome.epub" $arquivos
+              $capa -o "saida/$nome.epub" $(ls "$tmp"/aulas/[0-9]*.md | sort)
             echo "Gerado: saida/$nome.epub"
           done < cursos.txt
 
