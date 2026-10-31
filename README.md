@@ -10,6 +10,7 @@ Resumos dos cursos de programação e matemática que fiz, revisados e organizad
 | Udemy: Aprenda Lógica de Programação (Direto ao ponto) - Intellectuale Tecnologia e Treinamento | [Abrir](programacao/intellectuale-logica-flowgorithm/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/intellectuale-logica-flowgorithm.epub) |
 | Udemy: Algoritmo e lógica de programação do absoluto zero com JS - Cod3r | [Abrir](programacao/cod3r-logica-javascript/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/cod3r-logica-javascript.epub) |
 | Udemy: Algoritmos e Lógica de Programação do básico ao avançado - Geek University | [Abrir](programacao/geek-university-logica/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/geek-university-logica.epub) |
+| Dio: Banco Pan - Java developer | [Abrir](programacao/dio-banco-pan-java/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/dio-banco-pan-java.epub) |
 
 ## 📐 Matemática
 

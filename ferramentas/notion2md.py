@@ -21,11 +21,16 @@ def inline(el):
     if isinstance(el, NavigableString):
         return str(el).replace('\u00a0', ' ')
     name = el.name
+    if el.get('data-notion-inline-equation') is not None:
+        # equação em linha: devolve o texto original entre $...$
+        return '$' + el['data-notion-inline-equation'] + '$'
     inner = ''.join(inline(c) for c in el.children)
-    if name in ('strong','b'):
-        return f'**{inner}**' if inner.strip() else inner
-    if name in ('em','i'):
-        return f'*{inner}*' if inner.strip() else inner
+    if name in ('strong','b','em','i'):
+        if not inner.strip(): return inner
+        mk = '**' if name in ('strong','b') else '*'
+        # espaços ficam fora das marcas: "**texto **" não vira negrito em Markdown
+        m = re.match(r'^(\s*)(.*?)(\s*)$', inner, re.S)
+        return f'{m.group(1)}{mk}{m.group(2)}{mk}{m.group(3)}'
     if name == 'code':
         t = el.get_text()
         tick = '``' if '`' in t else '`'
@@ -53,9 +58,11 @@ def esc_cell(s):
     return s.replace('|', '\\|').replace('\n',' ').strip()
 
 class Conv:
-    def __init__(self, is_list, imgdir):
+    def __init__(self, is_list, imgdir, path=None, depth=0):
         self.is_list = is_list
         self.imgdir = imgdir
+        self.path = path
+        self.depth = depth  # 0 = aula; 1+ = subpágina embutida
         self.last_h2 = ''
         self.images = []
         self.shift = False
@@ -83,10 +90,11 @@ class Conv:
             t = re.sub(r'\*\*(.*?)\*\*', r'\1', t)
             if n in ('h1', 'h2', 'h3'): self.last_h2 = t
             if self.shift:
-                lvl = {'h1':'##','h2':'###','h3':'####'}[n]
+                k = {'h1':2,'h2':3,'h3':4}[n]
             else:
-                lvl = {'h1':'##','h2':'##','h3':'###'}[n]
-            return f'{lvl} {t}'
+                k = {'h1':2,'h2':2,'h3':3}[n]
+            k = min(k + self.depth, 6)
+            return f'{"#"*k} {t}'
         if n == 'p':
             t = inline(el).strip()
             return t
@@ -112,7 +120,15 @@ class Conv:
                 cap = el.find('figcaption')
                 cap = inline(cap).strip() if cap else ''
                 return f'![{cap}](../img/{base})'
-            if 'link-to-page' in cls: return ''
+            if 'link-to-page' in cls:
+                a = el.find('a')
+                if not a or not self.path: return ''
+                sub = os.path.join(os.path.dirname(self.path), urllib.parse.unquote(a['href']))
+                if not os.path.exists(sub) or not sub.endswith('.html'): return ''
+                nome = os.path.basename(sub)
+                lista = self.is_list or nome.startswith(('Exercício', 'Exercicio', 'Desafio'))
+                _, md = convert_page(sub, lista, self.imgdir, self.depth + 1)
+                return md.strip()
             a = el.find('a', class_='bookmark')
             if a:
                 title = el.find(class_='bookmark-title')
@@ -145,6 +161,8 @@ class Conv:
             h = self.last_h2.lower()
             answer = (self.is_list or h.startswith('desafio') or 'exercício' in h
                       or stext_plain.lower().startswith('resolução'))
+            if stext_plain.lower().startswith('exemplo'):
+                answer = False  # toggle de exemplos não é resposta
             if answer:
                 low = stext_plain.lower()
                 if low in ('resolução', 'código', 'código resposta', 'resposta'):
@@ -194,22 +212,26 @@ def polir_summaries(s):
         return f'<summary>Ver versão estendida: {resto}</summary>'
     return re.sub(r'<summary>Ver resposta: (Versão estendida original|Versão estendida|Variação original):? ?(.*?)</summary>', ext, s)
 
-def convert_page(path, is_list, imgdir):
+def convert_page(path, is_list, imgdir, depth=0):
     soup = BeautifulSoup(open(path, encoding='utf-8').read(), 'html.parser')
     title = soup.find('h1', class_='page-title').get_text().strip()
     body = soup.find('div', class_='page-body')
-    c = Conv(is_list, imgdir)
+    c = Conv(is_list, imgdir, path, depth)
     c.shift = body.find('h1') is not None
     parts = c.blocks(body)
-    md = f'# {title}\n\n' + '\n\n'.join(p for p in parts if p.strip()) + '\n'
+    md = f'{"#"*min(depth+1, 6)} {title}\n\n' + '\n\n'.join(p for p in parts if p.strip()) + '\n'
     for a,b in PERSONAL: md = md.replace(a,b)
     md = md.replace(' Cada um traz o enunciado, a resolução e o arquivo `.por` original.', ' Cada um traz o enunciado e a resolução, que fica recolhida: tente resolver antes de abrir.')
+    md = re.sub(r'(?<=\S)\*\*\*\*(?=\S)', '', md)
     md = re.sub(r'\n{3,}', '\n\n', md)
     # copia imagens
     for src in c.images:
         p = os.path.join(os.path.dirname(path), src)
         if os.path.exists(p):
-            shutil.copy(p, os.path.join(imgdir, os.path.basename(src)))
+            dst = os.path.join(imgdir, os.path.basename(src))
+            if os.path.exists(dst) and open(dst,'rb').read() != open(p,'rb').read():
+                print('IMAGEM COM NOME REPETIDO', dst)
+            shutil.copy(p, dst)
         else:
             print('IMAGEM FALTANDO', p)
     return title, md
