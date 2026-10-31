@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 SRC = sys.argv[1]          # pasta da exportação
 OUT = sys.argv[2]          # pasta do curso no repo
-PERSONAL = [("Josue B. Almeida", "Ana Souza")]
+PERSONAL = [("Josue B. Almeida", "Ana Souza"), ("Josué B. Almeida", "Ana Souza")]
 
 def slug(t):
     t = unicodedata.normalize('NFKD', t).encode('ascii','ignore').decode()
@@ -141,7 +141,7 @@ class Conv:
                       or stext_plain.lower().startswith('resolução'))
             if answer:
                 low = stext_plain.lower()
-                if low == 'resolução' or low == 'código':
+                if low in ('resolução', 'código', 'código resposta', 'resposta'):
                     label = 'Ver resposta'
                 elif low.startswith('resolução'):
                     label = 'Ver resposta ' + stext_plain[len('Resolução'):].strip()
@@ -217,7 +217,7 @@ if __name__ == '__main__':
     pages = []
     for i, rel in enumerate(order, start=1):
         title = None
-        is_list = 'Lista de exerc' in rel
+        is_list = 'Lista de exerc' in rel or os.path.basename(rel).startswith('Desafio')
         t, md = convert_page(os.path.join(SRC, rel), is_list, os.path.join(OUT,'img'))
         fn = f'{i:02d}-{slug(t)}.md'
         md = polir_summaries(md)
