@@ -7,6 +7,7 @@ Resumos dos cursos de programação e matemática que fiz, revisados e organizad
 | Curso | Ler online | EPUB |
 | --- | --- | --- |
 | Udemy/ YouTube: Lógica de programação com Portugol Studio - Bóson Treinamentos | [Abrir](programacao/boson-logica-portugol/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/boson-logica-portugol.epub) |
+| Udemy: Aprenda Lógica de Programação (Direto ao ponto) - Intellectuale Tecnologia e Treinamento | [Abrir](programacao/intellectuale-logica-flowgorithm/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/intellectuale-logica-flowgorithm.epub) |
 
 ## 📐 Matemática
 

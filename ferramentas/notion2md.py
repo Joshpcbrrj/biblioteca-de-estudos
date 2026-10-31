@@ -41,6 +41,14 @@ def inline(el):
         return el.get('data-emoji','')
     return inner
 
+def reindentar(code):
+    """Recuo de 4 espaços vira 2 (mais espaço útil na tela do e-reader)."""
+    linhas = code.split('\n')
+    recuos = [len(l) - len(l.lstrip(' ')) for l in linhas if l.strip() and l.startswith(' ')]
+    if not recuos or any(r % 4 for r in recuos):
+        return code
+    return '\n'.join(' ' * ((len(l) - len(l.lstrip(' '))) // 2) + l.lstrip(' ') if l.strip() else l for l in linhas)
+
 def esc_cell(s):
     return s.replace('|', '\\|').replace('\n',' ').strip()
 
@@ -50,6 +58,7 @@ class Conv:
         self.imgdir = imgdir
         self.last_h2 = ''
         self.images = []
+        self.shift = False
     def blocks(self, parent):
         out = []
         for c in parent.children:
@@ -68,11 +77,15 @@ class Conv:
     def block(self, el):
         n = el.name; cls = el.get('class') or []
         if n in ('script','link','style'): return ''
+        if n == 'nav': return ''  # table-of-contents do Notion
         if n in ('h1','h2','h3'):
             t = inline(el).strip()
             t = re.sub(r'\*\*(.*?)\*\*', r'\1', t)
-            if n == 'h2': self.last_h2 = t
-            lvl = {'h1':'##','h2':'##','h3':'###'}[n]
+            if n in ('h1', 'h2', 'h3'): self.last_h2 = t
+            if self.shift:
+                lvl = {'h1':'##','h2':'###','h3':'####'}[n]
+            else:
+                lvl = {'h1':'##','h2':'##','h3':'###'}[n]
             return f'{lvl} {t}'
         if n == 'p':
             t = inline(el).strip()
@@ -86,7 +99,8 @@ class Conv:
             lang = el.get('data-notion-code-syntax','') or ''
             lang = {'plain text':'text','txt':'text','shell':'bash'}.get(lang.lower(), lang.lower())
             code = el.get_text().replace('\t', '  ')
-            code = re.sub(r'(\S) {2,}//', r'\1  //', code)  # alinhamento de comentários estoura a largura em e-readers
+            code = re.sub(r'(\S) {3,}(//|\.\.\. |# |←|→)', r'\1  \2', code)
+            code = reindentar(code)  # alinhamento de comentários estoura a largura em e-readers
             return f'```{lang}\n{code.rstrip()}\n```'
         if n == 'figure':
             if 'image' in cls:
@@ -122,7 +136,9 @@ class Conv:
             parts = self.blocks(body) if body else []
             if not parts: return ''
             content = '\n\n'.join(parts)
-            answer = self.is_list or self.last_h2.lower().startswith('desafio')
+            h = self.last_h2.lower()
+            answer = (self.is_list or h.startswith('desafio') or 'exercício' in h
+                      or stext_plain.lower().startswith('resolução'))
             if answer:
                 low = stext_plain.lower()
                 if low == 'resolução' or low == 'código':
@@ -175,6 +191,7 @@ def convert_page(path, is_list, imgdir):
     title = soup.find('h1', class_='page-title').get_text().strip()
     body = soup.find('div', class_='page-body')
     c = Conv(is_list, imgdir)
+    c.shift = body.find('h1') is not None
     parts = c.blocks(body)
     md = f'# {title}\n\n' + '\n\n'.join(p for p in parts if p.strip()) + '\n'
     for a,b in PERSONAL: md = md.replace(a,b)
