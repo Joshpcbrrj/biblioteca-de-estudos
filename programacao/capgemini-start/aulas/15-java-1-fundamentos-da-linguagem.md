@@ -36,7 +36,7 @@ Hoje o Java é muito usado em **sistemas corporativos e bancários** (com Spring
 
 ### JDK, JRE e JVM
 
-![Um dentro do outro: o JDK inclui o JRE, que inclui a JVM.](../img/jdk-jre-jvm-2.svg)
+![Um dentro do outro: o JDK inclui o JRE, que inclui a JVM.](../img/jdk-jre-jvm.svg)
 
 | Sigla | Nome | Para que serve |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ Para programar, instale o **JDK**.
 
 ### Do código à execução
 
-![O javac gera bytecode; a JVM de cada sistema o executa.](../img/java-exec-2.svg)
+![O javac gera bytecode; a JVM de cada sistema o executa.](../img/java-exec.svg)
 
 ```java
 // Main.java

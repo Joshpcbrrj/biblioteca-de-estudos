@@ -652,7 +652,7 @@ Em uma linguagem interpretada não existe um executável final. Um programa cham
 
 Exemplos: **JavaScript, Python, PHP, Ruby**.
 
-![À esquerda, a linguagem interpretada; à direita, o caminho do Java.](../img/interpretacao.svg)
+![Em cima, a linguagem interpretada; embaixo, o caminho do Java.](../img/interpretacao.svg)
 
 > 🌐 O **navegador** tem um interpretador de JavaScript embutido (o V8, no Chrome; o SpiderMonkey, no Firefox). Por isso o mesmo site funciona em Windows, Mac, Linux e celular: quem executa o código é o navegador.
 

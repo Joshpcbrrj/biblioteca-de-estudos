@@ -235,7 +235,7 @@ for (int i = 0; i < paises.length; i++)
 for (String p : paises) System.out.println(p);
 ```
 
-> 💡 **Valores padrão** de um array recém-criado: números → `0` · `boolean` → `false` · `char` → `'\u0000'` · objetos e `String` → `null`.
+> 💡 **Valores padrão** de um array recém-criado: números → `0` · `boolean` → `false` · `char` → o caractere nulo (código 0) · objetos e `String` → `null`.
 
 ### 7. Collections
 

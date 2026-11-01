@@ -75,7 +75,7 @@ java -version
 javac -version
 ```
 
-Se o comando não for reconhecido, configure a variável de ambiente `JAVA_HOME` apontando para a pasta do JDK e inclua `%JAVA_HOME%\bin` no `PATH` (Windows).
+Se o comando não for reconhecido, configure a variável de ambiente `JAVA_HOME` apontando para a pasta do JDK e inclua a pasta `bin` dela (`%JAVA_HOME%\bin`) no `PATH` (Windows).
 
 ### 2. Instale uma IDE
 
@@ -2343,7 +2343,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
 </details>
 
-> ✅ **Checklist de qualidade:** a tecla **Enter** aciona o botão Entrar (`getRootPane().setDefaultButton(btnEntrar)`); a ordem do **Tab** segue de cima para baixo; mensagens de erro claras com `JOptionPane`; nenhum componente com nome genérico (`jButton1`).
+> 💡 **Checklist de qualidade:** a tecla **Enter** aciona o botão Entrar (`getRootPane().setDefaultButton(btnEntrar)`); a ordem do **Tab** segue de cima para baixo; mensagens de erro claras com `JOptionPane`; nenhum componente com nome genérico (`jButton1`).
 
 > ⚠️ Num sistema real, a senha nunca é comparada com um texto fixo no código nem guardada em texto puro no banco: guarda-se um **hash** dela. O projeto Spring Boot, no fim do curso, mostra como.
 
@@ -3225,7 +3225,7 @@ Porque o valor de cada `?` é enviado separado do comando e tratado sempre como 
 | `PreparedStatement` | SQL com `?`; evita SQL Injection |
 | `setX(índice, valor)` | preenche os `?`, a partir do 1 |
 | `execute()` × `executeQuery()` | altera dados × consulta |
-| `ResultSet` e `rs.next()` | percorre as linhas do SELECT |
+| `ResultSet` com `rs.next()` | percorre as linhas do SELECT |
 | `List<Task>` | lista que cresce; um objeto por linha |
 
 ## Projeto TodoApp 7: telas com Swing
@@ -3332,7 +3332,7 @@ private void excluirTarefa(Task t) {
 }
 ```
 
-> ✅ **Checklist de qualidade:** validar campos obrigatórios antes de salvar; mostrar erros com `JOptionPane`; pedir confirmação antes de excluir (`showConfirmDialog`); recarregar a lista depois de cada alteração.
+> 💡 **Checklist de qualidade:** validar campos obrigatórios antes de salvar; mostrar erros com `JOptionPane`; pedir confirmação antes de excluir (`showConfirmDialog`); recarregar a lista depois de cada alteração.
 
 ### 🧠 Revisão rápida
 

@@ -576,7 +576,7 @@ Praticamente só o endereço `api` no service (e talvez o tipo do `id`).
 | Conceito | Lembrete |
 | --- | --- |
 | API | contrato para um sistema usar outro; na web, HTTP + JSON |
-| REST | recursos com URL e métodos HTTP; sem estado |
+| REST | recursos com URL + métodos HTTP; sem estado |
 | Métodos | GET busca · POST cria · PUT substitui · PATCH altera parte · DELETE exclui |
 | Status | 200/201/204 sucesso · 400/401/403/404 erro do cliente · 500 erro do servidor |
 | HttpClient | `provideHttpClient()`; chamadas dentro de services |

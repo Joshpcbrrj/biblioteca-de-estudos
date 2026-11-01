@@ -534,7 +534,7 @@ Pai → filho: `@Input` com `[produto]="p"`. Filho → pai: `@Output` com `Event
 | `selector` | a tag do componente |
 | `imports` | o que o template usa |
 | `@Input` | dados do pai para o filho |
-| `@Output` e `EventEmitter` | eventos do filho para o pai |
+| `@Output` com `EventEmitter` | eventos do filho para o pai |
 | `ng-content` | o pai coloca HTML dentro do filho |
 | `ngOnInit` · `ngOnDestroy` | carregar · limpar |
 

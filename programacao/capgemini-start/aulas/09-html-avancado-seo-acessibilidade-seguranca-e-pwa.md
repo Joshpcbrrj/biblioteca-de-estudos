@@ -669,7 +669,7 @@ HTTPS, o manifest (nome, ícones, cores) e um Service Worker (cache e offline).
 | Acessibilidade | HTML semântico, `alt`, `label`, teclado, foco visível, contraste 4,5:1 |
 | ARIA | só quando não existe tag HTML para aquilo |
 | HTTPS | HTTP + TLS (SSL é obsoleto); protege a conexão |
-| Origem | protocolo, domínio e porta |
+| Origem | protocolo + domínio + porta |
 | CORS | o servidor autoriza outras origens com `Access-Control-Allow-Origin` |
 | CSP | lista de onde a página pode carregar recursos; defesa contra XSS |
 | OWASP Top 10 | riscos mais comuns: controle de acesso, criptografia, injeção |
