@@ -84,7 +84,7 @@ Para usar SQL do próprio banco, marque `nativeQuery = true`; aí valem os nomes
 List<Cliente> buscarPorCidadeSql(String cidade);
 ```
 
-> 💡 **Problema N+1:** relacionamentos `LAZY` são carregados só quando acessados. Listar 100 pedidos e ler o cliente de cada um dispara 1 consulta para os pedidos e mais 100 para os clientes. O `JOIN FETCH` traz tudo numa consulta só:<br>`@Query("SELECT p FROM Pedido p JOIN FETCH p.cliente")`
+> 💡 **Problema N+1:** relacionamentos `LAZY` são carregados só quando acessados. Listar 100 pedidos e ler o cliente de cada um dispara 1 consulta para os pedidos e mais 100 para os clientes. O `JOIN FETCH` traz tudo numa consulta só:<br />`@Query("SELECT p FROM Pedido p JOIN FETCH p.cliente")`
 
 ## 4. Paginação e ordenação
 

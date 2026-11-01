@@ -910,10 +910,10 @@ public class MinhaClasse {
 ![Compilando e executando a classe no terminal.](../img/term-exec.svg)
 
 1. Abra o **Prompt de Comando**, o **PowerShell** ou o terminal do VS Code.
-2. Vá até a pasta do projeto:<br>`cd C:\estudos\dio-trilha-java-basico\java-terminal`
-3. *(Se ainda não compilou pela IDE)* compile, mandando o `.class` para a pasta `bin`:<br>`javac -d bin src\MinhaClasse.java`
-4. Entre na pasta `bin`:<br>`cd bin`
-5. Execute a classe — informe o nome **sem** a extensão `.class`:<br>`java MinhaClasse`
+2. Vá até a pasta do projeto:<br />`cd C:\estudos\dio-trilha-java-basico\java-terminal`
+3. *(Se ainda não compilou pela IDE)* compile, mandando o `.class` para a pasta `bin`:<br />`javac -d bin src\MinhaClasse.java`
+4. Entre na pasta `bin`:<br />`cd bin`
+5. Execute a classe — informe o nome **sem** a extensão `.class`:<br />`java MinhaClasse`
 
 > ✨ **Dicas:**
 >

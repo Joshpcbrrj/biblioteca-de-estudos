@@ -134,7 +134,7 @@ Retirar o dinheiro · Inserir o cartão · Escolher o valor · Retirar o cartão
 3. Escolher a opção "Saque".
 4. Escolher o valor.
 5. Retirar o cartão.
-6. Retirar o dinheiro.<br>Os passos 1 → 2 → 3 → 4 dependem uns dos outros. A ordem de 5 e 6 varia conforme o banco (muitos caixas devolvem o cartão antes do dinheiro justamente para você não esquecê-lo).
+6. Retirar o dinheiro.<br />Os passos 1 → 2 → 3 → 4 dependem uns dos outros. A ordem de 5 e 6 varia conforme o banco (muitos caixas devolvem o cartão antes do dinheiro justamente para você não esquecê-lo).
 
 </details>
 
@@ -194,7 +194,7 @@ print("Média:", media)  # Média: 8.0
 3. Colocar o pó de café no filtro.
 4. Despejar a água quente sobre o pó.
 5. Esperar a água passar pelo filtro.
-6. Servir o café na xícara.<br>Os passos 2 e 3 podem ser feitos antes ou durante o passo 1 (enquanto a água esquenta). Já o 4 só pode vir depois de 1, 2 e 3, e o 6 só depois do 5.
+6. Servir o café na xícara.<br />Os passos 2 e 3 podem ser feitos antes ou durante o passo 1 (enquanto a água esquenta). Já o 4 só pode vir depois de 1, 2 e 3, e o 6 só depois do 5.
 
 </details>
 

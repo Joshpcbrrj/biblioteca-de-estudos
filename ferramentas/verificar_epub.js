@@ -12,6 +12,9 @@ const fs = require('fs'); const path = require('path');
     await p.goto('file://' + path.join(dir, f));
     await p.waitForTimeout(50);
     const r = await p.evaluate(() => {
+      // XHTML malformado: o navegador mostra só um trecho da página
+      const erro = document.querySelector('parsererror');
+      if (erro) return ['XHTML inválido: ' + erro.textContent.trim().slice(0, 120)];
       const W = document.documentElement.clientWidth;
       return [...document.querySelectorAll('pre, code, table, img, p, li, blockquote, details')]
         .filter(e => e.getBoundingClientRect().right > W + 2)
@@ -19,7 +22,7 @@ const fs = require('fs'); const path = require('path');
     });
     if (r.length) { total += r.length; console.log(f); r.slice(0, 5).forEach(x => console.log('   ' + x)); }
   }
-  console.log(total === 0 ? 'OK: nada passa da largura da tela.' : `${total} elemento(s) passam da largura.`);
+  console.log(total === 0 ? 'OK: nada passa da largura da tela.' : `${total} problema(s) encontrados.`);
   await b.close();
   process.exit(total === 0 ? 0 : 1);
 })();

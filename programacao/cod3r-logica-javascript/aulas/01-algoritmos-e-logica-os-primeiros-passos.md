@@ -19,7 +19,7 @@
 5. Colocar a lâmpada nova.
 6. Descer da escada.
 7. Ligar o interruptor.
-8. **Se** a lâmpada não acender, **voltar** ao passo 1 e verificar a instalação.<br>Repare que já aparecem as três ideias da programação: **sequência** (passos em ordem), **decisão** ("se não acender") e **repetição** ("voltar ao passo 1").
+8. **Se** a lâmpada não acender, **voltar** ao passo 1 e verificar a instalação.<br />Repare que já aparecem as três ideias da programação: **sequência** (passos em ordem), **decisão** ("se não acender") e **repetição** ("voltar ao passo 1").
 
 ## 2. Entrada, processamento e saída
 

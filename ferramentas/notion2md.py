@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 SRC = sys.argv[1]          # pasta da exportação
 OUT = sys.argv[2]          # pasta do curso no repo
-PERSONAL = [("Josue B. Almeida", "Ana Souza"), ("Josué B. Almeida", "Ana Souza")]
+PERSONAL = [("Josue B. Almeida", "Ana Souza"), ("Josué B. Almeida", "Ana Souza"), ("Josué sorrindo", "Ana sorrindo")]
 
 def slug(t):
     t = unicodedata.normalize('NFKD', t).encode('ascii','ignore').decode()
@@ -38,10 +38,13 @@ def inline(el):
     if name == 'a':
         href = el.get('href','')
         if href.startswith('http'):
+            # links automáticos do Notion (ex.: Task.java, ASP.NET) viram texto puro
+            if href.rstrip('/').lower() in ('http://' + inner.strip().lower(), 'https://' + inner.strip().lower()):
+                return inner
             return f'[{inner}]({href})'
         return inner
     if name == 'br':
-        return '<br>'
+        return '<br />'
     if name == 'span' and 'icon' in (el.get('class') or []):
         return el.get('data-emoji','')
     return inner
@@ -107,7 +110,7 @@ class Conv:
             lang = el.get('data-notion-code-syntax','') or ''
             lang = {'plain text':'text','txt':'text','shell':'bash'}.get(lang.lower(), lang.lower())
             code = el.get_text().replace('\t', '  ')
-            code = re.sub(r'(\S) {3,}(//|\.\.\. |# |←|→)', r'\1  \2', code)
+            code = re.sub(r'(\S) {3,}(//|/\*|<!--|\.\.\. |# |←|→)', r'\1  \2', code)
             code = reindentar(code)  # alinhamento de comentários estoura a largura em e-readers
             return f'```{lang}\n{code.rstrip()}\n```'
         if n == 'figure':
@@ -116,7 +119,16 @@ class Conv:
                 if not img: return ''
                 src = urllib.parse.unquote(img['src'])
                 base = os.path.basename(src)
-                self.images.append(src)
+                orig = os.path.join(os.path.dirname(self.path), src) if self.path else None
+                if orig and os.path.exists(orig):
+                    # nome repetido com conteúdo diferente ganha sufixo -2, -3...
+                    nome, ext = os.path.splitext(base); k = 2
+                    while os.path.exists(os.path.join(self.imgdir, base)) and \
+                          open(os.path.join(self.imgdir, base),'rb').read() != open(orig,'rb').read():
+                        base = f'{nome}-{k}{ext}'; k += 1
+                    shutil.copy(orig, os.path.join(self.imgdir, base))
+                else:
+                    self.images.append(src)
                 cap = el.find('figcaption')
                 cap = inline(cap).strip() if cap else ''
                 return f'![{cap}](../img/{base})'
@@ -165,7 +177,9 @@ class Conv:
                 answer = False  # toggle de exemplos não é resposta
             if answer:
                 low = stext_plain.lower()
-                if low in ('resolução', 'código', 'código resposta', 'resposta'):
+                if low.startswith('dica'):
+                    label = 'Ver ' + low
+                elif low in ('resolução', 'código', 'código resposta', 'resposta', 'solução'):
                     label = 'Ver resposta'
                 elif low == 'uma resposta possível':
                     label = 'Ver uma resposta possível'
@@ -223,6 +237,23 @@ def convert_page(path, is_list, imgdir, depth=0):
     for a,b in PERSONAL: md = md.replace(a,b)
     md = md.replace(' Cada um traz o enunciado, a resolução e o arquivo `.por` original.', ' Cada um traz o enunciado e a resolução, que fica recolhida: tente resolver antes de abrir.')
     md = re.sub(r'(?<=\S)\*\*\*\*(?=\S)', '', md)
+    # títulos que ficaram vazios (só tinham PDF/arquivo) saem do texto
+    def _sem_vazios(txt):
+        L = txt.split('\n'); out = []; dentro = False
+        for i, l in enumerate(L):
+            if l.startswith('```'): dentro = not dentro
+            m = re.match(r'^(#{2,6}) ', l) if not dentro else None
+            if m:
+                k = len(m.group(1)); j = i + 1
+                while j < len(L) and not L[j].strip(): j += 1
+                n = re.match(r'^(#{1,6}) ', L[j]) if j < len(L) else None
+                if j >= len(L) or (n and len(n.group(1)) <= k): continue
+            out.append(l)
+        return '\n'.join(out)
+    while True:
+        novo = _sem_vazios(md)
+        if novo == md: break
+        md = novo
     md = re.sub(r'\n{3,}', '\n\n', md)
     # copia imagens
     for src in c.images:
