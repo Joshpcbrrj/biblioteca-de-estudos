@@ -338,7 +338,7 @@ String texto = String.valueOf(42);
 
 | Tipo | Operadores | Portugol |
 | --- | --- | --- |
-| Aritméticos | `  • - * / %` | `%` é o `mod` |
+| Aritméticos | `+` `-` `*` `/` `%` | `%` é o `mod` |
 | Atribuição | `= += -= *= /=` | `=` é o `<-` |
 | Incremento | `++` `--` | `i <- i + 1` |
 | Relacionais | `== != > < >= <=` | `==` é o `=`; `!=` é o `<>` |
@@ -1302,7 +1302,7 @@ System.out.printf("Conta: R$ %.2f%n", kwh * tarifa);
 | Faixas com `else if` | 16, 28, 34 |
 | `switch` para valores fixos | 26, 31, 33, 35 |
 | `do-while` com "continuar?" | 20 |
-| `while (true)`  • `break` | 27 |
+| `while (true)` e `break` | 27 |
 | Vetor no lugar de vários `if` | 29 |
 
 ## Orientação a objetos em Java
@@ -1563,7 +1563,7 @@ Composição: um carro **tem** um motor; ele não **é** um motor.
 | --- | --- |
 | Classe × objeto | molde × instância criada com `new` |
 | `static` | pertence à classe, não a cada objeto |
-| `private`  • get/set | encapsulamento: o setter valida |
+| `private` e get/set | encapsulamento: o setter valida |
 | Construtor | mesmo nome da classe, sem retorno |
 | Sobrecarga | vários construtores ou métodos com parâmetros diferentes |
 | Herança | `extends`, `super`; relação "é um" |
@@ -2547,7 +2547,7 @@ Porque a descrição é opcional, mas todo projeto e toda tarefa precisam de um 
 
 | Item | Em uma frase |
 | --- | --- |
-| `CREATE DATABASE`  • `USE` | cria e seleciona o banco |
+| `CREATE DATABASE` e `USE` | cria e seleciona o banco |
 | `projects` 1 → N `tasks` | um projeto tem várias tarefas |
 | `idProject` | a FK que liga a tarefa ao projeto |
 | `ON DELETE CASCADE` | apagar o projeto apaga as tarefas (RN03) |
@@ -3225,7 +3225,7 @@ Porque o valor de cada `?` é enviado separado do comando e tratado sempre como 
 | `PreparedStatement` | SQL com `?`; evita SQL Injection |
 | `setX(índice, valor)` | preenche os `?`, a partir do 1 |
 | `execute()` × `executeQuery()` | altera dados × consulta |
-| `ResultSet`  • `rs.next()` | percorre as linhas do SELECT |
+| `ResultSet` e `rs.next()` | percorre as linhas do SELECT |
 | `List<Task>` | lista que cresce; um objeto por linha |
 
 ## Projeto TodoApp 7: telas com Swing
@@ -3612,7 +3612,7 @@ Para desenvolver sem arriscar a versão que funciona. Só se junta à `main` qua
 | `Scanner` | entrada pelo teclado; cuidado com o Enter depois de `nextInt()` |
 | `==` × `.equals()` | compare Strings com `.equals()` |
 | `7 / 2` | dá 3 entre inteiros |
-| Encapsulamento | atributos `private`  • getters/setters |
+| Encapsulamento | atributos `private` e getters/setters |
 | Construtor | mesmo nome da classe, sem retorno |
 | Herança / polimorfismo | `extends`, `super`, `@Override` |
 | MVC | model (dados), view (telas), controller (regras e banco) |

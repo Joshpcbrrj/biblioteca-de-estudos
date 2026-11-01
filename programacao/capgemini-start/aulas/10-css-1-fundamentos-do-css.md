@@ -752,8 +752,8 @@ Uma caixa com `width: 300px; padding: 10px 20px; border: 2px solid; margin: 15px
 | Parte | `content-box` | `border-box` |
 | --- | --- | --- |
 | conteúdo | 300 | 300 − 40 − 4 = 256 |
-| • padding (esq. + dir.) | 20 + 20 = 40 | (já incluído) |
-| • borda (esq. + dir.) | 2 + 2 = 4 | (já incluído) |
+| padding (esq. + dir.) | 20 + 20 = 40 | (já incluído) |
+| borda (esq. + dir.) | 2 + 2 = 4 | (já incluído) |
 | **largura visível** | **344px** | **300px** |
 | espaço ocupado (+ margem 15 + 15) | 374px | 330px |
 
@@ -928,7 +928,7 @@ Porque `span` é `inline`, que ignora largura e altura. Use `display: inline-blo
 | --- | --- |
 | `block` · `inline` · `inline-block` | ocupa a linha · no texto · no texto com tamanho |
 | `display: none` | some e não ocupa espaço |
-| `relative`  • `absolute` | o filho se posiciona dentro do pai |
+| `relative` no pai, `absolute` no filho | o filho se posiciona dentro do pai |
 | `fixed` · `sticky` | preso na janela · gruda ao rolar |
 | `z-index` | maior fica na frente |
 | `float` | só para texto contornar imagem |
@@ -1178,7 +1178,7 @@ Grid (duas dimensões). Dentro de cada parte, Flexbox costuma alinhar os itens.
 | `repeat()` · `minmax()` | repetir colunas · limites de tamanho |
 | `grid-column: 1 / -1` | largura toda |
 | `grid-template-areas` | layout desenhado com nomes |
-| `auto-fit`  • `minmax` | galeria responsiva sem media query |
+| `auto-fit` com `minmax` | galeria responsiva sem media query |
 
 ## Responsividade e media queries
 

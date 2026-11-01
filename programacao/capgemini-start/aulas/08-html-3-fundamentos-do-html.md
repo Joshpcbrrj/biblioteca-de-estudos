@@ -95,7 +95,7 @@ O Adobe Flash, porque áudio, vídeo e desenho passaram a ser nativos (`audio`, 
 
 ### De onde paramos
 
-A aula anterior mostrou que o HTML marca o que é cada conteúdo. Assim como todo programa Java tinha a mesma estrutura mínima (`class` + `main`), toda página HTML tem um esqueleto fixo. Primeiro, as peças que o formam: elementos, tags e atributos.
+A aula anterior mostrou que o HTML marca o que é cada conteúdo. Assim como todo programa Java tinha a mesma estrutura mínima (`class` com `main`), toda página HTML tem um esqueleto fixo. Primeiro, as peças que o formam: elementos, tags e atributos.
 
 ### Elementos, tags e atributos
 
@@ -186,7 +186,7 @@ O navegador é tolerante: se você esquecer `<head>`, `<body>` ou até o fechame
 Ao longo do módulo, você vai montar um **currículo** em HTML, aula por aula. Comece agora:
 
 1. Crie uma pasta `curriculo` e, dentro dela, o arquivo `index.html`.
-2. Gere o esqueleto (`!` + Tab), troque o `lang` para `pt-BR` e o `title` para "Currículo | Seu Nome".
+2. Gere o esqueleto (`!` e Tab), troque o `lang` para `pt-BR` e o `title` para "Currículo | Seu Nome".
 3. No `body`, escreva um `<h1>` com o seu nome.
 4. Abra com o **Live Server** (botão direito → *Open with Live Server*) e veja a página atualizar sozinha a cada salvamento.
 
@@ -210,7 +210,7 @@ Porque o navegador monta a árvore do DOM a partir do aninhamento; tags trocadas
 
 | Item | Em uma frase |
 | --- | --- |
-| Elemento | abertura + atributos + conteúdo + fechamento |
+| Elemento | abertura, atributos, conteúdo e fechamento |
 | Tag vazia | sem conteúdo nem fechamento (`img`, `meta`) |
 | Atributo | `nome="valor"` na abertura |
 | Esqueleto | `!DOCTYPE`, `html lang`, `head`, `body` |
@@ -694,7 +694,7 @@ Com CSS (`margin`), e não com vários `<br>`.
 | `br` | quebra dentro do texto, não para espaçar |
 | `strong` · `em` | importância · ênfase |
 | `blockquote` · `q` | citação longa · curta |
-| `pre`  • `code` | código com espaços preservados |
+| `pre` e `code` | código com espaços preservados |
 
 ## Links e caminhos
 
@@ -846,7 +846,7 @@ Na aula de links, o menu do currículo ficou como uma fileira de links separados
 | Tag | Tipo | Use quando | Marcador padrão |
 | --- | --- | --- | --- |
 | `<ol>` | ordenada (*ordered list*) | a **ordem importa**: passo a passo, ranking | 1, 2, 3 |
-| `<ul>` | não ordenada (*unordered list*) | a ordem não importa: itens, características, menus | • |
+| `<ul>` | não ordenada (*unordered list*) | a ordem não importa: itens, características, menus | bolinha (•) |
 | `<dl>` | de definição (*description list*) | termo e descrição: glossário, ficha técnica | sem marcador |
 
 Em `ol` e `ul`, cada item é um `<li>` (*list item*). Dentro de `ol`/`ul` só podem ficar `li`, mas dentro de um `li` pode ir qualquer coisa: links, parágrafos, imagens e outras listas.
@@ -983,10 +983,10 @@ Não: dentro de `ul`/`ol` só vai `li`. O `p` pode ficar dentro do `li`.
 | --- | --- |
 | `ol` | ordem importa (passos, ranking) |
 | `ul` | ordem não importa (itens, menus) |
-| `dl`  • `dt`/`dd` | termo e descrição |
+| `dl` com `dt`/`dd` | termo e descrição |
 | `li` | cada item; pode conter qualquer coisa |
 | Aninhar | lista dentro de um `li` |
-| Menu | `nav`  • `ul`  • `li`  • `a` |
+| Menu | `nav`, `ul`, `li` e `a` |
 
 ## Tabelas
 
@@ -1481,7 +1481,7 @@ Um programa no servidor (ou o JavaScript da página). O HTML só coleta e envia.
 | `name` | a chave de cada dado |
 | GET | dados na URL; buscas e filtros |
 | POST | dados no corpo; cadastros e login |
-| `fieldset`  • `legend` | agrupa campos com título |
+| `fieldset` e `legend` | agrupa campos com título |
 | Segurança | quem protege é o HTTPS, não o POST |
 
 ## Campos do formulário: input, label e textarea
@@ -1773,7 +1773,7 @@ O `datalist` só sugere: a pessoa pode digitar um valor fora da lista. O `select
 
 | Item | Em uma frase |
 | --- | --- |
-| `select`  • `option` | escolha fechada numa lista suspensa |
+| `select` e `option` | escolha fechada numa lista suspensa |
 | `value` | o que vai para o servidor |
 | `optgroup` | agrupa opções com título |
 | `datalist` | sugestões; aceita qualquer valor |
@@ -1887,6 +1887,6 @@ Link (`a href`): leva a outra página. Botão é para ações.
 | Imagens | sempre `alt`; WebP para fotos, SVG para ícones |
 | Mídia | `video`/`audio` com `controls`; `iframe` com `title` |
 | Script | `<script defer>` no `head` |
-| Formulário | `action`  • `method`; todo campo com `name` e `label` |
+| Formulário | `action` e `method`; todo campo com `name` e `label` |
 | GET × POST | dados na URL (buscas) × no corpo (cadastros, login) |
 | `button` no form | sem `type` = `submit`; use `type="button"` para JS |

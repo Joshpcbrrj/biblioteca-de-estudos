@@ -339,7 +339,7 @@ Classe abstrata `Animal`: eles **são** um tipo comum e compartilham código. Um
 | Conceito | Em uma frase |
 | --- | --- |
 | Construtor | inicializa o objeto no `new`; mesmo nome da classe, sem retorno |
-| `private`  • métodos públicos | encapsulamento: o objeto protege os próprios dados |
+| `private` e métodos públicos | encapsulamento: o objeto protege os próprios dados |
 | `static` | pertence à classe, uma cópia só |
 | `final` | não muda (variável), não sobrescreve (método), não herda (classe) |
 | `enum` | conjunto fixo de constantes com tipo próprio |
@@ -590,7 +590,7 @@ O código roda na thread atual, sem paralelismo. Só `start()` cria a nova linha
 | Generics | `<T>` dá segurança de tipo e reuso sem cast |
 | Annotations | metadados `@` lidos pelo compilador, frameworks ou reflexão |
 | for-each | percorre sem índice; para remover use `removeIf` |
-| Threads | `start()`  • `join()`; cuidado com dados compartilhados; prefira `ExecutorService` |
+| Threads | `start()` e `join()`; cuidado com dados compartilhados; prefira `ExecutorService` |
 | Datas | use `java.time` (`LocalDate`, `DateTimeFormatter`); `Calendar` é legado |
 
 ## Lambdas, Streams e Optional
@@ -1056,7 +1056,7 @@ Unchecked. Normalmente indica um bug: alguém usou uma variável que estava `nul
 | Tema | Lembre |
 | --- | --- |
 | JDBC | SQL na mão; sempre `PreparedStatement` com `?` |
-| JPA / Hibernate | ORM: `@Entity` vira tabela; `EntityManager`  • transação |
+| JPA / Hibernate | ORM: `@Entity` vira tabela; `EntityManager` dentro de uma transação |
 | Pacote | `jakarta.persistence` nas versões atuais |
 | Checked × unchecked | checked obriga tratar (`IOException`); unchecked indica bug (`NullPointerException`) |
 | `try/catch/finally` | tenta, trata, sempre executa |

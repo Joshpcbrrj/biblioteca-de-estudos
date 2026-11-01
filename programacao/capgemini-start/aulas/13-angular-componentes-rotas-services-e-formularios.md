@@ -32,7 +32,7 @@ No fim do módulo de JavaScript, a lista de tarefas já exigia vários `querySel
 | --- | --- |
 | **Node.js (versão LTS)** | executa as ferramentas do Angular; traz o **npm**, o gerenciador de pacotes |
 | **Angular CLI** | comando `ng`, que cria projetos, componentes e serviços e roda o servidor |
-| **VS Code**  • extensão **Angular Language Service** | autocompletar e erros dentro dos templates HTML |
+| **VS Code** com a extensão **Angular Language Service** | autocompletar e erros dentro dos templates HTML |
 
 🔗 [https://nodejs.org/](https://nodejs.org/)
 
@@ -534,7 +534,7 @@ Pai → filho: `@Input` com `[produto]="p"`. Filho → pai: `@Output` com `Event
 | `selector` | a tag do componente |
 | `imports` | o que o template usa |
 | `@Input` | dados do pai para o filho |
-| `@Output`  • `EventEmitter` | eventos do filho para o pai |
+| `@Output` e `EventEmitter` | eventos do filho para o pai |
 | `ng-content` | o pai coloca HTML dentro do filho |
 | `ngOnInit` · `ngOnDestroy` | carregar · limpar |
 
@@ -1051,7 +1051,7 @@ Não: só esconde a tela. A API precisa verificar o login em cada requisição.
 | `app.routes.ts` | a lista de rotas; `**` por último |
 | `<router-outlet>` | onde a página aparece |
 | `routerLink` | navega sem recarregar |
-| `:id`  • `ActivatedRoute` | parâmetro na URL |
+| `:id` e `ActivatedRoute` | parâmetro na URL |
 | `Router.navigate` | navega pelo código |
 | `loadComponent` | lazy loading |
 | Guards | controlam acesso à tela, não aos dados |
@@ -1212,8 +1212,8 @@ Sim. A validação do front é conforto; quem garante os dados é o servidor.
 
 | Item | Em uma frase |
 | --- | --- |
-| Template-driven | `FormsModule`  • `ngModel`; formulários simples |
-| Reactive | `ReactiveFormsModule`  • `FormBuilder`; recomendado |
+| Template-driven | `FormsModule` e `ngModel`; formulários simples |
+| Reactive | `ReactiveFormsModule` e `FormBuilder`; recomendado |
 | `Validators` | regras prontas: `required`, `email`, `min`... |
 | `touched` | mostre erros só depois dele |
 | `markAllAsTouched()` | revela todos os erros ao tentar enviar |
@@ -1581,8 +1581,8 @@ Porque o ng-bootstrap reescreve esses componentes em Angular, integrados ao cicl
 | Binding | `{{ }}` texto · `[ ]` propriedade · `( )` evento · `[( )]` dois sentidos |
 | Controle de fluxo | `@if`, `@for` (com `track`), `@switch` |
 | Pipes | `currency`, `date`, `uppercase`, `json`; só mudam a exibição |
-| Comunicação | `@Input` (pai → filho) · `@Output`  • `EventEmitter` (filho → pai) · service (qualquer um) |
+| Comunicação | `@Input` (pai → filho) · `@Output` e `EventEmitter` (filho → pai) · service (qualquer um) |
 | Service | `@Injectable({ providedIn: 'root' })`; recebido com `inject()` |
 | Rotas | `app.routes.ts`, `<router-outlet>`, `routerLink`, `:id`, guards |
-| Formulários | reactive: `FormBuilder`  • `Validators`  • `formControlName` |
+| Formulários | reactive: `FormBuilder`, `Validators` e `formControlName` |
 | Ciclo de vida | `ngOnInit` (carregar) · `ngOnDestroy` (limpar) |

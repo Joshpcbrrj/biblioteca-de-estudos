@@ -998,7 +998,7 @@ Os dados de cada cliente ficam juntos num objeto só, sem risco de as posições
 | Objeto | uma instância criada com `new` |
 | Construtor | inicializa os atributos na criação |
 | `this` | o próprio objeto, dentro da classe |
-| Herança | `extends`  • `super(...)`; relação "é um" |
+| Herança | `extends` e `super(...)`; relação "é um" |
 | Encapsulamento | dados privados, alterados só por métodos |
 
 ## 📌 Resumo do módulo

@@ -85,7 +85,7 @@ Content-Type: application/json
 | Lado | Exemplos |
 | --- | --- |
 | **Front-end** (consome APIs) | Angular, React, Vue, apps mobile |
-| **Back-end** (cria APIs) | Java → **Spring Boot** · C# → ASP.NET Core · JavaScript → Node.js + Express · PHP → Laravel · Python → Django, FastAPI |
+| **Back-end** (cria APIs) | Java → **Spring Boot** · C# → ASP.NET Core · JavaScript → Node.js com Express · PHP → Laravel · Python → Django, FastAPI |
 
 ### Ferramentas para testar APIs
 
@@ -116,7 +116,7 @@ Content-Type: application/json
 | Item | Em uma frase |
 | --- | --- |
 | API | contrato para um sistema usar outro |
-| REST | recursos com URL + métodos HTTP; sem estado |
+| REST | recursos com URL e métodos HTTP; sem estado |
 | URLs | substantivos no plural: `/produtos/1` |
 | Métodos | GET busca · POST cria · PUT/PATCH alteram · DELETE exclui |
 | Status | 2xx sucesso · 4xx erro do cliente · 5xx erro do servidor |
@@ -576,7 +576,7 @@ Praticamente só o endereço `api` no service (e talvez o tipo do `id`).
 | Conceito | Lembrete |
 | --- | --- |
 | API | contrato para um sistema usar outro; na web, HTTP + JSON |
-| REST | recursos com URL + métodos HTTP; sem estado |
+| REST | recursos com URL e métodos HTTP; sem estado |
 | Métodos | GET busca · POST cria · PUT substitui · PATCH altera parte · DELETE exclui |
 | Status | 200/201/204 sucesso · 400/401/403/404 erro do cliente · 500 erro do servidor |
 | HttpClient | `provideHttpClient()`; chamadas dentro de services |

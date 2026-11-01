@@ -78,7 +78,7 @@ O resultado aparece no **Console** do DevTools (F12). É ali também que aparece
 
 | Função | Mostra | Retorna |
 | --- | --- | --- |
-| `alert("msg")` | mensagem + OK | nada (`undefined`) |
+| `alert("msg")` | mensagem e botão OK | nada (`undefined`) |
 | `confirm("msg")` | OK / Cancelar | `true` / `false` |
 | `prompt("msg")` | campo de texto | o texto digitado (**sempre string**) ou `null` se cancelar |
 
@@ -202,7 +202,7 @@ Boolean("")  // false
 
 | Operador | Exemplo | Resultado |
 | --- | --- | --- |
-| `  • - * /` | `7 / 2` | `3.5` (não é 3 como no Java!) |
+| `+` `-` `*` `/` | `7 / 2` | `3.5` (não é 3 como no Java!) |
 | `%` (resto) | `7 % 2` | `1` (útil para saber se é par: `n % 2 === 0`) |
 | `**` (potência) | `2 ** 3` | `8` |
 | `++` / `--` | `i++` | soma / subtrai 1 |
@@ -1039,10 +1039,10 @@ Com chaves, importa uma exportação nomeada (o nome precisa ser igual). Sem cha
 
 | Item | Em uma frase |
 | --- | --- |
-| `class`  • `constructor` | molde e inicialização |
+| `class` e `constructor` | molde e inicialização |
 | `#campo` | privado |
 | `get`/`set` | acesso com validação, com cara de atributo |
-| `extends`  • `super` | herança |
+| `extends` e `super` | herança |
 | Módulo | um arquivo com escopo próprio |
 | `export`/`import` | compartilha entre arquivos |
 | `type="module"` | carrega módulos no navegador |
@@ -1217,7 +1217,7 @@ Com uma classe: `menu.classList.toggle("aberto")`, e no CSS a regra `.aberto { d
 | `querySelector(All)` | encontra elementos com seletores CSS |
 | `textContent` · `innerHTML` · `value` | texto · HTML · valor de campo |
 | `classList` | liga e desliga classes |
-| `createElement`  • `append` | cria elementos |
+| `createElement` e `append` | cria elementos |
 | `remove()` | apaga um elemento |
 
 ## Eventos
@@ -1403,8 +1403,8 @@ Delegação: um único ouvinte no pai atende todos os itens, inclusive os criado
 | `addEventListener` | registra uma função para um evento |
 | `e.target` | o elemento que recebeu a ação |
 | `input` × `change` | a cada tecla × ao confirmar |
-| `submit`  • `preventDefault()` | trata o formulário sem recarregar |
-| `keydown`  • `e.key` | teclado |
+| `submit` e `preventDefault()` | trata o formulário sem recarregar |
+| `keydown` e `e.key` | teclado |
 | Delegação | um ouvinte no pai para todos os filhos |
 
 ## JavaScript assíncrono: JSON, fetch e async/await
@@ -1817,8 +1817,8 @@ $("img").attr("title", "Logo");
 | Arrays | `map` transforma, `filter` filtra, `find` acha, `reduce` acumula |
 | Objetos | `obj.chave`; spread `{...obj}` copia |
 | DOM | `querySelector`, `textContent`, `classList`, `createElement` |
-| Eventos | `addEventListener`; `submit`  • `preventDefault()` |
-| Assíncrono | `async`/`await`  • `fetch`; confira `resposta.ok` |
+| Eventos | `addEventListener`; `submit` e `preventDefault()` |
+| Assíncrono | `async`/`await` e `fetch`; confira `resposta.ok` |
 | JSON | `JSON.stringify` ↔ `JSON.parse` |
 | jQuery | `$(seletor).on(...)`; útil para código legado |
 | Classes e módulos | `class`, `#privado`, `extends`; `export`/`import` |

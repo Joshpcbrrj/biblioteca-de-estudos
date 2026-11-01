@@ -138,7 +138,7 @@ Se o comando não for reconhecido, a pasta `bin` do JDK não está no **PATH**. 
 | **IntelliJ IDEA** (Community, gratuita) | sugestões e refatoração excelentes; a mais usada no mercado hoje | projetos profissionais, Spring Boot (a versão paga tem mais recursos para Spring) |
 | **Eclipse** | tradicional, gratuito, muito plugin; comum em empresas grandes | projetos corporativos legados |
 | **NetBeans** | simples; editor visual de telas Swing (arrastar e soltar) | iniciantes e interfaces gráficas desktop |
-| **VS Code**  • *Extension Pack for Java* | leve; o mesmo editor do front-end | quem já usa VS Code |
+| **VS Code** com *Extension Pack for Java* | leve; o mesmo editor do front-end | quem já usa VS Code |
 
 🔗 [https://www.jetbrains.com/idea/download/](https://www.jetbrains.com/idea/download/)
 
@@ -1145,8 +1145,8 @@ Não faz sentido: um carro **tem um** motor. Use um atributo (composição), nã
 | --- | --- |
 | Classe · objeto | molde · exemplar criado com `new` |
 | Construtor | inicializa o objeto no `new` |
-| Encapsulamento | atributos `private`  • métodos com regras |
-| Herança | `extends`  • `super`; "é um" |
+| Encapsulamento | atributos `private` e métodos com regras |
+| Herança | `extends` e `super`; "é um" |
 | Polimorfismo | o método do objeto real é o executado |
 | Abstração | modelar só o que importa |
 

@@ -181,7 +181,7 @@ Porque `transform` não obriga o navegador a recalcular o layout; a animação f
 | Tema escuro | trocar o valor das variáveis |
 | `transition` | suaviza mudança de estado |
 | `transform` | move, gira, escala |
-| `@keyframes`  • `animation` | animação com etapas |
+| `@keyframes` e `animation` | animação com etapas |
 | Desempenho | anime `transform` e `opacity` |
 
 ## Pré e pós-processadores de CSS
@@ -227,7 +227,7 @@ O CSS evoluiu e hoje faz nativamente muito do que antes exigia um pré-processad
 
 | Recurso | Antes | Hoje no CSS puro |
 | --- | --- | --- |
-| Variáveis | `$cor` (Sass) | `--cor`  • `var(--cor)` (*custom properties*), que ainda mudam em tempo real |
+| Variáveis | `$cor` (Sass) | `--cor` e `var(--cor)` (*custom properties*), que ainda mudam em tempo real |
 | Aninhamento | Sass/Less | **CSS nesting** (`.card { & h2 { } }`), suportado nos navegadores atuais desde 2023 |
 | Cálculos | funções do Sass | `calc()`, `min()`, `max()`, `clamp()` |
 | Cores derivadas | `darken()` | `color-mix()` |
@@ -575,7 +575,7 @@ h2 { font-size: @base + 4; }  // 20px
 | Recurso | Sass (SCSS) | Less |
 | --- | --- | --- |
 | Variável | `$cor` | `@cor` |
-| Mixin | `@mixin x() {}`  • `@include x;` | `.x() {}`  • `.x();` |
+| Mixin | `@mixin x() {}` e `@include x;` | `.x() {}` e `.x();` |
 | Condição | `@if` | `when` (guard) |
 | Escurecer cor | `color.adjust()` | `darken()` |
 
