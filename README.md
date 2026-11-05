@@ -13,6 +13,7 @@ Resumos dos cursos de programação e matemática que fiz, revisados e organizad
 | Dio: Banco Pan - Java developer | [Abrir](programacao/dio-banco-pan-java/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/dio-banco-pan-java.epub) |
 | Capgemini: Programa Start - Capgemini | [Abrir](programacao/capgemini-start/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/capgemini-start.epub) |
 | StartSe: Tech Academy - StartSe | [Abrir](programacao/startse-tech-academy/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/startse-tech-academy.epub) |
+| Santander Coders: Trilha Digital Web Back-End - Ada Tech | [Abrir](programacao/santander-coders-backend/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/santander-coders-backend.epub) |
 
 ## 📐 Matemática
 
