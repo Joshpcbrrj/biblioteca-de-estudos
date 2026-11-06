@@ -12,6 +12,8 @@ Na aula de classes, cada instância tinha seus próprios dados. Às vezes, poré
 
 ![A instância não enxerga o membro estático.](../img/static.svg)
 
+> 💡 **Analogia:** numa escola, cada aluno tem sua própria mochila (atributos de instância), mas o mural de avisos do corredor é um só, da escola inteira (atributo estático). Para ler o mural você vai ao corredor (`Escola.mural`), e não abre a mochila de um aluno.
+
 ## Exemplo
 
 ```jsx
@@ -24,7 +26,8 @@ class Exemplo {
   }
 }
 
-console.log(Exemplo.atributoEstatico);  // "Valor estático"
+// "Valor estático"
+console.log(Exemplo.atributoEstatico);
 
 const instancia = new Exemplo();
 instancia.metodo();  // "Valor estático"

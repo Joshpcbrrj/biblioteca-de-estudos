@@ -12,6 +12,8 @@ No construtor você validou os dados iniciais. Mas e se alguém alterar um atrib
 
 ![Leitura passa pelo get; escrita passa pelo set, que pode recusar o valor.](../img/getter-setter.svg)
 
+> 💡 **Analogia:** o campo privado é o cofre de um banco; o `get` é o caixa que consulta o saldo para você, e o `set` é o caixa que recebe um depósito e confere se a nota é verdadeira antes de guardar. Você nunca entra no cofre: tudo passa pelo balcão, que pode recusar o que não estiver certo.
+
 ## Exemplo com campos privados
 
 ```jsx

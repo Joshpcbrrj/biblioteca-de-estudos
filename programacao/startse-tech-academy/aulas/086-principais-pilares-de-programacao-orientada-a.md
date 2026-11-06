@@ -8,6 +8,8 @@ Você viu que a POO junta dados e comportamento em objetos. Quatro ideias, os **
 
 ![Os quatro pilares, com um exemplo de cada.](../img/pilares-poo.svg)
 
+> 💡 **Analogia:** pense num carro. **Encapsulamento**: o motor fica fechado sob o capô, e você só usa pedais e volante. **Abstração**: você sabe que "acelerar" faz andar, sem precisar entender a injeção eletrônica. **Herança**: um carro elétrico é um carro, com tudo que um carro tem e algo a mais. **Polimorfismo**: "acelerar" funciona em qualquer carro, mas cada motor faz isso do seu jeito.
+
 ## Classes e objetos (a base)
 
 Uma **classe** descreve um tipo de objeto: quais dados ele tem e o que sabe fazer. Um **objeto** é uma instância criada com `new`.
@@ -20,7 +22,9 @@ class Pessoa {
   }
 
   saudacao() {
-    console.log(`Olá, sou ${this.nome}, ${this.idade} anos.`);
+    console.log(
+      `Olá, sou ${this.nome}, ${this.idade} anos.`
+    );
   }
 }
 
@@ -75,7 +79,9 @@ console.log(conta.saldo);  // 1300
 ```jsx
 class Forma {
   calcularArea() {
-    throw new Error("Implemente calcularArea() na subclasse");
+    throw new Error(
+      "Implemente calcularArea() na subclasse"
+    );
   }
 }
 
@@ -121,8 +127,12 @@ Veja `super` e quando **não** usar herança na aula **Herança, extends e super
 
 ```jsx
 class Animal { falar() { return "..."; } }
-class Cachorro extends Animal { falar() { return "Au au!"; } }
-class Gato extends Animal { falar() { return "Miau!"; } }
+class Cachorro extends Animal {
+  falar() { return "Au au!"; }
+}
+class Gato extends Animal {
+  falar() { return "Miau!"; }
+}
 
 const animais = [new Cachorro(), new Gato(), new Animal()];
 animais.forEach(a => console.log(a.falar()));
@@ -177,7 +187,9 @@ class CarrinhoDeCompras {
   }
 
   calcularTotal() {
-    return this.itens.reduce((t, item) => t + item.preco, 0);
+    return this.itens.reduce(
+      (t, item) => t + item.preco, 0
+    );
   }
 }
 
@@ -218,8 +230,8 @@ const figura = {
   },
 };
 
-// 78.54 + 80
-console.log(figura.calcularAreaTotal().toFixed(2));  // "158.54"
+// 78.54 + 80 = "158.54"
+console.log(figura.calcularAreaTotal().toFixed(2));
 ```
 
 > ⚠️ **Correção:** a soma das áreas da composição (círculo 78,54 + retângulo 80) é **158,54**, e não 240,68 como no original.

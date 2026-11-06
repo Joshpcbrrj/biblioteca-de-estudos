@@ -27,6 +27,8 @@ console.log(pessoa1.idade);  // 25
 
 ![O que acontece no new](../img/st-construtor.svg)
 
+> 💡 **Analogia:** o construtor é a montagem de um móvel que acabou de sair da fábrica. O `new` entrega a caixa (o objeto vazio); o construtor encaixa as peças com as medidas e cores que você pediu (os parâmetros) e confere se nada está faltando (a validação) antes de entregar o móvel pronto.
+
 1. Um objeto vazio é criado, ligado ao `prototype` da classe.
 2. O `constructor` é executado com `this` apontando para esse objeto novo.
 3. O objeto é devolvido automaticamente (não é preciso `return`).

@@ -12,6 +12,8 @@ Os pilares da POO já usaram classes em vários exemplos. Agora vamos olhar a si
 
 ![Uma classe, várias instâncias.](../img/classe-instancias.svg)
 
+> 💡 **Analogia:** a classe é a forma de biscoito; as instâncias são os biscoitos. Todos saem com o mesmo formato (os mesmos atributos e métodos), mas cada um pode ter uma cobertura diferente (os valores). Ter a forma não enche o pote: só o `new` assa um biscoito de verdade.
+
 ## Anatomia de uma classe
 
 ```jsx
@@ -27,12 +29,16 @@ class Pessoa {
 
   // 3. métodos (sem a palavra function)
   saudacao() {
-    console.log(`Olá, sou ${this.nome}, ${this.idade} anos.`);
+    console.log(
+      `Olá, sou ${this.nome}, ${this.idade} anos.`
+    );
   }
 
   aniversario() {
     this.idade++;
-    console.log(`Feliz aniversário! ${this.idade} anos.`);
+    console.log(
+      `Feliz aniversário! ${this.idade} anos.`
+    );
   }
 }
 

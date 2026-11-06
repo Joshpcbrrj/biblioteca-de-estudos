@@ -12,6 +12,8 @@ Um **paradigma** é um estilo de organizar o código. Os dois mais comuns no in�
 
 ![No estruturado, dados e funções andam separados; na POO, eles vivem juntos no objeto.](../img/pe-vs-poo.svg)
 
+> 💡 **Analogia:** o estilo estruturado é como uma cozinha comunitária: os ingredientes ficam na despensa geral e qualquer cozinheiro pega e mexe neles seguindo uma receita. A POO é como uma praça de alimentação: cada quiosque (objeto) guarda seus próprios ingredientes e só os funcionários dele (os métodos) podem usá-los; os outros apenas fazem pedidos no balcão.
+
 ## Programação estruturada
 
 - O código é dividido em **funções** que recebem dados, processam e devolvem resultados.

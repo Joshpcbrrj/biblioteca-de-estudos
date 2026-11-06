@@ -12,6 +12,8 @@ Os pilares da POO apresentaram a herança em poucas linhas. Agora vamos ver os d
 
 ![Cachorro e Gato herdam de Animal e sobrescrevem falar().](../img/heranca.svg)
 
+> 💡 **Analogia:** herança é como uma receita de família adaptada. A filha recebe a receita do bolo da avó inteira (o que herda), pode acrescentar cobertura (métodos novos) ou trocar o açúcar por mel (sobrescrever). O `super` é ligar para a avó e perguntar "como você fazia essa parte?" antes de dar o seu toque.
+
 ## `extends`
 
 ```jsx
