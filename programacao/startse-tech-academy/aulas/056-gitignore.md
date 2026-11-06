@@ -12,6 +12,8 @@ Com `git add .`, tudo que está na pasta entra no próximo commit. Mas dependên
 
 ![O Git só enxerga o que não casa com nenhuma regra.](../img/gitignore-filtro.svg)
 
+> 💡 **Analogia:** o `.gitignore` é como a lista de "não levar" que você cola na porta antes de uma mudança de casa: lixo, caixas vazias, coisas que dá para comprar de novo. A transportadora (o Git) olha a lista e simplesmente não coloca esses itens no caminhão, mesmo que estejam no meio da sala.
+
 ### O que costuma ir no `.gitignore`
 
 - **Dependências** que podem ser baixadas de novo: `node_modules/`, `vendor/`, `.venv/`.
@@ -101,7 +103,7 @@ Porque já estava rastreado. Rode `git rm --cached .env` e faça commit.
 
 Cria uma exceção: o arquivo deixa de ser ignorado.
 
-> ➡️ **Próximo passo:** e quando um commit com problema já foi enviado? Veja como desfazê-lo com segurança em **Revert e reset**.
+> ➡️ **Próximo passo:** e quando um commit com problema já foi enviado? Veja como desfazê-lo com segurança em **Git revert**.
 
 ## 📌 Resumo
 

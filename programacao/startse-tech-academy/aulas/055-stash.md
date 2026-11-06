@@ -12,6 +12,8 @@ Você já sabe trabalhar com branches. Mas o Git não deixa trocar de branch se 
 
 ![Os stashes ficam numa pilha: o mais recente é o stash@{0}.](../img/stash.svg)
 
+> 💡 **Analogia:** o stash é como tirar a louça da pia e empilhar num canto para alguém usar a pia com urgência. A pia fica livre, nada se perde, e depois você pega a pilha de volta. Como numa pilha de pratos, o último guardado é o primeiro que sai (`stash@{0}`).
+
 > 💡 Por padrão, o stash guarda só os arquivos **rastreados** (modificados e staged). Arquivos novos (untracked) ficam para trás, a não ser que você use `-u`.
 
 ## Comandos

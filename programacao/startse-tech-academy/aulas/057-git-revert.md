@@ -12,6 +12,8 @@ Na aula de reset você viu como voltar a branch para trás, mas só em commits q
 
 ![O revert acrescenta um commit; o reset remove commits da branch.](../img/revert-vs-reset.svg)
 
+> 💡 **Analogia:** o revert é como uma errata num jornal. A notícia errada já foi impressa e distribuída, então não dá para arrancar a página da casa de cada leitor (isso seria o reset). Em vez disso, a edição seguinte publica uma correção que anula o erro, e as duas ficam registradas.
+
 ## Como usar
 
 ```bash

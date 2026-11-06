@@ -14,6 +14,8 @@ Você já sabe enviar e receber commits com `push` e `pull`. Agora vamos ver com
 
 ![O fluxo de pull request](../img/st-pull-request.svg)
 
+> 💡 **Analogia:** um pull request é como entregar um texto ao editor de um jornal antes de ele ir para a gráfica. Você escreve no seu rascunho (a branch), entrega com um bilhete explicando o que mudou, o editor sugere ajustes, você corrige, e só depois de aprovado o texto entra na edição oficial (a `main`).
+
 Em equipe, ninguém envia direto para a `main`. Cada mudança nasce numa branch e passa por revisão antes de entrar:
 
 ```bash

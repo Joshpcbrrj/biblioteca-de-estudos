@@ -17,6 +17,8 @@ Para o Git, todo arquivo do projeto está em um destes estados:
 
 ![Os comandos que movem um arquivo entre os estados.](../img/ciclo-estados.svg)
 
+> 💡 **Analogia:** a staging area é como o balcão dos Correios. Você edita várias cartas na sua mesa (modified), escolhe quais vão no próximo envio e as coloca no balcão (`git add`, staged), e só então o atendente sela o pacote (`git commit`). O que ficou na mesa vai num envio futuro.
+
 A staging area existe para você **escolher** o que entra em cada commit. Se mexeu em cinco arquivos mas só três são da mesma tarefa, adicione só esses três e faça um commit com uma mensagem clara.
 
 ```bash

@@ -16,6 +16,8 @@ Alterações em partes diferentes do arquivo, ou em arquivos diferentes, o Git j
 
 ![Os marcadores separam a versão atual da versão que está chegando.](../img/conflito-editor.svg)
 
+> 💡 **Analogia:** é como duas pessoas corrigindo a mesma frase de um contrato com canetas diferentes. Se uma mexeu no parágrafo 2 e a outra no 5, basta juntar. Se as duas reescreveram a mesma frase, alguém precisa ler as duas versões e decidir o texto final; o Git marca as duas no papel e espera essa decisão.
+
 ```html
 <<<<<<< HEAD
 <h1>Minha loja</h1>

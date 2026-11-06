@@ -21,6 +21,8 @@ Quando as duas branches avançaram, o Git compara três versões (o ancestral co
 
 ![O commit M tem como pais o C4 (main) e o C5 (feature).](../img/merge-tres-vias.svg)
 
+> 💡 **Analogia:** imagine duas estradas que saíram da mesma cidade. O merge constrói um trevo onde elas se encontram: as duas estradas continuam no mapa, e o trevo (o commit de merge) mostra a junção. O rebase é como reconstruir a segunda estrada a partir do fim da primeira: no mapa fica uma linha reta, como se ela sempre tivesse saído dali.
+
 ### Fast-forward (sem commit de merge)
 
 Se a `main` **não recebeu nenhum commit** desde que a feature foi criada, não há o que unir: o Git só avança o ponteiro da `main` até o último commit da feature. Para forçar um commit de merge mesmo assim (e deixar registrado que houve uma branch), use `git merge --no-ff feature`.

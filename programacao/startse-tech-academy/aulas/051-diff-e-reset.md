@@ -19,6 +19,8 @@ O ponto que mais confunde: **o** `git diff` **sem argumentos não compara com o 
 
 ![Cada variação compara um par de áreas diferente.](../img/diff-areas.svg)
 
+> 💡 **Analogia:** o `git diff` é o "controle de alterações" de um editor de texto: mostra riscado o que saiu e em destaque o que entrou. As variações só mudam **quais duas versões** você coloca lado a lado: o rascunho na mesa, o que está no balcão (staging) ou o que já foi enviado (último commit).
+
 ```bash
 # trabalho × staging (o que falta dar git add)
 git diff

@@ -27,6 +27,8 @@ Cada pessoa tem uma **cópia completa** do repositório, com todo o histórico, 
 
 ![Arquivos que não mudaram não são copiados de novo: o commit aponta para a versão anterior.](../img/git-snapshots.svg)
 
+> 💡 **Analogia:** o Git funciona como um álbum de fotos do projeto. Cada commit é uma foto tirada num momento, com data e legenda. Você pode folhear o álbum e voltar a qualquer foto. E o álbum é econômico: se um arquivo não mudou desde a foto anterior, a nova foto só aponta para a versão que já estava guardada.
+
 ## Links úteis
 
 Documentação oficial do Git (em português)

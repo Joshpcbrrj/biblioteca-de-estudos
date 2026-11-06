@@ -34,6 +34,8 @@ git push
 
 ![Se o remoto tem commits que você não tem, o push é rejeitado.](../img/push.svg)
 
+> 💡 **Analogia:** o remoto é como uma pasta compartilhada na nuvem. O `push` é subir as suas páginas novas; o `fetch` é olhar o que os colegas subiram, sem misturar com as suas; o `pull` é baixar e já juntar ao seu caderno. Se alguém subiu páginas que você ainda não tem, a pasta recusa o seu envio até você baixar e juntar primeiro.
+
 O push só funciona se o remoto **não tiver nada que você não tenha**. Se alguém enviou commits antes, faça `git pull` primeiro, resolva eventuais conflitos e depois `git push`.
 
 > ⚠️ `git push --force` sobrescreve o remoto e pode **apagar o trabalho de outras pessoas**. Se realmente precisar (por exemplo, depois de um rebase na sua própria branch), prefira `git push --force-with-lease`, que recusa o envio se o remoto mudou desde o seu último fetch.
