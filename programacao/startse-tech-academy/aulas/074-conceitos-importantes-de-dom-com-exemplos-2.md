@@ -12,6 +12,8 @@ Quando um evento acontece em um elemento, ele **"sobe"** pela árvore (pai, avô
 
 ![O clique no li é percebido pelo ul.](../img/eventos-delegacao.svg)
 
+> 💡 **Analogia:** a delegação é como a recepcionista de um prédio. Em vez de colocar um porteiro em cada apartamento, uma única pessoa na portaria recebe todas as entregas e olha a etiqueta (`event.target`) para saber de qual apartamento é. Quando um morador novo chega, ela já atende sem precisar contratar ninguém.
+
 ```html
 <ul id="minhaLista">
   <li>Item 1</li>

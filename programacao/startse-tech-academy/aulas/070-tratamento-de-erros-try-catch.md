@@ -14,6 +14,8 @@ Na aula de objetos você viu `JSON.parse`. Se o texto não for um JSON válido, 
 
 ![Se o try falha, o catch assume; o finally roda nos dois casos.](../img/try-catch.svg)
 
+> 💡 **Analogia:** `try/catch` é como a rede de segurança de um trapezista. O `try` é o número no ar; se ele escorrega, o `catch` é a rede que o segura e evita que o espetáculo acabe. O `finally` é a equipe que guarda o equipamento no fim, tenha o número dado certo ou não.
+
 ```jsx
 try {
   // pode falhar
@@ -115,7 +117,9 @@ Escreva uma função `lerIdade(texto)` que converta o texto em número e lance u
 ```jsx
 function lerIdade(texto) {
   const idade = Number(texto);
-  if (!Number.isInteger(idade) || idade < 0 || idade > 130) {
+  const valida = Number.isInteger(idade)
+    && idade >= 0 && idade <= 130;
+  if (!valida) {
     throw new Error(`Idade inválida: "${texto}"`);
   }
   return idade;

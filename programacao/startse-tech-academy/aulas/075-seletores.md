@@ -12,6 +12,8 @@ Antes de alterar um elemento, o JavaScript precisa **encontrá-lo** no DOM. Os m
 
 ![Atenção ao tipo de retorno: um elemento, uma NodeList ou uma HTMLCollection.](../img/seletores-retorno.svg)
 
+> 💡 **Analogia:** pense numa escola. `getElementById` é chamar um aluno pela matrícula: só existe um. `querySelector` é pedir "o primeiro aluno de camiseta azul"; `querySelectorAll` tira uma foto de todos os de camiseta azul agora. Já a HTMLCollection é a lista de chamada da turma, que se atualiza sozinha quando chega aluno novo.
+
 ## Os métodos
 
 ```jsx

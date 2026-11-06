@@ -49,6 +49,8 @@ const salvo = JSON.parse(
 
 ![Cada etapa espera a anterior; resp.ok decide se houve sucesso.](../img/fetch-fluxo.svg)
 
+> 💡 **Analogia:** o `fetch` é como pedir comida por aplicativo. Você faz o pedido e continua sua vida (a página não trava); quando o entregador chega, você confere se veio o pedido certo (`resp.ok`) antes de abrir a embalagem (`resp.json()`). O JSON é o cardápio padronizado que todo restaurante entende.
+
 ```jsx
 const URL_USUARIOS =
   "https://jsonplaceholder.typicode.com/users";

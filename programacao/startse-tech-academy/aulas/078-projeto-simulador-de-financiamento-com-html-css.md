@@ -14,6 +14,8 @@ Um simulador de financiamento pelo **Sistema de Amortização Constante (SAC)**,
 
 ![A amortização é fixa; os juros incidem sobre o saldo, que diminui todo mês.](../img/sac.svg)
 
+> 💡 **Analogia:** imagine uma pizza de 12 fatias que você deve ao banco. No SAC, você devolve sempre **uma fatia por mês** (a amortização), mais um "aluguel" proporcional às fatias que ainda estão com você (os juros). Como a pilha de fatias diminui, o aluguel cai, e cada parcela fica menor que a anterior.
+
 1. **Valor financiado** = valor do bem − entrada.
 2. **Taxa mensal** equivalente à anual: `i = (1 + taxaAnual)^(1/12) − 1`.
 3. **Amortização** (fixa) = valor financiado ÷ número de parcelas que amortizam.

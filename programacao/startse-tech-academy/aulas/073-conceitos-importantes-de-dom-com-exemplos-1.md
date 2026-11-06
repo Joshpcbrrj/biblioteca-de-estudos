@@ -82,6 +82,8 @@ Para parar de escutar, use `removeEventListener` com a **mesma** função (por i
 
 ![A partir de um elemento, dá para chegar ao pai, aos filhos e aos irmãos.](../img/dom-navegacao.svg)
 
+> 💡 **Analogia:** navegar pelo DOM é como andar por uma árvore genealógica. De qualquer pessoa você chega à mãe (`parentElement`), aos filhos (`children`) e aos irmãos do lado (`nextElementSibling`). O `closest` é perguntar "qual é o meu antepassado mais próximo que tem tal sobrenome?".
+
 ```jsx
 const pai = document.querySelector("#pai");
 

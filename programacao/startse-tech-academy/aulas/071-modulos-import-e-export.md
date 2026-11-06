@@ -12,6 +12,8 @@ Os exemplos até aqui cabiam num arquivo só. Projetos reais têm dezenas de fun
 
 ![Só o que tem export pode ser importado por outro arquivo.](../img/modulos.svg)
 
+> 💡 **Analogia:** cada módulo é como uma loja num shopping. O que fica na vitrine (o `export`) qualquer um pode levar; o estoque nos fundos é só da loja. O `import` é ir até a loja certa (o caminho do arquivo) e pedir exatamente o item que você quer.
+
 ## Export nomeado
 
 ```jsx
@@ -34,7 +36,8 @@ console.log(moeda(1234.5));  // "R$ 1.234,50"
 
 ```jsx
 // renomeando na importação
-import { moeda as formatarMoeda } from "./utils/formatar.js";
+import { moeda as formatarMoeda }
+  from "./utils/formatar.js";
 // importando tudo: fmt.moeda()
 import * as fmt from "./utils/formatar.js";
 ```
@@ -95,7 +98,8 @@ Carrega um módulo só quando precisar, o que deixa a página inicial mais leve:
 
 ```jsx
 botaoGrafico.addEventListener("click", async () => {
-  const { desenharGrafico } = await import("./grafico.js");
+  const { desenharGrafico } =
+    await import("./grafico.js");
   desenharGrafico();
 });
 ```
