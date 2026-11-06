@@ -13,6 +13,8 @@ A aula de herança mostrou um `h1` com `2em` virando 32px. Isso só faz sentido 
 
 ![Cada unidade e a referência que ela usa para calcular o tamanho.](../img/unidades.svg)
 
+> 💡 **Analogia:** `px` é como dizer "uma mesa de 2 metros": não muda. As unidades relativas são como receitas: "uma xícara para cada pessoa" (`em`, que segue o pai), "metade da mesa" (`%`) ou "um décimo da sala" (`vw`). Se a sala ou o número de pessoas muda, a medida acompanha.
+
 Artigo do W3C sobre unidades (em português):
 
 🔗 [CSS: em, px, pt, cm, in...](https://www.w3.org/Style/Examples/007/units.pt_BR.html)

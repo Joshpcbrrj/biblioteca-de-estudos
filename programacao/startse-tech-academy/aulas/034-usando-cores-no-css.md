@@ -12,6 +12,8 @@ Todas as formas abaixo produzem **o mesmo vermelho**:
 
 ![Palavra-chave, hexadecimal, RGB e HSL, com e sem transparência.](../img/cores.svg)
 
+> 💡 **Analogia:** o RGB é como misturar três lanternas coloridas (vermelha, verde e azul) numa parede escura: cada uma com brilho de 0 a 255, e as três no máximo dão branco. O HSL é como escolher tinta numa loja: primeiro a cor no mostruário circular (matiz), depois o quanto ela é viva (saturação) e por fim o quanto de branco ou preto entra (luminosidade).
+
 ### Palavras-chave
 
 O CSS tem cerca de 140 cores com nome: `red`, `tomato`, `aquamarine`, `rebeccapurple`... São boas para testes. Há também valores especiais: `transparent` e `currentColor` (a cor do texto atual).

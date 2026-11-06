@@ -10,6 +10,8 @@ A aula de seletores apresentou `:hover` e `::after` de passagem. Eles são tão 
 
 ![Pseudo-classe × pseudo-elemento](../img/st-pseudo.svg)
 
+> 💡 **Analogia:** pense numa pessoa. A pseudo-classe descreve um **momento** dela: "quando estiver sorrindo", "quando for a primeira da fila". O pseudo-elemento aponta uma **parte** ou um acessório: "o chapéu", "a primeira letra do nome no crachá".
+
 - **Pseudo-classe** (`:`) seleciona um elemento **em um estado ou posição**: com o mouse em cima, focado, o primeiro da lista...
 - **Pseudo-elemento** (`::`) estiliza **uma parte** do elemento ou cria um conteúdo extra: a primeira letra, um enfeite antes ou depois.
 

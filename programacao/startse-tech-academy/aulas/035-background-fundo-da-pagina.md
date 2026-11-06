@@ -38,6 +38,8 @@ Por padrão a imagem **se repete** nos dois eixos até cobrir o elemento.
 
 ![Como a imagem preenche o elemento com cada valor.](../img/background-size.svg)
 
+> 💡 **Analogia:** pense numa foto e num porta-retratos de outro formato. `cover` amplia a foto até não sobrar nenhum espaço vazio, mesmo que as bordas fiquem cortadas; `contain` encolhe a foto até ela caber inteira, mesmo que sobrem faixas vazias; `repeat` é um papel de parede, que repete o mesmo desenho lado a lado.
+
 | Propriedade | Valores comuns |
 | --- | --- |
 | `background-repeat` | `repeat` (padrão), `repeat-x`, `repeat-y`, `no-repeat` |

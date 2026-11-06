@@ -12,6 +12,8 @@ Você já sabe medir (unidades) e sabe que há elementos de bloco e em linha. Ag
 
 ![Content, padding, border e margin, com o cálculo do tamanho final.](../img/box-model.svg)
 
+> 💡 **Analogia:** pense num quadro pendurado na parede. A foto é o **content**; o passe-partout branco em volta dela é o **padding**; a moldura de madeira é a **border**; e o espaço vazio da parede até o próximo quadro é a **margin**.
+
 1. **Content (conteúdo)**: onde ficam o texto, as imagens e os filhos. Controlado por `width` e `height`.
 2. **Padding (preenchimento)**: espaço **interno** entre o conteúdo e a borda. Recebe a cor de fundo do elemento.
 3. **Border (borda)**: a linha em volta do padding.

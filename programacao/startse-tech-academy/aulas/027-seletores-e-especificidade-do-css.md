@@ -63,6 +63,8 @@ Quando duas regras estilizam a mesma propriedade do mesmo elemento, vence a **ma
 
 ![IDs, classes e elementos contados separadamente; compare da esquerda para a direita.](../img/especificidade.svg)
 
+> 💡 **Analogia:** a especificidade funciona como o quadro de medalhas das Olimpíadas. Primeiro se comparam os ouros (IDs); só se empatar, as pratas (classes); só se empatar de novo, os bronzes (elementos). Um único ouro vence qualquer quantidade de pratas.
+
 | Coluna | O que conta |
 | --- | --- |
 | **A**: IDs | `#id` |

@@ -29,6 +29,8 @@ O box model apresentou as quatro camadas da caixa. Agora, as propriedades de cad
 
 ![Com 1, 2, 3 ou 4 valores, sempre no sentido horário a partir do topo.](../img/atalho-margin.svg)
 
+> 💡 **Analogia:** leia os quatro valores como os ponteiros de um relógio, começando ao meio-dia: topo (12h), direita (3h), base (6h) e esquerda (9h). Quando faltam valores, o lado oposto copia o que foi dado: com dois valores, 12h vale para 6h e 3h vale para 9h.
+
 ### Margin collapse (colapso de margens)
 
 As margens **verticais** de dois blocos vizinhos não se somam: prevalece a **maior**.

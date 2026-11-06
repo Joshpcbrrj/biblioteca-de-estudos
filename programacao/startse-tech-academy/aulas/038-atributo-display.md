@@ -12,6 +12,8 @@ A aula de media queries mostrou como mudar estilos conforme a tela. Muitas dessa
 
 ![Como cada valor afeta o elemento e os vizinhos.](../img/display-valores.svg)
 
+> 💡 **Analogia:** pense numa estante. Um elemento `block` é uma prateleira inteira: o próximo item vai para a prateleira de baixo. Um `inline` é um livro em pé, ao lado dos outros, com a altura que o próprio livro tem. Um `inline-block` é uma caixa que você coloca ao lado dos livros, mas com o tamanho que escolher. E `none` é tirar o item da estante.
+
 | Valor | Comportamento |
 | --- | --- |
 | `block` | nova linha, largura total, aceita `width`/`height` |
