@@ -83,7 +83,8 @@ A **notação Big O** (O grande) descreve como o custo de um algoritmo cresce co
 | O(n) | linear | busca linear, percorrer uma lista |
 | O(n log n) | linearítmica | bons algoritmos de ordenação (merge sort) |
 | O(n²) | quadrática | laço dentro de laço sobre os mesmos dados |
-| Como estimar olhando o código: |  |  |
+
+Como estimar olhando o código:
 
 - comandos simples, sem laço: O(1);
 - um laço que percorre os n elementos: O(n);

@@ -77,7 +77,8 @@ Teste de mesa com as entradas 4, 10 e 1:
 | 0 | 4 | 4 |
 | 1 | 10 | 14 |
 | 2 | 1 | 15 |
-| Quando i vira 3, a condição `i < 3` fica falsa, o laço termina e o programa mostra 15. |  |  |
+
+Quando i vira 3, a condição `i < 3` fica falsa, o laço termina e o programa mostra 15.
 
 > 💡 O fluxograma original testava `iteração > 2` e voltava no "não". É a mesma lógica com a pergunta invertida: continuar enquanto `i < 3` é o mesmo que parar quando `i > 2`.
 

@@ -60,7 +60,8 @@ ORDER BY categoria;
 | acessórios | 1 | 150.00 | 150.00 |
 | cozinha | 2 | 32.45 | 39.90 |
 | papelaria | 2 | 10.85 | 18.50 |
-| `WHERE` filtra **linhas** antes de agrupar; `HAVING` filtra **grupos** depois: |  |  |  |
+
+`WHERE` filtra **linhas** antes de agrupar; `HAVING` filtra **grupos** depois:
 
 ```sql
 -- só categorias com média acima de 20
@@ -97,7 +98,8 @@ ORDER BY d.nome, p.nome;
 | `LEFT JOIN` | todas da esquerda; as sem par vêm com NULL |
 | `RIGHT JOIN` | todas da direita |
 | `FULL JOIN` | todas das duas |
-| O LEFT JOIN é o jeito de incluir quem não tem correspondência, como uma disciplina ainda sem professor: |  |
+
+O LEFT JOIN é o jeito de incluir quem não tem correspondência, como uma disciplina ainda sem professor:
 
 ```sql
 SELECT d.nome, COUNT(p.id_professor) AS qtd

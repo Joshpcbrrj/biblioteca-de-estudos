@@ -16,7 +16,8 @@ Uma condição é uma pergunta cuja resposta é verdadeiro ou falso. Ela usa **o
 | `!=` | diferente | 5 != 3 |
 | `>` e `<` | maior, menor | 7 > 2 |
 | `>=` e `<=` | maior ou igual, menor ou igual | 16 >= 16 |
-| Para combinar condições, use os **operadores lógicos**: |  |  |
+
+Para combinar condições, use os **operadores lógicos**:
 
 - **e**: verdadeiro só se as duas partes forem verdadeiras;
 - **ou**: verdadeiro se pelo menos uma parte for verdadeira;

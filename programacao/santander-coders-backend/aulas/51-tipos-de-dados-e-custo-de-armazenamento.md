@@ -36,7 +36,8 @@ O PostgreSQL está instalado. Antes de criar tabelas, é preciso escolher o **ti
 | `varchar(n)` | texto de até n caracteres |
 | `char(n)` | texto de exatamente n caracteres (completa com espaços) |
 | `text` | texto sem limite |
-| No PostgreSQL os três têm o mesmo desempenho; o espaço é o tamanho do texto mais 1 byte de cabeçalho (para textos curtos). Use `varchar(n)` quando o limite for uma regra de negócio, e `text` nos demais casos. |  |
+
+No PostgreSQL os três têm o mesmo desempenho; o espaço é o tamanho do texto mais 1 byte de cabeçalho (para textos curtos). Use `varchar(n)` quando o limite for uma regra de negócio, e `text` nos demais casos.
 
 ### Data e hora
 

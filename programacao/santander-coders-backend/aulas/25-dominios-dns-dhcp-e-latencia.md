@@ -45,7 +45,8 @@ O **DNS** (Domain Name System) é a "agenda de contatos" da internet: traduz nom
 | MX | o servidor de e-mail do domínio |
 | TXT | textos de verificação (SPF, DKIM) |
 | NS | quais servidores são autoritativos |
-| O DNS também faz a **resolução reversa**: dado um IP, descobrir o nome (registro PTR). |  |
+
+O DNS também faz a **resolução reversa**: dado um IP, descobrir o nome (registro PTR).
 
 ## DHCP
 

@@ -21,7 +21,8 @@ O **IPv4** (Internet Protocol versão 4) usa endereços de **32 bits**, escritos
 | 192.168.0.0/16 | rede privada (a mais comum em casa) |
 | 127.0.0.0/8 | loopback: a própria máquina (`localhost` = 127.0.0.1) |
 | 169.254.0.0/16 | autoatribuído quando o DHCP falha |
-| Endereços **privados** podem ser repetidos em redes diferentes e não circulam na internet. Endereços **públicos** são únicos no mundo e distribuídos pelos registros regionais (no Brasil, via NIC.br). |  |
+
+Endereços **privados** podem ser repetidos em redes diferentes e não circulam na internet. Endereços **públicos** são únicos no mundo e distribuídos pelos registros regionais (no Brasil, via NIC.br).
 
 ### NAT: dividindo um IP público
 

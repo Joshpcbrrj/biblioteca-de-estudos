@@ -18,6 +18,8 @@ Sem uma ferramenta, isso costuma virar pastas como `projeto_final`, `projeto_fin
 
 Ele também permite criar **branches** (ramificações), que são linhas de desenvolvimento paralelas: uma nova funcionalidade é feita numa branch e, quando estiver pronta e testada, é **mesclada** (merge) na principal.
 
+> 💡 **Analogia:** o Git funciona como os pontos de salvamento de um videogame. Antes de enfrentar o chefe você salva; se der errado, volta exatamente àquele ponto, sem perder o resto do progresso.
+
 ## Centralizado × distribuído
 
 |  | Centralizado (SVN) | Distribuído (Git, Mercurial) |

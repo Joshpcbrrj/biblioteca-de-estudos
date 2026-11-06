@@ -137,7 +137,8 @@ Incremento e decremento: `x++` soma 1 e `x--` subtrai 1.
 | `x *= 2` | `x = x * 2` |
 | `x /= 5` | `x = x / 5` |
 | `x %= 3` | `x = x % 3` |
-| Há também os operadores de deslocamento de bits, raros no dia a dia de back-end: |  |
+
+Há também os operadores de deslocamento de bits, raros no dia a dia de back-end:
 
 ```java
 int x = 5;

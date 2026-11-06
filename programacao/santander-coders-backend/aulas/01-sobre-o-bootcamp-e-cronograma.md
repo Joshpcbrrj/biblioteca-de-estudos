@@ -30,15 +30,20 @@ Este material nasceu da preparação para o **Santander Coders 2023**, programa 
 | Seleção dos participantes | 02/05 a 04/05/2023 |
 | Divulgação do resultado | 05/05/2023 |
 | Aceite da bolsa no Becas Santander | 05/05 a 16/05/2023 |
-| **Fase 2** |  |
+
+**Fase 2**
+
 | Etapa | Período |
 | --- | --- |
 | Curso online | 19/05 a 28/05/2023 |
 | Teste de lógica | 30/05/2023 |
 | Dinâmicas | 05/06 a 16/06/2023 |
 | Coding Tank | 26/06 a 30/06/2023 |
-| As dinâmicas avaliavam raciocínio lógico, comunicação e trabalho em equipe. |  |
-| **Fase 3** |  |
+
+As dinâmicas avaliavam raciocínio lógico, comunicação e trabalho em equipe.
+
+**Fase 3**
+
 | Etapa | Data |
 | --- | --- |
 | Divulgação dos 300 selecionados pela Ada | 06/07/2023 |

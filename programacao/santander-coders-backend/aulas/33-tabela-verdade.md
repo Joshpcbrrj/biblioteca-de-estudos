@@ -33,19 +33,25 @@ a ^ b  // OU EXCLUSIVO (XOR)
 | false | true | false |
 | true | false | false |
 | true | true | true |
-| **OU**: verdadeiro quando pelo menos um é verdadeiro. |  |  |
+
+**OU**: verdadeiro quando pelo menos um é verdadeiro.
+
 | A | B | A OU B |
 | --- | --- | --- |
 | false | false | false |
 | false | true | true |
 | true | false | true |
 | true | true | true |
-| **NÃO (**`!`**)**: inverte o valor. |  |  |
-| A | !A |  |
-| --- | --- |  |
-| false | true |  |
-| true | false |  |
-| **XOR (**`^`**)**: verdadeiro quando os dois são **diferentes**; um ou outro, mas não os dois. |  |  |
+
+**NÃO (**`!`**)**: inverte o valor.
+
+| A | !A |
+| --- | --- |
+| false | true |
+| true | false |
+
+**XOR (**`^`**)**: verdadeiro quando os dois são **diferentes**; um ou outro, mas não os dois.
+
 | A | B | A ^ B |
 | --- | --- | --- |
 | false | false | false |

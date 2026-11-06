@@ -17,7 +17,8 @@ No início, a divisão era fixa e dependia do primeiro octeto:
 | C | 192 a 223 | 255.255.255.0 (/24) | 254 (2⁸ − 2) |
 | D | 224 a 239 | não se aplica | multicast |
 | E | 240 a 255 | não se aplica | experimental |
-| Número de redes possíveis: classe A, 126 (2⁷, tirando 0 e 127); classe B, 16.384 (2¹⁴); classe C, 2.097.152 (2²¹). |  |  |  |
+
+Número de redes possíveis: classe A, 126 (2⁷, tirando 0 e 127); classe B, 16.384 (2¹⁴); classe C, 2.097.152 (2²¹).
 
 > ⚠️ **Correções:** a tabela original punha 127 na classe A e começava a faixa em 0.0.0.1. A rede 0 e a rede 127 (loopback) são reservadas, então a classe A vai de 1 a 126. Os números de redes das classes B e C também tinham um "− 2" que não se aplica a elas.
 
@@ -35,7 +36,8 @@ A **máscara** tem 32 bits, como o IP: os bits **1** marcam a parte de **rede** 
 | /27 | 255.255.255.224 | 30 |
 | /28 | 255.255.255.240 | 14 |
 | /30 | 255.255.255.252 | 2 |
-| Fórmula: com **h** bits de host, a rede tem 2ʰ endereços e 2ʰ − 2 hosts úteis. Os dois que sobram são o endereço da **rede** (todos os bits de host em 0) e o de **broadcast** (todos em 1). |  |  |
+
+Fórmula: com **h** bits de host, a rede tem 2ʰ endereços e 2ʰ − 2 hosts úteis. Os dois que sobram são o endereço da **rede** (todos os bits de host em 0) e o de **broadcast** (todos em 1).
 
 ## Exemplo: 192.168.10.1/24
 

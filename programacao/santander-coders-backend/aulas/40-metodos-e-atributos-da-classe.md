@@ -86,7 +86,8 @@ public void setNome(String nome) {
 | Acesso | `objeto.metodo()` | `Classe.metodo()` |
 | Enxerga atributos de instância? | sim | não (não há objeto) |
 | Exemplo | `p.apresentar()` | `Math.sqrt(16)` |
-| Um atributo `static` é compartilhado por todos os objetos: só existe uma cópia, na classe. Mais detalhes na aula de modelagem. |  |  |
+
+Um atributo `static` é compartilhado por todos os objetos: só existe uma cópia, na classe. Mais detalhes na aula de modelagem.
 
 ## 📝 Exercício
 
