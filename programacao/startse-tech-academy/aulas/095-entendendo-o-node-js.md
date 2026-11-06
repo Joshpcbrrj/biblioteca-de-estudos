@@ -12,6 +12,8 @@ Você entendeu o event loop. O Node.js usa esse mesmo modelo para rodar JavaScri
 
 ![V8 executa o JavaScript; a libuv cuida do event loop e do I/O assíncrono.](../img/node-arquitetura.svg)
 
+> 💡 **Analogia:** se o JavaScript é um motor de carro, o navegador é o carro de passeio onde ele veio montado. O Node.js tira esse mesmo motor (o V8) e o instala num caminhão de entregas: ele perde o painel e o rádio (o DOM), mas ganha carroceria e ferramentas para carregar arquivos, falar com bancos de dados e atender clientes pela rede.
+
 O Node **não é uma linguagem nem um framework**: é a plataforma. A linguagem continua sendo JavaScript, e frameworks como o **Express** rodam em cima dele.
 
 ## Por que ele é eficiente

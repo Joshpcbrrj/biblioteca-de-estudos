@@ -10,6 +10,8 @@ O event loop executa um callback quando uma operação termina. Vamos ver como e
 
 **Um callback é uma função passada como argumento para outra função, para ser chamada depois.** "Depois" pode ser logo em seguida (callback síncrono) ou quando algo terminar, como um timer, uma requisição ou um clique (callback assíncrono).
 
+> 💡 **Analogia:** um callback é como deixar seu telefone na recepção de uma oficina: "quando o carro ficar pronto, me liga". Você não fica plantado esperando; vai fazer outras coisas, e a oficina executa a ligação (o callback) quando o serviço termina.
+
 ```jsx
 // síncrono: map chama a função para cada item, na hora
 [1, 2, 3].map(n => n * 2);

@@ -17,7 +17,9 @@ const pessoa2 = {
   nome: "Maria",
   idade: 30,
   saudacao() {
-    console.log(`Olá, sou ${this.nome}, ${this.idade} anos.`);
+    console.log(
+      `Olá, sou ${this.nome}, ${this.idade} anos.`
+    );
   },
 };
 
@@ -37,7 +39,9 @@ function Pessoa(nome, idade) {
 // métodos no prototype: UMA cópia
 // compartilhada por todas as instâncias
 Pessoa.prototype.saudacao = function () {
-  console.log(`Olá, sou ${this.nome}, ${this.idade} anos.`);
+  console.log(
+    `Olá, sou ${this.nome}, ${this.idade} anos.`
+  );
 };
 
 const pessoa1 = new Pessoa("João", 25);
@@ -55,7 +59,9 @@ class Pessoa {
     this.idade = idade;
   }
   saudacao() {
-    console.log(`Olá, sou ${this.nome}, ${this.idade} anos.`);
+    console.log(
+      `Olá, sou ${this.nome}, ${this.idade} anos.`
+    );
   }
 }
 ```
@@ -66,6 +72,8 @@ Por baixo dos panos, a classe faz **exatamente o que a função construtora com 
 
 ![Se a propriedade não está no objeto, o JS sobe pela cadeia de protótipos.](../img/prototipo.svg)
 
+> 💡 **Analogia:** a cadeia de protótipos é como perguntar algo em família. Você pergunta ao filho; se ele não sabe, ele pergunta ao pai; se o pai não sabe, pergunta ao avô, até alguém responder ou a árvore acabar (`null`). O filho não precisa decorar tudo: ele "herda" o que os antepassados sabem.
+
 Ao acessar `pessoa1.saudacao`, o JS procura no próprio objeto; se não achar, procura no protótipo dele, depois no protótipo do protótipo, até chegar em `null`. É assim que `extends` funciona: o protótipo de `Cachorro.prototype` é `Animal.prototype`.
 
 ```jsx
@@ -74,7 +82,8 @@ pessoa1.hasOwnProperty("nome");  // true
 // vem do protótipo
 pessoa1.hasOwnProperty("saudacao");  // false
 pessoa1 instanceof Pessoa;  // true
-Object.getPrototypeOf(pessoa1) === Pessoa.prototype;  // true
+// true
+Object.getPrototypeOf(pessoa1) === Pessoa.prototype;
 ```
 
 ## Outras ferramentas úteis

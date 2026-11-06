@@ -8,9 +8,11 @@ Callbacks aninhados viram uma pirâmide difícil de ler. As Promises resolvem is
 
 ## O que é uma Promise
 
-**Uma Promise é um objeto que representa um valor que ainda não existe, mas vai existir (ou falhar) no futuro.** É como a senha de uma lanchonete: você recebe na hora e, quando o pedido fica pronto, ela é "cumprida". Ou o pedido dá errado, e ela é "rejeitada".
+**Uma Promise é um objeto que representa um valor que ainda não existe, mas vai existir (ou falhar) no futuro.**
 
 ![Uma Promise sai de pending uma única vez, para fulfilled ou rejected.](../img/promise-estados.svg)
+
+> 💡 **Analogia:** uma Promise é a senha que você recebe numa lanchonete. Na hora do pedido ela está "pendente"; quando o lanche fica pronto, a senha é chamada e cumprida (*fulfilled*); se acabou o pão, ela é rejeitada (*rejected*). Enquanto espera, você pode fazer outras coisas, e uma senha chamada nunca volta a ficar pendente.
 
 | Estado | Significado | Como chega nele |
 | --- | --- | --- |

@@ -8,6 +8,8 @@ Você conhece o Node e o npm. Agora vamos juntar os dois num projeto mínimo, pa
 
 ![Projeto Node em 4 passos](../img/st-node.svg)
 
+> 💡 **Analogia:** criar um projeto Node é como abrir uma pequena empresa. O `npm init` faz o registro (o `package.json` é o contrato social, com nome, versão e responsável); o `index.js` é a sede; e os `scripts` são os atalhos do dia a dia, como "abrir a loja" (`npm start`).
+
 ## 1. Iniciar o projeto
 
 Crie uma pasta, abra o terminal nela e rode:

@@ -12,6 +12,8 @@ No módulo de JavaScript, o `fetch` usava `await` e "esperava" a resposta sem tr
 
 ![Call stack, APIs do ambiente, filas e o event loop.](../img/event-loop.svg)
 
+> 💡 **Analogia:** o JavaScript é um garçom sozinho num restaurante. Ele não fica parado na cozinha esperando o prato ficar pronto: anota o pedido, entrega à cozinha (as APIs do ambiente) e vai atender outra mesa. Quando a cozinha toca a campainha, o prato entra na fila do balcão, e o garçom o leva assim que fica com as mãos livres (o event loop).
+
 ## As peças
 
 ### 1. Call stack (pilha de chamadas)

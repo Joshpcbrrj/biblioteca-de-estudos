@@ -68,6 +68,8 @@ const nome = await buscarUsuario("octocat");
 
 ![await em sequência × Promise.all](../img/st-async.svg)
 
+> 💡 **Analogia:** fazer café da manhã. Com `await` em sequência, você liga a cafeteira, espera o café ficar pronto e só então põe o pão na torradeira. Com `Promise.all`, liga as duas coisas ao mesmo tempo e espera as duas terminarem: o café da manhã sai bem mais rápido. Só faz sentido esperar em fila quando uma etapa depende da outra.
+
 ```jsx
 // ❌ lento: um espera o outro sem necessidade
 // (≈ 2 s + 2 s)
@@ -103,7 +105,8 @@ Reescreva com `async/await` e `try/catch`:
 ```jsx
 fetch("/api/pedidos/7")
   .then((r) => r.json())
-  .then((pedido) => fetch(`/api/clientes/${pedido.clienteId}`))
+  .then((pedido) =>
+    fetch(`/api/clientes/${pedido.clienteId}`))
   .then((r) => r.json())
   .then((cliente) => console.log(cliente.nome))
   .catch((e) => console.error(e));
