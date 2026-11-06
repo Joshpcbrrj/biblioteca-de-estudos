@@ -31,6 +31,8 @@ O valor a ser pago.
 
 > 🛠️ **Correção:** a tabela do 3º exemplo estava embaralhada (entradas 5 e 15 com saídas 4.3 e 19.35). A saída 19.35 corresponde à entrada **5 kg de morango e 5 kg de maçã**, como mostra a conta acima. Também corrigido "quintanda" → "quitanda".
 
+![Quitanda: preço por faixa e desconto](../img/dio-quitanda.svg)
+
 ## Resolução
 
 1. Ler as duas quantidades.

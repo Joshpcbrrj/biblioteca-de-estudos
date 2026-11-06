@@ -24,6 +24,8 @@ O resultado com uma casa decimal.
 | 6.0 4.0 2.0 | Area = 10.0 |
 | 6.0 4.0 2.1 | Perimetro = 12.1 |
 
+![Formam um triângulo?](../img/dio-triangulo.svg)
+
 ## Resolução
 
 Três medidas formam um triângulo quando **cada lado é menor que a soma dos outros dois** (desigualdade triangular): `A < B + C`, `B < A + C` e `C < A + B`.

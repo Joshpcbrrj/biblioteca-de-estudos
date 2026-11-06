@@ -21,6 +21,8 @@ Para cada valor lido, imprima o texto correspondente.
 | 100 | Inseto! |
 | 200 |  |
 
+![Nível de energia: o limite é 8000](../img/dio-dragao.svg)
+
 ### Código
 
 <details>

@@ -1,4 +1,4 @@
-# Criando uma API com Express
+# Criando uma API com Express (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** construir uma API REST de tarefas com Express: preparar o projeto, criar as rotas do CRUD, ler parâmetros e corpo, usar middlewares, tratar erros e testar.
 

@@ -1,4 +1,4 @@
-# Subconsultas (subqueries)
+# Subconsultas (subqueries) (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** subconsultas que devolvem um valor, uma lista ou uma tabela, `IN`, `EXISTS`, subconsultas correlacionadas, CTEs com `WITH` e quando preferir subconsulta ou JOIN.
 
@@ -7,6 +7,8 @@
 Com agregação você calcula a média de preços. Mas e para listar "os produtos mais caros que a média"? É preciso calcular a média primeiro e usá-la num filtro. Para isso servem as subconsultas.
 
 ## O que é uma subconsulta
+
+![Subconsulta: a de dentro roda primeiro](../img/st-subconsulta.svg)
 
 **Uma subconsulta é um** `SELECT` **dentro de outro comando SQL.** O resultado da consulta de dentro é usado pela de fora, como um valor, uma lista ou uma tabela temporária.
 

@@ -1,6 +1,4 @@
-# Coleções: List, Set e Map
-
-> ✨ **Página nova.** O curso usava `ArrayList` em exemplos sem explicar as coleções, que estão em praticamente todo código Java de back-end.
+# Coleções: List, Set e Map (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** as três famílias de coleções do Java (List, Set e Map), suas implementações mais usadas, os métodos principais e quando escolher cada uma.
 
@@ -145,7 +143,7 @@ O Set.
 
 O valor antigo é substituído pelo novo.
 
-**Por que `List<int>` não compila?**
+**Por que `List<int>` não compila? (lista do primitivo int)**
 
 Porque coleções guardam objetos; usa-se a classe wrapper Integer.
 

@@ -1,4 +1,4 @@
-# Strings e StringBuilder
+# Strings e StringBuilder (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** por que `String` é imutável, como comparar textos com `equals`, os métodos mais usados, formatação, text blocks e quando usar `StringBuilder`.
 
@@ -72,6 +72,8 @@ String sql = """
 
 ## `StringBuilder`: montando texto em laços
 
+![Concatenar em laço × StringBuilder](../img/dio-stringbuilder.svg)
+
 Como String é imutável, concatenar com `+` dentro de um laço cria um objeto novo a cada volta e copia todo o texto de novo. Com milhares de itens, isso fica lento:
 
 ```java
@@ -93,8 +95,6 @@ Outros métodos: `insert`, `deleteCharAt`, `reverse` (útil para palíndromos) e
 - `StringBuffer`: é sincronizado (thread-safe) e mais lento. Hoje raramente é necessário.
 
 Fora de laços, o `+` comum está ótimo: o compilador já otimiza `"Olá, " + nome + "!"`.
-
-> ✨ **Página nova:** vários desafios do curso (vogais e espaços, estruturas de dados) usam String e StringBuilder sem explicar a imutabilidade nem o `equals`.
 
 ## 📌 Resumo
 

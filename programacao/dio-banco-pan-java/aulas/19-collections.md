@@ -1592,7 +1592,7 @@ public class Main {
 > - O comentário do item 2 falava em "reference method" mas usava uma lambda; agora usa `System.out::print`. O nome correto em português é **referência de método** (*method reference*).
 > - Mantive nos comentários a evolução **classe anônima → lambda → referência de método**, que era o objetivo didático do exercício, mas sem repetir o código comentado várias vezes.
 
-## Optional
+## Optional (Adicionado pelo aluno para melhorar o estudo)
 
 ### O problema: `null` e o `NullPointerException`
 
@@ -1668,8 +1668,6 @@ Optional<Conta> maiorSaldo = contas.stream().max(Comparator.comparing(Conta::get
 Optional<Conta> primeiraVip = contas.stream().filter(Conta::isVip).findFirst();
 OptionalDouble media = numeros.stream().mapToInt(Integer::intValue).average();
 ```
-
-> ✨ **Página nova:** a Stream API e o Spring Data (`findById`) devolvem `Optional`, mas o curso não explicava como usá-lo sem cair no `get()` perigoso.
 
 ## 📌 Resumo
 

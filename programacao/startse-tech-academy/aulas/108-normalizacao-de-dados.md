@@ -1,4 +1,4 @@
-# Normalização de dados
+# Normalização de dados (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o que é normalização, as anomalias que ela evita, a 1ª, 2ª e 3ª Formas Normais aplicadas passo a passo a uma tabela de pedidos, e quando desnormalizar de propósito.
 

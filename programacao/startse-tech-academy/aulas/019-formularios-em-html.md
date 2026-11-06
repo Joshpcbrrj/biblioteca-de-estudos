@@ -1,4 +1,4 @@
-# Formulários em HTML
+# Formulários em HTML (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** criar formulários com `<form>`, `<label>`, `<input>`, `<select>`, `<textarea>` e `<button>`, usar os tipos de campo do HTML5 e validar dados sem JavaScript.
 

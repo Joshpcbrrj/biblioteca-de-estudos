@@ -2,8 +2,6 @@
 
 > 🧭 **Nesta aula:** como repetir código com `while`, `do-while` e `for`, e como guardar vários valores em vetores e matrizes — com exercícios resolvidos.
 
-### Conteúdo do curso
-
 ## Visão geral
 
 > 💡 **Laços** repetem um bloco de código; **arrays** guardam vários valores do mesmo tipo em uma única variável. Os dois quase sempre andam juntos: usamos um laço para percorrer um array.
@@ -580,8 +578,6 @@ public class Ex4MatrizForEach {
 </details>
 
 > 🛠️ **Correção:** `random.nextInt(0, 9)` gera de **0 a 8** — o 9 nunca aparecia. O correto é `nextInt(10)`. Também removi o `import java.util.Arrays` da versão com for-each, que não era usado.
-
-### Meu workspace do curso (Feito no IntelliJ)
 
 ## 📌 Resumo
 

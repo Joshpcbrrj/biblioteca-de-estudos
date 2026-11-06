@@ -23,6 +23,8 @@ O **primeiro valor** de saída é a **quantidade de valores positivos**. A próx
 | 4.6 |  |
 | 12 |  |
 
+![Positivos e média: contador + acumulador](../img/dio-positivos.svg)
+
 ### Código da resposta
 
 <details>

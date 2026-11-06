@@ -10,7 +10,7 @@ Esta lista fecha o módulo de algoritmos. Use teste de mesa: anote o valor de ca
 
 A equipe de desenvolvimento está testando um algoritmo que faz cálculos. O fluxograma abaixo mostra como ele funciona:
 
-![Fluxograma da Questão 1](../img/q1-fluxo.svg)
+![O mesmo fluxograma, redesenhado na vertical](../img/q1-fluxo.svg)
 
 Ao executar o algoritmo, qual é o valor de C impresso ao final?
 

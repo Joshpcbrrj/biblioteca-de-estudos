@@ -2,8 +2,6 @@
 
 > 💡 **Nesta aula:** como a web funciona por baixo: o protocolo **HTTP** e suas versões, a segurança com **HTTPS/TLS**, a comunicação em tempo real com **WebSocket** e os conceitos de rede que sustentam tudo isso.
 
-### Protocolo de comunicação web: HTTP
-
 ## Como funciona o protocolo HTTP
 
 ### O que é o HTTP?
@@ -357,8 +355,6 @@ O **Nginx** (pronuncia-se "engine-x") foi criado pelo engenheiro russo **Igor Sy
 > - O Nginx não foi criado para resolver "problemas do Apache" especificamente, e sim o **problema C10k** de muitas conexões simultâneas.
 > - As três imagens foram substituídas por dois diagramas (modelos de servidor e componentes do XAMPP), e acrescentei uma tabela comparando Apache e Nginx.
 
-### HTTPS
-
 ## Conceitos básicos de segurança da informação
 
 ### Criptografia
@@ -467,8 +463,6 @@ O TLS combina os dois tipos de criptografia: **assimétrica** no início, para a
 > - Acrescentei a linha do tempo das versões e o fato de que **todo SSL e o TLS 1.0/1.1 estão desativados** — só TLS 1.2 e 1.3 são aceitos hoje.
 > - O passo "negociar uma chave simétrica" foi detalhado: no TLS moderno a chave é **calculada pelos dois lados** (Diffie-Hellman), sem ser enviada pela rede.
 > - As duas imagens foram substituídas pela linha do tempo e pelo diagrama do handshake.
-
-### Protocolo de comunicação: WebSocket
 
 ## Introdução
 
@@ -662,8 +656,6 @@ Ao enviar, cada camada **acrescenta seu cabeçalho** aos dados que recebeu da ca
 > - No load balancer, acrescentei a diferença entre **camada 4 e camada 7** e os algoritmos mais comuns.
 > - Na camada "de rede" do TCP/IP, o nome usual é **Internet**; e o OSI foi descrito como modelo de referência, mais usado como vocabulário do que implementado.
 > - As três imagens (TCP/IP, OSI e comparação) foram substituídas por cinco diagramas: proxy, DNS, load balancer, OSI x TCP/IP e encapsulamento.
-
-### 📎 Slides do curso
 
 ## 📌 Resumo
 

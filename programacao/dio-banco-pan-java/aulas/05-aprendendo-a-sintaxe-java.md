@@ -6,8 +6,6 @@
 
 🔗 [Table of contents](https://felipe-silva-aguiar.gitbook.io/dio-java/gitbook/summary)
 
-### Conteúdo
-
 ## Anatomia das classes
 
 > Uma classe bem estruturada não quer guerra com ninguém.

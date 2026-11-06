@@ -182,6 +182,8 @@ for (Pagavel p : folha)
   System.out.println(p.calcularPagamento());
 ```
 
+![Herança e polimorfismo](../img/cap-polimorfismo.svg)
+
 ### 6. Arrays
 
 - Coleção de **tamanho fixo** de valores do **mesmo tipo**. Índices vão de **0 a N-1** e o tamanho fica em `.length`.

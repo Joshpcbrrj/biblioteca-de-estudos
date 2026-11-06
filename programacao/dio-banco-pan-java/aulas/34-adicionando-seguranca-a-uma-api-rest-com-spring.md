@@ -66,7 +66,7 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
 
 > 🛠️ **Correção:** o groupId estava escrito `org.springframeworkk.boot` (com dois "k"). O correto é `org.springframework.boot`. Do jeito que estava, o Maven não encontraria a dependência.
 
-> 💡 Também dá para incluir a dependência já na criação do projeto, pelo Spring Initializr ([start.spring.io](http://start.spring.io)), selecionando **Spring Security**.
+> 💡 Também dá para incluir a dependência já na criação do projeto, pelo Spring Initializr (start.spring.io), selecionando **Spring Security**.
 
 ## Autenticação simples/ autenticação em memória
 
@@ -77,7 +77,7 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
 - No Spring Security, um filtro de autenticação intercepta a requisição, extrai as credenciais (de um formulário de login ou do cabeçalho HTTP Basic) e as confere contra um repositório de usuários. Esse repositório pode ficar em memória, em um banco ou em um LDAP.
 - Também é possível integrar provedores externos (OAuth2/OpenID Connect, SAML) ou diretórios corporativos (LDAP, Active Directory).
 
-#### O jeito mais rápido: [application.properties](http://application.properties)
+#### O jeito mais rápido: application.properties
 
 Para testes rápidos, dá para definir um único usuário direto no `application.properties`. O Spring Boot lê essas propriedades na inicialização:
 
@@ -422,7 +422,7 @@ Um JWT tem três partes em Base64Url, separadas por pontos: `header.payload.sign
 
 > 🛠️ **Correções:**
 >
-> - O `alg` do header é o algoritmo de **assinatura**, não de "criptografia". Um JWT comum (JWS) é **assinado, não criptografado**: o header e o payload são só Base64Url, e qualquer pessoa os decodifica no [jwt.io](http://jwt.io). Nunca coloque senha ou dados sensíveis no payload. Para sigilo existe o JWE, um token criptografado.
+> - O `alg` do header é o algoritmo de **assinatura**, não de "criptografia". Um JWT comum (JWS) é **assinado, não criptografado**: o header e o payload são só Base64Url, e qualquer pessoa os decodifica no jwt.io. Nunca coloque senha ou dados sensíveis no payload. Para sigilo existe o JWE, um token criptografado.
 > - No RSA/ECDSA a chave não é "somente do servidor": a chave pública é distribuída justamente para que outros serviços validem o token.
 > - O exemplo agora inclui `exp`. Um token sem expiração vale para sempre se vazar.
 

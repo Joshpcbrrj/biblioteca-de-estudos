@@ -1,4 +1,4 @@
-# Índices e desempenho
+# Índices e desempenho (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o que é um índice, como criar índices simples, únicos e compostos, quando eles ajudam ou são ignorados, seu custo, como ler o plano com `EXPLAIN` e outras dicas de desempenho.
 

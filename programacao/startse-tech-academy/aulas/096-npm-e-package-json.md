@@ -1,4 +1,4 @@
-# npm e package.json
+# npm e package.json (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o npm, criar um projeto com `npm init`, instalar pacotes, a estrutura do `package.json`, scripts, versionamento semântico, `package-lock.json`, `npx` e cuidados de segurança.
 

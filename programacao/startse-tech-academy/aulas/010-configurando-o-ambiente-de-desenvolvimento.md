@@ -1,4 +1,4 @@
-# Configurando o ambiente de desenvolvimento
+# Configurando o ambiente de desenvolvimento (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** instalar e conferir as ferramentas do curso (navegador, VS Code, Git e Node.js), usar o DevTools e organizar a pasta de um projeto.
 
@@ -7,6 +7,8 @@
 Você já sabe que o código passa por um compilador ou interpretador. No desenvolvimento web, o "interpretador" do front-end é o próprio navegador, e o do back-end é o Node.js. Falta montar a bancada: as ferramentas para escrever, rodar e versionar o código.
 
 ## O kit básico
+
+![O kit básico e a organização de um projeto](../img/st-ambiente.svg)
 
 | Ferramenta | Para quê |
 | --- | --- |

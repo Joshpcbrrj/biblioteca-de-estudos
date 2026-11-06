@@ -34,6 +34,8 @@ if (idade >= 18) {
 
 ## if-else if-else
 
+![Os testes descem em ordem até o primeiro verdadeiro](../img/java-else-if.svg)
+
 Testa as condições em ordem e executa só a primeira verdadeira.
 
 ```java
@@ -90,6 +92,8 @@ System.out.println("Dia: " + nomeDia);
 ```
 
 ### Por que o break é necessário
+
+![Sem break, a execução cai nos cases seguintes](../img/java-switch.svg)
 
 Sem `break`, a execução "cai" (fall-through) para o próximo case e continua até achar um `break` ou o fim do switch. Às vezes isso é usado de propósito, para vários casos com o mesmo resultado:
 

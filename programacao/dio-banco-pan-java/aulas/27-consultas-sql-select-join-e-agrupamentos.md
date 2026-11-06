@@ -1,6 +1,4 @@
-# Consultas SQL: SELECT, JOIN e agrupamentos
-
-> ✨ **Página nova.** A aula anterior cria tabelas e cita o `SELECT`, mas não ensina a consultar: filtros, ordenação, junção de tabelas e agrupamentos são o que mais se usa no dia a dia.
+# Consultas SQL: SELECT, JOIN e agrupamentos (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** como escrever consultas com `SELECT`: filtros com `WHERE`, ordenação, `INNER JOIN` e `LEFT JOIN`, funções de agregação com `GROUP BY` e `HAVING`, e como alterar e apagar dados com segurança.
 

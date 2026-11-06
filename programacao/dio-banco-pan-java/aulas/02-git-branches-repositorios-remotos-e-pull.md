@@ -1,6 +1,4 @@
-# Git: branches, repositórios remotos e pull requests
-
-> ✨ **Página nova.** A aula de Git cobre commits e conflitos, mas não mostra como trabalhar em branches, sincronizar com o GitHub e colaborar por pull request, que é o dia a dia de um time.
+# Git: branches, repositórios remotos e pull requests (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** criar e trocar de branch, juntar o trabalho com merge (e quando usar rebase), enviar e baixar alterações do repositório remoto e o fluxo de pull request.
 

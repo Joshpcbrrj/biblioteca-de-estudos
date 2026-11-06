@@ -140,8 +140,6 @@ aws dynamodb query \
 
 Os comandos usam a quebra de linha do bash; no PowerShell, troque a barra invertida do fim da linha pelo acento grave.
 
-#### Link do projeto original
-
 #### Como criar a conta na AWS e configurar a CLI
 
 🔗 [Como instalar e configurar o AWS-CLI](https://www.youtube.com/watch?v=hBRnWjz9YxM)
@@ -149,8 +147,6 @@ Os comandos usam a quebra de linha do bash; no PowerShell, troque a barra invert
 🔗 [Primeiros passos com AWS CLI! Como usar o aws cli ?](https://www.youtube.com/watch?v=nqazfZEj2G0)
 
 > 💰 Ao terminar a prática, apague a tabela (`aws dynamodb delete-table --table-name Music`) para não gerar custos fora do nível gratuito.
-
-#### Arquivos do meu projeto
 
 ## 📌 Resumo
 

@@ -12,7 +12,7 @@ Criar o modelo de entidade e relacionamento e implementá-lo em tabelas do Postg
 
 ![Disciplinas, professores e livros](../img/der-escola.svg)
 
-O arquivo do modelo (`.vpd`), feito no Visual Paradigm, fica nas anotações pessoais; o diagrama acima mostra o mesmo modelo.
+Modelo feito no Visual Paradigm (arquivo do curso):
 
 ## Criando as tabelas
 

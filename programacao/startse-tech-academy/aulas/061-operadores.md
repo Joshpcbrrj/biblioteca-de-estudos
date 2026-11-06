@@ -114,6 +114,8 @@ usuario.endereco?.rua;
 
 ## Precedência
 
+![?? × || e a ordem de avaliação](../img/st-operadores.svg)
+
 Como na matemática, `**` vem primeiro, depois `*`, `/` e `%`, e por fim `+` e `-`. Comparações vêm depois das contas, e o E (`&&`) antes do OU. Na dúvida, **use parênteses**: `(a + b) * c`.
 
 ## Exercício

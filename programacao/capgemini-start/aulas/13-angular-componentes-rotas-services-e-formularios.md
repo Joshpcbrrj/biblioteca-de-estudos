@@ -785,6 +785,8 @@ export class CarrinhoService {
 
 ### Injeção de dependência
 
+![Service: uma instância para todos](../img/cap-angular-di.svg)
+
 O componente **não cria** o service com `new`: ele **pede** um, e o Angular entrega. Isso se chama **injeção de dependência**.
 
 ```tsx
@@ -880,6 +882,8 @@ Chamando como função: `itens()`.
 No currículo em HTML, cada página era um arquivo (`index.html`, `sobre.html`, `contato.html`), e clicar num link recarregava tudo. Numa SPA só existe **uma** página. O **Router** do Angular faz parecer que há várias: lê a URL e troca o componente exibido, sem recarregar. Lembra das âncoras `#contato`, que mudavam a URL sem sair da página? A ideia é parecida.
 
 ### Como funciona
+
+![Rotas: a URL escolhe o componente](../img/cap-angular-rotas.svg)
 
 Numa SPA, mudar de "página" não recarrega nada: o **Router** do Angular lê a URL e troca o componente exibido dentro do `<router-outlet>`.
 

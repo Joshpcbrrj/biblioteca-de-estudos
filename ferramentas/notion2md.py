@@ -39,7 +39,9 @@ def inline(el):
         href = el.get('href','')
         if href.startswith('http'):
             # links automáticos do Notion (ex.: Task.java, ASP.NET) viram texto puro
-            if href.rstrip('/').lower() in ('http://' + inner.strip().lower(), 'https://' + inner.strip().lower()):
+            # autolink do Notion (http:// + o próprio texto): vira texto puro;
+            # links escritos pelo autor (https, barra final, caminho) ficam
+            if href.lower() == 'http://' + inner.strip().lower():
                 return inner
             return f'[{inner}]({href})'
         return inner
@@ -280,7 +282,8 @@ if __name__ == '__main__':
         title = None
         is_list = 'Lista de exerc' in rel or os.path.basename(rel).startswith(('Desafio', 'Exercícios', 'Exercicios'))
         t, md = convert_page(os.path.join(SRC, rel), is_list, os.path.join(OUT,'img'))
-        fn = f'{i:02d}-{slug(t)}.md'
+        base = re.sub(r'\s*\(Adicionado pelo aluno[^)]*\)\s*$', '', t)
+        fn = f'{i:0{3 if len(order) >= 100 else 2}d}-{slug(base)}.md'
         md = polir_summaries(md)
         open(os.path.join(OUT, 'aulas', fn), 'w', encoding='utf-8').write(md)
         pages.append((fn, t))

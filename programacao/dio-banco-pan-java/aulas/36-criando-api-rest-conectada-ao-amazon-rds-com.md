@@ -31,6 +31,8 @@ A aplicação também precisa do driver do banco no `pom.xml`. Para MySQL:
 
 ## Perfis: um banco para cada ambiente
 
+![Perfis: um banco para cada ambiente](../img/dio-perfis-rds.svg)
+
 No dia a dia você desenvolve com um banco local e publica usando o RDS. Os **perfis** (*profiles*) do Spring guardam cada configuração num arquivo próprio:
 
 ```
@@ -67,12 +69,6 @@ java -jar api.jar --spring.profiles.active=prod
 | `none` | não mexe no banco |
 
 > ⚠️ Em produção, prefira `validate` ou `none` e crie as tabelas com uma ferramenta de migração como o **Flyway** ou o **Liquibase**. O `update` não remove colunas antigas e pode alterar tabelas de um jeito inesperado num banco com dados reais.
-
-## 📎 Slides
-
-## 🔗 Repositório
-
-## 📦 Projeto
 
 ## 📌 Resumo
 

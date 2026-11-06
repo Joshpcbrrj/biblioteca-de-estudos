@@ -8,6 +8,8 @@ Os tipos de dados limitam o formato de cada coluna. As restrições vão além: 
 
 ## Para que servem as restrições
 
+![Restrições: o banco recusa dado errado](../img/st-restricoes.svg)
+
 **Restrições (constraints) são regras que o próprio banco garante: ele recusa qualquer** `INSERT`**,** `UPDATE` **ou** `DELETE` **que as viole.** Assim, os dados ficam corretos mesmo que o código da aplicação tenha um bug.
 
 | Restrição | Garante |

@@ -1,8 +1,10 @@
-# Dinheiro e datas: BigDecimal e java.time
+# Dinheiro e datas: BigDecimal e java.time (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** por que `double` erra contas de dinheiro, como usar `BigDecimal` (criação, arredondamento, divisão e comparação) e a API `java.time` para datas e horas.
 
 ## Por que não usar `double` para dinheiro
+
+![Dinheiro: double × BigDecimal](../img/dio-bigdecimal.svg)
 
 `double` guarda números em **binário**, e valores como 0,1 não têm representação exata:
 
@@ -54,6 +56,8 @@ No banco de dados, use `DECIMAL(15,2)` ou `NUMERIC`. Em JPA: `@Column(precision 
 
 ## Datas: a API `java.time` (Java 8+)
 
+![As classes do java.time](../img/dio-java-time.svg)
+
 Esqueça `Date` e `Calendar`, que são mutáveis, confusos e têm meses começando em 0. Use `java.time`:
 
 | Classe | Representa | Exemplo |
@@ -92,8 +96,6 @@ LocalDate.parse("2024-12-25");  // ISO-8601 dispensa formatador
 Cuidado com o padrão: `MM` é mês e `mm` é minuto; `yyyy` é ano e `YYYY` é o "ano da semana", que dá errado perto do réveillon.
 
 > 💡 Regra prática: **grave e trafegue em UTC** (`Instant`, ou `OffsetDateTime` em JSON no formato ISO) e **converta para o fuso do usuário só na hora de exibir**. Como as classes de `java.time` são imutáveis, `plusDays` devolve uma nova data: guarde o resultado.
-
-> ✨ **Página nova:** em um curso voltado a banco, cálculos com dinheiro e datas (juros, vencimentos, prazos) são centrais. Os desafios do curso usavam `double` para preços, o que gera erros de arredondamento.
 
 ## 📌 Resumo
 

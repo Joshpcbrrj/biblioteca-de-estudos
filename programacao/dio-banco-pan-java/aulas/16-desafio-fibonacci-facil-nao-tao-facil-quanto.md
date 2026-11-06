@@ -22,6 +22,8 @@ Os valores devem ser mostrados na mesma linha, separados por um espaço em branc
 >
 > Com N < 46, o maior número impresso é o 45º termo (701.408.733), e o laço chega a calcular, sem imprimir, o 47º (1.836.311.903). Os dois cabem num `int`, cujo máximo é 2.147.483.647. O `int` só estoura a partir do 48º termo (2.971.215.073); para ir além, use `long`.
 
+![Fibonacci: a janela de dois números anda](../img/dio-fibonacci.svg)
+
 ### Código
 
 <details>

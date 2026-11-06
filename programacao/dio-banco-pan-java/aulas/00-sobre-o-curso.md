@@ -4,7 +4,7 @@
 
 > **Como estudar:** siga as seções na ordem. Cada aula começa com o quadro "Nesta aula" e termina com um **📌 Resumo**; para revisar, leia só os resumos. Nos desafios, tente resolver antes de abrir a resolução (**Ver resposta**).
 
-> **🔖 Legenda dos quadros:** 🗺️ visão geral da aula · ✨ página nova, criada para cobrir um tópico que faltava · 💡 dica · ⚠️ cuidado · 🛠️ correção ou ajuste no material original · 📌 resumo para revisão.
+> **🔖 Legenda dos quadros:** 🗺️ visão geral da aula · 💡 dica · ⚠️ cuidado · 🛠️ correção ou ajuste no material original · 📌 resumo para revisão.
 
 ## Seções
 

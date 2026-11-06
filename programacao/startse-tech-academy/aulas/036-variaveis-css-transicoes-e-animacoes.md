@@ -1,4 +1,4 @@
-# Variáveis CSS, transições e animações
+# Variáveis CSS, transições e animações (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** variáveis CSS para reaproveitar valores, transições para suavizar mudanças de estado e animações com `@keyframes`, respeitando quem prefere menos movimento.
 
@@ -103,6 +103,8 @@ Propriedades de `animation`:
 | `animation-iteration-count` | `infinite` | quantas vezes |
 | `animation-direction` | `alternate` | ida e volta |
 | `animation-fill-mode` | `both` | mantém o primeiro/último quadro |
+
+![Transição × animação](../img/st-transicao.svg)
 
 ## Respeite quem prefere menos movimento
 

@@ -8,6 +8,8 @@ Com as tabelas normalizadas no papel, é hora de criá-las no banco e saber alte
 
 ## O que é a DDL
 
+![DDL mexe na estrutura; DML, nos dados](../img/st-ddl.svg)
+
 **DDL (Data Definition Language) é a parte do SQL que define a estrutura do banco: bancos, tabelas, colunas, índices, views e restrições.** Ela mexe no "esqueleto"; quem mexe nos dados é a DML.
 
 | Comando | O que faz |

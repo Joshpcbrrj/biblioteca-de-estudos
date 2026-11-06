@@ -234,6 +234,8 @@ Convenções de nome: variáveis e métodos em **camelCase** (`precoTotal`), cla
 
 ### Tipos primitivos
 
+![Tipos primitivos do Java](../img/cap-java-tipos.svg)
+
 | Tipo | Tamanho | Faixa / guarda | Exemplo |
 | --- | --- | --- | --- |
 | `byte` | 8 bits | −128 a 127 | `byte b = 100;` |

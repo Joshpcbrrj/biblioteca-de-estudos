@@ -28,6 +28,8 @@ function teste() {
 
 ## O que muda
 
+!["use strict": falhas silenciosas viram erro](../img/st-strict.svg)
+
 | Situação | Modo normal | Modo estrito |
 | --- | --- | --- |
 | Atribuir a variável **não declarada** (`x = 10`) | cria uma global sem avisar | `ReferenceError` |

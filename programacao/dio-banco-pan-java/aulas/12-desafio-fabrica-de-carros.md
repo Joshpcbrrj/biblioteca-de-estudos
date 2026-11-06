@@ -25,6 +25,8 @@ O preço final do carro.
 
 > 🧮 **Fórmula:** `preço = custo + custo × distribuidor / 100 + custo × impostos / 100`, ou, simplificando, `custo × (100 + distribuidor + impostos) / 100`.
 
+![Preço do carro: custo + porcentagens](../img/dio-fabrica.svg)
+
 ## Código da resposta
 
 <details>

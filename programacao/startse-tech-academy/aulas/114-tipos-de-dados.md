@@ -8,6 +8,8 @@ Nos `CREATE TABLE` apareceram `VARCHAR`, `INT`, `DECIMAL` e `DATE`. Escolher bem
 
 > 💡 Os tipos abaixo são os do **MySQL/MariaDB**. Os nomes e limites mudam um pouco em outros bancos: no PostgreSQL, por exemplo, existem `TEXT` sem limite, `SERIAL` e `BOOLEAN` de verdade.
 
+![Escolhendo o tipo da coluna](../img/st-tipos.svg)
+
 ## Texto
 
 | Tipo | Descrição |

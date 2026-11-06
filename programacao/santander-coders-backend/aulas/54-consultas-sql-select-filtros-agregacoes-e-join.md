@@ -1,6 +1,4 @@
-# Consultas SQL: SELECT, filtros, agregações e JOIN
-
-> ✨ **Página nova.** O módulo criava tabelas e inseria dados, mas só consultava com `SELECT *`. Filtrar, ordenar, agrupar e juntar tabelas é o que um back-end mais faz no banco.
+# Consultas SQL: SELECT, filtros, agregações e JOIN (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** SELECT com WHERE, operadores de filtro, ORDER BY e LIMIT, funções de agregação com GROUP BY e HAVING, e os tipos de JOIN para combinar tabelas.
 

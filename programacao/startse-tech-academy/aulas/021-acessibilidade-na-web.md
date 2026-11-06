@@ -1,4 +1,4 @@
-# Acessibilidade na web
+# Acessibilidade na web (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o que é acessibilidade na web, por que ela é exigida e as seis práticas que resolvem a maior parte dos problemas: HTML semântico, texto alternativo, rótulos, teclado, contraste e ARIA.
 
@@ -7,6 +7,8 @@
 Você já escreve páginas com tags semânticas, imagens, tabelas e formulários. Cada uma dessas tags tem um papel para quem não enxerga a tela ou não usa mouse. Esta aula junta essas peças.
 
 ## Por que importa
+
+![Quem lê a página nem sempre vê a tela](../img/st-acessibilidade.svg)
 
 **Acessibilidade é fazer o site funcionar para todas as pessoas**, incluindo quem usa leitor de tela, navega só pelo teclado, tem baixa visão, daltonismo ou limitações motoras. No Brasil, a **Lei Brasileira de Inclusão (Lei 13.146/2015)** exige acessibilidade nos sites de empresas e órgãos públicos. A referência técnica mundial é a **WCAG**, publicada pelo W3C.
 

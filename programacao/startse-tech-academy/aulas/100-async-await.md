@@ -66,6 +66,8 @@ const nome = await buscarUsuario("octocat");
 
 ## Sequencial × paralelo
 
+![await em sequência × Promise.all](../img/st-async.svg)
+
 ```jsx
 // ❌ lento: um espera o outro sem necessidade
 // (≈ 2 s + 2 s)

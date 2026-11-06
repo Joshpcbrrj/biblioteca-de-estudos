@@ -1,4 +1,4 @@
-# Escopo, closures e this
+# Escopo, closures e this (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** como o escopo funciona em funções e blocos, o que é uma closure e para que serve, e como o valor de `this` é decidido em cada tipo de chamada.
 

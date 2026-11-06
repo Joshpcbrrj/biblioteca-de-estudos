@@ -61,7 +61,8 @@ Este material nasceu da preparação para o **Santander Coders 2023**, programa 
 | Java | 2 h |
 | Programação orientada a objetos | 3 h |
 | Banco de dados | 1 h |
-| Cada módulo virou uma seção deste material. Onde a proposta do curso pedia algo que não estava nas anotações (HTTP, coleções, exceções, consultas SQL), foram acrescentadas páginas novas, marcadas com ✨. |  |
+
+Cada módulo virou uma seção deste material. As páginas acrescentadas para completar a proposta do curso (HTTP, coleções, exceções e consultas SQL) levam no título "(Adicionado pelo aluno para melhorar o estudo)".
 
 ### Parte 2: bootcamp (300 selecionados)
 

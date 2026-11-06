@@ -210,6 +210,8 @@ O HttpClient devolve um **Observable** (da biblioteca **RxJS**), e não uma Prom
 
 > 💡 Uma Promise é como pedir uma pizza: você liga, ela chega uma vez. Um Observable é como assinar uma revista: nada chega até você assinar (`subscribe`), podem chegar várias edições, e dá para cancelar.
 
+![HttpClient: nada acontece sem subscribe](../img/cap-httpclient.svg)
+
 ### 4. Usando no componente
 
 ```tsx

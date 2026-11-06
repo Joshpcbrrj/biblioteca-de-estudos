@@ -2,8 +2,6 @@
 
 > 🗺️ **Nesta aula:** classes, atributos, métodos e objetos; `equals`, `hashCode` e `toString`; herança, associação, interfaces e classes abstratas; pacotes e modificadores de acesso; e os recursos modernos: enums, records e generics.
 
-### Introdução
-
 ## Estrutura básica de OO
 
 ### Classes
@@ -256,7 +254,7 @@ public class Carro {
 
 </details>
 
-## equals, hashCode e toString
+## equals, hashCode e toString (Adicionado pelo aluno para melhorar o estudo)
 
 ### Os três métodos herdados de `Object`
 
@@ -338,10 +336,6 @@ clientes.add(new Cliente("123", "Ana"));  // e agora o Set tem um "duplicado"
 ### Em entidades JPA
 
 Em `@Entity`, o `id` costuma ser gerado só ao salvar, então fica `null` antes disso. Prefira comparar por uma **chave de negócio** imutável (CPF, número da conta) ou siga o padrão recomendado pelo Hibernate. E **não** coloque coleções *lazy* no `toString`, porque isso dispara consultas ou `LazyInitializationException`.
-
-> ✨ **Página nova:** `equals` e `hashCode` são pré-requisitos para usar `Set` e `Map` corretamente (página de Collections) e estão entre as perguntas mais comuns em entrevistas de Java.
-
-### As relações (Herança, associação e interface)
 
 ## Herança
 
@@ -741,7 +735,7 @@ public class PlayStation implements Jogo {
 }
 ```
 
-## Classes abstratas
+## Classes abstratas (Adicionado pelo aluno para melhorar o estudo)
 
 ### O que é
 
@@ -824,10 +818,6 @@ public abstract class GeradorRelatorio {
 | precisa de construtor ou de campos `protected` | a classe precisa de **vários** tipos (só dá para estender uma classe) |
 
 Na dúvida, comece com uma **interface**: ela prende menos o design. Combinar as duas também é comum (`abstract class ContaBase implements Conta`).
-
-> ✨ **Página nova:** classes abstratas apareciam só de passagem na tabela da página de Interface. Elas completam o trio herança, interface e abstração.
-
-### Organização de pacotes e visibilidades
 
 ## Pacotes
 
@@ -924,9 +914,7 @@ public class Main {
 }
 ```
 
-### Recursos do Java moderno
-
-## Enums e records
+## Enums e records (Adicionado pelo aluno para melhorar o estudo)
 
 ### Enum: um conjunto fechado de valores
 
@@ -1018,9 +1006,7 @@ public record Dinheiro(BigDecimal valor, String moeda) {
 - Os campos são `final`: não há setters.
 - **Não servem como** `@Entity` **JPA**, que exige construtor vazio e campos mutáveis. Use records para os DTOs e classes comuns para as entidades.
 
-> ✨ **Página nova:** enums e records são recursos do Java moderno usados em praticamente toda API Spring (status, tipos e DTOs) e não estavam no curso.
-
-## Generics
+## Generics (Adicionado pelo aluno para melhorar o estudo)
 
 ### O problema que os generics resolvem
 
@@ -1108,8 +1094,6 @@ Regra mnemônica **PECS**: *Producer Extends, Consumer Super*.
 
 - **Não aceita tipos primitivos:** use `List<Integer>`, e não `List<int>`. O autoboxing converte automaticamente.
 - **Type erasure:** o tipo genérico só existe na compilação e é apagado no bytecode. Por isso não dá para fazer `new T()`, `new T[10]` nem `obj instanceof List<String>`.
-
-> ✨ **Página nova:** o curso usa generics o tempo todo (`List<String>`, `Map<K,V>`, `JpaRepository<Cliente, Long>`, `ResponseEntity<T>`), mas não explicava como funcionam.
 
 ## 📌 Resumo
 

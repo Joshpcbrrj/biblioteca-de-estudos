@@ -51,6 +51,8 @@ git config --global core.editor "code --wait"
 
 > 💡 Use no Git o mesmo e-mail da sua conta do GitHub (ou o e-mail `noreply` que o GitHub oferece, para não expor o seu). É assim que os commits aparecem ligados ao seu perfil.
 
+![O nível mais específico tem prioridade](../img/git-config-niveis.svg)
+
 ## Conferindo
 
 ```bash

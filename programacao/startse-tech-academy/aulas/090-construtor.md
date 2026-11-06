@@ -25,6 +25,8 @@ console.log(pessoa1.idade);  // 25
 
 ## O que acontece no `new`
 
+![O que acontece no new](../img/st-construtor.svg)
+
 1. Um objeto vazio é criado, ligado ao `prototype` da classe.
 2. O `constructor` é executado com `this` apontando para esse objeto novo.
 3. O objeto é devolvido automaticamente (não é preciso `return`).

@@ -1,4 +1,4 @@
-# Tratamento de erros (try/catch)
+# Tratamento de erros (try/catch) (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** tratar erros com `try`, `catch` e `finally`, os tipos de erro mais comuns, lançar seus próprios erros com `throw` e tratar erros em código assíncrono.
 

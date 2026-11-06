@@ -1,4 +1,4 @@
-# GitHub, pull requests e boas mensagens de commit
+# GitHub, pull requests e boas mensagens de commit (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** a diferença entre Git e GitHub, o fluxo de trabalho em equipe com branches e pull requests, forks e como escrever mensagens de commit que ajudam o time.
 
@@ -11,6 +11,8 @@ Você já sabe enviar e receber commits com `push` e `pull`. Agora vamos ver com
 **Git** é o programa que controla versões no seu computador. **GitHub** é um site que hospeda repositórios Git na nuvem e adiciona ferramentas de colaboração: pull requests, revisão de código, issues e Actions. GitLab e Bitbucket são alternativas.
 
 ## O fluxo de pull request
+
+![O fluxo de pull request](../img/st-pull-request.svg)
 
 Em equipe, ninguém envia direto para a `main`. Cada mudança nasce numa branch e passa por revisão antes de entrar:
 

@@ -4,7 +4,7 @@
 
 📥 **[Baixar o EPUB](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/santander-coders-backend.epub)**
 
-Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado pela Ada Tech: Git, lógica e algoritmos, redes e HTTP, Java, orientação a objetos e banco de dados com PostgreSQL. Cada aula segue o mesmo roteiro (Nesta aula → De onde paramos → conteúdo → Exercício → Revisão rápida → Próximo passo → Resumo), e as respostas dos exercícios ficam recolhidas em **Ver resposta**. Páginas marcadas com ✨ foram criadas para completar a proposta do curso.
+Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado pela Ada Tech: Git, lógica e algoritmos, redes e HTTP, Java, orientação a objetos e banco de dados com PostgreSQL. Cada aula segue o mesmo roteiro (Nesta aula → De onde paramos → conteúdo → Exercício → Revisão rápida → Próximo passo → Resumo), e as respostas dos exercícios ficam recolhidas em **Ver resposta**. As páginas com "(Adicionado pelo aluno para melhorar o estudo)" no título foram criadas para completar a proposta do curso.
 
 - [Sobre o curso](aulas/00-sobre-o-curso.md)
 
@@ -44,7 +44,7 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 - [Exercícios I](aulas/23-exercicios-i.md)
 - [Cálculo de sub-rede](aulas/24-calculo-de-sub-rede.md)
 - [Domínios, DNS, DHCP e latência](aulas/25-dominios-dns-dhcp-e-latencia.md)
-- [HTTP e HTTPS](aulas/26-http-e-https.md) ✨
+- [HTTP e HTTPS (Adicionado pelo aluno para melhorar o estudo)](aulas/26-http-e-https.md)
 - [Principais comandos de configuração](aulas/27-principais-comandos-de-configuracao.md)
 - [Segurança](aulas/28-seguranca.md)
 - [Simulando redes com packet tracer](aulas/29-simulando-redes-com-packet-tracer.md)
@@ -71,8 +71,8 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 - [Herança](aulas/44-heranca.md)
 - [Polimorfismo](aulas/45-polimorfismo.md)
 - [Herança, composição e acoplamento](aulas/46-heranca-composicao-e-acoplamento.md)
-- [Coleções: List, Set e Map](aulas/47-colecoes-list-set-e-map.md) ✨
-- [Exceções](aulas/48-excecoes.md) ✨
+- [Coleções: List, Set e Map (Adicionado pelo aluno para melhorar o estudo)](aulas/47-colecoes-list-set-e-map.md)
+- [Exceções (Adicionado pelo aluno para melhorar o estudo)](aulas/48-excecoes.md)
 - [Exercícios II](aulas/49-exercicios-ii.md)
 
 ## 🐘 Banco de dados com PostgreSQL
@@ -81,7 +81,7 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 - [Tipos de dados e custo de armazenamento](aulas/51-tipos-de-dados-e-custo-de-armazenamento.md)
 - [Modelagem de entidade](aulas/52-modelagem-de-entidade.md)
 - [Normalização dos dados](aulas/53-normalizacao-dos-dados.md)
-- [Consultas SQL: SELECT, filtros, agregações e JOIN](aulas/54-consultas-sql-select-filtros-agregacoes-e-join.md) ✨
+- [Consultas SQL: SELECT, filtros, agregações e JOIN (Adicionado pelo aluno para melhorar o estudo)](aulas/54-consultas-sql-select-filtros-agregacoes-e-join.md)
 - [Índices](aulas/55-indices.md)
 - [Projeto: banco de dados de uma escola](aulas/56-projeto-banco-de-dados-de-uma-escola.md)
 - [Exercícios I](aulas/57-exercicios-i.md)

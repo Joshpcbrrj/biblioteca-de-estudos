@@ -1,6 +1,4 @@
-# HTTP e HTTPS
-
-> ✨ **Página nova.** O curso é de back-end e o HTTP é o protocolo que toda API usa; ele aparecia só citado na camada de aplicação.
+# HTTP e HTTPS (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** como funciona uma requisição e uma resposta HTTP, os métodos (GET, POST, PUT, PATCH, DELETE), os códigos de status, os cabeçalhos mais comuns e o que o HTTPS acrescenta.
 

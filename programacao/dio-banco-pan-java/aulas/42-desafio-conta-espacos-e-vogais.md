@@ -20,6 +20,8 @@ A quantidade de espaços em branco e de vogais, no formato do exemplo:
 | Esse desafio foi facil | Espacos em branco: 3 Vogais: 10 |
 | Navegar nas aguas do teu mar | Espacos em branco: 5 Vogais: 11 |
 
+![Contando espaços e vogais: "Amo a DIO"](../img/dio-vogais.svg)
+
 ## Resolução
 
 1. Ler a linha inteira com `nextLine()`.

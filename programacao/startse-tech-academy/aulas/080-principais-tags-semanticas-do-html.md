@@ -8,6 +8,8 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 
 ## A estrutura de uma página semântica
 
+![A estrutura de uma página semântica](../img/st-semanticas.svg)
+
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">

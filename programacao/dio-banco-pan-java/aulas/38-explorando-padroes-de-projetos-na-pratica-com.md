@@ -275,10 +275,6 @@ jsonschema2pojo, que gera as classes Java a partir de um JSON de exemplo (útil 
 
 🔗 [https://www.jsonschema2pojo.org/](https://www.jsonschema2pojo.org/)
 
-### Projeto
-
-## Slides
-
 ## Repositórios
 
 > "Alguém está sentado à sombra hoje porque alguém plantou uma árvore há muito tempo." (Warren Buffett)

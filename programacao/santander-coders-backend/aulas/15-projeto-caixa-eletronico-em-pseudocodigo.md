@@ -22,6 +22,8 @@ Criar um caixa eletrônico que mostra um menu repetidamente até o usuário esco
 - Um **se/senão se** (ou escolha/caso) trata cada opção.
 - O saldo é um **acumulador**: soma nos depósitos, subtrai nos saques.
 
+![O menu volta ao início até a opção Sair](../img/alg-caixa-fluxo.svg)
+
 ## Pseudocódigo
 
 ```

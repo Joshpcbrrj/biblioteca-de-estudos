@@ -1,4 +1,4 @@
-# SOLID e código limpo
+# SOLID e código limpo (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** os cinco princípios SOLID com exemplos em Java e as práticas de código limpo do dia a dia.
 
@@ -9,6 +9,8 @@
 ## S: Single Responsibility (responsabilidade única)
 
 **Uma classe deve ter um único motivo para mudar.**
+
+![S: uma classe, um motivo para mudar](../img/dio-solid-srp.svg)
 
 ```java
 // ❌ faz tudo: regra, persistência, e-mail e PDF
@@ -30,6 +32,8 @@ class ExtratoPdfGenerator { ... }  // relatório
 
 **Aberto para extensão, fechado para modificação:** acrescentar um comportamento novo não deveria exigir editar código que já funciona.
 
+![O: estender sem modificar (Strategy)](../img/dio-solid-ocp.svg)
+
 ```java
 // ❌ todo tipo novo de tarifa obriga a mexer neste if/else
 BigDecimal tarifa(String tipo) {
@@ -43,6 +47,8 @@ interface CalculadoraTarifa { BigDecimal calcular(BigDecimal valor); }
 class TarifaPix implements CalculadoraTarifa { ... }
 class TarifaTed implements CalculadoraTarifa { ... }
 ```
+
+![L, I e D em uma imagem](../img/dio-solid-lid.svg)
 
 ## L: Liskov Substitution (substituição de Liskov)
 
@@ -116,8 +122,6 @@ if (!conta.isAtiva()) throw new ContaInativaException();
 - **DRY** (*Don't Repeat Yourself*) e **KISS** (*Keep It Simple*): evite duplicação, mas também abstrações antes da hora.
 
 > 💡 SOLID é um guia, e não uma lei. Aplicar todos os princípios em um script de 50 linhas gera complexidade sem ganho. O valor aparece em sistemas que crescem e são mantidos por equipes, que é o caso de um banco.
-
-> ✨ **Página nova:** SOLID é a ponte entre POO e Padrões de Projeto (Strategy, injeção de dependência) e um dos temas mais cobrados em entrevistas para desenvolvedor Java.
 
 ## 📌 Resumo
 

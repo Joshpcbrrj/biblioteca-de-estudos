@@ -1,6 +1,4 @@
-# Spring Data JPA: repositórios, consultas e transações
-
-> ✨ **Página nova.** O curso mostra como mapear entidades, mas não como consultar o banco além do básico. Esta aula cobre os repositórios do Spring Data, as consultas pelo nome do método e com JPQL, a paginação e as transações.
+# Spring Data JPA: repositórios, consultas e transações (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o que um `JpaRepository` já traz pronto, como criar consultas pelo nome do método e com `@Query`, como paginar resultados e como garantir que várias operações aconteçam juntas com `@Transactional`.
 

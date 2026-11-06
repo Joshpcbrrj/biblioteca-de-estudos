@@ -23,6 +23,8 @@ a ^ b  // OU EXCLUSIVO (XOR)
 
 ## Tabelas verdade
 
+![Cada operador como uma área pintada](../img/java-logicos.svg)
+
 **E (**`&&`**)**: verdadeiro só quando os dois são verdadeiros.
 
 | A | B | A && B |
@@ -117,6 +119,8 @@ if (temCupom ^ temFidelidade) {
 > ⚠️ **Correção:** o exemplo original de votação usava `maiorDe18 ^ idoso`. Uma pessoa de 70 anos tem as duas condições verdadeiras, e o XOR dá **false**: o programa a impediria de votar. O XOR só serve quando os dois ao mesmo tempo devem ser rejeitados. Para "maior de 18 ou idoso" o operador certo seria o OU.
 
 ## Curto-circuito
+
+![Com o primeiro lado falso, o segundo nem roda](../img/java-curto-circuito.svg)
 
 O `&&` para de avaliar assim que encontra um false, e o OU para no primeiro true: o resultado já está decidido. Isso evita erros:
 

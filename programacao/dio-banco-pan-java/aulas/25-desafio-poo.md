@@ -2,8 +2,6 @@
 
 > 🎯 **Nesta aula:** desafio de **Programação Orientada a Objetos**: modelar um domínio com classes, herança, encapsulamento e polimorfismo — e depois refatorar o projeto para usar o **Maven** como ferramenta de build.
 
-## 🔗 Repositório original
-
 ## 📦 Código do projeto refatorado com Maven
 
 🔗 [https://www.toptal.com/developers/gitignore/](https://www.toptal.com/developers/gitignore/)

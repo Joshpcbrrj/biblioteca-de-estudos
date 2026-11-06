@@ -2,8 +2,6 @@
 
 > 🧭 **Nesta aula:** como times de tecnologia se organizam: os valores do Manifesto Ágil, a diferença para a gestão tradicional e os principais métodos (XP, Scrum, Kanban, OKR) e ferramentas.
 
-### Introdução
-
 ## Manifesto ágil
 
 > 💡 **Em uma frase:** o Manifesto Ágil é a "constituição" do desenvolvimento ágil — 4 valores e 12 princípios que colocam pessoas, software funcionando e adaptação no centro do trabalho.
@@ -126,8 +124,6 @@ Uma forma de gerir o trabalho que é:
 - **Colaborativa e transparente**, com informação visível para todos;
 - **Voltada ao aprendizado**, usando cada ciclo para melhorar;
 - Focada em **entrega contínua de valor**.
-
-### Métodos e ferramentas Ágeis
 
 ## XP
 
@@ -319,7 +315,7 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 | Miro | Quadro branco colaborativo: retrospectivas, brainstorms, fluxos |
 | Trello | Quadro Kanban simples e visual |
 | Jira | Scrum e Kanban para times de software (backlog, sprints, relatórios) |
-| [monday.com](http://monday.com) | Gestão de projetos e fluxos de trabalho com automações |
+| monday.com | Gestão de projetos e fluxos de trabalho com automações |
 | Asana | Gestão de tarefas e projetos para times de negócio |
 | TeamRetro | Retrospectivas e health checks de times ágeis |
 | Pipefy | Automação de processos em formato de fluxo/Kanban |

@@ -320,8 +320,6 @@ public class GlobalExceptionHandler {
 
 > 💡 Esse tipo de erro costuma vir do **Springfox**, que deixou de ser mantido e quebra em versões novas do Spring Boot. Em projetos novos, troque pelo **springdoc-openapi** (veja a página *Swagger*).
 
-### 📦 Meu projeto de API com Spring, documentada no Swagger
-
 ## 📌 Resumo
 
 | Item | Em uma frase |

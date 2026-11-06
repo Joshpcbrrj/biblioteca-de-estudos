@@ -1,4 +1,4 @@
-# Módulos: import e export
+# Módulos: import e export (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** dividir o código em arquivos com `export` e `import`, exports nomeados e padrão, módulos no navegador e no Node.js, e import dinâmico.
 

@@ -1,4 +1,4 @@
-# Herança, extends e super
+# Herança, extends e super (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** herança com `extends`, sobrescrita de métodos, os dois usos de `super`, um exemplo com contas bancárias e quando preferir composição.
 

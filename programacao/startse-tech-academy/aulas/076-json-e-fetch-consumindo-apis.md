@@ -1,4 +1,4 @@
-# JSON e fetch: consumindo APIs
+# JSON e fetch: consumindo APIs (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o formato JSON e suas regras, `JSON.stringify` e `JSON.parse`, buscar e enviar dados com `fetch`, um exemplo completo com o DOM, os status HTTP e o erro de CORS.
 

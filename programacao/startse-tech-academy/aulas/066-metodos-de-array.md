@@ -1,4 +1,4 @@
-# Métodos de array
+# Métodos de array (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** os métodos que transformam, filtram, buscam e resumem arrays (`map`, `filter`, `reduce`, `find`, `some`, `every`, `forEach`, `sort`) e como encadeá-los.
 

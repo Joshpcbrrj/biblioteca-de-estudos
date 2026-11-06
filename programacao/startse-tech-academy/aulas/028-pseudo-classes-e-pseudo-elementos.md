@@ -1,4 +1,4 @@
-# Pseudo-classes e pseudo-elementos
+# Pseudo-classes e pseudo-elementos (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** pseudo-classes de estado, de posição e lógicas, e os pseudo-elementos que estilizam partes de um elemento ou criam enfeites.
 
@@ -7,6 +7,8 @@
 A aula de seletores apresentou `:hover` e `::after` de passagem. Eles são tão usados que merecem um olhar detalhado.
 
 ## A diferença em uma linha
+
+![Pseudo-classe × pseudo-elemento](../img/st-pseudo.svg)
 
 - **Pseudo-classe** (`:`) seleciona um elemento **em um estado ou posição**: com o mouse em cima, focado, o primeiro da lista...
 - **Pseudo-elemento** (`::`) estiliza **uma parte** do elemento ou cria um conteúdo extra: a primeira letra, um enfeite antes ou depois.

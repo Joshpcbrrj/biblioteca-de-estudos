@@ -1,6 +1,4 @@
-# Exceções
-
-> ✨ **Página nova.** O curso lançava e citava exceções (como `ArrayIndexOutOfBoundsException`) sem ensinar a tratá-las, algo indispensável em qualquer back-end.
+# Exceções (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o que é uma exceção, try, catch e finally, exceções checadas e não checadas, como lançar com throw e declarar com throws, exceções próprias e try-with-resources.
 

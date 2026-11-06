@@ -1059,6 +1059,8 @@ Na aula de estrutura do HTML, você viu que o navegador transforma o HTML numa �
 
 **DOM (Document Object Model) é o HTML transformado em uma árvore de objetos** que o JavaScript pode ler e alterar. A raiz é o objeto `document`. Quando o JavaScript altera o DOM, a tela se atualiza na hora.
 
+![O DOM: o HTML vira uma árvore](../img/cap-dom-arvore.svg)
+
 ### 1. Selecionar elementos
 
 | Método | Retorna |

@@ -37,6 +37,8 @@ O banco garante a consistência com **restrições**:
 
 ## Exemplo: montando as tabelas de uma loja
 
+![Tabelas de uma loja e suas ligações](../img/st-relacional.svg)
+
 A ordem importa: **crie primeiro as tabelas referenciadas** (que não dependem de ninguém) e depois as que têm chaves estrangeiras.
 
 ```sql

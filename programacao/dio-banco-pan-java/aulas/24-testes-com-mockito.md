@@ -1,4 +1,4 @@
-# Testes com Mockito
+# Testes com Mockito (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** por que usar objetos falsos (mocks) nos testes, como escrever um teste com Mockito, os recursos principais e como usar mocks em testes do Spring.
 
@@ -7,6 +7,8 @@
 Um **teste unitário** testa uma classe **isolada**. Mas um `TransferenciaService` depende de repositório, banco de dados, serviço de notificação... Subir tudo isso deixaria o teste lento e frágil.
 
 **Um mock é um objeto falso que imita uma dependência:** você define o que ele responde e, depois, confere como ele foi usado. **Mockito** é a biblioteca padrão para isso em Java e já vem no `spring-boot-starter-test`.
+
+![Teste com Mockito: Arrange, Act, Assert](../img/dio-mockito.svg)
 
 ## A classe que vamos testar
 
@@ -131,8 +133,6 @@ class TransferenciaControllerTest {
 - Mocke **dependências externas** (repositórios, clientes HTTP, filas), e não objetos simples de dados (entidades, DTOs, `BigDecimal`).
 - Um teste deve verificar **um comportamento**, com um nome que o descreva (`deveFalharSemSaldo...`).
 - Mocks demais costumam indicar uma classe com responsabilidades demais (veja SOLID).
-
-> ✨ **Página nova:** a página de JUnit testava classes sem dependências. Em projetos Spring, quase todo teste de service precisa de Mockito, que só era citado de passagem.
 
 ## 📌 Resumo
 

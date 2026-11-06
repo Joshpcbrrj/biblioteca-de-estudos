@@ -1,4 +1,4 @@
-# Terminal e linha de comando
+# Terminal e linha de comando (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** como navegar entre pastas, criar e apagar arquivos e encadear comandos no terminal, o básico para usar Git, npm e Node nos próximos módulos.
 

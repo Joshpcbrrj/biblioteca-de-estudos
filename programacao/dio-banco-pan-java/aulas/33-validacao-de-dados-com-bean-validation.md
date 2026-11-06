@@ -1,10 +1,12 @@
-# Validação de dados com Bean Validation
+# Validação de dados com Bean Validation (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** como validar os dados que chegam na API com Bean Validation: anotações no DTO, `@Valid` no controller e respostas de erro legíveis.
 
 ## O problema
 
 Uma API não pode confiar no que recebe: valor negativo em transferência, CPF vazio, e-mail inválido. Validar tudo com `if` em cada controller gera código repetido. **A Bean Validation (Jakarta Validation) permite declarar as regras com anotações**, e o Spring as aplica automaticamente.
+
+![Bean Validation: barrar dados inválidos na entrada](../img/dio-bean-validation.svg)
 
 ## Dependência
 
@@ -103,8 +105,6 @@ Para validar `@PathVariable` e `@RequestParam` (por exemplo, `@Positive Long id`
 ## Validação de formato × regra de negócio
 
 Bean Validation cuida do **formato** dos dados. Regras que dependem do banco ou do estado do sistema, como "CPF já cadastrado" ou "saldo insuficiente", ficam no **service**, com exceções próprias tratadas no `@RestControllerAdvice` (normalmente 409 Conflict ou 422 Unprocessable Entity).
-
-> ✨ **Página nova:** o curso criava APIs REST e tratava exceções, mas não validava a entrada. Isso é obrigatório em qualquer API que recebe dados de clientes.
 
 ## 📌 Resumo
 

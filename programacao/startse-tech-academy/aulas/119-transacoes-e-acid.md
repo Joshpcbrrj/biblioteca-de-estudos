@@ -1,4 +1,4 @@
-# Transações e ACID
+# Transações e ACID (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o que é uma transação, os comandos `START TRANSACTION`, `COMMIT`, `ROLLBACK` e `SAVEPOINT`, as garantias ACID, os níveis de isolamento e como usar transações numa aplicação Node.js.
 

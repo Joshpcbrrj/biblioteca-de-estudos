@@ -78,6 +78,8 @@ public void setNome(String nome) {
 
 ## Instância × static
 
+![Cada objeto com seu estado; o static compartilhado](../img/poo-instancia-static.svg)
+
 |  | De instância | static |
 | --- | --- | --- |
 | Pertence a | cada objeto | à classe |

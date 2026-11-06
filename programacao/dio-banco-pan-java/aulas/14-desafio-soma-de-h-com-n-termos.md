@@ -26,6 +26,8 @@ Na saída será impresso o valor que representa a soma dos termos.
 
 > 🛠️ **Ajustes:** o bloco estava marcado como **JavaScript** (o código é Java). O comentário falava em "duas casas decimais", mas o código (corretamente, segundo os exemplos) arredonda para inteiro. E `n` passou de `double` para `int`, já que é uma quantidade de termos. Note o `1.0/i`: com `1/i` (dois inteiros) a divisão daria 0 a partir de i = 2.
 
+![H com N = 4 termos](../img/dio-harmonica.svg)
+
 ### Código
 
 <details>

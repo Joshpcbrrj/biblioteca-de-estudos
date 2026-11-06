@@ -419,8 +419,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 > 🛠️ **Ajustes:** corrigido "ComandLineRunner" para `CommandLineRunner`; cada parte ganhou uma explicação curta e um exemplo de código; as três imagens de ORM/JPA foram substituídas por dois diagramas (mapeamento objeto-tabela e camadas de acesso a dados); o título da página tinha uma marcação HTML perdida.
 
-### 📎 Slides do curso
-
 ## 📌 Resumo
 
 | Item | Em uma frase |

@@ -6,6 +6,8 @@
 
 Você conhece o Node e o npm. Agora vamos juntar os dois num projeto mínimo, passo a passo.
 
+![Projeto Node em 4 passos](../img/st-node.svg)
+
 ## 1. Iniciar o projeto
 
 Crie uma pasta, abra o terminal nela e rode:

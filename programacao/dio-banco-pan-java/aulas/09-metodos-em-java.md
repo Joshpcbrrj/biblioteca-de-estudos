@@ -158,6 +158,8 @@ A sobrecarga de métodos é útil para criar interfaces mais intuitivas e fácei
 
 > ⚠️ Mudar **só o tipo de retorno** não cria uma sobrecarga: `int soma(int a, int b)` e `double soma(int a, int b)` na mesma classe dão **erro de compilação**, porque a assinatura (nome + parâmetros) é a mesma.
 
+![Sobrecarga: o compilador escolhe pela assinatura](../img/dio-sobrecarga.svg)
+
 #### Exemplo de código de Sobrecarga
 
 ```java
@@ -223,6 +225,8 @@ O retorno de um método em programação é o valor ou objeto que é devolvido a
   - Completa todas as instruções internas
   - Chega a uma declaração explicita de retorno
   - Lança uma exceção
+
+![Chamada de método e pilha de execução](../img/dio-pilha-chamadas.svg)
 
 #### Exemplo em código:
 
