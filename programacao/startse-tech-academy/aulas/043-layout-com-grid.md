@@ -53,6 +53,8 @@ As linhas da grade são numeradas a partir de 1. Uma grade de 4 colunas tem **5 
 
 ![grid-column e grid-row usam os números das linhas, não das células.](../img/grid-linhas.svg)
 
+> 💡 **Analogia:** o Grid é como um tabuleiro de batalha naval. As linhas numeradas são as coordenadas da borda, e cada item é um navio: você diz "vai da coluna 1 até a 3 e da linha 2 até a 4", e ele ocupa todas as casas nesse intervalo. Um navio de 2 casas vai da linha 1 à linha 3, porque contamos as linhas, não as casas.
+
 ```css
 /* da linha 1 até a 3: ocupa 2 colunas */
 .item-a { grid-column: 1 / 3; }

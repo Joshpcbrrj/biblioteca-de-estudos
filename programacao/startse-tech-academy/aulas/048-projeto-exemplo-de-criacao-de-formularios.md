@@ -49,6 +49,8 @@ input:valid { border-color: green; }
 
 ![O resultado do projeto e a tag responsável por cada parte.](../img/form-contato.svg)
 
+> 💡 **Analogia:** o `fieldset` é como uma moldura num formulário de papel com o título "Dados pessoais" no canto: ele junta os campos que andam juntos. A validação do navegador é o atendente que confere a ficha no balcão antes de aceitá-la; o servidor é o setor que confere tudo de novo, porque não dá para confiar só no balcão.
+
 **Código revisado**
 
 ```html

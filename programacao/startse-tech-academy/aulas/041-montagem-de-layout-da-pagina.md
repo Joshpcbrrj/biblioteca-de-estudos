@@ -25,6 +25,8 @@ Você já tem as peças: media queries, `display`, `position` e `box-sizing`. Ag
 
 ![Cabeçalho com menu, conteúdo principal e barra lateral lado a lado, rodapé.](../img/layout-pagina.svg)
 
+> 💡 **Analogia:** montar um layout é como diagramar a capa de um jornal. Primeiro se decide onde ficam o nome do jornal (cabeçalho), a manchete (conteúdo principal), a coluna de notas (barra lateral) e o expediente (rodapé); só depois se escolhem fontes e cores. Quem pula o rascunho acaba refazendo a página inteira.
+
 **Código revisado**
 
 ```html

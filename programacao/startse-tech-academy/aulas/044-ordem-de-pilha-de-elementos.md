@@ -12,6 +12,8 @@ A página tem três dimensões: largura (x), altura (y) e **profundidade (z)**. 
 
 ![Quanto maior o z-index, mais perto do usuário.](../img/z-index.svg)
 
+> 💡 **Analogia:** pense em folhas de papel sobre uma mesa. Sem combinar nada, a última folha colocada fica por cima (a ordem do HTML). O `z-index` é um número escrito em cada folha: a de número maior vai para o topo da pilha. E um contexto de empilhamento é uma pasta: as folhas dentro dela só trocam de lugar entre si; a pasta inteira é que fica acima ou abaixo das outras.
+
 ### Regras importantes
 
 1. **Só funciona em elementos posicionados** (`position` diferente de `static`) **ou em itens de Flexbox/Grid**. Num `<div>` comum, `z-index` não faz nada.

@@ -27,6 +27,8 @@ As listas `<ul>` (não ordenada) e `<ol>` (ordenada) vêm com marcadores, recuo 
 
 ![outside deixa o marcador fora da caixa do item; inside coloca dentro do texto.](../img/list-position.svg)
 
+> 💡 **Analogia:** pense numa lista de compras escrita num caderno com margem vermelha. Com `outside`, os marcadores ficam na margem, e o texto de cada item começa sempre na mesma linha vertical. Com `inside`, o marcador entra no espaço do texto, como se fosse a primeira letra da frase.
+
 Com `outside`, as linhas quebradas ficam alinhadas com o texto, o que é melhor para leitura. Use `inside` quando o item tiver fundo ou borda e você quiser o marcador dentro deles.
 
 ## `list-style-image` e o atalho

@@ -12,6 +12,8 @@ O CSS tem um grupo de propriedades `font-*` para controlar a aparência do texto
 
 ![As três famílias genéricas mais usadas e a escala de pesos.](../img/fontes.svg)
 
+> 💡 **Analogia:** a fonte é a "voz" do texto. Serifada soa como um livro impresso ou um jornal; sem serifa soa como uma placa de aeroporto, limpa e direta; monoespaçada soa como uma máquina de escrever. A lista do `font-family` é como pedir um prato com substitutos: "se não tiver Inter, serve Arial; se não tiver nenhuma, qualquer sem serifa".
+
 ## `font-family`
 
 Recebe uma **lista de fontes em ordem de preferência**. O navegador usa a primeira que estiver disponível; por isso, a lista termina sempre com uma **família genérica**.
