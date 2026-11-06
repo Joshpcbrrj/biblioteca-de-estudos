@@ -12,6 +12,8 @@ Com o DER pronto, falta conferir se as tabelas não guardam a mesma informação
 
 ![A cidade da Ana passa a ser guardada uma vez só](../img/normalizacao.svg)
 
+> 💡 **Analogia:** é como a agenda de contatos do celular. Em vez de anotar o telefone da Ana em cada mensagem, você salva o contato uma vez e as mensagens só apontam para ele. Se o número mudar, você corrige num lugar só.
+
 Sem normalização aparecem as **anomalias**:
 
 - **de atualização**: a Ana mudou de cidade e é preciso alterar várias linhas; se uma escapar, o banco fica contraditório;

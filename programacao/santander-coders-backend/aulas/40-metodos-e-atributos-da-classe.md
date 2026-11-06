@@ -89,6 +89,8 @@ public void setNome(String nome) {
 
 Um atributo `static` é compartilhado por todos os objetos: só existe uma cópia, na classe. Mais detalhes na aula de modelagem.
 
+> 💡 **Analogia:** numa sala de aula, o caderno de cada aluno é de instância (cada um escreve o seu); o quadro na parede é static: existe um só, e todos leem o mesmo.
+
 ## 📝 Exercício
 
 Na classe `Pessoa`, crie o método `calcularImc(double peso)`, que devolve o IMC usando a altura do objeto (peso ÷ altura²).

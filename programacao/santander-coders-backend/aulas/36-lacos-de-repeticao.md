@@ -48,6 +48,8 @@ do {
 } while (nota < 0 || nota > 10);
 ```
 
+> 💡 **Analogia:** o while é o porteiro que confere o convite antes de você entrar; o do-while é a degustação no supermercado: você prova primeiro e só depois decide se quer mais.
+
 ## for
 
 Junta inicialização, condição e atualização numa linha. Ideal quando se sabe quantas voltas dar.
@@ -250,7 +252,7 @@ O do-while é a escolha natural: é preciso ler pelo menos um número antes de t
 
 O do-while.
 
-**Em que ordem rodam as partes de for (A; B; C) { D }?**
+**Em que ordem rodam as partes de `for (A; B; C) { D }`?**
 
 A uma vez; depois B, D, C, B, D, C... até B ser falso.
 

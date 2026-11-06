@@ -60,6 +60,8 @@ CREATE TABLE livros (
 
 **CRUD** são as quatro operações básicas: **C**reate (INSERT), **R**ead (SELECT), **U**pdate (UPDATE) e **D**elete (DELETE).
 
+> 💡 **Analogia:** o CRUD é o ciclo de vida de uma ficha num fichário: escrever uma ficha nova (Create), ler (Read), corrigir com borracha (Update) e jogar fora (Delete).
+
 ### Inserir
 
 ```sql
@@ -131,8 +133,7 @@ WHERE id_disciplina = 8;
 
 Acrescente a tabela `alunos (id_aluno, nome, email)` e a matrícula de alunos em disciplinas, sabendo que cada aluno cursa várias disciplinas.
 
-<details>
-<summary>Ver resposta</summary>
+**Ver resposta**
 
 ```sql
 CREATE TABLE alunos (
@@ -151,7 +152,15 @@ CREATE TABLE matriculas (
 );
 ```
 
-</details>
+## 🧠 Revisão rápida
+
+**Por que a tabela disciplinas precisa ser criada antes de professores?**
+
+Porque professores tem uma chave estrangeira que aponta para disciplinas, e ela só pode apontar para uma tabela que já existe.
+
+**O que acontece com um DELETE sem WHERE?**
+
+Apaga todas as linhas da tabela.
 
 > ➡️ **Próximo passo:** as listas de exercícios de banco de dados.
 
@@ -161,5 +170,5 @@ CREATE TABLE matriculas (
 | --- | --- |
 | Ordem de criação | Primeiro a tabela referenciada, depois as que têm FK. |
 | CRUD | INSERT, SELECT, UPDATE e DELETE. |
-| COPY / \copy | Importam CSV do servidor ou do seu computador. |
+| COPY e `\copy` | Importam CSV do servidor ou do seu computador. |
 | WHERE | Obrigatório na prática em UPDATE e DELETE. |

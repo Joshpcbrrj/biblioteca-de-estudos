@@ -12,6 +12,8 @@ Uma classe **filha** (subclasse) herda os atributos e métodos de uma classe **p
 
 ![Cachorro e Gato herdam de Animal](../img/poo-heranca.svg)
 
+> 💡 **Analogia:** é como a receita de bolo da família. A receita base (superclasse) passa de geração em geração; cada filho usa a mesma base e acrescenta o seu toque, como cobertura de chocolate ou recheio de frutas (os métodos novos e sobrescritos).
+
 - Em Java usa-se `extends`.
 - Cada classe tem **uma única** superclasse (não há herança múltipla de classes).
 - Toda classe herda, direta ou indiretamente, de `Object`; é de lá que vêm `toString()` e `equals()`.
@@ -44,7 +46,8 @@ class Cachorro extends Animal {
   }
 
   public void latir() {
-    System.out.println(nome + " (" + raca + ") está latindo.");
+    System.out.println(nome + " (" + raca
+        + ") está latindo.");
   }
 }
 ```
@@ -144,10 +147,12 @@ class Gerente extends Funcionario {
 ```
 
 ```java
+Funcionario f = new Funcionario("Ana", 5000);
+Funcionario g = new Gerente("Beto", 5000);
 // 500.0
-System.out.println(new Funcionario("Ana", 5000).calcularBonus());
+System.out.println(f.calcularBonus());
 // 1000.0
-System.out.println(new Gerente("Beto", 5000).calcularBonus());
+System.out.println(g.calcularBonus());
 ```
 
 </details>

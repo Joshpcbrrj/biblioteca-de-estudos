@@ -15,6 +15,8 @@ Os objetos Java vivem na memória e somem quando o programa termina. Para guarda
 
 ![Tabelas ligadas por chaves](../img/sql-tabela.svg)
 
+> 💡 **Analogia:** o banco de dados é um arquivo de escritório cheio de pastas (as tabelas); o SGBD é o arquivista que guarda, protege e encontra os papéis; o SQL é a língua em que você faz os pedidos ao arquivista.
+
 ## Instalando o PostgreSQL
 
 O **PostgreSQL** (ou Postgres) é um SGBD relacional gratuito, de código aberto e muito usado em empresas.
@@ -59,7 +61,7 @@ O banco é o conjunto de dados; o SGBD é o programa que os gerencia (como o Pos
 
 **Em que porta o PostgreSQL atende por padrão?**
 
-5432. 
+Na porta 5432.
 
 > ➡️ **Próximo passo:** os tipos de dados do PostgreSQL e quanto espaço cada um ocupa.
 

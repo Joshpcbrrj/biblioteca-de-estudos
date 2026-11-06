@@ -58,6 +58,8 @@ WHERE email = 'ana@exemplo.com';
 
 Índices aceleram a **leitura**, mas cobram nas **escritas**: a cada INSERT, UPDATE ou DELETE, todos os índices da tabela precisam ser atualizados. Eles também ocupam espaço em disco.
 
+> 💡 **Analogia:** é como manter o índice remissivo de um livro que ainda está sendo escrito. Cada página nova obriga a atualizar o índice no fim; quanto mais índices (por autor, por tema, por data), mais trabalho a cada página escrita.
+
 > ⚠️ **Correção:** o original dizia que, com índice, "a velocidade de inserção do próximo dado aumenta". O que aumenta é o **tempo** de cada inserção: a inserção fica mais lenta. E o banco não "refaz o cálculo do índice" inteiro; ele só encaixa o novo valor na árvore.
 
 Quando vale criar:

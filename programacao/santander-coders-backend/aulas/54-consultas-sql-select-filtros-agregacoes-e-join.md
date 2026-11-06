@@ -45,6 +45,8 @@ LIMIT 2;
 
 Funções de agregação resumem várias linhas num valor: `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`. Com `GROUP BY`, o resumo é feito por grupo.
 
+> 💡 **Analogia:** o GROUP BY é separar as compras do mercado em sacolas por setor (cozinha, papelaria...) e depois contar ou somar o conteúdo de cada sacola. O HAVING é descartar as sacolas que não interessam depois de prontas.
+
 ```sql
 SELECT categoria,
        COUNT(*) AS qtd,

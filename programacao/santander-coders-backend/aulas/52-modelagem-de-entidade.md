@@ -16,6 +16,8 @@ O **diagrama de entidade e relacionamento** (DER, ou ERD em inglês) representa 
 
 ![DER de uma loja](../img/der-loja.svg)
 
+> 💡 **Analogia:** o DER é a planta baixa de uma casa. Ninguém começa a levantar paredes sem saber onde ficam os cômodos (as tabelas) e as portas entre eles (os relacionamentos).
+
 ## Componentes
 
 - **Entidades**: objetos ou conceitos do mundo real que o sistema precisa guardar. Numa biblioteca: Livro, Autor, Usuário. Viram **tabelas**.

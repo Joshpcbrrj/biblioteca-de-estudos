@@ -8,6 +8,8 @@ Arrays têm tamanho fixo. Na prática, quase nunca sabemos quantos clientes, ped
 
 ![As três famílias de coleções](../img/poo-colecoes.svg)
 
+> 💡 **Analogia:** a List é uma fila de banco (cada um tem sua posição, e a mesma pessoa pode voltar à fila); o Set é a lista de convidados de uma festa (cada nome aparece uma vez só); o Map é a agenda de contatos (você procura pelo nome e encontra o telefone).
+
 ## List: sequência com ordem
 
 Guarda elementos **na ordem** em que entram, aceita **repetidos** e permite acesso por índice.
@@ -68,7 +70,8 @@ unicos.add("Ana");
 System.out.println(unicos.size());
 
 // TreeSet mantém em ordem: [Ana, Beto, Caio]
-Set<String> ordenado = new TreeSet<>(List.of("Caio", "Ana", "Beto"));
+Set<String> ordenado =
+    new TreeSet<>(List.of("Caio", "Ana", "Beto"));
 ```
 
 ## Map: chave → valor
@@ -143,7 +146,7 @@ O Set.
 
 O valor antigo é substituído pelo novo.
 
-**Por que `List<int>` não compila? (lista do primitivo int)**
+**Por que `List<int>` não compila?**
 
 Porque coleções guardam objetos; usa-se a classe wrapper Integer.
 

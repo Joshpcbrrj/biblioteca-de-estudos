@@ -71,6 +71,8 @@ São métodos públicos que dão acesso **controlado** a atributos privados. Seg
 
 **Encapsular** é esconder os detalhes internos e expor só operações seguras. Quem usa a classe não mexe nos dados diretamente: pede para a classe fazer, e ela garante as regras.
 
+> 💡 **Analogia:** o caixa eletrônico é encapsulado. Você não abre o cofre e pega o dinheiro: aperta "sacar", e a máquina confere a senha e o saldo antes de entregar as notas.
+
 ```java
 public class ContaBancaria {
   private final String titular;

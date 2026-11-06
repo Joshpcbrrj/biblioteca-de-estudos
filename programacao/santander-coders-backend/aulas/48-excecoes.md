@@ -12,6 +12,8 @@ Uma **exceção** é um objeto que representa um erro durante a execução: divi
 
 ![Hierarquia das exceções](../img/poo-excecoes.svg)
 
+> 💡 **Analogia:** o try/catch funciona como a rede de proteção de um trapezista. O número (o código do try) segue normalmente; se ele cair (a exceção), a rede (o catch) segura e o espetáculo continua, em vez de terminar ali.
+
 ## try, catch e finally
 
 ```java

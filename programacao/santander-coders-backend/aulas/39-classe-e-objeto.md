@@ -54,6 +54,8 @@ Um **objeto** é uma **instância** da classe: um carro concreto, com os própri
 
 ![Uma classe, vários objetos](../img/poo-classe-objeto.svg)
 
+> 💡 **Analogia:** a classe é a fôrma de biscoito; os objetos são os biscoitos. Com a mesma fôrma você faz quantos quiser, e cada um pode ter cobertura diferente (os valores dos atributos).
+
 ```java
 public class Main {
   public static void main(String[] args) {
@@ -107,8 +109,10 @@ public class Livro {
 ```java
 public class Main {
   public static void main(String[] args) {
-    Livro a = new Livro("Dom Casmurro", "Machado de Assis", 256);
-    Livro b = new Livro("Vidas Secas", "Graciliano Ramos", 176);
+    Livro a = new Livro("Dom Casmurro",
+        "Machado de Assis", 256);
+    Livro b = new Livro("Vidas Secas",
+        "Graciliano Ramos", 176);
     a.descrever();
     b.descrever();
   }
@@ -123,7 +127,7 @@ public class Main {
 
 A classe é o molde, que define atributos e métodos; o objeto é uma instância concreta, criada com new, com seus próprios valores.
 
-**O que o this.marca = marca faz no construtor?**
+**O que o `this.marca = marca` faz no construtor?**
 
 Copia o parâmetro marca para o atributo marca do objeto. O this diferencia o atributo do parâmetro de mesmo nome.
 

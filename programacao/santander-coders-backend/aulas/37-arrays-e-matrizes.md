@@ -10,6 +10,8 @@ No módulo de algoritmos vimos array e lista em pseudocódigo. Agora em Java: o 
 
 Guarda vários valores do **mesmo tipo** numa variável. O tamanho é **fixo**, definido na criação. O primeiro índice é 0 e o último é `length - 1`.
 
+> 💡 **Analogia:** um array é uma fileira de armários numerados de um vestiário. O número de armários é decidido na construção, cada um guarda uma coisa do mesmo tipo e você abre o armário pelo número (o índice), começando do 0.
+
 ```java
 // criar com tamanho e preencher depois
 String[] frutas = new String[5];
@@ -186,7 +188,7 @@ public class Main {
 
 `array.length` (atributo, sem parênteses) e `texto.length()` (método).
 
-**Numa matriz m, o que é m[0].length?**
+**Numa matriz m, o que é `m[0].length`?**
 
 A quantidade de colunas da linha 0.
 

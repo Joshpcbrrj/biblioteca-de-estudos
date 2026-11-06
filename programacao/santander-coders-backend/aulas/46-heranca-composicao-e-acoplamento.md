@@ -60,6 +60,8 @@ Um cachorro **é** um animal: a herança descreve o mundo real.
 
 ![Depender da interface, não da classe concreta](../img/poo-acoplamento.svg)
 
+> 💡 **Analogia:** um aparelho soldado direto na fiação da casa é acoplamento forte: para trocá-lo, chama o eletricista. Um aparelho com plugue na tomada é acoplamento fraco: a tomada é o contrato (a interface), e qualquer aparelho com o plugue certo funciona.
+
 ### Exemplo: acoplamento forte
 
 ```java

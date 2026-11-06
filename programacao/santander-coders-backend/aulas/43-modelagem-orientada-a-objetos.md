@@ -12,6 +12,8 @@ Já sabemos criar classes encapsuladas. Agora, três ferramentas para modelá-la
 
 Os objetos criados com `new` ficam numa área chamada **heap**. Quando nenhuma variável aponta mais para um objeto, ele vira "lixo", e o **garbage collector** (coletor de lixo) da JVM libera essa memória automaticamente. Em C, por exemplo, o programador precisa liberar a memória à mão.
 
+> 💡 **Analogia:** as variáveis são cordões presos a balões (os objetos). Enquanto alguém segura um cordão, o balão fica. Quando ninguém segura mais, o balão sai voando e o garbage collector o recolhe.
+
 ```java
 Carro c1 = new Carro("Fiat", "Uno", 2010);
 // o objeto perde a única referência
@@ -43,7 +45,8 @@ public class Pessoa {
 
   @Override
   public String toString() {
-    return "Pessoa{nome='" + nome + "', idade=" + idade + "}";
+    return "Pessoa{nome='" + nome
+        + "', idade=" + idade + "}";
   }
 }
 ```

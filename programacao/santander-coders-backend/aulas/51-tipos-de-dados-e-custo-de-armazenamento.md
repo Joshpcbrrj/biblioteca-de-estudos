@@ -29,6 +29,8 @@ O PostgreSQL está instalado. Antes de criar tabelas, é preciso escolher o **ti
 
 > ⚠️ Para valores em dinheiro, use `numeric(10, 2)`: 10 dígitos no total, 2 depois da vírgula. `real` e `double precision` guardam aproximações e geram erros de centavos, como o `0.1 + 0.2` do Java.
 
+> 💡 **Analogia:** escolher o tipo é como escolher a embalagem certa numa mudança: uma caixa enorme para um copo desperdiça espaço, e uma caixa pequena demais não fecha. `smallint`, `integer` e `bigint` são caixas de 2, 4 e 8 bytes.
+
 ### Texto
 
 | Tipo | Guarda |
@@ -114,7 +116,8 @@ CREATE TABLE eventos (
 );
 
 INSERT INTO eventos
-  (nome_evento, data_evento, horario_evento, data_hora_evento)
+  (nome_evento, data_evento,
+   horario_evento, data_hora_evento)
 VALUES ('Conferência', '2026-05-30', '10:00:00',
         '2026-05-30 10:00:00-03');
 ```

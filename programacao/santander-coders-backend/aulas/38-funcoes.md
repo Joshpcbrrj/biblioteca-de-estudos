@@ -29,6 +29,8 @@ public class Main {
 - O valor devolvido precisa ser do tipo declarado (`int` aqui).
 - Por enquanto todos os métodos são `static`: pertencem à classe e são chamados sem criar objeto. No módulo de POO aparecem os métodos de instância.
 
+> 💡 **Analogia:** um método é como uma máquina de suco: os parâmetros são as frutas que você coloca, o corpo é o mecanismo que você não precisa ver, e o `return` é o copo que sai pronto.
+
 ## void: métodos sem retorno
 
 Quando o método só executa uma ação (o "procedimento" do pseudocódigo), o tipo de retorno é `void`:

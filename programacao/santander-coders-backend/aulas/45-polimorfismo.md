@@ -12,6 +12,8 @@ Uma variável do tipo da **superclasse** pode guardar um objeto de qualquer **su
 
 ![O tipo do objeto decide qual versão roda](../img/poo-polimorfismo.svg)
 
+> 💡 **Analogia:** o botão "play" de um controle universal. Você aperta o mesmo botão (a mesma chamada), mas a TV, o som e o videogame reagem cada um do seu jeito (a versão de cada objeto).
+
 ```java
 class Animal {
   public void emitirSom() {
