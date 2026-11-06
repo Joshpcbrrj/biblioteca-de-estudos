@@ -12,6 +12,8 @@ As restrições bloqueiam dados inválidos. Às vezes, porém, queremos que o ba
 
 ![Com BEFORE dá para mexer nos dados antes de gravar; com AFTER, reagir ao que foi gravado.](../img/trigger-fluxo.svg)
 
+> 💡 **Analogia:** pense numa carta indo para o correio. A trigger **BEFORE** é o revisor que lê a carta antes de ela ser enviada e pode corrigir um erro no endereço (alterar `NEW`). A trigger **AFTER** é o funcionário que, depois do envio, anota no livro de registros o que saiu e avisa o estoque de envelopes. Ninguém precisa pedir: os dois agem sozinhos toda vez que uma carta passa.
+
 ## BEFORE × AFTER
 
 |  | BEFORE | AFTER |

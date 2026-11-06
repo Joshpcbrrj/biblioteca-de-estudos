@@ -10,6 +10,8 @@ Nos `CREATE TABLE` apareceram `VARCHAR`, `INT`, `DECIMAL` e `DATE`. Escolher bem
 
 ![Escolhendo o tipo da coluna](../img/st-tipos.svg)
 
+> 💡 **Analogia:** escolher o tipo é escolher o pote certo na cozinha. Açúcar vai no açucareiro, não num balde (`VARCHAR(100)` em vez de `LONGTEXT`). E, para pesar ouro, usa-se balança de joalheria, não a de banheiro: dinheiro vai em `DECIMAL`, que é exato, e não em `FLOAT`, que arredonda. O pote certo ocupa menos espaço e não deixa entrar o que não deve (texto onde era para ser data, por exemplo).
+
 ## Texto
 
 | Tipo | Descrição |

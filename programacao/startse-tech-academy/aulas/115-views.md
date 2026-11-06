@@ -12,6 +12,8 @@ Algumas consultas, como "quanto cada cliente já gastou", se repetem em vários 
 
 ![A view junta clientes e pedidos e expõe só as colunas necessárias.](../img/view-sql.svg)
 
+> 💡 **Analogia:** uma view é uma **janela** para dentro do depósito. Quem olha por ela vê só a parte que a janela enquadra (as colunas e linhas escolhidas), sem entrar no depósito nem mexer nas prateleiras escondidas. E a janela mostra a cena **ao vivo**: se algo muda lá dentro, você vê na hora. A view materializada é diferente: é uma **foto** tirada pela janela, rápida de olhar, mas que precisa ser tirada de novo para ficar atualizada.
+
 ## Criando e usando
 
 ```sql

@@ -10,6 +10,8 @@ Com agregação você calcula a média de preços. Mas e para listar "os produto
 
 ![Subconsulta: a de dentro roda primeiro](../img/st-subconsulta.svg)
 
+> 💡 **Analogia:** para dizer quem é "alto" numa turma, você primeiro precisa saber a altura média. Então faz duas perguntas, uma dentro da outra: "qual é a média?" (a subconsulta) e, com essa resposta na mão, "quem está acima dela?" (a consulta de fora). Como as bonecas russas, a de dentro se resolve primeiro e entrega o resultado para a de fora.
+
 **Uma subconsulta é um** `SELECT` **dentro de outro comando SQL.** O resultado da consulta de dentro é usado pela de fora, como um valor, uma lista ou uma tabela temporária.
 
 ## 1. Subconsulta que devolve um valor (escalar)

@@ -8,9 +8,11 @@ Suas consultas funcionam, mas com poucas linhas tudo é rápido. Com milhões de
 
 ## O que é um índice
 
-**Um índice é uma estrutura auxiliar, como o sumário de um livro, que permite ao banco achar linhas sem ler a tabela inteira.** Na maioria dos bancos ele é uma **árvore B (B-tree)** ordenada pelos valores da coluna.
+**Um índice é uma estrutura auxiliar que permite ao banco achar linhas sem ler a tabela inteira.** Na maioria dos bancos ele é uma **árvore B (B-tree)** ordenada pelos valores da coluna.
 
 ![Sem índice, o banco lê tudo; com índice, desce pela árvore.](../img/indice.svg)
+
+> 💡 **Analogia:** é o índice remissivo no fim de um livro de biologia. Sem ele, para achar "fotossíntese" você folheia as 500 páginas (a varredura completa). Com ele, vai direto à letra F e lê "página 212". O preço: toda vez que o livro ganha um capítulo novo, alguém precisa atualizar o índice, e ele ocupa páginas extras. Por isso índices aceleram a leitura, mas deixam a escrita um pouco mais lenta.
 
 ## Criando
 

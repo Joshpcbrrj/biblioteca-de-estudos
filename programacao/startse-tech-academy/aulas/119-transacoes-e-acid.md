@@ -12,6 +12,8 @@ Os índices deixam as consultas rápidas. Falta garantir que operações que pre
 
 ![COMMIT confirma tudo; ROLLBACK desfaz tudo.](../img/transacao.svg)
 
+> 💡 **Analogia:** é o caixa do supermercado. Ele passa todos os produtos (os comandos), mas a compra só vale quando o pagamento é aprovado e a nota sai (`COMMIT`). Se o cartão for recusado, o caixa cancela a compra **inteira** (`ROLLBACK`): você não sai com metade das sacolas. E, depois de a nota sair, a compra está registrada mesmo que falte luz no minuto seguinte (durabilidade).
+
 ## Comandos (TCL)
 
 ```sql

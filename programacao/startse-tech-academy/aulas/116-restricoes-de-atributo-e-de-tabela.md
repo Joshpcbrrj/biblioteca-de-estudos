@@ -10,6 +10,8 @@ Os tipos de dados limitam o formato de cada coluna. As restrições vão além: 
 
 ![Restrições: o banco recusa dado errado](../img/st-restricoes.svg)
 
+> 💡 **Analogia:** as restrições são o segurança na porta de um evento. Sem nome, ninguém entra (`NOT NULL`). A mesma pulseira não passa duas vezes (`UNIQUE`). O nome tem que estar na lista de convidados (`FOREIGN KEY`). Menor de 18 fica de fora (`CHECK`). E quem chega sem dizer o setor vai para a pista comum (`DEFAULT`). Não importa por qual porta a pessoa tenta entrar: o segurança confere sempre.
+
 **Restrições (constraints) são regras que o próprio banco garante: ele recusa qualquer** `INSERT`**,** `UPDATE` **ou** `DELETE` **que as viole.** Assim, os dados ficam corretos mesmo que o código da aplicação tenha um bug.
 
 | Restrição | Garante |
