@@ -33,6 +33,8 @@ console.log(x);  // "Hello world!"
 
 ![let e const ficam presas ao bloco; var vaza para a função inteira.](../img/escopo.svg)
 
+> 💡 **Analogia:** uma variável é uma caixa com etiqueta. Com `let`, você pode trocar o que está dentro da caixa; com `const`, a caixa é lacrada depois de cheia. O escopo de bloco é como deixar a caixa dentro de um quarto: quem está fora do quarto (fora das chaves) não a enxerga. Já a `var` é uma caixa que "vaza" do quarto para a casa inteira (a função).
+
 ```jsx
 if (true) {
   let a = 1;

@@ -116,6 +116,8 @@ usuario.endereco?.rua;
 
 ![?? × || e a ordem de avaliação](../img/st-operadores.svg)
 
+> 💡 **Analogia:** o `??` é como um garçom que só traz o prato padrão se a sua mesa estiver **sem pedido nenhum**; se você pediu "zero sobremesa", ele respeita. O OU lógico é um garçom apressado: qualquer pedido "vazio" (zero, texto em branco, false) ele troca pelo padrão.
+
 Como na matemática, `**` vem primeiro, depois `*`, `/` e `%`, e por fim `+` e `-`. Comparações vêm depois das contas, e o E (`&&`) antes do OU. Na dúvida, **use parênteses**: `(a + b) * c`.
 
 ## Exercício
@@ -169,7 +171,7 @@ O valor antigo; a soma acontece depois.
 
 | Operador | Em uma frase |
 | --- | --- |
-| `  • - * / % **` | contas; `%` é o resto |
+| `+ - * / % **` | contas; `%` é o resto |
 | `+= -= *=` | operam e atribuem de uma vez |
 | `++` / `--` | somam ou subtraem 1 |
 | `===` / `!==` | comparação estrita (valor e tipo) |

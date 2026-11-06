@@ -39,6 +39,8 @@ Use `const` por padrão, `let` quando precisar reatribuir e evite `var`.
 
 ![A variável total sobrevive dentro da closure e fica inacessível de fora.](../img/closure.svg)
 
+> 💡 **Analogia:** uma closure é como uma mochila que a função leva ao sair de casa. Dentro dela vão as variáveis do lugar onde a função nasceu. Mesmo depois que a "casa" (a função de fora) fechou, a função ainda abre a mochila e usa o que está lá; e ninguém de fora consegue mexer no conteúdo.
+
 ```jsx
 function criarContador() {
   // "privada": ninguém de fora acessa

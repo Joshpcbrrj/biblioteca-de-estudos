@@ -12,6 +12,8 @@ Executa blocos diferentes de acordo com uma condição. As condições são test
 
 ![Assim que uma condição é verdadeira, as de baixo são ignoradas.](../img/if-else-cadeia.svg)
 
+> 💡 **Analogia:** uma cadeia de `if/else if` é como a triagem de um pronto-socorro: o atendente percorre a lista de perguntas de cima para baixo e encaminha o paciente para a **primeira** fila que se aplica, sem continuar perguntando. O `else` é o "atendimento geral" de quem não se encaixou em nada.
+
 ```jsx
 const nota = 7.5;
 

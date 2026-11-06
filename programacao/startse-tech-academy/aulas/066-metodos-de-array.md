@@ -12,13 +12,18 @@ Na aula de arrays você percorreu listas com `for`. Funciona, mas o laço manual
 
 ```jsx
 const produtos = [
-  { nome: "Café", preco: 39.9, categoria: "bebida", estoque: 10 },
-  { nome: "Chá",  preco: 19.9, categoria: "bebida", estoque: 0 },
-  { nome: "Bolo", preco: 25,   categoria: "comida", estoque: 4 },
+  { nome: "Café", preco: 39.9,
+    categoria: "bebida", estoque: 10 },
+  { nome: "Chá", preco: 19.9,
+    categoria: "bebida", estoque: 0 },
+  { nome: "Bolo", preco: 25,
+    categoria: "comida", estoque: 4 },
 ];
 ```
 
 ![map transforma, filter seleciona e reduce resume.](../img/map-filter-reduce.svg)
+
+> 💡 **Analogia:** pense numa linha de produção de frutas. O `map` é a máquina que descasca cada fruta (todas saem, só que transformadas); o `filter` é a peneira que deixa passar só as maduras; o `reduce` é o liquidificador no fim da esteira, que junta tudo num único suco.
 
 ## `map`: transformar cada item
 

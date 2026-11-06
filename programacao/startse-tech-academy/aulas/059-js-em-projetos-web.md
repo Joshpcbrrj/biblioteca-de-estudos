@@ -37,6 +37,8 @@ Quem evolui o padrão é o **TC39** (Comitê Técnico 39 da Ecma), com represent
 
 ![HTML é o conteúdo, CSS a aparência e JS o comportamento.](../img/js-camadas.svg)
 
+> 💡 **Analogia:** pense num carro. O HTML é a carroceria e o chassi (o que existe); o CSS é a pintura e o acabamento interno (como parece); o JavaScript é o motor e a parte elétrica (o que acontece quando você gira a chave, aperta o pedal ou liga o pisca).
+
 ## Como colocar JavaScript na página
 
 ### 1. Dentro do HTML, na tag `<script>`

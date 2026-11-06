@@ -12,6 +12,8 @@ O JavaScript tem **7 tipos primitivos** e um tipo para todo o resto: **object**.
 
 ![Primitivos guardam o próprio valor; objetos são acessados por referência.](../img/tipos-js.svg)
 
+> 💡 **Analogia:** um primitivo é como uma nota de dinheiro: se você dá uma cópia a alguém, cada um tem a sua. Um objeto é como o endereço de uma casa escrito num papel: copiar o papel não cria outra casa; as duas pessoas vão à mesma casa, e se uma pintar a parede, a outra vê a parede pintada.
+
 ## Number
 
 Inteiros e decimais são o mesmo tipo.
@@ -36,7 +38,8 @@ Texto entre aspas simples, duplas ou **crases** (template string).
 let nome = "João";
 let mensagem = 'Olá, seja bem-vindo!';
 // crases interpolam valores com ${}
-let saudacao = `Olá, ${nome}! Você tem ${2 + 3} mensagens.`;
+let saudacao =
+  `Olá, ${nome}! Você tem ${2 + 3} mensagens.`;
 
 nome.length;  // 4
 nome.toUpperCase();  // "JOÃO"

@@ -12,6 +12,8 @@ Os laços repetem tarefas, e quase sempre essas tarefas são sobre uma **lista**
 
 ![Índices começam em 0, então o último é length - 1.](../img/array-indices.svg)
 
+> 💡 **Analogia:** um array é como uma fileira de armários numerados num vestiário, mas a numeração começa no 0. Para pegar algo, você diz o número do armário (`lista[2]`). Se a fileira tem 5 armários, o último é o de número 4.
+
 ## Criando e acessando
 
 ```jsx

@@ -41,6 +41,8 @@ do {
 
 ![A diferença está em quando a condição é testada.](../img/loops.svg)
 
+> 💡 **Analogia:** o `while` é o porteiro que confere o convite **antes** de você entrar na festa: sem convite, você nem entra. O `do...while` é a degustação no supermercado: você prova primeiro e só depois decide se quer mais. O `for` é a série de abdominais do treino: você já sabe que são 20 e vai contando.
+
 ## `for`
 
 Junta início, condição e passo em uma linha. Ideal quando você sabe **quantas vezes** quer repetir.
