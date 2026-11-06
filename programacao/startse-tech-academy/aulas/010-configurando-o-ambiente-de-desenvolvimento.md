@@ -19,6 +19,8 @@ Você já sabe que o código passa por um compilador ou interpretador. No desenv
 
 Instale sempre a versão **LTS** do Node, que é a de suporte longo e a mais estável.
 
+> 💡 **Analogia:** é a caixa de ferramentas de um marceneiro. O VS Code é a bancada onde se trabalha, o navegador é o espelho para ver o resultado, o Git é o caderno que anota cada mudança e o Node é a máquina que faz o JavaScript funcionar fora do navegador.
+
 ## Conferindo as instalações
 
 ```bash

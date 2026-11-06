@@ -18,6 +18,8 @@ Quando você digita um endereço no navegador, acontece mais ou menos isto:
 4. **Resposta**: o servidor devolve um **código de status** (ex.: `200 OK`) e o conteúdo, normalmente HTML.
 5. **Renderização**: o navegador lê o HTML, descobre que precisa de CSS, JS e imagens, faz novas requisições para cada um e monta a página.
 
+> 💡 **Analogia:** abrir um site é como pedir comida por telefone. Primeiro você procura o número na agenda (DNS), liga e espera atender (conexão TCP), faz o pedido (requisição HTTP), recebe a comida (resposta) e monta o prato na mesa (renderização).
+
 ## Termos importantes
 
 ### IP (Internet Protocol)

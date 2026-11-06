@@ -58,6 +58,8 @@ Exemplos: redes sociais, lojas virtuais, webmail, internet banking e ferramentas
 
 ![O front-end consome a API; o back-end aplica as regras e fala com o banco.](../img/front-back.svg)
 
+> 💡 **Analogia:** num restaurante, o front-end é o salão (cardápio, mesas, garçom) e o back-end é a cozinha (receitas, estoque, regras). A API é a janela de pedidos entre os dois: o garçom entrega o pedido num formato combinado e recebe o prato pronto.
+
 **Front-end** é a interface, o que o usuário vê e com o que interage.
 
 - Na web: **HTML** (estrutura), **CSS** (aparência) e **JavaScript** (comportamento), muitas vezes com frameworks como React, Angular ou Vue.

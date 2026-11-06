@@ -30,6 +30,8 @@ cd -  # volta para a pasta anterior
 
 **Caminho absoluto** parte da raiz (`/home/ana/projetos`); **caminho relativo** parte da pasta atual (`css/style.css`). `..` significa "a pasta acima" e `.` significa "a pasta atual".
 
+> 💡 **Analogia:** o caminho absoluto é o endereço completo com cidade e CEP; o relativo é "duas casas depois da padaria". O segundo só funciona se você souber onde está agora, e é isso que o `pwd` responde.
+
 ## Criando, copiando, movendo e apagando
 
 ```bash

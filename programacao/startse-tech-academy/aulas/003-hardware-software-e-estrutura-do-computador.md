@@ -19,6 +19,8 @@ Na aula anterior, uma requisição saiu do navegador e chegou a um servidor. Tan
 | **Placa-mãe**: liga todos os componentes | HD/SSD externo, pendrive |
 | **Armazenamento (SSD/HD)**: guarda arquivos de forma permanente | fone, microfone, joystick |
 
+> 💡 **Analogia:** pense numa cozinha. A CPU é o cozinheiro, a RAM é a bancada (rápida, mas pequena e limpa ao fim do dia), o SSD é a despensa (grande e permanente) e a placa-mãe é a própria cozinha, que liga tudo.
+
 ### Funções do hardware
 
 - **Entrada**: levam dados para o computador. Ex.: teclado, mouse, microfone, scanner.

@@ -76,6 +76,8 @@ O **fluxograma** mostra o mesmo algoritmo de forma visual:
 
 > 💡 Se A e B forem iguais, o algoritmo exibe B, o que está correto, porque qualquer um dos dois é o maior. Pensar nesses **casos-limite** (valores iguais, vazios, negativos) é parte essencial da lógica de programação.
 
+> 💡 **Analogia:** o pseudocódigo é como a receita escrita em linguagem de casa ("bata os ovos até espumar"), e o fluxograma é o passo a passo desenhado num cartaz da cozinha. Os dois descrevem o mesmo prato; o código é a receita traduzida para o idioma de uma máquina.
+
 ### Palavras-chave do pseudocódigo
 
 | Palavra | Significado | Em JavaScript |

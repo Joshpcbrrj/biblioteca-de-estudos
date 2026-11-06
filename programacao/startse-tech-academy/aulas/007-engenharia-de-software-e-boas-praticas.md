@@ -23,6 +23,8 @@ O módulo mostrou o computador, a rede e a divisão entre front-end e back-end. 
 
 Uma peça de hardware segue a "curva da banheira": muitas falhas no início (defeitos de fabricação), uma vida útil estável e, depois, desgaste físico. O software não sofre desgaste físico, mas **muda o tempo todo**: correções, novas funções, outra equipe mexendo. Cada mudança mal feita introduz defeitos e aumenta a complexidade. É a **deterioração**, e as boas práticas existem para desacelerá-la.
 
+> 💡 **Analogia:** é como uma casa que recebe reformas sem planta: cada puxadinho resolve um problema hoje, mas depois de dez obras ninguém sabe por onde passa o encanamento. Boas práticas são a planta atualizada a cada reforma.
+
 ## Atividades do processo de software
 
 ![Comunicação, planejamento, modelagem, construção e entrega, em ciclos.](../img/es-atividades.svg)

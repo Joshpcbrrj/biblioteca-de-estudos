@@ -57,6 +57,8 @@ print("Hello, World!")
 
 ![Compilação antecipada, interpretação em tempo real e o modelo híbrido com bytecode e JIT.](../img/compila-interpreta.svg)
 
+> 💡 **Analogia:** o compilador é o tradutor de um livro: traduz a obra inteira antes, e depois qualquer um lê rápido. O interpretador é o intérprete numa palestra: traduz frase por frase enquanto o palestrante fala; é mais lento, mas não precisa esperar o texto ficar pronto.
+
 ### Compiladores
 
 Um **compilador** traduz **todo** o código-fonte para código de máquina **antes** da execução e gera um executável. Vantagens: execução rápida e erros pegos antes de rodar. Desvantagem: precisa recompilar a cada mudança, e o executável é específico do sistema e do processador.

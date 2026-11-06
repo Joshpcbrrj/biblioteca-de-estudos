@@ -52,6 +52,8 @@ console.log(maiorDeTres(7, 42, 13)); // 42
 
 > 💡 Algoritmos não são exclusivos da computação: estão na matemática, na logística e no dia a dia. A diferença é que, para o computador, cada passo precisa ser **totalmente explícito**.
 
+> 💡 **Analogia:** programar é como dar instruções a um GPS para alguém que nunca saiu de casa. "Vá até a padaria" não serve; é preciso dizer "saia pela porta, vire à direita, ande 200 metros, atravesse na faixa".
+
 ## Níveis das linguagens de programação
 
 ![Do binário que a CPU executa até as linguagens de alto nível.](../img/ling-niveis.svg)

@@ -12,6 +12,8 @@ A aula anterior mostrou as peças físicas do computador. Mas nenhum programa (n
 
 ![Aplicativos pedem ao kernel, que é quem fala com o hardware.](../img/so-camadas.svg)
 
+> 💡 **Analogia:** o SO é o gerente de um restaurante. Os clientes (aplicativos) não entram na cozinha nem mexem no fogão (hardware): fazem o pedido ao gerente, que organiza a fila, distribui as mesas (memória) e garante que um cliente não coma o prato do outro.
+
 ## Responsabilidades
 
 1. **Gerenciar processos**: carregar, executar, pausar e encerrar programas. Também alterna entre eles tão rápido que parece que tudo roda ao mesmo tempo (multitarefa).
