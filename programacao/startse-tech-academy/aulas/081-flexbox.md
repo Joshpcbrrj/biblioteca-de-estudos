@@ -31,6 +31,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ![Tudo no Flexbox é relativo a estes dois eixos.](../img/flex-eixos.svg)
 
+> 💡 **Analogia:** o contêiner flex é um varal e os itens são as roupas penduradas. O eixo principal é a corda: `justify-content` decide se as roupas ficam juntas numa ponta, no meio ou espalhadas. O eixo transversal é a altura: `align-items` decide se as peças ficam presas pelo topo, centralizadas ou esticadas até o chão. Girar o varal na vertical (`column`) troca os papéis.
+
 ## Propriedades do contêiner
 
 ### `flex-direction`

@@ -12,6 +12,8 @@ No módulo III você montou páginas com `<header>`, `<nav>` e `<footer>`. Este 
 
 ![Mesma aparência, significados muito diferentes.](../img/semantica-vs-div.svg)
 
+> 💡 **Analogia:** é a diferença entre caixas de mudança todas iguais e caixas etiquetadas "cozinha", "quarto" e "banheiro". Por fora parecem a mesma coisa, mas quem chega (o leitor de tela, o Google, o colega de equipe) sabe na hora o que tem dentro de cada uma e onde colocá-la.
+
 ## Benefícios
 
 ### 1. Código mais organizado e legível

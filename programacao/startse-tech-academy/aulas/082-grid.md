@@ -33,6 +33,8 @@ O Flexbox organiza itens em uma direção. Para o esqueleto de uma página, com 
 
 ![fr divide o espaço que sobra depois das medidas fixas.](../img/grid-template.svg)
 
+> 💡 **Analogia:** o `fr` é como dividir uma pizza depois de separar os pedaços reservados. Em `200px 1fr 2fr`, primeiro sai a fatia fixa de 200px; o que sobra é dividido em 3 partes iguais, e uma pessoa leva 1 parte enquanto a outra leva 2.
+
 ```css
 .container {
   display: grid;

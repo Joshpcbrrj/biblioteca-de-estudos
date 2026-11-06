@@ -10,6 +10,8 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 
 ![A estrutura de uma página semântica](../img/st-semanticas.svg)
 
+> 💡 **Analogia:** pense num jornal. O `header` é o nome do jornal no topo, o `nav` é o índice de cadernos, o `main` é o miolo com as matérias, cada `article` é uma matéria que poderia ser recortada e lida sozinha, cada `section` é um caderno temático (Esportes, Economia), o `aside` é o box "saiba mais" ao lado, e o `footer` é o expediente no fim.
+
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -102,7 +104,8 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 <p>O resultado foi <mark>acima do esperado</mark>.</p>
 <address>
   Fale conosco:
-  <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>
+  <a href="mailto:contato@exemplo.com">
+    contato@exemplo.com</a>
 </address>
 ```
 
@@ -139,10 +142,12 @@ Diferente do `<select>`, o usuário pode digitar um valor que não está na list
 
 ```html
 <label for="download">Download:</label>
-<progress id="download" value="50" max="100">50%</progress>
+<progress id="download" value="50" max="100">
+  50%</progress>
 
 <label for="disco">Uso do disco:</label>
-<meter id="disco" value="0.7" low="0.5" high="0.85">70%</meter>
+<meter id="disco" value="0.7"
+       low="0.5" high="0.85">70%</meter>
 ```
 
 - `<progress>`: andamento de uma **tarefa** (download, envio). Sem `value`, mostra uma barra indefinida.

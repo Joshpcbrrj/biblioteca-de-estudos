@@ -51,6 +51,8 @@ Em projetos com Node, instale com `npm install bootstrap`.
 
 ![A mesma marcação vira 1, 2 ou 3 colunas conforme a largura da tela.](../img/bootstrap-grid.svg)
 
+> 💡 **Analogia:** o Bootstrap é como montar móveis planejados com módulos de tamanho padrão. Cada parede (linha) comporta 12 módulos; você decide quantos módulos cada armário ocupa (`col-4`, `col-6`) e, conforme o tamanho do cômodo (a tela), os armários se reorganizam sozinhos.
+
 A estrutura é sempre `container` → `row` → `col`. Cada linha tem **12 colunas**, e o sufixo diz a partir de qual largura a regra vale (mobile first): `col-md-6` significa "6 de 12 colunas a partir de 768px".
 
 ```html
@@ -145,6 +147,10 @@ Monte com Bootstrap uma seção com 4 cards que fiquem 1 por linha no celular, 2
 </details>
 
 ## 🧠 Revisão rápida
+
+**Quantas colunas tem cada linha do grid do Bootstrap?**
+
+12.
 
 **O que `col-md-6` significa?**
 
