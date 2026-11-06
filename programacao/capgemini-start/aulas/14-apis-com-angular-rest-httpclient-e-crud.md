@@ -21,11 +21,13 @@ Três peças que você já viu se juntam aqui: os **verbos e status HTTP** (mód
 
 ### O que é uma API
 
-**API (Application Programming Interface) é um contrato que permite que um programa use funções e dados de outro**, sem conhecer o código interno dele. É como o cardápio de um restaurante: você escolhe o que quer, o garçom leva o pedido e você recebe o prato, sem precisar entrar na cozinha.
+**API (Application Programming Interface) é um contrato que permite que um programa use funções e dados de outro**, sem conhecer o código interno dele.
 
 Na web, uma API é um serviço que recebe **requisições HTTP** (de um site, um app de celular ou outro sistema), consulta o banco de dados e devolve os dados, normalmente em **JSON**. Isso permite que o mesmo back-end atenda o site, o app e parceiros.
 
 ![O front-end pede; a API acessa o banco e devolve JSON.](../img/api-rest.svg)
+
+> 💡 **Analogia:** a API é o garçom entre o salão e a cozinha. O front-end (o cliente) faz o pedido seguindo o cardápio (a documentação); a API leva à cozinha (o banco de dados) e volta com o prato pronto, em JSON. O mesmo garçom atende quem está no salão, no delivery ou no balcão: site, app e parceiros usam a mesma API.
 
 ### REST
 
@@ -208,9 +210,9 @@ O HttpClient devolve um **Observable** (da biblioteca **RxJS**), e não uma Prom
 | não pode ser cancelada | pode ser cancelada (`unsubscribe`) |
 | `then` / `await` | `subscribe` / operadores |
 
-> 💡 Uma Promise é como pedir uma pizza: você liga, ela chega uma vez. Um Observable é como assinar uma revista: nada chega até você assinar (`subscribe`), podem chegar várias edições, e dá para cancelar.
-
 ![HttpClient: nada acontece sem subscribe](../img/cap-httpclient.svg)
+
+> 💡 **Analogia:** uma Promise é como pedir uma pizza: você liga, ela chega uma vez. Um Observable é como assinar uma revista: nada chega até você assinar (`subscribe`), podem chegar várias edições, e dá para cancelar.
 
 ### 4. Usando no componente
 

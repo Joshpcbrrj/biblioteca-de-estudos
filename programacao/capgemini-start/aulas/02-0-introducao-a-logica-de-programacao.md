@@ -23,6 +23,8 @@ A palavra "computar" vem do latim *computare*, que significa **calcular**. Duran
 
 ![Os principais marcos antes do século XX.](../img/hist-linha.svg)
 
+> 💡 **Analogia:** pense na evolução de uma cozinha. O ábaco é o caderninho onde você anota as contas enquanto faz tudo de cabeça. A Pascalina é a batedeira: a máquina faz o trabalho sozinha. O tear de Jacquard é uma máquina de pão que lê receitas em fichas: troque a ficha e sai outro pão, sem mexer na máquina. O computador é a cozinha inteira automática, capaz de seguir qualquer receita que você entregar.
+
 ### Os marcos, um de cada vez
 
 #### Ábaco (cerca de 2500 a.C.)
@@ -110,6 +112,8 @@ Na aula anterior, vimos que o computador junta três ideias: um **programa troc�
 Para representar 0 e 1, um circuito precisa de **interruptores**: com corrente é 1, sem corrente é 0. Um computador usa milhões (hoje, bilhões) deles. A história das gerações é a história de como esse interruptor foi ficando menor.
 
 ![Válvula → transistor → circuito integrado → microprocessador.](../img/geracoes.svg)
+
+> 💡 **Analogia:** pense na iluminação de casa. A válvula é a lâmpada incandescente antiga: grande, quente e queima com frequência. O transistor é um LED: faz o mesmo trabalho, pequeno e quase frio. O circuito integrado é uma fita com milhares de LEDs grudados. E o microprocessador é uma cidade inteira de LEDs dentro de um grão de arroz. A função nunca mudou (acender ou apagar, 1 ou 0); o que muda é o tamanho, o custo e a energia.
 
 ### 1ª geração (1946–1959): válvulas
 
@@ -211,6 +215,8 @@ No século IV a.C., o filósofo grego **Aristóteles** organizou a lógica pela 
 - Conclusão: logo, Sócrates é mortal.
 
 ![Validade (a estrutura) é diferente de verdade (o conteúdo).](../img/silogismo.svg)
+
+> 💡 **Analogia:** pense numa receita de bolo. A **validade** é a receita estar bem escrita, com os passos na ordem certa. A **verdade** é usar os ingredientes certos. Se a receita é perfeita, mas você troca açúcar por sal (uma premissa falsa), o bolo sai ruim: válido, porém falso. Se os ingredientes são ótimos, mas os passos estão fora de ordem, nada garante o bolo: premissas verdadeiras, raciocínio inválido.
 
 #### Válido não é o mesmo que verdadeiro
 
@@ -315,6 +321,8 @@ Um computador funciona em **camadas**, como um prédio. Cada andar só conversa 
 
 ![Do usuário ao hardware, passando por aplicativos e sistema operacional.](../img/camadas.svg)
 
+> 💡 **Analogia:** num restaurante, você (o usuário) faz o pedido ao garçom (o aplicativo). O garçom não cozinha: entrega a comanda ao chefe de cozinha (o sistema operacional), que decide qual fogão e qual cozinheiro vão preparar cada prato e divide a cozinha entre todos os pedidos. Os fogões e panelas (o hardware) fazem o trabalho de fato. Você nunca precisa saber a marca do fogão para jantar.
+
 1. **Usuário:** você, que clica, digita e toca na tela.
 2. **Aplicativos:** o navegador, o editor de texto, o jogo. Eles não falam direto com o hardware; pedem ajuda ao sistema operacional.
 3. **Sistema operacional** (Windows, Linux, macOS, Android): gerencia o processador, a memória, os arquivos e os dispositivos, e divide esses recursos entre os aplicativos abertos.
@@ -377,6 +385,8 @@ Todo computador segue o mesmo esquema:
 No meio do caminho, os dados ficam guardados na **memória**. Esse mesmo esquema vai aparecer nos seus programas: quase todo algoritmo **lê** dados, **processa** e **mostra** um resultado.
 
 ![Entrada, processamento (CPU + RAM na placa-mãe), saída e armazenamento.](../img/partes-pc.svg)
+
+> 💡 **Analogia:** é você resolvendo um problema de matemática numa prova. Os olhos leem o enunciado (entrada), o cérebro faz as contas (CPU), o rascunho em cima da mesa guarda as contas pela metade (RAM), a folha de respostas entregue ao professor fica guardada para sempre (SSD) e a resposta que você fala em voz alta é a saída. Se o vento levar o rascunho, as contas somem; o que já foi passado a limpo, não.
 
 ### As peças, comparadas com o corpo humano
 
@@ -453,9 +463,9 @@ Porque existe uma troca que não tem como escapar:
 
 A solução é montar uma **hierarquia**: o que a CPU usa o tempo todo fica no topo, bem perto dela, em memórias pequenas e rapidíssimas. O resto fica mais abaixo, em memórias grandes e lentas.
 
-Pense na sua cozinha: o sal fica do lado do fogão, os mantimentos ficam no armário e as compras do mês ficam na despensa. Quanto mais você usa, mais perto fica.
-
 ![Quanto mais perto da CPU, mais rápida e menor a memória.](../img/memorias.svg)
+
+> 💡 **Analogia:** pense na sua cozinha. O sal e o óleo ficam do lado do fogão (registradores): cabem poucos, mas estão na mão. Os temperos mais usados ficam na prateleira de cima da pia (cache). Os mantimentos da semana ficam no armário (RAM). E as compras do mês, na despensa dos fundos (SSD/HD): cabe muito, mas buscar lá demora. Quanto mais você usa uma coisa, mais perto ela fica.
 
 ### Os tipos, do topo para a base
 
@@ -587,13 +597,15 @@ Alto nível é mais próxima da linguagem humana e mais produtiva (Java, Python)
 
 ### De onde paramos
 
-Na aula anterior vimos que escrevemos programas em linguagens próximas da nossa, mas o processador só entende 0 e 1. Alguém precisa **traduzir**. Existem dois jeitos principais de fazer essa tradução; esta aula mostra o primeiro, a **compilação**, que funciona como traduzir um livro inteiro antes de entregá-lo ao leitor.
+Na aula anterior vimos que escrevemos programas em linguagens próximas da nossa, mas o processador só entende 0 e 1. Alguém precisa **traduzir**. Existem dois jeitos principais de fazer essa tradução; esta aula mostra o primeiro, a **compilação**.
 
 ### Linguagens compiladas
 
 Em uma linguagem compilada, um programa chamado **compilador** lê **todo** o código-fonte, verifica se há erros e o traduz de uma vez para **linguagem de máquina**, gerando um **executável** (no Windows, um `.exe`). Depois disso, o executável roda direto no processador, sem precisar do código-fonte nem do compilador.
 
 ![Fonte → compilador → executável → CPU, e os níveis de linguagem.](../img/compilacao.svg)
+
+> 💡 **Analogia:** compilar é mandar traduzir um livro inteiro antes de lançá-lo. A tradução demora, mas depois qualquer leitor lê rápido, sem tradutor ao lado (o executável roda direto). Só que a edição em português não serve na Alemanha: para outro sistema ou processador, é preciso fazer uma nova tradução (compilar de novo).
 
 Exemplos: **C, C++, Go, Rust**.
 
@@ -644,7 +656,7 @@ Assembly é a linguagem de baixo nível (MOV, ADD...). Assembler é o programa q
 
 ### De onde paramos
 
-Na compilação, o programa inteiro é traduzido antes de rodar, como um livro traduzido antes de ir para a livraria. Na **interpretação**, a tradução acontece durante a execução, como um intérprete que traduz cada frase enquanto a pessoa fala. Vale a pena entender os dois, porque neste programa você vai usar uma linguagem de cada lado: **JavaScript** (interpretada) e **Java** (híbrida).
+Na compilação, o programa inteiro é traduzido antes de rodar. Na **interpretação**, a tradução acontece durante a execução. Vale a pena entender os dois, porque neste programa você vai usar uma linguagem de cada lado: **JavaScript** (interpretada) e **Java** (híbrida).
 
 ### Linguagens interpretadas
 
@@ -653,6 +665,8 @@ Em uma linguagem interpretada não existe um executável final. Um programa cham
 Exemplos: **JavaScript, Python, PHP, Ruby**.
 
 ![Em cima, a linguagem interpretada; embaixo, o caminho do Java.](../img/interpretacao.svg)
+
+> 💡 **Analogia:** a linguagem compilada é um livro já traduzido; a interpretada é uma palestra com **intérprete simultâneo**, que traduz cada frase enquanto o palestrante fala: funciona em qualquer país que tenha um intérprete, mas é um pouco mais lento. O Java fica no meio: o texto é escrito numa língua neutra (o bytecode), e cada país tem o seu intérprete dessa língua (a JVM).
 
 > 🌐 O **navegador** tem um interpretador de JavaScript embutido (o V8, no Chrome; o SpiderMonkey, no Firefox). Por isso o mesmo site funciona em Windows, Mac, Linux e celular: quem executa o código é o navegador.
 
@@ -716,6 +730,8 @@ Esta aula fecha a parte sobre o computador. Ela junta as peças das aulas anteri
 ### Do clique ao resultado
 
 ![As cinco etapas da execução de um programa.](../img/execucao.svg)
+
+> 💡 **Analogia:** abrir um programa é como fazer uma receita. Você pede o prato (o clique), alguém acha o livro de receitas na estante (o SSD) e o abre na bancada (a RAM). O cozinheiro (a CPU) lê um passo, entende o que ele pede e o executa, e então passa para o próximo, sem parar. Se a campainha toca no meio (um evento), ele atende e volta para a receita.
 
 1. **Clique:** o mouse gera um **evento**, que avisa o sistema operacional.
 2. **Localizar:** o sistema operacional encontra o arquivo do programa no SSD/HD.
@@ -884,17 +900,19 @@ Além dos princípios que já vimos (não contradição e terceiro excluído), v
 
 ![NÃO, E e OU, com a sintaxe usada em Java e JavaScript.](../img/operadores-logicos.svg)
 
+> 💡 **Analogia:** o **E** é uma porta com duas fechaduras: ela só abre se as duas chaves girarem. O **OU** é uma casa com duas portas: basta uma estar aberta para você entrar. O **NÃO** é um interruptor invertido: quando você "liga", a luz apaga. E o **XOR** é o interruptor de escada: a luz acende quando só um dos dois interruptores está para cima.
+
 #### NÃO (negação): `!`
 
 Inverte o valor. Se "está chovendo" é V, então "não está chovendo" é F.
 
 #### E (conjunção): `&&`
 
-Só dá verdadeiro se **todas** as partes forem verdadeiras. Pense numa porta com duas fechaduras: ela só abre se as duas chaves girarem.
+Só dá verdadeiro se **todas** as partes forem verdadeiras.
 
 #### OU (disjunção): `||`
 
-Dá verdadeiro se **pelo menos uma** parte for verdadeira. Pense numa casa com duas portas: basta uma estar aberta para você entrar.
+Dá verdadeiro se **pelo menos uma** parte for verdadeira.
 
 #### OU exclusivo (XOR): `^`
 
@@ -1101,6 +1119,8 @@ Já sabemos o que é um algoritmo e quais características ele precisa ter. Mas,
 
 ![Entender, identificar, planejar, testar e refinar.](../img/resolver-problema.svg)
 
+> 💡 **Analogia:** é como planejar uma viagem de carro. Primeiro você entende aonde precisa chegar e até que horas (entender). Depois vê o que tem: carro, dinheiro, mapa (entradas) e o que espera no fim (saída). Traça a rota no mapa (planejar), refaz o trajeto com o dedo para ver se não esqueceu uma estrada (teste de mesa) e, se achar um caminho mais curto, ajusta (refinar). Sair dirigindo sem rota é o mesmo que começar pelo código.
+
 1. **Entender o problema.** Leia o enunciado mais de uma vez. O que exatamente está sendo pedido? Quais são os casos especiais?
 2. **Identificar entradas, processamento e saídas.** Que dados eu recebo? O que preciso calcular ou decidir? O que devo mostrar?
 3. **Planejar os passos** em ordem, em português ou pseudocódigo.
@@ -1192,6 +1212,8 @@ fim
 
 ![Os cinco símbolos básicos.](../img/fluxograma-simbolos.svg)
 
+> 💡 **Analogia:** os símbolos do fluxograma são como placas de trânsito: o formato já diz o que fazer antes mesmo de você ler o texto. O oval é a placa de "início" e "fim" da estrada, o paralelogramo é o posto onde se recebe ou entrega algo, o retângulo é um trecho de trabalho, e o losango é a bifurcação, onde você escolhe a esquerda (sim) ou a direita (não).
+
 O mesmo algoritmo da média, em fluxograma:
 
 ![A decisão (losango) divide o fluxo em dois caminhos, que se juntam antes do fim.](../img/fluxograma-media.svg)
@@ -1270,6 +1292,8 @@ Já sabemos **em que formato** escrever um algoritmo. Esta aula trata de **como*
 Quase todo algoritmo se divide em três fases. Identificá-las antes de escrever ajuda muito:
 
 ![Entrada → processamento → saída.](../img/ipo.svg)
+
+> 💡 **Analogia:** é um liquidificador. As frutas e o leite que você coloca são a **entrada**; o motor batendo é o **processamento**; o suco no copo é a **saída**. Antes de ligar, você sempre sabe o que vai pôr e que suco quer tirar. Com o algoritmo é igual: decida o que entra e o que deve sair antes de pensar no "como".
 
 | Fase | Pergunta | Exemplo (média de duas notas) |
 | --- | --- | --- |
