@@ -54,6 +54,8 @@ O Portugol rodava dentro de um programa só (o VisuAlg ou o Portugol Studio), qu
 
 ![Um contém o outro: para programar, basta instalar o JDK.](../img/jdk-jre-jvm.svg)
 
+> 💡 **Analogia:** a JVM é o **motor**: é ela que faz o programa andar. O JRE é o **carro pronto**: motor mais tudo o que é preciso para dirigir (as bibliotecas). O JDK é a **oficina inteira**: o carro e ainda as ferramentas para montar e consertar carros novos (o compilador `javac`). Quem só dirige precisa do carro; quem constrói precisa da oficina.
+
 | Sigla | Nome | Para quê |
 | --- | --- | --- |
 | **JVM** | Java Virtual Machine | executa o bytecode (`.class`) |
@@ -169,6 +171,8 @@ Onde o Java é usado: sistemas de bancos e grandes empresas (back-end), aplicati
 
 ![javac gera bytecode; a JVM de cada sistema o executa.](../img/java-exec.svg)
 
+> 💡 **Analogia:** o bytecode é como um livro escrito numa língua universal. Cada sistema (Windows, Linux, macOS) tem o seu "tradutor" (a JVM), que lê esse livro na hora. Por isso o mesmo `.class` roda em qualquer lugar onde exista uma JVM, sem precisar reescrever o livro para cada país.
+
 1. Você escreve `Main.java`.
 2. O compilador `javac` verifica e traduz o código para **bytecode** (`Main.class`).
 3. A **JVM** carrega o bytecode e o executa, interpretando e compilando para código de máquina os trechos mais usados (**JIT**).
@@ -177,8 +181,6 @@ Onde o Java é usado: sistemas de bancos e grandes empresas (back-end), aplicati
 javac Main.java  # compila: gera Main.class
 java Main  # executa na JVM
 ```
-
-> 💡 Uma analogia: o bytecode é como um livro escrito em uma língua universal. Cada sistema (Windows, Linux, macOS) tem o seu "tradutor" (a JVM), que lê esse livro na hora. Por isso o mesmo `.class` roda em qualquer lugar onde exista uma JVM.
 
 > ⚠️ Erros de **compilação** (um `;` faltando, um tipo errado) aparecem antes de o programa rodar, e o `javac` diz a linha. Erros de **execução** (dividir por zero, índice fora do vetor) só aparecem quando o programa está rodando, como *exceptions*.
 
@@ -1325,6 +1327,8 @@ A POO organiza o programa em **objetos que representam entidades do mundo real**
 
 ![Os quatro pilares, com exemplos desta aula.](../img/pilares-poo.svg)
 
+> 💡 **Analogia:** pense num carro. **Abstração:** para dirigir, você só precisa de volante, pedais e câmbio, não da química da gasolina. **Encapsulamento:** o motor fica fechado sob o capô; você só mexe nele pelo acelerador. **Herança:** um carro esportivo é um carro com alguns extras. **Polimorfismo:** "acelerar" faz coisas diferentes num carro elétrico e num a gasolina, mas o pedal é o mesmo.
+
 ### Classes, atributos e métodos
 
 - **Classe:** o molde. Define **atributos** (o estado: nome, peso) e **métodos** (o comportamento: calcular o IMC).
@@ -1439,6 +1443,8 @@ Uma classe pode ter **vários construtores** com parâmetros diferentes (**sobre
 A herança serve para **reaproveitar** o que é comum: escreve-se uma vez na classe pai, e as filhas herdam tudo e acrescentam o que é específico. Teste da relação: "**é um tipo de**" (Vendedor *é um tipo de* Funcionário).
 
 ![Funcionário é a superclasse; Vendedor e Motorista, as subclasses.](../img/heranca-func.svg)
+
+> 💡 **Analogia:** é como a receita de bolo básico de uma família. Todos os bolos da casa herdam a massa (farinha, ovos, açúcar). O de chocolate acrescenta cacau; o de laranja troca o leite por suco. Ninguém reescreve a massa do zero: cada receita nova parte da básica e muda só o que é dela, como o `Vendedor` e o `Motorista` partem do `Funcionario`.
 
 ```java
 public class Funcionario {
@@ -2188,6 +2194,8 @@ O editor tem três modos:
 
 ![Os componentes de uma tela de login típica.](../img/swing-login.svg)
 
+> 💡 **Analogia:** montar uma tela Swing é como montar um quadro de avisos. O `JFrame` é a moldura; os `JPanel` são as divisórias de cortiça; os `JLabel` são os cartazes fixos; os `JTextField` são as fichas em branco que alguém preenche; e o `JButton` é a campainha: nada acontece até alguém apertar, e aí o evento é disparado.
+
 | Componente | Para quê | Método útil |
 | --- | --- | --- |
 | `JFrame` | a janela | `setVisible(true)` |
@@ -2468,6 +2476,8 @@ SELECT DATABASE();
 
 ![projects (1) → tasks (N).](../img/er-todo.svg)
 
+> 💡 **Analogia:** cada projeto é uma pasta de arquivo, e cada tarefa é uma folha guardada dentro dela, com o número da pasta anotado no canto (`idProject`). Não existe folha solta: toda folha precisa de uma pasta que exista. E, se você jogar a pasta no lixo, as folhas vão junto: é o `ON DELETE CASCADE`.
+
 ```sql
 CREATE TABLE projects (
   id          INT NOT NULL AUTO_INCREMENT,
@@ -2658,6 +2668,8 @@ Já temos tabelas (aula 2) e o desenho das telas (aula 3). Se todo o código (te
 **MVC (Model-View-Controller)** divide o projeto em três camadas, cada uma com uma responsabilidade. Assim, mudar a tela não exige mexer no banco, e vice-versa.
 
 ![A view pede ao controller; o controller usa o model e o banco.](../img/mvc.svg)
+
+> 💡 **Analogia:** num restaurante, o salão com mesas e cardápio é a **view**: é onde o cliente vê e pede. O garçom e a cozinha são o **controller**: recebem o pedido, aplicam as regras da casa e buscam o que for preciso na despensa (o banco). Os pratos e ingredientes, com seus nomes e porções, são o **model**. Dá para reformar o salão sem trocar a cozinha, e mudar o fornecedor sem mexer no cardápio.
 
 | Camada | Pacote | Responsabilidade | No TodoApp |
 | --- | --- | --- | --- |
@@ -2952,6 +2964,8 @@ A `ConnectionFactory` já abre e fecha conexões. Agora os controllers usam essa
 
 ![Os seis passos se repetem em todos os métodos do controller.](../img/jdbc-passos.svg)
 
+> 💡 **Analogia:** é como pagar uma conta na agência bancária. Você pega um formulário com campos em branco (o SQL com `?`), entra na agência (abre a conexão), entrega o formulário ao caixa (prepara o comando), preenche cada campo no espaço certo (os `setX`), o caixa processa (executa) e, no fim, você sai e a porta se fecha (o `finally`). O caixa nunca lê o que você escreveu como uma ordem nova: só como o valor de cada campo.
+
 1. Monte o SQL com `?` no lugar dos valores.
 2. Abra a conexão.
 3. Prepare o comando: `conn.prepareStatement(sql)`.
@@ -3240,6 +3254,8 @@ Os controllers (aula 6) já gravam e leem do banco, mas só um `main` de teste o
 
 ![A tela principal e os dois formulários de cadastro.](../img/todo-telas.svg)
 
+> 💡 **Analogia:** a tela principal é um fichário aberto na mesa: as abas à esquerda são os projetos, e as folhas à direita são as tarefas da aba escolhida. Os formulários são a ficha em branco que você preenche no balcão: enquanto está escrevendo, o fichário fica de lado (é o diálogo **modal**). Só depois de entregar ou rasgar a ficha você volta ao fichário, já com a folha nova no lugar.
+
 | Tela | Tipo | Como criar | Função |
 | --- | --- | --- | --- |
 | `MainScreen` | JFrame | New → JFrame Form | lista de projetos (`JList`) e tarefas do projeto selecionado (`JTable`) |
@@ -3450,6 +3466,8 @@ git --version  # confere a instalação
 
 ![O caminho de uma alteração: da pasta ao GitHub.](../img/git-remoto.svg)
 
+> 💡 **Analogia:** é como despachar uma encomenda. A mesa onde você mexe nas coisas é a **pasta de trabalho**. A caixa aberta, onde você vai colocando só o que quer mandar, é o **staging** (`git add`). Fechar a caixa com fita e etiqueta é o **commit**: aquele envio fica registrado com uma descrição. E levar as caixas ao centro de distribuição, onde outras pessoas podem buscá-las, é o `git push` para o GitHub.
+
 1. **Pasta de trabalho:** os arquivos como você os edita.
 2. **Staging** (área de preparação): o que vai entrar no próximo commit. Você escolhe com `git add`.
 3. **Repositório:** o histórico de commits, guardado na pasta oculta `.git`.
@@ -3505,7 +3523,8 @@ nbproject/private/
 
 ```bash
 # "origin" é o apelido do remoto
-git remote add origin https://github.com/usuario/todoapp.git
+git remote add origin \
+  https://github.com/usuario/todoapp.git
 
 # renomeia a branch principal para main
 git branch -M main
