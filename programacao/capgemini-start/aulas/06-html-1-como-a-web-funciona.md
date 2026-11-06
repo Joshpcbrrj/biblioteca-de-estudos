@@ -16,6 +16,8 @@ Até aqui, os programas rodavam em **um computador só**: o TodoApp e o MySQL fi
 
 ![A internet veio antes; a web é um dos serviços que rodam sobre ela.](../img/www-hist.svg)
 
+> 💡 **Analogia:** a internet é a **malha de estradas** que liga as cidades do mundo. A web é uma das linhas de ônibus que circulam por essas estradas, com paradas (páginas) e itinerários (links). E-mail, jogos online e aplicativos de mensagem são outros veículos usando as mesmas estradas. Dá para ter estrada sem ônibus, mas não ônibus sem estrada.
+
 - **Internet:** a **rede** que liga computadores no mundo todo (cabos, fibras, satélites, roteadores e o protocolo TCP/IP).
 - **Web (World Wide Web, WWW):** um **serviço** que roda sobre a internet: páginas em HTML, ligadas por links e acessadas pelo protocolo HTTP.
 
@@ -93,6 +95,8 @@ A aula anterior apresentou os três pilares da web: HTML, HTTP e URL. Agora o fo
 
 ![A anatomia de um request e de uma response.](../img/http-reqres.svg)
 
+> 💡 **Analogia:** um request é uma carta. O envelope traz o pedido e o endereço (a linha inicial: `GET /produtos`), as etiquetas coladas por fora dão detalhes como "frágil" ou "responder em português" (os headers) e a folha dentro é o conteúdo (o body). A resposta volta com um carimbo do correio dizendo o que aconteceu, como "entregue" ou "destinatário não encontrado" (o status 200 ou 404), e o que foi pedido dentro.
+
 - É **stateless** (sem estado): cada request é independente, e o servidor não lembra das anteriores. Para "lembrar" quem você é (login, carrinho), usam-se **cookies** e **tokens**.
 - O servidor decide quais **recursos** (caminhos, como `/produtos`) existem e quem pode acessá-los.
 
@@ -101,6 +105,8 @@ A aula anterior apresentou os três pilares da web: HTML, HTTP e URL. Agora o fo
 **HTTPS** é o HTTP dentro de um canal criptografado pelo protocolo **TLS** (sucessor do antigo SSL).
 
 ![O handshake TLS, simplificado.](../img/https.svg)
+
+> 💡 **Analogia:** no HTTP, a carta vai num cartão-postal: qualquer carteiro no caminho pode ler. No HTTPS, ela vai num cofre trancado. No *handshake*, os dois lados combinam um cadeado que só eles sabem abrir, e o servidor mostra um documento reconhecido em cartório (o certificado, assinado por uma CA) para provar que é quem diz ser.
 
 - **Confidencialidade:** quem interceptar a comunicação não consegue ler o conteúdo.
 - **Integridade:** os dados não podem ser alterados no caminho sem que isso seja detectado.
@@ -222,6 +228,8 @@ A comunicação pela internet é dividida em **camadas**. Cada uma resolve um pr
 
 ![O modelo de 5 camadas usado na prática.](../img/camadas-rede.svg)
 
+> 💡 **Analogia:** pense no correio. A **carta** é o conteúdo HTTP; o **envelope com endereço** é o IP; o **serviço de entrega com rastreio e aviso de recebimento** é o TCP; e os **caminhões e estradas** são as camadas física e de enlace. Quem escreve a carta não precisa saber por qual estrada ela vai, e o motorista do caminhão não precisa ler a carta.
+
 | # | Camada | Responsabilidade | Exemplos |
 | --- | --- | --- | --- |
 | 5 | **Aplicação** | protocolos que os programas usam | HTTP, HTTPS, DNS, SMTP (e-mail), FTP |
@@ -232,13 +240,13 @@ A comunicação pela internet é dividida em **camadas**. Cada uma resolve um pr
 
 O modelo de referência teórico, **OSI**, tem 7 camadas (separa sessão e apresentação da aplicação). O modelo de 5 camadas acima é a forma como a internet (TCP/IP) funciona na prática.
 
-> 💡 Uma analogia com o correio: a **carta** é o conteúdo HTTP; o **envelope com endereço** é o IP; o **serviço de entrega com rastreio e aviso de recebimento** é o TCP; e os **caminhões e estradas** são as camadas física e de enlace. Quem escreve a carta não precisa saber por qual estrada ela vai.
-
 ### DNS
 
-Computadores se encontram por **endereços IP** (como `142.250.79.46`), mas pessoas lembram de **nomes** (`google.com`). O **DNS** (*Domain Name System*) é a "agenda telefônica" que faz a tradução.
+Computadores se encontram por **endereços IP** (como `142.250.79.46`), mas pessoas lembram de **nomes** (`google.com`). O **DNS** (*Domain Name System*) faz a tradução.
 
 ![A resolução de um nome, passo a passo.](../img/dns.svg)
+
+> 💡 **Analogia:** o DNS é a **lista de contatos** do celular. Você toca em "Pizzaria do Zé" e o celular disca o número por você. Se o contato não estiver salvo, o resolvedor pergunta à "telefonista" geral (a raiz), que indica a lista do bairro (o `.com`), que finalmente dá o número da pizzaria (o servidor autoritativo). Da próxima vez, o número já está salvo (o cache).
 
 1. O navegador pergunta ao **resolvedor DNS** (do provedor ou público, como 8.8.8.8) qual é o IP de `loja.com`.
 2. Se não souber, o resolvedor consulta os servidores DNS em cadeia: **raiz** → servidor do **.com** → servidor **autoritativo** de `loja.com`.
@@ -251,6 +259,8 @@ Computadores se encontram por **endereços IP** (como `142.250.79.46`), mas pess
 
 ![Cada pacote pode seguir um caminho diferente até o destino.](../img/pacotes.svg)
 
+> 💡 **Analogia:** é como enviar um quebra-cabeça desmontado por vários motoboys. Cada peça (pacote) leva o endereço de destino e um número, e cada motoboy escolhe a rua mais livre naquele momento. Na chegada, o TCP confere a numeração, pede de novo a peça que se perdeu e monta o quebra-cabeça na ordem certa. O UDP manda as peças e não confere nada: mais rápido, mas pode faltar peça.
+
 - A informação é dividida em **pacotes** pequenos.
 - O **IP** coloca o endereço de origem e de destino em cada pacote, e os **roteadores** escolhem o melhor caminho naquele momento. Pacotes diferentes podem seguir rotas diferentes.
 - O **TCP** numera os pacotes, confirma o recebimento e **reenvia** os que se perderam. No destino, os pacotes são **reordenados** e o arquivo é remontado.
@@ -259,6 +269,8 @@ Computadores se encontram por **endereços IP** (como `142.250.79.46`), mas pess
 ### Deep web e dark web
 
 ![A parte indexada pelos buscadores é só a ponta do iceberg.](../img/iceberg.svg)
+
+> 💡 **Analogia:** pense numa biblioteca. As estantes abertas, que qualquer um encontra pelo catálogo, são a **surface web**. O arquivo dos fundos, que só abre com crachá (seu e-mail, seu banco), é a **deep web**: não é secreto nem ilegal, só não está no catálogo. A **dark web** é uma sala com entrada escondida, onde só se chega por um caminho especial (a rede Tor).
 
 | Camada | O que é | Exemplos |
 | --- | --- | --- |
@@ -313,6 +325,8 @@ Já vimos o request sair (HTTP), achar o servidor (DNS) e viajar em pacotes (TCP
 O navegador (*browser*) é o programa que: faz os requests HTTP; recebe HTML, CSS, JavaScript e imagens; e **desenha** a página na tela. A parte que interpreta HTML e CSS e monta a página é o **motor de renderização** (*engine*); o JavaScript é executado por um **motor de JavaScript** (V8 no Chrome, SpiderMonkey no Firefox).
 
 ![Os principais navegadores e os três motores que sobraram.](../img/navegadores.svg)
+
+> 💡 **Analogia:** os navegadores são como marcas de carro: há muitas, com painéis e acabamentos diferentes. Mas, por baixo do capô, sobraram só três fabricantes de motor: Blink, WebKit e Gecko. Todos aceitam o mesmo combustível (HTML, CSS e JavaScript), só que cada motor responde de um jeitinho próprio. Por isso vale "testar o carro" em mais de uma marca.
 
 | Navegador | Ano | Motor | Destaque |
 | --- | --- | --- | --- |
