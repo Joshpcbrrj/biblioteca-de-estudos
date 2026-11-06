@@ -36,6 +36,8 @@ A ligação entre entidades, sempre com uma **cardinalidade** (1:1, 1:N ou N:M):
 
 ![Cliente faz pedidos; pedido contém produtos por meio de itens_pedido.](../img/der-loja.svg)
 
+> 💡 **Analogia:** o diagrama ER é a **planta baixa** de uma casa. Antes de levantar paredes (criar tabelas), o arquiteto desenha os cômodos (entidades), o que vai em cada um (atributos) e as portas que ligam um cômodo ao outro (relacionamentos). Mudar a planta no papel custa uma borracha; mudar a casa pronta custa uma reforma, e com o banco é igual.
+
 Repare que **cliente e produto não se ligam diretamente**. O cliente se liga ao pedido, e o pedido aos produtos, por meio de `itens_pedido`, que resolve o N:M e ainda guarda a quantidade e o preço no momento da compra.
 
 ## Do conceito às tabelas

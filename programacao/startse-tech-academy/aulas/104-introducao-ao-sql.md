@@ -18,6 +18,8 @@ Os dados ficam em **tabelas** (linhas e colunas), e as tabelas se ligam por **ch
 
 ![A chave estrangeira cliente_id liga cada pedido ao seu cliente.](../img/sql-tabela.svg)
 
+> 💡 **Analogia:** um banco relacional é como uma pasta de planilhas, uma aba para cada assunto. Na aba **clientes**, cada pessoa tem um número de cadastro único (a chave primária), como uma matrícula. Na aba **pedidos**, em vez de copiar nome e endereço em toda compra, a comanda anota só o número do cliente (a chave estrangeira). Para saber quem comprou, basta procurar esse número na outra aba.
+
 - Cada **linha** é um registro (um cliente); cada **coluna** é um atributo (o nome).
 - A **chave primária** identifica cada linha: é única e nunca nula.
 - A **chave estrangeira** guarda a chave primária de outra tabela e cria a ligação.

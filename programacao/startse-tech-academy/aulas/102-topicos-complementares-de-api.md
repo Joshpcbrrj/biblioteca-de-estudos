@@ -12,6 +12,8 @@ Você conhece as peças de uma requisição. Agora vamos ver as convenções que
 
 ![Um CRUD completo de produtos em REST.](../img/rest-crud.svg)
 
+> 💡 **Analogia:** pense num arquivo de aço com gavetas etiquetadas. A etiqueta é a URL e diz **o quê** (`/produtos`, `/produtos/7`); o método HTTP diz **o que fazer** com aquilo: olhar (`GET`), pôr uma ficha nova (`POST`), trocar a ficha (`PUT`/`PATCH`) ou jogar fora (`DELETE`). Por isso a URL não precisa de verbos: a gaveta é sempre a mesma, só muda a ação.
+
 Princípios principais:
 
 - **Recursos com substantivos no plural** (`/produtos`, `/usuarios/7/pedidos`). Nada de verbos na URL, como `/criarProduto`.

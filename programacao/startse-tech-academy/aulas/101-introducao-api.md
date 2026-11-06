@@ -8,9 +8,11 @@ Você já usou `fetch` para buscar dados de servidores. Esses servidores oferece
 
 ## O que é uma API
 
-**API (Application Programming Interface) é um contrato que define como um programa pode pedir algo a outro e o que vai receber de volta.** Você não precisa saber como o outro sistema funciona por dentro: basta seguir o contrato. É como o cardápio de um restaurante: você faz o pedido do jeito descrito e recebe o prato, sem entrar na cozinha.
+**API (Application Programming Interface) é um contrato que define como um programa pode pedir algo a outro e o que vai receber de volta.** Você não precisa saber como o outro sistema funciona por dentro: basta seguir o contrato.
 
 ![Toda chamada a uma API web é uma requisição HTTP com uma resposta.](../img/api-requisicao.svg)
+
+> 💡 **Analogia:** uma API é o garçom de um restaurante. O cardápio é a documentação: diz o que dá para pedir e como. Você (o cliente) faz o pedido ao garçom (a requisição), ele leva à cozinha (o servidor) e volta com o prato (a resposta). Você nunca entra na cozinha nem precisa saber a receita; se pedir algo fora do cardápio, o garçom avisa que não tem (um erro 404).
 
 ## Tipos de API
 

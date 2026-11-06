@@ -12,6 +12,8 @@ Na introdução, a coluna `cliente_id` ligava pedidos a clientes. Mas como saber
 
 ![Os três tipos de relacionamento e como cada um vira tabela.](../img/cardinalidade.svg)
 
+> 💡 **Analogia:** pense numa escola. Cada aluno tem **uma** carteirinha e cada carteirinha é de **um** aluno (1:1). Uma turma tem **muitos** alunos, mas cada aluno está em **uma** turma (1:N): basta anotar a turma na ficha do aluno. Já alunos e disciplinas são **muitos para muitos** (N:M): ninguém consegue anotar tudo numa ficha só, então a escola mantém uma **lista de matrículas**, que é exatamente a tabela associativa.
+
 ## Um para um (1:1)
 
 Cada registro de A se liga a **no máximo um** de B, e vice-versa.
