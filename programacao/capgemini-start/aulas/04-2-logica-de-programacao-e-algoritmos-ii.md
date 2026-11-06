@@ -18,12 +18,17 @@ Imagine guardar as notas de 30 alunos com 30 variáveis (`nota1`, `nota2`...). I
 
 ![O vetor nomes, com 5 posições; nomes[3] guarda "Ana".](../img/vetor.svg)
 
+> 💡 **Analogia:** um vetor é a fileira de caixas de correio de um prédio. O prédio tem um nome só (o nome do vetor), cada caixa tem um número (o índice) e todas guardam o mesmo tipo de coisa: cartas. Para entregar uma carta à caixa 3, ninguém precisa de um prédio novo; basta dizer "prédio nomes, caixa 3".
+
 ```
 var
-   nomes : vetor[1..5] de caractere  // 5 posições, índices de 1 a 5
+   // 5 posições, índices de 1 a 5
+   nomes : vetor[1..5] de caractere
 inicio
-   nomes[3] <- "Ana"  // grava na posição 3
-   escreval(nomes[3])  // lê a posição 3
+   // grava na posição 3
+   nomes[3] <- "Ana"
+   // lê a posição 3
+   escreval(nomes[3])
 ```
 
 > ⚠️ No Portugol os índices costumam começar em **1**; em Java, JavaScript e quase todas as linguagens modernas, começam em **0**. Um vetor de 5 posições vai de `v[0]` a `v[4]`, e acessar `v[5]` dá erro (*index out of bounds*).
@@ -183,6 +188,8 @@ O bubble sort compara **pares vizinhos** e troca os dois de lugar se estiverem f
 
 ![Ordenando [5, 3, 8, 1] em três passadas.](../img/bubble.svg)
 
+> 💡 **Analogia:** imagine organizar uma fila de alunos por altura, mas só podendo comparar quem está lado a lado. Você anda do começo ao fim da fila e, sempre que alguém é mais alto que o vizinho da frente, os dois trocam de lugar. No fim da primeira caminhada, o mais alto já chegou ao final, como a bolha que sobe até a superfície do refrigerante. Cada nova caminhada leva o próximo mais alto para o seu lugar.
+
 ### Trocar dois valores: a variável auxiliar
 
 Para trocar `a` e `b`, não basta `a <- b` e `b <- a`: na primeira linha o valor original de `a` se perde. É preciso guardar um deles antes:
@@ -196,9 +203,12 @@ b   <- aux  // recupera o valor original de a
 ### O algoritmo
 
 ```
-para i de 1 ate n - 1 faca  // cada passada
-   para j de 1 ate n - i faca  // a cada passada, o fim já está ordenado
-      se v[j] > v[j + 1] entao  // fora de ordem?
+// cada volta do i é uma passada
+para i de 1 ate n - 1 faca
+   // o fim do vetor já está ordenado
+   para j de 1 ate n - i faca
+      // vizinhos fora de ordem?
+      se v[j] > v[j + 1] entao
          aux      <- v[j]
          v[j]     <- v[j + 1]
          v[j + 1] <- aux
@@ -296,11 +306,15 @@ O vetor guarda uma **fila** de valores, e um `para` basta para percorrê-lo. No 
 
 ![Matriz 4 × 5; em destaque, a posição m[2,3] (linha 2, coluna 3).](../img/matriz.svg)
 
+> 💡 **Analogia:** é o tabuleiro de batalha naval. Para atirar, você não diz só "casa 13": diz a linha e a coluna, como "B5". Na matriz é igual: `m[2, 3]` é "linha 2, coluna 3". E, assim como num cinema, cada poltrona tem fileira e número, e dá para percorrer a sala fileira por fileira.
+
 ```
 var
-   sala : vetor[1..10, 1..10] de caractere  // 10 linhas × 10 colunas = 100 posições
+   // 10 linhas × 10 colunas = 100 posições
+   sala : vetor[1..10, 1..10] de caractere
 inicio
-   sala[2, 3] <- "X"  // linha 2, coluna 3
+   // linha 2, coluna 3
+   sala[2, 3] <- "X"
 ```
 
 Em Java, os índices começam em 0 e cada dimensão tem o próprio par de colchetes: `char[][] sala = new char[10][10]; sala[1][2] = 'X';`.
@@ -435,6 +449,8 @@ Um programa de 500 linhas em um bloco só é difícil de ler, testar e corrigir.
 
 ![O programa principal chama um procedimento e uma função; só a função devolve valor.](../img/funcao.svg)
 
+> 💡 **Analogia:** uma função é como uma máquina de suco: você coloca as frutas (argumentos), ela trabalha por dentro e devolve o suco (retorno). Um procedimento é como um aspirador de pó: você liga, ele faz o serviço, mas não te entrega nada nas mãos. Em ambos, quem usa não precisa saber como funcionam por dentro, só o que entra e o que acontece.
+
 ### Procedimento: executa, não devolve
 
 ```
@@ -455,7 +471,8 @@ mostrarLinha(30)
 ### Função: processa e devolve um valor
 
 ```
-funcao somar(a, b: inteiro): inteiro  // ": inteiro" = tipo do retorno
+// ": inteiro" no fim = tipo do retorno
+funcao somar(a, b: inteiro): inteiro
 inicio
    retorne a + b
 fimfuncao
@@ -483,8 +500,6 @@ Para a linha `total <- somar(2, 3) * 10`:
 3. Executa o corpo da função: `retorne a + b` devolve 5.
 4. `a` e `b` deixam de existir.
 5. A linha continua com o valor devolvido no lugar da chamada: `5 * 10`, e `total` recebe 50.
-
-> 💡 Pense numa função como uma máquina de suco: você coloca as frutas (argumentos), ela trabalha por dentro e devolve o suco (retorno). Quem usa não precisa saber como ela funciona por dentro, só o que entra e o que sai.
 
 ### Escopo: local × global
 
@@ -591,6 +606,8 @@ Um **banco de dados relacional** guarda os dados em **tabelas**: cada **linha** 
 
 ![O modelo usado nesta aula.](../img/er-mercado.svg)
 
+> 💡 **Analogia:** pense num supermercado. Cada corredor tem uma placa com número e nome ("1 · frios"): é a tabela `categorias`. Cada produto tem uma etiqueta que diz só o número do corredor (a chave estrangeira `categoriaid`), sem repetir o nome. A nota fiscal (a venda) lista vários produtos, e cada produto aparece em muitas notas: as linhas da nota são a tabela associativa `itensvendas`.
+
 ### Ambiente: XAMPP
 
 🔗 [https://www.apachefriends.org/pt_br/download.html](https://www.apachefriends.org/pt_br/download.html)
@@ -631,15 +648,18 @@ Lendo em voz alta: "crie a tabela clientes, com um id inteiro que é a chave pri
 ### Inserindo, alterando e apagando
 
 ```sql
-INSERT INTO clientes (nome, cpf, data_nascimento, email)
-VALUES ('Ana Souza', '12212212222', '1997-10-03', 'ana@exemplo.com');
 -- texto e datas entre aspas simples; o id é gerado sozinho
+INSERT INTO clientes (nome, cpf, data_nascimento, email)
+VALUES ('Ana Souza', '12212212222',
+        '1997-10-03', 'ana@exemplo.com');
 
-UPDATE clientes SET email = 'novo@exemplo.com' WHERE id = 1;
+UPDATE clientes SET email = 'novo@exemplo.com'
+WHERE id = 1;
 
 DELETE FROM clientes WHERE id = 1;
 
-DROP TABLE clientes;      -- apaga a TABELA inteira (estrutura e dados)
+-- apaga a TABELA inteira (estrutura e dados)
+DROP TABLE clientes;
 ```
 
 > ⚠️ **Sempre use** `WHERE` **no** `UPDATE` **e no** `DELETE`**.** Sem ele, **todas** as linhas são alteradas ou apagadas. Dica: antes de um `DELETE`, rode um `SELECT` com o mesmo `WHERE` para ver o que vai ser afetado.
@@ -664,7 +684,8 @@ CREATE TABLE produtos (
 );
 
 INSERT INTO categorias (nome) VALUES ('frios');
-INSERT INTO produtos (descricao, qtdestoque, preco, categoriaid)
+INSERT INTO produtos
+  (descricao, qtdestoque, preco, categoriaid)
 VALUES ('Queijo minas', 100, 10.00, 1);
 -- 1 = id da categoria 'frios'
 ```
@@ -724,6 +745,8 @@ SELECT * FROM clientes WHERE nome LIKE 'An%';
 #### Juntando tabelas: `INNER JOIN`
 
 ![O JOIN casa cada produto com a sua categoria.](../img/join.svg)
+
+> 💡 **Analogia:** voltando ao supermercado, a etiqueta do queijo diz só "corredor 1". O JOIN é o funcionário que lê esse número, vai até a placa do corredor 1 e escreve "frios" ao lado do queijo, na mesma linha do relatório. Produtos cuja etiqueta aponta para um corredor que não existe ficam de fora do INNER JOIN.
 
 ```sql
 -- p e c são apelidos (alias) das tabelas
@@ -859,6 +882,8 @@ A primeira linguagem orientada a objetos foi o **Simula** (1967); o paradigma se
 
 ![Uma classe Cliente e três objetos criados a partir dela.](../img/classe-objeto.svg)
 
+> 💡 **Analogia:** a classe é a forminha de biscoito; os objetos são os biscoitos. Com uma forminha só, você faz quantos biscoitos quiser, todos com o mesmo formato (os mesmos atributos e métodos), mas cada um pode ter cobertura própria (valores próprios). O construtor é o momento em que você aperta a forminha na massa e decora o biscoito recém-cortado.
+
 #### Projeto: classe Cliente (4.A)
 
 Registre nome, RG e idade de um cliente e crie um objeto.
@@ -866,7 +891,8 @@ Registre nome, RG e idade de um cliente e crie um objeto.
 **Feito em JavaScript (Node.js)**
 
 ```jsx
-const readlineSync = require('readline-sync')  // npm i readline-sync
+// instale antes: npm i readline-sync
+const readlineSync = require('readline-sync')
 
 class Cliente {
   constructor(nome, rg, idade) {
@@ -877,7 +903,8 @@ class Cliente {
   }
 
   apresentar() {
-    return `${this.nome}, ${this.idade} anos (RG ${this.rg})`
+    return `${this.nome}, ${this.idade} anos` +
+      ` (RG ${this.rg})`
   }
 }
 
