@@ -56,6 +56,8 @@ O **DHCP** (Dynamic Host Configuration Protocol) entrega automaticamente as conf
 
 O endereço é **emprestado** por um tempo (lease). Antes de vencer, o aparelho pede renovação; se sair da rede, o IP volta para o servidor e pode ser dado a outro.
 
+> 💡 **Analogia:** o DHCP é a recepção de um hotel: você chega, pede um quarto, recebe a chave (o IP) por alguns dias e, ao sair, o quarto fica livre para o próximo hóspede.
+
 > 💡 Servidores e impressoras costumam ter IP **fixo** (configurado à mão ou reservado no DHCP), para que os outros sempre os encontrem no mesmo endereço.
 
 ## Latência

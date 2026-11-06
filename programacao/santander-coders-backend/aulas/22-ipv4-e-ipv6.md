@@ -30,6 +30,8 @@ Como sua casa recebe só um IP público, o roteador usa **NAT** (Network Address
 
 ![O roteador traduz os IPs privados para o público](../img/nat.svg)
 
+> 💡 **Analogia:** o IP público é o endereço do prédio; os IPs privados são os números dos apartamentos. O carteiro de fora só conhece o prédio, e o porteiro (o roteador com NAT) sabe para qual apartamento levar cada encomenda.
+
 > 💡 Os exemplos usam faixas reservadas para documentação, como 198.51.100.0/24 e 203.0.113.0/24, que nunca pertencem a ninguém de verdade.
 
 ## IPv6
@@ -73,9 +75,9 @@ São cerca de 3,4 × 10³⁸ endereços: dá para dar um IP para cada aparelho d
 
 O loopback: aponta para a própria máquina (localhost).
 
-**Abrevie 2001:0db8:0000:0000:0000:0000:0000:0001.**
+**Abrevie `2001:0db8:0000:0000:0000:0000:0000:0001`.**
 
-2001:db8::1
+`2001:db8::1`
 
 > ➡️ **Próximo passo:** testar o que você aprendeu até aqui na primeira lista de exercícios de redes.
 

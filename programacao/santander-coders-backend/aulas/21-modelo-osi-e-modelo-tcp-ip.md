@@ -57,6 +57,8 @@ O nome da unidade muda conforme a camada: **segmento** no transporte, **pacote**
 | Velocidade | menor | maior |
 | Usos | web, e-mail, APIs, banco de dados | vídeo ao vivo, jogos, voz, DNS |
 
+> 💡 **Analogia:** o TCP é uma ligação telefônica: primeiro se confirma que o outro atendeu, e se algo não foi ouvido, repete-se. O UDP é um grito no estádio: chega rápido, mas ninguém confirma se ouviu.
+
 ## Portas
 
 O IP leva o pacote até a máquina; a **porta** diz qual programa dentro dela deve receber. Um servidor pode ter um site na porta 443 e um banco de dados na 5432 ao mesmo tempo.

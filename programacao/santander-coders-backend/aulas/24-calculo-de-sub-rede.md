@@ -6,6 +6,8 @@
 
 Um endereço IPv4 tem duas partes: uma diz **qual é a rede** e a outra diz **qual é o dispositivo** (host) dentro dela. A máscara de sub-rede é quem marca onde termina uma e começa a outra.
 
+> 💡 **Analogia:** num endereço como "Rua das Flores, 120", a rua é a parte de rede e o número é o host. A máscara diz quantos dígitos do endereço são "rua".
+
 ## Classes de endereço IPv4
 
 No início, a divisão era fixa e dependia do primeiro octeto:

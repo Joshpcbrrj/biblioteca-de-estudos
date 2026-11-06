@@ -14,6 +14,8 @@ Os algoritmos do primeiro módulo foram escritos em pseudocódigo. Agora vamos e
 - **JRE** (Java Runtime Environment): JVM + bibliotecas padrão. Basta para **rodar** programas.
 - **JDK** (Java Development Kit): JRE + ferramentas de desenvolvimento, como o compilador `javac`. É o que você precisa para **programar**.
 
+> 💡 **Analogia:** o bytecode é como uma partitura. O compositor (o `javac`) escreve uma vez, e cada orquestra (a JVM de cada sistema) sabe tocá-la no seu palco, seja Windows, Linux ou macOS.
+
 ## Instalando o JDK
 
 Use uma versão **LTS** (Long-Term Support), que recebe atualizações por anos. Hoje a LTS mais recente é a **25**; a 21 e a 17 ainda são muito usadas em empresas.
@@ -38,7 +40,7 @@ O instalador `.msi` (Windows) ou `.pkg` (macOS) já configura tudo. Se baixar o 
 4. Em **Variáveis do sistema**, clique em **Novo**. Nome: `JAVA_HOME` (tudo em maiúsculas). Valor: `C:\Program Files\Java\jdk-25`.
 5. Clique em OK.
 6. Selecione a variável `Path` e clique duas vezes nela.
-7. Clique em **Novo** e adicione `%JAVA_HOME%\bin`.
+7. Clique em **Novo** e adicione a linha `%JAVA_HOME%\bin`.
 8. Confirme tudo com OK e abra um terminal **novo** (os já abertos não veem a mudança).
 
 **Vídeo: configurando o JDK nas variáveis de ambiente**

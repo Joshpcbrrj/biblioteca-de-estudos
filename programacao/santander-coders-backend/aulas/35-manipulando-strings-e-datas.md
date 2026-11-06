@@ -39,6 +39,8 @@ System.out.println(texto.length());
 
 ![toUpperCase devolve uma String nova; a original não muda](../img/java-string-imutavel.svg)
 
+> 💡 **Analogia:** uma String é como uma frase gravada em pedra. Para "mudar" a frase, o escultor faz uma pedra nova com o texto alterado; a pedra antiga continua igual.
+
 ### Comparando textos
 
 ```java

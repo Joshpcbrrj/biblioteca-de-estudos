@@ -108,6 +108,8 @@ switch (diaDaSemana) {
 }
 ```
 
+> 💡 **Analogia:** o switch clássico é um prédio em que você entra pelo andar certo, mas, sem o break, desce a escada passando por todos os andares de baixo. O break é a porta de saída daquele andar.
+
 ## switch moderno (Java 14+)
 
 Com a seta `->` não existe fall-through, vários valores cabem no mesmo case e o switch pode **devolver um valor**:

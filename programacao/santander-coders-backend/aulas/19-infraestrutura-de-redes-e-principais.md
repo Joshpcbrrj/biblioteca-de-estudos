@@ -28,6 +28,8 @@ O **switch** substituiu o hub. Ele aprende o endereço MAC de quem está ligado 
 
 Vantagens: várias conversas ao mesmo tempo, sem colisões, e mais privacidade. O switch atua na **camada 2** (enlace) do modelo OSI, que veremos adiante.
 
+> 💡 **Analogia:** o hub é um alto-falante que grita cada recado para o escritório inteiro; o switch é o carteiro que lê o nome no envelope e entrega só na mesa certa.
+
 > 💡 Hub e switch ligam aparelhos **dentro** de uma rede. Para ligar redes **diferentes** (sua casa e a internet), é preciso um roteador.
 
 ## Roteador

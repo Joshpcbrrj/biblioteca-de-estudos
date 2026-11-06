@@ -22,6 +22,8 @@ Toda medida de segurança protege pelo menos um destes (a tríade **CID**):
 - Os sistemas conectados, chamados **provedores de serviço** (SP), aceitam esse token no lugar da senha.
 - Protocolos comuns: **SAML**, **OAuth 2.0** (autorização) e **OpenID Connect** (autenticação sobre o OAuth).<br />Vantagens: menos senhas para lembrar (e reutilizar), controle centralizado e, ao desligar um funcionário, um único bloqueio corta o acesso a tudo.<br />**MFA** (autenticação multifator) pede mais de uma prova: algo que você **sabe** (senha), algo que você **tem** (celular, chave física) ou algo que você **é** (biometria). Mesmo que a senha vaze, o invasor não entra.
 
+> 💡 **Analogia:** o SSO é a pulseira de um parque de diversões: você se identifica uma vez na entrada e depois mostra só a pulseira em cada brinquedo. O MFA é o cofre que pede a chave e também a senha: roubar só uma das duas não basta.
+
 ## VPN
 
 Uma **VPN** (Virtual Private Network) cria um **túnel criptografado** sobre uma rede pública, como a internet. O funcionário em casa acessa os sistemas internos como se estivesse no escritório.

@@ -36,6 +36,8 @@ A **topologia** é o desenho de como os dispositivos estão ligados:
 
 Na maior parte da internet, a conversa segue o modelo **cliente-servidor**: o **cliente** (navegador, aplicativo) faz um pedido e o **servidor** responde. O back-end que você vai programar é justamente o lado servidor.<br />No modelo **par a par** (P2P), cada máquina é cliente e servidor ao mesmo tempo, como nos programas de torrent.
 
+> 💡 **Analogia:** o cliente é o freguês que faz o pedido no balcão; o servidor é a cozinha que prepara e devolve o prato. O freguês não precisa saber como a cozinha funciona, só como pedir.
+
 ## Comutação de pacotes
 
 A ideia que tornou a internet possível: em vez de reservar uma linha inteira para cada conversa, como no telefone antigo, os dados são quebrados em **pacotes** que viajam de forma independente.

@@ -59,6 +59,8 @@ a ^ b  // OU EXCLUSIVO (XOR)
 | true | false | true |
 | true | true | false |
 
+> 💡 **Analogia:** o E é uma porta com duas fechaduras: só abre com as duas chaves. O OU é uma casa com duas portas: qualquer uma serve. O XOR é o interruptor de escada: a luz acende quando as duas chaves estão em posições diferentes.
+
 ## Exemplos em código
 
 ### E: ir à praia
@@ -174,7 +176,7 @@ System.out.println(bissexto);
 
 ## 🧠 Revisão rápida
 
-**Quanto vale true ^ true?**
+**Quanto vale `true ^ true`?**
 
 false: o XOR só é verdadeiro quando os valores são diferentes.
 

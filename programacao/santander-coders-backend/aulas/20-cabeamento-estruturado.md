@@ -28,7 +28,16 @@ O cabo de rede mais comum. Tem **4 pares** de fios de cobre; os fios de cada par
 
 - **Conector**: RJ-45, montado na sequência de cores T568A ou T568B.
 - **Distância**: até 100 m por lance (90 m fixos + 10 m de cabos de ligação).
-- **Blindagem**: UTP (sem blindagem, o mais usado), FTP (folha de alumínio em volta de todos os pares) e STP (cada par blindado), para ambientes com muita interferência.<br />| Categoria | Velocidade típica | Frequência |<br />| --- | --- | --- |<br />| Cat 5e | 1 Gbps | 100 MHz |<br />| Cat 6 | 1 Gbps (10 Gbps até ~55 m) | 250 MHz |<br />| Cat 6a | 10 Gbps em 100 m | 500 MHz |<br />| Cat 8 | 25 a 40 Gbps em até 30 m (data centers) | 2.000 MHz |
+- **Blindagem**: UTP (sem blindagem, o mais usado), FTP (folha de alumínio em volta de todos os pares) e STP (cada par blindado), para ambientes com muita interferência.
+
+Categorias do par trançado:
+
+| Categoria | Velocidade típica | Frequência |
+| --- | --- | --- |
+| Cat 5e | 1 Gbps | 100 MHz |
+| Cat 6 | 1 Gbps (10 Gbps até ~55 m) | 250 MHz |
+| Cat 6a | 10 Gbps em 100 m | 500 MHz |
+| Cat 8 | 25 a 40 Gbps em até 30 m (data centers) | 2.000 MHz |
 
 ### Coaxial
 

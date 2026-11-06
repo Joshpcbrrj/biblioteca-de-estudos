@@ -163,6 +163,8 @@ z >>>= 2;
 1. **Implícito (widening)**: de um tipo menor para um maior. Não há perda, então é automático.
 2. **Explícito (narrowing)**: de um tipo maior para um menor. Pode perder informação, então você precisa escrever o tipo entre parênteses.
 
+> 💡 **Analogia:** passar água de um copo para um balde (widening) nunca derrama. Passar do balde para o copo (narrowing) pode transbordar, por isso o Java exige que você assuma o risco escrevendo `(int)`.
+
 ```java
 int x = 10;
 // implícito: 10.0
