@@ -16,6 +16,8 @@ O módulo II terminou com algoritmos e lógica. O HTML é diferente: não descre
 
 > 💡 "Hipertexto" é texto com **links** para outros textos. Essa ideia de ligar documentos é o coração da Web.
 
+> 💡 **Analogia:** uma página web é como uma casa. O HTML é a estrutura (paredes, portas, cômodos), o CSS é o acabamento (pintura, móveis, iluminação) e o JavaScript é a parte elétrica (interruptores e campainha, que reagem quando alguém mexe).
+
 ## O modelo TCP/IP
 
 O HTML viaja pela internet sobre a pilha de protocolos **TCP/IP**.

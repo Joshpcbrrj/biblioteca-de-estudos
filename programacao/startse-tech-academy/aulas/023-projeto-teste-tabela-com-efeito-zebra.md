@@ -16,6 +16,8 @@ Criar uma tabela de contatos estilizada com:
 
 ![Linhas pares em cinza, linha sob o cursor em amarelo.](../img/tabela-zebra.svg)
 
+> 💡 **Analogia:** o efeito zebra funciona como o papel de formulário contínuo antigo, com faixas alternadas: o olho não "pula" de linha ao atravessar a tabela da esquerda para a direita. O `:hover` é como passar uma régua por baixo da linha que você está lendo.
+
 ## Os seletores que fazem a mágica
 
 ```css

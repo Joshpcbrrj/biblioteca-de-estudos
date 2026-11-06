@@ -12,6 +12,8 @@ Tabelas servem para **dados tabulares**: informações que fazem sentido em linh
 
 ![table → thead/tbody/tfoot → tr → th/td, com caption como legenda.](../img/tabela-anatomia.svg)
 
+> 💡 **Analogia:** uma tabela HTML é montada como uma planilha impressa linha por linha: cada `tr` é uma linha da folha, e cada `td` é um quadradinho dessa linha. As colunas não são desenhadas; elas aparecem porque os quadradinhos ficam alinhados.
+
 | Tag | Significado |
 | --- | --- |
 | `<table>` | a tabela inteira |

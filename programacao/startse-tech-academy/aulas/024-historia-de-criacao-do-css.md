@@ -20,6 +20,8 @@ O CSS é feito de **regras**. Cada uma tem um **seletor** (quais elementos) e um
 
 ![Seletor, propriedade e valor formam uma regra.](../img/css-regra.svg)
 
+> 💡 **Analogia:** se o HTML é o esqueleto e os órgãos de uma pessoa, o CSS é a roupa, o corte de cabelo e a maquiagem. Trocar a roupa muda totalmente a aparência, mas a pessoa por baixo continua a mesma. Cada regra CSS é uma instrução do tipo "todos os `p` usam camisa azul".
+
 ```css
 /* todos os parágrafos ficam azuis e com 18px */
 p {

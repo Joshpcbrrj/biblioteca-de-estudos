@@ -10,6 +10,8 @@ Até aqui as páginas só mostravam conteúdo: textos, imagens, tabelas. Um form
 
 ![Cada campo tem um label ligado pelo id e um name que vira a chave do dado enviado.](../img/form-anatomia.svg)
 
+> 💡 **Analogia:** um formulário HTML é como uma ficha de papel num balcão. O `label` é o texto impresso ao lado de cada espaço, o `name` é o nome da coluna onde o atendente vai lançar a resposta, e o `action` é o guichê para onde a ficha é entregue.
+
 ```html
 <form action="/contato" method="post">
   <label for="nome">Nome</label>

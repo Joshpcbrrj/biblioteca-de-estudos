@@ -14,6 +14,8 @@ O HTML5 trouxe tags com **significado** (*semânticas*). Elas se comportam como 
 
 ![Organização típica de uma página com tags semânticas.](../img/layout-semantico.svg)
 
+> 💡 **Analogia:** montar a página só com `div` é como guardar tudo da mudança em caixas sem etiqueta. As tags semânticas são as etiquetas: "cozinha" (`header`), "quarto" (`main`), "garagem" (`footer`). O conteúdo é o mesmo, mas qualquer um sabe onde está cada coisa.
+
 | Tag | Uso |
 | --- | --- |
 | `<header>` | cabeçalho da página ou de uma seção: logo, título, busca |

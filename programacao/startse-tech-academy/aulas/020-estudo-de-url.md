@@ -10,7 +10,9 @@ Links (`href`), imagens (`src`) e formulários (`action`) apontam todos para URL
 
 **URL (*Uniform Resource Locator*) é o endereço completo de um recurso na web**: uma página, uma imagem, um PDF, um endpoint de API. É o que você digita na barra do navegador e o que vai no `href` de um link.
 
-![As sete partes de uma URL.](../img/url-partes.svg)
+![As partes de uma URL, da esquerda para a direita.](../img/url-partes.svg)
+
+> 💡 **Analogia:** uma URL é como o endereço de uma carta. O protocolo é o tipo de entrega (carta registrada ou simples), o domínio é a cidade e a rua, a porta é o número do prédio, o caminho é o apartamento, a query string é um bilhete com instruções e o fragmento é o "abra na página 5" que só quem recebe lê.
 
 1. **Protocolo (esquema)**: como acessar o recurso. `https://` (web com criptografia **TLS**), `http://` (sem criptografia), `ftp://`, `mailto:`, `tel:`, `file://`.
 2. **Domínio (host)**: o servidor. Pode ser um nome (`www.exemplo.com.br`) ou um IP (`192.0.2.1`). Lê-se de trás para frente: `.br` é o país, `.com.br` a categoria, `exemplo` o nome registrado e `www` um subdomínio.

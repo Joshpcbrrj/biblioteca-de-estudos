@@ -120,6 +120,8 @@ Dê um `id` ao destino e use `#id` no `href`:
 
 Também dá para combinar com outra página: `href="sobre.html#equipe"`. Com `html { scroll-behavior: smooth; }` no CSS, a rolagem fica suave.
 
+> 💡 **Analogia:** uma âncora é como o marcador de páginas de um livro: o `id` é o marcador colado na página, e o link com `#` é o dedo que abre o livro direto ali.
+
 ### A tag `<base>`
 
 Define a URL base para **todos os links relativos** da página. É pouco usada e pode confundir, então use com cuidado.

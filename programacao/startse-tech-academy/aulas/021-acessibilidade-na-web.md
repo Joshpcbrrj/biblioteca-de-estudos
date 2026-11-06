@@ -10,6 +10,8 @@ Você já escreve páginas com tags semânticas, imagens, tabelas e formulários
 
 ![Quem lê a página nem sempre vê a tela](../img/st-acessibilidade.svg)
 
+> 💡 **Analogia:** acessibilidade na web é como rampa e elevador num prédio. Quem sobe de escada nem percebe que eles existem, mas para quem usa cadeira de rodas são a diferença entre entrar ou ficar na calçada. No site, as "rampas" são o `alt`, o `label`, o foco visível e as tags certas.
+
 **Acessibilidade é fazer o site funcionar para todas as pessoas**, incluindo quem usa leitor de tela, navega só pelo teclado, tem baixa visão, daltonismo ou limitações motoras. No Brasil, a **Lei Brasileira de Inclusão (Lei 13.146/2015)** exige acessibilidade nos sites de empresas e órgãos públicos. A referência técnica mundial é a **WCAG**, publicada pelo W3C.
 
 De quebra, um site acessível costuma ser melhor para SEO e mais fácil de usar para todo mundo.

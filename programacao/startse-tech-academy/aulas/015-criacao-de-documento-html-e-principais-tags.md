@@ -41,6 +41,8 @@ Você já sabe o que é uma tag e onde consultar. Agora vamos montar uma página
 
 > 💡 No VS Code, digite `!` e aperte `Tab` num arquivo `.html` vazio: o Emmet gera esse esqueleto na hora.
 
+> 💡 **Analogia:** o `head` é a ficha técnica de um livro (título, autor, idioma), que o leitor não vê na página; o `body` é o livro aberto, com tudo o que aparece na leitura.
+
 ## Principais tags
 
 | Categoria | Tags | Para que serve |
