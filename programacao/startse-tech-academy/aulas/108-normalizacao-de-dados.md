@@ -16,6 +16,8 @@ Você sabe criar tabelas e ligá-las por chaves. Mas como decidir **quais** tabe
 
 ![Antes, a cidade da Ana se repete; depois, ela fica num lugar só.](../img/normalizacao.svg)
 
+> 💡 **Analogia:** é a diferença entre um caderno de recados e uma agenda de contatos. No caderno, você escreve o endereço da Ana em todo recado sobre ela; quando ela se muda, precisa caçar e corrigir cada página, e sempre escapa uma. Na agenda, o endereço fica **uma vez** no contato da Ana, e os recados só dizem "Ana". Normalizar é passar do caderno para a agenda.
+
 ## Ponto de partida: uma tabela "planilha"
 
 | pedido | cliente | cidade | produtos | precos |

@@ -12,6 +12,8 @@ Na normalização, os dados foram separados em várias tabelas. Para responder p
 
 ![A parte azul é o que cada tipo de JOIN retorna.](../img/joins.svg)
 
+> 💡 **Analogia:** numa festa, você tem a lista de convidados e a pilha de presentes, cada um com um cartão dizendo quem deu. O **INNER JOIN** mostra só os convidados que trouxeram presente. O **LEFT JOIN** mostra todos os convidados, com ou sem presente (quem não trouxe aparece com o campo vazio). O **RIGHT JOIN** mostra todos os presentes, inclusive os sem cartão. E o **FULL JOIN** mostra tudo dos dois lados.
+
 ## Dados de exemplo
 
 ```

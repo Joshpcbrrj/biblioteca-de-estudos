@@ -33,6 +33,8 @@ Sem `GROUP BY`, a agregação resume a tabela inteira em **uma** linha. Com ele,
 
 ![As três vendas da Ana viram uma linha só.](../img/group-by.svg)
 
+> 💡 **Analogia:** é como esvaziar um cofrinho na mesa. Primeiro você tira as moedas estrangeiras (`WHERE`, antes de agrupar). Depois separa as moedas em pilhas por valor (`GROUP BY`) e conta ou soma cada pilha (`COUNT`, `SUM`). Por fim, ignora as pilhas com menos de 5 moedas (`HAVING`, depois de agrupar). Cada pilha vira uma linha do resultado.
+
 ```sql
 SELECT vendedor, COUNT(*) AS qtd, SUM(valor) AS total
 FROM vendas

@@ -78,6 +78,8 @@ Outros recursos: `SELECT DISTINCT cidade` (sem repetir), `AS` para apelidos (`pr
 
 ![Você escreve SELECT primeiro, mas o banco o executa quase no fim.](../img/sql-ordem.svg)
 
+> 💡 **Analogia:** é como um bibliotecário montando uma pilha de livros para você. Primeiro ele vai à estante certa (`FROM`), separa só os livros que atendem ao pedido (`WHERE`), junta em grupos e descarta os grupos que não servem (`GROUP BY`, `HAVING`), anota as informações que você quer de cada um (`SELECT`), arruma a pilha (`ORDER BY`) e entrega só os primeiros (`LIMIT`). Você **fala** o `SELECT` primeiro, mas ele é **feito** quase no fim.
+
 ## Exercício
 
 Com a tabela `produtos(id, nome, preco, categoria, estoque)`, escreva: (a) os produtos sem estoque da categoria "bebidas"; (b) um aumento de 5% nos preços de quem custa menos de 10; (c) a remoção dos produtos com nome começando por "TESTE".

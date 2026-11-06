@@ -39,6 +39,8 @@ O banco garante a consistência com **restrições**:
 
 ![Tabelas de uma loja e suas ligações](../img/st-relacional.svg)
 
+> 💡 **Analogia:** a chave estrangeira é o número da mesa anotado na comanda de um restaurante. O sistema do caixa só aceita a comanda se a mesa 12 existir de verdade (integridade referencial). E, para montar o salão, primeiro se colocam as mesas e só depois se distribuem as comandas: por isso as tabelas referenciadas são criadas antes das que apontam para elas.
+
 A ordem importa: **crie primeiro as tabelas referenciadas** (que não dependem de ninguém) e depois as que têm chaves estrangeiras.
 
 ```sql

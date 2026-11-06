@@ -10,6 +10,8 @@ Com as tabelas normalizadas no papel, é hora de criá-las no banco e saber alte
 
 ![DDL mexe na estrutura; DML, nos dados](../img/st-ddl.svg)
 
+> 💡 **Analogia:** pense numa estante de livros. A DDL cuida da **estante**: montar (`CREATE`), pôr ou tirar prateleiras (`ALTER`) e jogar a estante fora (`DROP`). A DML cuida dos **livros**: guardar, trocar e tirar alguns escolhidos (`DELETE ... WHERE`). O `TRUNCATE` fica no meio: esvazia todas as prateleiras de uma vez, mas a estante continua lá.
+
 **DDL (Data Definition Language) é a parte do SQL que define a estrutura do banco: bancos, tabelas, colunas, índices, views e restrições.** Ela mexe no "esqueleto"; quem mexe nos dados é a DML.
 
 | Comando | O que faz |
@@ -102,7 +104,8 @@ ALTER TABLE produtos
   ADD CONSTRAINT ck_estoque CHECK (estoque >= 0);
 
 RENAME TABLE produtos TO itens_catalogo;
--- PostgreSQL: ALTER TABLE produtos RENAME TO itens_catalogo;
+-- PostgreSQL:
+-- ALTER TABLE produtos RENAME TO itens_catalogo;
 ```
 
 </details>
