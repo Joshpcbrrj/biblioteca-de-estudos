@@ -24,6 +24,8 @@ HTML deu a estrutura, CSS deu a aparência. Falta a terceira camada: o **comport
 
 ![Do JavaScript de 1995 às versões anuais do ECMAScript.](../img/js-linha-tempo.svg)
 
+> 💡 **Analogia:** o ECMAScript é como a norma ortográfica de um idioma, e o JavaScript é o idioma falado. A norma é revisada de tempos em tempos (ES5, ES6, ES2017...) e cada navegador é uma escola que ensina a versão mais nova que já adotou. O ES6 foi a grande reforma ortográfica: mudou tanto que o código escrito antes e depois dele parece de épocas diferentes.
+
 - Criado por **Brendan Eich** na **Netscape**, em 1995, em cerca de 10 dias. Chamou-se Mocha, depois LiveScript e, por fim, **JavaScript**, aproveitando a fama do Java. Apesar do nome, **as duas linguagens não têm relação**.
 - Em 1997 foi padronizado pela Ecma International com o nome **ECMAScript**. As versões são chamadas de ES5, ES6 (ES2015), ES2017...
 - O **ES6 (2015)** foi a grande virada: `let`, `const`, arrow functions, classes, módulos, template strings, Promises. Desde então sai uma versão nova por ano.
@@ -1061,6 +1063,8 @@ Na aula de estrutura do HTML, você viu que o navegador transforma o HTML numa �
 
 ![O DOM: o HTML vira uma árvore](../img/cap-dom-arvore.svg)
 
+> 💡 **Analogia:** o DOM é uma árvore genealógica da página. O `document` é o patriarca; `html` é o filho único; `head` e `body` são os netos, e assim por diante. Com `querySelector` você aponta para um parente ("o primeiro `h1` da família"); com `parentElement` e `children` você sobe e desce as gerações. Mudar alguém na árvore muda a foto da família na hora: a tela.
+
 ### 1. Selecionar elementos
 
 | Método | Retorna |
@@ -1329,10 +1333,14 @@ Se o script já está com `defer`, o `DOMContentLoaded` não é necessário.
 
 ![O evento desce até o alvo e depois sobe pelos ancestrais.](../img/eventos-fluxo.svg)
 
+> 💡 **Analogia:** pense num prédio. Quando alguém grita dentro de um apartamento (o `li`), quem está no corredor do andar (o `ul`), na portaria (o `body`) e na rua (o `document`) também ouve, nessa ordem: é o evento **borbulhando**. A **delegação** é o porteiro: em vez de pôr um vigia em cada apartamento, um só na portaria atende todos, inclusive os moradores que chegarem depois.
+
 Quando você clica num `<li>`, o evento "sobe" (*borbulha*) e também dispara nos elementos de fora: `<ul>`, `<body>`, `document`. Isso permite a **delegação de eventos**: um único ouvinte no pai trata todos os filhos, inclusive os criados depois.
 
 ```jsx
-document.querySelector("#lista").addEventListener("click", (e) => {
+const lista = document.querySelector("#lista");
+
+lista.addEventListener("click", (e) => {
   const item = e.target.closest("li");
   if (!item) return;
   item.classList.toggle("concluido");
@@ -1472,6 +1480,8 @@ O `sessionStorage` funciona igual, mas apaga ao fechar a aba. Nunca guarde senha
 ### Promises
 
 ![Uma Promise começa pendente e termina cumprida ou rejeitada.](../img/promise.svg)
+
+> 💡 **Analogia:** numa praça de alimentação, você faz o pedido e recebe um **pager** que vibra quando a comida fica pronta. O pager é a Promise: enquanto não vibra, está **pendente**, e você pode ir sentar e fazer outras coisas (o código segue). Quando vibra, ou o pedido está pronto (**cumprida**, e você recebe a comida) ou acabou o prato (**rejeitada**, e você recebe o motivo). O `await` é ficar olhando para o pager até ele vibrar, sem impedir que os outros clientes sejam atendidos.
 
 **Promise é um objeto que representa um resultado que ainda vai chegar.** Ela começa **pendente** (*pending*) e termina **cumprida** (*fulfilled*), com um valor, ou **rejeitada** (*rejected*), com um erro.
 
