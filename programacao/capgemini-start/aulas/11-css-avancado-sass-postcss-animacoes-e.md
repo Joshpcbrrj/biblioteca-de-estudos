@@ -200,6 +200,8 @@ Em projetos grandes, o CSS puro tinha limitações: não havia variáveis, era p
 
 ![Você escreve numa linguagem estendida; o compilador gera o CSS que o navegador entende.](../img/preprocessador.svg)
 
+> 💡 **Analogia:** pense nos atalhos de texto do celular. Você configura uma vez que "end" vira "Rua das Flores, 123, apto 45" e, daí em diante, digita só "end". O pré-processador funciona igual: você escreve `$azul` ou `@include botao`, e o compilador expande tudo no CSS completo antes de entregar ao navegador, que nunca vê os atalhos.
+
 **Pré-processador é uma linguagem "turbinada" que é compilada para CSS puro.** Recursos típicos:
 
 - **variáveis** para cores, fontes e medidas;
@@ -218,6 +220,8 @@ Em projetos grandes, o CSS puro tinha limitações: não havia variáveis, era p
 ### Pós-processadores: PostCSS
 
 ![O PostCSS transforma CSS em CSS por meio de plugins.](../img/postcss.svg)
+
+> 💡 **Analogia:** o PostCSS é um lava-rápido em túnel. O carro (seu CSS) entra, passa por várias estações (os plugins), e cada uma faz um serviço: uma lava, outra encera, outra seca. No fim sai o **mesmo carro**, só que melhorado. Você escolhe quais estações ligar.
 
 O **PostCSS** não é uma linguagem nova: ele lê CSS, aplica **plugins** e devolve CSS. É usado para adicionar prefixos de navegador, permitir recursos novos em navegadores antigos e minificar. Costuma rodar **depois** do Sass, ou sozinho.
 
@@ -615,11 +619,13 @@ Sim: o Less é um "superconjunto" do CSS.
 
 ### De onde paramos
 
-Sass e Less transformam uma linguagem estendida em CSS. O PostCSS entra **depois**: pega o CSS pronto (escrito à mão ou gerado pelo Sass) e o melhora automaticamente. É como um revisor que passa no texto depois de escrito.
+Sass e Less transformam uma linguagem estendida em CSS. O PostCSS entra **depois**: pega o CSS pronto (escrito à mão ou gerado pelo Sass) e o melhora automaticamente.
 
 ### O que é
 
 ![O CSS entra, passa pelos plugins e sai transformado.](../img/postcss.svg)
+
+> 💡 **Analogia:** o PostCSS é uma equipe de revisores que passa no texto depois de escrito, cada um com uma única tarefa. Um acrescenta as adaptações para leitores antigos (**autoprefixer**), outro aponta erros e padroniza o estilo (**stylelint**), outro corta tudo que sobra para o texto ficar curto (**cssnano**). Sem revisores contratados (plugins), o PostCSS devolve o texto como recebeu.
 
 **PostCSS é uma ferramenta em JavaScript que lê o CSS, aplica plugins e devolve CSS.** Sozinho ele não faz nada: cada recurso vem de um plugin. Por isso é chamado de **pós-processador** (trabalha sobre CSS pronto), ao contrário do Sass e do Less, que compilam uma linguagem própria.
 
