@@ -38,6 +38,8 @@ Hoje o Java é muito usado em **sistemas corporativos e bancários** (com Spring
 
 ![Um dentro do outro: o JDK inclui o JRE, que inclui a JVM.](../img/jdk-jre-jvm.svg)
 
+> 💡 **Analogia:** pense numa cozinha. A **JVM** é o fogão: é ela que esquenta (executa) a comida. O **JRE** é o fogão com a despensa básica: o suficiente para esquentar e servir pratos prontos (rodar programas). O **JDK** é a cozinha completa, com facas, panelas e livro de receitas: o que você precisa para cozinhar do zero (programar). Quem só come precisa do JRE; quem cozinha precisa do JDK.
+
 | Sigla | Nome | Para que serve |
 | --- | --- | --- |
 | **JVM** | *Java Virtual Machine* | máquina virtual que **executa o bytecode**; existe uma JVM para cada sistema operacional |
@@ -49,6 +51,8 @@ Para programar, instale o **JDK**.
 ### Do código à execução
 
 ![O javac gera bytecode; a JVM de cada sistema o executa.](../img/java-exec.svg)
+
+> 💡 **Analogia:** imagine um livro escrito em português (o `.java`). O `javac` o traduz uma única vez para uma língua universal, que nenhum país fala no dia a dia (o **bytecode**). Em cada país (Windows, Linux, macOS) existe um intérprete local, a **JVM**, que lê essa língua universal e a transmite ao público na língua dele. Um livro, uma tradução, leitores no mundo todo: *write once, run anywhere*.
 
 ```java
 // Main.java
@@ -235,6 +239,8 @@ Convenções de nome: variáveis e métodos em **camelCase** (`precoTotal`), cla
 ### Tipos primitivos
 
 ![Tipos primitivos do Java](../img/cap-java-tipos.svg)
+
+> 💡 **Analogia:** os tipos primitivos são caixas de tamanhos fixos num armário. O `byte` é uma caixinha de fósforo, o `int` é uma caixa de sapato, o `long` é uma caixa de mudança; o `boolean` é um interruptor (ligado ou desligado) e o `char` é uma etiqueta com uma letra só. Passar o conteúdo de uma caixa pequena para uma maior é automático (**alargamento**); colocar o de uma grande numa menor exige cortar o que sobra, e você precisa pedir isso de propósito (**cast**).
 
 | Tipo | Tamanho | Faixa / guarda | Exemplo |
 | --- | --- | --- | --- |
@@ -975,6 +981,8 @@ Você já usou objetos sem perceber: `String`, `Scanner` e `ArrayList` são clas
 ### Classe e objeto
 
 ![A classe é o molde; cada objeto criado com new tem seus próprios valores.](../img/oo-classe-objeto.svg)
+
+> 💡 **Analogia:** a classe é a **planta** de uma casa: diz quantos quartos haverá e onde ficam as portas, mas ninguém mora numa planta. Cada `new` constrói uma **casa** de verdade a partir dela, com endereço próprio. Pintar uma casa de azul (mudar um atributo) não muda as vizinhas nem a planta.
 
 | Conceito | Resumo | Analogia |
 | --- | --- | --- |
