@@ -37,6 +37,8 @@ Entre 1989 e 1991, **Tim Berners-Lee**, físico do **CERN** (o laboratório euro
 
 ![Do HTML de 1991 ao padrão vivo de hoje.](../img/html-linha-tempo.svg)
 
+> 💡 **Analogia:** a história do HTML parece a de uma língua. Começou pequena, com 18 "palavras" (tags). Ganhou um dicionário oficial (o W3C), passou por uma reforma ortográfica rígida que pouca gente adotou (o XHTML 2) e, por fim, virou uma **língua viva**: não tem mais edições numeradas, só evolui com o uso, como o português de todo dia.
+
 | Ano | Marco |
 | --- | --- |
 | 1991 | primeira descrição pública do HTML (18 tags) |
@@ -101,6 +103,8 @@ A aula anterior mostrou que o HTML marca o que é cada conteúdo. Assim como tod
 
 ![Um elemento é formado por abertura, atributos, conteúdo e fechamento.](../img/html-anatomia.svg)
 
+> 💡 **Analogia:** um elemento é como um sanduíche embrulhado. A tag de abertura é o pão de cima, o conteúdo é o recheio e a tag de fechamento é o pão de baixo. Os atributos são os recados escritos no papel do embrulho ("sem cebola", "para viagem"): não fazem parte do recheio, mas dizem como aquele sanduíche deve ser tratado. E uma tag vazia, como `img`, é um biscoito: vem inteiro, sem recheio.
+
 ```html
 <!-- abre e fecha -->
 <p>Um parágrafo.</p>
@@ -152,6 +156,8 @@ A aula anterior mostrou que o HTML marca o que é cada conteúdo. Assim como tod
 ### O documento vira uma árvore: o DOM
 
 ![Cada tag vira um nó da árvore; as tags de dentro são filhas.](../img/html-dom.svg)
+
+> 💡 **Analogia:** o DOM é a **árvore genealógica** da página. O `html` é o avô; `head` e `body` são os filhos; e cada tag dentro do `body` é neto, bisneto e assim por diante. O CSS e o JavaScript encontram cada elemento seguindo esse parentesco ("o parágrafo filho do `main`"). Uma tag fechada fora de ordem bagunça a família inteira.
 
 Ao ler o HTML, o navegador monta uma árvore de objetos chamada **DOM** (Document Object Model). É essa árvore que o CSS estiliza e que o JavaScript lê e altera. Por isso é tão importante aninhar as tags corretamente.
 
@@ -343,6 +349,8 @@ Antes do HTML5, tudo era feito com `<div>`, distinguidas só por classes (`<div 
 - **quem mantém o código**, que lê `<nav>` em vez de decifrar uma `div` genérica.
 
 ![Um layout típico com as tags semânticas.](../img/html-semantico.svg)
+
+> 💡 **Analogia:** é a planta de uma casa com o nome escrito em cada cômodo. A fachada é o `header`, o corredor com as portas é o `nav`, a sala principal é o `main`, a varanda ao lado é o `aside` e o quintal dos fundos é o `footer`. Uma `div` é um cômodo sem placa: serve, mas quem chega (um leitor de tela ou um buscador) não sabe para que ele existe.
 
 | Tag | Uso |
 | --- | --- |
@@ -1004,6 +1012,8 @@ Tabelas servem para **dados tabulares**: informações que se cruzam em linhas e
 
 ![Cabeçalho, corpo e rodapé, com células mescladas.](../img/html-tabela.svg)
 
+> 💡 **Analogia:** pense no quadro de horários pendurado na sala de aula. A primeira linha, com os dias da semana, é o `thead`; cada faixa de horário é uma linha (`tr`); o nome do horário na esquerda é um `th` de linha; e cada aula é um `td`. Uma aula dupla, que ocupa dois horários seguidos, é um `rowspan`; um evento que toma a tarde de vários dias é um `colspan`.
+
 | Tag | Papel |
 | --- | --- |
 | `<table>` | a tabela inteira |
@@ -1396,6 +1406,8 @@ No módulo HTML 1, você viu os verbos HTTP: `GET` para buscar, `POST` para cria
 ### GET × POST
 
 ![No GET os dados vão na URL; no POST, no corpo da requisição.](../img/form-get-post.svg)
+
+> 💡 **Analogia:** o `GET` é um **cartão-postal**: a mensagem vai escrita do lado de fora, junto do endereço, e qualquer um que pegar o cartão lê. O `POST` é uma **carta no envelope**: o conteúdo vai dentro, fora da vista. Mas um envelope comum ainda pode ser aberto no caminho; quem tranca a carta num cofre é o **HTTPS**.
 
 |  | `GET` | `POST` |
 | --- | --- | --- |
