@@ -34,6 +34,8 @@ No módulo anterior, o request saiu do navegador e chegou a "um servidor". Você
 
 ![O servidor web entrega arquivos prontos ou repassa o pedido para a aplicação.](../img/servidor-web.svg)
 
+> 💡 **Analogia:** pense numa padaria. O balconista é o **servidor web**: se você pede um pão francês, ele pega da vitrine e entrega na hora (conteúdo **estático**). Se você encomenda um bolo com o seu nome, ele passa o pedido ao confeiteiro lá dentro (o **servidor de aplicação**), que busca os ingredientes na despensa (o **banco de dados**) e prepara um bolo só seu (conteúdo **dinâmico**). Quem entrega no balcão, nos dois casos, é o balconista.
+
 1. O navegador envia um **request** HTTP (por exemplo, `GET /produtos`).
 2. O **servidor web** (Apache, Nginx) recebe e decide o caminho:
   - **estático:** procura o arquivo (`index.html`, `logo.png`) no disco e o devolve;
@@ -76,6 +78,8 @@ A aula anterior mostrou que qualquer computador pode ser servidor, mas que mante
 
 ![Quanto mais você paga, menos divide a máquina e mais controle tem.](../img/hospedagem-tipos.svg)
 
+> 💡 **Analogia:** pense em moradia. A hospedagem **compartilhada** é dividir um apartamento com outros moradores: barato, mas se o vizinho faz festa, você sente. A **VPS** é alugar um apartamento só seu no prédio: você decora como quiser, mas a manutenção é sua. O **dedicado** é alugar a casa inteira.
+
 | Tipo | Como é | Custo | Controle | Bom para |
 | --- | --- | --- | --- | --- |
 | **Compartilhada** | vários sites na mesma máquina, já configurada pelo provedor | $ | baixo: painel pronto (cPanel), sem acesso root | sites pequenos, blogs, WordPress |
@@ -90,14 +94,14 @@ Provedores como **AWS**, **Microsoft Azure** e **Google Cloud** alugam recursos 
 
 ![Em azul, o que fica com você; em verde, o que o provedor gerencia.](../img/cloud-camadas.svg)
 
+> 💡 **Analogia:** continuando com a moradia, **IaaS** é alugar o imóvel vazio: você leva móveis, eletrodomésticos e tudo mais. **PaaS** é o apartamento mobiliado: você só traz as suas roupas (o código). **Serverless** é pagar por diária só nos dias em que usa. E **SaaS** é o hotel: você só chega e usa, sem cuidar de nada.
+
 | Modelo | Você entrega | Exemplo |
 | --- | --- | --- |
 | **IaaS** (infraestrutura como serviço) | instala o sistema, o runtime e a aplicação numa máquina virtual | AWS EC2, Azure Virtual Machines |
 | **PaaS** (plataforma como serviço) | só o código; o provedor cuida do sistema e do runtime | Heroku, Azure App Service, Render |
 | **Serverless / FaaS** (funções como serviço) | só funções, executadas sob demanda e cobradas por execução | AWS Lambda, Azure Functions |
 | **SaaS** (software como serviço) | nada: você só usa o programa pronto | Gmail, Notion, Microsoft 365 |
-
-> 💡 Uma analogia com moradia: hospedagem compartilhada é dividir um apartamento; VPS é alugar um apartamento só seu no prédio; dedicado é alugar a casa inteira. Na nuvem, IaaS é alugar o imóvel vazio, PaaS é o apartamento mobiliado, e SaaS é o hotel: você só usa.
 
 > 💡 Para **sites estáticos** (HTML, CSS e JavaScript), existem serviços gratuitos como **GitHub Pages**, **Netlify** e **Vercel**. Veja a página "Publicando um site: domínio, DNS e deploy".
 
@@ -161,6 +165,8 @@ Já sabemos que o servidor web recebe o HTTP e entrega arquivos ou repassa à ap
 #### Proxy reverso e balanceamento de carga
 
 ![O Nginx recebe todos os pedidos e os distribui entre as instâncias da aplicação.](../img/proxy-reverso.svg)
+
+> 💡 **Analogia:** o proxy reverso é a **recepcionista** de uma clínica com vários médicos. Todo paciente fala primeiro com ela, que confere os documentos (o HTTPS), entrega na hora o que é simples, como um formulário pronto (os arquivos estáticos), e encaminha cada consulta para o médico mais livre (o balanceamento). O paciente nem sabe em qual sala cada médico está: só conhece a recepção.
 
 Um **proxy reverso** fica na frente dos servidores de aplicação. O usuário fala só com ele, e ele:
 
@@ -264,6 +270,8 @@ Uma aplicação depende de muita coisa além do código: versão do Java ou do N
 
 ![A VM leva um sistema operacional inteiro; o container compartilha o kernel do host.](../img/vm-container.svg)
 
+> 💡 **Analogia:** a VM é uma **casa** inteira: fundação, encanamento e telhado próprios. O container é um **apartamento**: tem a sua porta, os seus móveis e a sua chave, mas divide a estrutura do prédio (o kernel do sistema). Por isso o apartamento é mais barato e fica pronto muito mais rápido, mas um problema na estrutura do prédio afeta todos os moradores.
+
 |  | Máquina virtual (VM) | Container |
 | --- | --- | --- |
 | O que virtualiza | o **hardware**: cada VM tem um sistema operacional completo | o **sistema operacional**: só a aplicação e suas bibliotecas, compartilhando o kernel do host |
@@ -297,8 +305,6 @@ Exemplos: **AWS Lambda**, **Azure Functions**, **Google Cloud Functions**.
 ### A evolução da hospedagem
 
 **Servidor próprio → IaaS → PaaS → serverless:** a cada passo, você cuida de menos infraestrutura e foca mais no código. A tabela completa de "quem cuida de quê" está na página "Tipos de hospedagem e modelos de nuvem".
-
-> 💡 Uma analogia: a VM é uma **casa** inteira (fundação, encanamento, tudo próprio); o container é um **apartamento**, que tem a sua porta e os seus móveis, mas divide a estrutura do prédio (o kernel). Por isso o apartamento é mais barato e fica pronto mais rápido.
 
 ### 🧠 Revisão rápida
 
