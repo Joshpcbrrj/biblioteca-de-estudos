@@ -23,6 +23,8 @@ O currículo em HTML está completo, mas tem a cara padrão do navegador: fonte 
 
 ![Seletor, propriedade e valor.](../img/css-anatomia.svg)
 
+> 💡 **Analogia:** uma regra CSS é um bilhete para a equipe de decoração de um prédio. O seletor diz **onde** agir ("em todos os quartos das crianças"), e cada declaração diz **o que** fazer lá ("parede: azul; cortina: branca;"). O HTML construiu os cômodos; o CSS só decide como eles ficam.
+
 ```css
 /* comentário */
 seletor {
@@ -76,6 +78,8 @@ Quando duas regras definem a mesma propriedade para o mesmo elemento, o navegado
 3. **Ordem**: com especificidade igual, vence a regra que aparece **por último**.
 
 ![Do mais forte (em cima) ao mais fraco.](../img/css-especificidade.svg)
+
+> 💡 **Analogia:** é a hierarquia de uma empresa. Quando chegam ordens diferentes sobre a mesma tarefa, vale a de quem tem o cargo mais alto: a do diretor (id) passa por cima da do gerente (classe), que passa por cima da do colega (tag). Entre duas pessoas do mesmo cargo, vale a ordem mais recente. E o `!important` é um bilhete assinado pelo presidente: atropela tudo, por isso deve ser raro.
 
 A especificidade é contada como três números (**ids – classes – tags**) e comparada da esquerda para a direita:
 
@@ -704,6 +708,8 @@ Nas aulas de HTML, você viu elementos de **bloco** e **em linha**, e a regra "e
 
 ![De dentro para fora: conteúdo, padding, borda e margem.](../img/box-model.svg)
 
+> 💡 **Analogia:** pense num quadro pendurado na parede. A foto é o **conteúdo**; o passe-partout branco em volta dela é o **padding** (faz parte do quadro e tem a cor do fundo); a moldura é a **borda**; e o espaço vazio de parede até o próximo quadro é a **margem**. Aumentar o passe-partout deixa o quadro maior; aumentar a margem só afasta os vizinhos.
+
 | Camada | O que é | Pega a cor de fundo? |
 | --- | --- | --- |
 | **content** | o conteúdo (texto, imagem); tamanho definido por `width` e `height` | sim |
@@ -853,6 +859,8 @@ nav a {
 
 ![Os cinco valores de position.](../img/css-position.svg)
 
+> 💡 **Analogia:** imagine a página como um rolo de papel passando atrás de uma janela. `static` é o desenho impresso no papel, no seu lugar. `relative` é o mesmo desenho, só que deslocado um pouco; o espaço original continua reservado. `absolute` é um adesivo colado em cima de outro desenho (o pai com `relative`), sem ocupar espaço no papel. `fixed` é um adesivo colado no vidro da janela: o papel rola e ele fica parado. E `sticky` rola junto com o papel até encostar na borda da janela, e aí gruda.
+
 Com `position` diferente de `static`, as propriedades `top`, `right`, `bottom` e `left` passam a funcionar.
 
 ```css
@@ -946,6 +954,8 @@ Na aula anterior, colocar caixas lado a lado exigia `inline-block` ou `float`, e
 **Flexbox organiza itens em uma direção (linha ou coluna) e distribui o espaço entre eles.** Você aplica `display: flex` no **container** (o pai), e os **filhos diretos** viram itens flexíveis.
 
 ![Eixo principal (justify-content) e eixo cruzado (align-items).](../img/flex-eixos.svg)
+
+> 💡 **Analogia:** pense numa prateleira de livros. A prateleira é o **container**; os livros são os **itens**. O comprimento da prateleira é o **eixo principal**: `justify-content` decide se os livros ficam encostados num canto, no meio ou espalhados com espaço entre eles. A altura da prateleira é o **eixo cruzado**: `align-items` decide se os livros ficam apoiados embaixo, centralizados ou esticados até o teto. Virar a prateleira de pé (`flex-direction: column`) troca os dois eixos.
 
 ### Propriedades do container (o pai)
 
@@ -1063,6 +1073,8 @@ O Flexbox organiza itens em uma direção. O Grid trabalha com linhas e colunas 
 Os dois são combinados o tempo todo: Grid para o esqueleto, Flexbox dentro de cada parte.
 
 ![As linhas da grade são numeradas a partir de 1.](../img/grid-linhas.svg)
+
+> 💡 **Analogia:** o Grid é um tabuleiro de batalha naval. As **linhas** da grade são os riscos do tabuleiro, numerados a partir de 1; as **células** são os quadradinhos entre eles. Para posicionar um navio, você não diz "quadradinho 2", e sim "do risco 1 ao risco 3": é isso que `grid-column: 1 / 3` faz. E `-1` é sempre o último risco, seja qual for o tamanho do tabuleiro.
 
 ### Definindo a grade
 
