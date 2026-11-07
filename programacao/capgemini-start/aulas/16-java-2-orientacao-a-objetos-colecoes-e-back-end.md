@@ -39,12 +39,12 @@ Pessoa p2 = new Pessoa("Ana Souza", 30);
 
 ### 2. Modificadores de acesso e encapsulamento
 
-| Modificador | Própria classe | Mesmo pacote | Subclasse | Qualquer lugar |
-| --- | --- | --- | --- | --- |
-| `public` | ✅ | ✅ | ✅ | ✅ |
-| `protected` | ✅ | ✅ | ✅ | ❌ |
-| (padrão, sem palavra) | ✅ | ✅ | ❌ | ❌ |
-| `private` | ✅ | ❌ | ❌ | ❌ |
+| Modificador | Quem acessa |
+| --- | --- |
+| **`public`** | qualquer lugar |
+| **`protected`** | a própria classe, o mesmo pacote e as subclasses |
+| (padrão, sem palavra) | a própria classe e o mesmo pacote |
+| **`private`** | só a própria classe |
 
 - Regra prática do **encapsulamento**: atributos `private` e acesso controlado por métodos `public` (getters/setters ou métodos de negócio que validam os dados).
 
@@ -184,6 +184,8 @@ for (Pagavel p : folha)
 
 ![Herança e polimorfismo](../img/cap-polimorfismo.svg)
 
+> 💡 **Analogia:** no fim do mês, o RH manda **o mesmo pedido** a todos os funcionários: "calcule o seu pagamento". O mensalista responde com o salário fixo; o horista multiplica as horas pelo valor da hora. O RH não precisa saber quem é quem: só confia que todos cumprem o contrato `Pagavel`. Isso é polimorfismo: uma chamada, comportamentos diferentes conforme o objeto real.
+
 ### 6. Arrays
 
 - Coleção de **tamanho fixo** de valores do **mesmo tipo**. Índices vão de **0 a N-1** e o tamanho fica em `.length`.
@@ -244,7 +246,9 @@ for (String p : paises) System.out.println(p);
 - Estruturas **dinâmicas** do pacote `java.util` para guardar e manipular grupos de objetos. Crescem e diminuem sozinhas.
 - Boa prática: **declare pela interface** (`List`, `Set`, `Map`) e escolha a implementação no `new`. Assim fica fácil trocar depois.
 
-![](../img/colecoes.svg)
+![As interfaces do Collections e suas implementações mais usadas.](../img/colecoes.svg)
+
+> 💡 **Analogia:** a `List` é uma lista de compras: tem ordem e pode repetir item ("leite" duas vezes). O `Set` é a lista de convidados de uma festa: cada nome entra uma vez só. A `Queue` é a fila do banco: quem chega primeiro é atendido primeiro. E o `Map` é a agenda do celular: você procura pelo nome (a chave) e encontra o número (o valor).
 
 | Interface | Característica | Implementação mais comum | Use quando… |
 | --- | --- | --- | --- |
