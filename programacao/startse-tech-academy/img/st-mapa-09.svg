@@ -1,1 +1,188 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="462" viewBox="0 0 480 462"><style>text{white-space:pre;font-family:Helvetica,Arial,sans-serif;font-size:14px;fill:#1F2937}.t{font-size:17px;font-weight:bold;fill:#111827}.b{font-weight:bold}.m{font-family:Menlo,Consolas,monospace;font-size:13px}.s{font-size:12.5px;fill:#4B5563}.n{font-size:13px;font-style:italic;fill:#4B5563}.c{text-anchor:middle}.r{text-anchor:end}.w{fill:#fff}.xB{fill:url(#gB);stroke:#2563EB}.hB{fill:#2563EB;stroke:#2563EB}.fB{fill:#2563EB}.xG{fill:url(#gG);stroke:#16A34A}.hG{fill:#16A34A;stroke:#16A34A}.fG{fill:#16A34A}.xO{fill:url(#gO);stroke:#D97706}.hO{fill:#D97706;stroke:#D97706}.fO{fill:#D97706}.xP{fill:url(#gP);stroke:#7C3AED}.hP{fill:#7C3AED;stroke:#7C3AED}.fP{fill:#7C3AED}.xR{fill:url(#gR);stroke:#DC2626}.hR{fill:#DC2626;stroke:#DC2626}.fR{fill:#DC2626}.xY{fill:url(#gY);stroke:#6B7280}.hY{fill:#6B7280;stroke:#6B7280}.fY{fill:#6B7280}.xT{fill:url(#gT);stroke:#0D9488}.hT{fill:#0D9488;stroke:#0D9488}.fT{fill:#0D9488}.xK{fill:url(#gK);stroke:#DB2777}.hK{fill:#DB2777;stroke:#DB2777}.fK{fill:#DB2777}.xW{fill:url(#gW);stroke:#9CA3AF}.hW{fill:#9CA3AF;stroke:#9CA3AF}.fW{fill:#9CA3AF}.xZ{fill:url(#gZ);stroke:#DDD6FE}.hZ{fill:#DDD6FE;stroke:#DDD6FE}.fZ{fill:#DDD6FE}.xV{fill:url(#gV);stroke:#E5E7EB}.hV{fill:#E5E7EB;stroke:#E5E7EB}.fV{fill:#E5E7EB}rect,ellipse,polygon,circle{stroke-width:2}.l{stroke:#475569;stroke-width:2.2;fill:none}.d{stroke-dasharray:6 4}.sh{fill:#0F172A;opacity:.10;stroke:none}</style><defs><linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFF6FF"/><stop offset="1" stop-color="#BFDBFE"/></linearGradient><linearGradient id="gG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0FDF4"/><stop offset="1" stop-color="#BBF7D0"/></linearGradient><linearGradient id="gO" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFBEB"/><stop offset="1" stop-color="#FDE68A"/></linearGradient><linearGradient id="gP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5F3FF"/><stop offset="1" stop-color="#DDD6FE"/></linearGradient><linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FEF2F2"/><stop offset="1" stop-color="#FECACA"/></linearGradient><linearGradient id="gY" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F9FAFB"/><stop offset="1" stop-color="#E5E7EB"/></linearGradient><linearGradient id="gT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0FDFA"/><stop offset="1" stop-color="#99F6E4"/></linearGradient><linearGradient id="gK" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDF2F8"/><stop offset="1" stop-color="#FBCFE8"/></linearGradient><linearGradient id="gW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="gZ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5F3FF"/><stop offset="1" stop-color="#F5F3FF"/></linearGradient><linearGradient id="gV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset=".33" stop-color="#7C3AED"/><stop offset=".66" stop-color="#DB2777"/><stop offset="1" stop-color="#F59E0B"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#475569"/></marker></defs><rect width="100%" height="100%" fill="#fff"/><text x="240.0" y="30" class="t c">Mapa do módulo IX</text><rect x="200.0" y="38" width="80" height="4" rx="2" fill="url(#gT0)"/><rect x="22" y="49" width="440" height="44" rx="8" class="sh"/><rect x="20" y="46" width="440" height="44" rx="8" class="xY"/><text x="240.0" y="72.5" class="b c">POO em JavaScript</text><rect x="48" y="112" width="140" height="44" rx="8" class="xB"/><text x="118" y="139.0" class="b c">Paradigmas</text><rect x="206" y="121.0" width="254" height="26" rx="13" fill="#fff" stroke="#2563EB" stroke-width="2"/><path d="M188,134.0 C197,134.0 197,134.0 206,134.0" fill="none" stroke="#2563EB" stroke-width="2"/><text x="218" y="139.0" class="" style="font-size:13.5px">estruturado × POO</text><rect x="48" y="170" width="140" height="58" rx="8" class="xG"/><text x="118" y="204.0" class="b c">Pilares</text><rect x="206" y="170.0" width="254" height="26" rx="13" fill="#fff" stroke="#16A34A" stroke-width="2"/><path d="M188,199.0 C197,199.0 197,183.0 206,183.0" fill="none" stroke="#16A34A" stroke-width="2"/><text x="218" y="188.0" class="" style="font-size:13.5px">abstração · encapsulamento</text><rect x="206" y="202.0" width="254" height="26" rx="13" fill="#fff" stroke="#16A34A" stroke-width="2"/><path d="M188,199.0 C197,199.0 197,215.0 206,215.0" fill="none" stroke="#16A34A" stroke-width="2"/><text x="218" y="220.0" class="" style="font-size:13.5px">herança · polimorfismo</text><rect x="48" y="242" width="140" height="58" rx="8" class="xO"/><text x="118" y="276.0" class="b c">Classes</text><rect x="206" y="242.0" width="254" height="26" rx="13" fill="#fff" stroke="#D97706" stroke-width="2"/><path d="M188,271.0 C197,271.0 197,255.0 206,255.0" fill="none" stroke="#D97706" stroke-width="2"/><text x="218" y="260.0" class="" style="font-size:13.5px">class · constructor</text><rect x="206" y="274.0" width="254" height="26" rx="13" fill="#fff" stroke="#D97706" stroke-width="2"/><path d="M188,271.0 C197,271.0 197,287.0 206,287.0" fill="none" stroke="#D97706" stroke-width="2"/><text x="218" y="292.0" class="" style="font-size:13.5px">new</text><rect x="48" y="314" width="140" height="58" rx="8" class="xP"/><text x="118" y="348.0" class="b c">Membros</text><rect x="206" y="314.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,343.0 C197,343.0 197,327.0 206,327.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="332.0" class="" style="font-size:13.5px">static</text><rect x="206" y="346.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,343.0 C197,343.0 197,359.0 206,359.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="364.0" class="" style="font-size:13.5px">get · set</text><rect x="48" y="386" width="140" height="58" rx="8" class="xT"/><text x="118" y="420.0" class="b c">Herança</text><rect x="206" y="386.0" width="254" height="26" rx="13" fill="#fff" stroke="#0D9488" stroke-width="2"/><path d="M188,415.0 C197,415.0 197,399.0 206,399.0" fill="none" stroke="#0D9488" stroke-width="2"/><text x="218" y="404.0" class="" style="font-size:13.5px">extends · super</text><rect x="206" y="418.0" width="254" height="26" rx="13" fill="#fff" stroke="#0D9488" stroke-width="2"/><path d="M188,415.0 C197,415.0 197,431.0 206,431.0" fill="none" stroke="#0D9488" stroke-width="2"/><text x="218" y="436.0" class="" style="font-size:13.5px">protótipos</text><path d="M30,90 L30,415.0" class="l"/><path d="M30,134.0 L48,134.0" class="l"/><path d="M30,199.0 L48,199.0" class="l"/><path d="M30,271.0 L48,271.0" class="l"/><path d="M30,343.0 L48,343.0" class="l"/><path d="M30,415.0 L48,415.0" class="l"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1398" viewBox="0 0 1200 1398" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<defs><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9DBEF5"/><stop offset=".33" stop-color="#C3ADEE"/><stop offset=".66" stop-color="#F5AE9B"/><stop offset="1" stop-color="#EBCF6E"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1L9,5L1,9" fill="none" stroke="#7A7F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAF9F6"/>
+<text x="600.0" y="86" text-anchor="middle" style="font-size:54px;font-weight:900;fill:#1E1E1E;letter-spacing:1px">POO EM JAVASCRIPT</text>
+<text x="600.0" y="128" text-anchor="middle" style="font-size:23px;fill:#55555F">Módulo IX · objetos, classes e pilares</text>
+<rect x="510.0" y="146" width="180" height="6" rx="3" fill="url(#gT0)"/>
+<path d="M354.6666666666667,432 C388.6666666666667,436 388.6666666666667,468 358.6666666666667,469" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,708 C388.6666666666667,712 388.6666666666667,744 358.6666666666667,745" fill="none" stroke="#B4472B" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,1068 C388.6666666666667,1072 388.6666666666667,1104 358.6666666666667,1105" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,432 C773.3333333333334,436 773.3333333333334,468 743.3333333333334,469" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,708 C773.3333333333334,712 773.3333333333334,744 743.3333333333334,745" fill="none" stroke="#1C7A7A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,1068 C773.3333333333334,1072 773.3333333333334,1104 743.3333333333334,1105" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,432 C1158.0,436 1158.0,468 1128.0,469" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,708 C1158.0,712 1158.0,744 1128.0,745" fill="none" stroke="#6B44B8" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,1068 C1158.0,1072 1158.0,1104 1128.0,1105" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<!-- Card 1: Estrutural × POO -->
+<g>
+<rect x="36.0" y="201" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="196" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="54.0" y="214" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="83.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#2F5FB3">par</text>
+<text x="126.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">1. Estrutural × POO</text>
+<circle cx="70.0" cy="293" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="300" style="font-size:20px;fill:#3A3A44">funções + dados</text>
+<circle cx="70.0" cy="330" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="337" style="font-size:20px;fill:#3A3A44">objetos com estado</text>
+<circle cx="70.0" cy="367" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="374" style="font-size:20px;fill:#3A3A44">quando usar cada</text>
+</g>
+<!-- Card 5: Polimorfismo -->
+<g>
+<rect x="420.6666666666667" y="201" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="196" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="214" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="467.6666666666667" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#8A6A00">poly</text>
+<text x="510.6666666666667" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">5. Polimorfismo</text>
+<circle cx="454.6666666666667" cy="293" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,293 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="300" style="font-size:20px;fill:#3A3A44">sobrescrever método</text>
+<circle cx="454.6666666666667" cy="330" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,330 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="337" style="font-size:20px;fill:#3A3A44">mesma chamada</text>
+<circle cx="454.6666666666667" cy="367" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,367 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="374" style="font-size:20px;fill:#3A3A44">resultados diferentes</text>
+</g>
+<!-- Card 9: static -->
+<g>
+<rect x="805.3333333333334" y="201" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="196" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="214" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="852.3333333333334" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#21835A">stat</text>
+<text x="895.3333333333334" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">9. static</text>
+<circle cx="839.3333333333334" cy="293" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,293 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="300" style="font-size:20px;fill:#3A3A44">pertence à classe</text>
+<circle cx="839.3333333333334" cy="330" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,330 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="337" style="font-size:20px;fill:#3A3A44">Classe.metodo()</text>
+<circle cx="839.3333333333334" cy="367" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,367 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="374" style="font-size:20px;fill:#3A3A44">utilitários</text>
+</g>
+<!-- Card 2: Abstração -->
+<g>
+<rect x="36.0" y="477" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="472" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="54.0" y="490" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="83.0" y="528" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">abs</text>
+<text x="126.0" y="528" style="font-size:24px;font-weight:800;fill:#1E1E1E">2. Abstração</text>
+<circle cx="70.0" cy="569" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,569 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="576" style="font-size:20px;fill:#3A3A44">só o essencial</text>
+<circle cx="70.0" cy="606" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,606 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="613" style="font-size:20px;fill:#3A3A44">modelo simplificado</text>
+<circle cx="70.0" cy="643" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,643 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="650" style="font-size:20px;fill:#3A3A44">interface clara</text>
+</g>
+<!-- Card 6: Modo estrito -->
+<g>
+<rect x="420.6666666666667" y="477" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="472" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="490" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="467.6666666666667" y="528" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">use</text>
+<text x="510.6666666666667" y="528" style="font-size:24px;font-weight:800;fill:#1E1E1E">6. Modo estrito</text>
+<circle cx="454.6666666666667" cy="569" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,569 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="576" style="font-size:20px;fill:#3A3A44">"use strict"</text>
+<circle cx="454.6666666666667" cy="606" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,606 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="613" style="font-size:20px;fill:#3A3A44">erros mais cedo</text>
+<circle cx="454.6666666666667" cy="643" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,643 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="650" style="font-size:20px;fill:#3A3A44">módulos já são estritos</text>
+</g>
+<!-- Card 10: get e set -->
+<g>
+<rect x="805.3333333333334" y="477" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="472" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="490" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="852.3333333333334" y="528" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#6B44B8">gs</text>
+<text x="895.3333333333334" y="528" style="font-size:24px;font-weight:800;fill:#1E1E1E">10. get e set</text>
+<circle cx="839.3333333333334" cy="569" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,569 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="576" style="font-size:20px;fill:#3A3A44">get total()</text>
+<circle cx="839.3333333333334" cy="606" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,606 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="613" style="font-size:20px;fill:#3A3A44">set nome(v)</text>
+<circle cx="839.3333333333334" cy="643" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,643 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="650" style="font-size:20px;fill:#3A3A44">validar ao atribuir</text>
+</g>
+<!-- Card 3: Encapsulamento -->
+<g>
+<rect x="36.0" y="753" width="358.6666666666667" height="320" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="748" width="358.6666666666667" height="320" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="54.0" y="766" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="83.0" y="804" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#21835A">lock</text>
+<text x="126.0" y="804" style="font-size:24px;font-weight:800;fill:#1E1E1E">3. Encapsulamento</text>
+<circle cx="70.0" cy="845" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,845 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="852" style="font-size:20px;fill:#3A3A44">#privado</text>
+<circle cx="70.0" cy="882" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,882 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="889" style="font-size:20px;fill:#3A3A44">getters e setters</text>
+<circle cx="70.0" cy="919" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,919 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="926" style="font-size:20px;fill:#3A3A44">regras no objeto</text>
+</g>
+<!-- Card 7: Classes -->
+<g>
+<rect x="420.6666666666667" y="753" width="358.6666666666667" height="320" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="748" width="358.6666666666667" height="320" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="766" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="467.6666666666667" y="804" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#2F5FB3">cls</text>
+<text x="510.6666666666667" y="804" style="font-size:24px;font-weight:800;fill:#1E1E1E">7. Classes</text>
+<circle cx="454.6666666666667" cy="845" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,845 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="852" style="font-size:20px;fill:#3A3A44">class Nome</text>
+<circle cx="454.6666666666667" cy="882" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,882 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="889" style="font-size:20px;fill:#3A3A44">constructor</text>
+<circle cx="454.6666666666667" cy="919" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,919 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="926" style="font-size:20px;fill:#3A3A44">new</text>
+<rect x="438.6666666666667" y="955" width="322.6666666666667" height="99" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="452.6666666666667" y="981" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">class Conta {</text>
+<text x="452.6666666666667" y="1008" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">  #saldo = 0;</text>
+<text x="452.6666666666667" y="1035" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">}</text>
+</g>
+<!-- Card 11: Protótipos -->
+<g>
+<rect x="805.3333333333334" y="753" width="358.6666666666667" height="320" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="748" width="358.6666666666667" height="320" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="766" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="852.3333333333334" y="804" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#8A6A00">proto</text>
+<text x="895.3333333333334" y="804" style="font-size:24px;font-weight:800;fill:#1E1E1E">11. Protótipos</text>
+<circle cx="839.3333333333334" cy="845" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,845 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="852" style="font-size:20px;fill:#3A3A44">herança por protótipo</text>
+<circle cx="839.3333333333334" cy="882" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,882 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="889" style="font-size:20px;fill:#3A3A44">class é açúcar</text>
+<circle cx="839.3333333333334" cy="919" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,919 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="926" style="font-size:20px;fill:#3A3A44">__proto__</text>
+</g>
+<!-- Card 4: Herança -->
+<g>
+<rect x="36.0" y="1113" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="1108" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="54.0" y="1126" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="83.0" y="1164" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#6B44B8">ext</text>
+<text x="126.0" y="1164" style="font-size:24px;font-weight:800;fill:#1E1E1E">4. Herança</text>
+<circle cx="70.0" cy="1205" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1205 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1212" style="font-size:20px;fill:#3A3A44">extends</text>
+<circle cx="70.0" cy="1242" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1242 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1249" style="font-size:20px;fill:#3A3A44">super()</text>
+<circle cx="70.0" cy="1279" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1279 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1286" style="font-size:20px;fill:#3A3A44">reaproveitar</text>
+</g>
+<!-- Card 8: Métodos -->
+<g>
+<rect x="420.6666666666667" y="1113" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="1108" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="1126" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="467.6666666666667" y="1164" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#B4472B">fn</text>
+<text x="510.6666666666667" y="1164" style="font-size:24px;font-weight:800;fill:#1E1E1E">8. Métodos</text>
+<circle cx="454.6666666666667" cy="1205" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1205 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1212" style="font-size:20px;fill:#3A3A44">comportamento</text>
+<circle cx="454.6666666666667" cy="1242" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1242 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1249" style="font-size:20px;fill:#3A3A44">this.atributo</text>
+<circle cx="454.6666666666667" cy="1279" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1279 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1286" style="font-size:20px;fill:#3A3A44">retornam valores</text>
+</g>
+<!-- Card 12: Boas práticas -->
+<g>
+<rect x="805.3333333333334" y="1113" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="1108" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="1126" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="852.3333333333334" y="1164" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#1C7A7A">ok</text>
+<text x="895.3333333333334" y="1164" style="font-size:24px;font-weight:800;fill:#1E1E1E">12. Boas práticas</text>
+<circle cx="839.3333333333334" cy="1205" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1205 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1212" style="font-size:20px;fill:#3A3A44">classes pequenas</text>
+<circle cx="839.3333333333334" cy="1242" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1242 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1249" style="font-size:20px;fill:#3A3A44">composição</text>
+<circle cx="839.3333333333334" cy="1279" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1279 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1286" style="font-size:20px;fill:#3A3A44">nomes claros</text>
+</g>
+</svg>

@@ -1,1 +1,190 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="508" viewBox="0 0 480 508"><style>text{white-space:pre;font-family:Helvetica,Arial,sans-serif;font-size:14px;fill:#1F2937}.t{font-size:17px;font-weight:bold;fill:#111827}.b{font-weight:bold}.m{font-family:Menlo,Consolas,monospace;font-size:13px}.s{font-size:12.5px;fill:#4B5563}.n{font-size:13px;font-style:italic;fill:#4B5563}.c{text-anchor:middle}.r{text-anchor:end}.w{fill:#fff}.xB{fill:url(#gB);stroke:#2563EB}.hB{fill:#2563EB;stroke:#2563EB}.fB{fill:#2563EB}.xG{fill:url(#gG);stroke:#16A34A}.hG{fill:#16A34A;stroke:#16A34A}.fG{fill:#16A34A}.xO{fill:url(#gO);stroke:#D97706}.hO{fill:#D97706;stroke:#D97706}.fO{fill:#D97706}.xP{fill:url(#gP);stroke:#7C3AED}.hP{fill:#7C3AED;stroke:#7C3AED}.fP{fill:#7C3AED}.xR{fill:url(#gR);stroke:#DC2626}.hR{fill:#DC2626;stroke:#DC2626}.fR{fill:#DC2626}.xY{fill:url(#gY);stroke:#6B7280}.hY{fill:#6B7280;stroke:#6B7280}.fY{fill:#6B7280}.xT{fill:url(#gT);stroke:#0D9488}.hT{fill:#0D9488;stroke:#0D9488}.fT{fill:#0D9488}.xK{fill:url(#gK);stroke:#DB2777}.hK{fill:#DB2777;stroke:#DB2777}.fK{fill:#DB2777}.xW{fill:url(#gW);stroke:#9CA3AF}.hW{fill:#9CA3AF;stroke:#9CA3AF}.fW{fill:#9CA3AF}.xZ{fill:url(#gZ);stroke:#DDD6FE}.hZ{fill:#DDD6FE;stroke:#DDD6FE}.fZ{fill:#DDD6FE}.xV{fill:url(#gV);stroke:#E5E7EB}.hV{fill:#E5E7EB;stroke:#E5E7EB}.fV{fill:#E5E7EB}rect,ellipse,polygon,circle{stroke-width:2}.l{stroke:#475569;stroke-width:2.2;fill:none}.d{stroke-dasharray:6 4}.sh{fill:#0F172A;opacity:.10;stroke:none}</style><defs><linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFF6FF"/><stop offset="1" stop-color="#BFDBFE"/></linearGradient><linearGradient id="gG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0FDF4"/><stop offset="1" stop-color="#BBF7D0"/></linearGradient><linearGradient id="gO" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFBEB"/><stop offset="1" stop-color="#FDE68A"/></linearGradient><linearGradient id="gP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5F3FF"/><stop offset="1" stop-color="#DDD6FE"/></linearGradient><linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FEF2F2"/><stop offset="1" stop-color="#FECACA"/></linearGradient><linearGradient id="gY" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F9FAFB"/><stop offset="1" stop-color="#E5E7EB"/></linearGradient><linearGradient id="gT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0FDFA"/><stop offset="1" stop-color="#99F6E4"/></linearGradient><linearGradient id="gK" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDF2F8"/><stop offset="1" stop-color="#FBCFE8"/></linearGradient><linearGradient id="gW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="gZ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5F3FF"/><stop offset="1" stop-color="#F5F3FF"/></linearGradient><linearGradient id="gV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset=".33" stop-color="#7C3AED"/><stop offset=".66" stop-color="#DB2777"/><stop offset="1" stop-color="#F59E0B"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#475569"/></marker></defs><rect width="100%" height="100%" fill="#fff"/><text x="240.0" y="30" class="t c">Mapa da seção: repetição</text><rect x="200.0" y="38" width="80" height="4" rx="2" fill="url(#gT0)"/><rect x="22" y="49" width="440" height="44" rx="8" class="sh"/><rect x="20" y="46" width="440" height="44" rx="8" class="xY"/><text x="240.0" y="72.5" class="b c">Estruturas de repetição</text><rect x="48" y="112" width="140" height="58" rx="8" class="xB"/><text x="118" y="146.0" class="b c">enquanto</text><rect x="206" y="112.0" width="254" height="26" rx="13" fill="#fff" stroke="#2563EB" stroke-width="2"/><path d="M188,141.0 C197,141.0 197,125.0 206,125.0" fill="none" stroke="#2563EB" stroke-width="2"/><text x="218" y="130.0" class="" style="font-size:13.5px">testa antes de cada volta</text><rect x="206" y="144.0" width="254" height="26" rx="13" fill="#fff" stroke="#2563EB" stroke-width="2"/><path d="M188,141.0 C197,141.0 197,157.0 206,157.0" fill="none" stroke="#2563EB" stroke-width="2"/><text x="218" y="162.0" class="" style="font-size:13.5px">pode rodar 0 vezes</text><rect x="48" y="184" width="140" height="58" rx="8" class="xG"/><text x="118" y="218.0" class="b c">para</text><rect x="206" y="184.0" width="254" height="26" rx="13" fill="#fff" stroke="#16A34A" stroke-width="2"/><path d="M188,213.0 C197,213.0 197,197.0 206,197.0" fill="none" stroke="#16A34A" stroke-width="2"/><text x="218" y="202.0" class="m">para (i = 0; i &lt; 5; i++)</text><rect x="206" y="216.0" width="254" height="26" rx="13" fill="#fff" stroke="#16A34A" stroke-width="2"/><path d="M188,213.0 C197,213.0 197,229.0 206,229.0" fill="none" stroke="#16A34A" stroke-width="2"/><text x="218" y="234.0" class="" style="font-size:13.5px">número de voltas conhecido</text><rect x="48" y="256" width="140" height="58" rx="8" class="xO"/><text x="118" y="281.0" class="b c">faca-</text><text x="118" y="299.0" class="b c">enquanto</text><rect x="206" y="256.0" width="254" height="26" rx="13" fill="#fff" stroke="#D97706" stroke-width="2"/><path d="M188,285.0 C197,285.0 197,269.0 206,269.0" fill="none" stroke="#D97706" stroke-width="2"/><text x="218" y="274.0" class="" style="font-size:13.5px">testa depois</text><rect x="206" y="288.0" width="254" height="26" rx="13" fill="#fff" stroke="#D97706" stroke-width="2"/><path d="M188,285.0 C197,285.0 197,301.0 206,301.0" fill="none" stroke="#D97706" stroke-width="2"/><text x="218" y="306.0" class="" style="font-size:13.5px">roda pelo menos 1 vez</text><rect x="48" y="328" width="140" height="90" rx="8" class="xP"/><text x="118" y="378.0" class="b c">Padrões</text><rect x="206" y="328.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,373.0 C197,373.0 197,341.0 206,341.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="346.0" class="" style="font-size:13.5px">contador: c++</text><rect x="206" y="360.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,373.0 C197,373.0 197,373.0 206,373.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="378.0" class="m">acumulador: soma += x</text><rect x="206" y="392.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,373.0 C197,373.0 197,405.0 206,405.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="410.0" class="" style="font-size:13.5px">laços aninhados</text><rect x="48" y="432" width="140" height="58" rx="8" class="xT"/><text x="118" y="466.0" class="b c">Conferir</text><rect x="206" y="432.0" width="254" height="26" rx="13" fill="#fff" stroke="#0D9488" stroke-width="2"/><path d="M188,461.0 C197,461.0 197,445.0 206,445.0" fill="none" stroke="#0D9488" stroke-width="2"/><text x="218" y="450.0" class="" style="font-size:13.5px">teste de mesa</text><rect x="206" y="464.0" width="254" height="26" rx="13" fill="#fff" stroke="#0D9488" stroke-width="2"/><path d="M188,461.0 C197,461.0 197,477.0 206,477.0" fill="none" stroke="#0D9488" stroke-width="2"/><text x="218" y="482.0" class="" style="font-size:13.5px">cuidado: laço infinito</text><path d="M30,90 L30,461.0" class="l"/><path d="M30,141.0 L48,141.0" class="l"/><path d="M30,213.0 L48,213.0" class="l"/><path d="M30,285.0 L48,285.0" class="l"/><path d="M30,373.0 L48,373.0" class="l"/><path d="M30,461.0 L48,461.0" class="l"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1428" viewBox="0 0 1200 1428" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<defs><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9DBEF5"/><stop offset=".33" stop-color="#C3ADEE"/><stop offset=".66" stop-color="#F5AE9B"/><stop offset="1" stop-color="#EBCF6E"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1L9,5L1,9" fill="none" stroke="#7A7F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAF9F6"/>
+<text x="600.0" y="86" text-anchor="middle" style="font-size:54px;font-weight:900;fill:#1E1E1E;letter-spacing:1px">ESTRUTURAS DE REPETIÇÃO</text>
+<text x="600.0" y="128" text-anchor="middle" style="font-size:23px;fill:#55555F">Seção 4 · repetir sem copiar código</text>
+<rect x="510.0" y="146" width="180" height="6" rx="3" fill="url(#gT0)"/>
+<path d="M354.6666666666667,516 C388.6666666666667,520 388.6666666666667,552 358.6666666666667,553" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,822 C388.6666666666667,826 388.6666666666667,858 358.6666666666667,859" fill="none" stroke="#B4472B" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,1098 C388.6666666666667,1102 388.6666666666667,1134 358.6666666666667,1135" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,516 C773.3333333333334,520 773.3333333333334,552 743.3333333333334,553" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,822 C773.3333333333334,826 773.3333333333334,858 743.3333333333334,859" fill="none" stroke="#1C7A7A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,1098 C773.3333333333334,1102 773.3333333333334,1134 743.3333333333334,1135" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,516 C1158.0,520 1158.0,552 1128.0,553" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,822 C1158.0,826 1158.0,858 1128.0,859" fill="none" stroke="#6B44B8" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,1098 C1158.0,1102 1158.0,1134 1128.0,1135" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<!-- Card 1: enquanto -->
+<g>
+<rect x="36.0" y="201" width="358.6666666666667" height="320" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="196" width="358.6666666666667" height="320" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="54.0" y="214" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="83.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#2F5FB3">wh</text>
+<text x="126.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">1. enquanto</text>
+<circle cx="70.0" cy="293" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="300" style="font-size:20px;fill:#3A3A44">testa antes</text>
+<circle cx="70.0" cy="330" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="337" style="font-size:20px;fill:#3A3A44">pode rodar 0 vezes</text>
+<circle cx="70.0" cy="367" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="374" style="font-size:20px;fill:#3A3A44">atualize a condição</text>
+<rect x="54.0" y="403" width="322.6666666666667" height="99" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="68.0" y="429" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">enquanto (i &lt; 5) {</text>
+<text x="68.0" y="456" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">  i++</text>
+<text x="68.0" y="483" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">}</text>
+</g>
+<!-- Card 5: Acumulador -->
+<g>
+<rect x="420.6666666666667" y="201" width="358.6666666666667" height="320" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="196" width="358.6666666666667" height="320" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="214" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="467.6666666666667" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#8A6A00">sum</text>
+<text x="510.6666666666667" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">5. Acumulador</text>
+<circle cx="454.6666666666667" cy="293" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,293 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="300" style="font-size:20px;fill:#3A3A44">soma valores</text>
+<circle cx="454.6666666666667" cy="330" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,330 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="337" style="font-size:20px;fill:#3A3A44">soma += x</text>
+<circle cx="454.6666666666667" cy="367" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,367 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="374" style="font-size:20px;fill:#3A3A44">começa em 0</text>
+</g>
+<!-- Card 9: Teste de mesa -->
+<g>
+<rect x="805.3333333333334" y="201" width="358.6666666666667" height="320" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="196" width="358.6666666666667" height="320" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="214" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="852.3333333333334" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#21835A">tbl</text>
+<text x="895.3333333333334" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">9. Teste de mesa</text>
+<circle cx="839.3333333333334" cy="293" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,293 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="300" style="font-size:20px;fill:#3A3A44">simule no papel</text>
+<circle cx="839.3333333333334" cy="330" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,330 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="337" style="font-size:20px;fill:#3A3A44">uma coluna por variável</text>
+<circle cx="839.3333333333334" cy="367" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,367 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="374" style="font-size:20px;fill:#3A3A44">uma linha por volta</text>
+</g>
+<!-- Card 2: para -->
+<g>
+<rect x="36.0" y="561" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="556" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="54.0" y="574" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="83.0" y="612" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">for</text>
+<text x="126.0" y="612" style="font-size:24px;font-weight:800;fill:#1E1E1E">2. para</text>
+<circle cx="70.0" cy="653" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,653 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="660" style="font-size:20px;fill:#3A3A44">contador embutido</text>
+<circle cx="70.0" cy="690" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,690 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="697" style="font-size:20px;fill:#3A3A44">início; teste; passo</text>
+<circle cx="70.0" cy="727" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,727 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="734" style="font-size:20px;fill:#3A3A44">nº de voltas conhecido</text>
+<rect x="54.0" y="763" width="322.6666666666667" height="45" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="68.0" y="789" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">para (i=1; i&lt;=5; i++)</text>
+</g>
+<!-- Card 6: Sentinela -->
+<g>
+<rect x="420.6666666666667" y="561" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="556" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="574" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="467.6666666666667" y="612" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">stop</text>
+<text x="510.6666666666667" y="612" style="font-size:24px;font-weight:800;fill:#1E1E1E">6. Sentinela</text>
+<circle cx="454.6666666666667" cy="653" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,653 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="660" style="font-size:20px;fill:#3A3A44">valor que encerra</text>
+<circle cx="454.6666666666667" cy="690" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,690 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="697" style="font-size:20px;fill:#3A3A44">ex.: 0 sai</text>
+<circle cx="454.6666666666667" cy="727" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,727 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="734" style="font-size:20px;fill:#3A3A44">não entra na conta</text>
+</g>
+<!-- Card 10: Qual usar? -->
+<g>
+<rect x="805.3333333333334" y="561" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="556" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="574" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="852.3333333333334" y="612" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#6B44B8">?</text>
+<text x="895.3333333333334" y="612" style="font-size:24px;font-weight:800;fill:#1E1E1E">10. Qual usar?</text>
+<circle cx="839.3333333333334" cy="653" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,653 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="660" style="font-size:20px;fill:#3A3A44">sabe quantas: para</text>
+<circle cx="839.3333333333334" cy="690" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,690 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="697" style="font-size:20px;fill:#3A3A44">depende de dado: enquanto</text>
+<circle cx="839.3333333333334" cy="727" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,727 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="734" style="font-size:20px;fill:#3A3A44">1 vez ao menos: faca</text>
+</g>
+<!-- Card 3: faca-enquanto -->
+<g>
+<rect x="36.0" y="867" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="862" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="54.0" y="880" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="83.0" y="918" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#21835A">do</text>
+<text x="126.0" y="918" style="font-size:24px;font-weight:800;fill:#1E1E1E">3. faca-enquanto</text>
+<circle cx="70.0" cy="959" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,959 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="966" style="font-size:20px;fill:#3A3A44">testa depois</text>
+<circle cx="70.0" cy="996" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,996 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1003" style="font-size:20px;fill:#3A3A44">roda pelo menos 1 vez</text>
+<circle cx="70.0" cy="1033" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,1033 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1040" style="font-size:20px;fill:#3A3A44">menus e validação</text>
+</g>
+<!-- Card 7: Laços aninhados -->
+<g>
+<rect x="420.6666666666667" y="867" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="862" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="880" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="467.6666666666667" y="918" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#2F5FB3">xy</text>
+<text x="510.6666666666667" y="918" style="font-size:24px;font-weight:800;fill:#1E1E1E">7. Laços aninhados</text>
+<circle cx="454.6666666666667" cy="959" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,959 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="966" style="font-size:20px;fill:#3A3A44">laço dentro de laço</text>
+<circle cx="454.6666666666667" cy="996" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,996 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1003" style="font-size:20px;fill:#3A3A44">tabuada, matrizes</text>
+<circle cx="454.6666666666667" cy="1033" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,1033 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1040" style="font-size:20px;fill:#3A3A44">linhas × colunas</text>
+</g>
+<!-- Card 11: Validação -->
+<g>
+<rect x="805.3333333333334" y="867" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="862" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="880" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="852.3333333333334" y="918" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#8A6A00">ok</text>
+<text x="895.3333333333334" y="918" style="font-size:24px;font-weight:800;fill:#1E1E1E">11. Validação</text>
+<circle cx="839.3333333333334" cy="959" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,959 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="966" style="font-size:20px;fill:#3A3A44">repete até valer</text>
+<circle cx="839.3333333333334" cy="996" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,996 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1003" style="font-size:20px;fill:#3A3A44">nota entre 0 e 10</text>
+<circle cx="839.3333333333334" cy="1033" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,1033 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1040" style="font-size:20px;fill:#3A3A44">faca-enquanto</text>
+</g>
+<!-- Card 4: Contador -->
+<g>
+<rect x="36.0" y="1143" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="1138" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="54.0" y="1156" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="83.0" y="1194" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#6B44B8">n+1</text>
+<text x="126.0" y="1194" style="font-size:24px;font-weight:800;fill:#1E1E1E">4. Contador</text>
+<circle cx="70.0" cy="1235" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1235 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1242" style="font-size:20px;fill:#3A3A44">conta ocorrências</text>
+<circle cx="70.0" cy="1272" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1272 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1279" style="font-size:20px;fill:#3A3A44">começa em 0</text>
+<circle cx="70.0" cy="1309" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1309 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1316" style="font-size:20px;fill:#3A3A44">cont++</text>
+</g>
+<!-- Card 8: Laço infinito -->
+<g>
+<rect x="420.6666666666667" y="1143" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="1138" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="1156" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="467.6666666666667" y="1194" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">inf</text>
+<text x="510.6666666666667" y="1194" style="font-size:24px;font-weight:800;fill:#1E1E1E">8. Laço infinito</text>
+<circle cx="454.6666666666667" cy="1235" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1235 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1242" style="font-size:20px;fill:#3A3A44">condição nunca falsa</text>
+<circle cx="454.6666666666667" cy="1272" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1272 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1279" style="font-size:20px;fill:#3A3A44">esqueceu o i++</text>
+<circle cx="454.6666666666667" cy="1309" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1309 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1316" style="font-size:20px;fill:#3A3A44">pare o programa</text>
+</g>
+<!-- Card 12: Armadilhas -->
+<g>
+<rect x="805.3333333333334" y="1143" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="1138" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="1156" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="852.3333333333334" y="1194" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#1C7A7A">!</text>
+<text x="895.3333333333334" y="1194" style="font-size:24px;font-weight:800;fill:#1E1E1E">12. Armadilhas</text>
+<circle cx="839.3333333333334" cy="1235" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M835.8333333333334,1231.5 l7,7 M842.8333333333334,1231.5 l-7,7" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round"/>
+<text x="859.3333333333334" y="1242" style="font-size:20px;fill:#3A3A44">&lt;= vs &lt; no limite</text>
+<circle cx="839.3333333333334" cy="1272" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M835.8333333333334,1268.5 l7,7 M842.8333333333334,1268.5 l-7,7" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round"/>
+<text x="859.3333333333334" y="1279" style="font-size:20px;fill:#3A3A44">acumulador fora do laço</text>
+<circle cx="839.3333333333334" cy="1309" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M835.8333333333334,1305.5 l7,7 M842.8333333333334,1305.5 l-7,7" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round"/>
+<text x="859.3333333333334" y="1316" style="font-size:20px;fill:#3A3A44">zerar antes</text>
+</g>
+</svg>

@@ -48,7 +48,13 @@ jobs:
             tmp=$(mktemp -d)
             cp -r "$d"/. "$tmp"/
             # SVG -> PNG (2x) para o EPUB: Kindle e alguns leitores não exibem SVG bem
-            for s in "$tmp"/img/*.svg; do
+            # cheat sheets: no EPUB entram as 2 partes de 2 colunas (img/epub/)
+            for e in "$tmp"/img/epub/*-1.svg; do
+              [ -e "$e" ] || continue
+              n=$(basename "$e" -1.svg)
+              sed -i -E "s#!\[([^]]*)\]\(\.\./img/$n\.svg\)#![\1](../img/epub/$n-1.svg)\n\n![](../img/epub/$n-2.svg)#g" "$tmp"/aulas/*.md
+            done
+            for s in "$tmp"/img/*.svg "$tmp"/img/epub/*.svg; do
               [ -e "$s" ] || continue
               rsvg-convert -z 2 -b white -o "${s%.svg}.png" "$s"
             done

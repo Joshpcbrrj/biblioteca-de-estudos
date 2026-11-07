@@ -1,1 +1,200 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="404" viewBox="0 0 480 404"><style>text{white-space:pre;font-family:Helvetica,Arial,sans-serif;font-size:14px;fill:#1F2937}.t{font-size:17px;font-weight:bold;fill:#111827}.b{font-weight:bold}.m{font-family:Menlo,Consolas,monospace;font-size:13px}.s{font-size:12.5px;fill:#4B5563}.n{font-size:13px;font-style:italic;fill:#4B5563}.c{text-anchor:middle}.r{text-anchor:end}.w{fill:#fff}.xB{fill:url(#gB);stroke:#2563EB}.hB{fill:#2563EB;stroke:#2563EB}.fB{fill:#2563EB}.xG{fill:url(#gG);stroke:#16A34A}.hG{fill:#16A34A;stroke:#16A34A}.fG{fill:#16A34A}.xO{fill:url(#gO);stroke:#D97706}.hO{fill:#D97706;stroke:#D97706}.fO{fill:#D97706}.xP{fill:url(#gP);stroke:#7C3AED}.hP{fill:#7C3AED;stroke:#7C3AED}.fP{fill:#7C3AED}.xR{fill:url(#gR);stroke:#DC2626}.hR{fill:#DC2626;stroke:#DC2626}.fR{fill:#DC2626}.xY{fill:url(#gY);stroke:#6B7280}.hY{fill:#6B7280;stroke:#6B7280}.fY{fill:#6B7280}.xT{fill:url(#gT);stroke:#0D9488}.hT{fill:#0D9488;stroke:#0D9488}.fT{fill:#0D9488}.xK{fill:url(#gK);stroke:#DB2777}.hK{fill:#DB2777;stroke:#DB2777}.fK{fill:#DB2777}.xW{fill:url(#gW);stroke:#9CA3AF}.hW{fill:#9CA3AF;stroke:#9CA3AF}.fW{fill:#9CA3AF}.xZ{fill:url(#gZ);stroke:#DDD6FE}.hZ{fill:#DDD6FE;stroke:#DDD6FE}.fZ{fill:#DDD6FE}.xV{fill:url(#gV);stroke:#E5E7EB}.hV{fill:#E5E7EB;stroke:#E5E7EB}.fV{fill:#E5E7EB}rect,ellipse,polygon,circle{stroke-width:2}.l{stroke:#475569;stroke-width:2.2;fill:none}.d{stroke-dasharray:6 4}.sh{fill:#0F172A;opacity:.10;stroke:none}</style><defs><linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFF6FF"/><stop offset="1" stop-color="#BFDBFE"/></linearGradient><linearGradient id="gG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0FDF4"/><stop offset="1" stop-color="#BBF7D0"/></linearGradient><linearGradient id="gO" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFBEB"/><stop offset="1" stop-color="#FDE68A"/></linearGradient><linearGradient id="gP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5F3FF"/><stop offset="1" stop-color="#DDD6FE"/></linearGradient><linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FEF2F2"/><stop offset="1" stop-color="#FECACA"/></linearGradient><linearGradient id="gY" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F9FAFB"/><stop offset="1" stop-color="#E5E7EB"/></linearGradient><linearGradient id="gT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0FDFA"/><stop offset="1" stop-color="#99F6E4"/></linearGradient><linearGradient id="gK" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDF2F8"/><stop offset="1" stop-color="#FBCFE8"/></linearGradient><linearGradient id="gW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="gZ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5F3FF"/><stop offset="1" stop-color="#F5F3FF"/></linearGradient><linearGradient id="gV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset=".33" stop-color="#7C3AED"/><stop offset=".66" stop-color="#DB2777"/><stop offset="1" stop-color="#F59E0B"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#475569"/></marker></defs><rect width="100%" height="100%" fill="#fff"/><text x="240.0" y="30" class="t c">Mapa da etapa 3</text><rect x="200.0" y="38" width="80" height="4" rx="2" fill="url(#gT0)"/><rect x="22" y="49" width="440" height="44" rx="8" class="sh"/><rect x="20" y="46" width="440" height="44" rx="8" class="xY"/><text x="240.0" y="72.5" class="b c">CSS</text><rect x="48" y="112" width="140" height="58" rx="8" class="xB"/><text x="118" y="146.0" class="b c">Base</text><rect x="206" y="112.0" width="254" height="26" rx="13" fill="#fff" stroke="#2563EB" stroke-width="2"/><path d="M188,141.0 C197,141.0 197,125.0 206,125.0" fill="none" stroke="#2563EB" stroke-width="2"/><text x="218" y="130.0" class="" style="font-size:13.5px">seletores · cascata</text><rect x="206" y="144.0" width="254" height="26" rx="13" fill="#fff" stroke="#2563EB" stroke-width="2"/><path d="M188,141.0 C197,141.0 197,157.0 206,157.0" fill="none" stroke="#2563EB" stroke-width="2"/><text x="218" y="162.0" class="" style="font-size:13.5px">box model</text><rect x="48" y="184" width="140" height="58" rx="8" class="xG"/><text x="118" y="218.0" class="b c">Layout</text><rect x="206" y="184.0" width="254" height="26" rx="13" fill="#fff" stroke="#16A34A" stroke-width="2"/><path d="M188,213.0 C197,213.0 197,197.0 206,197.0" fill="none" stroke="#16A34A" stroke-width="2"/><text x="218" y="202.0" class="" style="font-size:13.5px">Flexbox · Grid</text><rect x="206" y="216.0" width="254" height="26" rx="13" fill="#fff" stroke="#16A34A" stroke-width="2"/><path d="M188,213.0 C197,213.0 197,229.0 206,229.0" fill="none" stroke="#16A34A" stroke-width="2"/><text x="218" y="234.0" class="" style="font-size:13.5px">media queries</text><rect x="48" y="256" width="140" height="58" rx="8" class="xO"/><text x="118" y="290.0" class="b c">Avançado</text><rect x="206" y="256.0" width="254" height="26" rx="13" fill="#fff" stroke="#D97706" stroke-width="2"/><path d="M188,285.0 C197,285.0 197,269.0 206,269.0" fill="none" stroke="#D97706" stroke-width="2"/><text x="218" y="274.0" class="" style="font-size:13.5px">Sass · PostCSS</text><rect x="206" y="288.0" width="254" height="26" rx="13" fill="#fff" stroke="#D97706" stroke-width="2"/><path d="M188,285.0 C197,285.0 197,301.0 206,301.0" fill="none" stroke="#D97706" stroke-width="2"/><text x="218" y="306.0" class="" style="font-size:13.5px">variáveis · animações</text><rect x="48" y="328" width="140" height="58" rx="8" class="xP"/><text x="118" y="362.0" class="b c">Organizar</text><rect x="206" y="328.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,357.0 C197,357.0 197,341.0 206,341.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="346.0" class="" style="font-size:13.5px">BEM</text><rect x="206" y="360.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,357.0 C197,357.0 197,373.0 206,373.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="378.0" class="" style="font-size:13.5px">Bootstrap · Tailwind</text><path d="M30,90 L30,357.0" class="l"/><path d="M30,141.0 L48,141.0" class="l"/><path d="M30,213.0 L48,213.0" class="l"/><path d="M30,285.0 L48,285.0" class="l"/><path d="M30,357.0 L48,357.0" class="l"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1481" viewBox="0 0 1200 1481" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<defs><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9DBEF5"/><stop offset=".33" stop-color="#C3ADEE"/><stop offset=".66" stop-color="#F5AE9B"/><stop offset="1" stop-color="#EBCF6E"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1L9,5L1,9" fill="none" stroke="#7A7F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAF9F6"/>
+<text x="600.0" y="86" text-anchor="middle" style="font-size:54px;font-weight:900;fill:#1E1E1E;letter-spacing:1px">CSS NA PRÁTICA</text>
+<text x="600.0" y="128" text-anchor="middle" style="font-size:23px;fill:#55555F">Etapa 3 · do seletor ao layout responsivo</text>
+<rect x="510.0" y="146" width="180" height="6" rx="3" fill="url(#gT0)"/>
+<path d="M354.6666666666667,489 C388.6666666666667,493 388.6666666666667,525 358.6666666666667,526" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,788 C388.6666666666667,792 388.6666666666667,824 358.6666666666667,825" fill="none" stroke="#B4472B" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,1094 C388.6666666666667,1098 388.6666666666667,1130 358.6666666666667,1131" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,489 C773.3333333333334,493 773.3333333333334,525 743.3333333333334,526" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,788 C773.3333333333334,792 773.3333333333334,824 743.3333333333334,825" fill="none" stroke="#1C7A7A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,1094 C773.3333333333334,1098 773.3333333333334,1130 743.3333333333334,1131" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,489 C1158.0,493 1158.0,525 1128.0,526" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,788 C1158.0,792 1158.0,824 1128.0,825" fill="none" stroke="#6B44B8" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,1094 C1158.0,1098 1158.0,1130 1128.0,1131" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<!-- Card 1: Regra CSS -->
+<g>
+<rect x="36.0" y="201" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="196" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="54.0" y="214" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="83.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#2F5FB3">{}</text>
+<text x="126.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">1. Regra CSS</text>
+<circle cx="70.0" cy="293" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="300" style="font-size:20px;fill:#3A3A44">seletor diz ONDE</text>
+<circle cx="70.0" cy="330" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="337" style="font-size:20px;fill:#3A3A44">propriedade: valor diz O QUÊ</text>
+<circle cx="70.0" cy="367" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="374" style="font-size:20px;fill:#3A3A44">arquivo externo com &lt;link&gt;</text>
+<rect x="54.0" y="403" width="322.6666666666667" height="45" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="68.0" y="429" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">h1 { color: navy; }</text>
+</g>
+<!-- Card 5: Box model -->
+<g>
+<rect x="420.6666666666667" y="201" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="196" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="214" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="467.6666666666667" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#8A6A00">[]</text>
+<text x="510.6666666666667" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">5. Box model</text>
+<circle cx="454.6666666666667" cy="293" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,293 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="300" style="font-size:20px;fill:#3A3A44">conteúdo, padding</text>
+<circle cx="454.6666666666667" cy="330" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,330 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="337" style="font-size:20px;fill:#3A3A44">borda e margem</text>
+<circle cx="454.6666666666667" cy="367" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,367 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="374" style="font-size:20px;fill:#3A3A44">box-sizing: border-box</text>
+</g>
+<!-- Card 9: Grid -->
+<g>
+<rect x="805.3333333333334" y="201" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="196" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="214" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="852.3333333333334" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#21835A">#</text>
+<text x="895.3333333333334" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">9. Grid</text>
+<circle cx="839.3333333333334" cy="293" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,293 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="300" style="font-size:20px;fill:#3A3A44">linhas e colunas</text>
+<circle cx="839.3333333333334" cy="330" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,330 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="337" style="font-size:20px;fill:#3A3A44">fr divide o espaço</text>
+<circle cx="839.3333333333334" cy="367" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,367 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="374" style="font-size:20px;fill:#3A3A44">áreas com nome</text>
+<rect x="823.3333333333334" y="403" width="322.6666666666667" height="72" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="837.3333333333334" y="429" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">grid-template-columns:</text>
+<text x="837.3333333333334" y="456" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">  repeat(3, 1fr);</text>
+</g>
+<!-- Card 2: Seletores -->
+<g>
+<rect x="36.0" y="534" width="358.6666666666667" height="259" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="529" width="358.6666666666667" height="259" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="54.0" y="547" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="83.0" y="585" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#B4472B">#.</text>
+<text x="126.0" y="585" style="font-size:24px;font-weight:800;fill:#1E1E1E">2. Seletores</text>
+<circle cx="70.0" cy="626" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,626 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="633" style="font-size:20px;fill:#3A3A44">tag, .classe, #id</text>
+<circle cx="70.0" cy="663" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,663 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="670" style="font-size:20px;fill:#3A3A44">descendente: nav a</text>
+<circle cx="70.0" cy="700" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,700 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="707" style="font-size:20px;fill:#3A3A44">estado: a:hover</text>
+<rect x="56.0" y="738" width="89" height="32" rx="16" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.4"/>
+<text x="100.5" y="760" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17px;font-weight:700;fill:#B4472B">.card</text>
+<rect x="155.0" y="738" width="89" height="32" rx="16" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.4"/>
+<text x="199.5" y="760" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17px;font-weight:700;fill:#B4472B">#menu</text>
+<rect x="254.0" y="738" width="115" height="32" rx="16" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.4"/>
+<text x="311.5" y="760" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17px;font-weight:700;fill:#B4472B">a:hover</text>
+</g>
+<!-- Card 6: Display -->
+<g>
+<rect x="420.6666666666667" y="534" width="358.6666666666667" height="259" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="529" width="358.6666666666667" height="259" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="547" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="467.6666666666667" y="585" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">[_]</text>
+<text x="510.6666666666667" y="585" style="font-size:24px;font-weight:800;fill:#1E1E1E">6. Display</text>
+<circle cx="454.6666666666667" cy="626" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,626 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="633" style="font-size:20px;fill:#3A3A44">block ocupa a linha</text>
+<circle cx="454.6666666666667" cy="663" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,663 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="670" style="font-size:20px;fill:#3A3A44">inline fica no texto</text>
+<circle cx="454.6666666666667" cy="700" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,700 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="707" style="font-size:20px;fill:#3A3A44">none some da página</text>
+</g>
+<!-- Card 10: Responsivo -->
+<g>
+<rect x="805.3333333333334" y="534" width="358.6666666666667" height="259" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="529" width="358.6666666666667" height="259" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="547" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="852.3333333333334" y="585" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#6B44B8">@m</text>
+<text x="895.3333333333334" y="585" style="font-size:24px;font-weight:800;fill:#1E1E1E">10. Responsivo</text>
+<circle cx="839.3333333333334" cy="626" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,626 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="633" style="font-size:20px;fill:#3A3A44">mobile first</text>
+<circle cx="839.3333333333334" cy="663" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,663 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="670" style="font-size:20px;fill:#3A3A44">@media (min-width)</text>
+<circle cx="839.3333333333334" cy="700" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,700 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="707" style="font-size:20px;fill:#3A3A44">imagens com max-width</text>
+</g>
+<!-- Card 3: Cascata -->
+<g>
+<rect x="36.0" y="833" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="828" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="54.0" y="846" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="83.0" y="884" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#21835A">!</text>
+<text x="126.0" y="884" style="font-size:24px;font-weight:800;fill:#1E1E1E">3. Cascata</text>
+<circle cx="70.0" cy="925" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,925 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="932" style="font-size:20px;fill:#3A3A44">id &gt; classe &gt; tag</text>
+<circle cx="70.0" cy="962" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,962 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="969" style="font-size:20px;fill:#3A3A44">empate: vale a última</text>
+<circle cx="70.0" cy="999" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,999 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1006" style="font-size:20px;fill:#3A3A44">!important: evite</text>
+</g>
+<!-- Card 7: Position -->
+<g>
+<rect x="420.6666666666667" y="833" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="828" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="846" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="467.6666666666667" y="884" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#2F5FB3">xy</text>
+<text x="510.6666666666667" y="884" style="font-size:24px;font-weight:800;fill:#1E1E1E">7. Position</text>
+<circle cx="454.6666666666667" cy="925" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,925 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="932" style="font-size:20px;fill:#3A3A44">relative no pai</text>
+<circle cx="454.6666666666667" cy="962" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,962 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="969" style="font-size:20px;fill:#3A3A44">absolute no filho</text>
+<circle cx="454.6666666666667" cy="999" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,999 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1006" style="font-size:20px;fill:#3A3A44">fixed e sticky</text>
+<rect x="438.6666666666667" y="1035" width="322.6666666666667" height="45" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="452.6666666666667" y="1061" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">top: 0; z-index: 10;</text>
+</g>
+<!-- Card 11: Sass e PostCSS -->
+<g>
+<rect x="805.3333333333334" y="833" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="828" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="846" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="852.3333333333334" y="884" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#8A6A00">$</text>
+<text x="895.3333333333334" y="884" style="font-size:24px;font-weight:800;fill:#1E1E1E">11. Sass e PostCSS</text>
+<circle cx="839.3333333333334" cy="925" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,925 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="932" style="font-size:20px;fill:#3A3A44">$variáveis e mixins</text>
+<circle cx="839.3333333333334" cy="962" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,962 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="969" style="font-size:20px;fill:#3A3A44">compila para CSS</text>
+<circle cx="839.3333333333334" cy="999" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,999 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1006" style="font-size:20px;fill:#3A3A44">autoprefixer, cssnano</text>
+</g>
+<!-- Card 4: Cores e textos -->
+<g>
+<rect x="36.0" y="1139" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="1134" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="54.0" y="1152" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="83.0" y="1190" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#6B44B8">Aa</text>
+<text x="126.0" y="1190" style="font-size:24px;font-weight:800;fill:#1E1E1E">4. Cores e textos</text>
+<circle cx="70.0" cy="1231" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1231 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1238" style="font-size:20px;fill:#3A3A44">hex, rgb(), hsl()</text>
+<circle cx="70.0" cy="1268" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1268 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1275" style="font-size:20px;fill:#3A3A44">font-family com fallback</text>
+<circle cx="70.0" cy="1305" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1305 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1312" style="font-size:20px;fill:#3A3A44">rem para tamanhos</text>
+</g>
+<!-- Card 8: Flexbox -->
+<g>
+<rect x="420.6666666666667" y="1139" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="1134" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="1152" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="467.6666666666667" y="1190" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">&lt;-&gt;</text>
+<text x="510.6666666666667" y="1190" style="font-size:24px;font-weight:800;fill:#1E1E1E">8. Flexbox</text>
+<circle cx="454.6666666666667" cy="1231" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1231 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1238" style="font-size:20px;fill:#3A3A44">uma direção</text>
+<circle cx="454.6666666666667" cy="1268" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1268 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1275" style="font-size:20px;fill:#3A3A44">justify: eixo principal</text>
+<circle cx="454.6666666666667" cy="1305" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1305 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1312" style="font-size:20px;fill:#3A3A44">align: eixo cruzado</text>
+<rect x="438.6666666666667" y="1341" width="322.6666666666667" height="72" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="452.6666666666667" y="1367" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">display: flex;</text>
+<text x="452.6666666666667" y="1394" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">gap: 16px;</text>
+</g>
+<!-- Card 12: Organizar -->
+<g>
+<rect x="805.3333333333334" y="1139" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="1134" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="1152" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="852.3333333333334" y="1190" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">BEM</text>
+<text x="895.3333333333334" y="1190" style="font-size:24px;font-weight:800;fill:#1E1E1E">12. Organizar</text>
+<circle cx="839.3333333333334" cy="1231" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1231 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1238" style="font-size:20px;fill:#3A3A44">bloco__elemento</text>
+<circle cx="839.3333333333334" cy="1268" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1268 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1275" style="font-size:20px;fill:#3A3A44">Bootstrap: componentes</text>
+<circle cx="839.3333333333334" cy="1305" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1305 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1312" style="font-size:20px;fill:#3A3A44">Tailwind: utilitários</text>
+</g>
+</svg>

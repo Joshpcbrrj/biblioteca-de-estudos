@@ -1,1 +1,185 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="476" viewBox="0 0 480 476"><style>text{white-space:pre;font-family:Helvetica,Arial,sans-serif;font-size:14px;fill:#1F2937}.t{font-size:17px;font-weight:bold;fill:#111827}.b{font-weight:bold}.m{font-family:Menlo,Consolas,monospace;font-size:13px}.s{font-size:12.5px;fill:#4B5563}.n{font-size:13px;font-style:italic;fill:#4B5563}.c{text-anchor:middle}.r{text-anchor:end}.w{fill:#fff}.xB{fill:url(#gB);stroke:#2563EB}.hB{fill:#2563EB;stroke:#2563EB}.fB{fill:#2563EB}.xG{fill:url(#gG);stroke:#16A34A}.hG{fill:#16A34A;stroke:#16A34A}.fG{fill:#16A34A}.xO{fill:url(#gO);stroke:#D97706}.hO{fill:#D97706;stroke:#D97706}.fO{fill:#D97706}.xP{fill:url(#gP);stroke:#7C3AED}.hP{fill:#7C3AED;stroke:#7C3AED}.fP{fill:#7C3AED}.xR{fill:url(#gR);stroke:#DC2626}.hR{fill:#DC2626;stroke:#DC2626}.fR{fill:#DC2626}.xY{fill:url(#gY);stroke:#6B7280}.hY{fill:#6B7280;stroke:#6B7280}.fY{fill:#6B7280}.xT{fill:url(#gT);stroke:#0D9488}.hT{fill:#0D9488;stroke:#0D9488}.fT{fill:#0D9488}.xK{fill:url(#gK);stroke:#DB2777}.hK{fill:#DB2777;stroke:#DB2777}.fK{fill:#DB2777}.xW{fill:url(#gW);stroke:#9CA3AF}.hW{fill:#9CA3AF;stroke:#9CA3AF}.fW{fill:#9CA3AF}.xZ{fill:url(#gZ);stroke:#DDD6FE}.hZ{fill:#DDD6FE;stroke:#DDD6FE}.fZ{fill:#DDD6FE}.xV{fill:url(#gV);stroke:#E5E7EB}.hV{fill:#E5E7EB;stroke:#E5E7EB}.fV{fill:#E5E7EB}rect,ellipse,polygon,circle{stroke-width:2}.l{stroke:#475569;stroke-width:2.2;fill:none}.d{stroke-dasharray:6 4}.sh{fill:#0F172A;opacity:.10;stroke:none}</style><defs><linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFF6FF"/><stop offset="1" stop-color="#BFDBFE"/></linearGradient><linearGradient id="gG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0FDF4"/><stop offset="1" stop-color="#BBF7D0"/></linearGradient><linearGradient id="gO" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFBEB"/><stop offset="1" stop-color="#FDE68A"/></linearGradient><linearGradient id="gP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5F3FF"/><stop offset="1" stop-color="#DDD6FE"/></linearGradient><linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FEF2F2"/><stop offset="1" stop-color="#FECACA"/></linearGradient><linearGradient id="gY" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F9FAFB"/><stop offset="1" stop-color="#E5E7EB"/></linearGradient><linearGradient id="gT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0FDFA"/><stop offset="1" stop-color="#99F6E4"/></linearGradient><linearGradient id="gK" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDF2F8"/><stop offset="1" stop-color="#FBCFE8"/></linearGradient><linearGradient id="gW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="gZ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5F3FF"/><stop offset="1" stop-color="#F5F3FF"/></linearGradient><linearGradient id="gV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset=".33" stop-color="#7C3AED"/><stop offset=".66" stop-color="#DB2777"/><stop offset="1" stop-color="#F59E0B"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#475569"/></marker></defs><rect width="100%" height="100%" fill="#fff"/><text x="240.0" y="30" class="t c">Mapa do módulo II</text><rect x="200.0" y="38" width="80" height="4" rx="2" fill="url(#gT0)"/><rect x="22" y="49" width="440" height="44" rx="8" class="sh"/><rect x="20" y="46" width="440" height="44" rx="8" class="xY"/><text x="240.0" y="72.5" class="b c">Linguagens de programação</text><rect x="48" y="112" width="140" height="58" rx="8" class="xB"/><text x="118" y="137.0" class="b c">Como</text><text x="118" y="155.0" class="b c">funcionam</text><rect x="206" y="112.0" width="254" height="26" rx="13" fill="#fff" stroke="#2563EB" stroke-width="2"/><path d="M188,141.0 C197,141.0 197,125.0 206,125.0" fill="none" stroke="#2563EB" stroke-width="2"/><text x="218" y="130.0" class="" style="font-size:13.5px">compilada × interpretada</text><rect x="206" y="144.0" width="254" height="26" rx="13" fill="#fff" stroke="#2563EB" stroke-width="2"/><path d="M188,141.0 C197,141.0 197,157.0 206,157.0" fill="none" stroke="#2563EB" stroke-width="2"/><text x="218" y="162.0" class="" style="font-size:13.5px">código → máquina</text><rect x="48" y="184" width="140" height="58" rx="8" class="xG"/><text x="118" y="218.0" class="b c">Tipos</text><rect x="206" y="184.0" width="254" height="26" rx="13" fill="#fff" stroke="#16A34A" stroke-width="2"/><path d="M188,213.0 C197,213.0 197,197.0 206,197.0" fill="none" stroke="#16A34A" stroke-width="2"/><text x="218" y="202.0" class="" style="font-size:13.5px">baixo × alto nível</text><rect x="206" y="216.0" width="254" height="26" rx="13" fill="#fff" stroke="#16A34A" stroke-width="2"/><path d="M188,213.0 C197,213.0 197,229.0 206,229.0" fill="none" stroke="#16A34A" stroke-width="2"/><text x="218" y="234.0" class="" style="font-size:13.5px">paradigmas</text><rect x="48" y="256" width="140" height="58" rx="8" class="xO"/><text x="118" y="290.0" class="b c">Ambiente</text><rect x="206" y="256.0" width="254" height="26" rx="13" fill="#fff" stroke="#D97706" stroke-width="2"/><path d="M188,285.0 C197,285.0 197,269.0 206,269.0" fill="none" stroke="#D97706" stroke-width="2"/><text x="218" y="274.0" class="" style="font-size:13.5px">VS Code · navegador</text><rect x="206" y="288.0" width="254" height="26" rx="13" fill="#fff" stroke="#D97706" stroke-width="2"/><path d="M188,285.0 C197,285.0 197,301.0 206,301.0" fill="none" stroke="#D97706" stroke-width="2"/><text x="218" y="306.0" class="" style="font-size:13.5px">Node.js · Git</text><rect x="48" y="328" width="140" height="58" rx="8" class="xP"/><text x="118" y="362.0" class="b c">Dúvidas</text><rect x="206" y="328.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,357.0 C197,357.0 197,341.0 206,341.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="346.0" class="" style="font-size:13.5px">busque em inglês</text><rect x="206" y="360.0" width="254" height="26" rx="13" fill="#fff" stroke="#7C3AED" stroke-width="2"/><path d="M188,357.0 C197,357.0 197,373.0 206,373.0" fill="none" stroke="#7C3AED" stroke-width="2"/><text x="218" y="378.0" class="" style="font-size:13.5px">Stack Overflow · MDN</text><rect x="48" y="400" width="140" height="58" rx="8" class="xT"/><text x="118" y="434.0" class="b c">Lógica</text><rect x="206" y="400.0" width="254" height="26" rx="13" fill="#fff" stroke="#0D9488" stroke-width="2"/><path d="M188,429.0 C197,429.0 197,413.0 206,413.0" fill="none" stroke="#0D9488" stroke-width="2"/><text x="218" y="418.0" class="" style="font-size:13.5px">algoritmo</text><rect x="206" y="432.0" width="254" height="26" rx="13" fill="#fff" stroke="#0D9488" stroke-width="2"/><path d="M188,429.0 C197,429.0 197,445.0 206,445.0" fill="none" stroke="#0D9488" stroke-width="2"/><text x="218" y="450.0" class="" style="font-size:13.5px">sequência · decisão · repetição</text><path d="M30,90 L30,429.0" class="l"/><path d="M30,141.0 L48,141.0" class="l"/><path d="M30,213.0 L48,213.0" class="l"/><path d="M30,285.0 L48,285.0" class="l"/><path d="M30,357.0 L48,357.0" class="l"/><path d="M30,429.0 L48,429.0" class="l"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1314" viewBox="0 0 1200 1314" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<defs><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9DBEF5"/><stop offset=".33" stop-color="#C3ADEE"/><stop offset=".66" stop-color="#F5AE9B"/><stop offset="1" stop-color="#EBCF6E"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1L9,5L1,9" fill="none" stroke="#7A7F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAF9F6"/>
+<text x="600.0" y="86" text-anchor="middle" style="font-size:54px;font-weight:900;fill:#1E1E1E;letter-spacing:1px">LINGUAGENS DE PROGRAMAÇÃO</text>
+<text x="600.0" y="128" text-anchor="middle" style="font-size:23px;fill:#55555F">Módulo II · do código à execução</text>
+<rect x="510.0" y="146" width="180" height="6" rx="3" fill="url(#gT0)"/>
+<path d="M354.6666666666667,432 C388.6666666666667,436 388.6666666666667,468 358.6666666666667,469" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,708 C388.6666666666667,712 388.6666666666667,744 358.6666666666667,745" fill="none" stroke="#B4472B" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,984 C388.6666666666667,988 388.6666666666667,1020 358.6666666666667,1021" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,432 C773.3333333333334,436 773.3333333333334,468 743.3333333333334,469" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,708 C773.3333333333334,712 773.3333333333334,744 743.3333333333334,745" fill="none" stroke="#1C7A7A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,984 C773.3333333333334,988 773.3333333333334,1020 743.3333333333334,1021" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,432 C1158.0,436 1158.0,468 1128.0,469" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,708 C1158.0,712 1158.0,744 1128.0,745" fill="none" stroke="#6B44B8" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,984 C1158.0,988 1158.0,1020 1128.0,1021" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<!-- Card 1: Como funcionam -->
+<g>
+<rect x="36.0" y="201" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="196" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="54.0" y="214" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="83.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#2F5FB3">run</text>
+<text x="126.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">1. Como funcionam</text>
+<circle cx="70.0" cy="293" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="300" style="font-size:20px;fill:#3A3A44">código-fonte</text>
+<circle cx="70.0" cy="330" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="337" style="font-size:20px;fill:#3A3A44">traduzido para máquina</text>
+<circle cx="70.0" cy="367" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="374" style="font-size:20px;fill:#3A3A44">executado</text>
+</g>
+<!-- Card 5: Tipagem -->
+<g>
+<rect x="420.6666666666667" y="201" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="196" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="214" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="467.6666666666667" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#8A6A00">T</text>
+<text x="510.6666666666667" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">5. Tipagem</text>
+<circle cx="454.6666666666667" cy="293" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,293 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="300" style="font-size:20px;fill:#3A3A44">estática × dinâmica</text>
+<circle cx="454.6666666666667" cy="330" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,330 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="337" style="font-size:20px;fill:#3A3A44">forte × fraca</text>
+<circle cx="454.6666666666667" cy="367" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,367 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="374" style="font-size:20px;fill:#3A3A44">erros cedo ou tarde</text>
+</g>
+<!-- Card 9: Documentação -->
+<g>
+<rect x="805.3333333333334" y="201" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="196" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="214" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="852.3333333333334" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#21835A">doc</text>
+<text x="895.3333333333334" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">9. Documentação</text>
+<circle cx="839.3333333333334" cy="293" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,293 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="300" style="font-size:20px;fill:#3A3A44">MDN</text>
+<circle cx="839.3333333333334" cy="330" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,330 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="337" style="font-size:20px;fill:#3A3A44">docs oficiais</text>
+<circle cx="839.3333333333334" cy="367" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,367 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="374" style="font-size:20px;fill:#3A3A44">exemplos testados</text>
+</g>
+<!-- Card 2: Compilada -->
+<g>
+<rect x="36.0" y="477" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="472" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="54.0" y="490" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="83.0" y="528" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">cmp</text>
+<text x="126.0" y="528" style="font-size:24px;font-weight:800;fill:#1E1E1E">2. Compilada</text>
+<circle cx="70.0" cy="569" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,569 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="576" style="font-size:20px;fill:#3A3A44">tradução antes</text>
+<circle cx="70.0" cy="606" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,606 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="613" style="font-size:20px;fill:#3A3A44">gera executável</text>
+<circle cx="70.0" cy="643" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,643 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="650" style="font-size:20px;fill:#3A3A44">C, Go</text>
+</g>
+<!-- Card 6: Paradigmas -->
+<g>
+<rect x="420.6666666666667" y="477" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="472" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="490" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="467.6666666666667" y="528" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">par</text>
+<text x="510.6666666666667" y="528" style="font-size:24px;font-weight:800;fill:#1E1E1E">6. Paradigmas</text>
+<circle cx="454.6666666666667" cy="569" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,569 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="576" style="font-size:20px;fill:#3A3A44">estruturado</text>
+<circle cx="454.6666666666667" cy="606" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,606 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="613" style="font-size:20px;fill:#3A3A44">orientado a objetos</text>
+<circle cx="454.6666666666667" cy="643" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,643 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="650" style="font-size:20px;fill:#3A3A44">funcional</text>
+</g>
+<!-- Card 10: Lógica -->
+<g>
+<rect x="805.3333333333334" y="477" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="472" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="490" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="852.3333333333334" y="528" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#6B44B8">if</text>
+<text x="895.3333333333334" y="528" style="font-size:24px;font-weight:800;fill:#1E1E1E">10. Lógica</text>
+<circle cx="839.3333333333334" cy="569" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,569 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="576" style="font-size:20px;fill:#3A3A44">sequência</text>
+<circle cx="839.3333333333334" cy="606" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,606 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="613" style="font-size:20px;fill:#3A3A44">decisão</text>
+<circle cx="839.3333333333334" cy="643" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,643 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="650" style="font-size:20px;fill:#3A3A44">repetição</text>
+</g>
+<!-- Card 3: Interpretada -->
+<g>
+<rect x="36.0" y="753" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="748" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="54.0" y="766" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="83.0" y="804" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#21835A">int</text>
+<text x="126.0" y="804" style="font-size:24px;font-weight:800;fill:#1E1E1E">3. Interpretada</text>
+<circle cx="70.0" cy="845" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,845 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="852" style="font-size:20px;fill:#3A3A44">tradução na hora</text>
+<circle cx="70.0" cy="882" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,882 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="889" style="font-size:20px;fill:#3A3A44">Python, JavaScript</text>
+<circle cx="70.0" cy="919" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,919 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="926" style="font-size:20px;fill:#3A3A44">mais flexível</text>
+</g>
+<!-- Card 7: Ambiente -->
+<g>
+<rect x="420.6666666666667" y="753" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="748" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="766" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="467.6666666666667" y="804" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#2F5FB3">ide</text>
+<text x="510.6666666666667" y="804" style="font-size:24px;font-weight:800;fill:#1E1E1E">7. Ambiente</text>
+<circle cx="454.6666666666667" cy="845" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,845 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="852" style="font-size:20px;fill:#3A3A44">VS Code</text>
+<circle cx="454.6666666666667" cy="882" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,882 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="889" style="font-size:20px;fill:#3A3A44">Node.js</text>
+<circle cx="454.6666666666667" cy="919" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,919 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="926" style="font-size:20px;fill:#3A3A44">extensões úteis</text>
+</g>
+<!-- Card 11: Algoritmo -->
+<g>
+<rect x="805.3333333333334" y="753" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="748" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="766" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="852.3333333333334" y="804" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#8A6A00">1-2</text>
+<text x="895.3333333333334" y="804" style="font-size:24px;font-weight:800;fill:#1E1E1E">11. Algoritmo</text>
+<circle cx="839.3333333333334" cy="845" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,845 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="852" style="font-size:20px;fill:#3A3A44">passos finitos</text>
+<circle cx="839.3333333333334" cy="882" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,882 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="889" style="font-size:20px;fill:#3A3A44">entrada e saída</text>
+<circle cx="839.3333333333334" cy="919" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,919 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="926" style="font-size:20px;fill:#3A3A44">pseudocódigo</text>
+</g>
+<!-- Card 4: Alto × baixo nível -->
+<g>
+<rect x="36.0" y="1029" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="1024" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="54.0" y="1042" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="83.0" y="1080" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#6B44B8">lvl</text>
+<text x="126.0" y="1068" style="font-size:24px;font-weight:800;fill:#1E1E1E">4. Alto × baixo</text>
+<text x="126.0" y="1096" style="font-size:24px;font-weight:800;fill:#1E1E1E">nível</text>
+<circle cx="70.0" cy="1121" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1121 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1128" style="font-size:20px;fill:#3A3A44">alto: perto do humano</text>
+<circle cx="70.0" cy="1158" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1158 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1165" style="font-size:20px;fill:#3A3A44">baixo: perto da máquina</text>
+<circle cx="70.0" cy="1195" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1195 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1202" style="font-size:20px;fill:#3A3A44">Assembly</text>
+</g>
+<!-- Card 8: Tirar dúvidas -->
+<g>
+<rect x="420.6666666666667" y="1029" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="1024" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="1042" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="467.6666666666667" y="1080" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">ask</text>
+<text x="510.6666666666667" y="1080" style="font-size:24px;font-weight:800;fill:#1E1E1E">8. Tirar dúvidas</text>
+<circle cx="454.6666666666667" cy="1121" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1121 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1128" style="font-size:20px;fill:#3A3A44">Google em inglês</text>
+<circle cx="454.6666666666667" cy="1158" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1158 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1165" style="font-size:20px;fill:#3A3A44">mensagem de erro exata</text>
+<circle cx="454.6666666666667" cy="1195" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1195 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1202" style="font-size:20px;fill:#3A3A44">Stack Overflow e docs</text>
+</g>
+<!-- Card 12: Fluxograma -->
+<g>
+<rect x="805.3333333333334" y="1029" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="1024" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="1042" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="852.3333333333334" y="1080" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#1C7A7A">&lt;&gt;</text>
+<text x="895.3333333333334" y="1080" style="font-size:24px;font-weight:800;fill:#1E1E1E">12. Fluxograma</text>
+<circle cx="839.3333333333334" cy="1121" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1121 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1128" style="font-size:20px;fill:#3A3A44">início e fim</text>
+<circle cx="839.3333333333334" cy="1158" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1158 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1165" style="font-size:20px;fill:#3A3A44">decisão em losango</text>
+<circle cx="839.3333333333334" cy="1195" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1195 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1202" style="font-size:20px;fill:#3A3A44">setas de fluxo</text>
+</g>
+</svg>

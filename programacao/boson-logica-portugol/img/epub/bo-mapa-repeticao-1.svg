@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1152" viewBox="0 0 800 1152" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<defs><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9DBEF5"/><stop offset=".33" stop-color="#C3ADEE"/><stop offset=".66" stop-color="#F5AE9B"/><stop offset="1" stop-color="#EBCF6E"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1L9,5L1,9" fill="none" stroke="#7A7F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAF9F6"/>
+<text x="400.0" y="86" text-anchor="middle" style="font-size:40px;font-weight:900;fill:#1E1E1E;letter-spacing:1px">ESTRUTURAS DE REPETIÇÃO</text>
+<text x="400.0" y="128" text-anchor="middle" style="font-size:19px;fill:#55555F">Seção 4 · repetir sem copiar código</text>
+<rect x="310.0" y="146" width="180" height="6" rx="3" fill="url(#gT0)"/>
+<path d="M347.0,516 C381.0,520 381.0,552 351.0,553" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M347.0,822 C381.0,826 381.0,858 351.0,859" fill="none" stroke="#B4472B" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M724.0,516 C758.0,520 758.0,552 728.0,553" fill="none" stroke="#6B44B8" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M724.0,822 C758.0,826 758.0,858 728.0,859" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<!-- Card 1: enquanto -->
+<g>
+<rect x="36.0" y="201" width="351.0" height="320" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="196" width="351.0" height="320" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="54.0" y="214" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="83.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#2F5FB3">wh</text>
+<text x="126.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">1. enquanto</text>
+<circle cx="70.0" cy="293" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="300" style="font-size:20px;fill:#3A3A44">testa antes</text>
+<circle cx="70.0" cy="330" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="337" style="font-size:20px;fill:#3A3A44">pode rodar 0 vezes</text>
+<circle cx="70.0" cy="367" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="374" style="font-size:20px;fill:#3A3A44">atualize a condição</text>
+<rect x="54.0" y="403" width="315.0" height="99" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="68.0" y="429" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">enquanto (i &lt; 5) {</text>
+<text x="68.0" y="456" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">  i++</text>
+<text x="68.0" y="483" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">}</text>
+</g>
+<!-- Card 4: Contador -->
+<g>
+<rect x="413.0" y="201" width="351.0" height="320" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="413.0" y="196" width="351.0" height="320" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="431.0" y="214" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="460.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#6B44B8">n+1</text>
+<text x="503.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">4. Contador</text>
+<circle cx="447.0" cy="293" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M442.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="300" style="font-size:20px;fill:#3A3A44">conta ocorrências</text>
+<circle cx="447.0" cy="330" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M442.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="337" style="font-size:20px;fill:#3A3A44">começa em 0</text>
+<circle cx="447.0" cy="367" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M442.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="374" style="font-size:20px;fill:#3A3A44">cont++</text>
+</g>
+<!-- Card 2: para -->
+<g>
+<rect x="36.0" y="561" width="351.0" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="556" width="351.0" height="266" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="54.0" y="574" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="83.0" y="612" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">for</text>
+<text x="126.0" y="612" style="font-size:24px;font-weight:800;fill:#1E1E1E">2. para</text>
+<circle cx="70.0" cy="653" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,653 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="660" style="font-size:20px;fill:#3A3A44">contador embutido</text>
+<circle cx="70.0" cy="690" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,690 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="697" style="font-size:20px;fill:#3A3A44">início; teste; passo</text>
+<circle cx="70.0" cy="727" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,727 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="734" style="font-size:20px;fill:#3A3A44">nº de voltas conhecido</text>
+<rect x="54.0" y="763" width="315.0" height="45" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="68.0" y="789" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">para (i=1; i&lt;=5; i++)</text>
+</g>
+<!-- Card 5: Acumulador -->
+<g>
+<rect x="413.0" y="561" width="351.0" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="413.0" y="556" width="351.0" height="266" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="431.0" y="574" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="460.0" y="612" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#8A6A00">sum</text>
+<text x="503.0" y="612" style="font-size:24px;font-weight:800;fill:#1E1E1E">5. Acumulador</text>
+<circle cx="447.0" cy="653" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M442.5,653 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="660" style="font-size:20px;fill:#3A3A44">soma valores</text>
+<circle cx="447.0" cy="690" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M442.5,690 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="697" style="font-size:20px;fill:#3A3A44">soma += x</text>
+<circle cx="447.0" cy="727" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M442.5,727 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="734" style="font-size:20px;fill:#3A3A44">começa em 0</text>
+</g>
+<!-- Card 3: faca-enquanto -->
+<g>
+<rect x="36.0" y="867" width="351.0" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="862" width="351.0" height="236" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="54.0" y="880" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="83.0" y="918" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#21835A">do</text>
+<text x="126.0" y="918" style="font-size:24px;font-weight:800;fill:#1E1E1E">3. faca-enquanto</text>
+<circle cx="70.0" cy="959" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,959 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="966" style="font-size:20px;fill:#3A3A44">testa depois</text>
+<circle cx="70.0" cy="996" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,996 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1003" style="font-size:20px;fill:#3A3A44">roda pelo menos 1 vez</text>
+<circle cx="70.0" cy="1033" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,1033 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1040" style="font-size:20px;fill:#3A3A44">menus e validação</text>
+</g>
+<!-- Card 6: Sentinela -->
+<g>
+<rect x="413.0" y="867" width="351.0" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="413.0" y="862" width="351.0" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="431.0" y="880" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="460.0" y="918" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">stop</text>
+<text x="503.0" y="918" style="font-size:24px;font-weight:800;fill:#1E1E1E">6. Sentinela</text>
+<circle cx="447.0" cy="959" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M442.5,959 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="966" style="font-size:20px;fill:#3A3A44">valor que encerra</text>
+<circle cx="447.0" cy="996" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M442.5,996 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="1003" style="font-size:20px;fill:#3A3A44">ex.: 0 sai</text>
+<circle cx="447.0" cy="1033" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M442.5,1033 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="1040" style="font-size:20px;fill:#3A3A44">não entra na conta</text>
+</g>
+</svg>

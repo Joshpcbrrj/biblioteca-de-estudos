@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1038" viewBox="0 0 800 1038" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<defs><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9DBEF5"/><stop offset=".33" stop-color="#C3ADEE"/><stop offset=".66" stop-color="#F5AE9B"/><stop offset="1" stop-color="#EBCF6E"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1L9,5L1,9" fill="none" stroke="#7A7F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAF9F6"/>
+<text x="400.0" y="86" text-anchor="middle" style="font-size:40px;font-weight:900;fill:#1E1E1E;letter-spacing:1px">CSS</text>
+<text x="400.0" y="128" text-anchor="middle" style="font-size:19px;fill:#55555F">Módulo IV · aparência e caixa (continuação)</text>
+<rect x="310.0" y="146" width="180" height="6" rx="3" fill="url(#gT0)"/>
+<path d="M347.0,432 C381.0,436 381.0,468 351.0,469" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M347.0,708 C381.0,712 381.0,744 351.0,745" fill="none" stroke="#B4472B" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M724.0,432 C758.0,436 758.0,468 728.0,469" fill="none" stroke="#6B44B8" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M724.0,708 C758.0,712 758.0,744 728.0,745" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<!-- Card 7: Unidades -->
+<g>
+<rect x="36.0" y="201" width="351.0" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="196" width="351.0" height="236" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="54.0" y="214" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="83.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#2F5FB3">px</text>
+<text x="126.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">7. Unidades</text>
+<circle cx="70.0" cy="293" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="300" style="font-size:20px;fill:#3A3A44">px fixa</text>
+<circle cx="70.0" cy="330" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="337" style="font-size:20px;fill:#3A3A44">rem e em</text>
+<circle cx="70.0" cy="367" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="374" style="font-size:20px;fill:#3A3A44">% e vw/vh</text>
+</g>
+<!-- Card 10: Cores -->
+<g>
+<rect x="413.0" y="201" width="351.0" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="413.0" y="196" width="351.0" height="236" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="431.0" y="214" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="460.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#6B44B8">rgb</text>
+<text x="503.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">10. Cores</text>
+<circle cx="447.0" cy="293" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M442.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="300" style="font-size:20px;fill:#3A3A44">hex</text>
+<circle cx="447.0" cy="330" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M442.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="337" style="font-size:20px;fill:#3A3A44">rgb() e hsl()</text>
+<circle cx="447.0" cy="367" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M442.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="374" style="font-size:20px;fill:#3A3A44">contraste</text>
+</g>
+<!-- Card 8: Box model -->
+<g>
+<rect x="36.0" y="477" width="351.0" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="472" width="351.0" height="236" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="54.0" y="490" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="83.0" y="528" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#B4472B">[]</text>
+<text x="126.0" y="528" style="font-size:24px;font-weight:800;fill:#1E1E1E">8. Box model</text>
+<circle cx="70.0" cy="569" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,569 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="576" style="font-size:20px;fill:#3A3A44">content, padding</text>
+<circle cx="70.0" cy="606" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,606 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="613" style="font-size:20px;fill:#3A3A44">border, margin</text>
+<circle cx="70.0" cy="643" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,643 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="650" style="font-size:20px;fill:#3A3A44">border-box</text>
+</g>
+<!-- Card 11: Background -->
+<g>
+<rect x="413.0" y="477" width="351.0" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="413.0" y="472" width="351.0" height="236" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="431.0" y="490" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="460.0" y="528" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#8A6A00">bg</text>
+<text x="503.0" y="528" style="font-size:24px;font-weight:800;fill:#1E1E1E">11. Background</text>
+<circle cx="447.0" cy="569" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M442.5,569 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="576" style="font-size:20px;fill:#3A3A44">color e image</text>
+<circle cx="447.0" cy="606" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M442.5,606 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="613" style="font-size:20px;fill:#3A3A44">size: cover</text>
+<circle cx="447.0" cy="643" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M442.5,643 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="650" style="font-size:20px;fill:#3A3A44">gradiente</text>
+</g>
+<!-- Card 9: Margin e padding -->
+<g>
+<rect x="36.0" y="753" width="351.0" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="748" width="351.0" height="236" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="54.0" y="766" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="83.0" y="804" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#21835A">mp</text>
+<text x="126.0" y="804" style="font-size:24px;font-weight:800;fill:#1E1E1E">9. Margin e padding</text>
+<circle cx="70.0" cy="845" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,845 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="852" style="font-size:20px;fill:#3A3A44">1 a 4 valores</text>
+<circle cx="70.0" cy="882" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,882 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="889" style="font-size:20px;fill:#3A3A44">auto centraliza</text>
+<circle cx="70.0" cy="919" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,919 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="926" style="font-size:20px;fill:#3A3A44">colapso vertical</text>
+</g>
+<!-- Card 12: Animações -->
+<g>
+<rect x="413.0" y="753" width="351.0" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="413.0" y="748" width="351.0" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="431.0" y="766" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="460.0" y="804" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">anim</text>
+<text x="503.0" y="804" style="font-size:24px;font-weight:800;fill:#1E1E1E">12. Animações</text>
+<circle cx="447.0" cy="845" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M442.5,845 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="852" style="font-size:20px;fill:#3A3A44">--variáveis</text>
+<circle cx="447.0" cy="882" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M442.5,882 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="889" style="font-size:20px;fill:#3A3A44">transition</text>
+<circle cx="447.0" cy="919" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M442.5,919 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467.0" y="926" style="font-size:20px;fill:#3A3A44">@keyframes</text>
+</g>
+</svg>
