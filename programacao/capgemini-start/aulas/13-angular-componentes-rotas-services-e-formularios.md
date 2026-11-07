@@ -111,6 +111,8 @@ ng serve -o
 
 ![Os arquivos criados pelo ng new.](../img/angular-pastas.svg)
 
+> 💡 **Analogia:** pense numa casa recém-entregue. O `index.html` é a fachada, com uma única porta (`<app-root>`); o `main.ts` é o disjuntor que liga a energia; `src/app` são os cômodos onde você vive e reforma todo dia; o `angular.json` é a planta da casa; o `package.json` é a lista de compras; e o `node_modules` é a despensa cheia: na mudança você não carrega a despensa, leva só a lista e compra tudo de novo (`npm install`).
+
 | Arquivo | Papel |
 | --- | --- |
 | `src/index.html` | a **única** página HTML. Contém só `<app-root>`, onde o Angular desenha a aplicação |
@@ -429,6 +431,8 @@ O `ng g c` nesses projetos já adiciona o componente em `declarations` automatic
 
 ![Dados descem por @Input; eventos sobem por @Output.](../img/angular-input-output.svg)
 
+> 💡 **Analogia:** pense no `@Input` como os **parâmetros** de uma função: dados que entram, vindos de quem chama. E pense no `@Output` como um **evento** do Swing: o filho só avisa "o botão Comprar foi clicado", e o pai decide o que fazer com isso. O filho não sabe quem é o pai; só recebe e avisa, por isso pode ser reutilizado em qualquer lugar.
+
 ```tsx
 // filho: produto-card.component.ts
 import { Component, EventEmitter,
@@ -472,7 +476,6 @@ export class ProdutoCardComponent {
 - **Filho → pai**: `@Output()` + `EventEmitter` + event binding `(comprar)`; o valor emitido chega como `$event`.
 - **Componentes sem relação direta**: compartilham dados por um **service**.
 
-> 💡 Pense no `@Input` como os **parâmetros** de uma função (dados que entram) e no `@Output` como um **evento** do Swing (o filho avisa que algo aconteceu, e o pai decide o que fazer).
 
 > 💡 Nas versões mais novas existem também as funções `input()` e `output()`, baseadas em **signals** (`produto = input.required&lt;Produto&gt;()`). Os decoradores `@Input`/`@Output` continuam funcionando e são os mais encontrados em projetos existentes.
 
@@ -549,6 +552,8 @@ No JavaScript puro, para mostrar um valor era preciso `querySelector` + `textCon
 ### Os quatro tipos de *data binding*
 
 ![Como os dados circulam entre classe e template.](../img/angular-binding.svg)
+
+> 💡 **Analogia:** pense num restaurante: a **classe** é a cozinha e o **template** é o salão. A interpolação `{{ }}` é o quadro do prato do dia, que mostra o que a cozinha tem. O `[prop]` é a placa "esgotado", acesa ou apagada conforme o estoque da cozinha. O `(evento)` é a campainha que o cliente toca para chamar a cozinha. E o `[(ngModel)]` é uma comanda compartilhada: o garçom anota e a cozinha vê; a cozinha corrige e o garçom vê.
 
 ```tsx
 export class PerfilComponent {
@@ -787,6 +792,8 @@ export class CarrinhoService {
 
 ![Service: uma instância para todos](../img/cap-angular-di.svg)
 
+> 💡 **Analogia:** num escritório, ninguém compra a própria cafeteira. Cada pessoa pede café, e a empresa aponta para a **mesma** cafeteira da copa. O componente é o funcionário, o service é a cafeteira, e o Angular é a empresa que entrega. Se alguém faz um café novo, todo mundo que for à copa encontra o mesmo bule: é assim que componentes diferentes compartilham o carrinho.
+
 O componente **não cria** o service com `new`: ele **pede** um, e o Angular entrega. Isso se chama **injeção de dependência**.
 
 ```tsx
@@ -884,6 +891,8 @@ No currículo em HTML, cada página era um arquivo (`index.html`, `sobre.html`, 
 ### Como funciona
 
 ![Rotas: a URL escolhe o componente](../img/cap-angular-rotas.svg)
+
+> 💡 **Analogia:** pense numa TV. O aparelho (a única página, `index.html`) nunca muda; a **URL** é o número do canal; o **Router** é o controle remoto; e o `<router-outlet>` é a tela, onde aparece o programa do canal escolhido. Trocar de canal não troca de TV. Um canal que não existe mostra "sem sinal" (a rota `**`), e o controle parental que pede senha antes de abrir um canal é o **guard**.
 
 Numa SPA, mudar de "página" não recarrega nada: o **Router** do Angular lê a URL e troca o componente exibido dentro do `<router-outlet>`.
 
