@@ -36,6 +36,8 @@ Se uma página não tem links apontando para ela e não está no sitemap, pode n
 
 ![URL, título e descrição: as três partes que você controla.](../img/seo-serp.svg)
 
+> 💡 **Analogia:** o resultado da busca é a **vitrine** da sua loja numa rua cheia de lojas iguais. O `title` é o letreiro, a `description` é o cartaz que convida a entrar e a URL é o endereço na fachada. Quem passa decide em segundos em qual vitrine clicar, por isso cada uma das três partes precisa dizer, com clareza, o que tem lá dentro.
+
 #### `<title>` (título SEO)
 
 ```html
@@ -340,6 +342,8 @@ Por segurança, o navegador aplica a **política de mesma origem** (*same-origin
 **CORS** (*Cross-Origin Resource Sharing*) é o jeito de o **servidor** autorizar outras origens, por meio de cabeçalhos na resposta:
 
 ![O navegador só entrega a resposta ao JavaScript se o servidor autorizar a origem.](../img/cors.svg)
+
+> 💡 **Analogia:** o navegador é o **porteiro** do seu prédio. A página pede uma encomenda a outro prédio (a API). A encomenda chega, mas o porteiro só a entrega se vier com um bilhete do remetente dizendo "pode entregar para o apartamento `loja.com`" (o cabeçalho `Access-Control-Allow-Origin`). Sem o bilhete, a encomenda fica na portaria. Por isso o problema se resolve com quem envia, o servidor, e não com o porteiro.
 
 ```
 Access-Control-Allow-Origin: https://loja.com
