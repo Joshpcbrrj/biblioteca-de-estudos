@@ -1,0 +1,39 @@
+name: Kit da skill
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skill/**'
+      - 'README.md'
+      - 'biblioteca.yaml'
+      - 'ferramentas/montar_kit.py'
+      - '.github/workflows/kit-skill.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  kit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # o README mostra a skill; se alguém editou a skill e esqueceu de
+      # rodar o montar_kit.py, a Action falha e avisa
+      - name: Conferir README x skill
+        run: python3 ferramentas/montar_kit.py --checar
+
+      - name: Empacotar a skill
+        run: python3 ferramentas/montar_kit.py --zip revisar-curso-biblioteca.zip
+
+      - name: Publicar na release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(python3 ferramentas/config.py release_skill)
+          gh release view "$tag" >/dev/null 2>&1 || \
+            gh release create "$tag" --title "Skill de reformulação de cursos" \
+              --notes "Zip da skill revisar-curso-biblioteca. Baixe e envie na tela de Skills do Claude. Passo a passo: COMO-USAR.md."
+          gh release upload "$tag" revisar-curso-biblioteca.zip --clobber

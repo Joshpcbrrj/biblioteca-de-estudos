@@ -11,7 +11,11 @@ Saída JSON: {"hash": ..., "publicado": true/false, "urls": {"x.svg": url}}.
 """
 import json, os, subprocess, sys
 
-REPO = 'Joshpcbrrj/biblioteca-de-estudos'
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config import CFG  # noqa: E402
+
+REPO = CFG['repositorio']
+BRANCH = CFG.get('branch', 'main')
 
 
 def git(*a):
@@ -25,7 +29,7 @@ def main():
     curso = sys.argv[1].rstrip('/')
     nomes = sys.argv[2:] or sorted(f for f in os.listdir(f'{curso}/img') if f.endswith('.svg'))
     h = git('rev-parse', 'HEAD')
-    git('fetch', '-q', 'origin', 'main')
+    git('fetch', '-q', 'origin', BRANCH)
     remoto = git('rev-parse', 'FETCH_HEAD')
     publicado = remoto == h or subprocess.run(
         ['git', 'merge-base', '--is-ancestor', h, remoto],

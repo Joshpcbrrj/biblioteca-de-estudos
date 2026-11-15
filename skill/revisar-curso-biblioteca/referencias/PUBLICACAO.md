@@ -4,7 +4,7 @@
 
 ## Repositório e exportação
 
-Repositório: `Joshpcbrrj/biblioteca-de-estudos` (branch `main`). Use `add_repo` com acesso `push` se ele ainda não estiver na sessão e clone com `--depth 1`.
+Repositório e branch: `repositorio` e `branch` do `biblioteca.yaml` (hoje `Joshpcbrrj/biblioteca-de-estudos`, `main`). Use `add_repo` com acesso `push` se ele ainda não estiver na sessão e clone com `--depth 1`.
 
 ### Obter o conteúdo com as imagens
 
@@ -167,7 +167,7 @@ README raiz: título "📚 Biblioteca de Estudos", uma frase de propósito, seç
 
 ```yaml
 title: "Udemy/ YouTube: Lógica de programação com Portugol Studio - Bóson Treinamentos"
-author: "Josué B. Almeida"
+author: "<autor do biblioteca.yaml>"
 lang: pt-BR
 rights: "Resumo pessoal de estudo. O conteúdo original pertence aos autores do curso."
 ```
@@ -203,7 +203,7 @@ A tela de um leitor tem ~360–600px de largura útil. Para nada ficar cortado:
 1. Gere o EPUB localmente e faça a checagem de e-readers acima, sem erros nem imagens faltando: `python3 -I ferramentas/gerar_epub_local.py <area>/<slug>` faz tudo (cheat sheets em 2 partes, SVG → PNG, pandoc e `verificar_epub.js`) e devolve JSON; `img_faltando` precisa vir vazio e `verificar_epub` precisa dizer "OK".
 2. Atualize o README raiz (linha do curso no catálogo).
 3. Commit com mensagem em português (`Adiciona curso: <nome>` ou `Atualiza curso: <nome>`), puxe `origin main` antes e faça push para `main`. Siga as regras de atribuição de commit da sessão. Não use o e-mail pessoal do usuário no commit; use o endereço `noreply` do GitHub.
-4. Acompanhe a Action (`gh run list`; para detalhes use a API REST, `gh api repos/Joshpcbrrj/biblioteca-de-estudos/...`, porque o GraphQL não funciona na sessão) até terminar e confirme que o `<slug>.epub` apareceu na release `epubs` (`gh api repos/Joshpcbrrj/biblioteca-de-estudos/releases/tags/epubs`). Se falhar, leia o log, corrija e publique de novo.
+4. Acompanhe a Action (`gh run list`; para detalhes use a API REST, `gh api repos/<repositorio>/...`, porque o GraphQL não funciona na sessão) até terminar e confirme que o `<slug>.epub` apareceu na release `epubs` (`gh api repos/Joshpcbrrj/biblioteca-de-estudos/releases/tags/epubs`). Se falhar, leia o log, corrija e publique de novo.
 
 
 ## Sincronizar Notion e GitHub

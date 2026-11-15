@@ -1,0 +1,9 @@
+# Configuração da biblioteca. Quem usar este repositório como template
+# troca só estes valores; a skill e os scripts leem daqui.
+autor: "Josué B. Almeida"          # vai na capa ("Criado por: ...") e no metadata.yaml
+repositorio: "Joshpcbrrj/biblioteca-de-estudos"
+branch: "main"
+commit_nome: "Josue"
+commit_email: "joshpcbrrj@users.noreply.github.com"   # e-mail noreply do GitHub, nunca o pessoal
+release_epubs: "epubs"             # tag da release onde ficam os EPUBs
+release_skill: "skill"             # tag da release onde fica o zip da skill

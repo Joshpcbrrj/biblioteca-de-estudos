@@ -5,7 +5,7 @@
 Todo curso publicado tem `capa.png` na pasta do curso (o workflow já usa `--epub-cover-image` quando ela existe) e o `capa.svg` de origem ao lado.
 
 - **Formato**: 1600 × 2560 px (proporção 1:1,6, a recomendada para Kindle e Kobo), PNG. Faça em SVG e renderize com Playwright (viewport 1600 × 2560) para PNG.
-- **Conteúdo obrigatório** (padrão do usuário): plataforma(s) em letra pequena, o **nome do curso** em destaque (sem a plataforma e o criador, que têm linhas próprias), uma **imagem** que represente o assunto, o criador ("Curso de <Criador>") e, no rodapé, `Criado por: Josué B. Almeida`. A posição de cada elemento pode variar conforme o conceito da capa, desde que a hierarquia fique clara.
+- **Conteúdo obrigatório** (padrão do usuário): plataforma(s) em letra pequena, o **nome do curso** em destaque (sem a plataforma e o criador, que têm linhas próprias), uma **imagem** que represente o assunto, o criador ("Curso de <Criador>") e, no rodapé, `Criado por: <autor do biblioteca.yaml>`. A posição de cada elemento pode variar conforme o conceito da capa, desde que a hierarquia fique clara.
 
 ## Direção de arte: capa de editora, não template
 
