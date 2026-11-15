@@ -740,8 +740,11 @@ Se o Docling estiver conectado como servidor MCP no app do computador (ferrament
 
 ## Instalar e configurar (para o usuário)
 
-1. Instale o `uv` se ainda não tiver (`uv --version`). No Windows:
-   `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`.
+1. Instale o `uv` (o gerenciador que baixa e roda o Docling), se ainda não tiver:
+   - confira com `uv --version`; se mostrar a versão, pule este passo;
+   - **Windows** (PowerShell): `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`;
+   - **macOS ou Linux** (terminal): `curl -LsSf https://astral.sh/uv/install.sh | sh`;
+   - feche e abra o terminal de novo e confira com `uv --version`. Se o comando não for encontrado, o instalador mostra no fim a pasta que precisa entrar no PATH (normalmente `~/.local/bin`).
 2. O comando do terminal acima já basta para converter. Para ter também o servidor MCP no app do Claude:
    - desinstale a extensão "Docling MCP", se houver;
    - baixe tudo antes: `uvx --from "docling-mcp[local]==2.1.0" --with "mcp<2" docling-mcp-server --help`;

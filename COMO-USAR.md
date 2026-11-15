@@ -25,7 +25,11 @@ Prefere não instalar? Abra o bloco **Skill completa** no [README](README.md#-ki
 
 Se o curso tiver PDFs de aula ou de listas de exercícios, o Claude pode convertê-los para conferir os enunciados exatos e a ementa. Os PDFs não são publicados. Para isso:
 
-1. Instale o `uv` (`uv --version` para conferir). No Windows: `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`.
+1. Instale o `uv`, o programa que baixa e roda o Docling (confira antes com `uv --version`):
+   - **Windows** (PowerShell): `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+   - **macOS ou Linux** (terminal): `curl -LsSf https://astral.sh/uv/install.sh | sh`
+
+   Depois feche e abra o terminal e rode `uv --version` de novo para confirmar.
 2. Quando o Claude pedir, baixe os PDFs para a pasta Downloads e rode o comando que ele passar, algo como `uvx --from docling docling "lista-1.pdf" --to md --output .`.
 3. Na primeira vez, o Docling baixa os modelos e demora alguns minutos.
 
