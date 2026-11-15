@@ -1,8 +1,10 @@
-# Laço de Repetição “Faça-Enquanto”
-
-> ✨ **Página nova.** O `faca-enquanto` é o terceiro laço do Portugol e só aparecia de passagem na aula de vetores.
+# Laço de Repetição “Faça-Enquanto” (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o laço que executa o bloco antes de testar a condição, a diferença para o `enquanto`, e os dois usos mais comuns: menus e validação de entrada.
+
+## De onde paramos
+
+O `enquanto` e o `para` testam a condição antes de entrar, por isso podem não rodar nenhuma vez. Para menus e validações, porém, o bloco precisa rodar pelo menos uma vez: é preciso mostrar o menu antes de saber a opção.
 
 ## O laço faca-enquanto
 
@@ -10,13 +12,18 @@ No `enquanto`, a condição é testada **antes** de cada volta, e o bloco pode n
 
 ```c
 faca {
-  // executado uma vez, e de novo enquanto a condição for verdadeira
+  // executado uma vez, e de novo enquanto
+  // a condição for verdadeira
 } enquanto (condicao)
 ```
 
-![enquanto x faca-enquanto](../img/fe-comp.svg)
+![enquanto × faca-enquanto: onde fica o teste](../img/fe-comp.svg)
+
+> 💡 **Analogia:** é provar a comida enquanto cozinha. Você sempre prova pelo menos uma colherada e só então decide: "falta sal? então tempero e provo de novo". Não dá para decidir se falta sal antes de provar.
 
 > 💡 O `faca-enquanto` é a escolha natural quando o bloco **produz** o valor que a condição vai testar: ler um dado e repetir se ele for inválido, mostrar um menu e repetir até escolherem "sair". Com o `enquanto`, seria preciso ler uma vez antes do laço e outra dentro dele.
+
+![faca-enquanto: executa primeiro, testa depois](../img/bo-faca-fluxo.svg)
 
 ## Os três laços lado a lado
 
@@ -37,13 +44,18 @@ programa
 
   funcao inicio()
   {
+    // a pergunta sempre acontece ao menos
+    // uma vez: por isso faca-enquanto
     faca {
       escreva("Digite a nota (0 a 10): ")
       leia(nota)
 
+      // avisa o erro antes de repetir
       se (nota < 0 ou nota > 10) {
-        escreva("Nota inválida! Tente de novo.\n")
+        escreva("Nota inválida! ",
+          "Tente de novo.\n")
       }
+    // repete enquanto a nota for inválida
     } enquanto (nota < 0 ou nota > 10)
 
     escreva("Nota registrada: ", nota, "\n")
@@ -63,7 +75,11 @@ programa
   funcao inicio()
   {
     faca {
-      escreva("\n1 - Ver o dobro | 2 - Ver o quadrado | 0 - Sair\n")
+      // o menu aparece antes de qualquer
+      // teste: o usuário precisa vê-lo
+      escreva("\n1 - Ver o dobro\n")
+      escreva("2 - Ver o quadrado\n")
+      escreva("0 - Sair\n")
       escreva("Opção: ")
       leia(opcao)
 
@@ -76,7 +92,8 @@ programa
         caso 2:
           escreva("Número: ")
           leia(num)
-          escreva("Quadrado: ", num * num, "\n")
+          escreva("Quadrado: ",
+            num * num, "\n")
           pare
         caso 0:
           escreva("Até logo!\n")
@@ -84,12 +101,30 @@ programa
         caso contrario:
           escreva("Opção inválida.\n")
       }
+    // 0 encerra; qualquer outra volta
+    // ao menu
     } enquanto (opcao != 0)
   }
 }
 ```
 
 > ⚠️ Não confunda o `enquanto (condicao)` que fecha o `faca` com o início de um novo laço `enquanto`. Ele não tem bloco próprio: termina ali mesmo, logo depois do `}`.
+
+## 🧠 Revisão rápida
+
+**Com `x = 10`, quantas vezes roda `faca { x++ } enquanto (x < 5)`?**
+
+Uma vez: o bloco roda antes do teste, e o teste já dá falso.
+
+**Por que o menu combina com `faca-enquanto`?**
+
+Porque ele precisa aparecer pelo menos uma vez antes de se saber a opção escolhida.
+
+**O `pare` dentro do `escolha` encerra o `faca-enquanto`?**
+
+Não: ele só sai do `escolha`. Quem encerra o laço é a condição `opcao != 0`.
+
+> ➡️ **Próximo passo:** já vimos os três laços separados. E quando um laço precisa ficar dentro de outro? **Encadeamento de Laços de Repetição Para e Enquanto**.
 
 ## 📌 Resumo
 

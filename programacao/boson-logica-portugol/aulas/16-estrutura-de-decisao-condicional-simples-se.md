@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** o que é uma estrutura de decisão, como funciona o `se` simples e dois projetos de média: um com um `se` e outro com três `se` independentes.
 
+## De onde paramos
+
+Na seção anterior, os operadores relacionais e lógicos produziam respostas `verdadeiro` ou `falso`, mas o programa só mostrava essas respostas. Agora ele vai usá-las para decidir o que fazer.
+
 ## Estruturas de decisão
 
 Até aqui os programas executavam todas as instruções, de cima para baixo. Uma **estrutura de decisão** permite que o programa escolha um caminho durante a execução: em certo ponto ele faz uma pergunta (uma condição) e, conforme a resposta, executa ou pula um trecho de código.
@@ -16,12 +20,15 @@ Em pseudocódigo: `se <condição> então <instruções> fim se`.
 
 ```c
 se (condicao) {
-  // executado só se a condição for verdadeira
+  // executado só se a condição for
+  // verdadeira
 }
 // executado sempre, depois do se
 ```
 
-![Fluxograma da decisão simples aplicada à média](../img/se-media.svg)
+![se simples: o bloco só roda quando a condição é verdadeira](../img/se-media.svg)
+
+> 💡 **Analogia:** é o "se estiver chovendo, leve o guarda-chuva". Se chove, você pega o guarda-chuva e sai; se não chove, simplesmente sai. Em nenhum dos casos você deixa de sair: o `se` só acrescenta um passo opcional no caminho.
 
 ## Projeto: média com decisão simples
 
@@ -30,7 +37,8 @@ se (condicao) {
 ```c
 programa
 {
-  real nota_1, nota_2, nota_3  // as três notas do aluno
+  // as três notas do aluno
+  real nota_1, nota_2, nota_3
   real media
 
   funcao inicio()
@@ -42,12 +50,17 @@ programa
     escreva("Digite a terceira nota: ")
     leia(nota_3)
 
+    // parênteses: soma primeiro, divide
+    // depois
     media = (nota_1 + nota_2 + nota_3) / 3
 
+    // a mensagem só aparece para quem
+    // atingiu a média
     se (media >= 7) {
       escreva("Resultado: Aprovado, chefe!\n")
     }
-    escreva("Sua média foi: ", media, "\n")  // sempre executado
+    // fora do bloco: roda sempre
+    escreva("Sua média foi: ", media, "\n")
   }
 }
 ```
@@ -56,7 +69,9 @@ programa
 
 É possível cobrir as três situações com três `se` independentes, desde que as condições não se sobreponham:
 
-![Três se independentes: todos são testados](../img/se-tres.svg)
+![Três se separados: os três testes sempre rodam](../img/se-tres.svg)
+
+> 💡 **Analogia:** é como um fiscal que confere três portas, uma depois da outra, mesmo já tendo encontrado a pessoa na primeira. Funciona, mas é trabalho repetido.
 
 **Código**
 
@@ -80,11 +95,16 @@ programa
     se (media >= 7) {
       escreva("Resultado: Aprovado, chefe!\n")
     }
+    // o "e" fecha a faixa dos dois lados,
+    // para não sobrepor com o se acima
     se ((media >= 4) e (media < 7)) {
-      escreva("Em recuperação. Se esforce mais que ainda dá para passar!\n")
+      escreva("Em recuperação. Se esforce ",
+        "mais que ainda dá para passar!\n")
     }
     se (media < 4) {
-      escreva("Infelizmente não foi dessa vez. Tente novamente no ano que vem!\n")
+      escreva("Infelizmente não foi dessa ",
+        "vez. Tente novamente no ano ",
+        "que vem!\n")
     }
     escreva("Sua média foi: ", media, "\n")
   }
@@ -92,6 +112,22 @@ programa
 ```
 
 > 💡 Funciona, mas o programa testa as três condições mesmo depois de já ter encontrado a resposta. As próximas aulas mostram o `senao` e o `senao se`, que resolvem isso de forma mais limpa.
+
+## 🧠 Revisão rápida
+
+**Com notas 5, 6 e 7, o que o primeiro projeto mostra?**
+
+Só "Sua média foi: 6.0". A média é 6, a condição `media >= 7` é falsa e o bloco é pulado.
+
+**No projeto com três se, quantos testes são feitos para uma média 9?**
+
+Três. O primeiro dá verdadeiro, mas os outros dois também são testados.
+
+**O que acontece com a linha logo depois do bloco `se` quando a condição é falsa?**
+
+Ela roda normalmente: só o bloco é pulado.
+
+> ➡️ **Próximo passo:** e quando a condição é falsa e você quer fazer outra coisa, em vez de nada? É o papel do `senao`: **Estrutura de Decisão Condicional Composta (SE, SENÃO)**.
 
 ## 📌 Resumo
 

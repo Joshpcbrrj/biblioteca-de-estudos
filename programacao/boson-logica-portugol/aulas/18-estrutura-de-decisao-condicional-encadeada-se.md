@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** como encadear condições com `senao se` quando há mais de dois caminhos, por que a ordem dos testes importa e o desafio da média com faltas.
 
+## De onde paramos
+
+O `se`/`senao` resolve escolhas de dois caminhos. Mas a média do aluno tem três resultados (aprovado, recuperação, reprovado), e três `se` separados repetem testes à toa. A solução é encadear.
+
 ## Decisão encadeada: se / senao se / senao
 
 Quando há mais de dois caminhos possíveis, encadeamos várias condições:
@@ -17,10 +21,10 @@ se (condicao_1) {
   // condição 1 verdadeira
 }
 senao se (condicao_2) {
-  // condição 1 falsa e condição 2 verdadeira
+  // 1 falsa e 2 verdadeira
 }
 senao se (condicao_3) {
-  // condições 1 e 2 falsas e condição 3 verdadeira
+  // 1 e 2 falsas e 3 verdadeira
 }
 senao {
   // todas as condições falsas
@@ -28,11 +32,17 @@ senao {
 // executado sempre, depois da cadeia
 ```
 
-![Fluxograma da decisão encadeada aplicada à média](../img/en-media.svg)
+![Decisão encadeada: só um dos três caminhos é executado](../img/en-media.svg)
+
+> 💡 **Analogia:** é a triagem de um pronto-socorro. A enfermeira pergunta primeiro o mais grave ("está inconsciente?"), depois o médio ("tem febre alta?"), e assim por diante. Na primeira resposta "sim", o paciente já vai para a fila certa, e as outras perguntas nem são feitas.
 
 Como os testes são feitos em ordem, o segundo não precisa repetir o limite superior: se o programa chegou ao `media >= 5.0`, já se sabe que a média é menor que 7.
 
 ![Faixas da média e a ordem dos testes](../img/en-faixas.svg)
+
+> 💡 **Analogia:** pense em peneiras empilhadas. A de cima, de malha grossa, segura só as pedras grandes (média ≥ 7); a de baixo segura as médias (≥ 5); o que passa por todas cai no fundo (reprovado). Se a peneira de malha fina ficasse em cima, ela seguraria tudo, inclusive as pedras grandes.
+
+> ⚠️ **A ordem importa.** Se o primeiro teste fosse `media >= 5.0`, uma média 9 cairia nele e o aluno apareceria "em recuperação". Teste sempre da condição mais restrita para a mais ampla.
 
 ## Projeto: média com se / senao se / senao
 
@@ -55,14 +65,20 @@ programa
 
     media = (nota_1 + nota_2 + nota_3) / 3
 
-    se (media >= 7.0) {  // 1º teste
+    // 1º teste: o mais restrito vem antes
+    se (media >= 7.0) {
       escreva("Resultado: Aprovado, chefe!\n")
     }
-    senao se (media >= 5.0) {  // 2º teste (só chega aqui se media < 7)
-      escreva("Em recuperação! Calma que ainda dá.\n")
+    // 2º teste: só chega aqui se media < 7,
+    // por isso não precisa repetir o limite
+    senao se (media >= 5.0) {
+      escreva("Em recuperação! Calma que ",
+        "ainda dá.\n")
     }
-    senao {  // todos os testes falsos
-      escreva("Reprovado. Esse ano não deu, mas ano que vem tem mais.\n")
+    // todos os testes deram falso
+    senao {
+      escreva("Reprovado. Esse ano não deu, ",
+        "mas ano que vem tem mais.\n")
     }
 
     escreva("Sua média foi: ", media, "\n")
@@ -74,7 +90,9 @@ programa
 
 Calcule a média e verifique também as faltas: com 10 faltas ou mais, o aluno é reprovado independentemente da nota.
 
-![Fluxograma do desafio com média e faltas](../img/en-faltas.svg)
+![Desafio: primeiro a frequência, depois a nota](../img/en-faltas.svg)
+
+> 💡 **Analogia:** é a catraca de um show. Antes de olhar qual é o seu setor (a nota), o segurança confere se você tem ingresso (a frequência). Sem ingresso, o setor nem importa.
 
 <details>
 <summary>Ver resposta</summary>
@@ -84,6 +102,7 @@ programa
 {
   real nota_1, nota_2, nota_3
   real media
+  // faltas são contadas, então inteiro
   inteiro faltas
 
   funcao inicio()
@@ -99,24 +118,32 @@ programa
 
     media = (nota_1 + nota_2 + nota_3) / 3
 
-    // 1ª decisão: frequência
+    // 1ª decisão: frequência, porque ela
+    // reprova sozinha, qualquer que seja
+    // a nota
     se (faltas >= 10) {
-      escreva("\nReprovado por falta, independentemente da nota.\n")
+      escreva("\nReprovado por falta, ",
+        "independentemente da nota.\n")
     }
     senao {
-      escreva("\nVocê está dentro do limite de faltas.\n")
+      escreva("\nVocê está dentro do ",
+        "limite de faltas.\n")
     }
-    escreva("Quantidade de faltas: ", faltas, "\n")
+    escreva("Quantidade de faltas: ",
+      faltas, "\n")
 
-    // 2ª decisão: resultado final (nota E presença)
+    // 2ª decisão: o "e" exige nota E
+    // presença ao mesmo tempo
     se ((media >= 7.0) e (faltas < 10)) {
       escreva("Resultado: Aprovado, chefe!\n")
     }
     senao se ((media >= 5.0) e (faltas < 10)) {
-      escreva("Em recuperação! Calma que ainda dá.\n")
+      escreva("Em recuperação! Calma que ",
+        "ainda dá.\n")
     }
     senao {
-      escreva("Reprovado. Esse ano não deu, mas ano que vem tem mais.\n")
+      escreva("Reprovado. Esse ano não deu, ",
+        "mas ano que vem tem mais.\n")
     }
 
     escreva("Sua média foi: ", media, "\n")
@@ -125,6 +152,22 @@ programa
 ```
 
 </details>
+
+## 🧠 Revisão rápida
+
+**Com média 7.5, quantas condições da cadeia são testadas?**
+
+Só uma. `media >= 7.0` é verdadeira, o bloco roda e o resto da cadeia é pulado.
+
+**Com média 3 e 2 faltas, qual mensagem final aparece no desafio?**
+
+"Reprovado...". As duas primeiras condições são falsas (a média é menor que 5), então cai no `senao`.
+
+**Por que o segundo teste não precisa ser `(media >= 5.0) e (media < 7.0)`?**
+
+Porque ele só é avaliado quando o primeiro deu falso, ou seja, quando já se sabe que a média é menor que 7.
+
+> ➡️ **Próximo passo:** quando todas as perguntas são do tipo "a variável vale exatamente X?", há um jeito mais limpo que a cadeia de `senao se`: **Estrutura de Decisão Condicional Escolha Caso**.
 
 ## 📌 Resumo
 

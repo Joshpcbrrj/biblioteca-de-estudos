@@ -1,8 +1,10 @@
-# Passagem de parâmetros por valor e por referência
-
-> ✨ **Página nova.** Explica por que, na aula de pesquisa binária, a função `preenche_ordena_vetor` consegue alterar o vetor de quem a chamou.
+# Passagem de parâmetros por valor e por referência (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** a diferença entre passar um valor (cópia) e passar a própria variável (referência), o `&` do Portugol, a troca de valores com função e o caso dos vetores.
+
+## De onde paramos
+
+Na aula de sub-rotinas, as funções recebiam parâmetros e devolviam um resultado com `retorne`. Mas o que acontece se a função alterar um parâmetro: a variável de quem chamou muda junto?
 
 ## Por valor (o padrão)
 
@@ -13,14 +15,17 @@ programa
 {
   funcao dobra(inteiro n)
   {
-    n = n * 2  // muda só a cópia
+    // n é uma cópia: dobrar aqui não
+    // afeta quem chamou
+    n = n * 2
   }
 
   funcao inicio()
   {
     inteiro num = 5
     dobra(num)
-    escreva(num, "\n")  // 5
+    // continua 5
+    escreva(num, "\n")
   }
 }
 ```
@@ -32,21 +37,26 @@ Com um `&` antes do nome do parâmetro, a função recebe a **própria variável
 ```c
 programa
 {
+  // o & faz n ser outro nome para a
+  // variável de quem chamou
   funcao dobra(inteiro &n)
   {
-    n = n * 2  // muda a variável original
+    n = n * 2
   }
 
   funcao inicio()
   {
     inteiro num = 5
     dobra(num)
-    escreva(num, "\n")  // 10
+    // agora vale 10
+    escreva(num, "\n")
   }
 }
 ```
 
-![Passagem por valor x por referência](../img/ref-mem.svg)
+![Por valor × por referência: a mesma chamada dobra(num) com resultados diferentes](../img/ref-mem.svg)
+
+> 💡 **Analogia:** por valor é entregar uma **fotocópia** de um documento: a pessoa pode rabiscar à vontade, e o seu original fica intacto. Por referência é entregar o **original**: qualquer anotação feita aparece no seu documento quando ele voltar.
 
 > ⚠️ Um parâmetro por referência precisa receber uma **variável**. Chamar `dobra(5)` ou `dobra(num + 1)` com `&n` dá erro, porque não há variável para alterar.
 
@@ -57,6 +67,8 @@ A rotina de troca da aula de estruturas de dados vira uma função reutilizável
 ```c
 programa
 {
+  // os dois & são obrigatórios: a função
+  // precisa alterar as duas variáveis
   funcao troca(inteiro &a, inteiro &b)
   {
     inteiro aux = a
@@ -68,9 +80,12 @@ programa
   {
     inteiro x = 3, y = 8
 
-    escreva("Antes: x = ", x, " e y = ", y, "\n")
+    escreva("Antes: x = ", x, " e y = ",
+      y, "\n")
     troca(x, y)
-    escreva("Depois: x = ", x, " e y = ", y, "\n")  // x = 8 e y = 3
+    // x = 8 e y = 3
+    escreva("Depois: x = ", x, " e y = ",
+      y, "\n")
   }
 }
 ```
@@ -84,10 +99,14 @@ programa
 {
   inclua biblioteca Util --> u
 
-  funcao preenche(inteiro v[], inteiro tamanho)
+  // v[] sem &: vetores já chegam por
+  // referência
+  funcao preenche(inteiro v[],
+    inteiro tamanho)
   {
     para (inteiro i = 0; i < tamanho; i++) {
-      v[i] = u.sorteia(1, 100)  // altera o vetor de quem chamou
+      // altera o vetor de quem chamou
+      v[i] = u.sorteia(1, 100)
     }
   }
 
@@ -96,8 +115,10 @@ programa
     inteiro numeros[5]
     preenche(numeros, 5)
 
+    // mostra os números sorteados dentro
+    // da função
     para (inteiro i = 0; i < 5; i++) {
-      escreva(numeros[i], " ")  // mostra os números sorteados dentro da função
+      escreva(numeros[i], " ")
     }
   }
 }
@@ -106,6 +127,22 @@ programa
 É isso que acontece na aula de pesquisa binária: `preenche_ordena_vetor(vet)` sorteia e ordena o vetor dentro da função, e o `inicio()` enxerga o resultado.
 
 > 💡 Prefira devolver o resultado com `retorne` sempre que der: o código fica mais fácil de entender. Use referência quando a função precisa alterar **mais de um** valor (como na troca) ou quando trabalha sobre vetores.
+
+## 🧠 Revisão rápida
+
+**Com `funcao soma1(inteiro n) { n = n + 1 }` e `x = 7`, quanto vale `x` depois de `soma1(x)`?**
+
+7: o parâmetro é por valor, então só a cópia mudou.
+
+**Por que a função de troca não funciona sem os `&`?**
+
+Porque ela trocaria só as cópias; as variáveis de quem chamou ficariam iguais.
+
+**Um vetor passado sem `&` pode ser alterado pela função?**
+
+Sim: vetores e matrizes são sempre passados por referência.
+
+> ➡️ **Próximo passo:** uma função pode chamar outras... e também chamar a si mesma. É a **Recursividade (Funções recursivas)**.
 
 ## 📌 Resumo
 

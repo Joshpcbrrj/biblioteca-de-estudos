@@ -1,14 +1,18 @@
-# Operadores de atribuição compostos (+=, -=, *=, /=)
-
-> ✨ **Página nova.** Estes operadores são usados nas listas de exercícios, nos vetores e nas matrizes, mas não tinham uma aula própria.
+# Operadores de atribuição compostos (+=, -=, *=, /=) (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** os atalhos que combinam uma conta com a atribuição, a equivalência com a forma longa e onde eles aparecem no curso.
+
+## De onde paramos
+
+O `x++` soma exatamente 1. Mas muitas vezes o passo é outro: somar uma nota ao total, descontar um saque do saldo, dobrar um valor. Para esses casos existem os operadores compostos.
 
 ## O que são
 
 É muito comum atualizar uma variável a partir do próprio valor dela: somar algo ao total, descontar do saldo, dobrar um número. Os operadores compostos escrevem isso de forma mais curta, sem repetir o nome da variável.
 
-![Operadores de atribuição compostos](../img/ac-ops.svg)
+![Atribuição composta: faz a conta e guarda](../img/ac-ops.svg)
+
+> 💡 **Analogia:** é o cofrinho. `cofre += 5` é "coloque 5 reais no cofre": você não esvazia o cofre, conta tudo e guarda de novo; só acrescenta ao que já está lá. `cofre -= 2` é tirar 2 reais do mesmo cofre.
 
 A leitura é sempre a mesma: `x += 3` significa "pegue o valor atual de x, some 3 e guarde o resultado em x". É a mesma ideia do `x++`, mas com qualquer valor e qualquer uma das quatro operações.
 
@@ -31,21 +35,28 @@ programa
 
   funcao inicio()
   {
+    // faca-enquanto: o menu aparece pelo
+    // menos uma vez e repete até digitar 0
     faca {
       escreva("\nSaldo: R$ ", saldo, "\n")
-      escreva("1 - Depositar | 2 - Sacar | 0 - Sair: ")
+      escreva("1 - Depositar | 2 - Sacar",
+        " | 0 - Sair: ")
       leia(opcao)
 
       se (opcao == 1) {
         escreva("Valor do depósito: ")
         leia(valor)
-        saldo += valor  // saldo = saldo + valor
+        // acrescenta ao que já existe:
+        // saldo = saldo + valor
+        saldo += valor
       }
       senao se (opcao == 2) {
         escreva("Valor do saque: ")
         leia(valor)
+        // conferir antes evita saldo negativo
         se (valor <= saldo) {
-          saldo -= valor  // saldo = saldo - valor
+          // saldo = saldo - valor
+          saldo -= valor
         }
         senao {
           escreva("Saldo insuficiente.\n")
@@ -59,6 +70,22 @@ programa
 ```
 
 O menu usa o `faca-enquanto`, visto na seção de repetição: ele mostra as opções pelo menos uma vez e repete até o usuário digitar 0.
+
+## 🧠 Revisão rápida
+
+**Se `total` vale 10, quanto vale depois de `total -= 4`?**
+
+6: é o mesmo que `total = total - 4`.
+
+**Com `x = 2`, quanto vale `x` depois de `x *= 3 + 1`?**
+
+8: o lado direito (3 + 1 = 4) é calculado primeiro, e 2 * 4 = 8.
+
+**`x += 1` e `x++` fazem a mesma coisa?**
+
+Sim: os dois somam 1 a `x`.
+
+> ➡️ **Próximo passo:** com as contas dominadas, falta o programa saber comparar valores. É o assunto dos **operadores relacionais**.
 
 ## 📌 Resumo
 

@@ -1,8 +1,10 @@
-# Teste de mesa: simulando o programa no papel
-
-> ✨ **Página nova.** O curso usa diagramas de rastreio em várias aulas; esta página ensina a técnica por trás deles.
+# Teste de mesa: simulando o programa no papel (Adicionado pelo aluno para melhorar o estudo)
 
 > 🗺️ **Nesta aula:** o que é o teste de mesa, como montar a tabela passo a passo e como usá-lo para achar um erro num laço.
+
+## De onde paramos
+
+Com laços e decisões, os programas ficaram longos o bastante para errar sem perceber: uma volta a mais, uma condição trocada. O teste de mesa é a ferramenta para enxergar o que acontece por dentro.
 
 ## O que é
 
@@ -24,6 +26,8 @@ Serve para:
 
 ![Teste de mesa de um laço que soma de 1 a 4](../img/tm-tabela.svg)
 
+> 💡 **Analogia:** é o extrato bancário do programa. Cada linha registra uma movimentação e o saldo logo depois dela. Se o saldo final não bate, você volta linha por linha até achar a movimentação errada.
+
 ## Projeto: achando um erro com o teste de mesa
 
 O programa abaixo deveria ler 3 notas e mostrar a média, mas o resultado sai errado.
@@ -36,6 +40,8 @@ programa
 
   funcao inicio()
   {
+    // o erro está escondido aqui: com cont
+    // começando em 1, "< 3" dá só 2 voltas
     enquanto (cont < 3) {
       escreva("Nota: ")
       leia(nota)
@@ -49,18 +55,34 @@ programa
 
 Teste de mesa digitando as notas 6, 8 e 10 (média esperada: 8):
 
-| Passo | cont | cont < 3? | nota | soma | Saída |
-| --- | --- | --- | --- | --- | --- |
-| início | 1 | – | – | 0 |  |
-| 1ª volta | 1 → 2 | V | 6 | 6 |  |
-| 2ª volta | 2 → 3 | V | 8 | 14 |  |
-| teste | 3 | F | – | 14 | Média: 4.67 |
+| Passo | cont | cont < 3? | nota e soma |
+| --- | --- | --- | --- |
+| início | 1 | – | soma = 0 |
+| 1ª volta | 1 → 2 | V | lê 6, soma = 6 |
+| 2ª volta | 2 → 3 | V | lê 8, soma = 14 |
+| teste | 3 | F | sai e mostra 14 / 3 = 4.67 |
 
 A tabela mostra o problema: com `cont` começando em 1 e a condição `cont < 3`, o laço dá só **duas** voltas. A terceira nota nunca é lida, e a soma de duas notas é dividida por 3.
 
 > 🛠️ **Correção:** usar `cont <= 3` (ou começar `cont` em 0 e manter `cont < 3`). Refazendo o teste de mesa, são três voltas, a soma chega a 24 e a média sai 8.
 
 > 💡 Teste sempre os **limites**: a primeira e a última volta de cada laço e os valores exatos das condições (como 7 em `media >= 7`). A maioria dos erros de laço é de "uma volta a mais ou a menos". Para programas maiores, a depuração do Portugol Studio faz o mesmo trabalho automaticamente.
+
+## 🧠 Revisão rápida
+
+**Quantas voltas dá `para (i = 2; i <= 6; i += 2)`? Monte o teste de mesa.**
+
+3 voltas: i = 2, 4 e 6. Depois i vira 8 e a condição dá falso.
+
+**Por que anotar o resultado da condição (V ou F) em cada passo?**
+
+Porque é ali que o programa decide se continua ou sai; a maioria dos erros de laço aparece nesse ponto.
+
+**Quais valores de entrada vale a pena testar primeiro?**
+
+Os limites: o primeiro e o último valor aceitos e os valores exatos das condições.
+
+> ➡️ **Próximo passo:** use o teste de mesa para conferir suas soluções na **3ª Lista de exercícios**, toda sobre repetição.
 
 ## 📌 Resumo
 

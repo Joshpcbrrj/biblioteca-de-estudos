@@ -14,6 +14,10 @@ Prof. Fábio dos Reis, Bóson Treinamentos.
 > - 💡 dica ou observação importante
 > - ✨ página nova, criada para cobrir um tema que faltava
 > - 📝 lista de exercícios: as respostas ficam recolhidas em **Ver resposta**; tente resolver antes de abrir
+> - 💡 **Analogia**: comparação com o dia a dia, logo abaixo de cada diagrama
+> - 🧠 **Revisão rápida**: três perguntas com a resposta recolhida, no fim da aula
+> - ➡️ **Próximo passo**: o que vem na aula seguinte e por quê
+> - 🧭 **Cheat sheet da seção**: folha de revisão com 12 cards no fim de cada seção
 
 ## Seções
 
@@ -70,8 +74,8 @@ Repetir blocos de código com enquanto, para, faça-enquanto e laços aninhados,
 Vetores e matrizes, com troca, ordenação e pesquisa.
 
 29. Rotina de Troca de Valores entre Variáveis
-30. Manipulação de Vetores com Laço Para
-31. Declaração e Atribuição de Valores a Vetores
+30. Declaração e Atribuição de Valores a Vetores
+31. Manipulação de Vetores com Laço Para
 32. Ordenação de Vetores com o algoritmo Selection Sort
 33. Algoritmo de Pesquisa Linear em Vetores
 34. Algoritmo de pesquisa binária em vetores

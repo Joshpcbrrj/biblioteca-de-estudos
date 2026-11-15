@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** o que é uma função recursiva, caso base e caso geral, como as chamadas se empilham e voltam, e o fatorial como exemplo.
 
+## De onde paramos
+
+Uma função pode chamar outras funções, e a execução sempre volta para quem chamou. Nada impede que a função chamada seja ela mesma, e esse truque resolve problemas que se repetem em tamanhos cada vez menores.
+
 ## O que é recursividade
 
 Uma função é **recursiva** quando chama a si mesma. A chamada pode ser:
@@ -9,12 +13,16 @@ Uma função é **recursiva** quando chama a si mesma. A chamada pode ser:
 - **direta**: a função `f` chama `f`;
 - **indireta**: `f` chama `g`, que chama `f` de novo.
 
+Uma imagem útil é a das bonecas russas (matrioscas): para chegar à menor, você abre uma boneca e encontra outra igual, só que menor, até chegar à última, que não abre.
+
 Toda função recursiva tem duas partes:
 
-- **Caso base**: a versão mais simples do problema, que a função resolve diretamente, sem nova chamada. É ele que faz a recursão parar.
+- **Caso base**: a versão mais simples do problema, que a função resolve diretamente, sem nova chamada. É ele que faz a recursão parar (a boneca que não abre).
 - **Caso geral (passo recursivo)**: divide o problema numa parte que a função sabe resolver e numa versão **um pouco menor** do mesmo problema, que ela entrega a uma nova chamada de si mesma.
 
 ![Passo recursivo e caso base](../img/rc-ideia.svg)
+
+> 💡 **Analogia:** é perguntar "qual é a sua fileira?" num cinema escuro. Você pergunta à pessoa da frente, que pergunta à da frente dela, até chegar à primeira fileira, que sabe a resposta sem perguntar (o caso base). Aí cada um soma 1 e passa a resposta de volta.
 
 ## Como a execução acontece
 
@@ -35,6 +43,8 @@ O fatorial de `n` (`n!`) é o produto de todos os inteiros de 1 até `n`: `4! = 
 
 ![Chamadas recursivas do fatorial de 4](../img/rc-fatorial.svg)
 
+> 💡 **Analogia:** é uma pilha de pratos na pia. Cada chamada coloca um prato em cima ("espere, preciso de 3!"); quando chega ao caso base, os pratos são retirados de cima para baixo, cada um já com sua resposta.
+
 ## Projeto: fatorial com função recursiva
 
 **Código**
@@ -45,26 +55,33 @@ programa
   inteiro num = 0
   inteiro fat = 0
 
-  funcao inteiro calcula_fatorial(inteiro n)
+  funcao inteiro calcula_fatorial(
+    inteiro n)
   {
+    // caso base: responde sem chamar de
+    // novo, e é o que faz a recursão parar
     se (n == 0 ou n == 1) {
-      retorne 1  // caso base
+      retorne 1
     }
     senao {
-      retorne n * calcula_fatorial(n - 1)  // caso geral: chama a si mesma com n - 1
+      // caso geral: n - 1 deixa o problema
+      // menor a cada chamada
+      retorne n * calcula_fatorial(n - 1)
     }
   }
 
   funcao inicio()
   {
-    escreva("Cálculo do fatorial de um número\n")
+    escreva("Cálculo do fatorial\n")
 
-    // não existe fatorial de número negativo
+    // não existe fatorial de número
+    // negativo: insiste até vir um válido
     enquanto (verdadeiro) {
       escreva("Digite um número positivo: ")
       leia(num)
       se (num < 0) {
-        escreva("\nErro! Só é possível calcular o fatorial de números positivos.\n")
+        escreva("\nErro! Use um número ",
+          "positivo.\n")
       }
       senao {
         pare
@@ -72,12 +89,33 @@ programa
     }
 
     fat = calcula_fatorial(num)
-    escreva("O fatorial de ", num, " é: ", fat, "\n")
+    escreva("O fatorial de ", num, " é: ",
+      fat, "\n")
   }
 }
 ```
 
+Teste: 5 → `O fatorial de 5 é: 120`.
+
 > ⚠️ O fatorial cresce muito rápido: `13!` já passa do maior valor que cabe num `inteiro` (cerca de 2,1 bilhões), e o resultado sai errado. Para números maiores, use `real`.
+
+> 💡 Todo problema recursivo também pode ser resolvido com um laço. O fatorial iterativo seria: `fat = 1`, depois `para (i = 2; i <= n; i++) fat = fat * i`. A recursão brilha quando o problema é naturalmente dividido em partes iguais e menores (árvores, busca binária, Fibonacci).
+
+## 🧠 Revisão rápida
+
+**Quantas chamadas de `calcula_fatorial` acontecem para `calcula_fatorial(5)`?**
+
+5: com n = 5, 4, 3, 2 e 1 (a de n = 1 é o caso base).
+
+**O que acontece se o caso base for apagado?**
+
+A função chama a si mesma com n cada vez menor (0, −1, −2…) sem nunca parar, até estourar a memória.
+
+**Quanto vale `calcula_fatorial(0)`?**
+
+1: o zero cai direto no caso base.
+
+> ➡️ **Próximo passo:** para fechar o curso, uma revisão das regras que decidem a ordem das contas em qualquer expressão: **Associatividade e Precedência de Operadores**.
 
 ## 📌 Resumo
 

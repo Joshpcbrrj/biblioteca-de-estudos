@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** o que são números aleatórios (e pseudoaleatórios), a função `u.sorteia` da biblioteca `Util` e dois projetos de sorteio.
 
+## De onde paramos
+
+Na aula de bibliotecas, a `Util` apareceu com o `u.aguarde`. Ela tem outro recurso muito usado em jogos e testes: sortear números.
+
 ## O que é um número aleatório
 
 É um número gerado pelo próprio programa, sem que se saiba de antemão qual será, como no lançamento de um dado. Serve para jogos, sorteios, simulações e testes com dados variados.
@@ -17,10 +21,15 @@ A função `sorteia` da biblioteca `Util` devolve um número inteiro dentro de u
 ```c
 inclua biblioteca Util --> u
 
-numero = u.sorteia(inicio, fim)  // ex.: u.sorteia(1, 6) simula um dado
+// simula um dado: 1, 2, 3, 4, 5 ou 6
+numero = u.sorteia(1, 6)
 ```
 
 ![u.sorteia inclui o início e o fim do intervalo](../img/al-sorteia.svg)
+
+> 💡 **Analogia:** é um saquinho de bingo com uma bola para cada número do intervalo, do primeiro ao último, sem faltar nenhum. `u.sorteia(1, 6)` coloca as bolas 1 a 6 no saquinho, mistura e tira uma. Depois a bola volta para o saquinho, por isso um próximo sorteio pode repetir o número.
+
+> ⚠️ O primeiro argumento precisa ser menor ou igual ao segundo. `u.sorteia(10, 1)` gera erro de execução.
 
 ## Projeto: sorteio no intervalo escolhido
 
@@ -31,19 +40,25 @@ programa
 {
   inclua biblioteca Util --> u
 
-  inteiro num_inicial, num_final, num_sorteado
+  inteiro num_inicial, num_final
+  inteiro num_sorteado
 
   funcao inicio()
   {
-    escreva("Digite o primeiro número do intervalo: ")
+    escreva("Primeiro número do ",
+      "intervalo: ")
     leia(num_inicial)
 
-    escreva("Digite o último número do intervalo: ")
+    escreva("Último número do intervalo: ")
     leia(num_final)
 
-    num_sorteado = u.sorteia(num_inicial, num_final)
+    // os extremos entram no sorteio; o
+    // primeiro precisa ser <= o segundo
+    num_sorteado = u.sorteia(num_inicial,
+      num_final)
 
-    escreva("\nO número sorteado entre ", num_inicial, " e ", num_final, " é: ", num_sorteado, "\n")
+    escreva("\nNúmero sorteado: ",
+      num_sorteado, "\n")
   }
 }
 ```
@@ -63,21 +78,45 @@ programa
 
   funcao inicio()
   {
-    escreva("Digite o primeiro número do intervalo: ")
+    escreva("Primeiro número do ",
+      "intervalo: ")
     leia(num_inicial)
 
-    escreva("Digite o último número do intervalo: ")
+    escreva("Último número do intervalo: ")
     leia(num_final)
 
-    escreva("\nSorteios entre ", num_inicial, " e ", num_final, ":\n")
+    escreva("\nSorteios:\n")
 
-    para (inteiro i = num_inicial; i <= num_final; i++) {
-      sorteado = u.sorteia(num_inicial, num_final)
-      escreva("Número gerado: ", sorteado, "\n")
+    // o i só conta quantas vezes repetir:
+    // um sorteio por número do intervalo
+    para (inteiro i = num_inicial;
+      i <= num_final; i++) {
+      // cada chamada é um sorteio novo,
+      // independente dos anteriores
+      sorteado = u.sorteia(num_inicial,
+        num_final)
+      escreva("Número gerado: ",
+        sorteado, "\n")
     }
   }
 }
 ```
+
+## 🧠 Revisão rápida
+
+**Quais valores `u.sorteia(0, 3)` pode devolver?**
+
+0, 1, 2 ou 3: os dois extremos estão incluídos.
+
+**Como sortear uma moeda (cara ou coroa)?**
+
+Use `u.sorteia(0, 1)` e trate 0 como cara e 1 como coroa, com um `se`.
+
+**Dois sorteios seguidos de `u.sorteia(1, 6)` podem dar o mesmo número?**
+
+Sim: cada sorteio é independente, como lançar o dado de novo.
+
+> ➡️ **Próximo passo:** decisões, bibliotecas e sorteios juntos na **2ª Lista de exercícios**.
 
 ## 📌 Resumo
 

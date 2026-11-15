@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** como a pesquisa linear compara o valor procurado com cada posição, a condição dupla do `enquanto` e dois projetos: números e frutas.
 
+## De onde paramos
+
+Na consulta de matrículas, um `para` percorria o vetor inteiro com uma flag. A pesquisa linear organiza essa ideia e para assim que encontra o valor, sem olhar o resto.
+
 ## Pesquisa linear (sequencial)
 
 Na pesquisa linear o valor procurado é comparado com cada posição do vetor, **uma por uma, da primeira à última**, até ser encontrado ou até o vetor acabar.
@@ -10,6 +14,8 @@ Na pesquisa linear o valor procurado é comparado com cada posição do vetor, *
 - É simples, mas lenta em vetores grandes: no pior caso (valor no fim ou inexistente), compara todas as posições.
 
 ![Pesquisa linear: encontrado e não encontrado](../img/li-trace.svg)
+
+> 💡 **Analogia:** é procurar a chave do carro numa gaveta bagunçada: você tira um objeto de cada vez até achar a chave ou esvaziar a gaveta. Se ela estiver no fundo (ou não estiver lá), você mexe em tudo.
 
 O laço `enquanto` avança a posição enquanto **duas** condições forem verdadeiras: ainda não chegou à última posição **e** o valor da posição atual não é o procurado. Quando ele termina, basta conferir a posição em que parou.
 
@@ -33,18 +39,22 @@ programa
     escreva("Digite o valor a pesquisar: ")
     leia(num)
 
-    // pesquisa linear: avança enquanto não chegou ao fim e não achou
+    // avança enquanto não chegou à última
+    // posição (4) e ainda não achou
     pos = 0
-    enquanto ((pos < 4) e (vet[pos] != num)) {
+    enquanto (pos < 4 e vet[pos] != num) {
       pos++
     }
 
-    // parou porque achou, ou porque chegou à última posição?
+    // o laço para por dois motivos: achou
+    // ou chegou ao fim. O se descobre qual
     se (vet[pos] == num) {
-      escreva("\nO número ", num, " está na posição ", pos, "\n")
+      escreva("\n", num, " está na posição ",
+        pos, "\n")
     }
     senao {
-      escreva("\nO número ", num, " não existe no vetor.\n")
+      escreva("\n", num, " não existe no ",
+        "vetor.\n")
     }
 
     escreva("\nVetor completo: ")
@@ -69,19 +79,26 @@ programa
 {
   inclua biblioteca Texto --> t
 
-  cadeia frutas[] = {"morango", "banana", "caju", "amora"}
+  // o estoque já vem preenchido
+  cadeia frutas[] = {"morango", "banana",
+    "caju", "amora"}
   cadeia fruta
   inteiro pos
 
   funcao inicio()
   {
-    escreva("Qual fruta você deseja comprar? ")
+    escreva("Qual fruta você deseja ",
+      "comprar? ")
     leia(fruta)
 
-    fruta = t.caixa_baixa(fruta)  // "Banana" e "BANANA" viram "banana"
+    // "Banana" e "BANANA" viram "banana",
+    // igual ao que está no vetor
+    fruta = t.caixa_baixa(fruta)
 
+    // 4 frutas: a última posição é 3
     pos = 0
-    enquanto ((pos < 3) e (frutas[pos] != fruta)) {
+    enquanto (pos < 3
+      e frutas[pos] != fruta) {
       pos++
     }
 
@@ -94,6 +111,22 @@ programa
   }
 }
 ```
+
+## 🧠 Revisão rápida
+
+**Num vetor de 1000 posições, quantas comparações a pesquisa linear faz no pior caso?**
+
+1000: quando o valor está na última posição ou não existe.
+
+**Por que padronizar o texto com `t.caixa_baixa()` antes de comparar?**
+
+Porque "Banana" e "banana" são cadeias diferentes para o computador. Convertendo tudo para minúsculas, a comparação ignora maiúsculas.
+
+**A pesquisa linear exige vetor ordenado?**
+
+Não: ela olha todas as posições em sequência, então funciona com qualquer ordem.
+
+> ➡️ **Próximo passo:** se o vetor estiver ordenado, dá para achar o valor com muito menos comparações: **Algoritmo de pesquisa binária em vetores**.
 
 ## 📌 Resumo
 

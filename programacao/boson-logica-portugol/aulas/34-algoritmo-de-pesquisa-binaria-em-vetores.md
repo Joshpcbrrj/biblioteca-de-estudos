@@ -6,9 +6,13 @@
 
 > 🗺️ **Nesta aula:** como a pesquisa binária divide o vetor ao meio a cada passo, por que ele precisa estar ordenado, o papel de cada variável e um projeto que sorteia, ordena e pesquisa.
 
+## De onde paramos
+
+A pesquisa linear olha uma posição de cada vez e, no pior caso, todas elas. Se o vetor já estiver ordenado (com o selection sort, por exemplo), existe um jeito muito mais rápido.
+
 ## Pesquisa binária
 
-A pesquisa binária procura um valor num vetor **ordenado** dividindo o espaço de busca ao meio a cada passo:
+A pesquisa binária procura um valor num vetor **ordenado** dividindo o espaço de busca ao meio a cada passo. É o que fazemos ao procurar uma palavra no dicionário: abrimos no meio e decidimos se a palavra está antes ou depois.
 
 1. Compara o valor procurado com o elemento do **meio** do trecho que ainda pode contê-lo.
 2. Se for igual, encontrou.
@@ -21,13 +25,15 @@ A pesquisa binária procura um valor num vetor **ordenado** dividindo o espaço 
 
 ## A busca como árvore de decisões
 
-Cada comparação com o meio é uma bifurcação: menor vai para a esquerda, maior vai para a direita. No vetor `{0, 1, 2, ..., 9}`, procurar o 6 percorre o caminho em verde:
+Cada comparação com o meio é uma bifurcação: menor vai para a esquerda, maior vai para a direita. No vetor `{0, 1, 2, ..., 9}`, procurar o 6 percorre o caminho em destaque:
 
 ![Árvore de decisões da busca binária procurando o 6](../img/bi-arvore.svg)
 
+> 💡 **Analogia:** é o jogo "pensei num número de 1 a 100", em que só se responde "maior" ou "menor". Quem chuta sempre o meio (50, depois 25 ou 75...) acerta em no máximo 7 tentativas; quem chuta 1, 2, 3... pode precisar de 100.
+
 ## Passo a passo com as variáveis
 
-A implementação usa quatro variáveis:
+A implementação usa quatro variáveis (nos diagramas, `ini` e `fim` abreviam `inicial` e `final`):
 
 | Variável | Papel |
 | --- | --- |
@@ -44,6 +50,10 @@ E um caso mais longo, procurando o 15:
 
 ![Pesquisa binária em 3 passos](../img/bi-passos.svg)
 
+> 💡 **Analogia:** `inicial` e `final` são as duas mãos segurando as páginas do livro que ainda importam. A cada passo, uma das mãos pula para perto do meio, e o pedaço entre elas fica cada vez mais fino, até sobrar a página certa ou nenhuma.
+
+> 💡 `meio = (inicial + final) / 2` é uma divisão entre inteiros: o resto é descartado. Com `inicial = 0` e `final = 9`, o meio é 4 (e não 4,5).
+
 ## Projeto: sortear, ordenar e pesquisar
 
 Crie um vetor de 10 posições com números aleatórios, ordene do menor para o maior e diga se um número informado pelo usuário está no vetor.
@@ -59,6 +69,7 @@ programa
 
   funcao inicio()
   {
+    // a binária exige vetor ordenado
     preenche_ordena_vetor(vet)
 
     // mostra o vetor ordenado, para conferir
@@ -76,30 +87,43 @@ programa
     escreva("Digite o valor a pesquisar: ")
     leia(busca)
 
-    enquanto ((inicial <= final) e (nao encontrado)) {
+    // para quando acha ou quando o trecho
+    // de busca fica vazio
+    enquanto (inicial <= final
+      e nao encontrado) {
+      // divisão inteira: descarta o resto
       meio = (inicial + final) / 2
 
       se (vet[meio] == busca) {
         encontrado = verdadeiro
       }
       senao se (vet[meio] > busca) {
-        final = meio - 1  // descarta a metade da direita
+        // procurado é menor: fica só a
+        // metade da esquerda
+        final = meio - 1
       }
       senao {
-        inicial = meio + 1  // descarta a metade da esquerda
+        // procurado é maior: fica só a
+        // metade da direita
+        inicial = meio + 1
       }
     }
 
     se (encontrado) {
-      escreva("\nSim! O número está no vetor.\n")
+      escreva("\nSim! O número está no ",
+        "vetor.\n")
     }
     senao {
-      escreva("\nNão. O número não está no vetor.\n")
+      escreva("\nNão. O número não está ",
+        "no vetor.\n")
     }
   }
 
-  // preenche com sorteios e ordena (selection sort)
-  funcao preenche_ordena_vetor(inteiro vetor[])
+  // preenche com sorteios e ordena com o
+  // selection sort; o vetor é recebido
+  // como parâmetro
+  funcao preenche_ordena_vetor(
+    inteiro vetor[])
   {
     inteiro a, b, aux
 
@@ -121,6 +145,22 @@ programa
 ```
 
 > 💡 A função `preenche_ordena_vetor` (funções são vistas na seção de sub-rotinas) recebe o vetor como parâmetro. No original, ela misturava o parâmetro `vetor` com a variável global `vet` no preenchimento e na troca. Funcionava só porque os dois eram o mesmo vetor; agora a função usa apenas o parâmetro e tem suas próprias variáveis locais.
+
+## 🧠 Revisão rápida
+
+**Quantos passos, no máximo, a busca binária precisa para 100 posições?**
+
+7, porque 2⁷ = 128 ≥ 100 (e 2⁶ = 64 não basta).
+
+**No vetor {2, 5, 8, 12, 16, 23, 38}, procurando 23: quais meios são visitados?**
+
+meio = 3 (12 < 23, inicial = 4); meio = 5 (23): encontrado em 2 passos.
+
+**Quando o laço termina sem achar?**
+
+Quando `inicial` passa de `final`: o trecho de busca ficou vazio.
+
+> ➡️ **Próximo passo:** o vetor é uma fileira. E quando os dados formam uma tabela, com linhas e colunas? **Como criar e manipular Matrizes (Vetores bidimensionais)**.
 
 ## 📌 Resumo
 

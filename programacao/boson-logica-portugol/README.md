@@ -51,8 +51,8 @@ Lógica de programação do zero com o Portugol Studio: fundamentos, variáveis 
 ## Estruturas de dados básicas
 
 29. [Rotina de Troca de Valores entre Variáveis](aulas/29-rotina-de-troca-de-valores-entre-variaveis.md)
-30. [Manipulação de Vetores com Laço Para](aulas/30-manipulacao-de-vetores-com-laco-para.md)
-31. [Declaração e Atribuição de Valores a Vetores](aulas/31-declaracao-e-atribuicao-de-valores-a-vetores.md)
+30. [Declaração e Atribuição de Valores a Vetores](aulas/30-declaracao-e-atribuicao-de-valores-a-vetores.md)
+31. [Manipulação de Vetores com Laço Para](aulas/31-manipulacao-de-vetores-com-laco-para.md)
 32. [Ordenação de Vetores com o algoritmo Selection Sort](aulas/32-ordenacao-de-vetores-com-o-algoritmo-selection.md)
 33. [Algoritmo de Pesquisa Linear em Vetores](aulas/33-algoritmo-de-pesquisa-linear-em-vetores.md)
 34. [Algoritmo de pesquisa binária em vetores](aulas/34-algoritmo-de-pesquisa-binaria-em-vetores.md)

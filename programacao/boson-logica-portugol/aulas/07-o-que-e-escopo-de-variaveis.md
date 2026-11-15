@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** o que é escopo (visibilidade e tempo de vida), a diferença entre variáveis globais e locais e um programa que mostra quem enxerga o quê.
 
+## De onde paramos
+
+No projeto da aula anterior, algumas variáveis foram declaradas fora de `inicio()` e outras dentro. Isso não é detalhe: define **quem pode usar** cada variável e **por quanto tempo** ela existe.
+
 ## O que é escopo
 
 O **escopo** de uma variável é a região do programa onde ela existe e pode ser usada. Ele define duas coisas:
@@ -20,7 +24,9 @@ Uma variável só pode ser usada dentro do escopo em que foi criada. Fora dele, 
 | Tempo de vida | Do início ao fim da execução do programa | Só enquanto a função está sendo executada |
 | Uso típico | Compartilhar um dado entre várias funções | Guardar valores de trabalho de uma única função |
 
-![Variável global é vista por todas as funções; local, só pela sua](../img/es-escopo.svg)
+![Escopo: quem enxerga cada variável, com os nomes do projeto abaixo](../img/es-escopo.svg)
+
+> 💡 **Analogia:** pense numa casa. Uma variável global é o relógio da sala: todo mundo na casa vê, e ele fica lá o tempo todo. Uma variável local é o rascunho que alguém usa numa escrivaninha do quarto: só quem está naquele quarto o vê, e ele vai para o lixo quando a pessoa sai.
 
 > 💡 Use variáveis globais com moderação. Elas ocupam memória durante toda a execução, e como qualquer função pode alterá-las, um valor errado numa global é mais difícil de rastrear na depuração. Prefira variáveis locais e passe valores entre funções quando possível.
 
@@ -31,26 +37,37 @@ Uma variável só pode ser usada dentro do escopo em que foi criada. Fora dele, 
 ```c
 programa
 {
-  // Escopo global
+  // global: declarada fora das funções,
+  // por isso inicio() e calcula() a enxergam
   real numero_global
 
   funcao inicio()
   {
-    // Escopo local de inicio()
-    numero_global = 10.0  // inicio() enxerga a global
-    real numero_local_inicio = 12.0  // só existe dentro de inicio()
+    // inicio() pode alterar a global
+    numero_global = 10.0
+    // local: só existe dentro de inicio()
+    real numero_local_inicio = 12.0
 
-    escreva("O número global é: ", numero_global, "\n")
-    escreva("O número local de inicio é: ", numero_local_inicio, "\n")
-    escreva("numero_local_calcula x numero_global = ", calcula(), "\n")
+    escreva("O número global é: ",
+      numero_global, "\n")
+    escreva("O número local de inicio é: ",
+      numero_local_inicio, "\n")
+    // chama calcula() e mostra o que ela devolve
+    escreva("numero_local_calcula x ",
+      "numero_global = ", calcula(), "\n")
     escreva("Foi tudo! Agora, segue o baile.\n")
   }
 
-  funcao real calcula()  // função que devolve um valor real
+  // "real" antes do nome: a função devolve
+  // um número real com retorne
+  funcao real calcula()
   {
-    real numero_local_calcula = 5.0  // local de calcula()
-    retorne numero_local_calcula * numero_global  // calcula() também enxerga a global
-    // numero_local_inicio não pode ser usado aqui: pertence a inicio()
+    // local de calcula(): some quando ela acaba
+    real numero_local_calcula = 5.0
+    // a global também é visível aqui; já
+    // numero_local_inicio NÃO seria, porque
+    // pertence a inicio()
+    retorne numero_local_calcula * numero_global
   }
 }
 ```
@@ -63,6 +80,22 @@ O número local de inicio é: 12.0
 numero_local_calcula x numero_global = 50.0
 Foi tudo! Agora, segue o baile.
 ```
+
+## 🧠 Revisão rápida
+
+**Uma variável declarada dentro de `inicio()` pode ser usada em `calcula()`?**
+
+Não: ela é local de `inicio()`. Para `calcula()`, ela não existe.
+
+**Quando uma variável local deixa de existir?**
+
+Quando a função em que foi declarada termina de executar.
+
+**Por que preferir variáveis locais?**
+
+Porque só a própria função pode alterá-las, o que facilita achar erros, e elas liberam a memória ao fim da função.
+
+> ➡️ **Próximo passo:** e quando um valor nunca deve mudar, como o valor de pi? Para isso existem as **constantes**: **Estudo complementar de Constantes**.
 
 ## 📌 Resumo
 

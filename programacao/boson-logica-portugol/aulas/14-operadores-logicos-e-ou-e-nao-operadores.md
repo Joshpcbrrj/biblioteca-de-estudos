@@ -2,11 +2,17 @@
 
 > 🗺️ **Nesta aula:** como os operadores lógicos combinam condições, os básicos (E, OU, NÃO) e os derivados (NAND, NOR, XOR, XNOR), a tabela-verdade e projetos com janelas abertas e fechadas.
 
+## De onde paramos
+
+Os operadores relacionais respondem uma pergunta de cada vez ("a nota é maior que 7?"). Na vida real as decisões juntam várias perguntas, e é aí que entram os operadores lógicos.
+
 ## Para que servem
 
 Os operadores lógicos **combinam condições**. Com eles uma única expressão pode testar várias comparações ao mesmo tempo, como "a nota é maior que 7 **e** as faltas são menores que 10". O resultado continua sendo um valor lógico: `verdadeiro` ou `falso`.
 
-![Os sete operadores lógicos e seus símbolos de porta lógica](../img/lg-portas.svg)
+![e, ou, nao: tabela-verdade e como montar os derivados](../img/lg-portas.svg)
+
+> 💡 **Analogia:** pense na porta de um cofre de banco. Com **E**, ela só abre se o gerente **e** o caixa girarem a chave juntos. Com **OU**, é a porta da sua casa: qualquer morador com a chave abre. O **NÃO** é o aviso "não entre" virando "entre": só inverte a mensagem.
 
 ## Os operadores básicos
 
@@ -32,21 +38,32 @@ Todas as combinações possíveis de duas entradas `a` e `b` (V = verdadeiro, F 
 
 **Operadores básicos**
 
-| a | b | a e b | a ou b | nao a |
-| --- | --- | --- | --- | --- |
-| V | V | **V** | **V** | F |
-| V | F | F | **V** | F |
-| F | V | F | **V** | **V** |
-| F | F | F | F | **V** |
+| a | b | a e b | a ou b |
+| --- | --- | --- | --- |
+| V | V | **V** | **V** |
+| V | F | F | **V** |
+| F | V | F | **V** |
+| F | F | F | F |
 
-**Operadores derivados**
+O `nao` só tem uma entrada: `nao V` dá F e `nao F` dá V.
 
-| a | b | NAND | NOR | XOR | XNOR |
-| --- | --- | --- | --- | --- | --- |
-| V | V | F | F | F | **V** |
-| V | F | **V** | F | **V** | F |
-| F | V | **V** | F | **V** | F |
-| F | F | **V** | **V** | F | **V** |
+**Operadores derivados: NAND e NOR**
+
+| a | b | NAND | NOR |
+| --- | --- | --- | --- |
+| V | V | F | F |
+| V | F | **V** | F |
+| F | V | **V** | F |
+| F | F | **V** | **V** |
+
+**Operadores derivados: XOR e XNOR**
+
+| a | b | XOR | XNOR |
+| --- | --- | --- | --- |
+| V | V | F | **V** |
+| V | F | **V** | F |
+| F | V | **V** | F |
+| F | F | F | **V** |
 
 > 💡 No Portugol só existem as palavras `e`, `ou` e `nao`. Os demais se montam com elas: NAND é `nao (a e b)`, NOR é `nao (a ou b)`, e, para variáveis do tipo `logico`, XOR é `a != b` e XNOR é `a == b`.
 
@@ -54,7 +71,9 @@ Todas as combinações possíveis de duas entradas `a` e `b` (V = verdadeiro, F 
 
 Nos projetos abaixo, cada variável representa uma janela: `'a'` para aberta e `'f'` para fechada.
 
-![e, ou e nao aplicados às janelas do projeto](../img/lg-janelas.svg)
+![As janelas da casa: e, ou e nao aplicados aos projetos abaixo](../img/lg-janelas.svg)
+
+> 💡 **Analogia:** antes de viajar, você confere a casa. "Todas as janelas estão fechadas?" exige checar uma por uma (**e**). "Alguma está aberta?" termina na primeira aberta que você encontrar (**ou**).
 
 **Operador e**
 
@@ -70,14 +89,22 @@ programa
     a2 = 'a'
     a3 = 'a'
 
-    // verdadeiro só se as TRÊS estiverem abertas
-    estado = a1 == 'a' e a2 == 'a' e a3 == 'a'
+    // e: verdadeiro só se as TRÊS
+    // comparações forem verdadeiras
+    estado = a1 == 'a' e a2 == 'a'
+      e a3 == 'a'
 
-    escreva("Janelas (a = aberta | f = fechada)\n")
-    escreva("a1: ", a1, "\na2: ", a2, "\na3: ", a3, "\n")
+    escreva("Janelas (a = aberta | ",
+      "f = fechada)\n")
+    escreva("a1: ", a1, "\na2: ", a2,
+      "\na3: ", a3, "\n")
 
-    escreva("\nTodas as janelas estão abertas? ", estado, "\n")
-    escreva("Alguma janela está fechada? ", nao estado, "\n")
+    escreva("\nTodas as janelas estão ",
+      "abertas? ", estado, "\n")
+    // se não estão todas abertas, alguma
+    // está fechada: basta inverter
+    escreva("Alguma janela está fechada? ",
+      nao estado, "\n")
   }
 }
 ```
@@ -96,12 +123,16 @@ programa
     a2 = 'f'
     a3 = 'f'
 
-    // verdadeiro se PELO MENOS UMA estiver aberta
-    estado = a1 == 'a' ou a2 == 'a' ou a3 == 'a'
+    // ou: basta UMA comparação verdadeira
+    estado = a1 == 'a' ou a2 == 'a'
+      ou a3 == 'a'
 
-    escreva("Janelas (a = aberta | f = fechada)\n")
-    escreva("a1: ", a1, "\na2: ", a2, "\na3: ", a3, "\n")
-    escreva("\nAlguma janela está aberta? ", estado, "\n")
+    escreva("Janelas (a = aberta | ",
+      "f = fechada)\n")
+    escreva("a1: ", a1, "\na2: ", a2,
+      "\na3: ", a3, "\n")
+    escreva("\nAlguma janela está aberta? ",
+      estado, "\n")
   }
 }
 ```
@@ -120,13 +151,18 @@ programa
     a2 = 'f'
     a3 = 'f'
 
-    alguma_aberta = a1 == 'a' ou a2 == 'a' ou a3 == 'a'
+    alguma_aberta = a1 == 'a' ou a2 == 'a'
+      ou a3 == 'a'
 
-    escreva("Janelas (a = aberta | f = fechada)\n")
-    escreva("a1: ", a1, "\na2: ", a2, "\na3: ", a3, "\n")
+    escreva("Janelas (a = aberta | ",
+      "f = fechada)\n")
+    escreva("a1: ", a1, "\na2: ", a2,
+      "\na3: ", a3, "\n")
 
-    // se NÃO há nenhuma aberta, então todas estão fechadas
-    escreva("\nTodas as janelas estão fechadas? ", nao alguma_aberta, "\n")  // falso
+    // se NÃO há nenhuma aberta, então
+    // todas estão fechadas; aqui dá falso
+    escreva("\nTodas as janelas estão ",
+      "fechadas? ", nao alguma_aberta, "\n")
   }
 }
 ```
@@ -142,7 +178,8 @@ programa
 {
   caracter a1, a2, a3, b1, b2, b3
   cadeia c1, c2
-  logico estado_a, estado_b, afirmacao_d, negacao_d
+  logico estado_a, estado_b
+  logico afirmacao_d, negacao_d
 
   funcao inicio()
   {
@@ -158,24 +195,55 @@ programa
     c1 = "dia"
     c2 = "noite"
 
-    estado_a = a1 == 'a' e a2 == 'a' e a3 == 'a'  // todas abertas?
-    estado_b = b1 == 'a' ou b2 == 'a' ou b3 == 'a'  // alguma aberta?
+    // todas as janelas a estão abertas?
+    estado_a = a1 == 'a' e a2 == 'a'
+      e a3 == 'a'
+    // alguma janela b está aberta?
+    estado_b = b1 == 'a' ou b2 == 'a'
+      ou b3 == 'a'
 
-    afirmacao_d = c1 == "dia"  // comparação de cadeias
+    // cadeias também se comparam com ==
+    afirmacao_d = c1 == "dia"
     negacao_d = nao afirmacao_d
 
-    escreva("Janelas a: ", a1, " ", a2, " ", a3, "\n")
-    escreva("Janelas b: ", b1, " ", b2, " ", b3, "\n")
+    escreva("Janelas a: ", a1, " ", a2,
+      " ", a3, "\n")
+    escreva("Janelas b: ", b1, " ", b2,
+      " ", b3, "\n")
 
-    escreva("\nTodas as janelas a estão abertas? ", estado_a, "\n")  // verdadeiro
-    escreva("Alguma janela b está aberta? ", estado_b, "\n")  // verdadeiro
-    escreva("9 horas da manhã é ", c1, "? ", afirmacao_d, "\n")  // verdadeiro
-    escreva("10 horas da ", c2, " é dia? ", negacao_d, "\n")  // falso
+    // verdadeiro
+    escreva("\nTodas as janelas a estão ",
+      "abertas? ", estado_a, "\n")
+    // verdadeiro (b2 está aberta)
+    escreva("Alguma janela b está aberta? ",
+      estado_b, "\n")
+    // verdadeiro
+    escreva("9 horas da manhã é ", c1, "? ",
+      afirmacao_d, "\n")
+    // falso
+    escreva("10 horas da ", c2, " é dia? ",
+      negacao_d, "\n")
   }
 }
 ```
 
 > 💡 No original, `estado_b` testava `b1 == 'f' ou b2 == 'a' ou b3 == 'f'`, misturando "fechada" e "aberta" na mesma pergunta. Na versão acima as três comparações testam a mesma coisa (aberta). Também tirei o trecho final de brincadeira, que reproduzia letra de música.
+
+## 🧠 Revisão rápida
+
+**Com idade = 20 e tem_carteira = falso, quanto vale idade >= 18 e tem_carteira?**
+
+`falso`: o `e` exige as duas verdadeiras, e a segunda é falsa.
+
+**E idade >= 18 ou tem_carteira?**
+
+`verdadeiro`: basta uma das duas ser verdadeira.
+
+**Como escrever um XOR entre duas variáveis lógicas no Portugol?**
+
+`a != b`: é verdadeiro quando as duas têm valores diferentes.
+
+> ➡️ **Próximo passo:** hora de praticar tudo o que a seção mostrou (variáveis, operadores, entrada e saída) na **1ª Lista de exercícios**.
 
 ## 📌 Resumo
 
