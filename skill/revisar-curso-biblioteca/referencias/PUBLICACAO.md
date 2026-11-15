@@ -1,4 +1,4 @@
-# Exportação, conversão e publicação (Fases 6 e 7)
+# Exportação, conversão e publicação (etapas Publicar e Sincronizar)
 
 > Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia só depois que o usuário avisar que exportou o curso.
 
@@ -14,7 +14,7 @@ O servidor de arquivos do Notion (`prod-files-secure.s3...amazonaws.com`) costum
 2. Se o computador do usuário estiver vinculado à sessão, peça acesso à pasta Downloads (`device_request_folder_access`) e traga o zip com `device_stage_files`. Se não, peça para ele anexar o zip na conversa.
 3. Descompacte numa pasta vazia própria e converta com o script do repositório: `python3 -I ferramentas/notion2md.py <pasta-da-exportacao> <pasta-do-curso>`. Ele segue a ordem do índice, gera `aulas/NN-<slug>.md`, copia as imagens para `img/`, transforma callouts em citações, toggles de resolução em `<details>`, ignora PDFs e arquivos de projeto, troca tabulações do código por 2 espaços e reduz o alinhamento de comentários. Ajuste o script se encontrar um bloco novo do Notion e mantenha a versão melhorada no repositório.
 4. Revise o resultado: rótulos dos `<summary>`, menções a arquivos não publicados, nomes pessoais, `•` no lugar de `+` em tabelas, `�` em código. Depois escreva `aulas/00-sobre-o-curso.md`, `README.md` e `metadata.yaml`.
-5. Toda correção de conteúdo feita nesta etapa (texto, tabela dividida, código reescrito) entra numa lista para a sincronização com o Notion (Fase 7).
+5. Toda correção de conteúdo feita nesta etapa (texto, tabela dividida, código reescrito) entra numa lista para a sincronização com o Notion (etapa Sincronizar).
 
 ## Infraestrutura do repositório
 
@@ -213,7 +213,7 @@ O conteúdo tem que ser o mesmo nos dois lugares. A ordem de trabalho é: **o No
 - **Texto, títulos, callouts e tabelas**: `notion-update-page` com `update_content` (trechos exatos) na página correspondente.
 - **Código**: se uma linha foi reescrita ou quebrada, atualize o bloco de código no Notion.
 - **Imagens**: o mesmo SVG no `img/` e no Notion (suba com `notion-create-attachment` e troque o `<image>`).
-- **Aulas novas**: crie a página no Notion, com o título terminado em ` (Adicionado pelo aluno para melhorar o estudo)`, e posicione no índice. Conforme a Fase 2.3, ela não leva callout de "página nova" nem marca ✨ (a lista do que foi acrescentado vai também no resumo ao usuário).
+- **Aulas novas**: crie a página no Notion, com o título terminado em ` (Adicionado pelo aluno para melhorar o estudo)`, e posicione no índice. Conforme a etapa Escopo, ela não leva callout de "página nova" nem marca ✨ (a lista do que foi acrescentado vai também no resumo ao usuário).
 - **Índice**: o `00-sobre-o-curso.md` e o índice do Notion têm a mesma proposta, legenda e Resumo do curso.
 
 Diferenças permitidas (são de formato, não de conteúdo):

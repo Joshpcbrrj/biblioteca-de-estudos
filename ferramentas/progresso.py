@@ -2,24 +2,27 @@
 """Registro de progresso da remodelagem (para retomar depois de uma
 compactação de contexto sem refazer páginas).
 
-O estado fica em /tmp/ss/progresso-<curso>.json (fora do repositório).
+O estado fica em progresso/<slug>.json, dentro do repositório: faça commit
+junto com o trabalho, e um chat novo retoma de onde o anterior parou.
+<slug> é o nome da pasta do curso (ex.: boson-logica-portugol).
 
 Uso:
-  progresso.py <curso> init <id> [<id> ...]   cadastra as páginas, em ordem
-  progresso.py <curso> nota <id> "<texto>"    anota (ex.: título ou imagens)
-  progresso.py <curso> feito <id> [<id> ...]  marca como concluídas
-  progresso.py <curso> pendentes              lista o que falta (JSON)
-  progresso.py <curso> status                 resumo: total, feitas, próxima
+  progresso.py <slug> init <id> [<id> ...]   cadastra as páginas, em ordem
+  progresso.py <slug> nota <id> "<texto>"    anota (ex.: título ou imagens)
+  progresso.py <slug> feito <id> [<id> ...]  marca como concluídas
+  progresso.py <slug> pendentes              lista o que falta (JSON)
+  progresso.py <slug> status                 resumo: total, feitas, próxima
 
 Ids podem ser parciais (os 8 primeiros caracteres bastam se forem únicos).
 """
 import json, os, sys
 
-DIR = '/tmp/ss'
+DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'progresso')
 
 
 def carregar(curso):
-    p = os.path.join(DIR, f'progresso-{curso}.json')
+    os.makedirs(DIR, exist_ok=True)
+    p = os.path.join(DIR, f'{curso}.json')
     if os.path.exists(p):
         return p, json.load(open(p))
     return p, {'curso': curso, 'paginas': []}

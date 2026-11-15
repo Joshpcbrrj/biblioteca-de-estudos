@@ -1,6 +1,6 @@
 # Capa do livro
 
-> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia só na Fase 6, ao criar ou refazer a capa de um curso.
+> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia só na etapa Publicar, ao criar ou refazer a capa de um curso.
 
 Todo curso publicado tem `capa.png` na pasta do curso (o workflow já usa `--epub-cover-image` quando ela existe) e o `capa.svg` de origem ao lado.
 

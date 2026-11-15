@@ -9,7 +9,7 @@
 - Em células de tabela, evite começar o texto com `+` (vira marcador). Escreva `<` e `>` diretamente; `&lt;` aparece literal em código.
 - Para **mover uma página filha** no índice: num único `update_content`, apague a tag `<page url="...">Título</page>` de onde ela está e reinsira a mesma tag na posição desejada.
 - Páginas novas não ganham breadcrumb pela API; avise o usuário que ele pode adicionar com `/breadcrumb`.
-- Os arquivos anexados ao Notion não podem ser baixados direto da sessão (servidor bloqueado): para imagens existentes, use a exportação HTML descrita na Fase 6.
+- Os arquivos anexados ao Notion não podem ser baixados direto da sessão (servidor bloqueado): para imagens existentes, use a exportação HTML descrita em PUBLICACAO.md.
 - Antes de mexer numa página, faça fetch; depois de várias edições, faça um fetch de conferência por amostragem.
 - `+ ` logo depois de `</code>` ou no começo de uma célula vira marcador (`  •`). Escreva "e"/"com" no lugar; `<code>+</code>` sozinho funciona.
 - Em `new_str`, sequências como `\u0000` são decodificadas e viram `�`. Evite escapes em texto (escreva por extenso, ex.: "caractere nulo"); quando a barra invertida for necessária (`%JAVA_HOME%\bin`), corrija depois com `update_content` em JSON, com a barra duplicada.

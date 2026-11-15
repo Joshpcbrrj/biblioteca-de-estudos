@@ -16,8 +16,13 @@ Escreva tudo em **português do Brasil**: o conteúdo e as mensagens ao usuário
 Se o usuário ainda não mandou o link do curso, responda só isto, numa mensagem curta, e espere:
 
 1. peça o **link da página índice do curso no Notion**;
-2. diga que precisa do **Notion conectado**, do **repositório da biblioteca** (padrão `Joshpcbrrj/biblioteca-de-estudos`; pergunte se é outro) e do **app do Claude no computador aberto**, com a pasta **Downloads** liberada (é por ela que chega a exportação);
-3. pergunte se é um curso novo ou a continuação de um já começado.
+2. diga que precisa do **Notion conectado** e do **repositório da biblioteca** (padrão `Joshpcbrrj/biblioteca-de-estudos`; pergunte se é outro). Avise que, só na publicação, vai precisar do **app do Claude no computador** com a pasta **Downloads** liberada (confira com `get_device_info`) ou do `.zip` anexado no chat.
+
+Com o link, ache o curso no `ESTADO.md` (pela coluna do id do Notion; se não houver, compare o título com o `title` dos `metadata.yaml`):
+
+- **curso novo** ou **⬜** → comece pelo passo 1 do Fluxo;
+- **🟡 em andamento** → retome de onde o `ESTADO.md` e o `progresso/<slug>.json` dizem;
+- **✅ já publicado** → não remodele. Rode o `auditar_curso.py`, mostre os avisos (descontando os "avisos aceitos" do `ESTADO.md`) e pergunte: corrigir só os avisos, revisar tudo de novo ou escolher outro curso.
 
 Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e** caro de refazer (plataforma ou criador desconhecidos, área do curso).
 
@@ -42,7 +47,8 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 
 ## Ambiente
 
-- Clone o repositório (`add_repo` com acesso `push`, depois `git clone --depth 1`). Os scripts estão em `ferramentas/`.
+- Clone o repositório (`add_repo`, depois `git clone --depth 1`). Peça acesso `push`, porque o trabalho termina em commits (SVGs, progresso, publicação). Os scripts estão em `ferramentas/`.
+- Ferramentas do Notion: `notion-fetch` para ler; `notion-update-page` para editar, com `command` igual a `replace_content` (página inteira), `update_content` (trecho exato) ou `insert_content`; `notion-create-attachment` para subir imagens. Uma página é identificada pelo id de 32 caracteres no fim do link.
 - Leia logo no início o `biblioteca.yaml` (autor, repositório, branch, nome e e-mail dos commits) e o `ESTADO.md` da raiz (o que já foi feito em cada curso e onde parou).
 - Arquivos de apoio: ficam em `referencias/` ao lado deste SKILL.md (no repositório, em `skill/revisar-curso-biblioteca/referencias/`). Leia cada um só na etapa indicada:
 
@@ -58,7 +64,7 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 
 | Script | Faz |
 | --- | --- |
-| `ferramentas/progresso.py <curso> init/feito/pendentes/status` | registra as páginas concluídas, para retomar sem refazer |
+| `ferramentas/progresso.py <slug> init/feito/pendentes/status` | registra as páginas concluídas em `progresso/<slug>.json` (no repositório: faça commit), para um chat novo retomar sem refazer |
 | `ferramentas/auditar_curso.py <area>/<slug> --resumo` | JSON com aulas sem imagem, imagens sem analogia, código longo ou sem comentário, tabelas largas, HTML que sobrou |
 | `ferramentas/svg/v3.py` e `cheatsheets.py` | diagramas no tema e cheat sheets 3×4 (também gera as partes do EPUB) |
 | `ferramentas/raw_urls.py <area>/<slug> [svgs]` | links raw fixados no commit, para subir SVGs ao Notion |
@@ -67,8 +73,8 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 
 ## Fluxo (crie uma lista de tarefas com estes passos)
 
-1. **Preparar:** clonar; ler `biblioteca.yaml` e `ESTADO.md`; `progresso.py <curso> status`. Se já houver trabalho, retome da próxima página pendente.
-2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug. Registrar os ids na ordem com `progresso.py init`. Se o curso já estiver no repositório, rodar o `auditar_curso.py`.
+1. **Preparar:** clonar; ler `biblioteca.yaml` e `ESTADO.md`; `progresso.py <slug> status`. O `<slug>` é o nome da pasta do curso (ex.: `boson-logica-portugol`); para curso novo, defina-o no passo 2. Se houver páginas pendentes, retome da próxima.
+2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug (minúsculas, hífens, sem acento, com a origem: `boson-logica-portugol`). Registrar os ids na ordem com `progresso.py <slug> init` e pôr o curso no `ESTADO.md` com o id do índice. Se o curso já estiver no repositório, rodar o `auditar_curso.py`.
 3. **Escopo:** montar, só para você, a tabela `Tópico | Onde está | completo / raso / falta`, usando a ementa, os resumos, os "veremos depois" e o currículo padrão do assunto. Completar o que estiver raso: abrir a seção com um callout `💡 Complemento de Estudo (Sugestão de Expansão):` e dizer em uma frase o que foi acrescentado e por quê. Criar as páginas que faltam. Temas fora da proposta vão só como sugestão no resumo final.
 4. **Por página, uma de cada vez:**
    1. abrir a página;
@@ -76,14 +82,14 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
    3. reescrever no padrão de aula;
    4. gerar os SVGs, fazer commit e push, pegar os links com `raw_urls.py`, subir com `notion-create-attachment`;
    5. gravar a página inteira com `replace_content`;
-   6. marcar com `progresso.py feito`.
+   6. marcar com `progresso.py <slug> feito <id>` e, a cada poucas páginas, fazer commit do `progresso/`.
 5. **Fechar cada seção** com o cheat sheet 3×4 e deixar o índice no padrão (abaixo).
 6. **PARAR.** Resumir o que mudou, atualizar o `ESTADO.md` (commit e push) e pedir a exportação com estas instruções: *"Na página índice do curso: ••• → Exportar → HTML, Incluir subpáginas ligado, Incluir conteúdo: tudo. Salve o .zip na pasta Downloads e me avise."* Confira o zip ao receber: um zip de poucos KB, ou com 1 arquivo HTML só, é de uma página, não do curso.
 7. **Publicar** (seguindo o `referencias/PUBLICACAO.md`):
    1. converter com `notion2md.py` numa pasta temporária;
    2. substituir as aulas, mantendo o `00-sobre-o-curso.md`, o README do curso, o `metadata.yaml` e a capa;
    3. ajustar a ordem e a legenda no README do curso e no `00-sobre-o-curso.md`;
-   4. rodar `auditar_curso.py` e `gerar_epub_local.py`, depois commit e push;
+   4. rodar `auditar_curso.py` e `gerar_epub_local.py`; corrigir o que for erro e registrar no `ESTADO.md`, como "avisos aceitos", os que ficarem de propósito; depois commit e push;
    5. acompanhar a Action pela API REST e confirmar o `<slug>.epub` na release `epubs`.
 8. **Sincronizar e entregar:** o que mudou no Markdown volta ao Notion. Pôr no índice o callout `📚` com os links do GitHub e do EPUB. Atualizar a linha do curso no catálogo do README e no `ESTADO.md`. Mandar o resumo final.
 

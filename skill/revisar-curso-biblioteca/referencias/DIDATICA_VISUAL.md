@@ -1,10 +1,10 @@
-# Imagens e diagramas (Fase 4)
+# Imagens e diagramas (etapa Por página, item 4)
 
 > Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia antes de criar, trocar ou auditar qualquer imagem.
 
 Para cada imagem do curso:
 
-1. Veja a imagem. Se o servidor de arquivos do Notion estiver bloqueado na sessão, use a exportação do Notion descrita na Fase 6 (ela traz todas as imagens).
+1. Veja a imagem. Se o servidor de arquivos do Notion estiver bloqueado na sessão, use a exportação do Notion descrita em PUBLICACAO.md (ela traz todas as imagens).
 2. Decida:
    - **Diagrama, fluxograma, esquema, tabela, gráfico simples, print de código** → substitua por **SVG próprio** (ou, para print de código/tabela, por bloco de código/tabela em texto, e acrescente um SVG se ajudar a entender).
    - **Captura real de interface** que só faz sentido como foto da tela (ex.: onde fica um botão) → mantenha, a menos que um SVG esquemático explique melhor.
@@ -157,5 +157,5 @@ Os diagramas serão vistos numa tela de 6–7 polegadas, então são desenhados 
 - **Sempre renderize para conferir** antes de subir: Playwright/Chromium e veja o PNG com `Read` na largura de 380px (tela de e-reader). Se o texto ficar difícil de ler, se houver sobreposição ou texto saindo da caixa, simplifique ou divida o diagrama.
 - Nomeie com prefixo da aula: `fe-comp.svg`, `ref-mem.svg`.
 - Suba no Notion com `notion-create-attachment` (`content` = SVG ou `source_url` = link raw do GitHub, `filename` = nome.svg) e use o `file-upload://ID` numa `<image source="...">legenda</image>`. Cada ID serve uma vez e expira em ~1 h: use logo.
-- Guarde cópia local de todos os SVGs criados: eles vão para o repositório na Fase 6.
+- Guarde cópia local de todos os SVGs criados: eles vão para o repositório na etapa Publicar.
 
