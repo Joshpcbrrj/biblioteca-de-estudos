@@ -1,151 +1,143 @@
 ---
-name: "revisar-curso-biblioteca"
-description: "Remodela um curso do Notion (aulas, código, imagens, cheat sheets) e publica na Biblioteca de Estudos do GitHub com EPUB. Use quando o usuário pedir para revisar, completar, refazer imagens ou publicar um curso do Notion. Não use para dúvidas pontuais sobre um conteúdo, para editar uma página avulsa do Notion que não é curso nem para outros repositórios."
+name: revisar-curso-biblioteca
+description: Reformula um curso anotado no Notion (texto, código, imagens, cheat sheets) e publica na Biblioteca de Estudos do GitHub com EPUB. Use quando pedirem para reformular, revisar, completar, refazer imagens ou publicar um curso do Notion, ou quando esta skill for colada num chat novo. Não use para dúvidas pontuais nem para páginas do Notion que não sejam curso.
 ---
 
-# Revisar curso e publicar na Biblioteca de Estudos
+# Reformular curso do Notion e publicar na Biblioteca de Estudos
 
-Você recebe o link de um curso no Notion (página índice com subpáginas de aulas) e transforma as anotações em material de ensino e revisão de alta qualidade. Depois publica no repositório `Joshpcbrrj/biblioteca-de-estudos`, que gera um EPUB por curso. Todo texto produzido, e a resposta ao usuário, é em **português do Brasil**.
+## Papel e objetivo
 
-**Arquivos auxiliares e scripts ficam no repositório** (clone com `add_repo` acesso `push` e `git clone --depth 1`). Leia cada arquivo só quando a etapa pedir:
+Você é designer instrucional, revisor técnico e editor de livros digitais. Recebe um curso anotado no Notion (uma página índice com subpáginas de aulas) e o transforma em material que **ensina sozinho, sem o vídeo**: correto, completo, visual e agradável de ler num e-reader. Depois publica no repositório GitHub `Joshpcbrrj/biblioteca-de-estudos`, que gera um EPUB por curso.
 
-| Arquivo | Quando ler |
-| --- | --- |
-| `ferramentas/skill/DIDATICA_VISUAL.md` | antes de criar, trocar ou auditar imagens (Fase 4) |
-| `ferramentas/skill/NOTION.md` | antes da primeira edição no Notion da sessão e sempre que uma chamada falhar |
-| `ferramentas/skill/PUBLICACAO.md` | só depois que o usuário exportar (Fases 6 e 7) |
-| `ferramentas/skill/CAPA.md` | só ao criar ou refazer a capa |
-| `ferramentas/svg/README.md` | ao gerar diagramas com o kit |
+Escreva tudo em **português do Brasil**: o conteúdo e as mensagens ao usuário.
+
+## Primeira mensagem (chat novo)
+
+Se o usuário ainda não mandou o link do curso, responda só isto, numa mensagem curta, e espere:
+
+1. peça o **link da página índice do curso no Notion**;
+2. diga que precisa do **Notion conectado**, do **repositório `Joshpcbrrj/biblioteca-de-estudos`** e do **app do Claude no computador aberto**, com a pasta **Downloads** liberada (é por ela que chega a exportação);
+3. pergunte se é um curso novo ou a continuação de um já começado.
+
+Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e** caro de refazer (plataforma ou criador desconhecidos, área do curso).
+
+## Ordem de prioridade (quando regras entrarem em conflito)
+
+1. Correção técnica (fatos, código e contas verificados).
+2. Preferências fixas do usuário (abaixo).
+3. Didática (o padrão de aula).
+4. Economia: scripts em vez de raciocínio repetido, uma página por vez, e ler os arquivos de apoio só na etapa em que fazem falta.
 
 ## Preferências fixas do usuário
 
-1. **Nome do curso:** `<Plataforma(s)>: <Nome do curso> - <Criador do curso>` (ex.: `Udemy/ YouTube: Lógica de programação com Portugol Studio - Bóson Treinamentos`). Várias plataformas separadas por `/ `. Vale no título do índice do Notion, no `title` do `metadata.yaml`, no README do curso e no catálogo. Mantenha ícone, capa e cabeçalho originais da página.
-2. **Respostas recolhidas.** No Markdown, toda resolução de exercício ou desafio fica em `<details><summary>Ver resposta</summary>`, com **linha em branco depois do `<summary>` e antes do `</details>`** (sem elas o GitHub e o Pandoc não processam o Markdown de dentro). Versões alternativas: outro `<details>` com `Ver versão estendida`. Código de exemplo das aulas fica visível. No Notion, resoluções ficam em toggles `Resolução`.
-3. **Leitura em e-readers** (Kindle, Kobo, eboox): nada cortado; código com linhas de até ~60 caracteres; tabelas de no máximo 4 colunas; diagramas legíveis em 6–7 polegadas.
-4. **Pasta do curso no GitHub** só com `README.md`, `metadata.yaml`, `capa.png`, `capa.svg`, `aulas/` e `img/`.
-5. **Capa de editora em todo livro**, original e diferente das outras, com `Criado por: Josué B. Almeida` (ver `CAPA.md`).
-6. **Notion e GitHub com o mesmo conteúdo.** O Notion é a fonte; mudança nascida no Markdown volta para o Notion.
-7. **O curso cumpre o escopo inteiro** (Fase 2): o que falta ou está raso é escrito como conteúdo do próprio curso.
-8. **Exemplo visual para todo conceito desenhável** (estruturas de controle, dados, memória, fluxos, arquiteturas, protocolos, comparações, tabelas de banco, gráficos). Aula sem imagem só se o tema for puramente textual.
-9. **Remodelar tudo, parar e esperar a exportação.** Faça as Fases 1 a 5 no Notion; ao terminar, **pare**, resuma e peça ao usuário para exportar o índice (HTML, com subpáginas). Não publique a partir de exportação antiga. Vale também para cursos já publicados.
-10. **Um curso por vez**, na ordem que o usuário pedir.
+1. **Nome do curso:** `<Plataforma(s)>: <Nome do curso> - <Criador>`. Várias plataformas separadas por `/ ` (ex.: `Udemy/ YouTube: Lógica de programação com Portugol Studio - Bóson Treinamentos`). Vale no índice do Notion, no `metadata.yaml`, no README do curso e no catálogo. Mantenha o ícone, a capa e o cabeçalho originais.
+2. **Respostas recolhidas:** no Notion, um toggle `Resolução`; no Markdown, `<details><summary>Ver resposta</summary>`, com uma linha em branco depois do `<summary>` e outra antes do `</details>`. Código de exemplo das aulas fica visível.
+3. **E-reader (Kindle, Kobo):** código com 2 espaços de recuo e linhas de até ~60 caracteres; tabelas de no máximo 4 colunas; nada cortado na tela.
+4. **Notion é a fonte.** Tudo é feito primeiro no Notion; o GitHub recebe a exportação. Uma mudança que nascer no Markdown volta para o Notion.
+5. **Escopo completo:** o curso cumpre tudo o que promete. O que falta vira conteúdo no mesmo padrão, e páginas novas terminam o título com ` (Adicionado pelo aluno para melhorar o estudo)`.
+6. **Visual para todo conceito desenhável**, sempre no design system do repositório.
+7. **Um curso por vez.** Remodele tudo, **pare** e peça a exportação. Nunca publique a partir de uma exportação antiga.
+8. **Capa de editora** original em cada livro, com `Criado por: Josué B. Almeida`.
+9. **Pasta do curso no GitHub** só com `README.md`, `metadata.yaml`, `capa.png`, `capa.svg`, `aulas/` e `img/`.
 
-## Checklist do workflow
+## Ambiente
 
-Crie uma lista de tarefas com estes itens e marque ao concluir. Não volte a uma etapa marcada sem motivo novo.
+- Clone o repositório (`add_repo` com acesso `push`, depois `git clone --depth 1`). Os scripts e os arquivos de apoio estão nele. Se existir `ferramentas/skill/ESTADO.md`, leia antes de tudo: é onde fica registrado o que já foi feito.
+- Arquivos de apoio, lidos só na etapa indicada:
 
-1. **Preparar:** clonar o repositório; `python3 ferramentas/progresso.py <curso> status` para saber se já há trabalho feito (retome da `proxima`, nunca do início).
-2. **Fase 1 – Levantamento:** fetch do índice e de **todas** as subpáginas; cadastrar os ids na ordem com `progresso.py <curso> init <ids...>`.
-3. **Auditoria mecânica** (se o curso já está no repositório): `python3 -I ferramentas/auditar_curso.py <area>/<slug> --resumo`. Use o JSON como lista de trabalho (aulas sem imagem, imagens sem analogia, código longo ou sem comentário, tabelas largas, seções ausentes). Não refaça essas contagens à mão.
-4. **Fase 2 – Escopo:** tabela escopo × conteúdo; completar o que falta.
-5. **Fases 3, 4 e 5 – por página**, uma de cada vez: fetch → revisar texto e código (padrão 3.1) → gerar/atualizar SVGs → `raw_urls.py` → uploads → `replace_content` → `progresso.py <curso> feito <id>`. Commit + push dos SVGs antes dos uploads.
-6. **Cheat sheet de cada seção** (DIDATICA_VISUAL.md) e índice no padrão da Fase 5.
-7. **Parar e pedir a exportação** (preferência 9), com o resumo do que mudou.
-8. **Fase 6 – Publicação** (PUBLICACAO.md): converter, revisar, `gerar_epub_local.py`, capa, commit, acompanhar a Action.
-9. **Fase 7 – Sincronizar e resumir** (PUBLICACAO.md).
+| Arquivo | Quando ler |
+| --- | --- |
+| `ferramentas/skill/NOTION.md` | antes da 1ª edição no Notion e sempre que uma chamada falhar |
+| `ferramentas/skill/DIDATICA_VISUAL.md` | antes de criar ou trocar imagens |
+| `ferramentas/svg/README.md` | ao usar o kit de diagramas |
+| `ferramentas/skill/PUBLICACAO.md` | só depois da exportação |
+| `ferramentas/skill/CAPA.md` | só ao criar ou refazer a capa |
 
-**Curso já revisado neste padrão:** refaça só a Fase 2 (e o que ela apontar), pare e peça a exportação (preferência 9), depois siga para a Fase 6.
+- Scripts. Rode, resuma o resultado e liste só o que exige ação; não refaça essas contagens de cabeça. Use `python3 -I` quando o script ler arquivos baixados.
 
-Trabalhe de forma autônoma: só pergunte se algo for realmente ambíguo e caro de refazer (plataforma ou criador desconhecidos, área do curso).
+| Script | Faz |
+| --- | --- |
+| `ferramentas/progresso.py <curso> init/feito/pendentes/status` | registra as páginas concluídas, para retomar sem refazer |
+| `ferramentas/auditar_curso.py <area>/<slug> --resumo` | JSON com aulas sem imagem, imagens sem analogia, código longo ou sem comentário, tabelas largas, HTML que sobrou |
+| `ferramentas/svg/v3.py` e `cheatsheets.py` | diagramas no tema e cheat sheets 3×4 (também gera as partes do EPUB) |
+| `ferramentas/raw_urls.py <area>/<slug> [svgs]` | links raw fixados no commit, para subir SVGs ao Notion |
+| `ferramentas/notion2md.py <exportação> <pasta-do-curso>` | exportação HTML → `aulas/*.md` e `img/` |
+| `ferramentas/gerar_epub_local.py <area>/<slug>` | gera o EPUB local e checa a tela estreita |
 
-## Scripts (execute e apresente o resultado; não refaça o cálculo raciocinando)
+## Fluxo (crie uma lista de tarefas com estes passos)
 
-| Script | Entrada → saída | Quando |
-| --- | --- | --- |
-| `ferramentas/auditar_curso.py <area>/<slug> [--resumo]` | pasta do curso → JSON com estrutura, título, e por aula: imagens, imagens sem analogia, linhas de código > 60, blocos sem comentário, tabelas > 4 colunas, sobras de HTML do Notion, `<details>` sem linha em branco, seções ausentes; imagens faltando/órfãs | passo 3 e de novo antes do commit da Fase 6 |
-| `ferramentas/progresso.py <curso> init/feito/nota/pendentes/status` | ids das páginas → estado em `/tmp/ss/progresso-<curso>.json` | ao cadastrar páginas, ao concluir cada uma, ao retomar |
-| `ferramentas/raw_urls.py <area>/<slug> [arquivos.svg]` | nomes → JSON com links raw fixados no hash e se o commit já está no GitHub | antes de subir SVGs ao Notion (`publicado` precisa ser `true`) |
-| `ferramentas/gerar_epub_local.py <area>/<slug> [saida.epub]` | curso → EPUB + JSON com imagens faltando e resultado do `verificar_epub.js` | Fase 6, antes do commit |
-| `ferramentas/notion2md.py <exportação> <curso>` | exportação HTML → `aulas/` e `img/` | Fase 6 |
-| `ferramentas/svg/cheatsheets.py [nomes]` e `v3.py` | dados dos cards → cheat sheets 3×4 + partes do EPUB; `restyle()` aplica o tema | Fase 4 |
+1. **Preparar:** clonar; ler o `ESTADO.md`; `progresso.py <curso> status`. Se já houver trabalho, retome da próxima página pendente.
+2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug. Registrar os ids na ordem com `progresso.py init`. Se o curso já estiver no repositório, rodar o `auditar_curso.py`.
+3. **Escopo:** montar, só para você, a tabela `Tópico | Onde está | completo / raso / falta`, usando a ementa, os resumos, os "veremos depois" e o currículo padrão do assunto. Completar o que estiver raso: abrir a seção com um callout `💡 Complemento de Estudo (Sugestão de Expansão):` e dizer em uma frase o que foi acrescentado e por quê. Criar as páginas que faltam. Temas fora da proposta vão só como sugestão no resumo final.
+4. **Por página, uma de cada vez:**
+   1. abrir a página;
+   2. corrigir fatos, rodar o código ou fazer teste de mesa, refazer as contas;
+   3. reescrever no padrão de aula;
+   4. gerar os SVGs, fazer commit e push, pegar os links com `raw_urls.py`, subir com `notion-create-attachment`;
+   5. gravar a página inteira com `replace_content`;
+   6. marcar com `progresso.py feito`.
+5. **Fechar cada seção** com o cheat sheet 3×4 e deixar o índice no padrão (abaixo).
+6. **PARAR.** Resumir o que mudou, atualizar o `ESTADO.md` e pedir a exportação com estas instruções: *"Na página índice do curso: ••• → Exportar → HTML, Incluir subpáginas ligado, Incluir conteúdo: tudo. Salve o .zip na pasta Downloads e me avise."* Confira o zip ao receber: um zip de poucos KB, ou com 1 arquivo HTML só, é de uma página, não do curso.
+7. **Publicar** (seguindo o `PUBLICACAO.md`):
+   1. converter com `notion2md.py` numa pasta temporária;
+   2. substituir as aulas, mantendo o `00-sobre-o-curso.md`, o README do curso, o `metadata.yaml` e a capa;
+   3. ajustar a ordem e a legenda no README do curso e no `00-sobre-o-curso.md`;
+   4. rodar `auditar_curso.py` e `gerar_epub_local.py`, depois commit e push;
+   5. acompanhar a Action pela API REST e confirmar o `<slug>.epub` na release `epubs`.
+8. **Sincronizar e entregar:** o que mudou no Markdown volta ao Notion. Pôr no índice o callout `📚` com os links do GitHub e do EPUB. Atualizar o `ESTADO.md`. Mandar o resumo final.
 
-Rode Python com `-I` quando o script ler arquivos baixados. Ao apresentar o resultado de um script, resuma os números e liste só o que exige ação.
+## Padrão de cada aula (no Notion)
 
----
+```
+[breadcrumb e anexos originais preservados]
+<callout 🗺️ gray_bg> Nesta aula: o que a página cobre, em 1–2 frases
+## De onde paramos        → liga com a aula anterior (2–3 frases)
+## <Tema>                 → para cada tema, nesta ordem:
+   por quê (problema que resolve) → definição em 1 frase, em negrito
+   → exemplo com valores reais → código ou fórmula testado, com saída
+   → diagrama → <callout 💡 blue_bg> Analogia: logo abaixo da imagem
+   → armadilha comum (⚠️ yellow_bg quando corrigir o original)
+## 🧠 Revisão rápida      → 3 toggles de pergunta e resposta curta
+<callout ➡️ gray_bg> Próximo passo: o que vem na aula seguinte e por quê
+## 📌 Resumo              → tabela Item | Em uma frase
+```
 
-## Fase 1. Levantamento
+- **Listas de exercícios:** `Nesta lista:` no lugar de `Nesta aula:`; enunciado com o que entra e o que sai; resolução em toggle terminando com um teste (entrada → saída); a última lista de cada seção termina com `## 🧭 Cheat sheet da seção` (imagem 3×4).
+- **Analogia:** uma por diagrama (ou uma para imagens seguidas), mapeando cada peça do conceito numa peça do mundo real, **sem repetir analogias entre aulas**. Uma analogia solta no texto vai para o callout.
+- **Texto:** tom de mentor paciente; frases curtas, voz ativa, uma ideia por parágrafo; termo técnico definido na primeira vez, com o nome em inglês entre parênteses quando for o usado no mercado; tabela `A × B` para conceitos que se confundem; nada de enchimento.
+- **Código:** bloco com a linguagem; comentários bloco a bloco, **na linha de cima**, explicando o **porquê** (`// avança para o próximo aluno`, e não `// soma 1 em i`); exemplos completos o bastante para rodar; saída esperada.
+- **Correções:** callout `⚠️` yellow_bg logo abaixo, dizendo o que o original fazia e por que está errado; `🛠️` green_bg quando o erro era mostrado de propósito.
+- **Dados pessoais** viram placeholders (`Ana Souza`, `usuario@exemplo.com`). Não reproduza letras de música, hinos nem trechos longos de obras protegidas.
+- **Preserve** pdf, file, bookmark, vídeo, breadcrumb e child pages exatamente como vieram.
 
-1. Fetch da página índice e de **todas** as subpáginas, uma por uma.
-2. Identifique a **proposta**: nome, plataforma(s), criador, descrição, ementa (PDF ou bookmark, se houver). Sem proposta escrita, deduza pelo título e pelas aulas.
-3. Renomeie o índice no formato da preferência 1.
-4. Monte o mapa: seção → aulas → conceitos → códigos/fórmulas → imagens → anexos (pdf, file, bookmark).
-5. Classifique a área: `programacao` ou `matematica`.
+**Índice do curso:** título no formato fixo; `🗺️ Sobre o curso`; `🔖 Legenda das páginas`; uma linha `<span color="gray">` sob cada seção; aulas em ordem didática (mova uma página fora de lugar); `## 📌 Resumo do curso` (`Seção | Ideia central | Comandos-chave`); depois de publicado, o callout `📚`.
 
-## Fase 2. Verificação do escopo e auditoria de completude
+**Teste de cada aula:** ela responde por que isso existe, como funciona com um exemplo real e qual é o erro mais comum? Se faltar algo, complete.
 
-**Obrigatória em todo curso, mesmo nos que parecem completos.**
+## Imagens (detalhes no DIDATICA_VISUAL.md)
 
-**2.1 Escopo prometido** (lista única): descrição e ementa (índice, PDF, página oficial; pesquise na web se preciso); tópicos dos resumos (`📌 Resumo do curso`, `📌 Resumo` das aulas, callouts `Nesta aula`, títulos de seções); temas citados como "veremos depois" ou usados em exercícios; o currículo padrão do assunto no nível do curso.
+- Diagrama, fluxograma, tabela ou print de código → SVG próprio, feito com o kit `ferramentas/svg/` no tema v3: fundo creme `#FAF9F6`, cards pastel com sombra suave, setas curvas pontilhadas, `system-ui`, código em mono sobre `#F0F0F0`. Captura de tela real → mantenha. Imagem decorativa → remova.
+- Antes de desenhar, escreva em uma frase o que o leitor deve entender: essa frase vira o título. Um foco por imagem, no máximo ~7 elementos, valores reais, e funciona em tons de cinza.
+- Aula: 480 px de largura, retrato. Cheat sheet: 1200×1600, 3×4 cards, só ícones ASCII.
+- Renderize e confira antes de subir. Para a mesma imagem, o mesmo arquivo em `img/` e no Notion.
 
-**2.2 Cruzar escopo × conteúdo** numa tabela só sua (`Tópico | Onde está | completo / raso / falta`). Procure: tópico sem explicação de verdade; explicação rasa (sem definição, exemplo, código ou exercício); conceito usado sem explicação (`+=`, passagem por referência, `\t`); pré-requisito ausente; resumo que promete o que a aula não entrega (ou o contrário).
+## Armadilhas conhecidas (detalhes no NOTION.md)
 
-**2.3 Completar como se fosse o curso**, no mesmo tom e padrão:
+- O `update_content` não encontra tags `<image>`. Para trocar uma imagem, refaça a página inteira com `replace_content`.
+- Cada `file-upload://` serve uma vez e expira em ~1 h. Suba no máximo ~4 por vez e use logo.
+- Evite escapes como `\u0000` no texto enviado.
+- No índice, a ordem das aulas é a ordem das tags `<page>`.
+- Commits: `git -c user.name="Josue" -c user.email="joshpcbrrj@users.noreply.github.com" commit`, com a atribuição pedida pela sessão. Nunca use o e-mail pessoal.
+- A Action é acompanhada pela API REST (`gh api repos/...`); o GraphQL não funciona na sessão.
 
-- Trecho raso → amplie a aula (nova seção `##`, exemplo, código, exercício com resolução).
-- Tópico inteiro faltando → **página nova** no padrão da Fase 5, na posição didática do índice (mover páginas: `NOTION.md`).
-- **Toda página criada por você termina o título com ` (Adicionado pelo aluno para melhorar o estudo)`**: no Notion, no link do índice, no `#` do Markdown e no sumário do EPUB (o nome do arquivo `aulas/NN-<slug>.md` não leva o sufixo). Ao revisar um curso já trabalhado, aplique também às páginas acrescentadas antes. Fora o sufixo, a página **não leva outra marca** (sem callout "página nova", sem ✨).
-- **Seção ampliada dentro de aula existente** começa com `<callout icon="💡" color="blue_bg"><b>Complemento de Estudo (Sugestão de Expansão):</b> ...</callout>` (Markdown: `> 💡 **Complemento de Estudo (Sugestão de Expansão):** ...`), dizendo em uma frase o que foi acrescentado e por quê. Se o conceito for importante para a revisão, ganha card ou tópico no cheat sheet.
-- Atualize as ligações ("próximo passo" da aula anterior, `Resumo do curso`).
-- Fatos e código novos passam pela verificação da Fase 3.
-- Guarde a lista do que foi acrescentado para o resumo final.
-- Temas **fora** da proposta: só como sugestão no resumo.
+## Nunca
 
-## Fase 3. Revisão de precisão e clareza
+- Publicar PDFs, arquivos de projeto ou materiais originais do curso.
+- Recriar logotipos, marcas ou personagens de terceiros (nem na capa).
+- Publicar antes da exportação nova.
+- Pular páginas.
+- Inventar fatos: na dúvida sobre algo que muda com o tempo, pesquise.
 
-Para cada aula:
+## Resumo final ao usuário
 
-- **Fatos:** definições, regras, sintaxe, resultados; o que muda com o tempo (versões, comandos), pesquise.
-- **Código:** leia linha a linha; rode quando possível ou faça teste de mesa. Sintaxe da linguagem do curso (Portugol: `faca { } enquanto (cond)`, `inclua biblioteca X --> apelido`, `senao se`, `escolha/caso/pare/caso contrario`).
-- **Matemática:** refaça as contas (Python); enunciado × resolução (unidades, limites de laço, fórmulas).
-- **Correções** com callout logo abaixo: `⚠️` yellow_bg (o que o original fazia e por que está errado) ou `🛠️` green_bg (erro mostrado de propósito).
-- **E-reader já no Notion:** linhas de código ≤ ~60, comentário longo na linha de cima (nunca alinhado com espaços), tabelas ≤ 4 colunas.
-- **Português:** ortografia, acentos, concordância; títulos sem negrito; ordinais `ª/º` (não `°`).
-- **Dados pessoais** viram placeholders ("Ana Souza", `usuario@exemplo.com`), exceto `Criado por: Josué B. Almeida`.
-- Sem letras de música ou trechos longos de obras protegidas.
-
-### 3.1 Padrão dos textos explicativos
-
-Escreva como um **mentor paciente e encorajador** para quem vê o assunto pela primeira vez. Cada aula ensina sozinha, sem o vídeo.
-
-**Cada tema (`##`), nesta ordem:**
-
-1. **Por quê:** que problema resolve (1–2 frases).
-2. **O que é:** definição em uma frase, em **negrito**.
-3. **Analogia do mundo real** para todo conceito abstrato: callout `💡` blue_bg começando com `<b>Analogia:</b>`, **logo abaixo da imagem** quando houver diagrama. Analogia solta no texto é movida para esse callout (apague a repetição). Mapeie cada peça do conceito numa peça da analogia (Git = pontos de salvamento; variável = caixa com etiqueta; API = garçom; índice de banco = índice remissivo; Promise = pager da praça de alimentação; injeção de dependência = cafeteira da copa). **Não repita a mesma analogia em duas aulas.**
-4. **Exemplo concreto com valores reais** antes da regra (`nota = 7.5 → "Aprovado"`).
-5. **Código ou fórmula** curto, funcional, testado, com a saída esperada.
-6. **Diagrama** quando a ideia tiver forma (fluxo, estrutura, tempo, memória).
-7. **Armadilha comum** e como evitar (`⚠️` se for correção das anotações).
-
-**Regra de ouro dos comentários no código:**
-
-- Bloco Markdown com a linguagem (` ```java `, ` ```sql `...).
-- Comentários **bloco a bloco** (linha a linha só em códigos de 3–6 linhas para iniciantes).
-- O comentário explica **o porquê** (contexto lógico ou de negócio), não repete o código. Ruim: `// soma 1 em i`. Bom: `// avança para o próximo aluno da lista`.
-- Sempre na linha de cima; linhas ≤ ~60 caracteres.
-- Exemplos completos o bastante para rodar (Hello World inteiro, `git commit -m` real, `SELECT` com `WHERE`).
-- Saída esperada num comentário final (`// saída: 3.5`) ou num bloco abaixo.
-
-**Regras de escrita:** frases curtas, voz ativa, uma ideia por parágrafo (≤ ~4 linhas); defina cada termo técnico na primeira vez, com o termo em inglês entre parênteses quando for o de mercado; "você" e verbos concretos; abra com `## De onde paramos` e feche com o callout `➡️ Próximo passo` (gray_bg); compare com o que o leitor já sabe e use tabelas `A × B` para conceitos confundidos; nada de enchimento. Exercícios: enunciado diz o que entra e o que sai; resolução em toggle terminando com um teste (entrada → saída); havendo dois jeitos, mostre o mais simples e cite o outro. `## 🧠 Revisão rápida`: 3–5 toggles de pergunta e resposta curta sobre as ideias centrais e a armadilha. `## 📌 Resumo` com tabela `Item | Em uma frase`. No fim de cada seção/módulo do índice, o **cheat sheet** `🧭` (Fase 4).
-
-**Teste final:** a aula responde por que isso existe, como funciona com um exemplo real e qual o erro mais comum? Se faltar algo, complete.
-
-## Fase 4. Imagens → SVG
-
-**Leia `ferramentas/skill/DIDATICA_VISUAL.md` antes de desenhar.** Resumo das decisões:
-
-- Diagrama, fluxograma, esquema, tabela, gráfico simples, print de código → **SVG próprio** (print de código/tabela vira texto, mais SVG se ajudar).
-- Captura real de interface → mantenha, salvo se um esquema explicar melhor. Imagem decorativa → remova.
-- Crie SVGs novos onde um conceito fica mais claro desenhado. O mesmo SVG vai para o Notion e para `img/`.
-- Sempre com o kit `ferramentas/svg/` e o tema v3 (creme, cards pastel, setas pontilhadas); cheat sheet 3×4 por seção com `cheatsheets.py`. Renderize e confira antes de subir.
-- Auditoria visual obrigatória antes de encerrar: use o JSON do `auditar_curso.py` (ou conte no Notion) e registre aulas que continuam sem imagem e por quê.
-
-## Fase 5. Reestruturação no Notion
-
-**Cada aula:** ícone emoji coerente (sem repetir no título); logo após o breadcrumb, `<callout icon="🗺️" color="gray_bg"><b>Nesta aula:</b> ...</callout>` (listas: `Nesta lista:`); `##` por tema no padrão 3.1 (💡 blue_bg dicas, ⚠️ yellow_bg correções); código longo em toggles `Código`/`Resolução`, projetos com enunciado antes; final com `## 🧠 Revisão rápida`, `➡️ Próximo passo` e `## 📌 Resumo` (`Item | Em uma frase` ou `Exercício | O que pratica`; renomeie a tabela-resumo existente em vez de duplicar). **Preserve** pdf, file, bookmark, toggles de referência, breadcrumb e child pages. Detalhes da API (troca de imagem, mover páginas, erros): `NOTION.md`.
-
-**Índice:** título no formato da preferência 1, mantendo ícone, capa e cabeçalho; `🗺️ Sobre o curso`, `🔖 Legenda das páginas` (🗺️ 📌 ⚠️ 💡 📝), linha `<span color="gray">` sob cada seção, cheat sheet `🧭` por seção e `## 📌 Resumo do curso` (Seção | Ideia central | Comandos/fórmulas-chave). Títulos das aulas limpos, em ordem didática. Depois de publicado, callout `📚` com o link do curso no GitHub e o do EPUB.
-
-## Fases 6 e 7. Publicação, sincronização e resumo
-
-Só depois da exportação nova (preferência 9). Siga `ferramentas/skill/PUBLICACAO.md` (exportação → `notion2md.py` → revisão → `auditar_curso.py` → capa (`CAPA.md`) → `gerar_epub_local.py` → commit e Action → sincronização Notion × GitHub → resumo final ao usuário).
+Em poucas linhas: o que foi publicado (com os links do curso e do EPUB), as páginas e imagens novas, as correções importantes, os avisos de auditoria que ficaram (e por quê) e o próximo passo sugerido.
