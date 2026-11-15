@@ -1,0 +1,27 @@
+titulo: "WSL do zero: Linux no Windows para programar"
+slug: wsl-do-zero
+trilha: wsl
+ordem_na_trilha: 1
+nivel: iniciante
+publico: "Quem usa Windows e quer um ambiente Linux de desenvolvimento, sem máquina virtual nem dual boot"
+objetivo: "Montar, personalizar, fazer backup e restaurar um ambiente de desenvolvimento completo no WSL, com Claude Code e Spec Kit"
+pre_requisitos: []
+versao_referencia: "WSL 3.0 com Ubuntu 26.04 LTS (conferido em 2026-11-15)"
+fontes:
+  - {titulo: "Guia pessoal: Instalação do WSL (Notion)", url: "https://app.notion.com/p/f39388c639d64f47909c9ef01f9ad4e7", conferido_em: "2026-11-15"}
+  - {titulo: "Microsoft Learn: WSL", url: "https://learn.microsoft.com/en-us/windows/wsl/", conferido_em: "2026-11-15"}
+  - {titulo: "Ubuntu on WSL docs", url: "https://ubuntu.com/wsl/docs/stable/tutorials/develop-with-ubuntu-wsl/", conferido_em: "2026-11-15"}
+aprovada_em: "2026-11-15"
+capitulos:
+  - {n: 1, titulo: "O que é o WSL e quando usar", objetivo: "Comparar WSL, máquina virtual e dual boot e escolher", topicos: [wsl1-x-wsl2, kernel, casos-de-uso]}
+  - {n: 2, titulo: "Instalação do WSL e do Ubuntu", objetivo: "Instalar o Ubuntu e confirmar que roda no WSL 2", topicos: [virtualizacao, wsl-install, usuario-e-senha]}
+  - {n: 3, titulo: "Primeiros passos no Ubuntu", objetivo: "Atualizar pacotes e usar sudo sem trabalhar como root", topicos: [apt, sudo-x-root, systemd]}
+  - {n: 4, titulo: "Arquivos entre Linux e Windows", objetivo: "Guardar projetos no lugar certo e trocar arquivos entre os dois lados", topicos: [home, mnt-c, wsl-dollar, desempenho]}
+  - {n: 5, titulo: "O terminal do seu jeito", objetivo: "Configurar tema, Nerd Font, Starship, idioma e teclado ABNT2", topicos: [windows-terminal, starship, locale]}
+  - {n: 6, titulo: "Ferramentas de desenvolvimento e programas com janela", objetivo: "Instalar git, Node, Java e Python do Linux e abrir apps gráficos pelo WSLg", topicos: [nvm, sdkman, uv, wslg]}
+  - {n: 7, titulo: "Gerenciar o WSL", objetivo: "Limitar memória e CPU, atualizar, trocar de distro e resolver erros comuns", topicos: [wslconfig, wsl-conf, comandos-wsl]}
+  - {n: 8, titulo: "Backup e restauração", objetivo: "Exportar o Ubuntu inteiro e restaurá-lo com o seu usuário", topicos: [export, import, usuario-padrao]}
+  - {n: 9, titulo: "Claude Code no WSL", objetivo: "Instalar como usuário, usar os modos de permissão, plugins e MCPs", topicos: [claude-code, permissoes, plugins, mcp]}
+  - {n: 10, titulo: "Projeto final: um app com Spec Kit", objetivo: "Criar um projeto do zero no fluxo specify, plan, tasks e implement e guardar o ambiente em backup", topicos: [spec-kit, sdd]}
+cobre: [wsl, ubuntu-wsl, windows-terminal, ferramentas-dev-linux, wslg, backup-wsl, claude-code, spec-kit]
+fica_para_depois: [engenharia-reversa-rea-ghidra, conteineres-no-wsl, vscode-com-wsl, gpu-no-wsl]
