@@ -1,0 +1,27 @@
+name: Testes do kit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skill/**'
+      - 'ferramentas/**'
+      - 'testes/**'
+      - 'README.md'
+      - 'biblioteca.yaml'
+      - '.github/workflows/testes-kit.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # curso de exemplo precisa passar, curso quebrado precisa ser recusado,
+      # README igual à skill, caminhos da skill existentes, scripts compilando
+      - name: Rodar os testes
+        run: python3 testes/rodar.py

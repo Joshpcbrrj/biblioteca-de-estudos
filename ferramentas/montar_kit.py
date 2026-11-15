@@ -19,6 +19,8 @@ INI, FIM = '<!-- kit:inicio -->', '<!-- kit:fim -->'
 # (arquivo relativo à pasta da skill, rótulo do bloco recolhido)
 ARQUIVOS = [
     ('SKILL.md', 'Skill completa (SKILL.md)'),
+    ('referencias/EXEMPLOS.md', 'Apoio: aula e cheat sheet modelo (antes e depois)'),
+    ('referencias/COORDENADOR.md', 'Apoio: modo coordenador (um agente por página)'),
     ('referencias/DIDATICA_VISUAL.md', 'Apoio: imagens, didática visual e design system'),
     ('referencias/NOTION.md', 'Apoio: notas técnicas do Notion'),
     ('referencias/PUBLICACAO.md', 'Apoio: exportação, conversão e publicação'),

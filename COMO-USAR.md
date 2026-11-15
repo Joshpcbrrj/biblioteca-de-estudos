@@ -35,7 +35,7 @@ O Claude confere as conexões, lê o `biblioteca.yaml` e o `ESTADO.md` e começa
 
 ## 4. O que acontece
 
-1. **Remodelação no Notion**, página por página. O Claude:
+1. **Remodelação no Notion**, página por página. O chat principal coordena e dispara um agente novo para cada página, para não acumular contexto. Em cada página, o Claude:
    - corrige fatos e código;
    - completa o que falta no escopo do curso;
    - reescreve cada aula no padrão (analogias, revisão rápida, próximo passo, código comentado);
@@ -65,4 +65,6 @@ Se o chat ficar longo demais ou cair, abra outro e diga "continue o curso X": o 
 
 - A skill e os arquivos de apoio ficam em [`skill/revisar-curso-biblioteca/`](skill/revisar-curso-biblioteca/); os scripts, em [`ferramentas/`](ferramentas/).
 - Depois de editar a skill, rode `python3 ferramentas/montar_kit.py`. Ele atualiza o README, e a Action publica o zip novo.
+- Antes de commitar, rode `python3 testes/rodar.py`. Ele confere que o curso de exemplo continua passando no critério de pronto, que o curso quebrado é recusado, que todo caminho citado na skill existe e que o README está em dia. A Action "Testes do kit" roda o mesmo a cada push.
+- O critério de pronto de um curso de verdade é `python3 -I ferramentas/auditar_curso.py <area>/<slug> --criterios`: sem erros, e os avisos registrados no `ESTADO.md`.
 - Os scripts leem a configuração do `biblioteca.yaml` (`ferramentas/config.py`).

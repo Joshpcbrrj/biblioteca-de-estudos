@@ -54,6 +54,8 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 
 | Arquivo | Quando ler |
 | --- | --- |
+| `referencias/EXEMPLOS.md` | antes da 1ª página: a aula e o cheat sheet modelo (imite-os) |
+| `referencias/COORDENADOR.md` | antes da etapa "Por página": um agente por página |
 | `referencias/NOTION.md` | antes da 1ª edição no Notion e sempre que uma chamada falhar |
 | `referencias/DIDATICA_VISUAL.md` | antes de criar ou trocar imagens |
 | `ferramentas/svg/README.md` | ao usar o kit de diagramas |
@@ -76,20 +78,22 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 1. **Preparar:** clonar; ler `biblioteca.yaml` e `ESTADO.md`; `progresso.py <slug> status`. O `<slug>` é o nome da pasta do curso (ex.: `boson-logica-portugol`); para curso novo, defina-o no passo 2. Se houver páginas pendentes, retome da próxima.
 2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug (minúsculas, hífens, sem acento, com a origem: `boson-logica-portugol`). Registrar os ids na ordem com `progresso.py <slug> init` e pôr o curso no `ESTADO.md` com o id do índice. Se o curso já estiver no repositório, rodar o `auditar_curso.py`.
 3. **Escopo:** montar, só para você, a tabela `Tópico | Onde está | completo / raso / falta`, usando a ementa, os resumos, os "veremos depois" e o currículo padrão do assunto. Completar o que estiver raso: abrir a seção com um callout `💡 Complemento de Estudo (Sugestão de Expansão):` e dizer em uma frase o que foi acrescentado e por quê. Criar as páginas que faltam. Temas fora da proposta vão só como sugestão no resumo final.
-4. **Por página, uma de cada vez:**
-   1. abrir a página;
-   2. corrigir fatos, rodar o código ou fazer teste de mesa, refazer as contas;
-   3. reescrever no padrão de aula;
-   4. gerar os SVGs, fazer commit e push, pegar os links com `raw_urls.py`, subir com `notion-create-attachment`;
-   5. gravar a página inteira com `replace_content`;
-   6. marcar com `progresso.py <slug> feito <id>` e, a cada poucas páginas, fazer commit do `progresso/`.
+4. **Por página** (modo coordenador, em `referencias/COORDENADOR.md`): o chat principal só controla a fila. Para cada página, ele dispara um agente novo com o briefing pronto. O agente:
+   1. abre a página;
+   2. corrige fatos, roda o código ou faz teste de mesa e refaz as contas;
+   3. reescreve no padrão, imitando o `EXEMPLOS.md`;
+   4. gera os SVGs e sobe com `notion-create-attachment`;
+   5. grava com `replace_content`;
+   6. devolve um JSON curto.
+
+   O coordenador marca com `progresso.py <slug> feito <id>`, registra a analogia usada e, a cada 3 a 5 páginas, faz commit de `img/` e `progresso/`. Sem a ferramenta de agentes, faça o mesmo roteiro no próprio chat, uma página por vez.
 5. **Fechar cada seção** com o cheat sheet 3×4 e deixar o índice no padrão (abaixo).
 6. **PARAR.** Resumir o que mudou, atualizar o `ESTADO.md` (commit e push) e pedir a exportação com estas instruções: *"Na página índice do curso: ••• → Exportar → HTML, Incluir subpáginas ligado, Incluir conteúdo: tudo. Salve o .zip na pasta Downloads e me avise."* Confira o zip ao receber: um zip de poucos KB, ou com 1 arquivo HTML só, é de uma página, não do curso.
 7. **Publicar** (seguindo o `referencias/PUBLICACAO.md`):
    1. converter com `notion2md.py` numa pasta temporária;
    2. substituir as aulas, mantendo o `00-sobre-o-curso.md`, o README do curso, o `metadata.yaml` e a capa;
    3. ajustar a ordem e a legenda no README do curso e no `00-sobre-o-curso.md`;
-   4. rodar `auditar_curso.py` e `gerar_epub_local.py`; corrigir o que for erro e registrar no `ESTADO.md`, como "avisos aceitos", os que ficarem de propósito; depois commit e push;
+   4. rodar `auditar_curso.py --criterios` e `gerar_epub_local.py`; corrigir o que for erro e registrar no `ESTADO.md`, como "avisos aceitos", os que ficarem de propósito; depois commit e push;
    5. acompanhar a Action pela API REST e confirmar o `<slug>.epub` na release `epubs`.
 8. **Sincronizar e entregar:** o que mudou no Markdown volta ao Notion. Pôr no índice o callout `📚` com os links do GitHub e do EPUB. Atualizar a linha do curso no catálogo do README e no `ESTADO.md`. Mandar o resumo final.
 
@@ -120,6 +124,8 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 **Índice do curso:** título no formato fixo; `🗺️ Sobre o curso`; `🔖 Legenda das páginas`; uma linha `<span color="gray">` sob cada seção; aulas em ordem didática (mova uma página fora de lugar); `## 📌 Resumo do curso` (`Seção | Ideia central | Comandos-chave`); depois de publicado, o callout `📚`.
 
 **Teste de cada aula:** ela responde por que isso existe, como funciona com um exemplo real e qual é o erro mais comum? Se faltar algo, complete.
+
+**Critério de pronto (automático):** depois da conversão, `auditar_curso.py <area>/<slug> --criterios` precisa sair sem erros. Os avisos (imagem sem analogia logo abaixo, tabela larga) são aceitáveis só se estiverem registrados no `ESTADO.md` com o motivo.
 
 ## Imagens (detalhes em referencias/DIDATICA_VISUAL.md)
 

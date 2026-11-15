@@ -100,6 +100,8 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 
 | Arquivo | Quando ler |
 | --- | --- |
+| `referencias/EXEMPLOS.md` | antes da 1ª página: a aula e o cheat sheet modelo (imite-os) |
+| `referencias/COORDENADOR.md` | antes da etapa "Por página": um agente por página |
 | `referencias/NOTION.md` | antes da 1ª edição no Notion e sempre que uma chamada falhar |
 | `referencias/DIDATICA_VISUAL.md` | antes de criar ou trocar imagens |
 | `ferramentas/svg/README.md` | ao usar o kit de diagramas |
@@ -122,20 +124,22 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 1. **Preparar:** clonar; ler `biblioteca.yaml` e `ESTADO.md`; `progresso.py <slug> status`. O `<slug>` é o nome da pasta do curso (ex.: `boson-logica-portugol`); para curso novo, defina-o no passo 2. Se houver páginas pendentes, retome da próxima.
 2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug (minúsculas, hífens, sem acento, com a origem: `boson-logica-portugol`). Registrar os ids na ordem com `progresso.py <slug> init` e pôr o curso no `ESTADO.md` com o id do índice. Se o curso já estiver no repositório, rodar o `auditar_curso.py`.
 3. **Escopo:** montar, só para você, a tabela `Tópico | Onde está | completo / raso / falta`, usando a ementa, os resumos, os "veremos depois" e o currículo padrão do assunto. Completar o que estiver raso: abrir a seção com um callout `💡 Complemento de Estudo (Sugestão de Expansão):` e dizer em uma frase o que foi acrescentado e por quê. Criar as páginas que faltam. Temas fora da proposta vão só como sugestão no resumo final.
-4. **Por página, uma de cada vez:**
-   1. abrir a página;
-   2. corrigir fatos, rodar o código ou fazer teste de mesa, refazer as contas;
-   3. reescrever no padrão de aula;
-   4. gerar os SVGs, fazer commit e push, pegar os links com `raw_urls.py`, subir com `notion-create-attachment`;
-   5. gravar a página inteira com `replace_content`;
-   6. marcar com `progresso.py <slug> feito <id>` e, a cada poucas páginas, fazer commit do `progresso/`.
+4. **Por página** (modo coordenador, em `referencias/COORDENADOR.md`): o chat principal só controla a fila. Para cada página, ele dispara um agente novo com o briefing pronto. O agente:
+   1. abre a página;
+   2. corrige fatos, roda o código ou faz teste de mesa e refaz as contas;
+   3. reescreve no padrão, imitando o `EXEMPLOS.md`;
+   4. gera os SVGs e sobe com `notion-create-attachment`;
+   5. grava com `replace_content`;
+   6. devolve um JSON curto.
+
+   O coordenador marca com `progresso.py <slug> feito <id>`, registra a analogia usada e, a cada 3 a 5 páginas, faz commit de `img/` e `progresso/`. Sem a ferramenta de agentes, faça o mesmo roteiro no próprio chat, uma página por vez.
 5. **Fechar cada seção** com o cheat sheet 3×4 e deixar o índice no padrão (abaixo).
 6. **PARAR.** Resumir o que mudou, atualizar o `ESTADO.md` (commit e push) e pedir a exportação com estas instruções: *"Na página índice do curso: ••• → Exportar → HTML, Incluir subpáginas ligado, Incluir conteúdo: tudo. Salve o .zip na pasta Downloads e me avise."* Confira o zip ao receber: um zip de poucos KB, ou com 1 arquivo HTML só, é de uma página, não do curso.
 7. **Publicar** (seguindo o `referencias/PUBLICACAO.md`):
    1. converter com `notion2md.py` numa pasta temporária;
    2. substituir as aulas, mantendo o `00-sobre-o-curso.md`, o README do curso, o `metadata.yaml` e a capa;
    3. ajustar a ordem e a legenda no README do curso e no `00-sobre-o-curso.md`;
-   4. rodar `auditar_curso.py` e `gerar_epub_local.py`; corrigir o que for erro e registrar no `ESTADO.md`, como "avisos aceitos", os que ficarem de propósito; depois commit e push;
+   4. rodar `auditar_curso.py --criterios` e `gerar_epub_local.py`; corrigir o que for erro e registrar no `ESTADO.md`, como "avisos aceitos", os que ficarem de propósito; depois commit e push;
    5. acompanhar a Action pela API REST e confirmar o `<slug>.epub` na release `epubs`.
 8. **Sincronizar e entregar:** o que mudou no Markdown volta ao Notion. Pôr no índice o callout `📚` com os links do GitHub e do EPUB. Atualizar a linha do curso no catálogo do README e no `ESTADO.md`. Mandar o resumo final.
 
@@ -167,6 +171,8 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 
 **Teste de cada aula:** ela responde por que isso existe, como funciona com um exemplo real e qual é o erro mais comum? Se faltar algo, complete.
 
+**Critério de pronto (automático):** depois da conversão, `auditar_curso.py <area>/<slug> --criterios` precisa sair sem erros. Os avisos (imagem sem analogia logo abaixo, tabela larga) são aceitáveis só se estiverem registrados no `ESTADO.md` com o motivo.
+
 ## Imagens (detalhes em referencias/DIDATICA_VISUAL.md)
 
 - Diagrama, fluxograma, tabela ou print de código → SVG próprio, feito com o kit `ferramentas/svg/` no tema v3: fundo creme `#FAF9F6`, cards pastel com sombra suave, setas curvas pontilhadas, `system-ui`, código em mono sobre `#F0F0F0`. Captura de tela real → mantenha. Imagem decorativa → remova.
@@ -194,6 +200,298 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 ## Resumo final ao usuário
 
 Em poucas linhas: o que foi publicado (com os links do curso e do EPUB), as páginas e imagens novas, as correções importantes, os avisos de auditoria que ficaram (e por quê) e o próximo passo sugerido.
+~~~~
+
+</details>
+
+<details>
+<summary><b>Apoio: aula e cheat sheet modelo (antes e depois)</b> · <code>referencias/EXEMPLOS.md</code></summary>
+
+~~~~markdown
+# Exemplos de referência: aula e cheat sheet
+
+> Arquivo de apoio da skill `revisar-curso-biblioteca`. Leia antes da primeira página do curso e volte a ele sempre que estiver em dúvida sobre o tom ou o formato. **Imite estes exemplos**: eles valem mais que a lista de regras.
+
+## 1. Aula: antes e depois
+
+Aula real do curso da Bóson ("Estudo complementar de Constantes"). O *antes* já estava revisado no padrão anterior; o *depois* é o padrão atual, exatamente como foi gravado no Notion (`replace_content`).
+
+### Antes (padrão anterior, em Markdown)
+
+````markdown
+# Estudo complementar de Constantes
+
+> 🗺️ **Nesta aula:** a diferença entre variável e constante, quando usar constantes e como declarar uma com `const` no Portugol.
+
+## Variáveis x constantes
+
+|  | Variável | Constante |
+| --- | --- | --- |
+| O valor pode mudar? | Sim, quantas vezes for preciso durante a execução | Não: é definido uma vez e fica fixo até o fim |
+| Quando recebe o valor | Pode ser declarada agora e receber o valor depois | Precisa receber o valor **na própria declaração** |
+| Convenção de nome | minúsculas (`nota_final`) | MAIÚSCULAS (`PI`, `TAXA_JUROS`) |
+
+![Variável muda; constante não muda](../img/c-const.svg)
+
+Use constantes para valores que não devem mudar: o valor de π, uma taxa fixa, a nota mínima de aprovação. Além de proteger o valor (o programa dá erro se alguém tentar alterá-lo), o nome deixa o código mais legível: `MEDIA_MINIMA` diz mais que um `7` solto no meio do código.
+
+> 💡 Assim como as variáveis, as constantes podem ser locais ou globais.
+
+## Como declarar
+
+```c
+const tipo NOME_DA_CONSTANTE = valor
+```
+
+## Projeto: criando uma constante
+
+**Código**
+
+```c
+programa
+{
+  const real PI = 3.1415  // declarada e inicializada na mesma linha
+
+  funcao inicio()
+  {
+    escreva("Aqui usamos a constante para armazenar o valor de Pi: ", PI, "\n")
+
+    // PI = 3.0  ← erro: não é possível alterar o valor de uma constante
+  }
+}
+```
+
+## 📌 Resumo
+
+| Conceito | Em uma frase |
+| --- | --- |
+| Constante | Valor fixo, definido uma vez e nunca alterado |
+| Declaração | `const tipo NOME = valor`, sempre com o valor na mesma linha |
+| Nome | Em MAIÚSCULAS, por convenção |
+| Para que serve | Proteger valores fixos e deixar o código mais legível |
+````
+
+### Depois (padrão atual, no Notion)
+
+O breadcrumb e os anexos originais (`<unknown ... alt="breadcrumb" />`, `<file ...>`) ficam no lugar em que vieram; foram omitidos aqui. O `file-upload://` é o id devolvido pelo `notion-create-attachment`.
+
+````markdown
+<callout icon="🗺️" color="gray_bg">
+<b>Nesta aula:</b> a diferença entre variável e constante, quando usar constantes e como declarar uma com <code>const</code> no Portugol.
+</callout>
+
+## De onde paramos
+
+Variáveis existem para mudar de valor. Mas alguns valores nunca deveriam mudar, como o valor de π ou a nota mínima de aprovação. Para eles existe a constante.
+
+## Variáveis x constantes
+
+|  | Variável | Constante |
+| --- | --- | --- |
+| O valor pode mudar? | Sim, quantas vezes for preciso durante a execução | Não: é definido uma vez e fica fixo até o fim |
+| Quando recebe o valor | Pode ser declarada agora e receber o valor depois | Precisa receber o valor <b>na própria declaração</b> |
+| Convenção de nome | minúsculas (<code>nota_final</code>) | MAIÚSCULAS (<code>PI</code>, <code>TAXA_JUROS</code>) |
+
+<image source="file-upload://ID-DO-UPLOAD">
+Variável muda; constante não muda
+</image>
+
+<callout icon="💡" color="blue_bg">
+<b>Analogia:</b> uma variável é o quadro branco da sala, que se apaga e reescreve o dia todo. Uma constante é a placa de metal parafusada na porta com o número da sala: definida uma vez, na instalação, e ninguém consegue trocar com um apagador.
+</callout>
+
+Use constantes para valores que não devem mudar: o valor de π, uma taxa fixa, a nota mínima de aprovação. Além de proteger o valor (o programa dá erro se alguém tentar alterá-lo), o nome deixa o código mais legível: <code>MEDIA_MINIMA</code> diz mais que um <code>7</code> solto no meio do código.
+
+<callout icon="💡" color="red_bg">
+Assim como as variáveis, as constantes podem ser locais ou globais.
+</callout>
+
+## Como declarar
+
+```c
+// const + tipo + NOME em maiúsculas + valor:
+// o valor vem na mesma linha porque depois
+// não poderá mais ser atribuído
+const tipo NOME_DA_CONSTANTE = valor
+```
+
+## Projeto: criando uma constante
+
+<toggle>
+Código
+
+```c
+programa
+{
+  // global e fixa: qualquer função usa o
+  // mesmo PI, e ninguém consegue alterá-lo
+  const real PI = 3.1415
+
+  funcao inicio()
+  {
+    escreva("Aqui usamos a constante para ",
+      "armazenar o valor de Pi: ", PI, "\n")
+
+    // a linha abaixo daria ERRO, e é
+    // justamente essa proteção que queremos:
+    // PI = 3.0
+  }
+}
+```
+
+Saída: <code>Aqui usamos a constante para armazenar o valor de Pi: 3.1415</code>
+</toggle>
+
+## 🧠 Revisão rápida
+
+<toggle>
+Posso declarar <code>const real PI</code> e atribuir o valor depois?
+
+Não: a constante precisa receber o valor na própria declaração.
+</toggle>
+
+<toggle>
+Por que escrever <code>MEDIA_MINIMA</code> em vez de usar o número 7 direto no código?
+
+Porque o nome explica o significado e, se a regra mudar, você altera um lugar só.
+</toggle>
+
+<toggle>
+O que acontece se o programa tentar fazer <code>PI = 3.0</code>?
+
+Dá erro: o valor de uma constante não pode ser alterado.
+</toggle>
+
+<callout icon="➡️" color="gray_bg">
+<b>Próximo passo:</b> até aqui, os valores foram escritos no próprio código. A próxima aula mostra como recebê-los do usuário e mostrar resultados: <b>Entrada e Saída de Dados com Leia e Escreva</b>.
+</callout>
+
+## 📌 Resumo
+
+| Conceito | Em uma frase |
+| --- | --- |
+| Constante | Valor fixo, definido uma vez e nunca alterado |
+| Declaração | <code>const tipo NOME = valor</code>, sempre com o valor na mesma linha |
+| Nome | Em MAIÚSCULAS, por convenção |
+| Para que serve | Proteger valores fixos e deixar o código mais legível |
+````
+
+### O que mudou, e por quê
+
+| Mudança | Regra que ela aplica |
+| --- | --- |
+| `## De onde paramos` no início | cada aula se liga à anterior e explica por que o tema existe |
+| Callout `Analogia:` logo abaixo da imagem, mapeando peça por peça (quadro branco = variável, placa parafusada = constante) | toda imagem tem uma analogia; nenhuma se repete em outra aula |
+| Comentários na linha de cima explicando o **porquê** ("o valor vem na mesma linha porque depois não poderá mais ser atribuído") | comentário explica intenção, não repete o código |
+| Linhas de código quebradas em até ~60 caracteres; recuo de 2 espaços | leitura em e-reader |
+| O erro proposital (`PI = 3.0`) virou comentário com a explicação | o código mostrado sempre roda |
+| Linha `Saída:` depois do código | todo exemplo mostra o resultado esperado |
+| `## 🧠 Revisão rápida` com 3 toggles curtos (uma armadilha incluída) | revisão ativa no fim da aula |
+| Callout `➡️ Próximo passo` com o nome exato da aula seguinte | o leitor sabe para onde vai e por quê |
+| O resumo foi mantido (já estava bom) | só mude o que melhora |
+
+## 2. Cheat sheet de seção
+
+Fecha cada seção (na última página dela, normalmente a lista de exercícios), com o título `## 🧭 Cheat sheet da seção`. Imagem pronta deste exemplo: `programacao/boson-logica-portugol/img/bo-mapa-variaveis.svg`.
+
+Os dados ficam em `ferramentas/svg/cheatsheets.py`; cada card é `C(título, ícone ASCII, 3 tópicos curtos, code=[...], tags=[...])`:
+
+```python
+S['bo-mapa-variaveis'] = ('boson-logica-portugol',
+  'Variáveis e operadores',
+  'Seção 2 · guardar, calcular e comparar', [
+  C('Tipos', 'T', ['inteiro e real', 'caracter e cadeia',
+    'logico'], tags=['inteiro', 'real', 'cadeia']),
+  C('Variável', '[x]', ['caixa com etiqueta', 'tipo fixo',
+    'valor muda'], code=['inteiro idade = 20']),
+  C('Constante', 'K', ['const real PI', 'não muda',
+    'nome em MAIÚSCULAS']),
+  # ... 12 cards no total, na ordem em que a seção ensina
+])
+```
+
+Como fica no Notion:
+
+```
+## 🧭 Cheat sheet da seção
+
+<image source="file-upload://ID">
+Cheat sheet da seção: 12 cards para revisar variáveis, tipos,
+entrada e saída e operadores
+</image>
+```
+
+Regras do exemplo: 12 cards, na ordem em que a seção ensina; tópicos de até ~28 caracteres; ícone só com ASCII; no máximo uma linha de código por card.
+~~~~
+
+</details>
+
+<details>
+<summary><b>Apoio: modo coordenador (um agente por página)</b> · <code>referencias/COORDENADOR.md</code></summary>
+
+~~~~markdown
+# Modo coordenador: um agente por página
+
+> Arquivo de apoio da skill `revisar-curso-biblioteca`. Leia antes da etapa "Por página".
+
+**Por que existe:** um curso tem dezenas de páginas. Se o chat principal abre e reescreve todas, o histórico cresce até ser resumido automaticamente, e os detalhes se perdem (regras, analogias já usadas, o que falta). No modo coordenador, o chat principal **só controla a fila**. Cada página é feita por um agente novo, que recebe só o que precisa e devolve um resumo curto.
+
+**Quando usar:** sempre que houver a ferramenta de agentes (`Agent`). Sem ela, faça as páginas no próprio chat, uma por vez, seguindo o mesmo roteiro.
+
+## O que o coordenador faz
+
+1. Antes da primeira página: levantamento e escopo prontos, `progresso/<slug>.json` cadastrado, lista de páginas novas decidida.
+2. Para cada página pendente, preenche o **briefing** abaixo e dispara um agente (`subagent_type: general-purpose`, em primeiro plano).
+   - No máximo **3 agentes ao mesmo tempo**, e nunca duas páginas da mesma seção em paralelo. Assim, os "De onde paramos" e "Próximo passo" de páginas vizinhas não são escritos às cegas.
+   - Páginas novas (temas que faltavam) são criadas pelo próprio coordenador com `notion-create-pages` e depois entram na fila como as outras.
+3. Ao receber a resposta:
+   - marca a página: `progresso.py <slug> feito <id>`;
+   - anota a analogia usada: `progresso.py <slug> nota <id> "analogia: ..."`;
+   - acrescenta a analogia à lista de proibidas que vai nos próximos briefings.
+4. A cada 3 a 5 páginas, faz commit de `img/` e de `progresso/`. Os agentes nunca fazem commit.
+5. Confere por amostragem: a cada 5 páginas, abre uma com `notion-fetch` e checa o padrão. Se algo estiver fora, devolve ao mesmo agente (`SendMessage`) com a correção.
+6. Os cheat sheets das seções, o índice e a parada para exportar continuam com o coordenador.
+
+## Briefing (copie e preencha)
+
+```text
+Você vai reformular UMA página de um curso no Notion. Trabalhe só nela.
+
+Página: <id> - "<título>"  (aula <n> de <total>, seção "<seção>")
+Aula anterior: "<título anterior>"  ·  Próxima aula: "<título seguinte>"
+Curso: <área>/<slug>, repositório clonado em <caminho do clone>
+Analogias já usadas no curso (não repita nenhuma): <lista>
+Ajustes do escopo para esta página: <o que acrescentar, ou "nenhum">
+
+Antes de começar, leia:
+- <caminho do clone>/skill/revisar-curso-biblioteca/SKILL.md
+  (seções "Padrão de cada aula", "Imagens" e "Armadilhas conhecidas");
+- .../referencias/EXEMPLOS.md (imite a aula de exemplo);
+- .../referencias/NOTION.md;
+- .../referencias/DIDATICA_VISUAL.md, só se for criar ou trocar uma imagem.
+
+Faça, nesta ordem:
+1. notion-fetch da página.
+2. Corrija fatos, rode o código ou faça teste de mesa, refaça as contas.
+3. Reescreva no padrão de aula, preservando o breadcrumb e os anexos
+   (pdf, file, bookmark, vídeo) exatamente como vieram.
+4. Imagens: gere os SVGs com o kit, salve em <clone>/<área>/<slug>/img/
+   com o prefixo desta aula, renderize e confira. Suba cada um com
+   notion-create-attachment usando content (o texto do SVG) e filename.
+5. Grave a página inteira com notion-update-page, command replace_content.
+6. Não faça commit, não edite outras páginas, não mexa no progresso.
+
+Responda SÓ com este JSON:
+{"id": "...", "ok": true, "imagens": ["novo.svg"], "analogias": ["..."],
+ "correcoes": ["o que estava errado, em uma linha"],
+ "pendencias": ["o que ficou de fora e por quê"]}
+```
+
+## Regras que valem para os dois lados
+
+- Uma página por agente. Uma página que deu erro volta para a fila com uma nota em `pendencias`, nunca é dada como feita.
+- O SVG é sempre o mesmo arquivo no Notion e em `img/`. Por isso o agente sobe pelo `content` e o coordenador faz o commit depois.
+- Se o `replace_content` falhar por causa de um bloco de banco de dados apagado, o agente segue a receita do `NOTION.md` (vários `update_content` pequenos) e registra o caso em `pendencias`.
 ~~~~
 
 </details>
