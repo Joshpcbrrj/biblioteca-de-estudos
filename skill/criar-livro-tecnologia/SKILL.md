@@ -24,6 +24,8 @@ Se o usuário ainda não disse o tema, responda só isto, curto, e espere:
 1. pergunte **o tema do livro** e, se quiser, para quem é e o tamanho;
 2. diga que precisa do **Notion conectado** e do **repositório da biblioteca** (padrão `Joshpcbrrj/biblioteca-de-estudos`; pergunte se é outro). Avise que, para publicar, vai precisar do **app do Claude no computador** com a pasta **Downloads** liberada, ou do `.zip` da exportação anexado no chat.
 
+Se o tema já veio no pedido, não repita a mensagem acima: mande numa só mensagem as perguntas do `EMENTA.md` §1 e uma linha avisando do Notion e do app/Downloads. Confira o Notion com `notion-get-self` antes da pesquisa; se falhar, peça para conectar.
+
 Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
 
 - **já existe um livro com esse tema** → mostre o que ele cobre e pergunte: ampliar esse, criar o próximo da trilha (sugira com base em "fica para depois") ou outro enfoque;
@@ -50,7 +52,7 @@ Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
 
 ## Ambiente
 
-- Clone o repositório (`add_repo` com `push`, depois `git clone --depth 1`). Leia o `biblioteca.yaml` e o `ESTADO.md`. Se `notion_livros` estiver vazio, pergunte em qual página do Notion os livros devem ficar (link), grave o id no `biblioteca.yaml` e faça commit.
+- Clone o repositório (`add_repo` com `push`, depois `git clone --depth 1`). Leia o `biblioteca.yaml` e o `ESTADO.md`. Se `notion_livros` estiver vazio, pergunte em qual página do Notion os livros devem ficar só na etapa Registrar (depois do "aprovado") e grave o id no `biblioteca.yaml` no mesmo commit do `ementa.yaml`. Nada é gravado no repositório antes da aprovação.
 - Ferramentas do Notion:
   - `notion-fetch` para ler;
   - `notion-create-pages` para criar o índice e os capítulos;
@@ -90,10 +92,10 @@ Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
    - versão atual da ferramenta;
    - currículo usual do tema;
    - armadilhas comuns de quem começa.
-3. **Propor a ementa** no formato do `EMENTA.md` §2. Antes de mostrar, grave um rascunho e rode `mapa_livros.py --checar` para não repetir livros existentes; ligue o novo aos anteriores por pré-requisito.
+3. **Propor a ementa** no formato do `EMENTA.md` §2. Antes de mostrar, grave o rascunho **fora do repositório** (`/tmp/ementa-<slug>.yaml`, com `aprovada_em: ""` e as `fontes` da pesquisa) e rode `mapa_livros.py --checar /tmp/ementa-<slug>.yaml` para não repetir livros existentes; ligue o novo aos anteriores por pré-requisito.
 4. **Ajustar até o aluno aprovar** (`EMENTA.md` §3). A cada pedido, mostre a ementa inteira atualizada e o que mudou. **Não escreva capítulos antes de "aprovado".**
 5. **Registrar** (`EMENTA.md` §4): `ementa.yaml` aprovado (commit), índice e capítulos vazios no Notion, `progresso.py init`, linha do livro no `ESTADO.md`.
-6. **Escrever** (modo coordenador). Um agente por capítulo, com o briefing do `COORDENADOR.md` mais: objetivo e tópicos do capítulo (da ementa), versão de referência, regras do `PESQUISA.md` e livros da trilha para referência cruzada. Cada capítulo segue o padrão de aula e acrescenta:
+6. **Escrever** (modo coordenador). Um agente por capítulo, com o briefing do `COORDENADOR.md` mais: objetivo e tópicos do capítulo, `versao_referencia` e `fontes` (tudo do `ementa.yaml`, para que um chat novo também tenha), regras do `PESQUISA.md` e livros da trilha para referência cruzada. Cada capítulo segue o padrão de aula e acrescenta:
    - **🧪 Laboratório:** passo a passo executado, com a saída real;
    - **🏋️ Pratique:** 2 ou 3 exercícios com `Resolução` recolhida;
    - **📚 Fontes:** antes do Resumo, com a data em que foram conferidas;

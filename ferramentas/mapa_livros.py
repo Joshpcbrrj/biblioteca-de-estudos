@@ -80,7 +80,8 @@ def checar(caminho):
         'sobreposicao': f'{round(100 * len(repetidos) / total)}%',
         'pre_requisitos_inexistentes': pre_inexistentes,
         'temas_pendentes_da_trilha': sugeridos,
-        'alerta': len(repetidos) / total > 0.4,
+        'slug_ja_existe': novo['slug'] in existentes,
+        'alerta': len(repetidos) / total > 0.4 or novo['slug'] in existentes,
     }
 
 

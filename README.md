@@ -213,6 +213,8 @@ Se o usuário ainda não disse o tema, responda só isto, curto, e espere:
 1. pergunte **o tema do livro** e, se quiser, para quem é e o tamanho;
 2. diga que precisa do **Notion conectado** e do **repositório da biblioteca** (padrão `Joshpcbrrj/biblioteca-de-estudos`; pergunte se é outro). Avise que, para publicar, vai precisar do **app do Claude no computador** com a pasta **Downloads** liberada, ou do `.zip` da exportação anexado no chat.
 
+Se o tema já veio no pedido, não repita a mensagem acima: mande numa só mensagem as perguntas do `EMENTA.md` §1 e uma linha avisando do Notion e do app/Downloads. Confira o Notion com `notion-get-self` antes da pesquisa; se falhar, peça para conectar.
+
 Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
 
 - **já existe um livro com esse tema** → mostre o que ele cobre e pergunte: ampliar esse, criar o próximo da trilha (sugira com base em "fica para depois") ou outro enfoque;
@@ -239,7 +241,7 @@ Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
 
 ## Ambiente
 
-- Clone o repositório (`add_repo` com `push`, depois `git clone --depth 1`). Leia o `biblioteca.yaml` e o `ESTADO.md`. Se `notion_livros` estiver vazio, pergunte em qual página do Notion os livros devem ficar (link), grave o id no `biblioteca.yaml` e faça commit.
+- Clone o repositório (`add_repo` com `push`, depois `git clone --depth 1`). Leia o `biblioteca.yaml` e o `ESTADO.md`. Se `notion_livros` estiver vazio, pergunte em qual página do Notion os livros devem ficar só na etapa Registrar (depois do "aprovado") e grave o id no `biblioteca.yaml` no mesmo commit do `ementa.yaml`. Nada é gravado no repositório antes da aprovação.
 - Ferramentas do Notion:
   - `notion-fetch` para ler;
   - `notion-create-pages` para criar o índice e os capítulos;
@@ -279,10 +281,10 @@ Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
    - versão atual da ferramenta;
    - currículo usual do tema;
    - armadilhas comuns de quem começa.
-3. **Propor a ementa** no formato do `EMENTA.md` §2. Antes de mostrar, grave um rascunho e rode `mapa_livros.py --checar` para não repetir livros existentes; ligue o novo aos anteriores por pré-requisito.
+3. **Propor a ementa** no formato do `EMENTA.md` §2. Antes de mostrar, grave o rascunho **fora do repositório** (`/tmp/ementa-<slug>.yaml`, com `aprovada_em: ""` e as `fontes` da pesquisa) e rode `mapa_livros.py --checar /tmp/ementa-<slug>.yaml` para não repetir livros existentes; ligue o novo aos anteriores por pré-requisito.
 4. **Ajustar até o aluno aprovar** (`EMENTA.md` §3). A cada pedido, mostre a ementa inteira atualizada e o que mudou. **Não escreva capítulos antes de "aprovado".**
 5. **Registrar** (`EMENTA.md` §4): `ementa.yaml` aprovado (commit), índice e capítulos vazios no Notion, `progresso.py init`, linha do livro no `ESTADO.md`.
-6. **Escrever** (modo coordenador). Um agente por capítulo, com o briefing do `COORDENADOR.md` mais: objetivo e tópicos do capítulo (da ementa), versão de referência, regras do `PESQUISA.md` e livros da trilha para referência cruzada. Cada capítulo segue o padrão de aula e acrescenta:
+6. **Escrever** (modo coordenador). Um agente por capítulo, com o briefing do `COORDENADOR.md` mais: objetivo e tópicos do capítulo, `versao_referencia` e `fontes` (tudo do `ementa.yaml`, para que um chat novo também tenha), regras do `PESQUISA.md` e livros da trilha para referência cruzada. Cada capítulo segue o padrão de aula e acrescenta:
    - **🧪 Laboratório:** passo a passo executado, com a saída real;
    - **🏋️ Pratique:** 2 ou 3 exercícios com `Resolução` recolhida;
    - **📚 Fontes:** antes do Resumo, com a data em que foram conferidas;
@@ -368,6 +370,10 @@ Ajuste à vontade: "aumenta", "diminui", "tira o 5", "adiciona X",
 Quando estiver bom, diga "aprovado".
 ```
 
+- `<posição>` = `1º livro` ou `continua <título do anterior>`.
+- "Fica para livros futuros" em texto legível ("Docker Compose"); os rótulos curtos (`compose`) ficam só no yaml.
+- "Versão de referência" cita o que o leitor instala (ex.: "Docker Desktop 4.x, com Docker Engine 29.9").
+
 ## 3. Ajustar (quantas rodadas o aluno quiser)
 
 Interprete pedidos em linguagem natural e responda sempre com **a ementa inteira atualizada** e, acima dela, uma linha "Mudou:" listando as alterações.
@@ -376,12 +382,14 @@ Interprete pedidos em linguagem natural e responda sempre com **a ementa inteira
 | --- | --- |
 | "aumenta" / "mais completo" | Acrescente capítulos ou aprofunde os existentes, sem quebrar a progressão; diga o novo total |
 | "diminui" / "mais curto" | Junte capítulos próximos e mande o excedente para "Fica para livros futuros" |
-| "tira o X" | Remova; se algo depois dependia dele, mova esse conteúdo ou avise |
+| "tira o X" | Remova. Se um capítulo posterior (inclusive o projeto final) depende dele, leve o mínimo necessário para esse capítulo; tire o rótulo de `cobre`, ponha em `fica_para_depois` e diga isso no "Mudou:" |
 | "adiciona Y" | Encaixe onde a progressão permitir; se Y for avançado demais para o nível, sugira deixar para outro livro |
+| "adiciona Y" e Y já é capítulo | Aprofunde Y em mais um capítulo (ou pergunte em uma frase) e diga o que escolheu no "Mudou:" |
+| "mais prático" | Troque objetivos de "explicar" por tarefas executáveis, faça o cap. 1 já rodar algo e deixe o projeto final mensurável |
 | "junta", "separa", "troca a ordem" | Faça e confira se nenhum capítulo passa a usar algo ainda não ensinado |
 | Pedido que contradiz o nível ou o tamanho | Faça, mas avise em uma frase o efeito ("com Kubernetes, o livro deixa de ser iniciante") |
 
-Se a sobreposição com um livro existente passar de ~40% (`mapa_livros.py --checar`), pergunte se é melhor ampliar o livro antigo ou mudar o enfoque do novo.
+Se `slug_ja_existe` vier verdadeiro, trate como "já existe um livro com esse tema" (ampliar, próximo da trilha ou outro enfoque). Se a sobreposição com um livro existente passar de ~40% (`mapa_livros.py --checar`), pergunte se é melhor ampliar o livro antigo ou mudar o enfoque do novo.
 
 ## 4. Aprovar e registrar
 
@@ -405,6 +413,10 @@ publico: "Quem programa, mas nunca usou contêineres"
 objetivo: "Empacotar e publicar uma aplicação com banco de dados em contêineres"
 pre_requisitos: []              # slugs de outros livros desta biblioteca
 versao_referencia: "Docker Engine 29.x (conferido em 2026-11-15)"
+fontes:                         # da pesquisa; os agentes de capítulo partem daqui
+  - titulo: "Docker Engine 29 release notes"
+    url: "https://docs.docker.com/engine/release-notes/29/"
+    conferido_em: "2026-11-15"
 aprovada_em: "2026-11-15"       # vazio enquanto for rascunho
 capitulos:
   - n: 1

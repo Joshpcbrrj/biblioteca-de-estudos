@@ -115,6 +115,12 @@ def _():
     assert 'volumes' in c['topicos_repetidos'], c
     assert c['pre_requisitos_inexistentes'] == ['livro-que-nao-existe'], c
     assert 'kubernetes' in c['temas_pendentes_da_trilha'], c
+    assert c['slug_ja_existe'] is False, c
+    r = subprocess.run([sys.executable, 'ferramentas/mapa_livros.py', '--checar',
+                        'testes/livros-exemplo/docker-do-zero/ementa.yaml'],
+                       cwd=RAIZ, capture_output=True, text=True, env=env)
+    c = json.loads(r.stdout)
+    assert c['slug_ja_existe'] is True and c['alerta'] is True, c
 
 
 @teste('ementa: modelo da skill tem todos os campos que o mapa exige')
@@ -122,7 +128,7 @@ def _():
     t = open(os.path.join(SKILLS, 'criar-livro-tecnologia', 'referencias', 'EMENTA.md'),
              encoding='utf-8').read()
     for campo in ['titulo:', 'slug:', 'trilha:', 'nivel:', 'objetivo:', 'capitulos:',
-                  'cobre:', 'aprovada_em:', 'fica_para_depois:', 'pre_requisitos:']:
+                  'cobre:', 'aprovada_em:', 'fontes:', 'fica_para_depois:', 'pre_requisitos:']:
         assert campo in t, f'falta {campo} no modelo'
 
 

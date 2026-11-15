@@ -45,6 +45,10 @@ Ajuste à vontade: "aumenta", "diminui", "tira o 5", "adiciona X",
 Quando estiver bom, diga "aprovado".
 ```
 
+- `<posição>` = `1º livro` ou `continua <título do anterior>`.
+- "Fica para livros futuros" em texto legível ("Docker Compose"); os rótulos curtos (`compose`) ficam só no yaml.
+- "Versão de referência" cita o que o leitor instala (ex.: "Docker Desktop 4.x, com Docker Engine 29.9").
+
 ## 3. Ajustar (quantas rodadas o aluno quiser)
 
 Interprete pedidos em linguagem natural e responda sempre com **a ementa inteira atualizada** e, acima dela, uma linha "Mudou:" listando as alterações.
@@ -53,12 +57,14 @@ Interprete pedidos em linguagem natural e responda sempre com **a ementa inteira
 | --- | --- |
 | "aumenta" / "mais completo" | Acrescente capítulos ou aprofunde os existentes, sem quebrar a progressão; diga o novo total |
 | "diminui" / "mais curto" | Junte capítulos próximos e mande o excedente para "Fica para livros futuros" |
-| "tira o X" | Remova; se algo depois dependia dele, mova esse conteúdo ou avise |
+| "tira o X" | Remova. Se um capítulo posterior (inclusive o projeto final) depende dele, leve o mínimo necessário para esse capítulo; tire o rótulo de `cobre`, ponha em `fica_para_depois` e diga isso no "Mudou:" |
 | "adiciona Y" | Encaixe onde a progressão permitir; se Y for avançado demais para o nível, sugira deixar para outro livro |
+| "adiciona Y" e Y já é capítulo | Aprofunde Y em mais um capítulo (ou pergunte em uma frase) e diga o que escolheu no "Mudou:" |
+| "mais prático" | Troque objetivos de "explicar" por tarefas executáveis, faça o cap. 1 já rodar algo e deixe o projeto final mensurável |
 | "junta", "separa", "troca a ordem" | Faça e confira se nenhum capítulo passa a usar algo ainda não ensinado |
 | Pedido que contradiz o nível ou o tamanho | Faça, mas avise em uma frase o efeito ("com Kubernetes, o livro deixa de ser iniciante") |
 
-Se a sobreposição com um livro existente passar de ~40% (`mapa_livros.py --checar`), pergunte se é melhor ampliar o livro antigo ou mudar o enfoque do novo.
+Se `slug_ja_existe` vier verdadeiro, trate como "já existe um livro com esse tema" (ampliar, próximo da trilha ou outro enfoque). Se a sobreposição com um livro existente passar de ~40% (`mapa_livros.py --checar`), pergunte se é melhor ampliar o livro antigo ou mudar o enfoque do novo.
 
 ## 4. Aprovar e registrar
 
@@ -82,6 +88,10 @@ publico: "Quem programa, mas nunca usou contêineres"
 objetivo: "Empacotar e publicar uma aplicação com banco de dados em contêineres"
 pre_requisitos: []              # slugs de outros livros desta biblioteca
 versao_referencia: "Docker Engine 29.x (conferido em 2026-11-15)"
+fontes:                         # da pesquisa; os agentes de capítulo partem daqui
+  - titulo: "Docker Engine 29 release notes"
+    url: "https://docs.docker.com/engine/release-notes/29/"
+    conferido_em: "2026-11-15"
 aprovada_em: "2026-11-15"       # vazio enquanto for rascunho
 capitulos:
   - n: 1
