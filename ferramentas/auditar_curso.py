@@ -19,7 +19,7 @@ Não altera nenhum arquivo.
 """
 import json, os, re, sys
 
-PERMITIDOS = {'README.md', 'metadata.yaml', 'capa.png', 'capa.svg', 'aulas', 'img'}
+PERMITIDOS = {'README.md', 'metadata.yaml', 'capa.png', 'capa.svg', 'aulas', 'img', 'ementa.yaml'}
 SOBRAS = ['<callout', '<toggle', '<aside', '<page ', 'notion-file-block', '&lt;', '<unknown']
 SECOES = {'nesta_aula': r'Nesta (aula|lista)', 'de_onde': r'De onde paramos', 'revisao': r'Revisão rápida',
           'resumo': r'📌 Resumo', 'proximo': r'Próximo passo'}

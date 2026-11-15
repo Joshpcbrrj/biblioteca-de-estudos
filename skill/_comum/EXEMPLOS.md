@@ -1,6 +1,6 @@
 # Exemplos de referência: aula e cheat sheet
 
-> Arquivo de apoio da skill `revisar-curso-biblioteca`. Leia antes da primeira página do curso e volte a ele sempre que estiver em dúvida sobre o tom ou o formato. **Imite estes exemplos**: eles valem mais que a lista de regras.
+> Arquivo comum às skills da biblioteca. Leia antes da primeira página do curso e volte a ele sempre que estiver em dúvida sobre o tom ou o formato. **Imite estes exemplos**: eles valem mais que a lista de regras.
 
 ## 1. Aula: antes e depois
 

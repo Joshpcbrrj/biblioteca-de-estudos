@@ -1,0 +1,16 @@
+titulo: "Docker Compose na prática"
+slug: docker-compose
+trilha: docker
+ordem_na_trilha: 2
+nivel: intermediário
+publico: "Quem já leu Docker do zero"
+objetivo: "Orquestrar vários serviços com Compose"
+pre_requisitos: [docker-do-zero, livro-que-nao-existe]
+aprovada_em: ""
+capitulos:
+  - n: 1
+    titulo: "Vários serviços"
+    objetivo: "Subir app e banco juntos"
+    topicos: [compose.yaml]
+cobre: [compose, volumes, redes]
+fica_para_depois: [swarm]

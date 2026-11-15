@@ -1,4 +1,4 @@
-name: Kit da skill
+name: Kit das skills
 
 on:
   push:
@@ -25,8 +25,8 @@ jobs:
       - name: Conferir README x skill
         run: python3 ferramentas/montar_kit.py --checar
 
-      - name: Empacotar a skill
-        run: python3 ferramentas/montar_kit.py --zip revisar-curso-biblioteca.zip
+      - name: Empacotar as skills
+        run: python3 ferramentas/montar_kit.py --zip zips
 
       - name: Publicar na release
         env:
@@ -34,6 +34,6 @@ jobs:
         run: |
           tag=$(python3 ferramentas/config.py release_skill)
           gh release view "$tag" >/dev/null 2>&1 || \
-            gh release create "$tag" --title "Skill de reformulação de cursos" \
-              --notes "Zip da skill revisar-curso-biblioteca. Baixe e envie na tela de Skills do Claude. Passo a passo: COMO-USAR.md."
-          gh release upload "$tag" revisar-curso-biblioteca.zip --clobber
+            gh release create "$tag" --title "Skills da Biblioteca de Estudos" \
+              --notes "Zips das skills revisar-curso-biblioteca e criar-livro-tecnologia. Baixe e envie na tela de Skills do Claude. Passo a passo: COMO-USAR.md."
+          gh release upload "$tag" zips/*.zip --clobber

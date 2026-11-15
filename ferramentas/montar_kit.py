@@ -1,59 +1,74 @@
 #!/usr/bin/env python3
-"""Mantém o kit da skill: README sempre igual aos arquivos e zip para instalar.
+"""Mantém o kit das skills: README sempre igual aos arquivos e zip para instalar.
 
 Uso:
   python3 ferramentas/montar_kit.py            # reescreve a seção da skill no README.md
   python3 ferramentas/montar_kit.py --checar   # sai com erro se o README estiver desatualizado
-  python3 ferramentas/montar_kit.py --zip saida.zip   # empacota a skill para upload no Claude
+  python3 ferramentas/montar_kit.py --zip <pasta>     # um zip por skill (com _comum/) para upload no Claude
 
 A seção do README fica entre <!-- kit:inicio --> e <!-- kit:fim -->: não edite
-à mão, edite os arquivos em skill/revisar-curso-biblioteca/ e rode este script.
+à mão, edite os arquivos em skill/ e rode este script.
 """
 import os, sys, zipfile
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKILL = os.path.join(RAIZ, 'skill', 'revisar-curso-biblioteca')
+SKILLS = os.path.join(RAIZ, 'skill')
+COMUM = os.path.join(SKILLS, '_comum')
 README = os.path.join(RAIZ, 'README.md')
 INI, FIM = '<!-- kit:inicio -->', '<!-- kit:fim -->'
 
-# (arquivo relativo à pasta da skill, rótulo do bloco recolhido)
-ARQUIVOS = [
-    ('SKILL.md', 'Skill completa (SKILL.md)'),
-    ('referencias/EXEMPLOS.md', 'Apoio: aula e cheat sheet modelo (antes e depois)'),
-    ('referencias/COORDENADOR.md', 'Apoio: modo coordenador (um agente por página)'),
-    ('referencias/DIDATICA_VISUAL.md', 'Apoio: imagens, didática visual e design system'),
-    ('referencias/NOTION.md', 'Apoio: notas técnicas do Notion'),
-    ('referencias/PDFS.md', 'Apoio: PDFs do curso com o Docling (opcional)'),
-    ('referencias/PUBLICACAO.md', 'Apoio: exportação, conversão e publicação'),
-    ('referencias/CAPA.md', 'Apoio: capa do livro'),
+# skill -> (título, [(arquivo relativo à pasta da skill, rótulo)])
+KIT = {
+    'revisar-curso-biblioteca': ('Reformular um curso anotado no Notion', [
+        ('SKILL.md', 'Skill completa: revisar-curso-biblioteca'),
+    ]),
+    'criar-livro-tecnologia': ('Criar um livro de tecnologia do zero', [
+        ('SKILL.md', 'Skill completa: criar-livro-tecnologia'),
+        ('referencias/EMENTA.md', 'Apoio: ementa (propor, ajustar, aprovar)'),
+        ('referencias/PESQUISA.md', 'Apoio: pesquisa, fontes e verificação'),
+    ]),
+}
+# arquivos comuns às duas skills (em skill/_comum/)
+COMUNS = [
+    ('PADRAO_AULA.md', 'Padrão de aula, imagens e armadilhas'),
+    ('EXEMPLOS.md', 'Aula e cheat sheet modelo (antes e depois)'),
+    ('COORDENADOR.md', 'Modo coordenador (um agente por página)'),
+    ('DIDATICA_VISUAL.md', 'Imagens, didática visual e design system'),
+    ('NOTION.md', 'Notas técnicas do Notion'),
+    ('PDFS.md', 'PDFs do curso com o Docling (opcional)'),
+    ('PUBLICACAO.md', 'Exportação, conversão e publicação'),
+    ('CAPA.md', 'Capa do livro'),
 ]
 
 
-def ler(rel):
-    return open(os.path.join(SKILL, rel), encoding='utf-8').read().rstrip('\n')
-
-
-def bloco(rel, rotulo):
-    texto = ler(rel)
+def bloco(caminho, rotulo, mostrar):
+    texto = open(caminho, encoding='utf-8').read().rstrip('\n')
     cerca = '~~~~'
     while cerca in texto:
         cerca += '~'
-    return (f'<details>\n<summary><b>{rotulo}</b> · <code>{rel}</code></summary>\n\n'
+    return (f'<details>\n<summary><b>{rotulo}</b> · <code>{mostrar}</code></summary>\n\n'
             f'{cerca}markdown\n{texto}\n{cerca}\n\n</details>')
 
 
 def secao():
-    corpo = '\n\n'.join(bloco(r, t) for r, t in ARQUIVOS)
+    partes = []
+    for nome, (titulo, arqs) in KIT.items():
+        blocos = '\n\n'.join(bloco(os.path.join(SKILLS, nome, r), t, f'{nome}/{r}') for r, t in arqs)
+        partes.append(f'### {titulo}\n\nZip para instalar: [`{nome}.zip`](../../releases/download/skill/{nome}.zip)\n\n{blocos}')
+    comuns = '\n\n'.join(bloco(os.path.join(COMUM, r), t, f'_comum/{r}') for r, t in COMUNS)
+    partes.append(f'### Arquivos comuns às duas skills\n\nPadrão de aula, design, Notion e publicação: as duas skills leem daqui, e os dois zips já os incluem.\n\n{comuns}')
+    corpo = '\n\n'.join(partes)
     return f'''{INI}
-## 🤖 Kit de reformulação (skill + arquivos de apoio)
+## 🤖 Kit de reformulação e criação (skills + arquivos de apoio)
 
-Todos os cursos daqui foram reformulados com a skill abaixo. Qualquer pessoa pode refazer o processo do zero num chat novo do Claude: veja o passo a passo em **[COMO-USAR.md](COMO-USAR.md)**.
+Todos os livros daqui foram feitos com as skills abaixo. Qualquer pessoa pode refazer o processo do zero num chat novo do Claude: veja o passo a passo em **[COMO-USAR.md](COMO-USAR.md)**.
 
-- **Instalar (recomendado):** baixe o [`revisar-curso-biblioteca.zip`](../../releases/download/skill/revisar-curso-biblioteca.zip) e envie na tela de Skills do Claude.
-- **Sem instalar:** abra o primeiro bloco, copie e cole na primeira mensagem do chat.
-- Os scripts que a skill usa ficam em [`ferramentas/`](ferramentas/); a configuração da biblioteca, em [`biblioteca.yaml`](biblioteca.yaml); o andamento de cada curso, em [`ESTADO.md`](ESTADO.md).
+- **`revisar-curso-biblioteca`:** transforma as anotações de um curso no Notion num livro revisado.
+- **`criar-livro-tecnologia`:** cria um livro do zero sobre um tema, com ementa aprovada por você, e livros complementares na mesma trilha.
+- **Instalar:** baixe o zip da skill (links abaixo, na release **skill**) e envie na tela de Skills do Claude. Sem instalar: copie o bloco "Skill completa" e cole na primeira mensagem.
+- Scripts em [`ferramentas/`](ferramentas/), configuração em [`biblioteca.yaml`](biblioteca.yaml), andamento em [`ESTADO.md`](ESTADO.md), mapa das trilhas em [`livros/`](livros/).
 
-> Esta seção é gerada por `ferramentas/montar_kit.py` a partir de [`skill/revisar-curso-biblioteca/`](skill/revisar-curso-biblioteca/). Edite os arquivos de lá, não este README.
+> Esta seção é gerada por `ferramentas/montar_kit.py` a partir de [`skill/`](skill/). Edite os arquivos de lá, não este README.
 
 {corpo}
 {FIM}'''
@@ -70,13 +85,17 @@ def readme_novo():
     return (r[:i] + '\n' + secao() + '\n' + r[i:]) if i >= 0 else r.rstrip('\n') + '\n\n' + secao() + '\n'
 
 
-def zipar(saida):
-    with zipfile.ZipFile(saida, 'w', zipfile.ZIP_DEFLATED) as z:
-        for base, _, nomes in os.walk(SKILL):
-            for n in sorted(nomes):
-                caminho = os.path.join(base, n)
-                z.write(caminho, os.path.join('revisar-curso-biblioteca', os.path.relpath(caminho, SKILL)))
-    print(f'zip: {saida}')
+def zipar(pasta_saida):
+    os.makedirs(pasta_saida, exist_ok=True)
+    for nome in KIT:
+        saida = os.path.join(pasta_saida, f'{nome}.zip')
+        with zipfile.ZipFile(saida, 'w', zipfile.ZIP_DEFLATED) as z:
+            for origem, destino in [(os.path.join(SKILLS, nome), nome), (COMUM, f'{nome}/_comum')]:
+                for base, _, nomes in os.walk(origem):
+                    for n in sorted(nomes):
+                        c = os.path.join(base, n)
+                        z.write(c, os.path.join(destino, os.path.relpath(c, origem)))
+        print(f'zip: {saida}')
 
 
 if __name__ == '__main__':

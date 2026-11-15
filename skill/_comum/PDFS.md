@@ -1,6 +1,6 @@
 # PDFs do curso com o Docling (opcional)
 
-> Arquivo de apoio da skill `revisar-curso-biblioteca`. Leia na etapa Levantar, só se o curso tiver PDFs de aula, de lista de exercícios ou de ementa.
+> Arquivo comum às skills da biblioteca. Leia na etapa Levantar, só se o curso tiver PDFs de aula, de lista de exercícios ou de ementa.
 
 **Para que serve:** os PDFs do curso costumam trazer o que as anotações não trazem: o **enunciado exato** de cada exercício e a **ementa**. Convertidos para Markdown, eles permitem conferir se cada resolução responde ao que foi pedido e se o curso cobre o que promete (etapa Escopo). Os PDFs e os `.md` gerados servem **só de fonte**: nunca são publicados nem colados nas aulas.
 

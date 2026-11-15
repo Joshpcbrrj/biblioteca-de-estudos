@@ -50,18 +50,19 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 - Clone o repositório (`add_repo`, depois `git clone --depth 1`). Peça acesso `push`, porque o trabalho termina em commits (SVGs, progresso, publicação). Os scripts estão em `ferramentas/`.
 - Ferramentas do Notion: `notion-fetch` para ler; `notion-update-page` para editar, com `command` igual a `replace_content` (página inteira), `update_content` (trecho exato) ou `insert_content`; `notion-create-attachment` para subir imagens. Uma página é identificada pelo id de 32 caracteres no fim do link.
 - Leia logo no início o `biblioteca.yaml` (autor, repositório, branch, nome e e-mail dos commits) e o `ESTADO.md` da raiz (o que já foi feito em cada curso e onde parou).
-- Arquivos de apoio: ficam em `referencias/` ao lado deste SKILL.md (no repositório, em `skill/revisar-curso-biblioteca/referencias/`). Leia cada um só na etapa indicada:
+- Arquivos de apoio: ficam em `_comum/`, compartilhados com a skill `criar-livro-tecnologia` (no repositório, em `skill/_comum/`; no zip, dentro da pasta da skill). Leia cada um só na etapa indicada:
 
 | Arquivo | Quando ler |
 | --- | --- |
-| `referencias/EXEMPLOS.md` | antes da 1ª página: a aula e o cheat sheet modelo (imite-os) |
-| `referencias/COORDENADOR.md` | antes da etapa "Por página": um agente por página |
-| `referencias/NOTION.md` | antes da 1ª edição no Notion e sempre que uma chamada falhar |
-| `referencias/PDFS.md` | na etapa Levantar, só se o curso tiver PDFs (Docling, opcional) |
-| `referencias/DIDATICA_VISUAL.md` | antes de criar ou trocar imagens |
+| `_comum/PADRAO_AULA.md` | antes da 1ª página: padrão de aula, imagens e armadilhas |
+| `_comum/EXEMPLOS.md` | antes da 1ª página: a aula e o cheat sheet modelo (imite-os) |
+| `_comum/COORDENADOR.md` | antes da etapa "Por página": um agente por página |
+| `_comum/NOTION.md` | antes da 1ª edição no Notion e sempre que uma chamada falhar |
+| `_comum/PDFS.md` | na etapa Levantar, só se o curso tiver PDFs (Docling, opcional) |
+| `_comum/DIDATICA_VISUAL.md` | antes de criar ou trocar imagens |
 | `ferramentas/svg/README.md` | ao usar o kit de diagramas |
-| `referencias/PUBLICACAO.md` | só depois da exportação |
-| `referencias/CAPA.md` | só ao criar ou refazer a capa |
+| `_comum/PUBLICACAO.md` | só depois da exportação |
+| `_comum/CAPA.md` | só ao criar ou refazer a capa |
 
 - Scripts. Rode, resuma o resultado e liste só o que exige ação; não refaça essas contagens de cabeça. Use `python3 -I` quando o script ler arquivos baixados.
 
@@ -77,9 +78,9 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 ## Fluxo (crie uma lista de tarefas com estes passos)
 
 1. **Preparar:** clonar; ler `biblioteca.yaml` e `ESTADO.md`; `progresso.py <slug> status`. O `<slug>` é o nome da pasta do curso (ex.: `boson-logica-portugol`); para curso novo, defina-o no passo 2. Se houver páginas pendentes, retome da próxima.
-2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug (minúsculas, hífens, sem acento, com a origem: `boson-logica-portugol`). Registrar os ids na ordem com `progresso.py <slug> init` e pôr o curso no `ESTADO.md` com o id do índice. Se o curso já estiver no repositório, rodar o `auditar_curso.py`. **Se houver PDFs** de aula, lista ou ementa, seguir o `referencias/PDFS.md` (opcional): converter com o Docling e usar como fonte do enunciado exato e da ementa.
+2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug (minúsculas, hífens, sem acento, com a origem: `boson-logica-portugol`). Registrar os ids na ordem com `progresso.py <slug> init` e pôr o curso no `ESTADO.md` com o id do índice. Se o curso já estiver no repositório, rodar o `auditar_curso.py`. **Se houver PDFs** de aula, lista ou ementa, seguir o `_comum/PDFS.md` (opcional): converter com o Docling e usar como fonte do enunciado exato e da ementa.
 3. **Escopo:** montar, só para você, a tabela `Tópico | Onde está | completo / raso / falta`, usando a ementa (e os PDFs convertidos, se houver), os resumos, os "veremos depois" e o currículo padrão do assunto. Completar o que estiver raso: abrir a seção com um callout `💡 Complemento de Estudo (Sugestão de Expansão):` e dizer em uma frase o que foi acrescentado e por quê. Criar as páginas que faltam. Temas fora da proposta vão só como sugestão no resumo final.
-4. **Por página** (modo coordenador, em `referencias/COORDENADOR.md`): o chat principal só controla a fila. Para cada página, ele dispara um agente novo com o briefing pronto. O agente:
+4. **Por página** (modo coordenador, em `_comum/COORDENADOR.md`): o chat principal só controla a fila. Para cada página, ele dispara um agente novo com o briefing pronto. O agente:
    1. abre a página;
    2. corrige fatos, roda o código ou faz teste de mesa e refaz as contas;
    3. reescreve no padrão, imitando o `EXEMPLOS.md`;
@@ -90,7 +91,7 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
    O coordenador marca com `progresso.py <slug> feito <id>`, registra a analogia usada e, a cada 3 a 5 páginas, faz commit de `img/` e `progresso/`. Sem a ferramenta de agentes, faça o mesmo roteiro no próprio chat, uma página por vez.
 5. **Fechar cada seção** com o cheat sheet 3×4 e deixar o índice no padrão (abaixo).
 6. **PARAR.** Resumir o que mudou, atualizar o `ESTADO.md` (commit e push) e pedir a exportação com estas instruções: *"Na página índice do curso: ••• → Exportar → HTML, Incluir subpáginas ligado, Incluir conteúdo: tudo. Salve o .zip na pasta Downloads e me avise."* Confira o zip ao receber: um zip de poucos KB, ou com 1 arquivo HTML só, é de uma página, não do curso.
-7. **Publicar** (seguindo o `referencias/PUBLICACAO.md`):
+7. **Publicar** (seguindo o `_comum/PUBLICACAO.md`):
    1. converter com `notion2md.py` numa pasta temporária;
    2. substituir as aulas, mantendo o `00-sobre-o-curso.md`, o README do curso, o `metadata.yaml` e a capa;
    3. ajustar a ordem e a legenda no README do curso e no `00-sobre-o-curso.md`;
@@ -98,51 +99,11 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
    5. acompanhar a Action pela API REST e confirmar o `<slug>.epub` na release `epubs`.
 8. **Sincronizar e entregar:** o que mudou no Markdown volta ao Notion. Pôr no índice o callout `📚` com os links do GitHub e do EPUB. Atualizar a linha do curso no catálogo do README e no `ESTADO.md`. Mandar o resumo final.
 
-## Padrão de cada aula (no Notion)
+## Padrão de aula, imagens e armadilhas
 
-```
-[breadcrumb e anexos originais preservados]
-<callout 🗺️ gray_bg> Nesta aula: o que a página cobre, em 1–2 frases
-## De onde paramos        → liga com a aula anterior (2–3 frases)
-## <Tema>                 → para cada tema, nesta ordem:
-   por quê (problema que resolve) → definição em 1 frase, em negrito
-   → exemplo com valores reais → código ou fórmula testado, com saída
-   → diagrama → <callout 💡 blue_bg> Analogia: logo abaixo da imagem
-   → armadilha comum (⚠️ yellow_bg quando corrigir o original)
-## 🧠 Revisão rápida      → 3 toggles de pergunta e resposta curta
-<callout ➡️ gray_bg> Próximo passo: o que vem na aula seguinte e por quê
-## 📌 Resumo              → tabela Item | Em uma frase
-```
-
-- **Listas de exercícios:** `Nesta lista:` no lugar de `Nesta aula:`; enunciado com o que entra e o que sai; resolução em toggle terminando com um teste (entrada → saída); a última lista de cada seção termina com `## 🧭 Cheat sheet da seção` (imagem 3×4).
-- **Analogia:** uma por diagrama (ou uma para imagens seguidas), mapeando cada peça do conceito numa peça do mundo real, **sem repetir analogias entre aulas**. Uma analogia solta no texto vai para o callout.
-- **Texto:** tom de mentor paciente; frases curtas, voz ativa, uma ideia por parágrafo; termo técnico definido na primeira vez, com o nome em inglês entre parênteses quando for o usado no mercado; tabela `A × B` para conceitos que se confundem; nada de enchimento.
-- **Código:** bloco com a linguagem; comentários bloco a bloco, **na linha de cima**, explicando o **porquê** (`// avança para o próximo aluno`, e não `// soma 1 em i`); exemplos completos o bastante para rodar; saída esperada.
-- **Correções:** callout `⚠️` yellow_bg logo abaixo, dizendo o que o original fazia e por que está errado; `🛠️` green_bg quando o erro era mostrado de propósito.
-- **Dados pessoais** viram placeholders (`Ana Souza`, `usuario@exemplo.com`). Não reproduza letras de música, hinos nem trechos longos de obras protegidas.
-- **Preserve** pdf, file, bookmark, vídeo, breadcrumb e child pages exatamente como vieram.
-
-**Índice do curso:** título no formato fixo; `🗺️ Sobre o curso`; `🔖 Legenda das páginas`; uma linha `<span color="gray">` sob cada seção; aulas em ordem didática (mova uma página fora de lugar); `## 📌 Resumo do curso` (`Seção | Ideia central | Comandos-chave`); depois de publicado, o callout `📚`.
-
-**Teste de cada aula:** ela responde por que isso existe, como funciona com um exemplo real e qual é o erro mais comum? Se faltar algo, complete.
+Estão em `_comum/PADRAO_AULA.md`, que vale para as duas skills da biblioteca. **Leia antes da primeira página** e imite o `_comum/EXEMPLOS.md`. Em resumo: "Nesta aula", "De onde paramos", temas na ordem por quê → definição → exemplo → código testado → diagrama → analogia → armadilha, "🧠 Revisão rápida", "➡️ Próximo passo", "📌 Resumo", e um cheat sheet 3×4 por seção.
 
 **Critério de pronto (automático):** depois da conversão, `auditar_curso.py <area>/<slug> --criterios` precisa sair sem erros. Os avisos (imagem sem analogia logo abaixo, tabela larga) são aceitáveis só se estiverem registrados no `ESTADO.md` com o motivo.
-
-## Imagens (detalhes em referencias/DIDATICA_VISUAL.md)
-
-- Diagrama, fluxograma, tabela ou print de código → SVG próprio, feito com o kit `ferramentas/svg/` no tema v3: fundo creme `#FAF9F6`, cards pastel com sombra suave, setas curvas pontilhadas, `system-ui`, código em mono sobre `#F0F0F0`. Captura de tela real → mantenha. Imagem decorativa → remova.
-- Antes de desenhar, escreva em uma frase o que o leitor deve entender: essa frase vira o título. Um foco por imagem, no máximo ~7 elementos, valores reais, e funciona em tons de cinza.
-- Aula: 480 px de largura, retrato. Cheat sheet: 1200×1600, 3×4 cards, só ícones ASCII.
-- Renderize e confira antes de subir. Para a mesma imagem, o mesmo arquivo em `img/` e no Notion.
-
-## Armadilhas conhecidas (detalhes em referencias/NOTION.md)
-
-- O `update_content` não encontra tags `<image>`. Para trocar uma imagem, refaça a página inteira com `replace_content`.
-- Cada `file-upload://` serve uma vez e expira em ~1 h. Suba no máximo ~4 por vez e use logo.
-- Evite escapes como `\u0000` no texto enviado.
-- No índice, a ordem das aulas é a ordem das tags `<page>`.
-- Commits: `git -c user.name="<commit_nome>" -c user.email="<commit_email>" commit`, com os valores do `biblioteca.yaml` e a atribuição pedida pela sessão. Nunca use o e-mail pessoal de ninguém.
-- A Action é acompanhada pela API REST (`gh api repos/...`); o GraphQL não funciona na sessão.
 
 ## Nunca
 

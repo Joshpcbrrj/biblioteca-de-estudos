@@ -23,5 +23,7 @@ jobs:
           python-version: '3.12'
       # curso de exemplo precisa passar, curso quebrado precisa ser recusado,
       # README igual à skill, caminhos da skill existentes, scripts compilando
+      - name: Instalar dependências
+        run: pip install pyyaml
       - name: Rodar os testes
         run: python3 testes/rodar.py

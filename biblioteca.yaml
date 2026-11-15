@@ -7,3 +7,4 @@ commit_nome: "Josue"
 commit_email: "joshpcbrrj@users.noreply.github.com"   # e-mail noreply do GitHub, nunca o pessoal
 release_epubs: "epubs"             # tag da release onde ficam os EPUBs
 release_skill: "skill"             # tag da release onde fica o zip da skill
+notion_livros: ""              # id da página do Notion onde os livros novos são criados (a skill pergunta e preenche)

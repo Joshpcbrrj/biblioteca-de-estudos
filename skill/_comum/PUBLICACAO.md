@@ -1,6 +1,6 @@
 # Exportação, conversão e publicação (etapas Publicar e Sincronizar)
 
-> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia só depois que o usuário avisar que exportou o curso.
+> Arquivo comum às skills da biblioteca. Leia só depois que o usuário avisar que exportou o curso.
 
 ## Repositório e exportação
 
@@ -67,6 +67,7 @@ on:
     paths:
       - 'programacao/**'
       - 'matematica/**'
+      - 'livros/**'
       - 'epub/**'
       - '.github/workflows/gerar-epubs.yml'
   workflow_dispatch:
@@ -90,13 +91,13 @@ jobs:
 
       - name: Descobrir cursos a gerar
         run: |
-          todos() { ls -d programacao/*/ matematica/*/ 2>/dev/null | sed 's#/$##'; }
+          todos() { ls -d programacao/*/ matematica/*/ livros/*/ 2>/dev/null | sed 's#/$##'; }
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] || ! git rev-parse HEAD~1 >/dev/null 2>&1; then
             todos > cursos.txt
           elif git diff --name-only HEAD~1 HEAD | grep -qE '^(epub/|\.github/)'; then
             todos > cursos.txt
           else
-            git diff --name-only HEAD~1 HEAD | grep -E '^(programacao|matematica)/[^/]+/' | cut -d/ -f1-2 | sort -u > cursos.txt
+            git diff --name-only HEAD~1 HEAD | grep -E '^(programacao|matematica|livros)/[^/]+/' | cut -d/ -f1-2 | sort -u > cursos.txt
           fi
           cat cursos.txt
 
@@ -140,6 +141,14 @@ jobs:
 ```
 
 README raiz: título "📚 Biblioteca de Estudos", uma frase de propósito, seções **Programação** e **Matemática** com tabela `Curso | Ler online | EPUB` (o curso com o nome no formato padrão), onde EPUB aponta para `https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/<slug>.epub`, uma nota sobre como os EPUBs são gerados e outra explicando que as respostas dos exercícios ficam recolhidas.
+
+## Livros criados do zero (skill criar-livro-tecnologia)
+
+Mesma estrutura dos cursos, com três diferenças:
+
+- a área é `livros/` (`livros/<slug>/`), e a pasta também guarda o `ementa.yaml` aprovado;
+- no `metadata.yaml`: `rights: "Livro criado com IA a partir de fontes públicas, citadas em cada capítulo. Conferido em <data>."`;
+- o catálogo do README tem a seção **📗 Livros criados do zero**, agrupada por trilha na ordem de leitura. O mapa das trilhas (`livros/README.md`) é gerado por `python3 ferramentas/mapa_livros.py --md`.
 
 ## Estrutura de cada curso
 

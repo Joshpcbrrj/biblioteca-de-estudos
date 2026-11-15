@@ -1,6 +1,6 @@
 # Imagens e diagramas (etapa Por página, item 4)
 
-> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia antes de criar, trocar ou auditar qualquer imagem.
+> Arquivo comum às skills da biblioteca. Leia antes de criar, trocar ou auditar qualquer imagem.
 
 Para cada imagem do curso:
 

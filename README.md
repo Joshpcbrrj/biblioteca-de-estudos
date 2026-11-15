@@ -23,6 +23,14 @@ Resumos dos cursos de programação e matemática que fiz, revisados e organizad
 | --- | --- | --- |
 | *Em breve* | | |
 
+## 📗 Livros criados do zero
+
+Livros escritos com a skill `criar-livro-tecnologia`, a partir de fontes públicas citadas em cada capítulo, organizados em trilhas (do básico aos complementares). Veja o [mapa das trilhas](livros/).
+
+| Livro | Trilha | Ler | EPUB |
+| --- | --- | --- | --- |
+| _Nenhum ainda. O primeiro pode ser o seu: veja o [COMO-USAR.md](COMO-USAR.md)._ | | | |
+
 ## Como os livros são gerados
 
 Cada curso fica numa pasta própria (`programacao/<curso>/` ou `matematica/<curso>/`), com as aulas em Markdown na pasta `aulas/` e os diagramas em SVG na pasta `img/`. A cada atualização, uma GitHub Action usa o [Pandoc](https://pandoc.org) para gerar o EPUB do curso e publicá-lo na [release `epubs`](../../releases/tag/epubs).
@@ -30,18 +38,23 @@ Cada curso fica numa pasta própria (`programacao/<curso>/` ou `matematica/<curs
 Nos exercícios, as respostas ficam recolhidas: tente resolver primeiro e depois clique em **Ver resposta** para conferir.
 
 <!-- kit:inicio -->
-## 🤖 Kit de reformulação (skill + arquivos de apoio)
+## 🤖 Kit de reformulação e criação (skills + arquivos de apoio)
 
-Todos os cursos daqui foram reformulados com a skill abaixo. Qualquer pessoa pode refazer o processo do zero num chat novo do Claude: veja o passo a passo em **[COMO-USAR.md](COMO-USAR.md)**.
+Todos os livros daqui foram feitos com as skills abaixo. Qualquer pessoa pode refazer o processo do zero num chat novo do Claude: veja o passo a passo em **[COMO-USAR.md](COMO-USAR.md)**.
 
-- **Instalar (recomendado):** baixe o [`revisar-curso-biblioteca.zip`](../../releases/download/skill/revisar-curso-biblioteca.zip) e envie na tela de Skills do Claude.
-- **Sem instalar:** abra o primeiro bloco, copie e cole na primeira mensagem do chat.
-- Os scripts que a skill usa ficam em [`ferramentas/`](ferramentas/); a configuração da biblioteca, em [`biblioteca.yaml`](biblioteca.yaml); o andamento de cada curso, em [`ESTADO.md`](ESTADO.md).
+- **`revisar-curso-biblioteca`:** transforma as anotações de um curso no Notion num livro revisado.
+- **`criar-livro-tecnologia`:** cria um livro do zero sobre um tema, com ementa aprovada por você, e livros complementares na mesma trilha.
+- **Instalar:** baixe o zip da skill (links abaixo, na release **skill**) e envie na tela de Skills do Claude. Sem instalar: copie o bloco "Skill completa" e cole na primeira mensagem.
+- Scripts em [`ferramentas/`](ferramentas/), configuração em [`biblioteca.yaml`](biblioteca.yaml), andamento em [`ESTADO.md`](ESTADO.md), mapa das trilhas em [`livros/`](livros/).
 
-> Esta seção é gerada por `ferramentas/montar_kit.py` a partir de [`skill/revisar-curso-biblioteca/`](skill/revisar-curso-biblioteca/). Edite os arquivos de lá, não este README.
+> Esta seção é gerada por `ferramentas/montar_kit.py` a partir de [`skill/`](skill/). Edite os arquivos de lá, não este README.
+
+### Reformular um curso anotado no Notion
+
+Zip para instalar: [`revisar-curso-biblioteca.zip`](../../releases/download/skill/revisar-curso-biblioteca.zip)
 
 <details>
-<summary><b>Skill completa (SKILL.md)</b> · <code>SKILL.md</code></summary>
+<summary><b>Skill completa: revisar-curso-biblioteca</b> · <code>revisar-curso-biblioteca/SKILL.md</code></summary>
 
 ~~~~markdown
 ---
@@ -96,18 +109,19 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 - Clone o repositório (`add_repo`, depois `git clone --depth 1`). Peça acesso `push`, porque o trabalho termina em commits (SVGs, progresso, publicação). Os scripts estão em `ferramentas/`.
 - Ferramentas do Notion: `notion-fetch` para ler; `notion-update-page` para editar, com `command` igual a `replace_content` (página inteira), `update_content` (trecho exato) ou `insert_content`; `notion-create-attachment` para subir imagens. Uma página é identificada pelo id de 32 caracteres no fim do link.
 - Leia logo no início o `biblioteca.yaml` (autor, repositório, branch, nome e e-mail dos commits) e o `ESTADO.md` da raiz (o que já foi feito em cada curso e onde parou).
-- Arquivos de apoio: ficam em `referencias/` ao lado deste SKILL.md (no repositório, em `skill/revisar-curso-biblioteca/referencias/`). Leia cada um só na etapa indicada:
+- Arquivos de apoio: ficam em `_comum/`, compartilhados com a skill `criar-livro-tecnologia` (no repositório, em `skill/_comum/`; no zip, dentro da pasta da skill). Leia cada um só na etapa indicada:
 
 | Arquivo | Quando ler |
 | --- | --- |
-| `referencias/EXEMPLOS.md` | antes da 1ª página: a aula e o cheat sheet modelo (imite-os) |
-| `referencias/COORDENADOR.md` | antes da etapa "Por página": um agente por página |
-| `referencias/NOTION.md` | antes da 1ª edição no Notion e sempre que uma chamada falhar |
-| `referencias/PDFS.md` | na etapa Levantar, só se o curso tiver PDFs (Docling, opcional) |
-| `referencias/DIDATICA_VISUAL.md` | antes de criar ou trocar imagens |
+| `_comum/PADRAO_AULA.md` | antes da 1ª página: padrão de aula, imagens e armadilhas |
+| `_comum/EXEMPLOS.md` | antes da 1ª página: a aula e o cheat sheet modelo (imite-os) |
+| `_comum/COORDENADOR.md` | antes da etapa "Por página": um agente por página |
+| `_comum/NOTION.md` | antes da 1ª edição no Notion e sempre que uma chamada falhar |
+| `_comum/PDFS.md` | na etapa Levantar, só se o curso tiver PDFs (Docling, opcional) |
+| `_comum/DIDATICA_VISUAL.md` | antes de criar ou trocar imagens |
 | `ferramentas/svg/README.md` | ao usar o kit de diagramas |
-| `referencias/PUBLICACAO.md` | só depois da exportação |
-| `referencias/CAPA.md` | só ao criar ou refazer a capa |
+| `_comum/PUBLICACAO.md` | só depois da exportação |
+| `_comum/CAPA.md` | só ao criar ou refazer a capa |
 
 - Scripts. Rode, resuma o resultado e liste só o que exige ação; não refaça essas contagens de cabeça. Use `python3 -I` quando o script ler arquivos baixados.
 
@@ -123,9 +137,9 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 ## Fluxo (crie uma lista de tarefas com estes passos)
 
 1. **Preparar:** clonar; ler `biblioteca.yaml` e `ESTADO.md`; `progresso.py <slug> status`. O `<slug>` é o nome da pasta do curso (ex.: `boson-logica-portugol`); para curso novo, defina-o no passo 2. Se houver páginas pendentes, retome da próxima.
-2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug (minúsculas, hífens, sem acento, com a origem: `boson-logica-portugol`). Registrar os ids na ordem com `progresso.py <slug> init` e pôr o curso no `ESTADO.md` com o id do índice. Se o curso já estiver no repositório, rodar o `auditar_curso.py`. **Se houver PDFs** de aula, lista ou ementa, seguir o `referencias/PDFS.md` (opcional): converter com o Docling e usar como fonte do enunciado exato e da ementa.
+2. **Levantar:** abrir o índice e **todas** as subpáginas. Mapear seção → aulas → conceitos → código → imagens → anexos. Definir a área (`programacao` ou `matematica`) e o slug (minúsculas, hífens, sem acento, com a origem: `boson-logica-portugol`). Registrar os ids na ordem com `progresso.py <slug> init` e pôr o curso no `ESTADO.md` com o id do índice. Se o curso já estiver no repositório, rodar o `auditar_curso.py`. **Se houver PDFs** de aula, lista ou ementa, seguir o `_comum/PDFS.md` (opcional): converter com o Docling e usar como fonte do enunciado exato e da ementa.
 3. **Escopo:** montar, só para você, a tabela `Tópico | Onde está | completo / raso / falta`, usando a ementa (e os PDFs convertidos, se houver), os resumos, os "veremos depois" e o currículo padrão do assunto. Completar o que estiver raso: abrir a seção com um callout `💡 Complemento de Estudo (Sugestão de Expansão):` e dizer em uma frase o que foi acrescentado e por quê. Criar as páginas que faltam. Temas fora da proposta vão só como sugestão no resumo final.
-4. **Por página** (modo coordenador, em `referencias/COORDENADOR.md`): o chat principal só controla a fila. Para cada página, ele dispara um agente novo com o briefing pronto. O agente:
+4. **Por página** (modo coordenador, em `_comum/COORDENADOR.md`): o chat principal só controla a fila. Para cada página, ele dispara um agente novo com o briefing pronto. O agente:
    1. abre a página;
    2. corrige fatos, roda o código ou faz teste de mesa e refaz as contas;
    3. reescreve no padrão, imitando o `EXEMPLOS.md`;
@@ -136,7 +150,7 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
    O coordenador marca com `progresso.py <slug> feito <id>`, registra a analogia usada e, a cada 3 a 5 páginas, faz commit de `img/` e `progresso/`. Sem a ferramenta de agentes, faça o mesmo roteiro no próprio chat, uma página por vez.
 5. **Fechar cada seção** com o cheat sheet 3×4 e deixar o índice no padrão (abaixo).
 6. **PARAR.** Resumir o que mudou, atualizar o `ESTADO.md` (commit e push) e pedir a exportação com estas instruções: *"Na página índice do curso: ••• → Exportar → HTML, Incluir subpáginas ligado, Incluir conteúdo: tudo. Salve o .zip na pasta Downloads e me avise."* Confira o zip ao receber: um zip de poucos KB, ou com 1 arquivo HTML só, é de uma página, não do curso.
-7. **Publicar** (seguindo o `referencias/PUBLICACAO.md`):
+7. **Publicar** (seguindo o `_comum/PUBLICACAO.md`):
    1. converter com `notion2md.py` numa pasta temporária;
    2. substituir as aulas, mantendo o `00-sobre-o-curso.md`, o README do curso, o `metadata.yaml` e a capa;
    3. ajustar a ordem e a legenda no README do curso e no `00-sobre-o-curso.md`;
@@ -144,7 +158,335 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
    5. acompanhar a Action pela API REST e confirmar o `<slug>.epub` na release `epubs`.
 8. **Sincronizar e entregar:** o que mudou no Markdown volta ao Notion. Pôr no índice o callout `📚` com os links do GitHub e do EPUB. Atualizar a linha do curso no catálogo do README e no `ESTADO.md`. Mandar o resumo final.
 
-## Padrão de cada aula (no Notion)
+## Padrão de aula, imagens e armadilhas
+
+Estão em `_comum/PADRAO_AULA.md`, que vale para as duas skills da biblioteca. **Leia antes da primeira página** e imite o `_comum/EXEMPLOS.md`. Em resumo: "Nesta aula", "De onde paramos", temas na ordem por quê → definição → exemplo → código testado → diagrama → analogia → armadilha, "🧠 Revisão rápida", "➡️ Próximo passo", "📌 Resumo", e um cheat sheet 3×4 por seção.
+
+**Critério de pronto (automático):** depois da conversão, `auditar_curso.py <area>/<slug> --criterios` precisa sair sem erros. Os avisos (imagem sem analogia logo abaixo, tabela larga) são aceitáveis só se estiverem registrados no `ESTADO.md` com o motivo.
+
+## Nunca
+
+- Publicar PDFs, arquivos de projeto ou materiais originais do curso.
+- Recriar logotipos, marcas ou personagens de terceiros (nem na capa).
+- Publicar antes da exportação nova.
+- Pular páginas.
+- Inventar fatos: na dúvida sobre algo que muda com o tempo, pesquise.
+
+## Resumo final ao usuário
+
+Em poucas linhas: o que foi publicado (com os links do curso e do EPUB), as páginas e imagens novas, as correções importantes, os avisos de auditoria que ficaram (e por quê) e o próximo passo sugerido.
+~~~~
+
+</details>
+
+### Criar um livro de tecnologia do zero
+
+Zip para instalar: [`criar-livro-tecnologia.zip`](../../releases/download/skill/criar-livro-tecnologia.zip)
+
+<details>
+<summary><b>Skill completa: criar-livro-tecnologia</b> · <code>criar-livro-tecnologia/SKILL.md</code></summary>
+
+~~~~markdown
+---
+name: criar-livro-tecnologia
+description: Cria do zero um livro didático de tecnologia sobre o tema pedido (ex.: Docker), com ementa proposta e aprovada pelo aluno, escrito no Notion e publicado na Biblioteca de Estudos do GitHub com EPUB; também cria livros complementares numa mesma trilha. Use quando pedirem para criar um livro, curso ou material novo sobre um tema de tecnologia. Não use para reformular um curso já anotado no Notion (isso é a skill revisar-curso-biblioteca).
+---
+
+# Criar livro de tecnologia do zero
+
+## Papel e objetivo
+
+Você é autor técnico, designer instrucional e editor. A partir de um **tema** ("Docker", "Git", "SQL") você cria um livro que **ensina sozinho**: progressivo, prático, correto, com fontes e agradável de ler num e-reader. Fluxo:
+
+1. **ementa** proposta e aprovada pelo aluno;
+2. **escrita** no Notion;
+3. **publicação** na biblioteca do GitHub, que gera o EPUB.
+
+Cada livro também é uma peça de uma **trilha**: o básico vem primeiro, e os livros complementares continuam de onde o anterior parou, sem repetir.
+
+O repositório padrão é `Joshpcbrrj/biblioteca-de-estudos`; quem usa uma cópia própria (template) informa o seu. Escreva tudo em **português do Brasil**.
+
+## Primeira mensagem (chat novo)
+
+Se o usuário ainda não disse o tema, responda só isto, curto, e espere:
+
+1. pergunte **o tema do livro** e, se quiser, para quem é e o tamanho;
+2. diga que precisa do **Notion conectado** e do **repositório da biblioteca** (padrão `Joshpcbrrj/biblioteca-de-estudos`; pergunte se é outro). Avise que, para publicar, vai precisar do **app do Claude no computador** com a pasta **Downloads** liberada, ou do `.zip` da exportação anexado no chat.
+
+Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
+
+- **já existe um livro com esse tema** → mostre o que ele cobre e pergunte: ampliar esse, criar o próximo da trilha (sugira com base em "fica para depois") ou outro enfoque;
+- **livro 🟡 em andamento** → retome do `ESTADO.md` e do `progresso/<slug>.json`;
+- **tema novo** → passo 1 do Fluxo.
+
+## Ordem de prioridade
+
+1. Correção: nada inventado; fatos que mudam com o tempo vêm de fonte oficial conferida nesta sessão; todo comando executado.
+2. Decisões do aluno: a ementa aprovada manda; nada é escrito antes da aprovação.
+3. Didática: o padrão de aula da biblioteca.
+4. Economia: scripts, um capítulo por agente, arquivos de apoio só quando a etapa pede.
+
+## Preferências fixas da biblioteca
+
+1. **Nome do livro:** `Livro: <Título> - <autor>` (o `autor` do `biblioteca.yaml`), no índice do Notion, no `metadata.yaml`, no README do livro e no catálogo.
+2. **Aviso de origem** no índice e no `00-sobre-o-livro.md`: "Livro criado com IA a partir de fontes públicas, citadas em cada capítulo. Conferido em <data>, com <ferramenta x.y>."
+3. **Respostas recolhidas:** toggle `Resolução` no Notion; `<details><summary>Ver resposta</summary>` no Markdown, com linha em branco depois do `<summary>` e antes do `</details>`.
+4. **E-reader:** código com 2 espaços e linhas de até ~60 caracteres; tabelas de no máximo 4 colunas.
+5. **Notion é a fonte.** Escreve-se no Notion; o GitHub recebe a exportação.
+6. **Visual para todo conceito desenhável**, no design system da biblioteca, e capa de editora original.
+7. **Um livro por vez.** Escreve tudo, **para** e pede a exportação.
+8. **Pasta do livro no GitHub** (`livros/<slug>/`) só com `README.md`, `metadata.yaml`, `ementa.yaml`, `capa.png`, `capa.svg`, `aulas/` e `img/`.
+
+## Ambiente
+
+- Clone o repositório (`add_repo` com `push`, depois `git clone --depth 1`). Leia o `biblioteca.yaml` e o `ESTADO.md`. Se `notion_livros` estiver vazio, pergunte em qual página do Notion os livros devem ficar (link), grave o id no `biblioteca.yaml` e faça commit.
+- Ferramentas do Notion:
+  - `notion-fetch` para ler;
+  - `notion-create-pages` para criar o índice e os capítulos;
+  - `notion-update-page` (`replace_content`, `update_content`, `insert_content`) para editar;
+  - `notion-create-attachment` para subir imagens.
+- Pesquisa: WebSearch e WebFetch (o shell normalmente não acessa sites).
+- Arquivos de apoio. Os comuns às duas skills ficam em `_comum/` (no repositório, `skill/_comum/`; no zip, dentro da pasta da skill); os desta skill, em `referencias/`:
+
+| Arquivo | Quando ler |
+| --- | --- |
+| `referencias/EMENTA.md` | etapas Entender e Ementa: perguntas, formato, ajustes, aprovação, `ementa.yaml` |
+| `referencias/PESQUISA.md` | antes de propor a ementa: fontes, citação, direitos autorais, laboratórios executados |
+| `_comum/PADRAO_AULA.md` | antes do 1º capítulo: padrão de aula, imagens e armadilhas |
+| `_comum/EXEMPLOS.md` | antes do 1º capítulo: aula e cheat sheet modelo (imite) |
+| `_comum/COORDENADOR.md` | antes da etapa Escrever: um agente por capítulo |
+| `_comum/NOTION.md` | antes da 1ª edição no Notion e quando uma chamada falhar |
+| `_comum/DIDATICA_VISUAL.md` | antes de criar imagens |
+| `_comum/PUBLICACAO.md` | só depois da exportação (veja a parte "Livros criados do zero") |
+| `_comum/CAPA.md` | ao criar a capa |
+
+- Scripts. Rode e resuma; não refaça de cabeça.
+
+| Script | Faz |
+| --- | --- |
+| `ferramentas/mapa_livros.py [--checar <ementa.yaml>] [--md]` | trilhas, tópicos já cobertos, sobreposição de uma ementa nova, mapa `livros/README.md` |
+| `ferramentas/progresso.py <slug> init/feito/pendentes/status` | capítulos concluídos em `progresso/<slug>.json` (commit junto) |
+| `ferramentas/auditar_curso.py livros/<slug> --criterios` | critério de pronto: erros bloqueiam, avisos vão para o `ESTADO.md` |
+| `ferramentas/svg/v3.py` e `cheatsheets.py` | diagramas no tema e cheat sheets 3×4 |
+| `ferramentas/notion2md.py <exportação> <pasta>` | exportação HTML → `aulas/*.md` e `img/` |
+| `ferramentas/gerar_epub_local.py livros/<slug>` | EPUB local e checagem de tela estreita |
+
+## Fluxo (crie uma lista de tarefas com estes passos)
+
+1. **Entender** (`referencias/EMENTA.md` §1): até 3 perguntas, só o que o pedido não disse. Antes, rode `mapa_livros.py` para saber o que a trilha já tem.
+2. **Pesquisar** (`referencias/PESQUISA.md`):
+   - documentação oficial;
+   - versão atual da ferramenta;
+   - currículo usual do tema;
+   - armadilhas comuns de quem começa.
+3. **Propor a ementa** no formato do `EMENTA.md` §2. Antes de mostrar, grave um rascunho e rode `mapa_livros.py --checar` para não repetir livros existentes; ligue o novo aos anteriores por pré-requisito.
+4. **Ajustar até o aluno aprovar** (`EMENTA.md` §3). A cada pedido, mostre a ementa inteira atualizada e o que mudou. **Não escreva capítulos antes de "aprovado".**
+5. **Registrar** (`EMENTA.md` §4): `ementa.yaml` aprovado (commit), índice e capítulos vazios no Notion, `progresso.py init`, linha do livro no `ESTADO.md`.
+6. **Escrever** (modo coordenador). Um agente por capítulo, com o briefing do `COORDENADOR.md` mais: objetivo e tópicos do capítulo (da ementa), versão de referência, regras do `PESQUISA.md` e livros da trilha para referência cruzada. Cada capítulo segue o padrão de aula e acrescenta:
+   - **🧪 Laboratório:** passo a passo executado, com a saída real;
+   - **🏋️ Pratique:** 2 ou 3 exercícios com `Resolução` recolhida;
+   - **📚 Fontes:** antes do Resumo, com a data em que foram conferidas;
+   - **referência cruzada:** quando um tópico já foi ensinado em outro livro da trilha, um link curto ("volumes: veja *Docker do zero*, cap. 5") em vez de repetir a explicação.
+7. **Fechar:**
+   - cheat sheet 3×4 por parte do livro (ou um geral, em livro curto);
+   - índice no padrão (aviso de origem, legenda, resumo do livro);
+   - capítulo final "Próximos livros da trilha", com os temas de "fica para depois".
+8. **PARAR** e pedir a exportação da página índice do livro (••• → Exportar → HTML, Incluir subpáginas, Incluir conteúdo: tudo → pasta Downloads). Confira se o zip é do livro inteiro.
+9. **Publicar** (`_comum/PUBLICACAO.md`):
+   1. `notion2md.py` para `livros/<slug>/`;
+   2. `00-sobre-o-livro.md`, README do livro e `metadata.yaml` (com `rights` de livro gerado);
+   3. capa;
+   4. `auditar_curso.py --criterios` e `gerar_epub_local.py`;
+   5. `mapa_livros.py --md`;
+   6. catálogo do README (seção **📗 Livros criados do zero**, por trilha);
+   7. commit e push, e conferir a Action e o EPUB na release.
+10. **Entregar:**
+    - callout `📚` com os links no índice do Notion;
+    - `ESTADO.md` atualizado;
+    - resumo final com os links do livro e do EPUB, os capítulos, os laboratórios não executados (se houver) e **a sugestão do próximo livro da trilha**.
+
+## Nunca
+
+- Escrever capítulos antes de a ementa ser aprovada.
+- Inventar comando, opção, saída ou fonte. Se não conferiu, não afirma; se não executou, marca.
+- Copiar trechos da documentação ou de outros livros além de uma citação curta com link.
+- Usar logotipos, marcas ou mascotes de terceiros.
+- Repetir num livro novo o que outro da trilha já ensina: referencie.
+- Publicar antes da exportação nova, ou pular capítulos.
+~~~~
+
+</details>
+
+<details>
+<summary><b>Apoio: ementa (propor, ajustar, aprovar)</b> · <code>criar-livro-tecnologia/referencias/EMENTA.md</code></summary>
+
+~~~~markdown
+# Ementa: propor, ajustar com o aluno e aprovar
+
+> Arquivo de apoio da skill `criar-livro-tecnologia`. Leia nas etapas Entender e Ementa.
+
+A ementa é o contrato do livro. **Nada é escrito antes de o aluno aprovar.** Errar aqui custa o livro inteiro; ajustar aqui custa uma mensagem.
+
+## 1. Entender o pedido (no máximo 3 perguntas, numa mensagem)
+
+Pergunte só o que o pedido não disse. Use `AskUserQuestion` se houver; senão, texto.
+
+| Pergunta | Opções sugeridas (padrão em negrito) |
+| --- | --- |
+| Para quem é? | **quem nunca usou o tema**, quem já usa e quer se aprofundar, uso no trabalho |
+| Qual nível? | **iniciante**, intermediário, avançado |
+| Qual tamanho? | guia curto (4–5 capítulos), **livro (8–10)**, completo (12–15) |
+
+Antes de perguntar, rode `python3 ferramentas/mapa_livros.py`. Se já houver livros na mesma trilha, diga quais são e proponha a posição do novo ("o básico já existe; este pode começar do Compose"). Isso costuma substituir a pergunta de nível.
+
+## 2. Propor a ementa
+
+Pesquise antes (veja `referencias/PESQUISA.md`): documentação oficial, guia de primeiros passos, versão atual da ferramenta. A ementa segue estas regras:
+
+- **Progressão:** cada capítulo usa só o que os anteriores ensinaram. O primeiro responde "por que isso existe"; o último é um **projeto final** que junta tudo.
+- **Um objetivo por capítulo**, com verbo de ação que dá para conferir: "construir uma imagem própria", e não "entender imagens".
+- **Prática em todo capítulo:** um laboratório com comandos ou código executáveis e 2–3 exercícios.
+- **Escopo explícito:** a lista "Fica para livros futuros" diz o que o livro **não** cobre, e é ela que alimenta os próximos livros da trilha.
+
+Mostre no chat neste formato, e em nenhum outro:
+
+```text
+📘 <Título do livro>  ·  <nível>  ·  <n> capítulos  ·  trilha: <trilha> (<posição>)
+Para quem: <uma frase>
+Ao terminar, você vai: <objetivo do livro>
+Pré-requisitos: <livros da trilha ou conhecimentos>
+
+1. <Título do capítulo>      → <objetivo com verbo de ação>
+2. ...
+n. Projeto final: <nome>     → <o que o leitor entrega>
+
+Fica para livros futuros: <tema>, <tema>, <tema>
+Versão de referência: <ferramenta x.y, conferida em AAAA-MM-DD>
+
+Ajuste à vontade: "aumenta", "diminui", "tira o 5", "adiciona X",
+"junta o 3 e o 4", "troca a ordem", "mais prático", "nível intermediário".
+Quando estiver bom, diga "aprovado".
+```
+
+## 3. Ajustar (quantas rodadas o aluno quiser)
+
+Interprete pedidos em linguagem natural e responda sempre com **a ementa inteira atualizada** e, acima dela, uma linha "Mudou:" listando as alterações.
+
+| Pedido | O que fazer |
+| --- | --- |
+| "aumenta" / "mais completo" | Acrescente capítulos ou aprofunde os existentes, sem quebrar a progressão; diga o novo total |
+| "diminui" / "mais curto" | Junte capítulos próximos e mande o excedente para "Fica para livros futuros" |
+| "tira o X" | Remova; se algo depois dependia dele, mova esse conteúdo ou avise |
+| "adiciona Y" | Encaixe onde a progressão permitir; se Y for avançado demais para o nível, sugira deixar para outro livro |
+| "junta", "separa", "troca a ordem" | Faça e confira se nenhum capítulo passa a usar algo ainda não ensinado |
+| Pedido que contradiz o nível ou o tamanho | Faça, mas avise em uma frase o efeito ("com Kubernetes, o livro deixa de ser iniciante") |
+
+Se a sobreposição com um livro existente passar de ~40% (`mapa_livros.py --checar`), pergunte se é melhor ampliar o livro antigo ou mudar o enfoque do novo.
+
+## 4. Aprovar e registrar
+
+Ao ouvir "aprovado" (ou equivalente claro), e só então:
+
+1. Grave `livros/<slug>/ementa.yaml` com `aprovada_em` preenchido, faça commit e push. A partir daí o livro aparece no mapa da trilha.
+2. Crie no Notion a página índice do livro (dentro da página de livros do `biblioteca.yaml`) e uma subpágina vazia por capítulo, na ordem.
+3. Cadastre os ids com `progresso.py <slug> init`.
+
+**Mudanças depois da aprovação:** mostre o impacto ("tirar o capítulo 5 afeta os exemplos dos capítulos 6 e 8"), peça aprovação só da mudança, atualize o `ementa.yaml` (o histórico fica no git) e as páginas do Notion.
+
+## Modelo do `ementa.yaml`
+
+```yaml
+titulo: "Docker do zero"
+slug: docker-do-zero            # minúsculas, hífens, sem acento
+trilha: docker                  # agrupa os livros complementares
+ordem_na_trilha: 1
+nivel: iniciante                # iniciante | intermediário | avançado
+publico: "Quem programa, mas nunca usou contêineres"
+objetivo: "Empacotar e publicar uma aplicação com banco de dados em contêineres"
+pre_requisitos: []              # slugs de outros livros desta biblioteca
+versao_referencia: "Docker Engine 29.x (conferido em 2026-11-15)"
+aprovada_em: "2026-11-15"       # vazio enquanto for rascunho
+capitulos:
+  - n: 1
+    titulo: "Por que contêineres existem"
+    objetivo: "Explicar que problema o Docker resolve e quando não usar"
+    topicos: [isolamento, "imagem x contêiner", "contêiner x máquina virtual"]
+  - n: 2
+    titulo: "Instalação e primeiro contêiner"
+    objetivo: "Rodar, listar, parar e remover um contêiner"
+    topicos: [docker run, docker ps, ciclo de vida]
+cobre: [conteiner, imagem, dockerfile, volumes, redes-basicas, docker-hub]
+fica_para_depois: [compose-avancado, swarm, kubernetes, seguranca-de-imagens]
+```
+
+`cobre` e `fica_para_depois` usam rótulos curtos e estáveis (minúsculas, hífens): são eles que o mapa compara entre livros.
+~~~~
+
+</details>
+
+<details>
+<summary><b>Apoio: pesquisa, fontes e verificação</b> · <code>criar-livro-tecnologia/referencias/PESQUISA.md</code></summary>
+
+~~~~markdown
+# Pesquisa, fontes e verificação
+
+> Arquivo de apoio da skill `criar-livro-tecnologia`. Leia antes de propor a ementa e passe as regras no briefing de cada capítulo.
+
+Um livro criado do zero não tem um original para corrigir. O risco é **inventar** (comando, opção ou recurso que não existe) ou **desatualizar** (algo que mudou de versão). Estas regras existem para isso.
+
+## Fontes, em ordem de confiança
+
+1. **Documentação oficial** e guias do próprio projeto (ex.: docs.docker.com), notas de versão (*release notes*), especificações e RFCs.
+2. **Repositório oficial** (README, exemplos, issues dos mantenedores).
+3. Livros e cursos reconhecidos, blogs técnicos dos mantenedores ou de empresas com autoridade no tema.
+4. Fóruns (Stack Overflow e afins) **só** para entender armadilhas comuns, nunca como fonte de fato.
+
+Toda afirmação que pode mudar com o tempo (comandos, opções, valores padrão, limites, versões, preços, licenças) precisa vir de 1 ou 2, **conferida nesta sessão** com WebSearch/WebFetch. Conceitos estáveis (o que é um processo, o que é uma porta de rede) não precisam de fonte.
+
+## Como citar no capítulo
+
+- No fim de cada capítulo, antes do Resumo, uma seção `## 📚 Fontes` com 2 a 6 links no formato `[Título](URL)`, e "conferido em AAAA-MM-DD".
+- Comportamento que depende de versão vem com a versão no texto: "a partir do Docker Engine 25, ...".
+- No índice do livro e no `00-sobre-o-livro.md`, o aviso: **"Livro criado com IA a partir de fontes públicas, citadas em cada capítulo. Conferido em <data>, com <ferramenta x.y>."**
+
+## Direitos autorais
+
+- **Explique com as suas palavras.** Não copie parágrafos da documentação nem de outros livros; paráfrase não é trocar sinônimos, é reescrever a explicação.
+- No máximo **uma citação curta** (menos de 15 palavras) por fonte, entre aspas e com o link, só quando a frase exata importar.
+- Exemplos de código: escreva os seus. Um trecho curto da documentação, quando inevitável, vai com a fonte. Respeite a licença de qualquer código reaproveitado.
+- Nada de logotipos, marcas ou mascotes de terceiros, nem na capa nem nos diagramas (veja `_comum/CAPA.md`).
+
+## Verificação prática (laboratórios)
+
+Todo comando e todo código do livro precisa ter sido **executado** e ter a saída mostrada. Onde rodar, nesta ordem:
+
+1. **Neste ambiente da sessão:** linguagens, bibliotecas e ferramentas de linha de comando que instalam com pip, npm ou apt.
+2. **No computador do aluno** (`device_bash`, a VM Linux ligada ao app do computador), quando a ferramenta precisar de algo que a sessão não tem, como um serviço (Docker, bancos de dados). Confira antes com `which` se está instalado.
+3. Se não der para executar em lugar nenhum: marque o bloco com um callout `⚠️` yellow_bg, "Este comando não foi executado na produção do livro; confira a saída no seu ambiente", e liste o caso nas `pendencias` do capítulo.
+
+Nunca invente uma saída. Se a saída real tiver dados variáveis (ids, horários), mostre a real e explique o que muda.
+
+## Ao fechar o livro
+
+- Revise a lista de fontes de todos os capítulos: link quebrado ou página que mudou volta para conferência.
+- Registre no `ESTADO.md` a data e a versão de referência. Um livro com mais de ~12 meses entra na lista de "revisar versão".
+~~~~
+
+</details>
+
+### Arquivos comuns às duas skills
+
+Padrão de aula, design, Notion e publicação: as duas skills leem daqui, e os dois zips já os incluem.
+
+<details>
+<summary><b>Padrão de aula, imagens e armadilhas</b> · <code>_comum/PADRAO_AULA.md</code></summary>
+
+~~~~markdown
+# Padrão de aula e de imagens
+
+> Arquivo comum às skills da biblioteca (`revisar-curso-biblioteca` e `criar-livro-tecnologia`). Leia antes de escrever a primeira página e imite o `_comum/EXEMPLOS.md`. Onde se lê "aula", vale também "capítulo"; onde se lê "curso", vale também "livro".
+
+## Cada aula (no Notion)
 
 ```
 [breadcrumb e anexos originais preservados]
@@ -164,24 +506,24 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 - **Analogia:** uma por diagrama (ou uma para imagens seguidas), mapeando cada peça do conceito numa peça do mundo real, **sem repetir analogias entre aulas**. Uma analogia solta no texto vai para o callout.
 - **Texto:** tom de mentor paciente; frases curtas, voz ativa, uma ideia por parágrafo; termo técnico definido na primeira vez, com o nome em inglês entre parênteses quando for o usado no mercado; tabela `A × B` para conceitos que se confundem; nada de enchimento.
 - **Código:** bloco com a linguagem; comentários bloco a bloco, **na linha de cima**, explicando o **porquê** (`// avança para o próximo aluno`, e não `// soma 1 em i`); exemplos completos o bastante para rodar; saída esperada.
-- **Correções:** callout `⚠️` yellow_bg logo abaixo, dizendo o que o original fazia e por que está errado; `🛠️` green_bg quando o erro era mostrado de propósito.
+- **Correções** (ao reformular material existente): callout `⚠️` yellow_bg logo abaixo, dizendo o que o original fazia e por que está errado; `🛠️` green_bg quando o erro era mostrado de propósito.
 - **Dados pessoais** viram placeholders (`Ana Souza`, `usuario@exemplo.com`). Não reproduza letras de música, hinos nem trechos longos de obras protegidas.
-- **Preserve** pdf, file, bookmark, vídeo, breadcrumb e child pages exatamente como vieram.
+- **Preserve** (ao reformular) pdf, file, bookmark, vídeo, breadcrumb e child pages exatamente como vieram.
 
-**Índice do curso:** título no formato fixo; `🗺️ Sobre o curso`; `🔖 Legenda das páginas`; uma linha `<span color="gray">` sob cada seção; aulas em ordem didática (mova uma página fora de lugar); `## 📌 Resumo do curso` (`Seção | Ideia central | Comandos-chave`); depois de publicado, o callout `📚`.
+**Índice do curso ou livro:** título no formato fixo; `🗺️ Sobre o curso`; `🔖 Legenda das páginas`; uma linha `<span color="gray">` sob cada seção; aulas em ordem didática (mova uma página fora de lugar); `## 📌 Resumo do curso` (`Seção | Ideia central | Comandos-chave`); depois de publicado, o callout `📚`.
 
 **Teste de cada aula:** ela responde por que isso existe, como funciona com um exemplo real e qual é o erro mais comum? Se faltar algo, complete.
 
 **Critério de pronto (automático):** depois da conversão, `auditar_curso.py <area>/<slug> --criterios` precisa sair sem erros. Os avisos (imagem sem analogia logo abaixo, tabela larga) são aceitáveis só se estiverem registrados no `ESTADO.md` com o motivo.
 
-## Imagens (detalhes em referencias/DIDATICA_VISUAL.md)
+## Imagens (detalhes em _comum/DIDATICA_VISUAL.md)
 
 - Diagrama, fluxograma, tabela ou print de código → SVG próprio, feito com o kit `ferramentas/svg/` no tema v3: fundo creme `#FAF9F6`, cards pastel com sombra suave, setas curvas pontilhadas, `system-ui`, código em mono sobre `#F0F0F0`. Captura de tela real → mantenha. Imagem decorativa → remova.
 - Antes de desenhar, escreva em uma frase o que o leitor deve entender: essa frase vira o título. Um foco por imagem, no máximo ~7 elementos, valores reais, e funciona em tons de cinza.
 - Aula: 480 px de largura, retrato. Cheat sheet: 1200×1600, 3×4 cards, só ícones ASCII.
 - Renderize e confira antes de subir. Para a mesma imagem, o mesmo arquivo em `img/` e no Notion.
 
-## Armadilhas conhecidas (detalhes em referencias/NOTION.md)
+## Armadilhas conhecidas (detalhes em _comum/NOTION.md)
 
 - O `update_content` não encontra tags `<image>`. Para trocar uma imagem, refaça a página inteira com `replace_content`.
 - Cada `file-upload://` serve uma vez e expira em ~1 h. Suba no máximo ~4 por vez e use logo.
@@ -189,29 +531,17 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 - No índice, a ordem das aulas é a ordem das tags `<page>`.
 - Commits: `git -c user.name="<commit_nome>" -c user.email="<commit_email>" commit`, com os valores do `biblioteca.yaml` e a atribuição pedida pela sessão. Nunca use o e-mail pessoal de ninguém.
 - A Action é acompanhada pela API REST (`gh api repos/...`); o GraphQL não funciona na sessão.
-
-## Nunca
-
-- Publicar PDFs, arquivos de projeto ou materiais originais do curso.
-- Recriar logotipos, marcas ou personagens de terceiros (nem na capa).
-- Publicar antes da exportação nova.
-- Pular páginas.
-- Inventar fatos: na dúvida sobre algo que muda com o tempo, pesquise.
-
-## Resumo final ao usuário
-
-Em poucas linhas: o que foi publicado (com os links do curso e do EPUB), as páginas e imagens novas, as correções importantes, os avisos de auditoria que ficaram (e por quê) e o próximo passo sugerido.
 ~~~~
 
 </details>
 
 <details>
-<summary><b>Apoio: aula e cheat sheet modelo (antes e depois)</b> · <code>referencias/EXEMPLOS.md</code></summary>
+<summary><b>Aula e cheat sheet modelo (antes e depois)</b> · <code>_comum/EXEMPLOS.md</code></summary>
 
 ~~~~markdown
 # Exemplos de referência: aula e cheat sheet
 
-> Arquivo de apoio da skill `revisar-curso-biblioteca`. Leia antes da primeira página do curso e volte a ele sempre que estiver em dúvida sobre o tom ou o formato. **Imite estes exemplos**: eles valem mais que a lista de regras.
+> Arquivo comum às skills da biblioteca. Leia antes da primeira página do curso e volte a ele sempre que estiver em dúvida sobre o tom ou o formato. **Imite estes exemplos**: eles valem mais que a lista de regras.
 
 ## 1. Aula: antes e depois
 
@@ -428,12 +758,12 @@ Regras do exemplo: 12 cards, na ordem em que a seção ensina; tópicos de até 
 </details>
 
 <details>
-<summary><b>Apoio: modo coordenador (um agente por página)</b> · <code>referencias/COORDENADOR.md</code></summary>
+<summary><b>Modo coordenador (um agente por página)</b> · <code>_comum/COORDENADOR.md</code></summary>
 
 ~~~~markdown
 # Modo coordenador: um agente por página
 
-> Arquivo de apoio da skill `revisar-curso-biblioteca`. Leia antes da etapa "Por página".
+> Arquivo comum às skills da biblioteca. Leia antes da etapa "Por página".
 
 **Por que existe:** um curso tem dezenas de páginas. Se o chat principal abre e reescreve todas, o histórico cresce até ser resumido automaticamente, e os detalhes se perdem (regras, analogias já usadas, o que falta). No modo coordenador, o chat principal **só controla a fila**. Cada página é feita por um agente novo, que recebe só o que precisa e devolve um resumo curto.
 
@@ -456,7 +786,7 @@ Regras do exemplo: 12 cards, na ordem em que a seção ensina; tópicos de até 
 ## Briefing (copie e preencha)
 
 ```text
-Você vai reformular UMA página de um curso no Notion. Trabalhe só nela.
+Você vai <reformular | escrever> UMA página de um <curso | livro> no Notion. Trabalhe só nela.
 
 Página: <id> - "<título>"  (aula <n> de <total>, seção "<seção>")
 Aula anterior: "<título anterior>"  ·  Próxima aula: "<título seguinte>"
@@ -465,15 +795,17 @@ Analogias já usadas no curso (não repita nenhuma): <lista>
 Ajustes do escopo para esta página: <o que acrescentar, ou "nenhum">
 
 Antes de começar, leia:
-- <caminho do clone>/skill/revisar-curso-biblioteca/SKILL.md
-  (seções "Padrão de cada aula", "Imagens" e "Armadilhas conhecidas");
-- .../referencias/EXEMPLOS.md (imite a aula de exemplo);
-- .../referencias/NOTION.md;
-- .../referencias/DIDATICA_VISUAL.md, só se for criar ou trocar uma imagem.
+- <caminho do clone>/skill/_comum/PADRAO_AULA.md (padrão, imagens,
+  armadilhas);
+- <caminho do clone>/skill/<skill em uso>/SKILL.md (regras da skill);
+- .../skill/_comum/EXEMPLOS.md (imite a aula de exemplo);
+- .../skill/_comum/NOTION.md;
+- .../skill/_comum/DIDATICA_VISUAL.md, só se for criar ou trocar uma imagem.
 
 Faça, nesta ordem:
 1. notion-fetch da página.
-2. Corrija fatos, rode o código ou faça teste de mesa, refaça as contas.
+2. Corrija fatos (ou, num livro novo, pesquise e cite as fontes do
+   briefing), rode o código ou faça teste de mesa, refaça as contas.
 3. Reescreva no padrão de aula, preservando o breadcrumb e os anexos
    (pdf, file, bookmark, vídeo) exatamente como vieram.
 4. Imagens: gere os SVGs com o kit, salve em <clone>/<área>/<slug>/img/
@@ -498,12 +830,12 @@ Responda SÓ com este JSON:
 </details>
 
 <details>
-<summary><b>Apoio: imagens, didática visual e design system</b> · <code>referencias/DIDATICA_VISUAL.md</code></summary>
+<summary><b>Imagens, didática visual e design system</b> · <code>_comum/DIDATICA_VISUAL.md</code></summary>
 
 ~~~~markdown
 # Imagens e diagramas (etapa Por página, item 4)
 
-> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia antes de criar, trocar ou auditar qualquer imagem.
+> Arquivo comum às skills da biblioteca. Leia antes de criar, trocar ou auditar qualquer imagem.
 
 Para cada imagem do curso:
 
@@ -666,12 +998,12 @@ Os diagramas serão vistos numa tela de 6–7 polegadas, então são desenhados 
 </details>
 
 <details>
-<summary><b>Apoio: notas técnicas do Notion</b> · <code>referencias/NOTION.md</code></summary>
+<summary><b>Notas técnicas do Notion</b> · <code>_comum/NOTION.md</code></summary>
 
 ~~~~markdown
 # Notas técnicas do Notion
 
-> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia antes da primeira edição de página na sessão e sempre que uma chamada falhar.
+> Arquivo comum às skills da biblioteca. Leia antes da primeira edição de página na sessão e sempre que uma chamada falhar.
 
 - `update_content`: o `old_str` precisa ser texto exato e único, sem formatação cruzando o trecho. Para inserir algo no topo da página, **ancore no primeiro título/parágrafo** depois do breadcrumb (o `insert_content` com posição `start` coloca acima do breadcrumb).
 - `insert_content` com posição `end` serve para o Resumo.
@@ -695,12 +1027,12 @@ Os diagramas serão vistos numa tela de 6–7 polegadas, então são desenhados 
 </details>
 
 <details>
-<summary><b>Apoio: PDFs do curso com o Docling (opcional)</b> · <code>referencias/PDFS.md</code></summary>
+<summary><b>PDFs do curso com o Docling (opcional)</b> · <code>_comum/PDFS.md</code></summary>
 
 ~~~~markdown
 # PDFs do curso com o Docling (opcional)
 
-> Arquivo de apoio da skill `revisar-curso-biblioteca`. Leia na etapa Levantar, só se o curso tiver PDFs de aula, de lista de exercícios ou de ementa.
+> Arquivo comum às skills da biblioteca. Leia na etapa Levantar, só se o curso tiver PDFs de aula, de lista de exercícios ou de ementa.
 
 **Para que serve:** os PDFs do curso costumam trazer o que as anotações não trazem: o **enunciado exato** de cada exercício e a **ementa**. Convertidos para Markdown, eles permitem conferir se cada resolução responde ao que foi pedido e se o curso cobre o que promete (etapa Escopo). Os PDFs e os `.md` gerados servem **só de fonte**: nunca são publicados nem colados nas aulas.
 
@@ -787,12 +1119,12 @@ Get-ChildItem $env:APPDATA, $env:LOCALAPPDATA -Recurse -Filter "*.log" -ErrorAct
 </details>
 
 <details>
-<summary><b>Apoio: exportação, conversão e publicação</b> · <code>referencias/PUBLICACAO.md</code></summary>
+<summary><b>Exportação, conversão e publicação</b> · <code>_comum/PUBLICACAO.md</code></summary>
 
 ~~~~markdown
 # Exportação, conversão e publicação (etapas Publicar e Sincronizar)
 
-> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia só depois que o usuário avisar que exportou o curso.
+> Arquivo comum às skills da biblioteca. Leia só depois que o usuário avisar que exportou o curso.
 
 ## Repositório e exportação
 
@@ -859,6 +1191,7 @@ on:
     paths:
       - 'programacao/**'
       - 'matematica/**'
+      - 'livros/**'
       - 'epub/**'
       - '.github/workflows/gerar-epubs.yml'
   workflow_dispatch:
@@ -882,13 +1215,13 @@ jobs:
 
       - name: Descobrir cursos a gerar
         run: |
-          todos() { ls -d programacao/*/ matematica/*/ 2>/dev/null | sed 's#/$##'; }
+          todos() { ls -d programacao/*/ matematica/*/ livros/*/ 2>/dev/null | sed 's#/$##'; }
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] || ! git rev-parse HEAD~1 >/dev/null 2>&1; then
             todos > cursos.txt
           elif git diff --name-only HEAD~1 HEAD | grep -qE '^(epub/|\.github/)'; then
             todos > cursos.txt
           else
-            git diff --name-only HEAD~1 HEAD | grep -E '^(programacao|matematica)/[^/]+/' | cut -d/ -f1-2 | sort -u > cursos.txt
+            git diff --name-only HEAD~1 HEAD | grep -E '^(programacao|matematica|livros)/[^/]+/' | cut -d/ -f1-2 | sort -u > cursos.txt
           fi
           cat cursos.txt
 
@@ -932,6 +1265,14 @@ jobs:
 ```
 
 README raiz: título "📚 Biblioteca de Estudos", uma frase de propósito, seções **Programação** e **Matemática** com tabela `Curso | Ler online | EPUB` (o curso com o nome no formato padrão), onde EPUB aponta para `https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/<slug>.epub`, uma nota sobre como os EPUBs são gerados e outra explicando que as respostas dos exercícios ficam recolhidas.
+
+## Livros criados do zero (skill criar-livro-tecnologia)
+
+Mesma estrutura dos cursos, com três diferenças:
+
+- a área é `livros/` (`livros/<slug>/`), e a pasta também guarda o `ementa.yaml` aprovado;
+- no `metadata.yaml`: `rights: "Livro criado com IA a partir de fontes públicas, citadas em cada capítulo. Conferido em <data>."`;
+- o catálogo do README tem a seção **📗 Livros criados do zero**, agrupada por trilha na ordem de leitura. O mapa das trilhas (`livros/README.md`) é gerado por `python3 ferramentas/mapa_livros.py --md`.
 
 ## Estrutura de cada curso
 
@@ -1034,12 +1375,12 @@ Curto e objetivo:
 </details>
 
 <details>
-<summary><b>Apoio: capa do livro</b> · <code>referencias/CAPA.md</code></summary>
+<summary><b>Capa do livro</b> · <code>_comum/CAPA.md</code></summary>
 
 ~~~~markdown
 # Capa do livro
 
-> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia só na etapa Publicar, ao criar ou refazer a capa de um curso.
+> Arquivo comum às skills da biblioteca. Leia só na etapa Publicar, ao criar ou refazer a capa de um curso.
 
 Todo curso publicado tem `capa.png` na pasta do curso (o workflow já usa `--epub-cover-image` quando ela existe) e o `capa.svg` de origem ao lado.
 

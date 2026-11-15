@@ -1,6 +1,6 @@
 # Modo coordenador: um agente por página
 
-> Arquivo de apoio da skill `revisar-curso-biblioteca`. Leia antes da etapa "Por página".
+> Arquivo comum às skills da biblioteca. Leia antes da etapa "Por página".
 
 **Por que existe:** um curso tem dezenas de páginas. Se o chat principal abre e reescreve todas, o histórico cresce até ser resumido automaticamente, e os detalhes se perdem (regras, analogias já usadas, o que falta). No modo coordenador, o chat principal **só controla a fila**. Cada página é feita por um agente novo, que recebe só o que precisa e devolve um resumo curto.
 
@@ -23,7 +23,7 @@
 ## Briefing (copie e preencha)
 
 ```text
-Você vai reformular UMA página de um curso no Notion. Trabalhe só nela.
+Você vai <reformular | escrever> UMA página de um <curso | livro> no Notion. Trabalhe só nela.
 
 Página: <id> - "<título>"  (aula <n> de <total>, seção "<seção>")
 Aula anterior: "<título anterior>"  ·  Próxima aula: "<título seguinte>"
@@ -32,15 +32,17 @@ Analogias já usadas no curso (não repita nenhuma): <lista>
 Ajustes do escopo para esta página: <o que acrescentar, ou "nenhum">
 
 Antes de começar, leia:
-- <caminho do clone>/skill/revisar-curso-biblioteca/SKILL.md
-  (seções "Padrão de cada aula", "Imagens" e "Armadilhas conhecidas");
-- .../referencias/EXEMPLOS.md (imite a aula de exemplo);
-- .../referencias/NOTION.md;
-- .../referencias/DIDATICA_VISUAL.md, só se for criar ou trocar uma imagem.
+- <caminho do clone>/skill/_comum/PADRAO_AULA.md (padrão, imagens,
+  armadilhas);
+- <caminho do clone>/skill/<skill em uso>/SKILL.md (regras da skill);
+- .../skill/_comum/EXEMPLOS.md (imite a aula de exemplo);
+- .../skill/_comum/NOTION.md;
+- .../skill/_comum/DIDATICA_VISUAL.md, só se for criar ou trocar uma imagem.
 
 Faça, nesta ordem:
 1. notion-fetch da página.
-2. Corrija fatos, rode o código ou faça teste de mesa, refaça as contas.
+2. Corrija fatos (ou, num livro novo, pesquise e cite as fontes do
+   briefing), rode o código ou faça teste de mesa, refaça as contas.
 3. Reescreva no padrão de aula, preservando o breadcrumb e os anexos
    (pdf, file, bookmark, vídeo) exatamente como vieram.
 4. Imagens: gere os SVGs com o kit, salve em <clone>/<área>/<slug>/img/

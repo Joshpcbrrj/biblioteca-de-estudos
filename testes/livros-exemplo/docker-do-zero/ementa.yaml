@@ -1,0 +1,21 @@
+titulo: "Docker do zero"
+slug: docker-do-zero
+trilha: docker
+ordem_na_trilha: 1
+nivel: iniciante
+publico: "Quem programa, mas nunca usou contêineres"
+objetivo: "Empacotar e publicar uma aplicação em contêineres"
+pre_requisitos: []
+versao_referencia: "Docker Engine 29.x (exemplo de teste)"
+aprovada_em: "2026-11-15"
+capitulos:
+  - n: 1
+    titulo: "Por que contêineres existem"
+    objetivo: "Explicar o problema que o Docker resolve"
+    topicos: [isolamento]
+  - n: 2
+    titulo: "Projeto final"
+    objetivo: "Publicar uma aplicação com banco"
+    topicos: [projeto]
+cobre: [conteiner, imagem, dockerfile, volumes]
+fica_para_depois: [compose, kubernetes]

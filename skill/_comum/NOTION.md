@@ -1,6 +1,6 @@
 # Notas técnicas do Notion
 
-> Arquivo auxiliar da skill `revisar-curso-biblioteca`. Leia antes da primeira edição de página na sessão e sempre que uma chamada falhar.
+> Arquivo comum às skills da biblioteca. Leia antes da primeira edição de página na sessão e sempre que uma chamada falhar.
 
 - `update_content`: o `old_str` precisa ser texto exato e único, sem formatação cruzando o trecho. Para inserir algo no topo da página, **ancore no primeiro título/parágrafo** depois do breadcrumb (o `insert_content` com posição `start` coloca acima do breadcrumb).
 - `insert_content` com posição `end` serve para o Resumo.

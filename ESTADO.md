@@ -1,6 +1,6 @@
 # Estado dos cursos
 
-Diário de bordo da reformulação. A skill lê este arquivo no início de cada chat e o atualiza sempre que para (antes de pedir exportação) e ao publicar. Assim, qualquer chat novo continua do ponto certo.
+Diário de bordo da reformulação. As skills leem este arquivo no início de cada chat e o atualiza sempre que para (antes de pedir exportação) e ao publicar. Assim, qualquer chat novo continua do ponto certo.
 
 **Padrão atual:** skill `revisar-curso-biblioteca` (pasta `skill/`), com imagens no tema v3 (creme, cards pastel, setas pontilhadas), analogia abaixo de cada diagrama, "De onde paramos", "🧠 Revisão rápida", "➡️ Próximo passo", código comentado com linhas de até 60 caracteres e cheat sheet 3×4 por seção.
 
@@ -20,6 +20,16 @@ Diário de bordo da reformulação. A skill lê este arquivo no início de cada 
 O id é o código de 32 caracteres no fim do link do índice no Notion; um curso novo entra aqui com o seu.
 
 **Ordem combinada com o dono:** um curso por vez; o próximo é escolhido por ele.
+
+## Livros criados do zero
+
+Skill `criar-livro-tecnologia`. A ementa aprovada de cada livro fica em `livros/<slug>/ementa.yaml`; o mapa das trilhas, em `livros/README.md` (gerado por `ferramentas/mapa_livros.py --md`).
+
+| Livro (pasta) | Trilha | Índice no Notion (id) | Situação | Onde parou / o que falta |
+| --- | --- | --- | --- | --- |
+| — | — | — | — | Nenhum livro ainda. |
+
+Página do Notion onde os livros são criados: `notion_livros` do `biblioteca.yaml` (vazio até o primeiro livro).
 
 ## Como atualizar este arquivo
 

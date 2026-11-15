@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Testes automáticos do kit (skill + scripts). Rode antes de commitar mudanças na
+"""Testes automáticos do kit (skills + scripts). Rode antes de commitar mudanças na
 skill ou em ferramentas/; a Action "Testes do kit" roda o mesmo a cada push.
 
 Uso:  python3 testes/rodar.py
@@ -9,7 +9,8 @@ Cada teste imprime OK ou FALHOU com o motivo; sai com código 1 se algum falhar.
 import glob, json, os, re, subprocess, sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKILL = os.path.join(RAIZ, 'skill', 'revisar-curso-biblioteca')
+SKILLS = os.path.join(RAIZ, 'skill')
+NOMES = ['revisar-curso-biblioteca', 'criar-livro-tecnologia']
 falhas = []
 
 
@@ -58,43 +59,76 @@ def _():
     assert r.returncode == 0, r.stdout.strip()
 
 
-@teste('SKILL.md: cabeçalho válido')
+@teste('cabeçalho válido nas duas skills')
 def _():
-    s = open(os.path.join(SKILL, 'SKILL.md'), encoding='utf-8').read()
-    m = re.match(r'---\nname: ([a-z0-9-]+)\ndescription: (.+?)\n---\n', s, re.S)
-    assert m, 'frontmatter com name e description ausente'
-    assert m.group(1) == 'revisar-curso-biblioteca', 'name diferente da pasta'
-    assert len(m.group(2)) <= 1024, 'description acima de 1024 caracteres'
-    return f'{len(s.splitlines())} linhas'
+    tamanhos = []
+    for nome in NOMES:
+        s = open(os.path.join(SKILLS, nome, 'SKILL.md'), encoding='utf-8').read()
+        m = re.match(r'---\nname: ([a-z0-9-]+)\ndescription: (.+?)\n---\n', s, re.S)
+        assert m, f'{nome}: frontmatter com name e description ausente'
+        assert m.group(1) == nome, f'{nome}: name diferente da pasta'
+        assert len(m.group(2)) <= 1024, f'{nome}: description acima de 1024 caracteres'
+        tamanhos.append(f'{nome}: {len(s.splitlines())} linhas')
+    return '; '.join(tamanhos)
 
 
-@teste('todo caminho citado na skill existe')
+@teste('todo caminho citado nas skills existe')
 def _():
     quebrados = []
-    for arq in glob.glob(os.path.join(SKILL, '**', '*.md'), recursive=True):
+    for arq in glob.glob(os.path.join(SKILLS, '**', '*.md'), recursive=True):
         texto = open(arq, encoding='utf-8').read()
-        for ref in set(re.findall(r'`?(referencias/[A-Z_]+\.md)', texto)):
-            if not os.path.exists(os.path.join(SKILL, ref)):
-                quebrados.append(f'{os.path.basename(arq)} → {ref}')
+        pasta = os.path.dirname(arq)
+        dono = os.path.join(SKILLS, os.path.relpath(pasta, SKILLS).split(os.sep)[0])
+        for ref in set(re.findall(r'(?<![\w/])(referencias/[A-Z_]+\.md)', texto)):
+            if not os.path.exists(os.path.join(dono, ref)):
+                quebrados.append(f'{os.path.relpath(arq, SKILLS)} → {ref}')
+        for ref in set(re.findall(r'(?<![\w/])(_comum/[A-Z_]+\.md)', texto)):
+            if not os.path.exists(os.path.join(SKILLS, ref)):
+                quebrados.append(f'{os.path.relpath(arq, SKILLS)} → {ref}')
         for ref in set(re.findall(r'(ferramentas/[\w/.-]+\.(?:py|js|md))', texto)):
             if not os.path.exists(os.path.join(RAIZ, ref)):
-                quebrados.append(f'{os.path.basename(arq)} → {ref}')
+                quebrados.append(f'{os.path.relpath(arq, SKILLS)} → {ref}')
     assert not quebrados, quebrados
 
 
 @teste('nomes de etapa consistentes (sem "Fase N" antigo)')
 def _():
     achados = []
-    for arq in glob.glob(os.path.join(SKILL, '**', '*.md'), recursive=True):
+    for arq in glob.glob(os.path.join(SKILLS, '**', '*.md'), recursive=True):
         for i, l in enumerate(open(arq, encoding='utf-8'), 1):
             if re.search(r'\bFases? \d', l):
                 achados.append(f'{os.path.basename(arq)}:{i}')
     assert not achados, achados
 
 
+@teste('mapa das trilhas: só ementa aprovada entra, sobreposição detectada')
+def _():
+    env = dict(os.environ, LIVROS_DIR=os.path.join(RAIZ, 'testes', 'livros-exemplo'))
+    r = subprocess.run([sys.executable, 'ferramentas/mapa_livros.py'], cwd=RAIZ,
+                       capture_output=True, text=True, env=env)
+    m = json.loads(r.stdout)
+    assert [b['slug'] for b in m['trilhas']['docker']] == ['docker-do-zero'], m
+    r = subprocess.run([sys.executable, 'ferramentas/mapa_livros.py', '--checar',
+                        'testes/livros-exemplo/docker-compose/ementa.yaml'],
+                       cwd=RAIZ, capture_output=True, text=True, env=env)
+    c = json.loads(r.stdout)
+    assert 'volumes' in c['topicos_repetidos'], c
+    assert c['pre_requisitos_inexistentes'] == ['livro-que-nao-existe'], c
+    assert 'kubernetes' in c['temas_pendentes_da_trilha'], c
+
+
+@teste('ementa: modelo da skill tem todos os campos que o mapa exige')
+def _():
+    t = open(os.path.join(SKILLS, 'criar-livro-tecnologia', 'referencias', 'EMENTA.md'),
+             encoding='utf-8').read()
+    for campo in ['titulo:', 'slug:', 'trilha:', 'nivel:', 'objetivo:', 'capitulos:',
+                  'cobre:', 'aprovada_em:', 'fica_para_depois:', 'pre_requisitos:']:
+        assert campo in t, f'falta {campo} no modelo'
+
+
 @teste('briefing do coordenador traz o contrato de resposta')
 def _():
-    t = open(os.path.join(SKILL, 'referencias', 'COORDENADOR.md'), encoding='utf-8').read()
+    t = open(os.path.join(SKILLS, '_comum', 'COORDENADOR.md'), encoding='utf-8').read()
     for chave in ['"id"', '"ok"', '"imagens"', '"analogias"', '"correcoes"', '"pendencias"']:
         assert chave in t, f'falta {chave} no JSON de resposta'
 
@@ -112,7 +146,7 @@ def _():
 def _():
     r = rodar('ferramentas/config.py')
     for chave in ['autor', 'repositorio', 'branch', 'commit_nome', 'commit_email',
-                  'release_epubs', 'release_skill']:
+                  'release_epubs', 'release_skill', 'notion_livros']:
         assert chave in r.stdout, f'falta {chave}'
 
 
