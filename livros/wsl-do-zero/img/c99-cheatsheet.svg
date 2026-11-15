@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1461" viewBox="0 0 1200 1461" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<defs><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9DBEF5"/><stop offset=".33" stop-color="#C3ADEE"/><stop offset=".66" stop-color="#F5AE9B"/><stop offset="1" stop-color="#EBCF6E"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1L9,5L1,9" fill="none" stroke="#7A7F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAF9F6"/>
+<text x="600.0" y="86" text-anchor="middle" style="font-size:54px;font-weight:900;fill:#1E1E1E;letter-spacing:1px">WSL DO ZERO</text>
+<text x="600.0" y="128" text-anchor="middle" style="font-size:23px;fill:#55555F">Cheat sheet do livro · 12 ideias para revisar</text>
+<rect x="510.0" y="146" width="180" height="6" rx="3" fill="url(#gT0)"/>
+<path d="M354.6666666666667,462 C388.6666666666667,466 388.6666666666667,498 358.6666666666667,499" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,768 C388.6666666666667,772 388.6666666666667,804 358.6666666666667,805" fill="none" stroke="#B4472B" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,1074 C388.6666666666667,1078 388.6666666666667,1110 358.6666666666667,1111" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,462 C773.3333333333334,466 773.3333333333334,498 743.3333333333334,499" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,768 C773.3333333333334,772 773.3333333333334,804 743.3333333333334,805" fill="none" stroke="#1C7A7A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,1074 C773.3333333333334,1078 773.3333333333334,1110 743.3333333333334,1111" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,462 C1158.0,466 1158.0,498 1128.0,499" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,768 C1158.0,772 1158.0,804 1128.0,805" fill="none" stroke="#6B44B8" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,1074 C1158.0,1078 1158.0,1110 1128.0,1111" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<!-- Card 1: WSL 2 -->
+<g>
+<rect x="36.0" y="201" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="196" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="54.0" y="214" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="83.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#2F5FB3">vm</text>
+<text x="126.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">1. WSL 2</text>
+<circle cx="70.0" cy="293" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="300" style="font-size:20px;fill:#3A3A44">kernel Linux real</text>
+<circle cx="70.0" cy="330" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="337" style="font-size:20px;fill:#3A3A44">VM leve gerenciada</text>
+<circle cx="70.0" cy="367" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="374" style="font-size:20px;fill:#3A3A44">sem dual boot</text>
+</g>
+<!-- Card 5: Arquivos -->
+<g>
+<rect x="420.6666666666667" y="201" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="196" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="214" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="467.6666666666667" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#8A6A00">~</text>
+<text x="510.6666666666667" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">5. Arquivos</text>
+<circle cx="454.6666666666667" cy="293" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,293 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="300" style="font-size:20px;fill:#3A3A44">projetos em ~/projetos</text>
+<circle cx="454.6666666666667" cy="330" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,330 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="337" style="font-size:20px;fill:#3A3A44">/mnt/c só para trocar</text>
+<circle cx="454.6666666666667" cy="367" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,367 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="374" style="font-size:20px;fill:#3A3A44">\\wsl.localhost no Windows</text>
+</g>
+<!-- Card 9: Gerenciar -->
+<g>
+<rect x="805.3333333333334" y="201" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="196" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="214" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="852.3333333333334" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#21835A">cfg</text>
+<text x="895.3333333333334" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">9. Gerenciar</text>
+<circle cx="839.3333333333334" cy="293" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,293 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="300" style="font-size:20px;fill:#3A3A44">.wslconfig: memória/CPU</text>
+<circle cx="839.3333333333334" cy="330" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,330 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="337" style="font-size:20px;fill:#3A3A44">wsl.conf: por distro</text>
+<circle cx="839.3333333333334" cy="367" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,367 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="374" style="font-size:20px;fill:#3A3A44">aplique com shutdown</text>
+<rect x="823.3333333333334" y="403" width="322.6666666666667" height="45" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="837.3333333333334" y="429" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">wsl --shutdown</text>
+</g>
+<!-- Card 2: Instalar -->
+<g>
+<rect x="36.0" y="507" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="502" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="54.0" y="520" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="83.0" y="558" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#B4472B">&gt;_</text>
+<text x="126.0" y="558" style="font-size:24px;font-weight:800;fill:#1E1E1E">2. Instalar</text>
+<circle cx="70.0" cy="599" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,599 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="606" style="font-size:20px;fill:#3A3A44">PowerShell como admin</text>
+<circle cx="70.0" cy="636" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,636 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="643" style="font-size:20px;fill:#3A3A44">reinicie se pedir</text>
+<circle cx="70.0" cy="673" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,673 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="680" style="font-size:20px;fill:#3A3A44">crie usuário e senha</text>
+<rect x="54.0" y="709" width="322.6666666666667" height="45" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="68.0" y="735" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">wsl --install -d Ubuntu-26.04</text>
+</g>
+<!-- Card 6: Terminal -->
+<g>
+<rect x="420.6666666666667" y="507" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="502" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="520" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="467.6666666666667" y="558" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#1C7A7A">Aa</text>
+<text x="510.6666666666667" y="558" style="font-size:24px;font-weight:800;fill:#1E1E1E">6. Terminal</text>
+<circle cx="454.6666666666667" cy="599" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,599 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="606" style="font-size:20px;fill:#3A3A44">Ctrl+, abre ajustes</text>
+<circle cx="454.6666666666667" cy="636" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,636 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="643" style="font-size:20px;fill:#3A3A44">Nerd Font no Windows</text>
+<circle cx="454.6666666666667" cy="673" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,673 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="680" style="font-size:20px;fill:#3A3A44">Starship no Ubuntu</text>
+</g>
+<!-- Card 10: Backup -->
+<g>
+<rect x="805.3333333333334" y="507" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="502" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="520" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="852.3333333333334" y="558" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#6B44B8">tar</text>
+<text x="895.3333333333334" y="558" style="font-size:24px;font-weight:800;fill:#1E1E1E">10. Backup</text>
+<circle cx="839.3333333333334" cy="599" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,599 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="606" style="font-size:20px;fill:#3A3A44">desligue antes</text>
+<circle cx="839.3333333333334" cy="636" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,636 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="643" style="font-size:20px;fill:#3A3A44">--export / --import</text>
+<circle cx="839.3333333333334" cy="673" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,673 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="680" style="font-size:20px;fill:#3A3A44">depois: [user] default=</text>
+</g>
+<!-- Card 3: Conferir -->
+<g>
+<rect x="36.0" y="813" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="808" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="54.0" y="826" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="83.0" y="864" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#21835A">v2</text>
+<text x="126.0" y="864" style="font-size:24px;font-weight:800;fill:#1E1E1E">3. Conferir</text>
+<circle cx="70.0" cy="905" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,905 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="912" style="font-size:20px;fill:#3A3A44">VERSION deve ser 2</text>
+<circle cx="70.0" cy="942" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,942 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="949" style="font-size:20px;fill:#3A3A44">wsl --version</text>
+<circle cx="70.0" cy="979" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,979 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="986" style="font-size:20px;fill:#3A3A44">wsl --status</text>
+<rect x="54.0" y="1015" width="322.6666666666667" height="45" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="68.0" y="1041" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">wsl -l -v</text>
+</g>
+<!-- Card 7: Ferramentas -->
+<g>
+<rect x="420.6666666666667" y="813" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="808" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="826" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="467.6666666666667" y="864" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#2F5FB3">dev</text>
+<text x="510.6666666666667" y="864" style="font-size:24px;font-weight:800;fill:#1E1E1E">7. Ferramentas</text>
+<circle cx="454.6666666666667" cy="905" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,905 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="912" style="font-size:20px;fill:#3A3A44">Node via nvm</text>
+<circle cx="454.6666666666667" cy="942" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,942 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="949" style="font-size:20px;fill:#3A3A44">Java via SDKMAN</text>
+<circle cx="454.6666666666667" cy="979" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,979 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="986" style="font-size:20px;fill:#3A3A44">Python via uv</text>
+</g>
+<!-- Card 11: Claude Code -->
+<g>
+<rect x="805.3333333333334" y="813" width="358.6666666666667" height="266" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="808" width="358.6666666666667" height="266" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="826" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="852.3333333333334" y="864" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#8A6A00">AI</text>
+<text x="895.3333333333334" y="864" style="font-size:24px;font-weight:800;fill:#1E1E1E">11. Claude Code</text>
+<circle cx="839.3333333333334" cy="905" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,905 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="912" style="font-size:20px;fill:#3A3A44">instale como usuário</text>
+<circle cx="839.3333333333334" cy="942" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,942 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="949" style="font-size:20px;fill:#3A3A44">abra numa pasta</text>
+<circle cx="839.3333333333334" cy="979" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,979 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="986" style="font-size:20px;fill:#3A3A44">Shift+Tab troca modo</text>
+<rect x="823.3333333333334" y="1015" width="322.6666666666667" height="45" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="837.3333333333334" y="1041" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">claude --version</text>
+</g>
+<!-- Card 4: Pacotes -->
+<g>
+<rect x="36.0" y="1119" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="1114" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="54.0" y="1132" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="83.0" y="1170" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#6B44B8">apt</text>
+<text x="126.0" y="1170" style="font-size:24px;font-weight:800;fill:#1E1E1E">4. Pacotes</text>
+<circle cx="70.0" cy="1211" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1211 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1218" style="font-size:20px;fill:#3A3A44">update antes de upgrade</text>
+<circle cx="70.0" cy="1248" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1248 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1255" style="font-size:20px;fill:#3A3A44">sudo só quando pede</text>
+<circle cx="70.0" cy="1285" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1285 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1292" style="font-size:20px;fill:#3A3A44">nunca viva como root</text>
+<rect x="54.0" y="1321" width="322.6666666666667" height="72" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="68.0" y="1347" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">sudo apt update</text>
+<text x="68.0" y="1374" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">sudo apt upgrade -y</text>
+</g>
+<!-- Card 8: Janelas -->
+<g>
+<rect x="420.6666666666667" y="1119" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="1114" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="1132" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="467.6666666666667" y="1170" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">gui</text>
+<text x="510.6666666666667" y="1170" style="font-size:24px;font-weight:800;fill:#1E1E1E">8. Janelas</text>
+<circle cx="454.6666666666667" cy="1211" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1211 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1218" style="font-size:20px;fill:#3A3A44">WSLg abre no Windows</text>
+<circle cx="454.6666666666667" cy="1248" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1248 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1255" style="font-size:20px;fill:#3A3A44">gedit &amp;, firefox &amp;</text>
+<circle cx="454.6666666666667" cy="1285" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1285 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1292" style="font-size:20px;fill:#3A3A44">&amp; libera o terminal</text>
+</g>
+<!-- Card 12: Spec Kit -->
+<g>
+<rect x="805.3333333333334" y="1119" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="1114" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="1132" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="852.3333333333334" y="1170" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">sdd</text>
+<text x="895.3333333333334" y="1170" style="font-size:24px;font-weight:800;fill:#1E1E1E">12. Spec Kit</text>
+<circle cx="839.3333333333334" cy="1211" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1211 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1218" style="font-size:20px;fill:#3A3A44">spec: o quê</text>
+<circle cx="839.3333333333334" cy="1248" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1248 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1255" style="font-size:20px;fill:#3A3A44">plan: como</text>
+<circle cx="839.3333333333334" cy="1285" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1285 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1292" style="font-size:20px;fill:#3A3A44">tasks → implement</text>
+</g>
+</svg>
