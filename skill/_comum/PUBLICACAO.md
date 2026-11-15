@@ -140,7 +140,7 @@ jobs:
           gh release upload epubs saida/*.epub --clobber
 ```
 
-README raiz: título "📚 Biblioteca de Estudos", uma frase de propósito, seções **Programação** e **Matemática** com tabela `Curso | Ler online | EPUB` (o curso com o nome no formato padrão), onde EPUB aponta para `https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/<slug>.epub`, uma nota sobre como os EPUBs são gerados e outra explicando que as respostas dos exercícios ficam recolhidas.
+README raiz: título "📚 Biblioteca de Estudos", uma frase de propósito, seção **🔁 Cursos reformulados** com as subseções **Programação** e **Matemática**, cada uma com tabela `Curso | Ler online | EPUB` (o curso com o nome no formato padrão), onde EPUB aponta para `https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/<slug>.epub`, uma nota sobre como os EPUBs são gerados e outra explicando que as respostas dos exercícios ficam recolhidas.
 
 ## Livros criados do zero (skill criar-livro-tecnologia)
 
@@ -148,7 +148,7 @@ Mesma estrutura dos cursos, com três diferenças:
 
 - a área é `livros/` (`livros/<slug>/`), e a pasta também guarda o `ementa.yaml` aprovado;
 - no `metadata.yaml`: `rights: "Livro criado com IA a partir de fontes públicas, citadas em cada capítulo. Conferido em <data>."`;
-- o catálogo do README tem a seção **📗 Livros criados do zero**, agrupada por trilha na ordem de leitura. O mapa das trilhas (`livros/README.md`) é gerado por `python3 ferramentas/mapa_livros.py --md`.
+- o catálogo do README tem a seção **📗 Cursos criados a partir de ementa**, agrupada por trilha na ordem de leitura. O mapa das trilhas (`livros/README.md`) é gerado por `python3 ferramentas/mapa_livros.py --md`.
 
 ## Estrutura de cada curso
 

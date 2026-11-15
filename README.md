@@ -1,10 +1,14 @@
 # 📚 Biblioteca de Estudos
 
-Resumos dos cursos de programação e matemática que fiz, revisados e organizados para estudo e revisão. Cada curso pode ser lido aqui no GitHub ou baixado como livro EPUB.
+Livros para estudo e revisão, em duas categorias: **cursos reformulados** (cursos que fiz, revisados a partir das minhas anotações) e **cursos criados a partir de ementa** (livros escritos do zero sobre um tema, depois de aprovar a ementa). Cada livro pode ser lido aqui no GitHub ou baixado como EPUB.
 
 > 🚀 **Quer reformular um curso seu do mesmo jeito?** O repositório também é o kit que produz estes livros: veja **[COMO-USAR.md](COMO-USAR.md)** (skill para o Claude, scripts e passo a passo).
 
-## 💻 Programação
+## 🔁 Cursos reformulados
+
+Cursos que fiz, com as anotações do Notion revisadas, completadas e ilustradas pela skill `revisar-curso-biblioteca`.
+
+### 💻 Programação
 
 | Curso | Ler online | EPUB |
 | --- | --- | --- |
@@ -17,15 +21,15 @@ Resumos dos cursos de programação e matemática que fiz, revisados e organizad
 | StartSe: Tech Academy - StartSe | [Abrir](programacao/startse-tech-academy/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/startse-tech-academy.epub) |
 | Santander Coders: Trilha Digital Web Back-End - Ada Tech | [Abrir](programacao/santander-coders-backend/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/santander-coders-backend.epub) |
 
-## 📐 Matemática
+### 📐 Matemática
 
 | Curso | Ler online | EPUB |
 | --- | --- | --- |
 | *Em breve* | | |
 
-## 📗 Livros criados do zero
+## 📗 Cursos criados a partir de ementa
 
-Livros escritos com a skill `criar-livro-tecnologia`, a partir de fontes públicas citadas em cada capítulo, organizados em trilhas (do básico aos complementares). Veja o [mapa das trilhas](livros/).
+Livros escritos do zero com a skill `criar-livro-tecnologia`: a ementa é proposta, ajustada e aprovada antes de qualquer capítulo, e o texto parte de fontes públicas citadas em cada capítulo. Ficam organizados em trilhas (do básico aos complementares). Veja o [mapa das trilhas](livros/).
 
 | Livro | Trilha | Ler | EPUB |
 | --- | --- | --- | --- |
@@ -33,7 +37,7 @@ Livros escritos com a skill `criar-livro-tecnologia`, a partir de fontes públic
 
 ## Como os livros são gerados
 
-Cada curso fica numa pasta própria (`programacao/<curso>/` ou `matematica/<curso>/`), com as aulas em Markdown na pasta `aulas/` e os diagramas em SVG na pasta `img/`. A cada atualização, uma GitHub Action usa o [Pandoc](https://pandoc.org) para gerar o EPUB do curso e publicá-lo na [release `epubs`](../../releases/tag/epubs).
+Cada curso reformulado fica numa pasta própria (`programacao/<curso>/` ou `matematica/<curso>/`), e cada curso criado a partir de ementa em `livros/<livro>/`, com as aulas em Markdown na pasta `aulas/` e os diagramas em SVG na pasta `img/`. A cada atualização, uma GitHub Action usa o [Pandoc](https://pandoc.org) para gerar o EPUB e publicá-lo na [release `epubs`](../../releases/tag/epubs).
 
 Nos exercícios, as respostas ficam recolhidas: tente resolver primeiro e depois clique em **Ver resposta** para conferir.
 
@@ -300,7 +304,7 @@ Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
    3. capa;
    4. `auditar_curso.py --criterios` e `gerar_epub_local.py`;
    5. `mapa_livros.py --md`;
-   6. catálogo do README (seção **📗 Livros criados do zero**, por trilha);
+   6. catálogo do README (seção **📗 Cursos criados a partir de ementa**, por trilha);
    7. commit e push, e conferir a Action e o EPUB na release.
 10. **Entregar:**
     - callout `📚` com os links no índice do Notion;
@@ -1276,7 +1280,7 @@ jobs:
           gh release upload epubs saida/*.epub --clobber
 ```
 
-README raiz: título "📚 Biblioteca de Estudos", uma frase de propósito, seções **Programação** e **Matemática** com tabela `Curso | Ler online | EPUB` (o curso com o nome no formato padrão), onde EPUB aponta para `https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/<slug>.epub`, uma nota sobre como os EPUBs são gerados e outra explicando que as respostas dos exercícios ficam recolhidas.
+README raiz: título "📚 Biblioteca de Estudos", uma frase de propósito, seção **🔁 Cursos reformulados** com as subseções **Programação** e **Matemática**, cada uma com tabela `Curso | Ler online | EPUB` (o curso com o nome no formato padrão), onde EPUB aponta para `https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/<slug>.epub`, uma nota sobre como os EPUBs são gerados e outra explicando que as respostas dos exercícios ficam recolhidas.
 
 ## Livros criados do zero (skill criar-livro-tecnologia)
 
@@ -1284,7 +1288,7 @@ Mesma estrutura dos cursos, com três diferenças:
 
 - a área é `livros/` (`livros/<slug>/`), e a pasta também guarda o `ementa.yaml` aprovado;
 - no `metadata.yaml`: `rights: "Livro criado com IA a partir de fontes públicas, citadas em cada capítulo. Conferido em <data>."`;
-- o catálogo do README tem a seção **📗 Livros criados do zero**, agrupada por trilha na ordem de leitura. O mapa das trilhas (`livros/README.md`) é gerado por `python3 ferramentas/mapa_livros.py --md`.
+- o catálogo do README tem a seção **📗 Cursos criados a partir de ementa**, agrupada por trilha na ordem de leitura. O mapa das trilhas (`livros/README.md`) é gerado por `python3 ferramentas/mapa_livros.py --md`.
 
 ## Estrutura de cada curso
 

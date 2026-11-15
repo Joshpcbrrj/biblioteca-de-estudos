@@ -111,7 +111,7 @@ Com o tema, procure no `ESTADO.md` (seção Livros) e no `mapa_livros.py`:
    3. capa;
    4. `auditar_curso.py --criterios` e `gerar_epub_local.py`;
    5. `mapa_livros.py --md`;
-   6. catálogo do README (seção **📗 Livros criados do zero**, por trilha);
+   6. catálogo do README (seção **📗 Cursos criados a partir de ementa**, por trilha);
    7. commit e push, e conferir a Action e o EPUB na release.
 10. **Entregar:**
     - callout `📚` com os links no índice do Notion;
