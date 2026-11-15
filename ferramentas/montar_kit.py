@@ -23,6 +23,7 @@ ARQUIVOS = [
     ('referencias/COORDENADOR.md', 'Apoio: modo coordenador (um agente por página)'),
     ('referencias/DIDATICA_VISUAL.md', 'Apoio: imagens, didática visual e design system'),
     ('referencias/NOTION.md', 'Apoio: notas técnicas do Notion'),
+    ('referencias/PDFS.md', 'Apoio: PDFs do curso com o Docling (opcional)'),
     ('referencias/PUBLICACAO.md', 'Apoio: exportação, conversão e publicação'),
     ('referencias/CAPA.md', 'Apoio: capa do livro'),
 ]

@@ -21,6 +21,16 @@ Este repositório é, ao mesmo tempo, a biblioteca de livros e o kit que a produ
 
 Prefere não instalar? Abra o bloco **Skill completa** no [README](README.md#-kit-de-reformulação-skill--arquivos-de-apoio), copie o conteúdo e cole na primeira mensagem do chat. Funciona igual: a skill busca sozinha os arquivos de apoio no repositório.
 
+## Opcional: ler os PDFs do curso com o Docling
+
+Se o curso tiver PDFs de aula ou de listas de exercícios, o Claude pode convertê-los para conferir os enunciados exatos e a ementa. Os PDFs não são publicados. Para isso:
+
+1. Instale o `uv` (`uv --version` para conferir). No Windows: `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`.
+2. Quando o Claude pedir, baixe os PDFs para a pasta Downloads e rode o comando que ele passar, algo como `uvx --from docling docling "lista-1.pdf" --to md --output .`.
+3. Na primeira vez, o Docling baixa os modelos e demora alguns minutos.
+
+Quer o Docling também como servidor MCP no app? A configuração que funciona e a solução para os erros comuns ("Connection closed", modo remoto, antivírus) estão no apoio **PDFs do curso com o Docling** do [README](README.md#-kit-de-reformulação-skill--arquivos-de-apoio).
+
 ## 3. Comece um chat novo
 
 Cole esta mensagem (troque o link):
@@ -59,6 +69,7 @@ Se o chat ficar longo demais ou cair, abra outro e diga "continue o curso X": o 
 | O Claude não acha a pasta Downloads | Abra o app do Claude no computador e libere a pasta para o chat, ou anexe o zip. |
 | O Claude não consegue publicar no GitHub | Confira se o repositório está conectado com permissão de escrita. |
 | A Action "Kit da skill" falhou | Alguém editou a skill sem atualizar o README: rode `python3 ferramentas/montar_kit.py` e faça commit. |
+| O servidor Docling mostra "Connection closed" | Veja a tabela de problemas no apoio **PDFs do curso com o Docling** (normalmente falta `--with "mcp<2"`). |
 | Uma imagem não aparece no Notion | O upload expirou (vale ~1 h). Peça para o Claude refazer a página. |
 
 ## Para mexer no kit
