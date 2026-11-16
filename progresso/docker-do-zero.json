@@ -38,28 +38,28 @@
   },
   {
    "id": "419345e2044381aeb213d17557a95b43",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: pilha de caixas no depósito (cache); marcenaria x entrega do móvel (multi-stage)"
   },
   {
    "id": "419345e20443810fa7d5db7706294902",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: rodoviária (guarda-volumes/mochila/vidro); carro alugado e mala; chaveiro em casa (backup)"
   },
   {
    "id": "419345e2044381af810eec6eae3f0b1d",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: escola (lista de chamada/DNS); restaurante (salão x cozinha, portas)"
   },
   {
    "id": "419345e2044381c1927dfd79d243a717",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: chave de manobrista (PAT); loja de aplicativos (publicar); edições de livro (SemVer). Revisar limite de pulls no cap.6"
   },
   {
    "id": "419345e204438158a383cdbde99c3de8",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: biblioteca com acervo fechado; maestro x partitura (compose)"
   },
   {
    "id": "419345e20443811a8e68df8c86cf7432",

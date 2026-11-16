@@ -28,7 +28,7 @@ Skill `criar-livro-tecnologia`. A ementa aprovada de cada livro fica em `livros/
 | Livro (pasta) | Trilha | Índice no Notion (id) | Situação | Onde parou / o que falta |
 | --- | --- | --- | --- | --- |
 | `livros/wsl-do-zero` | wsl (1º) | 419345e2044381a2b27edff0235f85f2 | ✅ publicado 2026-11-15 | 11 capítulos, capa e EPUB. Avisos aceitos: saida_longa (saídas reais de terminal e linhas com URL; o EPUB quebra a linha). Revisar versões em nov/2027. |
-| `livros/docker-do-zero` | docker (1º) | 419345e2044381a8a4aac8e2a8ddd1d1 | 🟡 escrevendo | Ementa aprovada em 2026-11-15 (12 caps + próximos). Labs rodam com Docker Engine 29.9 local e imagem ubuntu:24.04 importada (Hub bloqueado). |
+| `livros/docker-do-zero` | docker (1º) | 419345e2044381a8a4aac8e2a8ddd1d1 | 🟡 aguardando exportação | Capítulos 1–13, cheat sheet e índice prontos no Notion (2026-11-16). Labs rodam com Docker Engine 29.9 local e imagem ubuntu:24.04 importada (Hub bloqueado). |
 
 Página do Notion onde os livros são criados: `notion_livros` do `biblioteca.yaml` (página "📗 Cursos criados a partir de ementa", dentro de Estudos).
 
