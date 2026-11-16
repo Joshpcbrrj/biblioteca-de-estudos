@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** desafio de geometria com condição: verificar se três medidas formam um triângulo (desigualdade triangular) e calcular o perímetro ou a área do trapézio. Tente resolver antes de abrir a resolução.
 
+## De onde paramos
+
+Você já compara valores com `if` e combina condições com operadores lógicos. Agora vai verificar uma regra antes de decidir qual cálculo fazer.
+
 ## Desafio
 
 Leia 3 valores reais (A, B e C) e verifique se eles formam um triângulo.
@@ -25,6 +29,8 @@ O resultado com uma casa decimal.
 | 6.0 4.0 2.1 | Perimetro = 12.1 |
 
 ![Formam um triângulo?](../img/dio-triangulo.svg)
+
+> 💡 **Analogia:** pense em três varetas. Se a mais comprida for maior que a soma das outras duas, não há como fechá-las num triângulo: as duas menores não alcançam a ponta.
 
 ## Resolução
 
@@ -72,6 +78,24 @@ public class Main {
 > - A variável `soma` guardava ora o perímetro, ora a área. Agora cada valor tem seu próprio nome.
 > - `String.format` sem `Locale` imprime `12,1` (com vírgula) em computadores em português. Com `Locale.US` sai `12.1`, como o juiz espera.
 > - Removido o `import java.io.IOException`, que não era usado, e a linha duplicada da tabela de exemplos.
+
+> ➡️ **Próximo passo:** **Desafio conta espaços e vogais**, que percorre uma frase caractere por caractere.
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Que condição precisa valer para três lados formarem um triângulo?</summary>
+
+Cada lado precisa ser menor que a soma dos outros dois, e as três desigualdades valem juntas.
+
+</details>
+
+<details>
+<summary>Ver resposta: Por que o código testa as três desigualdades em vez de achar o maior lado?</summary>
+
+O teste das três cobre todos os casos sem trabalho extra de ordenação.
+
+</details>
 
 ## 📌 Resumo
 

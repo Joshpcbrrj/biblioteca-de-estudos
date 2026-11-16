@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** como uma classe Java é organizada, os tipos primitivos e as variáveis, os operadores, como declarar métodos, o escopo das variáveis, as palavras reservadas, o Javadoc e como compilar e rodar pelo terminal.
 
+## De onde paramos
+
+Na aula anterior você instalou o JDK e uma IDE. Agora vai escrever o seu primeiro código Java e entender cada parte dele.
+
 ### Documentação do professor
 
 🔗 [Table of contents](https://felipe-silva-aguiar.gitbook.io/dio-java/gitbook/summary)
@@ -12,6 +16,10 @@
 
 > 💡 **Nesta página:** como declarar uma classe, o método `main`, convenções de nomes, indentação, pacotes e boas práticas de nomenclatura (Java Beans).
 
+### De onde paramos
+
+Você já instalou o JDK e sabe rodar um programa. Agora vai ler, peça por peça, como uma classe Java é escrita.
+
 ### Criação de classes
 
 - Um programa é escrito combinando **palavras reservadas** da linguagem (`public`, `class`, `int`…) com **nomes que nós escolhemos** para arquivos, classes, atributos e métodos.
@@ -20,6 +28,8 @@
 #### Sintaxe de declaração de uma classe
 
 ![Partes da declaração de uma classe.](../img/cls-declaracao.svg)
+
+> 💡 **Analogia:** a declaração de uma classe é como a capa de um formulário: diz qual é o documento (o nome), quem pode ver (`public`) e onde começam e terminam as informações (as chaves).
 
 - Quase todas as classes começam com `public class`.
 - Toda classe precisa de um nome, por exemplo `MinhaClasse`.
@@ -32,9 +42,13 @@
 
 É essencial saber em qual par de chaves `{ }` você está: dentro da classe, dentro de um método ou dentro de um bloco (`if`, `for`…).
 
+> 💡 **Analogia:** pense em caixas dentro de caixas. A classe é a caixa grande, cada método é uma caixa dentro dela, e cada `if` ou `for` é uma caixa ainda menor.
+
 #### O método `main`
 
 ![Cada palavra da assinatura do main tem um papel.](../img/cls-main.svg)
+
+> 💡 **Analogia:** o `main` é a porta de entrada de um prédio. A JVM bate nela, e cada palavra da assinatura diz quem pode bater (`public`), que não precisa de um morador para abrir (`static`) e o que ela não devolve (`void`).
 
 - É o **ponto de entrada** do programa: a JVM começa a execução por ele.
 - Recomenda-se que **apenas uma classe** da aplicação tenha `main`.
@@ -83,10 +97,10 @@ public class CalculadoraCientifica {
 
 ```java
 // Declarações INVÁLIDAS
-int numero&um = 1;  // símbolo & não é permitido (só _ e $)
-int 1numero = 1;  // não pode começar com número
-int numero um = 1;  // não pode ter espaço
-int long = 1;  // long é palavra reservada
+int numero&um = 1; // & não é permitido
+int 1numero = 1;  // começa com número
+int numero um = 1; // tem espaço
+int long = 1;  // palavra reservada
 
 // Declarações VÁLIDAS
 int numero$um = 1;
@@ -100,12 +114,12 @@ int longo = 1;
 Variáveis e métodos seguem estruturas parecidas:
 
 ```java
-// Variável: Tipo nomeBemDefinido = valor (opcional em alguns casos);
+// Variável: Tipo nome = valor;
 int idade = 23;
 double altura = 1.62;
-Dog spike; // sem valor ainda — é permitido
+Dog spike; // sem valor ainda: é permitido
 
-// Método: TipoRetorno nomeNoInfinitivo(parâmetros)
+// Método: TipoRetorno nomeNoInfinitivo(params)
 int somar(int numeroUm, int numeroDois)
 String formatarCep(long cep)
 ```
@@ -117,6 +131,8 @@ String formatarCep(long cep)
 **Indentar** é recuar o código para mostrar sua hierarquia: o que está dentro de quê. O compilador ignora os espaços, mas para quem lê faz toda a diferença.
 
 ![A mesma lógica, sem e com indentação.](../img/cls-indent.svg)
+
+> 💡 **Analogia:** é como os tópicos de um resumo: o recuo mostra quais itens estão dentro de qual tópico, sem mudar o conteúdo.
 
 **Sem indentação**
 
@@ -156,10 +172,14 @@ Conforme o sistema cresce, surgem muitos arquivos. Eles são organizados em **pa
 
 ![Estrutura de pastas e o nome qualificado da classe.](../img/cls-pacotes.svg)
 
+> 💡 **Analogia:** é como um arquivo de documentos com pastas. O nome qualificado é o caminho completo até o documento, e dois documentos com o mesmo título podem existir em pastas diferentes.
+
 Com pacotes, cada classe passa a ter dois nomes:
 
 - **Nome simples:** só o nome da classe — `ContaBanco`.
 - **Nome qualificado:** pacote + classe — `com.suaempresa.conta.ContaBanco`.
+
+O nome qualificado funciona como um endereço completo: pode haver duas classes `Conta` em pacotes diferentes, sem conflito.
 
 ### Java Beans: convenções de escrita
 
@@ -174,9 +194,12 @@ Código legível é aquele que o time (e você mesmo, no futuro) entende sem esf
 **Não recomendado**
 
 ```java
-double salMedio = 1500.23;  // abreviado, difícil de entender
-String emails = "aluno@escola.com"; // plural para um único e-mail confunde
-String myName = "JOSEPH";  // mistura de idiomas no nome
+// abreviado, difícil de entender
+double salMedio = 1500.23;
+// plural para um único e-mail confunde
+String emails = "aluno@escola.com";
+// mistura de idiomas no nome
+String myName = "JOSEPH";
 ```
 
 **Recomendado**
@@ -184,7 +207,8 @@ String myName = "JOSEPH";  // mistura de idiomas no nome
 ```java
 double salarioMedio = 1500.23;
 String email = "aluno@escola.com";
-String[] emails = {"aluno@escola.com", "professor@escola.com"};
+String[] emails = {"aluno@escola.com",
+                   "professor@escola.com"};
 String meuNome = "JOSEPH";
 ```
 
@@ -196,13 +220,41 @@ Nomes de métodos são **verbos** em camelCase e cada método deve ter **uma ún
 somar(int n1, int n2) {}
 abrirConexao() {}
 concluirProcessamento() {}
-findById(int id) {}  // você verá muitos métodos em inglês
-calcularImprimir() {} // problema: faz duas coisas; separe em calcular() e imprimir()
+findById(int id) {}  // muitos métodos em inglês
+// problema: faz duas coisas;
+// separe em calcular() e imprimir()
+calcularImprimir() {}
 ```
+
+> ➡️ **Próximo passo:** na próxima página você conhece os tipos primitivos e as variáveis que guardam os dados.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Classe pública | o arquivo tem exatamente o mesmo nome da classe |
+| `main` | ponto de entrada: `public static void main(String[] args)` |
+| Nomes | PascalCase para classes, camelCase para variáveis e métodos, MAIÚSCULAS_COM_UNDERSCORE para constantes |
+| Pacotes | pastas em minúsculas; o nome qualificado é pacote + classe |
+| Indentação | recuo que mostra a hierarquia, sem mudar o código |
+
+### 🧠 Revisão rápida
+
+**A classe pública `ContaCorrente` pode ficar no arquivo `conta.java`?**
+
+Não: o arquivo precisa se chamar exatamente `ContaCorrente.java`.
+
+**Qual a convenção para cada nome: `valor total` como variável, como classe e como constante?**
+
+Variável: `valorTotal`. Classe: `ValorTotal`. Constante: `VALOR_TOTAL`.
 
 ## Tipos e variáveis
 
-> 💡 **Resumo:** Java é **fortemente tipado** — toda variável tem um tipo definido. Os 8 tipos primitivos guardam valores simples; todo o resto (String, objetos, arrays) é **referência**.
+> 🗺️ **Nesta aula:** Java é **fortemente tipado** — toda variável tem um tipo definido. Os 8 tipos primitivos guardam valores simples; todo o resto (String, objetos, arrays) é **referência**.
+
+### De onde paramos
+
+Você já escreve uma classe com um método `main`. Agora vai decidir qual tipo de dado guardar em cada variável.
 
 ### Tipos primitivos
 
@@ -211,6 +263,8 @@ O Java tem palavras reservadas para os tipos de dados básicos, chamados **tipos
 > 📌 **Os oito tipos primitivos:** `byte`, `short`, `int`, `long`, `float`, `double`, `boolean` e `char`. Eles **não são objetos**: representam o valor bruto. Quando declarados como variáveis locais, ficam diretamente na **stack** (pilha de memória).
 
 ![Primitivos guardam o valor; referências apontam para um objeto no heap.](../img/tipos-memoria.svg)
+
+> 💡 **Analogia:** a variável primitiva é uma gaveta com o valor dentro. A variável de referência é uma gaveta com um papel que diz em qual armário (no heap) está o objeto.
 
 #### Inteiros
 
@@ -241,7 +295,7 @@ O Java tem palavras reservadas para os tipos de dados básicos, chamados **tipos
 
 - `float` usa metade da memória do `double`, mas tem pouca precisão (6–7 dígitos), por isso é menos usado.
 - `byte` e `short` raramente são necessários hoje — economia de memória quase nunca compensa.
-- `long` aparece quando os números passam de ~2 bilhões (ex.: IDs, timestamps em milissegundos).
+- `long` aparece quando os números passam de cerca de 2 bilhões (ex.: IDs, timestamps em milissegundos).
 - **Regra prática:** `int` para inteiros e `double` para decimais.
 
 > 💰 **E dinheiro?** Para valores monetários reais (como num banco), use `BigDecimal`. `double` pode gerar erros de arredondamento: `0.1 + 0.2` dá `0.30000000000000004`.
@@ -254,9 +308,9 @@ Uma **variável** é um nome para um espaço de memória. É composta por **tipo
 
 ```java
 // <Tipo> <nomeVariavel> = <valor opcional>;
-int idade;  // tipo int, nome idade, sem valor ainda
-int anoFabricacao = 2021;  // tipo int, nome anoFabricacao, valor 2021
-double salarioMinimo = 2500.0; // tipo double, nome salarioMinimo, valor 2500.0
+int idade;  // sem valor
+int anoFabricacao = 2021;
+double salarioMinimo = 2500.0;
 ```
 
 > 🛠️ **Correção no código:** o original tinha `double salarioMinimo = 2.500;`. Em Java o ponto é o **separador decimal**, então isso vale **2,5** (dois e meio), não dois mil e quinhentos. O certo é `2500.0` — ou `2_500.0`, usando `_` para facilitar a leitura.
@@ -268,9 +322,10 @@ public class TipoDados {
   public static void main(String[] args) {
     byte idade = 123;
     short ano = 2021;
-    int cep = 21070333;  // se começar com zero, o zero é perdido!
-    long cpf = 98765432109L;  // long precisa do sufixo L
-    float pi = 3.14F;  // float precisa do sufixo F
+    // se começar com zero, o zero se perde!
+    int cep = 21070333;
+    long cpf = 98765432109L; // sufixo L
+    float pi = 3.14F;  // sufixo F
     double salario = 1275.33;
   }
 }
@@ -298,23 +353,58 @@ public class ExemploVariavel {
     numero = 10;
     System.out.println(numero); // 10
 
-    // constante: final impede qualquer nova atribuição
+    // final impede nova atribuição
     final double VALOR_DE_PI = 3.14;
 
-    VALOR_DE_PI = 3.15; // ERRO de compilação: não é possível alterar uma constante
+    // ERRO de compilação: é uma constante
+    VALOR_DE_PI = 3.15;
   }
 }
 ```
 
+> ➡️ **Próximo passo:** na próxima página você combina essas variáveis com operadores para calcular e comparar.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Inteiros | `byte`, `short`, `int` e `long`, do menor para o maior |
+| Decimais | `float` (6 a 7 dígitos) e `double` (15 a 16 dígitos) |
+| `boolean` e `char` | `true`/`false` e um caractere Unicode entre aspas simples |
+| Dinheiro | use `BigDecimal`, nunca `double` |
+| Declaração | tipo + nome + valor opcional |
+
+### 🧠 Revisão rápida
+
+**Qual tipo usar para idade? E para o salário de um funcionário num sistema bancário?**
+
+Idade: `int` (ou `byte`, se quiser economizar). Salário: `BigDecimal`, para evitar erros de arredondamento.
+
+**Por que `long x = 3000000000;` não compila?**
+
+O literal sem sufixo é tratado como `int`, e 3 bilhões passa do máximo do `int`. O certo é `3000000000L`.
+
+**Onde fica o texto "Ana" em `String nome = "Ana";`?**
+
+No heap, como um objeto String. A variável `nome`, na stack, guarda só a referência para ele.
+
 ## Operadores
 
-> 💡 **Operadores** são símbolos com significado especial para a linguagem: atribuem valores, fazem contas, comparam e combinam condições.
+> 🗺️ **Nesta aula:** operadores são símbolos com significado especial para a linguagem: atribuem valores, fazem contas, comparam e combinam condições.
+
+### De onde paramos
+
+Você já guarda valores em variáveis. Agora vai usar operadores para calcular, comparar e combinar condições.
 
 Um programa é um conjunto de instruções que, executadas, produzem um resultado. Quase sempre o fluxo é o mesmo: **receber dados**, **processá-los** com alguma lógica e **apresentar** o resultado. Os operadores são as ferramentas do meio desse caminho.
 
 ![Entrada, processamento e saída.](../img/op-ipo.svg)
 
-### Resumo
+> 💡 **Analogia:** é uma padaria. A farinha e os ovos são a entrada, a mistura e o forno são o processamento, e o pão pronto é a saída. Os operadores são as ferramentas usadas no meio do caminho.
+
+> ➡️ **Próximo passo:** na próxima página você escreve métodos que recebem parâmetros e devolvem valores.
+
+### 📌 Resumo
 
 | Categoria | Operadores |
 | --- | --- |
@@ -336,7 +426,8 @@ int idade = 22;
 double peso = 99.9;
 char sexo = 'M';
 boolean doadorOrgao = true;
-LocalDate dataNascimento = LocalDate.of(2001, 5, 10); // import java.time.LocalDate;
+// import java.time.LocalDate;
+LocalDate nascimento = LocalDate.of(2001, 5, 10);
 ```
 
 Existem também as **atribuições compostas**, que operam e atribuem de uma vez: `x += 5` equivale a `x = x + 5`.
@@ -350,8 +441,8 @@ double soma = 10.5 + 15.7;  // 26.2
 int subtracao = 113 - 25;  // 88
 int multiplicacao = 20 * 7;  // 140
 int divisao = 15 / 3;  // 5
-int modulo = 18 % 3;  // 0 (18 é divisível por 3)
-double resultado = (10 * 7) + (20 / 4); // 75.0
+int modulo = 18 % 3;  // 0
+double r = (10 * 7) + (20 / 4);  // 75.0
 ```
 
 > ⚠️ **Atenção:**
@@ -379,13 +470,16 @@ System.out.println(-numero);  // -5
 numero++;
 System.out.println(numero);  // 6
 
-System.out.println(numero++);  // imprime 6 e SÓ DEPOIS incrementa (pós-incremento)
+// pós: imprime 6 e SÓ DEPOIS incrementa
+System.out.println(numero++);
 System.out.println(numero);  // 7
 
-System.out.println(++numero);  // incrementa ANTES e imprime 8 (pré-incremento)
+// pré: incrementa ANTES e imprime 8
+System.out.println(++numero);
 
 boolean verdadeiro = true;
-System.out.println("Inverteu " + !verdadeiro); // Inverteu false
+System.out.println("Inverteu " + !verdadeiro);
+// Inverteu false
 ```
 
 > 🛠️ **Ajuste nos comentários:** no original, a linha `System.out.println(numero ++)` estava comentada como "imprime 7". Ela imprime **6**: no pós-incremento (`x++`) o valor é usado primeiro e incrementado depois; no pré-incremento (`++x`) incrementa primeiro.
@@ -408,7 +502,8 @@ else
   resultado = "falso";
 */
 
-String resultado = (a == b) ? "verdadeiro" : "falso";
+String resultado = (a == b) ? "verdadeiro"
+              : "falso";
 System.out.println(resultado); // falso
 ```
 
@@ -428,23 +523,23 @@ Comparam dois valores e retornam um `boolean`.
 | `<=` | menor ou igual a |
 
 ```java
-int numero1 = 1;
-int numero2 = 2;
+int n1 = 1;
+int n2 = 2;
 
-if (numero1 > numero2)
-  System.out.println("Número 1 é maior que número 2");
+if (n1 > n2)
+  System.out.println("n1 é maior");
 
-if (numero1 < numero2)
-  System.out.println("Número 1 é menor que número 2");  // imprime
+if (n1 < n2)
+  System.out.println("n1 é menor");  // imprime
 
-if (numero1 >= numero2)
-  System.out.println("Número 1 é maior ou igual ao número 2");
+if (n1 >= n2)
+  System.out.println("n1 é maior ou igual");
 
-if (numero1 <= numero2)
-  System.out.println("Número 1 é menor ou igual ao número 2"); // imprime
+if (n1 <= n2)
+  System.out.println("n1 é menor ou igual"); // imprime
 
-if (numero1 != numero2)
-  System.out.println("Número 1 é diferente do número 2");  // imprime
+if (n1 != n2)
+  System.out.println("n1 é diferente");  // imprime
 ```
 
 #### Comparações avançadas: `==` x `equals`
@@ -457,13 +552,16 @@ if (numero1 != numero2)
 ```java
 String nome1 = "JAVA";
 String nome2 = "JAVA";
-System.out.println(nome1 == nome2);  // true  (literais iguais reaproveitam o mesmo objeto no String Pool)
+// true: literais iguais reaproveitam o
+// mesmo objeto no String Pool
+System.out.println(nome1 == nome2);
 
 String nome3 = new String("JAVA");
-System.out.println(nome1 == nome3);  // false (new cria outro objeto)
+// false: new cria outro objeto
+System.out.println(nome1 == nome3);
 
 String nome4 = nome3;
-System.out.println(nome3 == nome4);  // true  (mesma referência)
+System.out.println(nome3 == nome4); // true
 
 System.out.println(nome1.equals(nome2)); // true
 System.out.println(nome2.equals(nome3)); // true
@@ -473,12 +571,15 @@ System.out.println(nome3.equals(nome4)); // true
 ```java
 int primitivo1 = 130;
 int primitivo2 = 130;
-System.out.println(primitivo1 == primitivo2); // true (primitivos comparam valor)
+// true: primitivos comparam valor
+System.out.println(primitivo1 == primitivo2);
 
 Integer objeto1 = 130;
 Integer objeto2 = 130;
-System.out.println(objeto1 == objeto2);  // false (objetos diferentes)
-System.out.println(objeto1.equals(objeto2));  // true  (mesmo conteúdo)
+// false: objetos diferentes
+System.out.println(objeto1 == objeto2);
+// true: mesmo conteúdo
+System.out.println(objeto1.equals(objeto2));
 ```
 
 > 🛠️ **Correção no código:** o original declarava `numero1` e `numero2` duas vezes no mesmo método (primeiro como `int`, depois como `Integer`), o que não compila; renomeei as variáveis. Curiosidade: com `Integer` entre **-128 e 127** o `==` dá `true`, porque o Java reaproveita esses objetos em cache — mais um motivo para usar sempre `equals`.
@@ -498,10 +599,10 @@ boolean condicao1 = true;
 boolean condicao2 = false;
 
 if (condicao1 && condicao2)
-  System.out.println("Os dois valores precisam ser verdadeiros");
+  System.out.println("As duas são true");
 
 if (condicao1 || condicao2)
-  System.out.println("Um dos valores precisa ser verdadeiro"); // imprime
+  System.out.println("Uma é true"); // imprime
 ```
 
 #### Curto-circuito: `&&` x `&` e `||` x `|`
@@ -518,24 +619,48 @@ int numero1 = 1;
 int numero2 = 1;
 
 if (numero1 == 2 & numero2++ == 2)
-  System.out.println("As 2 condições são verdadeiras");
+  System.out.println("As 2 são verdadeiras");
 
 System.out.println("numero1 = " + numero1); // 1
-System.out.println("numero2 = " + numero2); // 2 → o lado direito foi avaliado
+// 2: o lado direito foi avaliado
+System.out.println("numero2 = " + numero2);
 
-// Troque & por && e rode de novo:
-// como numero1 == 2 é falso, numero2++ NÃO é executado e numero2 continua 1.
+// Troque & por && e rode de novo: como
+// numero1 == 2 é falso, numero2++ NÃO roda
+// e numero2 continua 1.
 ```
 
 > 🛠️ **Correção conceitual:** o texto original dizia que, com `&&`, "se a condição1 atender aos critérios, não é necessário validar a condição2". É o contrário: no `&&`, a segunda condição é pulada quando a primeira é **falsa**; no `||`, quando a primeira é **verdadeira**.
+
+> 💡 Uso prático do curto-circuito: `if (cliente != null && cliente.isAtivo())`. Se `cliente` for nulo, a segunda parte nem é chamada, e o programa não quebra com `NullPointerException`.
+
+### 🧠 Revisão rápida
+
+**Quanto vale `17 % 5`? E `17 / 5` com inteiros?**
+
+`17 % 5` = 2 (o resto). `17 / 5` = 3 (a parte decimal é descartada).
+
+**Com `int x = 3;`, o que imprime `System.out.println(x++ + ++x);`?**
+
+8: `x++` usa 3 (e x vira 4); `++x` faz x virar 5 e usa 5. 3 + 5 = 8.
+
+**Por que comparar Strings com `==` é perigoso?**
+
+Porque `==` compara referências. Duas Strings com o mesmo texto podem ser objetos diferentes; use `equals`.
 
 ## Métodos
 
 > Todas as ações de uma aplicação são métodos.
 
-> 💡 Uma classe é formada por **atributos** (os dados, geralmente variáveis) e **métodos** (as ações, equivalentes a funções ou sub-rotinas).
+> 🗺️ **Nesta aula:** uma classe é formada por **atributos** (os dados, geralmente variáveis) e **métodos** (as ações, equivalentes a funções ou sub-rotinas).
 
 ![As partes da assinatura de um método.](../img/met-anatomia.svg)
+
+> 💡 **Analogia:** a assinatura de um método é como o cabeçalho de um formulário: diz qual é o formulário (o nome), o que precisa ser preenchido (os parâmetros) e o que ele devolve ao final (o tipo de retorno).
+
+### De onde paramos
+
+Você já usa operadores e variáveis dentro do `main`. Agora vai separar essas instruções em métodos com nome, que podem ser reutilizados.
 
 ### Como nomear métodos
 
@@ -548,8 +673,9 @@ Não é obrigatório, mas seguir as convenções deixa o código legível para v
 somar(int n1, int n2) {}
 abrirConexao() {}
 concluirProcessamento() {}
-findById(int id) {}  // você verá muitos métodos em inglês
-calcularImprimir() {} // problema: deveria ter uma única finalidade
+findById(int id) {}  // muitos métodos em inglês
+// problema: deveria ter uma única finalidade
+calcularImprimir() {}
 ```
 
 > ⚠️ Em Java **não existem métodos globais**: todo método precisa estar dentro de uma classe.
@@ -567,50 +693,81 @@ calcularImprimir() {} // problema: deveria ter uma única finalidade
 ```java
 public class MinhaClasse {
 
-  public double somar(int num1, int num2) {
-    return num1 + num2; // devolve o resultado
-  }
-
-  public void imprimir(String texto) {
-    System.out.println(texto); // void: não precisa de return
-  }
-
-  // throws: avisa que o método pode lançar uma exceção
-  public double dividir(int dividendo, int divisor) throws Exception {
-    if (divisor == 0) {
-      throw new Exception("Divisor não pode ser zero");
+    public double somar(int num1, int num2) {
+        return num1 + num2; // devolve o resultado
     }
-    return (double) dividendo / divisor;
-  }
 
-  // private: só pode ser usado dentro desta classe
-  private void metodoPrivado() {}
+    public void imprimir(String texto) {
+        // void: não precisa de return
+        System.out.println(texto);
+    }
 
-  // ---- equívocos comuns ----
+    // throws: avisa que pode lançar exceção
+    public double dividir(int dividendo,
+                          int divisor)
+            throws Exception {
+        if (divisor == 0) {
+            throw new Exception("Divisor zero");
+        }
+        return (double) dividendo / divisor;
+    }
 
-  public void validar() {
-    // um método de validação deveria retornar boolean (true/false)
-  }
+    // private: só dentro desta classe
+    private void metodoPrivado() {}
 
-  public void calcularEnviar() {
-    // faz duas coisas: separe em calcular() e enviar()
-  }
+    // ---- equívocos comuns ----
 
-  // muitos parâmetros soltos...
-  public void gravarCliente(String nome, String cpf, String telefone) {}
+    public void validar() {
+        // validação deveria retornar boolean
+    }
 
-  // ...ficam melhor agrupados em um objeto
-  public void gravar(Cliente cliente) {}
+    public void calcularEnviar() {
+        // faz duas coisas: separe em
+        // calcular() e enviar()
+    }
+
+    // muitos parâmetros soltos...
+    public void gravarCliente(String nome,
+            String cpf, String telefone) {}
+
+    // ...ficam melhor agrupados em um objeto
+    public void gravar(Cliente cliente) {}
 }
 ```
 
 > 🛠️ **Correções no código:** o exemplo original tinha `return ... ;` e `throws Exception{}` sem corpo nem retorno (não compilam) — completei os métodos. Também troquei `Integer telefone` por `String telefone` (telefone tem zeros e símbolos, não é número para contas) e removi o `....` da lista de parâmetros, que não é sintaxe válida.
 
+> ➡️ **Próximo passo:** na próxima página você descobre onde uma variável existe e onde ela deixa de existir.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Assinatura | visibilidade, tipo de retorno, nome e parâmetros de um método |
+| Nome | verbo em camelCase, com uma única responsabilidade |
+| `return` | devolve o valor e encerra o método |
+| `void` | indica que o método não devolve valor |
+| `throws` | avisa que o método pode lançar exceção |
+
+### 🧠 Revisão rápida
+
+**Um método que verifica se um CPF é válido deveria retornar o quê?**
+
+`boolean`: `true` se válido, `false` se não. Nome sugerido: `isCpfValido(String cpf)` ou `validarCpf`.
+
+**Por que `(double) dividendo / divisor` e não só `dividendo / divisor`?**
+
+Os dois são `int`; sem o cast, a divisão descartaria a parte decimal (7 / 2 daria 3).
+
 ## Escopo
 
-> 💡 **Escopo** é a região do código onde uma variável existe e pode ser usada. Em Java, ele é definido pelo **bloco** `{ }` onde a variável foi declarada.
+> 🗺️ **Nesta aula:** escopo é a região do código onde uma variável existe e pode ser usada. Em Java, ele é definido pelo **bloco** `{ }` onde a variável foi declarada.
 
 ![Classe, método e bloco: cada nível tem seu escopo.](../img/escopo-niveis.svg)
+
+### De onde paramos
+
+Você já escreve métodos com variáveis locais. Agora vai entender até onde cada variável pode ser usada.
 
 ### Como funciona
 
@@ -619,6 +776,8 @@ public class MinhaClasse {
 - **Variáveis locais** (declaradas dentro de um método) só existem **dentro daquele método**.
 - **Variáveis de bloco** (dentro de `for`, `if`, `while`…) só existem **dentro daquele bloco**.
 - Regra de ouro: **um bloco interno enxerga as variáveis dos blocos externos, mas nunca o contrário.**
+
+> 💡 **Analogia:** pense numa casa. O que está na sala (atributo) todos os cômodos podem usar; o que está trancado no quarto (variável local) só quem está no quarto vê.
 
 Dominar escopo evita erros estruturais: variáveis "sumindo", valores que não são atualizados e conflitos de nomes.
 
@@ -630,26 +789,29 @@ public class Conta {
   double saldo = 10.0;
 
   public void sacar(double valor) {
-    // variável local: só existe dentro de sacar()
+    // local: só existe dentro de sacar()
     double novoSaldo = saldo - valor;
     saldo = novoSaldo; // atualiza o atributo
   }
 
   public void imprimirSaldo() {
-    System.out.println(saldo);  // OK: atributo é visível aqui
-    // System.out.println(novoSaldo); // ERRO: novoSaldo só existe em sacar()
+    // OK: atributo é visível aqui
+    System.out.println(saldo);
+    // ERRO: novoSaldo só existe em sacar()
+    // System.out.println(novoSaldo);
   }
 
-  public double calcularDividaExponencial() {
-    double valorParcela = 50.0;  // variável local
+  public double calcularDivida() {
+    double valorParcela = 50.0;
     double valorMontante = 0.0;
 
-    for (int x = 1; x <= 5; x++) {  // x: escopo do for
+    // x: escopo do for
+    for (int x = 1; x <= 5; x++) {
       // recriada a cada volta do laço
-      double valorCalculado = valorParcela * x;
-      valorMontante = valorMontante + valorCalculado;
+      double calculado = valorParcela * x;
+      valorMontante += calculado;
     }
-    // x e valorCalculado NÃO existem aqui fora
+    // x e calculado NÃO existem aqui fora
 
     return valorMontante; // 750.0
   }
@@ -658,15 +820,43 @@ public class Conta {
 
 > 🛠️ **Correção no código:** no original, `imprimirSaldo()` tentava imprimir `novoSaldo`, o que **não compila** (era a ideia do exemplo, mas a linha estava ativa). Deixei comentada com a explicação. Também fiz `sacar()` atualizar o `saldo` — antes o cálculo era feito e perdido — e troquei `Double` por `double`, mais adequado para um parâmetro simples.
 
+> ➡️ **Próximo passo:** na próxima página você conhece as palavras reservadas, que não podem ser usadas como nome de variável.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Escopo | região do código onde a variável existe, definida pelo bloco `{ }` |
+| Atributo | visível em todos os métodos da classe |
+| Variável local | existe só dentro do método que a declarou |
+| Variável de bloco | existe só dentro do `for`, `if` ou `while` |
+| Regra de ouro | um bloco interno enxerga o externo, nunca o contrário |
+
+### 🧠 Revisão rápida
+
+**Por que `calcularDivida()` retorna 750?**
+
+50 × (1 + 2 + 3 + 4 + 5) = 50 × 15 = 750.
+
+**Duas variáveis locais `total`, em métodos diferentes da mesma classe, dão conflito?**
+
+Não: cada uma vive no seu método. Só haveria conflito se estivessem no mesmo escopo.
+
 ## Palavras reservadas
 
-> 💡 **Palavras reservadas** já têm um significado para a linguagem, então **não podem** ser usadas como nomes de variáveis, classes, métodos ou atributos. Todas são escritas em minúsculas e a IDE costuma destacá-las com uma cor própria.
+> 🗺️ **Nesta aula:** palavras reservadas já têm um significado para a linguagem, então **não podem** ser usadas como nomes de variáveis, classes, métodos ou atributos. Todas são escritas em minúsculas e a IDE costuma destacá-las com uma cor própria.
+
+### De onde paramos
+
+Você já escreveu classes, métodos e variáveis. Agora vai conhecer as palavras que a própria linguagem já usa, e que por isso não podem ser nomes.
 
 ### Referência
 
 🔗 [http://www.linhadecodigo.com.br/artigo/83/as-52-palavras-reservadas-do-java.aspx](http://www.linhadecodigo.com.br/artigo/83/as-52-palavras-reservadas-do-java.aspx)
 
 ![As palavras reservadas agrupadas por finalidade.](../img/reservadas-grupos.svg)
+
+> 💡 **Analogia:** é como os cargos de uma empresa. Ninguém pode se chamar "gerente" em um crachá se o nome é reservado para a função. Do mesmo modo, palavras como `class` e `int` já têm um papel na linguagem e não servem como nome.
 
 > 🛠️ **Ajuste:** a lista clássica fala em "52 palavras", mas isso inclui os literais `true`, `false` e `null`, que tecnicamente não são *keywords*. Versões mais novas do Java adicionaram `enum` (Java 5) e palavras contextuais como `var`, `record`, `yield` e `sealed`. A tabela de primitivos também dizia que `short` tem 32 bits — o correto é **16 bits**.
 
@@ -779,9 +969,35 @@ Pela especificação, `null`, `true` e `false` são **literais**, não *keywords
 | `final` | `abstract` | `final` **impede** alterações (herança, sobrescrita, reatribuição); `abstract` **exige** que a subclasse implemente. Se uma classe tem um método abstrato, ela inteira precisa ser abstrata |
 | `throws` | `throw` | `throws` **avisa** que o método pode lançar uma exceção; `throw` **lança** a exceção de fato (mais detalhes em Exceções) |
 
+> ➡️ **Próximo passo:** na próxima página você aprende a ler e gerar a documentação com Javadoc.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Palavras reservadas | não servem como nome de variável, classe, método ou atributo |
+| Modificadores de acesso | `public`, `protected` e `private` |
+| Controle de fluxo | `if`, `switch`, `for`, `while`, `break`, `continue` e `return` |
+| Tratamento de erros | `try`, `catch`, `finally`, `throw` e `throws` |
+| `throws` × `throw` | `throws` declara na assinatura; `throw` lança |
+
+### 🧠 Revisão rápida
+
+**`int Class = 3;` compila? E `int class = 3;`?**
+
+O primeiro compila (Java diferencia maiúsculas); o segundo não, porque `class` é reservada. Mesmo assim, evite nomes que confundem.
+
+**Qual a diferença entre `throw` e `throws`?**
+
+`throws` vai na assinatura e avisa que o método pode lançar uma exceção; `throw` é o comando que lança a exceção.
+
 ## Java Doc
 
-> 💡 O Java sempre teve uma **documentação oficial rica**: dá para explorar pacotes, classes e métodos sem escrever uma linha de código. Saber ler documentação é uma das habilidades que mais separam iniciantes de devs avançados.
+> 🗺️ **Nesta aula:** o Java sempre teve uma **documentação oficial rica**: dá para explorar pacotes, classes e métodos sem escrever uma linha de código. Saber ler documentação é uma das habilidades que mais separam iniciantes de devs avançados.
+
+### De onde paramos
+
+Você já sabe escrever classes com nomes que dizem o que fazem. Agora vai aprender a documentar o código e a ler a documentação oficial do Java.
 
 ### Documentação oficial
 
@@ -868,9 +1084,31 @@ javadoc -encoding UTF-8 -docencoding UTF-8 -charset UTF-8 -d ../docs src/*.java
 
 🔗 [Javadoc](https://pt.wikipedia.org/wiki/Javadoc)
 
+> ➡️ **Próximo passo:** na próxima página você usa o terminal para compilar e executar um programa Java sem a IDE.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `javadoc` | gera documentação em HTML a partir dos comentários `/** */` |
+| `@param` | descreve cada parâmetro do método |
+| `@return` | descreve o valor devolvido |
+| `@throws` | descreve a exceção que o método pode lançar |
+| `@author` | nome de quem criou o recurso; a tag é em inglês |
+
+### 🧠 Revisão rápida
+
+**Qual tag do Javadoc descreve o valor devolvido pelo método?**
+
+`@return`. A tag `@param` descreve cada parâmetro, e `@throws` descreve as exceções.
+
+**Por que o comando `javadoc` usa UTF-8 nos parâmetros?**
+
+Para que os acentos dos comentários apareçam corretamente no HTML gerado.
+
 ## Terminal
 
-> 💡 A IDE é só uma ferramenta de desenvolvimento. Para rodar um programa Java basta ter a **JVM** — e o terminal mostra o que a IDE faz "por baixo dos panos".
+> 🗺️ **Nesta aula:** a IDE é só uma ferramenta de desenvolvimento. Para rodar um programa Java basta ter a **JVM** — e o terminal mostra o que a IDE faz "por baixo dos panos".
 
 ### Links úteis
 
@@ -891,7 +1129,8 @@ Crie o arquivo `MinhaClasse.java`:
 ```java
 public class MinhaClasse {
   public static void main(String[] args) {
-    System.out.println("Oi, fui executado pelo Terminal");
+    System.out.println(
+      "Oi, fui executado pelo Terminal");
   }
 }
 ```
@@ -900,6 +1139,8 @@ public class MinhaClasse {
 
 ![O .java fica em src; o .class compilado, em bin.](../img/term-pastas.svg)
 
+> 💡 **Analogia:** é um escritório. A pasta `src` é a mesa com os rascunhos (o código que você escreve), e a pasta `bin` é a prateleira com as cópias prontas para uso (o bytecode).
+
 - Um projeto criado pela IDE tem a pasta do **código-fonte** (`src`) e a pasta de **saída** com os arquivos `.class` (o bytecode). No Eclipse ela se chama `bin`; no IntelliJ, `out`; em projetos Maven, `target/classes`.
 - Mesmo usando IDE, é importante saber **onde** estão as classes do projeto. No exemplo: `C:\estudos\dio-trilha-java-basico\java-terminal`.
 
@@ -907,11 +1148,21 @@ public class MinhaClasse {
 
 ![Compilando e executando a classe no terminal.](../img/term-exec.svg)
 
+> 💡 **Analogia:** o `javac` é um tradutor que transforma o rascunho em uma língua que a JVM entende. A JVM é um ator que lê esse roteiro traduzido e o executa na ordem.
+
 1. Abra o **Prompt de Comando**, o **PowerShell** ou o terminal do VS Code.
-2. Vá até a pasta do projeto:<br />`cd C:\estudos\dio-trilha-java-basico\java-terminal`
-3. *(Se ainda não compilou pela IDE)* compile, mandando o `.class` para a pasta `bin`:<br />`javac -d bin src\MinhaClasse.java`
-4. Entre na pasta `bin`:<br />`cd bin`
-5. Execute a classe — informe o nome **sem** a extensão `.class`:<br />`java MinhaClasse`
+2. Vá até a pasta do projeto:
+
+`cd C:\estudos\dio-trilha-java-basico\java-terminal`
+3. *(Se ainda não compilou pela IDE)* compile, mandando o `.class` para a pasta `bin`:
+
+`javac -d bin src\MinhaClasse.java`
+4. Entre na pasta `bin`:
+
+`cd bin`
+5. Execute a classe — informe o nome **sem** a extensão `.class`:
+
+`java MinhaClasse`
 
 > ✨ **Dicas:**
 >
@@ -920,6 +1171,30 @@ public class MinhaClasse {
 > - Argumentos depois do nome da classe chegam no `String[] args` do `main`: `java MinhaClasse Ana 25`.
 
 > 🛠️ **Complemento:** o passo a passo original pulava a **compilação** (`javac`), supondo que a IDE já tinha gerado o `.class`. Incluí o comando para que o roteiro funcione também fora da IDE.
+
+> ➡️ **Próximo passo:** com o programa rodando no terminal, volte às estruturas de decisão e escolha caminhos diferentes com `if` e `switch`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `javac` | compila o `.java` em `.class`, com bytecode |
+| `java` | executa a classe pela JVM, informando o nome sem `.class` |
+| `-d bin` | define a pasta de saída dos arquivos `.class` |
+| `-cp` | indica onde procurar as classes |
+| `args` | argumentos da linha de comando, que chegam sempre como texto |
+
+### 🧠 Revisão rápida
+
+**O que acontece com `java MinhaClasse.class`?**
+
+Erro: a JVM procura uma classe chamada "MinhaClasse.class". Informe só o nome: `java MinhaClasse`.
+
+**Em `java MinhaClasse Ana 25`, quanto vale `args[1]`?**
+
+A String `"25"` (os argumentos sempre chegam como texto).
+
+> ➡️ **Próximo passo:** agora que você sabe escrever uma classe, a próxima aula ensina a tomar decisões com `if` e `switch`.
 
 ## 📌 Resumo
 

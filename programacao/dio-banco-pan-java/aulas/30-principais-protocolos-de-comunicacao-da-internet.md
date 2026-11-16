@@ -1,8 +1,18 @@
 # Principais protocolos de comunicação da internet
 
-> 💡 **Nesta aula:** como a web funciona por baixo: o protocolo **HTTP** e suas versões, a segurança com **HTTPS/TLS**, a comunicação em tempo real com **WebSocket** e os conceitos de rede que sustentam tudo isso.
+> 🗺️ **Nesta aula:** como a web funciona por baixo: o protocolo **HTTP** e suas versões, a segurança com **HTTPS/TLS**, a comunicação em tempo real com **WebSocket** e os conceitos de rede que sustentam tudo isso.
+
+## De onde paramos
+
+Você já sabe guardar dados em bancos. Agora vai entender como um cliente e um servidor conversam pela rede, antes de construir a API.
 
 ## Como funciona o protocolo HTTP
+
+> 🗺️ **Nesta aula:** o que é o HTTP, suas versões, os protocolos de transporte TCP e UDP, o three-way handshake, os métodos, o corpo da mensagem e o head-of-line blocking.
+
+### De onde paramos
+
+Você já sabe que uma API recebe requisições e devolve respostas. Agora vai ver por dentro o protocolo que faz essa troca e o transporte que o sustenta.
 
 ### O que é o HTTP?
 
@@ -12,6 +22,8 @@
 
 ![O cliente envia uma requisição; o servidor devolve uma resposta.](../img/http-cs.svg)
 
+> 💡 **Analogia:** é o balcão de uma lanchonete. O cliente faz o pedido num formato combinado ("um X, sem cebola"), o atendente responde ("aqui está" ou "acabou"). O HTTP é esse combinado de como pedir e como responder.
+
 #### Papel do cliente e do servidor
 
 - **Cliente:** inicia a comunicação com uma **requisição** (*request*): método (GET, POST…), recurso desejado (ex.: `/produtos`), cabeçalhos e, se for o caso, um corpo com dados.
@@ -20,6 +32,8 @@
 > 💡 O HTTP é **sem estado** (*stateless*): cada requisição é independente, e o servidor não "lembra" da anterior. Para manter uma sessão (como o login), usam-se cookies ou tokens.
 
 ### Versões e especificações
+
+![Do HTTP/1.0 ao HTTP/3.](../img/http-versoes.svg)
 
 | Versão | Especificação | Destaques |
 | --- | --- | --- |
@@ -35,6 +49,8 @@ Hoje a semântica do HTTP (métodos, status, cabeçalhos) está reunida na **RFC
 O HTTP precisa de um protocolo de transporte por baixo. Até o HTTP/2 é o **TCP**; o HTTP/3 usa **QUIC**, que roda sobre **UDP**.
 
 ![TCP garante entrega e ordem; UDP troca garantias por velocidade.](../img/tcp-udp.svg)
+
+> 💡 **Analogia:** TCP é uma carta registrada — tem confirmação de entrega e, se extraviar, é reenviada. UDP é um panfleto jogado na caixa de correio — chega rápido, mas ninguém confere se chegou.
 
 #### TCP (*Transmission Control Protocol*)
 
@@ -87,6 +103,8 @@ O **corpo** é a parte da mensagem que carrega os dados em si, além dos metadad
 
 ![No HTTP/1.1 as respostas esperam em fila; no HTTP/2 elas são intercaladas na mesma conexão.](../img/http-hol.svg)
 
+> 💡 **Analogia:** fila única de supermercado em que o primeiro cliente tem um carrinho cheio. Quem só leva um chiclete espera do mesmo jeito.
+
 - **No HTTP/1.1:** numa mesma conexão, as respostas saem na ordem dos pedidos. Se a primeira for lenta, as outras esperam. Por isso os navegadores abrem várias conexões paralelas (cerca de 6 por domínio).
 - **No HTTP/2:** a **multiplexação** divide as respostas em quadros (*frames*) intercalados numa única conexão — o HOL na camada HTTP desaparece.
 - **No TCP:** como ele entrega tudo em ordem, um pacote perdido segura todos os dados seguintes da conexão, inclusive de outros streams do HTTP/2. O **HTTP/3**, sobre QUIC, resolve isso tratando cada stream de forma independente.
@@ -101,7 +119,45 @@ O **corpo** é a parte da mensagem que carrega os dados em si, além dos metadad
 > - O HOL blocking foi reexplicado: ele acontece **dentro de uma mesma conexão**, e não "em múltiplas conexões simultâneas". Incluí como HTTP/2 e HTTP/3 o resolvem.
 > - As cinco imagens foram substituídas por diagramas.
 
+> ➡️ **Próximo passo:** **Mensagens HTTP (Request e response)**, para ler a estrutura de cada pedido e de cada resposta.
+
+### 🧠 Revisão rápida
+
+**O que significa dizer que o HTTP é *stateless*?**
+
+Cada requisição é independente; o servidor não lembra das anteriores. Sessões usam cookies ou tokens.
+
+**Quais são os três passos do three-way handshake?**
+
+SYN, SYN-ACK e ACK.
+
+**Qual a diferença entre PUT e PATCH?**
+
+PUT substitui o recurso inteiro; PATCH altera só uma parte.
+
+**Por que o HTTP/3 usa UDP?**
+
+Para rodar o QUIC, que trata cada stream de forma independente e elimina o HOL blocking do TCP.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| HTTP | Protocolo de pedido e resposta, sem estado. |
+| TCP | Transporte confiável e ordenado, com handshake. |
+| UDP | Transporte rápido, sem garantias. |
+| Métodos | GET lê, POST cria, PUT substitui, PATCH altera, DELETE remove. |
+| HOL blocking | Um item lento trava a fila; o HTTP/2 e o HTTP/3 atenuam. |
+
 ## Mensagens HTTP (Request e response)
+
+> 🗺️ **Nesta aula:** a anatomia de uma requisição e de uma resposta HTTP, as famílias de códigos de status e a classificação dos métodos em seguros e idempotentes.
+
+> 💡 **Analogia:** uma mensagem HTTP é como um envelope. A linha inicial é o destinatário, os cabeçalhos são as etiquetas ("frágil", "urgente"), a linha em branco é a aba que fecha o envelope e o corpo é a carta dentro dele.
+
+### De onde paramos
+
+Você já sabe que o HTTP funciona como pedido e resposta, com TCP por baixo. Agora vai ler a estrutura exata de cada mensagem.
 
 ### Requisição (request)
 
@@ -130,6 +186,8 @@ O **corpo** é a parte da mensagem que carrega os dados em si, além dos metadad
 | **3xx** | Redirecionamento | `301 Moved Permanently`, `304 Not Modified` |
 | **4xx** | Erro do cliente | `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found` |
 | **5xx** | Erro do servidor | `500 Internal Server Error`, `502 Bad Gateway`, `503 Service Unavailable` |
+
+> ⚠️ **401 × 403:** 401 quer dizer "não sei quem você é" (falta autenticar); 403 quer dizer "sei quem você é, mas você não pode" (falta permissão).
 
 #### Referência divertida de status HTTP
 
@@ -163,6 +221,8 @@ Podem alterar dados no servidor.
 
 Repetir a mesma requisição várias vezes tem o **mesmo efeito** que fazê-la uma vez: **GET, HEAD, OPTIONS, TRACE, PUT e DELETE**. **POST** não é idempotente (cada envio pode criar um novo registro), e o **PATCH** depende da implementação. Isso importa, por exemplo, para decidir se é seguro **repetir** uma requisição que falhou por timeout.
 
+> 💡 **Analogia:** apertar o botão do elevador cinco vezes é idempotente — ele vem uma vez só. Pedir cinco vezes "mais um café" não é: chegam cinco cafés.
+
 > 🛠️ **Ajustes:**
 >
 > - O texto dizia que requisições e respostas HTTP "são escritas em ASCII". Isso vale para a linha inicial e os cabeçalhos do **HTTP/1.x**; o corpo pode ser binário, e o HTTP/2 e o HTTP/3 são **binários**.
@@ -170,7 +230,43 @@ Repetir a mesma requisição várias vezes tem o **mesmo efeito** que fazê-la u
 > - **TRACE** também é um método seguro e foi incluído. Acrescentei o conceito de **idempotência**, a tabela de famílias de status e a diferença entre URI e URL.
 > - As duas imagens foram substituídas por diagramas anotados.
 
+> ➡️ **Próximo passo:** **Pra que serve cookies e cache**, para entender como o HTTP mantém sessões e evita repetir downloads.
+
+### 🧠 Revisão rápida
+
+**Quais são as quatro partes de uma mensagem HTTP?**
+
+Linha inicial (ou de status), cabeçalhos, linha em branco e corpo.
+
+**O que indica um código 4xx? E um 5xx?**
+
+4xx: erro do cliente (pedido errado). 5xx: erro do servidor.
+
+**POST é idempotente?**
+
+Não: repetir pode criar vários registros.
+
+**Qual cabeçalho informa o formato do corpo?**
+
+`Content-Type`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Request | Método, caminho, versão + cabeçalhos + corpo. |
+| Response | Versão, status, frase + cabeçalhos + corpo. |
+| Status | 1xx info, 2xx sucesso, 3xx redireciona, 4xx cliente, 5xx servidor. |
+| Seguro | Não altera o servidor (GET, HEAD…). |
+| Idempotente | Repetir dá o mesmo efeito (GET, PUT, DELETE…). |
+
 ## Pra que serve cookies e cache
+
+> 🗺️ **Nesta aula:** o que são cookies e seus atributos de segurança, como funciona o cache HTTP e o papel dos servidores proxy.
+
+### De onde paramos
+
+Você já sabe a estrutura de uma requisição e de uma resposta HTTP. Agora vai ver como o navegador guarda informações entre uma requisição e outra.
 
 ### O que são cookies?
 
@@ -179,6 +275,8 @@ Repetir a mesma requisição várias vezes tem o **mesmo efeito** que fazê-la u
 Normalmente o servidor cria o cookie pelo cabeçalho `Set-Cookie` da resposta; o navegador o envia de volta no cabeçalho `Cookie`. Também é possível criá-los via JavaScript.
 
 ![O servidor define o cookie; o navegador o reenvia a cada nova requisição.](../img/http-cookie.svg)
+
+> 💡 **Analogia:** é a pulseira de um parque de diversões. Na entrada (login) você recebe a pulseira; depois, em cada brinquedo (requisição), basta mostrá-la para provar que já pagou.
 
 #### Para que servem
 
@@ -202,6 +300,8 @@ Normalmente o servidor cria o cookie pelo cabeçalho `Set-Cookie` da resposta; o
 
 ![Se a cópia está válida, o cache responde na hora; senão, busca no servidor e guarda.](../img/http-cache.svg)
 
+> 💡 **Analogia:** é a geladeira de casa. Em vez de ir ao mercado (servidor) toda vez que quer leite, você pega o da geladeira — até a data de validade (`max-age`) vencer.
+
 #### Tipos de cache
 
 - **Cache do navegador:** imagens, CSS, scripts e outras respostas ficam no seu computador.
@@ -213,9 +313,13 @@ Normalmente o servidor cria o cookie pelo cabeçalho `Set-Cookie` da resposta; o
 - `Cache-Control`: a regra principal — `max-age=3600` (válido por 1 hora), `no-cache` (sempre revalidar antes de usar), `no-store` (nunca guardar), `private`/`public`.
 - `ETag` e `Last-Modified`: identificam a versão do recurso. Com elas, o navegador pode perguntar "mudou?" (`If-None-Match` / `If-Modified-Since`); se não mudou, o servidor responde `304 Not Modified` sem corpo.
 
+> ⚠️ Cuidado com os nomes: `no-cache` **não** significa "não guardar" — significa "guarde, mas confira antes de usar". Para nunca guardar (dados sensíveis), use `no-store`.
+
 ### Servidor proxy
 
 Um **proxy** é um servidor **intermediário** entre o cliente e o servidor de destino: recebe a requisição, a encaminha e devolve a resposta.
+
+![O forward proxy representa os clientes; o reverso representa os servidores.](../img/rede-proxy.svg)
 
 Usos comuns:
 
@@ -233,7 +337,43 @@ Existem dois sentidos: o **proxy de encaminhamento** (*forward*) representa os *
 > - O proxy ganhou a diferença entre **forward** e **reverso**.
 > - As duas imagens foram substituídas por diagramas do fluxo de cookies e de cache.
 
+> ➡️ **Próximo passo:** **HTTP/2: atualização do protocolo**, sobre como a versão 2 transporta os mesmos pedidos mais rápido.
+
+### 🧠 Revisão rápida
+
+**Qual cabeçalho cria um cookie? Qual o devolve?**
+
+`Set-Cookie` (na resposta) cria; `Cookie` (na requisição) devolve.
+
+**O que o atributo `HttpOnly` impede?**
+
+Que o JavaScript da página leia o cookie, protegendo contra roubo via XSS.
+
+**O que significa a resposta `304 Not Modified`?**
+
+O recurso não mudou; o navegador pode usar a cópia que já tem.
+
+**Qual a diferença entre `no-cache` e `no-store`?**
+
+`no-cache` guarda mas revalida antes de usar; `no-store` nunca guarda.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Cookie | Dado guardado no navegador e reenviado ao site. |
+| `Secure` / `HttpOnly` / `SameSite` | Só HTTPS / sem JS / controle entre sites. |
+| Cache | Cópia temporária para evitar buscar de novo. |
+| `Cache-Control` / `ETag` | Regras de validade / versão do recurso. |
+| Proxy | Intermediário entre cliente e servidor. |
+
 ## HTTP/2: atualização do protocolo
+
+> 🗺️ **Nesta aula:** o que mudou no HTTP/2 — quadros binários, multiplexação, compressão HPACK, priorização, negociação via TLS e server push — e como o HTTP/3 vai além.
+
+### De onde paramos
+
+Você já conhece HTTP/1.1 e o problema da fila de respostas. Agora vai ver como o HTTP/2 muda a forma de transportar os dados, sem mudar o significado das mensagens.
 
 ### HTTP/2: o que mudou
 
@@ -253,7 +393,9 @@ No HTTP/1.1 a conexão pode ser **reaproveitada** (*keep-alive*), mas as respost
 
 No HTTP/2, uma **única conexão** carrega vários **streams** ao mesmo tempo, com os quadros de recursos diferentes **intercalados**. Isso elimina o *head-of-line blocking* da camada HTTP e economiza conexões.
 
-![Várias conexões em fila x uma conexão com streams intercalados.](../img/http2-mux.svg)
+![Várias conexões em fila × uma conexão com streams intercalados.](../img/http2-mux.svg)
+
+> 💡 **Analogia:** no HTTP/1.1, cada caminhão leva um pedido inteiro por vez numa estrada estreita. No HTTP/2, uma única estrada larga leva caixas de vários pedidos misturadas, cada uma com a etiqueta do seu pedido (o número do stream); no destino, elas são reagrupadas.
 
 #### Compressão de cabeçalhos (HPACK)
 
@@ -285,11 +427,49 @@ O **HTTP/3** (RFC 9114, 2022) mantém as ideias do HTTP/2, mas roda sobre o **QU
 > - **Server push** e o esquema original de **priorização** foram descontinuados na prática; atualizei com as alternativas (`103 Early Hints`, RFC 9218).
 > - As quatro imagens foram substituídas por três diagramas: linha do tempo, quadros binários e multiplexação.
 
+> ➡️ **Próximo passo:** **Servidores / Sistema de aplicação**, para entender o que fica do lado do servidor que atende essas requisições.
+
+### 🧠 Revisão rápida
+
+**O HTTP/2 mudou os métodos e os códigos de status?**
+
+Não. Mudou só a forma de transportar: quadros binários e multiplexação.
+
+**O que é multiplexação?**
+
+Vários streams na mesma conexão, com os quadros de recursos diferentes intercalados.
+
+**Para que serve o HPACK?**
+
+Comprimir os cabeçalhos e evitar reenviar os que se repetem.
+
+**Como cliente e servidor combinam usar HTTP/2?**
+
+Pela extensão ALPN, durante o handshake TLS.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Frames | Mensagens divididas em quadros binários (HEADERS, DATA). |
+| Multiplexação | Vários streams numa só conexão. |
+| HPACK | Compressão de cabeçalhos. |
+| ALPN | Negocia a versão dentro do TLS. |
+| HTTP/3 | Mesmas ideias, sobre QUIC (UDP). |
+
 ## Servidores/Sistema de aplicação
+
+> 🗺️ **Nesta aula:** o que faz um servidor web e os dois mais usados — Apache e Nginx —, seus modelos de funcionamento e o pacote XAMPP para desenvolvimento local.
+
+### De onde paramos
+
+Você já sabe o que trafega numa requisição HTTP e o que o TCP garante. Agora vai ver o software que recebe essas requisições do lado do servidor.
 
 Um **servidor web** recebe requisições HTTP e devolve respostas: arquivos estáticos (HTML, CSS, imagens) ou o resultado de uma aplicação (PHP, Java, Python…). Os dois mais usados no mundo são o **Apache** e o **Nginx**, que trabalham de formas bem diferentes.
 
 ![Apache dedica um processo ou thread a cada conexão; o Nginx atende muitas conexões com poucos workers orientados a eventos.](../img/srv-modelos.svg)
+
+> 💡 **Analogia:** o Apache é um restaurante com um garçom exclusivo por mesa — atendimento atencioso, mas faltam garçons quando lota. O Nginx é um garçom ágil que circula entre todas as mesas, anotando e entregando pedidos sem ficar parado esperando a cozinha.
 
 ### Apache HTTP Server
 
@@ -348,6 +528,8 @@ O **Nginx** (pronuncia-se "engine-x") foi criado pelo engenheiro russo **Igor Sy
 | Ponto forte | flexibilidade, `.htaccess`, módulos | conexões simultâneas, estáticos, proxy reverso |
 | Configuração por diretório | sim (`.htaccess`) | não (tudo centralizado) |
 
+> 💡 É comum usar os dois juntos: o Nginx na frente, como proxy reverso e servidor de estáticos, e o Apache (ou o Tomcat de uma aplicação Java) atrás, processando o conteúdo dinâmico.
+
 > 🛠️ **Ajustes:**
 >
 > - A origem do nome "Apache" como trocadilho com *patch* é uma lenda; a explicação oficial é a homenagem ao povo Apache. Também separei o **Apache Group** (1995) da **Apache Software Foundation**, que só foi criada em 1999.
@@ -355,7 +537,38 @@ O **Nginx** (pronuncia-se "engine-x") foi criado pelo engenheiro russo **Igor Sy
 > - O Nginx não foi criado para resolver "problemas do Apache" especificamente, e sim o **problema C10k** de muitas conexões simultâneas.
 > - As três imagens foram substituídas por dois diagramas (modelos de servidor e componentes do XAMPP), e acrescentei uma tabela comparando Apache e Nginx.
 
+> ➡️ **Próximo passo:** **Conceitos básicos de segurança da informação**, para entender criptografia, certificados e confiança.
+
+### 🧠 Revisão rápida
+
+**Qual a diferença de arquitetura entre Apache e Nginx?**
+
+Apache: um processo ou thread por conexão. Nginx: poucos workers orientados a eventos atendem milhares de conexões.
+
+**O que é o problema C10k?**
+
+Atender 10 mil conexões simultâneas num único servidor — o motivo da criação do Nginx.
+
+**O que significa cada letra de XAMPP?**
+
+X (multiplataforma), Apache, MariaDB, PHP e Perl.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Servidor web | Recebe requisições HTTP e devolve respostas. |
+| Apache | Modular, flexível, um processo/thread por conexão. |
+| Nginx | Orientado a eventos; ótimo em estáticos e proxy reverso. |
+| XAMPP | Pacote de ambiente local; não serve para produção. |
+
 ## Conceitos básicos de segurança da informação
+
+> 🗺️ **Nesta aula:** criptografia simétrica e assimétrica, assinatura digital, certificados digitais e a cadeia de confiança das autoridades certificadoras.
+
+### De onde paramos
+
+Você já sabe que o HTTP envia tudo em texto puro e que o servidor pode ser qualquer máquina. Agora vai entender as ferramentas que tornam a comunicação segura.
 
 ### Criptografia
 
@@ -377,6 +590,8 @@ Uma **única chave** é usada para cifrar e para decifrar, e por isso precisa se
 - **Desafio:** como combinar a chave com segurança se o canal ainda não é seguro?
 - Algoritmos atuais: **AES** e **ChaCha20**. O **DES** (chave de 56 bits) foi quebrado nos anos 1990 e o **3DES** está depreciado — ambos não devem mais ser usados.
 
+> 💡 **Analogia:** é um cadeado com uma chave só, copiada para as duas pessoas. Funciona muito bem — o problema é entregar a cópia da chave sem que ninguém a intercepte no caminho.
+
 #### Criptografia assimétrica (chave pública)
 
 ![A chave pública cifra; só a privada correspondente decifra.](../img/cripto-assimetrica.svg)
@@ -387,6 +602,8 @@ Usa um **par de chaves** matematicamente ligadas: uma **pública**, que pode ser
 - **Para assinatura digital:** o autor assina com a sua **privada**; qualquer um confere a assinatura com a **pública**. Isso prova autoria e integridade.
 - **Resolve o problema da troca de chaves**, mas é **bem mais lenta** que a simétrica.
 - Algoritmos: **RSA** e criptografia de curvas elípticas (**ECC**, como ECDSA e ECDHE).
+
+> 💡 **Analogia:** a chave pública é uma caixa de correio com fenda — qualquer um pode colocar uma carta. A chave privada é a única chave que abre a caixa para ler as cartas.
 
 > 💡 **Na prática as duas trabalham juntas.** No HTTPS, a criptografia assimétrica é usada no início para autenticar o servidor e combinar uma chave; depois, todos os dados trafegam com criptografia **simétrica**, que é muito mais rápida.
 
@@ -403,6 +620,8 @@ Um **certificado digital** é um documento eletrônico que **associa uma chave p
 
 As **ACs** (*Certificate Authorities*) são organizações que **verificam a identidade** de quem pede um certificado e o **assinam**. Navegadores e sistemas operacionais já vêm com uma lista de **ACs raiz** confiáveis; um certificado é aceito quando é possível montar uma **cadeia de assinaturas** até uma dessas raízes.
 
+> 💡 **Analogia:** é como um documento de identidade. Você confia na carteira de alguém porque confia no órgão que a emitiu — e o navegador confia no certificado do site porque confia na AC que o assinou.
+
 - **Níveis de validação:** DV (só o domínio), OV (organização) e EV (validação estendida).
 - **Exemplos de ACs:** DigiCert, Sectigo, GlobalSign e **Let's Encrypt** (gratuita e automatizada, hoje uma das maiores do mundo).
 - **ICP-Brasil:** a infraestrutura de chaves públicas oficial do Brasil, com a AC raiz mantida pelo **ITI**. É ela que dá validade jurídica aos certificados e-CPF e e-CNPJ.
@@ -417,7 +636,43 @@ As **ACs** (*Certificate Authorities*) são organizações que **verificam a ide
 > - Na lista de ACs, o **CA/Browser Forum** não é uma AC, e a **VeriSign** vendeu esse negócio em 2010 (hoje faz parte da DigiCert). Detalhei o que é a ICP-Brasil.
 > - As duas imagens foram substituídas por três diagramas.
 
+> ➡️ **Próximo passo:** **Protocolo SSL e TLS**, que usam essas ferramentas para proteger o HTTP.
+
+### 🧠 Revisão rápida
+
+**Na criptografia assimétrica, qual chave cifra uma mensagem secreta para o Rui?**
+
+A chave **pública** do Rui. Só a privada dele decifra.
+
+**E para assinar digitalmente um documento?**
+
+O autor usa a sua chave **privada**; qualquer um confere com a pública.
+
+**Por que o HTTPS combina os dois tipos de criptografia?**
+
+A assimétrica resolve a troca de chaves; a simétrica, mais rápida, cifra os dados.
+
+**O que o navegador confere num certificado?**
+
+Se a cadeia de assinaturas chega a uma AC raiz confiável, se o domínio confere e se está dentro da validade.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Simétrica | Uma chave só; rápida (AES). |
+| Assimétrica | Par pública/privada; troca de chaves e assinatura (RSA, ECC). |
+| Assinatura digital | Assina com a privada, confere com a pública. |
+| Certificado | Liga uma chave pública a uma identidade. |
+| AC | Verifica identidades e assina certificados. |
+
 ## Protocolo SSL (Secure socket layer) e TLS (Transport Layer Security)
+
+> 🗺️ **Nesta aula:** o que SSL e TLS garantem, a história das versões, o passo a passo do handshake e o que mudou no TLS 1.3.
+
+### De onde paramos
+
+Você já conhece criptografia simétrica, assimétrica e certificados. Agora vai ver como o TLS junta essas ferramentas numa conexão segura.
 
 ### SSL e TLS: o que são
 
@@ -428,6 +683,8 @@ As **ACs** (*Certificate Authorities*) são organizações que **verificam a ide
 - **Autenticidade:** o certificado prova que o servidor é quem diz ser.
 
 **HTTPS** é simplesmente **HTTP sobre TLS** (porta padrão 443). O mesmo vale para SMTPS, IMAPS, POP3S, FTPS, WSS e outros.
+
+> 💡 **Analogia:** o HTTP sem TLS é um cartão-postal — qualquer carteiro no caminho lê. Com TLS, é uma carta lacrada dentro de um cofre, entregue por um mensageiro que mostrou documento na porta.
 
 ### História: de SSL a TLS
 
@@ -451,6 +708,8 @@ O TLS combina os dois tipos de criptografia: **assimétrica** no início, para a
 4. **Chave de sessão:** com as duas partes do Diffie-Hellman, cliente e servidor calculam **a mesma chave simétrica**, sem que ela trafegue pela rede.
 5. **Dados cifrados:** a partir daí, toda a comunicação usa criptografia simétrica (AES-GCM ou ChaCha20-Poly1305), que protege sigilo e integridade.
 
+> 💡 **Analogia do Diffie-Hellman:** cada lado mistura uma cor secreta com uma cor pública e envia a mistura. Cada um acrescenta de novo a sua cor secreta à mistura que recebeu — e os dois chegam à **mesma cor final**, que quem olhou só as misturas não consegue reproduzir.
+
 #### O que mudou no TLS 1.3
 
 - Handshake mais rápido: **1 ida e volta** (1-RTT), ou zero na retomada de sessão (0-RTT).
@@ -464,7 +723,43 @@ O TLS combina os dois tipos de criptografia: **assimétrica** no início, para a
 > - O passo "negociar uma chave simétrica" foi detalhado: no TLS moderno a chave é **calculada pelos dois lados** (Diffie-Hellman), sem ser enviada pela rede.
 > - As duas imagens foram substituídas pela linha do tempo e pelo diagrama do handshake.
 
+> ➡️ **Próximo passo:** **Introdução ao WebSocket**, um canal bidirecional que também pode usar TLS (`wss://`).
+
+### 🧠 Revisão rápida
+
+**O que é o HTTPS?**
+
+HTTP sobre TLS, normalmente na porta 443.
+
+**Quais versões de TLS devem ser usadas hoje?**
+
+Só TLS 1.2 e TLS 1.3.
+
+**A chave simétrica da sessão viaja pela rede?**
+
+Não. Cada lado a calcula com Diffie-Hellman (ECDHE).
+
+**O que é *forward secrecy*?**
+
+Se a chave privada do servidor vazar no futuro, as conversas antigas continuam protegidas.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| TLS | Canal seguro: sigilo, integridade e autenticidade. |
+| HTTPS | HTTP sobre TLS. |
+| Versões | Só TLS 1.2 e 1.3 são aceitos. |
+| Handshake | Autentica o servidor e combina a chave de sessão. |
+| TLS 1.3 | 1-RTT, sem algoritmos antigos, forward secrecy obrigatório. |
+
 ## Introdução
+
+> 🗺️ **Nesta aula:** o que é o WebSocket, como a conexão é aberta, vantagens, cuidados de segurança, exemplos de uso e a comparação com o HTTP.
+
+### De onde paramos
+
+Você já sabe que o HTTP é pergunta e resposta, sempre iniciada pelo cliente. Agora vai ver um canal que deixa o servidor falar primeiro.
 
 ### O que é WebSocket?
 
@@ -473,6 +768,8 @@ O TLS combina os dois tipos de criptografia: **assimétrica** no início, para a
 Ele resolve uma limitação do HTTP tradicional: lá, é sempre o **cliente** que pergunta e o servidor que responde. Para receber novidades, o cliente precisaria ficar perguntando de tempos em tempos (*polling*).
 
 ![Com polling o cliente pergunta sem parar; com WebSocket o servidor envia quando houver algo.](../img/ws-http.svg)
+
+> 💡 **Analogia:** o polling é a criança no banco de trás perguntando "já chegou?" a cada minuto. O WebSocket é uma ligação telefônica que fica aberta: quando chegar, o motorista avisa — e qualquer um dos dois pode falar a qualquer hora.
 
 #### Quando foi criado?
 
@@ -491,11 +788,14 @@ Os endereços usam `ws://` (sem criptografia) ou `wss://` (com TLS, equivalente 
 
 ```jsx
 // no navegador
-const socket = new WebSocket("wss://exemplo.com/chat");
+const socket =
+  new WebSocket("wss://exemplo.com/chat");
 
-socket.onopen    = () => socket.send("oi!");
-socket.onmessage = (evento) => console.log("recebido:", evento.data);
-socket.onclose   = () => console.log("conexão encerrada");
+socket.onopen = () => socket.send("oi!");
+socket.onmessage = (evento) =>
+  console.log("recebido:", evento.data);
+socket.onclose = () =>
+  console.log("conexão encerrada");
 ```
 
 #### Vantagens
@@ -544,7 +844,43 @@ socket.onclose   = () => console.log("conexão encerrada");
 > - A latência do HTTP "de alguns segundos" era exagerada; o problema é ter de **perguntar** para receber novidades.
 > - A imagem foi substituída por dois diagramas, e incluí um exemplo de código.
 
+> ➡️ **Próximo passo:** **Outros conceitos importantes**, sobre proxy, DNS, load balancer e as camadas de rede.
+
+### 🧠 Revisão rápida
+
+**Qual código de status confirma a troca para WebSocket?**
+
+`101 Switching Protocols`.
+
+**Qual a diferença entre `ws://` e `wss://`?**
+
+`wss://` usa TLS (como o HTTPS); `ws://` não tem criptografia.
+
+**Qual cabeçalho validar para evitar Cross-Site WebSocket Hijacking?**
+
+`Origin`, durante o handshake.
+
+**Quando o SSE é melhor que o WebSocket?**
+
+Quando só o servidor precisa enviar atualizações.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| WebSocket | Canal bidirecional sobre uma conexão TCP aberta. |
+| Handshake | HTTP com `Upgrade` → `101 Switching Protocols`. |
+| Frames | Mensagens pequenas de texto ou binário. |
+| `wss://` | WebSocket com TLS; use sempre em produção. |
+| SSE | Alternativa mais simples quando só o servidor envia. |
+
 ## Outros conceitos importantes
+
+> 🗺️ **Nesta aula:** conceitos de rede que aparecem no dia a dia do back-end — proxy, DNS, socket, load balancer, firewall, CDN, API, microsserviços, contêineres — e os modelos de camadas OSI e TCP/IP.
+
+### De onde paramos
+
+Você já viu HTTP, TCP, TLS e WebSocket. Agora vai ver os conceitos de rede que aparecem ao redor deles no dia a dia do back-end.
 
 ### Proxy
 
@@ -564,6 +900,8 @@ Um **proxy** é um servidor **intermediário**: recebe a requisição de um lado
 O **DNS** (*Domain Name System*) é a "agenda" da internet: traduz nomes fáceis de lembrar, como `www.exemplo.com`, para **endereços IP**, que é o que a rede usa de fato.
 
 ![O resolvedor consulta raiz, TLD e servidor autoritativo até achar o IP.](../img/rede-dns.svg)
+
+> 💡 **Analogia:** é como perguntar um endereço na rua. Você pergunta ao porteiro (resolvedor); ele não sabe, mas sabe quem cuida do bairro (raiz → TLD), que sabe quem cuida da rua (autoritativo), que dá o número exato (IP). O porteiro anota para a próxima vez (cache).
 
 #### Como funciona
 
@@ -648,6 +986,8 @@ Pacotes que reúnem a aplicação **e suas dependências** e rodam isolados, com
 
 Ao enviar, cada camada **acrescenta seu cabeçalho** aos dados que recebeu da camada de cima; ao receber, cada camada **retira** o seu. Por isso os dados mudam de nome no caminho: **mensagem** (aplicação), **segmento** (transporte), **pacote** (internet) e **quadro** (acesso à rede).
 
+> 💡 **Analogia:** é como enviar um presente. Você embrulha (aplicação), põe numa caixa com o nome do destinatário (transporte), cola a etiqueta com o endereço (internet) e o caminhão leva tudo (acesso à rede). No destino, cada camada desembrulha a sua parte.
+
 > 🛠️ **Ajustes:**
 >
 > - O proxy ganhou a diferença entre **forward** e **reverso**, que antes estava pouco clara.
@@ -656,6 +996,55 @@ Ao enviar, cada camada **acrescenta seu cabeçalho** aos dados que recebeu da ca
 > - No load balancer, acrescentei a diferença entre **camada 4 e camada 7** e os algoritmos mais comuns.
 > - Na camada "de rede" do TCP/IP, o nome usual é **Internet**; e o OSI foi descrito como modelo de referência, mais usado como vocabulário do que implementado.
 > - As três imagens (TCP/IP, OSI e comparação) foram substituídas por cinco diagramas: proxy, DNS, load balancer, OSI x TCP/IP e encapsulamento.
+
+> ➡️ **Próximo passo:** **Imersão no Spring Framework com Spring Boot**, onde a API que você montou começa a rodar sobre esses protocolos.
+
+### 🧠 Revisão rápida
+
+**Qual a diferença entre forward proxy e proxy reverso?**
+
+O forward representa os clientes; o reverso fica na frente dos servidores e os representa.
+
+**Em que ordem o resolvedor DNS consulta os servidores?**
+
+Raiz → TLD → autoritativo. Depois guarda a resposta em cache pelo TTL.
+
+**Load balancer de camada 4 ou 7: qual consegue rotear por caminho da URL?**
+
+O de camada 7, que entende HTTP.
+
+**Como se chamam os dados em cada camada do TCP/IP?**
+
+Mensagem (aplicação), segmento (transporte), pacote (internet) e quadro (acesso à rede).
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Proxy | Intermediário; forward (clientes) ou reverso (servidores). |
+| DNS | Traduz nomes em IPs, com cache por TTL. |
+| Socket | Ponto final da comunicação: IP + porta + protocolo. |
+| Load balancer | Distribui requisições entre servidores. |
+| TCP/IP × OSI | 4 camadas reais × 7 camadas de referência. |
+| Encapsulamento | Cada camada adiciona e depois retira seu cabeçalho. |
+
+### 📎 Slides do curso
+
+> ➡️ **Próximo passo:** **Imersão no Spring Framework com Spring Boot**, o framework que vai construir a API.
+
+## 🧠 Revisão rápida
+
+**Quais métodos HTTP correspondem a ler e a criar um recurso?**
+
+`GET` lê; `POST` cria.
+
+**O que um código 404 indica?**
+
+Um erro do cliente: o recurso pedido não foi encontrado.
+
+**Para que o HTTPS usa TLS?**
+
+Para criptografar a comunicação e autenticar o servidor por meio de certificado digital.
 
 ## 📌 Resumo
 

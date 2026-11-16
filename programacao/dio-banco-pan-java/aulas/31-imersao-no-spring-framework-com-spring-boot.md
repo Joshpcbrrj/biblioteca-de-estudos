@@ -2,7 +2,17 @@
 
 > 🗺️ **Nesta aula:** os fundamentos do Spring (inversão de controle, injeção de dependência, beans e escopos), o que o Spring Boot acrescenta com os starters e seis projetos práticos, até o primeiro contato com JPA.
 
+## De onde paramos
+
+Você já sabe como cliente e servidor se comunicam. Agora vai usar o Spring, que cuida das partes repetitivas de uma aplicação.
+
 ## Fundamentos do Spring
+
+> 🗺️ **Nesta aula:** o que é o Spring Framework e seus módulos, a comparação com o Jakarta EE, inversão de controle, injeção de dependência, beans, escopos e como o `@Autowired` resolve dependências.
+
+### De onde paramos
+
+Você já sabe criar classes, interfaces e usar boas práticas de design. Agora vai usar um framework que cria e conecta os objetos da aplicação por você.
 
 ### Spring Framework
 
@@ -48,6 +58,8 @@ O **Java EE** (hoje **Jakarta EE**, mantido pela Eclipse Foundation) é um conju
 
 ![Sem IoC, a classe cria o que usa; com IoC, o container cria e injeta.](../img/spring-ioc.svg)
 
+> 💡 **Analogia:** sem IoC, você vai para a cozinha, compra os ingredientes e cozinha cada prato. Com IoC, você vai a um restaurante: diz o que quer e o prato chega pronto à mesa. O container é a cozinha do restaurante.
+
 #### Como funciona no Spring
 
 O container é representado pela interface `ApplicationContext` (que estende `BeanFactory`). Na inicialização, ele:
@@ -78,12 +90,14 @@ O container é representado pela interface `ApplicationContext` (que estende `Be
 Um **bean** é qualquer objeto **criado e gerenciado pelo container** do Spring. Hoje a forma mais comum de declará-los é com anotações:
 
 ```java
-@Service  // a própria classe vira um bean
+// a própria classe vira um bean
+@Service
 public class PedidoService { ... }
 
 @Configuration
 public class AppConfig {
-  @Bean  // o retorno do método vira um bean
+  // o retorno do método vira um bean
+  @Bean
   public RestTemplate restTemplate() {
     return new RestTemplate();
   }
@@ -135,10 +149,11 @@ O singleton do Spring significa **uma instância por definição de bean no cont
 ```java
 @Component
 public class MyClass {
-  private final MyDependency myDependency;
+  private final MyDependency dep;
 
-  public MyClass(MyDependency myDependency) { // @Autowired opcional com 1 construtor
-    this.myDependency = myDependency;
+  // @Autowired opcional com 1 construtor
+  public MyClass(MyDependency dep) {
+    this.dep = dep;
   }
 }
 ```
@@ -147,17 +162,22 @@ public class MyClass {
 
 ```java
 @Component("emailNotificacao")
-class EmailNotificacao implements Notificacao { ... }
+class EmailNotificacao
+  implements Notificacao { ... }
 
 @Component("smsNotificacao")
-class SmsNotificacao implements Notificacao { ... }
+class SmsNotificacao
+  implements Notificacao { ... }
 
 @Component
 public class MyClass {
   private final Notificacao notificacao;
 
-  public MyClass(@Qualifier("smsNotificacao") Notificacao notificacao) {
-    this.notificacao = notificacao; // recebe o bean chamado "smsNotificacao"
+  public MyClass(
+    @Qualifier("smsNotificacao")
+    Notificacao notificacao) {
+    // recebe o bean "smsNotificacao"
+    this.notificacao = notificacao;
   }
 }
 ```
@@ -167,8 +187,10 @@ public class MyClass {
 ```java
 @Component
 public class MyClass {
+  // dois candidatos: o nome do
+  // atributo decide
   @Autowired
-  private Notificacao emailNotificacao; // dois candidatos: o nome do atributo decide
+  private Notificacao emailNotificacao;
 }
 ```
 
@@ -177,11 +199,13 @@ public class MyClass {
 ```java
 @Component
 public class MyClass {
+  // fica null se não existir o bean
   @Autowired(required = false)
-  private MyDependency myDependency; // fica null se não existir o bean
+  private MyDependency dep;
 
   // alternativa mais explícita:
-  // public MyClass(Optional<MyDependency> dep) { ... }
+  // public MyClass(
+  //     Optional<MyDependency> dep) {...}
 }
 ```
 
@@ -196,11 +220,49 @@ public class MyClass {
 > - Removido o texto "javaCopy code" dos blocos de código, e o conteúdo repetido entre IoC, DI e @Autowired foi enxugado.
 > - As seis imagens foram substituídas por quatro diagramas.
 
+> ➡️ **Próximo passo:** **O que é o Spring Boot?**, que acelera a criação de aplicações sobre o Spring.
+
+### 🧠 Revisão rápida
+
+**Qual a diferença entre IoC e DI?**
+
+IoC é o princípio (o container controla a criação); DI é a técnica (o container entrega as dependências prontas).
+
+**Qual a forma de injeção recomendada? Por quê?**
+
+Por construtor: a dependência fica obrigatória, pode ser `final` e o teste fica simples.
+
+**Quando usar `@Bean` em vez de `@Component`?**
+
+Para objetos de bibliotecas de terceiros ou que exigem configuração na criação.
+
+**Por que um bean singleton deve ser sem estado?**
+
+Porque a mesma instância atende várias requisições ao mesmo tempo.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| IoC | O container cria e gerencia os objetos. |
+| DI | As dependências chegam prontas, de preferência pelo construtor. |
+| Bean | Objeto gerenciado pelo Spring. |
+| Escopo | Singleton (padrão), prototype, request, session… |
+| `@Autowired` | Resolve por tipo; desempata com `@Primary`, `@Qualifier` ou nome. |
+
 ## O que é o Spring Boot?
+
+> 🗺️ **Nesta aula:** o que o Spring Boot acrescenta ao Spring — auto-configuração, gerenciamento de dependências, servidor embutido, testes e Actuator — e o que são os starters.
+
+### De onde paramos
+
+Você já entende IoC, DI e beans. Agora vai ver o que o Spring Boot acrescenta para você não escrever configuração à mão.
 
 O **Spring Boot** (lançado em **2014**) é um projeto construído sobre o Spring Framework que facilita criar aplicações **autônomas e prontas para produção**. Ele segue a ideia de **convenção sobre configuração**: escolhe padrões sensatos para que você escreva quase nenhuma configuração e foque nas regras de negócio.
 
 ![Starter no pom, @SpringBootApplication, auto-configuração e a aplicação rodando com servidor embutido.](../img/boot-auto.svg)
+
+> 💡 **Analogia:** o Spring Framework é uma cozinha profissional com todos os equipamentos; o Spring Boot é a mesma cozinha já ligada, com as panelas no fogão e a receita aberta. Você pode mudar tudo, mas já dá para começar a cozinhar.
 
 ### Principais recursos
 
@@ -235,8 +297,10 @@ O **Actuator** expõe endpoints de saúde (`/actuator/health`), métricas e info
 ```xml
 <dependency>
   <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-web</artifactId>
-  <!-- sem versão: vem do spring-boot-starter-parent -->
+  <artifactId>spring-boot-starter-web
+    </artifactId>
+  <!-- sem versão: vem do
+       spring-boot-starter-parent -->
 </dependency>
 ```
 
@@ -266,7 +330,39 @@ O **Actuator** expõe endpoints de saúde (`/actuator/health`), métricas e info
 > - "Dependência de gerenciamento" virou **gerenciamento de dependências**, com a explicação de como o parent/BOM alinha as versões. Acrescentei o Actuator, o starter de validação e as anotações de teste por fatia.
 > - Incluí um diagrama do que acontece na inicialização.
 
+> ➡️ **Próximo passo:** **Projeto prático**, com seis partes curtas sobre beans, escopos, propriedades e JPA.
+
+### 🧠 Revisão rápida
+
+**O que a auto-configuração faz?**
+
+Olha as bibliotecas no classpath e configura o que faz sentido (servidor, banco, segurança…).
+
+**Por que declaramos starters sem versão no `pom.xml`?**
+
+Porque o `spring-boot-starter-parent` já define versões compatíveis entre si.
+
+**O que o Spring Initializr faz?**
+
+Gera o projeto inicial com os starters escolhidos.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Spring Boot | Spring com convenção sobre configuração. |
+| Auto-configuração | Configura pelo que está no classpath. |
+| Starter | Dependência "pacote" para uma funcionalidade. |
+| Servidor embutido | Tomcat dentro do `.jar`. |
+| Actuator | Saúde e métricas para produção. |
+
 ## Projeto prático
+
+> 🗺️ **Nesta aula:** seis projetos curtos — primeiros passos, IoC/DI na prática, escopos, propriedades com `@Value` e `@ConfigurationProperties` e o primeiro contato com ORM e JPA.
+
+### De onde paramos
+
+Você já sabe o que é o Spring Boot e os starters. Agora vai montar pequenos projetos para praticar beans, escopos, propriedades e JPA.
 
 #### Referências
 
@@ -287,12 +383,15 @@ O **Actuator** expõe endpoints de saúde (`/actuator/health`), métricas e info
 @SpringBootApplication
 public class PrimeirosPassosApplication {
   public static void main(String[] args) {
-    SpringApplication.run(PrimeirosPassosApplication.class, args);
+    SpringApplication.run(
+      PrimeirosPassosApplication.class,
+      args);
   }
 }
 
 @Component
-public class MeuRunner implements CommandLineRunner {
+public class MeuRunner
+    implements CommandLineRunner {
   @Override
   public void run(String... args) {
     System.out.println("Aplicação iniciada!");
@@ -309,14 +408,18 @@ public class MeuRunner implements CommandLineRunner {
 **Exemplo**
 
 ```java
+// classe nossa
 @Component
-public class CalculadoraImc { ... }  // classe nossa
+public class CalculadoraImc { ... }
 
 @Configuration
 public class BeansConfig {
+  // classe de terceiros
   @Bean
-  public Gson gson() {  // classe de terceiros
-    return new GsonBuilder().setPrettyPrinting().create();
+  public Gson gson() {
+    return new GsonBuilder()
+      .setPrettyPrinting()
+      .create();
   }
 }
 ```
@@ -357,14 +460,16 @@ remetente.telefones=1111,2222
 ```java
 @Component
 public class SistemaMensagem {
-  @Value("${remetente.nome}")
-  private String nome;
+    @Value("${remetente.nome}")
+    private String nome;
 
-  @Value("${remetente.email:nao-informado@dio.me}")  // valor padrão depois dos dois-pontos
-  private String email;
+    // valor padrão depois dos dois-pontos
+    @Value("${remetente.email:"
+         + "nao-informado@exemplo.com}")
+    private String email;
 
-  @Value("${remetente.telefones}")
-  private List<Long> telefones;
+    @Value("${remetente.telefones}")
+    private List<Long> telefones;
 }
 ```
 
@@ -385,6 +490,8 @@ public class Remetente {
 }
 ```
 
+> 💡 **Por que tirar valores do código?** O mesmo `.jar` pode rodar em desenvolvimento e em produção só trocando o `application.properties` (ou variáveis de ambiente) — sem recompilar.
+
 ### 6ª parte — ORM e JPA (`dio-spring-data-jpa`)
 
 - **O que é ORM?** *Object-Relational Mapping*: mapear **classes** para **tabelas**, **atributos** para **colunas** e **objetos** para **linhas**, para trabalhar com o banco usando objetos Java em vez de SQL manual.
@@ -403,21 +510,66 @@ public class Remetente {
 @Table(name = "usuarios")
 public class Usuario {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(
+    strategy = GenerationType.IDENTITY)
   private Long id;
   private String nome;
   private String email;
   // getters e setters
 }
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-  Optional<Usuario> findByEmail(String email);  // consulta gerada pelo nome do método
+public interface UsuarioRepository
+    extends JpaRepository<Usuario, Long> {
+  // consulta gerada pelo nome do método
+  Optional<Usuario> findByEmail(String email);
 }
 ```
+
+> 💡 **Analogia (ORM):** o ORM é um tradutor entre duas línguas. Você fala com o banco em objetos Java, e o tradutor (JPA/Hibernate) converte cada pedido para SQL e devolve as linhas como objetos.
 
 ### 📦 Pacotes dos projetos
 
 > 🛠️ **Ajustes:** corrigido "ComandLineRunner" para `CommandLineRunner`; cada parte ganhou uma explicação curta e um exemplo de código; as três imagens de ORM/JPA foram substituídas por dois diagramas (mapeamento objeto-tabela e camadas de acesso a dados); o título da página tinha uma marcação HTML perdida.
+
+> ➡️ **Próximo passo:** **Criando API REST documentada com Spring Web e Swagger**, para expor endpoints HTTP.
+
+### 🧠 Revisão rápida
+
+**O que é um `CommandLineRunner`?**
+
+Um bean cujo método `run` é executado logo depois que a aplicação sobe.
+
+**Como dar um valor padrão a uma propriedade com `@Value`?**
+
+Depois de dois-pontos: `@Value("${chave:padrao}")`.
+
+**Qual a diferença entre JPA e Hibernate?**
+
+JPA é a especificação; Hibernate é a implementação mais usada.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `CommandLineRunner` | Código que roda na inicialização. |
+| `@Bean` | Registra objetos de terceiros como beans. |
+| `@Value` | Lê uma propriedade, com valor padrão opcional. |
+| `@ConfigurationProperties` | Liga um grupo de propriedades a uma classe. |
+| ORM / JPA | Classes viram tabelas; o Hibernate implementa a JPA. |
+
+### 📎 Slides do curso
+
+> ➡️ **Próximo passo:** **Criando API REST documentada com Spring Web e Swagger**, para expor os primeiros endpoints.
+
+## 🧠 Revisão rápida
+
+**O que é inversão de controle?**
+
+O Spring cria e gerencia os objetos, e o seu código deixa de instanciá-los.
+
+**Qual o escopo padrão de um bean?**
+
+`singleton`: uma única instância para todo o contexto.
 
 ## 📌 Resumo
 

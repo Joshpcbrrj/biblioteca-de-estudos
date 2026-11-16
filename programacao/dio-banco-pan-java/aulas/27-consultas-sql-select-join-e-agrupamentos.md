@@ -2,25 +2,32 @@
 
 > 🗺️ **Nesta aula:** como escrever consultas com `SELECT`: filtros com `WHERE`, ordenação, `INNER JOIN` e `LEFT JOIN`, funções de agregação com `GROUP BY` e `HAVING`, e como alterar e apagar dados com segurança.
 
-Os exemplos usam as tabelas `clientes`, `pedidos` e `itens_pedido` da aula **Primeiros passos com SQL**, com dois registros a mais: a cliente Ana, que ainda não fez pedidos, e um segundo pedido do João.
+## De onde paramos
+
+Você já criou tabelas e inseriu dados. Agora vai perguntar coisas a esses dados: filtrar, juntar tabelas e resumir resultados.
+
+Os exemplos usam as tabelas `clientes`, `pedidos` e `itens_pedido` da aula **Criando um banco de dados**, **sem** rodar o `DELETE` do fim daquela aula (Pedro continua no banco). Acrescentamos dois registros: a cliente Ana, que ainda não fez pedidos, e um segundo pedido do João.
 
 ```sql
-INSERT INTO clientes (id, nome, email, idade) VALUES
-  (4, 'Ana', 'ana@email.com', 22);
+INSERT INTO clientes (id, nome, email, idade)
+VALUES (4, 'Ana', 'ana@exemplo.com', 22);
 
-INSERT INTO pedidos (id, cliente_id, data_pedido) VALUES
-  (4, 1, '2023-04-10');
+INSERT INTO pedidos (id, cliente_id, data_pedido)
+VALUES (4, 1, '2023-04-10');
 
-INSERT INTO itens_pedido VALUES
-  (7, 4, 'Meia', 5);
+INSERT INTO itens_pedido
+VALUES (7, 4, 'Meia', 5);
 ```
+
+> 💡 **Analogia:** uma consulta é um funil. O `FROM` despeja as tabelas, o `WHERE` peneira as linhas, o `GROUP BY` separa em montes, o `HAVING` descarta montes, o `SELECT` escolhe o que mostrar e o `ORDER BY` arruma a vitrine.
 
 ## 1. Filtrando com WHERE
 
 ```sql
 SELECT nome, idade
 FROM clientes
-WHERE idade >= 25 AND email IS NOT NULL;
+WHERE idade >= 25
+  AND email IS NOT NULL;
 -- João (30), Maria (25)
 ```
 
@@ -53,9 +60,11 @@ LIMIT 2;
 Os dados ficam espalhados em várias tabelas, ligadas por chaves estrangeiras. O `JOIN` junta as linhas que combinam pela condição do `ON`.
 
 ```sql
-SELECT c.nome, p.id AS pedido, p.data_pedido
+SELECT c.nome, p.id AS pedido,
+       p.data_pedido
 FROM clientes c
-INNER JOIN pedidos p ON p.cliente_id = c.id;
+INNER JOIN pedidos p
+  ON p.cliente_id = c.id;
 ```
 
 `c` e `p` são **apelidos** das tabelas, para escrever menos. O `AS` dá um apelido à coluna no resultado.
@@ -74,7 +83,8 @@ Um uso clássico do `LEFT JOIN` é achar quem **não** tem registro relacionado:
 -- clientes sem nenhum pedido
 SELECT c.nome
 FROM clientes c
-LEFT JOIN pedidos p ON p.cliente_id = c.id
+LEFT JOIN pedidos p
+  ON p.cliente_id = c.id
 WHERE p.id IS NULL;
 -- Ana
 ```
@@ -84,7 +94,8 @@ WHERE p.id IS NULL;
 As funções de agregação resumem várias linhas num valor só: `COUNT`, `SUM`, `AVG`, `MIN` e `MAX`.
 
 ```sql
-SELECT COUNT(*), AVG(idade), MIN(idade), MAX(idade)
+SELECT COUNT(*), AVG(idade),
+       MIN(idade), MAX(idade)
 FROM clientes;
 -- 4 | 29.25 | 22 | 40
 ```
@@ -93,11 +104,12 @@ Com `GROUP BY`, o resumo é feito por grupo:
 
 ```sql
 -- quantos pedidos cada cliente fez
-SELECT c.nome, COUNT(p.id) AS qtd_pedidos
+SELECT c.nome, COUNT(p.id) AS qtd
 FROM clientes c
-LEFT JOIN pedidos p ON p.cliente_id = c.id
+LEFT JOIN pedidos p
+  ON p.cliente_id = c.id
 GROUP BY c.id, c.nome
-ORDER BY qtd_pedidos DESC;
+ORDER BY qtd DESC;
 -- João 2, Maria 1, Pedro 1, Ana 0
 ```
 
@@ -106,11 +118,13 @@ ORDER BY qtd_pedidos DESC;
 O `WHERE` filtra **linhas** antes de agrupar; o `HAVING` filtra **grupos** depois:
 
 ```sql
--- clientes que compraram mais de 3 peças no total
+-- clientes com mais de 3 peças no total
 SELECT c.nome, SUM(i.quantidade) AS pecas
 FROM clientes c
-JOIN pedidos p ON p.cliente_id = c.id
-JOIN itens_pedido i ON i.pedido_id = p.id
+JOIN pedidos p
+  ON p.cliente_id = c.id
+JOIN itens_pedido i
+  ON i.pedido_id = p.id
 GROUP BY c.id, c.nome
 HAVING SUM(i.quantidade) > 3;
 -- João 8, Maria 5
@@ -122,7 +136,7 @@ HAVING SUM(i.quantidade) > 3;
 
 ```sql
 UPDATE clientes
-SET email = 'pedro@email.com'
+SET email = 'pedro@exemplo.com'
 WHERE id = 3;
 
 DELETE FROM itens_pedido
@@ -131,14 +145,34 @@ WHERE produto = 'Meia';
 
 > ⚠️ `UPDATE` e `DELETE` sem `WHERE` afetam **todas** as linhas da tabela. Antes de rodar, teste a condição com um `SELECT` usando o mesmo `WHERE` e confira quais linhas seriam atingidas.
 
+> ➡️ **Próximo passo:** na próxima aula você verá um banco NoSQL, o MongoDB, que guarda documentos em vez de tabelas.
+
+## 🧠 Revisão rápida
+
+**Qual a diferença entre `WHERE` e `HAVING`?**
+
+`WHERE` filtra linhas antes de agrupar; `HAVING` filtra os grupos depois do `GROUP BY`.
+
+**Como achar clientes sem nenhum pedido?**
+
+`LEFT JOIN` com pedidos e `WHERE p.id IS NULL`.
+
+**Por que um apelido criado no `SELECT` não funciona no `WHERE`?**
+
+Porque o `WHERE` é executado antes do `SELECT`; o apelido ainda não existe.
+
+**`COUNT(*)` ou `COUNT(coluna)`: qual ignora nulos?**
+
+`COUNT(coluna)`. O `COUNT(*)` conta todas as linhas.
+
 ## 📌 Resumo
 
 | Item | Em uma frase |
 | --- | --- |
-| `WHERE` | filtra linhas com comparações, `AND`/`OR`, `IN`, `BETWEEN`, `LIKE` e `IS NULL` |
-| `ORDER BY` / `LIMIT` | ordena e corta o resultado |
-| `INNER JOIN` | junta só as linhas que combinam |
-| `LEFT JOIN` | mantém todas as linhas da esquerda, com `NULL` onde não há par |
-| Agregação | `COUNT`, `SUM`, `AVG`, `MIN`, `MAX` |
-| `GROUP BY` / `HAVING` | resume por grupo / filtra os grupos |
-| `UPDATE` / `DELETE` | sempre com `WHERE`, testado antes com um `SELECT` |
+| `WHERE` | Filtra linhas com comparações, `AND`/`OR`, `IN`, `BETWEEN`, `LIKE` e `IS NULL`. |
+| `ORDER BY` / `LIMIT` | Ordena e corta o resultado. |
+| `INNER JOIN` | Junta só as linhas que combinam. |
+| `LEFT JOIN` | Mantém todas as linhas da esquerda, com `NULL` onde não há par. |
+| Agregação | `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`. |
+| `GROUP BY` / `HAVING` | Resume por grupo / filtra os grupos. |
+| `UPDATE` / `DELETE` | Sempre com `WHERE`, testado antes com um `SELECT`. |

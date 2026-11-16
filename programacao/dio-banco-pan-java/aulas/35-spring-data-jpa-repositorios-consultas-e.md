@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** o que um `JpaRepository` já traz pronto, como criar consultas pelo nome do método e com `@Query`, como paginar resultados e como garantir que várias operações aconteçam juntas com `@Transactional`.
 
+## De onde paramos
+
+Você já protege a API com o Spring Security. Agora vai guardar e consultar dados sem escrever o acesso ao banco na mão.
+
 ## 1. O repositório
 
 Com o Spring Data JPA você não escreve a classe de acesso ao banco: declara uma **interface** e o Spring cria a implementação ao subir a aplicação.
@@ -24,8 +28,11 @@ Os dois tipos genéricos são a **entidade** (`Cliente`) e o tipo do **id** (`Lo
 
 ```java
 Cliente c = repo.findById(1L)
-  .orElseThrow(() -> new ClienteNaoEncontradoException(1L));
+  .orElseThrow(() ->
+    new ClienteNaoEncontradoException(1L));
 ```
+
+> 💡 **Analogia:** o repositório é um bibliotecário. Você não entra no depósito procurando o livro: só pede "o livro de id 1" ou "os livros desta autora", e ele traz.
 
 ## 2. Consultas pelo nome do método
 
@@ -37,11 +44,15 @@ public interface ClienteRepository
 
   Optional<Cliente> findByEmail(String email);
 
-  List<Cliente> findByIdadeGreaterThan(int idade);
+  List<Cliente> findByIdadeGreaterThan(
+      int idade);
 
-  List<Cliente> findByNomeContainingIgnoreCase(String trecho);
+  List<Cliente>
+      findByNomeContainingIgnoreCase(
+      String trecho);
 
-  List<Cliente> findByCidadeOrderByNomeAsc(String cidade);
+  List<Cliente> findByCidadeOrderByNomeAsc(
+      String cidade);
 
   boolean existsByEmail(String email);
 
@@ -68,7 +79,8 @@ Quando o nome do método ficaria enorme, escreva a consulta em **JPQL**, a lingu
 
 ```java
 @Query("SELECT c FROM Cliente c "
-     + "WHERE c.cidade = :cidade AND c.idade >= :idade")
+     + "WHERE c.cidade = :cidade "
+     + "AND c.idade >= :idade")
 List<Cliente> buscarAdultosDaCidade(
     @Param("cidade") String cidade,
     @Param("idade") int idade);
@@ -77,12 +89,16 @@ List<Cliente> buscarAdultosDaCidade(
 Para usar SQL do próprio banco, marque `nativeQuery = true`; aí valem os nomes das tabelas e colunas:
 
 ```java
-@Query(value = "SELECT * FROM tb_clientes WHERE cidade = ?1",
+@Query(value = "SELECT * FROM tb_clientes "
+             + "WHERE cidade = ?1",
        nativeQuery = true)
-List<Cliente> buscarPorCidadeSql(String cidade);
+List<Cliente> buscarPorCidadeSql(
+    String cidade);
 ```
 
-> 💡 **Problema N+1:** relacionamentos `LAZY` são carregados só quando acessados. Listar 100 pedidos e ler o cliente de cada um dispara 1 consulta para os pedidos e mais 100 para os clientes. O `JOIN FETCH` traz tudo numa consulta só:<br />`@Query("SELECT p FROM Pedido p JOIN FETCH p.cliente")`
+> 💡 **Problema N+1:** relacionamentos `LAZY` são carregados só quando acessados. Listar 100 pedidos e ler o cliente de cada um dispara 1 consulta para os pedidos e mais 100 para os clientes. O `JOIN FETCH` traz tudo numa consulta só:
+
+`@Query("SELECT p FROM Pedido p JOIN FETCH p.cliente")`
 
 ## 4. Paginação e ordenação
 
@@ -93,15 +109,19 @@ Devolver milhares de registros de uma vez deixa a API lenta. Com um parâmetro `
 Page<Cliente> findByCidade(String cidade,
                            Pageable pageable);
 
-// no serviço: página 0, 20 itens, ordenado por nome
+// no serviço: página 0, 20 itens,
+// ordenado por nome
 Pageable pagina =
     PageRequest.of(0, 20, Sort.by("nome"));
 Page<Cliente> resultado =
     repo.findByCidade("Recife", pagina);
 
-resultado.getContent();  // os clientes da página
-resultado.getTotalElements();  // total no banco
-resultado.getTotalPages();  // quantas páginas
+// os clientes da página
+resultado.getContent();
+// total no banco
+resultado.getTotalElements();
+// quantas páginas
+resultado.getTotalPages();
 ```
 
 Num controller, o Spring monta o `Pageable` a partir da URL: `GET /clientes?page=0&size=20&sort=nome,asc`.
@@ -116,22 +136,25 @@ public class TransferenciaService {
 
   private final ContaRepository contas;
 
-  public TransferenciaService(ContaRepository contas) {
+  public TransferenciaService(
+      ContaRepository contas) {
     this.contas = contas;
   }
 
   @Transactional
-  public void transferir(Long origemId, Long destinoId,
-                         BigDecimal valor) {
+  public void transferir(Long origemId,
+      Long destinoId, BigDecimal valor) {
     Conta origem = contas.findById(origemId)
         .orElseThrow();
     Conta destino = contas.findById(destinoId)
         .orElseThrow();
 
-    origem.sacar(valor);  // pode lançar exceção
+    // pode lançar exceção
+    origem.sacar(valor);
     destino.depositar(valor);
-    // não precisa chamar save(): as entidades
-    // carregadas na transação são gravadas no commit
+    // não precisa chamar save(): as
+    // entidades carregadas na transação
+    // são gravadas no commit
   }
 }
 ```
@@ -147,13 +170,33 @@ Se `sacar` lançar uma exceção (saldo insuficiente, por exemplo), o Spring faz
 
 > ⚠️ O `@Transactional` funciona por meio de um **proxy** do Spring, que envolve o bean. Se um método da classe chamar outro método **da mesma classe**, a chamada não passa pelo proxy e a anotação do método chamado é ignorada.
 
+> ➡️ **Próximo passo:** **Criando API REST conectada ao Amazon RDS com Java**, para levar o banco para a nuvem.
+
+## 🧠 Revisão rápida
+
+**Quais são os dois tipos genéricos de `JpaRepository&lt;T, ID&gt;`?**
+
+A entidade e o tipo do id.
+
+**Que consulta o Spring gera para `findByCidadeOrderByNomeAsc`?**
+
+`WHERE cidade = ? ORDER BY nome ASC`.
+
+**Qual a diferença entre JPQL e SQL nativo?**
+
+JPQL usa entidades e atributos; SQL nativo usa tabelas e colunas do banco.
+
+**Uma exceção checked dentro de um `@Transactional` desfaz a transação?**
+
+Não, a menos que você use `rollbackFor`.
+
 ## 📌 Resumo
 
 | Item | Em uma frase |
 | --- | --- |
-| `JpaRepository<T, ID>` | interface que já traz `save`, `findById`, `findAll`, `deleteById` |
-| Consulta derivada | o nome do método vira a consulta (`findByEmail`) |
-| `@Query` | JPQL com entidades e atributos; `nativeQuery = true` para SQL puro |
-| N+1 | resolva com `JOIN FETCH` |
-| `Pageable` / `Page` | busca uma página por vez, com ordenação |
-| `@Transactional` | tudo ou nada; rollback em exceções unchecked |
+| `JpaRepository<T, ID>` | Interface que já traz `save`, `findById`, `findAll`, `deleteById`. |
+| Consulta derivada | O nome do método vira a consulta (`findByEmail`). |
+| `@Query` | JPQL com entidades e atributos; `nativeQuery = true` para SQL puro. |
+| N+1 | Resolva com `JOIN FETCH`. |
+| `Pageable` / `Page` | Busca uma página por vez, com ordenação. |
+| `@Transactional` | Tudo ou nada; rollback em exceções unchecked. |

@@ -1,12 +1,24 @@
 # Explorando Padrões de Projetos na Prática com Java
 
-**Nesta aula:** módulo sobre padrões de projeto do GoF: os conceitos, três padrões clássicos implementados em Java puro (Singleton, Strategy e Facade) e depois os mesmos padrões aplicados em uma API com Spring Boot.
+> 🗺️ **Nesta aula:** módulo sobre padrões de projeto do GoF: os conceitos, três padrões clássicos implementados em Java puro (Singleton, Strategy e Facade) e depois os mesmos padrões aplicados em uma API com Spring Boot.
+
+## De onde paramos
+
+Você já organiza a API em camadas e viu o Spring criar os beans. Agora vai reconhecer soluções clássicas para problemas recorrentes de projeto.
 
 ## Introdução
+
+> 🗺️ **Nesta aula:** o que são padrões de projeto, o livro do GoF e as três categorias com os 23 padrões.
+
+### De onde paramos
+
+Você já sabe criar classes, usar interfaces e aplicar SOLID. Agora vai ver soluções prontas e nomeadas para problemas que aparecem em quase todo sistema.
 
 ### Padrões de projeto
 
 **Padrões de projeto (design patterns) são soluções consolidadas para problemas recorrentes no desenvolvimento e na manutenção de software orientado a objetos.** Eles não são código pronto: são modelos de solução, com nome, problema, estrutura e consequências, que você adapta ao seu contexto.
+
+> 💡 **Analogia:** são como receitas clássicas de cozinha. "Molho branco" não é um prato pronto, mas todo cozinheiro sabe o que é, quando usar e como adaptar. Dizer "use um Strategy aqui" comunica uma solução inteira em duas palavras.
 
 A principal referência é o livro ***Design Patterns: Elements of Reusable Object-Oriented Software*** (1994), de **Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides**, autores que ficaram conhecidos como ***Gang of Four*** **(GoF)**. O livro cataloga **23 padrões**, divididos em três categorias:
 
@@ -22,7 +34,35 @@ A principal referência é o livro ***Design Patterns: Elements of Reusable Obje
 > - Faltava uma vírgula entre Facade e Flyweight.
 > - O livro foi lançado em outubro de 1994. O copyright da edição é de 1995, por isso as duas datas aparecem por aí.
 
+> ➡️ **Próximo passo:** **Singleton**, o primeiro padrão criacional, com suas variantes em Java.
+
+### 🧠 Revisão rápida
+
+**Quais são as três categorias do GoF?**
+
+Criacionais, estruturais e comportamentais.
+
+**Em qual categoria fica o Singleton? E o Strategy? E o Facade?**
+
+Singleton: criacional. Strategy: comportamental. Facade: estrutural.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Padrão de projeto | Solução consolidada e nomeada para um problema recorrente. |
+| GoF | Livro de 1994 com 23 padrões. |
+| Criacionais | Como criar objetos (5). |
+| Estruturais | Como combinar classes e objetos (7). |
+| Comportamentais | Como os objetos interagem (11). |
+
 ## Singleton
+
+> 🗺️ **Nesta aula:** o padrão Singleton, suas variações em Java (lazy, eager, lazy holder e enum) e como o Spring aplica a mesma ideia com os beans.
+
+### De onde paramos
+
+Você já sabe o que é um padrão de projeto e as três categorias do GoF. Agora vai ver o primeiro deles, que controla quantas instâncias de uma classe existem.
 
 ### «Padrão criacional»
 
@@ -31,6 +71,8 @@ A principal referência é o livro ***Design Patterns: Elements of Reusable Obje
 ![O construtor é privado; todos obtêm a instância pelo método estático.](../img/singleton-uml.svg)
 
 **Quando usar:** quando faz sentido existir um único objeto compartilhado, como configuração, cache, pool de conexões ou log.
+
+> 💡 **Analogia:** um país tem um único presidente em exercício. Ninguém "cria" outro com `new`: todos falam com o mesmo, pelo cargo (o método `getInstancia()`).
 
 ### Variações em Java
 
@@ -61,7 +103,8 @@ A instância é criada quando a classe é carregada. É thread-safe, porque a JV
 
 ```java
 public class SingletonEager {
-  private static final SingletonEager INSTANCIA = new SingletonEager();
+  private static final SingletonEager
+    INSTANCIA = new SingletonEager();
 
   private SingletonEager() { }
 
@@ -80,10 +123,12 @@ public class SingletonLazyHolder {
   private SingletonLazyHolder() { }
 
   private static class Holder {
-    static final SingletonLazyHolder INSTANCIA = new SingletonLazyHolder();
+    static final SingletonLazyHolder
+      INSTANCIA = new SingletonLazyHolder();
   }
 
-  public static SingletonLazyHolder getInstancia() {
+  public static SingletonLazyHolder
+      getInstancia() {
     return Holder.INSTANCIA;
   }
 }
@@ -97,7 +142,39 @@ Os beans do Spring têm escopo **singleton por padrão**: o container cria **uma
 
 > ⚠️ Singletons são compartilhados entre threads. Evite guardar estado mutável neles (ex.: um campo com o "usuário atual"), ou você terá condições de corrida.
 
+> ➡️ **Próximo passo:** **Strategy**, um padrão comportamental para trocar algoritmos sem `if`.
+
+### 🧠 Revisão rápida
+
+**Quais são os dois ingredientes do Singleton clássico?**
+
+Construtor privado e um método estático que devolve a instância única.
+
+**Por que o lazy simples não é thread-safe?**
+
+Duas threads podem passar pelo `if (instancia == null)` ao mesmo tempo e criar duas instâncias.
+
+**Como o Spring garante uma instância só de um `@Service`?**
+
+O container cria um bean singleton por contexto e injeta sempre o mesmo.
+
+### 📌 Resumo
+
+| Variação | Em uma frase |
+| --- | --- |
+| Lazy | Cria no primeiro uso; não é thread-safe. |
+| Eager | Cria ao carregar a classe; thread-safe. |
+| Lazy Holder | Preguiçoso e thread-safe, via classe interna. |
+| Enum | Thread-safe e à prova de reflexão. |
+| Spring | Beans são singleton por padrão. |
+
 ## Strategy
+
+> 🗺️ **Nesta aula:** o padrão Strategy, um exemplo com comportamentos de um robô, as vantagens do padrão e como ele aparece no Spring.
+
+### De onde paramos
+
+Você já viu o Singleton e como o Spring controla as instâncias. Agora vai ver como trocar um comportamento inteiro sem mexer na classe que o usa.
 
 ### «Padrão comportamental»
 
@@ -105,34 +182,49 @@ Os beans do Spring têm escopo **singleton por padrão**: o container cria **uma
 
 ![O Robo depende só da interface; cada comportamento é uma estratégia concreta.](../img/strategy-uml.svg)
 
+> 💡 **Analogia:** o aplicativo de mapas oferece rota de carro, a pé ou de ônibus. O destino é o mesmo; você troca a estratégia de cálculo com um toque, sem reinstalar o app.
+
 ### Exemplo: comportamentos de um robô
 
 ```java
+// cada tipo fica em seu próprio arquivo .java
 public interface Comportamento {
   void mover();
 }
 
-public class ComportamentoNormal implements Comportamento {
-  public void mover() { System.out.println("Movendo-se normalmente..."); }
+public class ComportamentoNormal
+    implements Comportamento {
+  public void mover() {
+    System.out.println("Movendo normalmente");
+  }
 }
 
-public class ComportamentoDefensivo implements Comportamento {
-  public void mover() { System.out.println("Movendo-se defensivamente..."); }
+public class ComportamentoDefensivo
+    implements Comportamento {
+  public void mover() {
+    System.out.println("Movendo defensivo");
+  }
 }
 
-public class ComportamentoAgressivo implements Comportamento {
-  public void mover() { System.out.println("Movendo-se agressivamente..."); }
+public class ComportamentoAgressivo
+    implements Comportamento {
+  public void mover() {
+    System.out.println("Movendo agressivo");
+  }
 }
 
 public class Robo {
-  private Comportamento comportamento = new ComportamentoNormal();
+  private Comportamento comportamento =
+    new ComportamentoNormal();
 
-  public void setComportamento(Comportamento comportamento) {
-    this.comportamento = comportamento;
+  public void setComportamento(
+      Comportamento c) {
+    this.comportamento = c;
   }
 
   public void mover() {
-    comportamento.mover(); // delega para a estratégia atual
+    // delega para a estratégia atual
+    comportamento.mover();
   }
 }
 ```
@@ -141,10 +233,13 @@ Uso:
 
 ```java
 Robo robo = new Robo();
-robo.mover();  // normal
-robo.setComportamento(new ComportamentoDefensivo());
-robo.mover();  // defensivo
-robo.setComportamento(() -> System.out.println("Parado.")); // estratégia via lambda
+robo.mover(); // normal
+robo.setComportamento(
+  new ComportamentoDefensivo());
+robo.mover(); // defensivo
+// estratégia via lambda
+robo.setComportamento(
+  () -> System.out.println("Parado."));
 robo.mover();
 ```
 
@@ -160,7 +255,39 @@ robo.mover();
 
 Declare uma interface (ex.: `ClienteService`) e uma ou mais implementações anotadas com `@Service`. Quem usa depende só da interface, e o Spring injeta a implementação. Com várias implementações, escolha com `@Qualifier` ou injete todas numa `Map<String, ClienteService>`.
 
+> ➡️ **Próximo passo:** **Facade**, que esconde vários subsistemas atrás de um método simples.
+
+### 🧠 Revisão rápida
+
+**Qual problema o Strategy resolve?**
+
+Trocar o algoritmo em tempo de execução sem encher a classe de `if`/`switch`.
+
+**Por que uma estratégia pode ser um lambda?**
+
+Porque a interface tem um único método abstrato (é funcional).
+
+**Cite um Strategy da biblioteca padrão do Java.**
+
+O `Comparator` usado em `list.sort(...)`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Strategy | Família de algoritmos atrás de uma interface. |
+| Contexto | A classe (Robo) que delega à estratégia atual. |
+| Troca | `setComportamento(...)` em tempo de execução. |
+| Aberto/fechado | Novo comportamento = nova classe. |
+| Spring | Interface de serviço + implementações `@Service`. |
+
 ## Facade
+
+> 🗺️ **Nesta aula:** o padrão Facade, um exemplo de migração de cliente que esconde três subsistemas atrás de um método e como ele aparece nos services do Spring.
+
+### De onde paramos
+
+Você já viu como Strategy troca um comportamento por dentro. Agora vai ver como esconder várias integrações atrás de uma interface simples.
 
 ### «Padrão estrutural»
 
@@ -168,33 +295,47 @@ Declare uma interface (ex.: `ClienteService`) e uma ou mais implementações ano
 
 ![O cliente faz uma chamada; a Facade coordena CRM, consulta de CEP e e-mail.](../img/facade-uml.svg)
 
+> 💡 **Analogia:** o botão "ligar" do home theater. Por trás, ele liga a TV, o receiver e o projetor, ajusta a entrada e o volume. Você aperta um botão só.
+
 ### Exemplo: migrar um cliente
 
 Sem a fachada, quem quisesse cadastrar um cliente teria de conhecer a API de CEP, o CRM e o serviço de e-mail. Com ela, basta uma chamada:
 
 ```java
-// Subsistemas (complexos, cada um com sua API)
+// Subsistemas (cada um com sua API)
 class CepApi {
-  String recuperarCidade(String cep) { return "Araraquara"; }
-  String recuperarEstado(String cep) { return "SP"; }
+    String recuperarCidade(String cep) {
+        return "Araraquara";
+    }
+    String recuperarEstado(String cep) {
+        return "SP";
+    }
 }
 
 class CrmService {
-  void gravarCliente(String nome, String cep, String cidade, String estado) {
-    System.out.printf("Cliente %s salvo no CRM: %s - %s/%s%n", nome, cep, cidade, estado);
-  }
+    void gravarCliente(String nome, String cep,
+            String cidade, String estado) {
+        System.out.printf(
+            "Cliente %s salvo: %s - %s/%s%n",
+            nome, cep, cidade, estado);
+    }
 }
 
 // Facade
 public class Facade {
-  private final CepApi cepApi = new CepApi();
-  private final CrmService crm = new CrmService();
+    private final CepApi cepApi = new CepApi();
+    private final CrmService crm =
+        new CrmService();
 
-  public void migrarCliente(String nome, String cep) {
-    String cidade = cepApi.recuperarCidade(cep);
-    String estado = cepApi.recuperarEstado(cep);
-    crm.gravarCliente(nome, cep, cidade, estado);
-  }
+    public void migrarCliente(String nome,
+                              String cep) {
+        String cidade =
+            cepApi.recuperarCidade(cep);
+        String estado =
+            cepApi.recuperarEstado(cep);
+        crm.gravarCliente(
+            nome, cep, cidade, estado);
+    }
 }
 
 // Cliente
@@ -209,7 +350,33 @@ new Facade().migrarCliente("Ana", "14801-788");
 
 > 💡 **No dia a dia com Spring:** uma classe `@Service` que orquestra vários repositórios e clientes HTTP, expondo métodos como `inserir(cliente)`, é na prática uma Facade.
 
+> ➡️ **Próximo passo:** **Praticando os padrões de projeto com o Spring**, onde Singleton, Strategy e Facade aparecem num projeto real.
+
+### 🧠 Revisão rápida
+
+**O Facade impede o acesso direto aos subsistemas?**
+
+Não. Ele só oferece um caminho mais simples; quem precisar ainda pode usá-los diretamente.
+
+**Se a API de CEP mudar, quem precisa ser alterado?**
+
+Só a Facade; os clientes continuam chamando `migrarCliente`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Facade | Interface simples na frente de subsistemas complexos. |
+| Benefício | Desacopla o cliente dos detalhes. |
+| Spring | Um `@Service` orquestrador é uma Facade. |
+
 ## Praticando os padrões de projeto com o Spring
+
+> 🗺️ **Nesta aula:** onde Singleton, Strategy e Facade aparecem num projeto Spring Boot, a arquitetura da API de clientes com ViaCEP e o código do cliente Feign e do serviço.
+
+### De onde paramos
+
+Você já viu Singleton, Strategy e Facade isoladamente. Agora vai reconhecê-los num projeto Spring Boot com API, JPA e OpenFeign.
 
 ### Os padrões dentro do Spring
 
@@ -219,6 +386,8 @@ new Facade().migrarCliente("Ana", "14801-788");
 
 > 🛠️ **Correção:** `@Autowired` não *cria* singletons. Ele só injeta o bean. O que define a instância única é o **escopo** do bean, que é `singleton` por padrão.
 
+> 💡 **Analogia:** é um restaurante com cozinha que pode trocar de cozinheiro. O cliente pede um prato pelo nome do cardápio (a interface `ClienteService`); a cozinha pode trocar quem prepara sem que o pedido mude.
+
 ### Arquitetura do projeto
 
 ![O controller depende da interface ClienteService; a implementação orquestra os repositórios JPA e o cliente Feign do ViaCEP.](../img/spring-padroes.svg)
@@ -226,41 +395,54 @@ new Facade().migrarCliente("Ana", "14801-788");
 #### Cliente Feign para o ViaCEP
 
 ```java
-@FeignClient(name = "viacep", url = "https://viacep.com.br/ws")
+@FeignClient(name = "viacep",
+  url = "https://viacep.com.br/ws")
 public interface ViaCepService {
 
   @GetMapping("/{cep}/json/")
-  Endereco consultarCep(@PathVariable("cep") String cep);
+  Endereco consultarCep(
+    @PathVariable("cep") String cep);
 }
 ```
 
 Para ativar, anote a classe principal com `@EnableFeignClients` e inclua a dependência `spring-cloud-starter-openfeign`.
 
+> 💡 **Feign em uma frase:** você só escreve a interface com as anotações HTTP; o Feign cria, em tempo de execução, a classe que faz a chamada e converte o JSON em objeto.
+
 #### Lógica do serviço (Facade)
 
 ```java
 @Service
-public class ClienteServiceImpl implements ClienteService {
+public class ClienteServiceImpl
+    implements ClienteService {
 
-  private final ClienteRepository clienteRepository;
-  private final EnderecoRepository enderecoRepository;
-  private final ViaCepService viaCepService;
+  private final ClienteRepository clientes;
+  private final EnderecoRepository enderecos;
+  private final ViaCepService viaCep;
 
-  // injeção por construtor (dispensa @Autowired)
-  public ClienteServiceImpl(ClienteRepository c, EnderecoRepository e, ViaCepService v) {
-    this.clienteRepository = c;
-    this.enderecoRepository = e;
-    this.viaCepService = v;
+  // injeção por construtor
+  // (dispensa @Autowired)
+  public ClienteServiceImpl(
+      ClienteRepository c,
+      EnderecoRepository e,
+      ViaCepService v) {
+    this.clientes = c;
+    this.enderecos = e;
+    this.viaCep = v;
   }
 
   @Override
   public void inserir(Cliente cliente) {
-    String cep = cliente.getEndereco().getCep();
-    // reaproveita o endereço salvo; se não existir, consulta o ViaCEP e salva
-    Endereco endereco = enderecoRepository.findById(cep)
-        .orElseGet(() -> enderecoRepository.save(viaCepService.consultarCep(cep)));
+    String cep =
+      cliente.getEndereco().getCep();
+    // reaproveita o endereço salvo;
+    // se não existir, consulta o ViaCEP
+    Endereco endereco = enderecos
+      .findById(cep)
+      .orElseGet(() -> enderecos.save(
+        viaCep.consultarCep(cep)));
     cliente.setEndereco(endereco);
-    clienteRepository.save(cliente);
+    clientes.save(cliente);
   }
 }
 ```
@@ -275,6 +457,33 @@ jsonschema2pojo, que gera as classes Java a partir de um JSON de exemplo (útil 
 
 🔗 [https://www.jsonschema2pojo.org/](https://www.jsonschema2pojo.org/)
 
+### Projeto
+
+> ➡️ **Próximo passo:** **Desafios**, para praticar os conceitos do curso em exercícios próprios.
+
+### 🧠 Revisão rápida
+
+**Onde está o Strategy neste projeto?**
+
+Na interface `ClienteService` com a implementação `ClienteServiceImpl`, trocável sem mexer no controller.
+
+**Por que o serviço consulta o banco antes do ViaCEP?**
+
+Para reaproveitar endereços já salvos e evitar chamadas externas repetidas.
+
+**O que é preciso para usar o OpenFeign?**
+
+A dependência `spring-cloud-starter-openfeign` e `@EnableFeignClients` na classe principal.
+
+### 📌 Resumo
+
+| Padrão | No projeto |
+| --- | --- |
+| Singleton | Todo bean do Spring, por padrão. |
+| Strategy | `ClienteService`  • `ClienteServiceImpl`. |
+| Facade | O service esconde JPA + ViaCEP atrás de `inserir`. |
+| OpenFeign | Interface que vira cliente HTTP. |
+
 ## Repositórios
 
 > "Alguém está sentado à sombra hoje porque alguém plantou uma árvore há muito tempo." (Warren Buffett)
@@ -282,6 +491,18 @@ jsonschema2pojo, que gera as classes Java a partir de um JSON de exemplo (útil 
 > "Falar é fácil. Mostre-me o código." (Linus Torvalds)
 
 > 🛠️ **Correções:** "sobra" → "sombra", "Mostre me" → "Mostre-me" e "TOrvalds" → "Torvalds".
+
+> ➡️ **Próximo passo:** **Desafio animal**, na seção 7, para praticar decisões encadeadas com o que você aprendeu.
+
+## 🧠 Revisão rápida
+
+**Qual padrão garante uma única instância de uma classe?**
+
+Singleton. No Spring, todo bean é singleton por padrão.
+
+**Qual padrão troca o algoritmo em tempo de execução?**
+
+Strategy: uma interface com implementações intercambiáveis.
 
 ## 📌 Resumo
 
@@ -292,3 +513,7 @@ jsonschema2pojo, que gera as classes Java a partir de um JSON de exemplo (útil 
 | Strategy | troca o algoritmo em tempo de execução por meio de uma interface |
 | Facade | uma interface simples na frente de subsistemas complexos |
 | No Spring | `@Bean`/`@Component` (Singleton), interfaces de serviço (Strategy), serviços que orquestram outros (Facade) |
+
+## 🧭 Mapa da seção
+
+![Mapa mental para revisar Spring](../img/dio-mapa-spring.svg)

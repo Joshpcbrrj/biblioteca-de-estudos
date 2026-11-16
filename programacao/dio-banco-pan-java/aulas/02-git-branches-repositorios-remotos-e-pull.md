@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** criar e trocar de branch, juntar o trabalho com merge (e quando usar rebase), enviar e baixar alterações do repositório remoto e o fluxo de pull request.
 
+## De onde paramos
+
+Na aula anterior você criou um repositório, fez commits e enviou o código ao GitHub. Agora você vai trabalhar em tarefas separadas, sem bagunçar a branch principal.
+
 ## 1. O que é uma branch
 
 Uma **branch** é uma linha de trabalho independente. Na prática, é só um ponteiro para um commit, que anda sozinho a cada novo commit. Criar uma branch é instantâneo e não copia arquivos.
@@ -9,6 +13,8 @@ Uma **branch** é uma linha de trabalho independente. Na prática, é só um pon
 O `HEAD` indica em qual branch você está. A regra de ouro dos times: **a** `main` **fica sempre estável**, e cada tarefa (uma funcionalidade, uma correção) ganha sua própria branch.
 
 ![A branch feature sai da main, recebe seus commits e volta com um merge.](../img/git-branches.svg)
+
+> 💡 **Analogia:** branches são versões alternativas de um capítulo de livro. Você escreve a sua versão sem mexer no texto publicado; quando fica pronta, o editor junta as duas (o merge).
 
 ```bash
 # lista as branches (a atual aparece com *)
@@ -64,6 +70,8 @@ Um **remoto** é uma cópia do repositório num servidor, como o GitHub. Por pad
 
 ![add e commit trabalham na sua máquina; push, fetch e pull conversam com o GitHub.](../img/git-remoto.svg)
 
+> 💡 **Analogia:** o `fetch` é olhar a caixa de correio sem abrir as cartas; o `pull` é abrir as cartas e colocá-las na mesa; o `push` é postar a sua carta para o destinatário.
+
 ```bash
 # copia um repositório existente
 git clone https://github.com/usuario/projeto.git
@@ -77,7 +85,7 @@ git push -u origin feature/login
 # depois disso, basta
 git push
 
-# baixa as novidades sem mexer nos seus arquivos
+# baixa as novidades sem mexer nos arquivos
 git fetch origin
 
 # baixa e já integra na branch atual
@@ -87,7 +95,7 @@ git pull
 | Comando | O que faz | Mexe nos seus arquivos? |
 | --- | --- | --- |
 | `git fetch` | baixa os commits novos do remoto | não |
-| `git pull` | `fetch`  • `merge` na branch atual | sim |
+| `git pull` | `fetch` seguido de `merge` na branch atual | sim |
 | `git push` | envia os seus commits para o remoto | não |
 
 > 💡 Se o `git push` for recusado com "rejected", alguém enviou commits antes de você. Rode `git pull`, resolva conflitos se houver e tente o push de novo.
@@ -104,6 +112,24 @@ Um **pull request** (PR) é um pedido para juntar a sua branch na `main`, feito 
 6. Responda à revisão com novos commits na mesma branch; o PR se atualiza sozinho.
 7. Aprovado, faça o merge pelo GitHub.
 8. Na sua máquina, volte para a `main`, rode `git pull` e apague a branch local.
+
+> 💡 **Analogia:** o pull request é como pedir a um editor que leia o texto antes de publicar. Ele comenta, você corrige e só depois o texto vai para a estante.
+
+## 🧠 Revisão rápida
+
+**Quando um merge é fast-forward?**
+
+Quando a `main` não recebeu commits desde que a branch saiu: o Git só avança o ponteiro, sem criar commit de merge.
+
+**`git fetch` ou `git pull`: qual usar para só ver o que mudou no remoto, sem mexer no seu trabalho?**
+
+`git fetch`. Depois, `git log origin/main` mostra os commits novos.
+
+**Você fez rebase numa branch que um colega já tinha baixado. Qual o problema?**
+
+Os commits ganharam hashes novos; o colega fica com o histórico antigo e terá conflitos e commits duplicados ao sincronizar.
+
+> ➡️ **Próximo passo:** na próxima aula você verá como organizar um time ágil com Scrum, Kanban e OKR.
 
 ## 📌 Resumo
 

@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** desafio de manipulação de texto: percorrer uma frase caractere por caractere e contar espaços e vogais. Tente resolver antes de abrir a resolução.
 
+## De onde paramos
+
+Você já usa laços `for` e contadores. Agora vai aplicar isso a um texto, tratando cada letra como um item.
+
 ## Desafio
 
 Jorginho é professor do primário e tem 100.000 alunos. Ele precisa de um programa que conte quantos **espaços em branco** e quantas **vogais** existem em uma frase. Ajude-o antes que o prazo do semestre acabe!
@@ -21,6 +25,8 @@ A quantidade de espaços em branco e de vogais, no formato do exemplo:
 | Navegar nas aguas do teu mar | Espacos em branco: 5 Vogais: 11 |
 
 ![Contando espaços e vogais: "Amo a DIO"](../img/dio-vogais.svg)
+
+> 💡 **Analogia:** é como revisar um texto com marca-texto: você passa os olhos letra por letra e marca só as vogais e os espaços, contando cada marca no final.
 
 ## Resolução
 
@@ -65,6 +71,24 @@ public class Main {
 > 🛠️ **Bug na versão anterior:** ela separava a frase com `split(" ")` e contava os espaços como `partes.length - 1`. Mas o `split` **descarta as partes vazias do final**: com espaços no fim da frase (ex.: `"Amo a DIO  "`), a contagem saía menor que a real. Além disso, o `if (c == ' ')` dentro do laço nunca era verdadeiro, porque as palavras já vinham sem espaços. Percorrer a frase original, caractere a caractere, resolve as duas coisas e simplifica o código.
 
 > 💡 Vogais acentuadas (á, ê, õ...) não são contadas por `"aeiou"`. Se precisar delas, use `"aeiouáàâãéêíóôõú"`, ou remova os acentos antes com `java.text.Normalizer`.
+
+> ➡️ **Próximo passo:** **Desafio taxa de Imposto de Renda**, com faixas progressivas.
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Por que converter a frase para minúsculas antes de contar?</summary>
+
+Para que `A` e `a` sejam contados como a mesma vogal.
+
+</details>
+
+<details>
+<summary>Ver resposta: Por que não contar os espaços com `split`?</summary>
+
+Porque o `split` descarta partes vazias no fim; percorrer a frase caractere a caractere é mais seguro.
+
+</details>
 
 ## 📌 Resumo
 

@@ -23,13 +23,15 @@ Para cada valor lido, imprima o texto correspondente.
 
 ![Nível de energia: o limite é 8000](../img/dio-dragao.svg)
 
+> 💡 **Analogia:** é um detector de metais na entrada de um evento. Quem passa sem apitar (até 8000) segue normalmente; quem dispara o alarme (acima de 8000) recebe outra mensagem. Cada caso é uma leitura independente.
+
 ### Código
 
 <details>
 <summary>Ver resposta</summary>
 
 ```java
-package Dragao;
+package dragao;
 
 import java.util.Scanner;
 
@@ -61,6 +63,22 @@ public class Main {
 > 🧮 **Lendo o exemplo:** a primeira linha (`3`) é a quantidade de casos. Depois vêm `8001` → **Mais de 8000!**, `100` → **Inseto!** e `200` → **Inseto!**. A condição é estritamente **maior que** 8000: exatamente 8000 ainda é inseto.
 
 > 🛠️ **Atenção à saída exata:** a tabela de exemplo mostrava "mais de 8000!" em minúsculas e o código imprime "Mais de 8000!". Corretores automáticos comparam o texto **caractere por caractere** — confira maiúsculas, acentos e pontuação no enunciado original da plataforma.
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Se a entrada for `8000`, qual mensagem sai?</summary>
+
+"Inseto!": a condição é estritamente maior que 8000.
+
+</details>
+
+<details>
+<summary>Ver resposta: Por que o `for` roda exatamente `casos` vezes?</summary>
+
+Porque a primeira leitura diz quantas linhas vêm depois; o laço usa esse número como limite.
+
+</details>
 
 ## 📌 Resumo
 

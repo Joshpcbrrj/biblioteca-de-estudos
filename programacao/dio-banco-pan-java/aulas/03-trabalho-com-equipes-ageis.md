@@ -2,9 +2,17 @@
 
 > 🧭 **Nesta aula:** como times de tecnologia se organizam: os valores do Manifesto Ágil, a diferença para a gestão tradicional e os principais métodos (XP, Scrum, Kanban, OKR) e ferramentas.
 
+## De onde paramos
+
+Na aula anterior você viu o Git e o GitHub, e como trabalhar com branches e pull requests. Agora a pergunta é outra: como um time organiza o trabalho para entregar software com qualidade?
+
 ## Manifesto ágil
 
-> 💡 **Em uma frase:** o Manifesto Ágil é a "constituição" do desenvolvimento ágil — 4 valores e 12 princípios que colocam pessoas, software funcionando e adaptação no centro do trabalho.
+> 🗺️ **Nesta aula:** o Manifesto Ágil é a "constituição" do desenvolvimento ágil — 4 valores e 12 princípios que colocam pessoas, software funcionando e adaptação no centro do trabalho.
+
+### De onde paramos
+
+Antes de falar de métodos como Scrum e Kanban, vale entender a ideia que os une. O Manifesto Ágil é o texto que deu origem a todos eles.
 
 🔗 [Manifesto para Desenvolvimento Ágil de Software](https://agilemanifesto.org/iso/ptbr/manifesto.html)
 
@@ -18,6 +26,8 @@
 - **Agilidade** é eficiência com **capacidade de adaptação**: o time entrega em ciclos curtos, recebe feedback e **corrige o rumo** continuamente.
 - Para isso funcionar, a **comunicação** precisa ser clara, frequente e assertiva.
 
+> 💡 **Analogia:** pense num GPS: ele não deixa o carro mais rápido, mas recalcula a rota a cada curva errada. Agilidade é esse recálculo constante.
+
 ### Como surgiu
 
 - O manifesto foi escrito em **fevereiro de 2001**, quando **17 desenvolvedores** se reuniram em uma estação de esqui em **Snowbird, Utah (EUA)**.
@@ -27,6 +37,8 @@
 ### Os 4 valores do Manifesto Ágil
 
 ![Os 4 valores: o lado esquerdo tem prioridade sobre o direito.](../img/ag-valores.svg)
+
+> 💡 **Analogia:** é como o orçamento de uma viagem. Quando o dinheiro aperta, você paga primeiro o que está no topo da lista (a passagem), mas o restante continua contando e é negociado com cuidado.
 
 1. **Indivíduos e interações** acima de processos e ferramentas — o foco está nas pessoas e na conversa entre elas; ferramenta boa não salva time desalinhado.
 2. **Software em funcionamento** acima de documentação abrangente — o que gera valor ao cliente é o produto rodando; documente o necessário, não o máximo.
@@ -38,6 +50,8 @@
 ### Os 12 princípios ágeis
 
 ![Os 12 princípios em versão resumida.](../img/ag-principios.svg)
+
+> 💡 **Analogia:** os 12 princípios funcionam como as regras de um bom anfitrião de festa: ouvir os convidados, ajustar o cardápio durante o evento e aprender com a festa anterior para a próxima.
 
 1. A maior prioridade é **satisfazer o cliente** com entregas contínuas e adiantadas de software de valor.
 2. **Mudanças nos requisitos são bem-vindas**, mesmo tarde no projeto — elas podem virar vantagem competitiva para o cliente.
@@ -72,13 +86,34 @@
 - **Valor antes:** o cliente começa a usar partes do produto ainda durante o projeto.
 - **Times mais engajados:** autonomia e propósito claro aumentam motivação e qualidade.
 
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Manifesto Ágil | 4 valores e 12 princípios escritos em 2001 por 17 desenvolvedores |
+| Agilidade | adaptação contínua com feedback, não apenas velocidade |
+| Valores | indivíduos e interações, software funcionando, colaboração com o cliente e resposta a mudanças |
+| Princípio 7 | software funcionando é a principal medida de progresso |
+
+### 🧠 Revisão rápida
+
+**O manifesto diz que documentação não é importante?**
+
+Não. Diz que software funcionando vale **mais** que documentação abrangente. Documentação continua útil, na medida do necessário.
+
+**Qual princípio mede o progresso do projeto?**
+
+O 7º: software funcionando é a principal medida de progresso (e não horas trabalhadas ou documentos escritos).
+
 ## Gerenciamento de projetos x Gestão Ágil
 
-> 💡 **Resumo:** o gerenciamento tradicional planeja tudo no início e entrega no fim; a gestão ágil entrega em ciclos curtos, mede e se adapta durante o caminho.
+> 🗺️ **Nesta aula:** o gerenciamento tradicional planeja tudo no início e entrega no fim; a gestão ágil entrega em ciclos curtos, mede e se adapta durante o caminho.
 
 ### Projeto x processo
 
 ![Projeto termina; processo se repete.](../img/gp-projeto-processo.svg)
+
+> 💡 **Analogia:** um casamento é um projeto: tem começo, data marcada e fim. A limpeza semanal da casa é um processo: nunca termina, só se repete.
 
 - **Projeto:** esforço **temporário**, com começo, meio e fim, que gera um resultado **único** (ex.: criar um novo app de cartões).
 - **Processo:** atividade **contínua e repetitiva** que mantém a operação funcionando (ex.: atender chamados de suporte, fechar a folha de pagamento).
@@ -89,6 +124,8 @@
 #### Modelo tradicional (cascata / waterfall)
 
 ![No cascata, cada fase depende da anterior.](../img/gp-cascata.svg)
+
+> 💡 **Analogia:** construir uma casa. Não se levanta a parede antes da fundação. Se o cliente pede uma janela extra depois que o telhado está pronto, parte da obra precisa ser desmontada.
 
 - Cada etapa só começa quando a anterior foi concluída.
 - O planejamento é feito todo no início, fixando **escopo → custo → cronograma**.
@@ -103,9 +140,13 @@
 - Ao fim de cada ciclo há uma **entrega de valor** utilizável: o produto cresce de forma **iterativa e incremental**.
 - Cada entrega gera **feedback**, que orienta o planejamento da próxima sprint.
 
+> 💡 **Iterativo e incremental**, na prática: em vez de entregar a roda, depois o chassi e só no fim o carro, o time entrega um skate, depois uma bicicleta, depois uma moto. Cada versão já serve para algo e gera feedback.
+
 #### Comparando a entrega de valor
 
 ![No ágil o valor chega em degraus; no cascata, só no fim.](../img/gp-valor.svg)
+
+> 💡 **Analogia:** é como subir uma escada. Cada degrau é um lugar onde você pode parar, olhar o caminho e decidir o próximo passo, em vez de chegar ao topo só no fim.
 
 | Aspecto | Tradicional (cascata) | Ágil |
 | --- | --- | --- |
@@ -125,9 +166,29 @@ Uma forma de gerir o trabalho que é:
 - **Voltada ao aprendizado**, usando cada ciclo para melhorar;
 - Focada em **entrega contínua de valor**.
 
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Projeto | esforço temporário que gera um resultado único |
+| Processo | atividade contínua e repetitiva que mantém a operação |
+| Cascata | cada fase depende da anterior; valor só no fim |
+| Ágil | ciclos curtos (sprints), entrega a cada ciclo e feedback constante |
+| Gestão ágil | flexível, transparente, orientada ao aprendizado e à entrega contínua |
+
+### 🧠 Revisão rápida
+
+**"Fechar a folha de pagamento todo mês" é projeto ou processo?**
+
+Processo: é contínuo e se repete sempre do mesmo jeito.
+
+**No ágil, o que costuma ser fixo e o que é flexível?**
+
+Prazo (duração da sprint) e custo (o time) costumam ser fixos; o escopo é que se ajusta.
+
 ## XP
 
-> 💡 **XP em uma frase:** um método ágil focado em **práticas de engenharia** — levar ao "extremo" o que já se sabe que funciona (testar, revisar, integrar, simplificar).
+> 🗺️ **Nesta aula:** o XP, um método ágil focado em **práticas de engenharia** — levar ao "extremo" o que já se sabe que funciona (testar, revisar, integrar, simplificar).
 
 ### O que é
 
@@ -139,6 +200,8 @@ Uma forma de gerir o trabalho que é:
 
 ![As práticas do XP trabalham juntas para manter o código saudável.](../img/xp-praticas.svg)
 
+> 💡 **Analogia:** as práticas do XP funcionam como a equipe de um pit stop na Fórmula 1. Cada integrante tem uma tarefa curta e repetida, e a corrida depende de todos fazerem a sua rápido e sem erro.
+
 | Prática | Como funciona |
 | --- | --- |
 | Programação em par | Duas pessoas no mesmo código: uma digita, a outra revisa e pensa à frente; trocam de papel com frequência |
@@ -148,6 +211,8 @@ Uma forma de gerir o trabalho que é:
 | Releases curtos | Versões pequenas e frequentes nas mãos do cliente |
 | Cliente presente | Alguém do negócio acompanha o time e tira dúvidas na hora |
 
+> 💡 Scrum e XP se completam: o Scrum organiza **o trabalho** (papéis, sprints, reuniões) e o XP cuida **do código** (testes, pares, integração). Muitos times usam os dois juntos.
+
 ### Valores do XP
 
 1. **Comunicação** — conversa constante entre time e cliente.
@@ -156,19 +221,29 @@ Uma forma de gerir o trabalho que é:
 4. **Coragem** — para refatorar, dizer a verdade sobre prazos e jogar fora o que não serve.
 5. **Respeito** — entre os membros do time e com o trabalho de cada um.
 
-### O que tem no XP, resumindo
+### 📌 Resumo
 
-- Ciclos curtos de entrega
-- Cerimônias (reuniões de planejamento e acompanhamento)
-- Testes automatizados desde o início
-- Programação em par
-- Feedback frequente
-- Proximidade com o cliente
-- Flexibilidade para mudar
+| Item | Em uma frase |
+| --- | --- |
+| Ciclos curtos | entregas pequenas e frequentes, com feedback do cliente |
+| Práticas técnicas | programação em par, TDD, integração contínua e design simples |
+| Valores | comunicação, simplicidade, feedback, coragem e respeito |
+| Cliente presente | alguém do negócio acompanha o time no dia a dia |
+| XP x Scrum | o Scrum organiza o trabalho; o XP cuida do código |
+
+### 🧠 Revisão rápida
+
+**Qual a ordem dos passos no TDD?**
+
+Vermelho (teste que falha) → verde (código mínimo que passa) → refatorar.
+
+**Por que integrar o código várias vezes por dia?**
+
+Quanto menor a diferença entre as versões de cada dev, menores e mais fáceis de resolver são os conflitos e bugs de integração.
 
 ## Scrum
 
-> 💡 **Scrum em uma frase:** um framework leve que organiza o trabalho em sprints de duração fixa, com papéis, eventos e artefatos bem definidos, para entregar valor e aprender a cada ciclo.
+> 🗺️ **Nesta aula:** o Scrum, um framework leve que organiza o trabalho em sprints de duração fixa, com papéis, eventos e artefatos bem definidos, para entregar valor e aprender a cada ciclo.
 
 ### Guia do Scrum
 
@@ -187,6 +262,8 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 ### Os 3 pilares (TIA)
 
 ![Transparência, Inspeção e Adaptação sustentam o Scrum.](../img/scrum-pilares.svg)
+
+> 💡 **Analogia:** dirigir um carro. O para-brisa limpo é a transparência (você enxerga a estrada), o retrovisor é a inspeção (você confere o que está ao redor) e o volante é a adaptação (você corrige o rumo).
 
 - **Transparência:** o trabalho, o progresso e os problemas ficam visíveis para todos (quadro, backlog, incremento). Sem isso, não dá para inspecionar direito.
 - **Inspeção:** o time verifica com frequência o que foi produzido e como está trabalhando — principalmente nos eventos do Scrum.
@@ -220,6 +297,8 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 
 ![Do Product Backlog ao incremento, e de volta para a próxima sprint.](../img/scrum-fluxo.svg)
 
+> 💡 **Analogia:** uma redação de jornal. A pauta é o Product Backlog, a reunião de pauta é a Sprint Planning, a edição do dia é a sprint e a matéria publicada é o incremento. A Review é a conversa sobre o que foi publicado; a Retrospectiva é a conversa sobre como a redação trabalhou.
+
 1. O **Product Owner** mantém o **Product Backlog** priorizado.
 2. Na **Sprint Planning**, o time escolhe os itens e monta o **Sprint Backlog**.
 3. Durante a **Sprint**, o time trabalha e faz a **Daily** todos os dias.
@@ -227,9 +306,35 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 5. Na **Sprint Review**, mostra o resultado e coleta feedback; na **Retrospectiva**, melhora o processo.
 6. Começa a próxima sprint, já com o aprendizado incorporado.
 
+> ⚠️ Confusão comum: a **Review** olha para o **produto** (o que foi entregue, com os stakeholders); a **Retrospectiva** olha para o **processo** (como o time trabalhou, só o time).
+
+### 🧠 Revisão rápida
+
+**Quem decide a prioridade do Product Backlog? E quem decide como implementar?**
+
+O Product Owner decide a prioridade (o quê); os Developers decidem o como.
+
+**Qual a duração máxima de uma sprint?**
+
+Um mês. Na prática, a maioria dos times usa 1 ou 2 semanas.
+
+**O que é a Definition of Done?**
+
+O acordo do time sobre o que um item precisa ter para ser considerado pronto (testado, revisado, documentado…). Só itens que a cumprem entram no incremento.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Scrum | framework leve que organiza o trabalho em sprints de duração fixa |
+| Papéis | Product Owner decide o quê, Scrum Master facilita e Developers decidem o como |
+| Eventos | Sprint, Sprint Planning, Daily Scrum, Sprint Review e Sprint Retrospective |
+| Artefatos | Product Backlog, Sprint Backlog e Incremento |
+| Pilares | transparência, inspeção e adaptação |
+
 ## Kanban
 
-> 💡 **Kanban em uma frase:** deixar o fluxo de trabalho **visível** num quadro e **limitar** quanta coisa fica em andamento ao mesmo tempo, para terminar mais e acumular menos.
+> 🗺️ **Nesta aula:** o Kanban, uma forma de deixar o fluxo de trabalho **visível** num quadro e **limitar** quanta coisa fica em andamento ao mesmo tempo, para terminar mais e acumular menos.
 
 ### O que é
 
@@ -243,6 +348,8 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 ### Ilustrando um quadro Kanban
 
 ![Cada coluna é uma etapa; os cartões andam da esquerda para a direita.](../img/kanban-quadro.svg)
+
+> 💡 **Analogia:** pense num restaurante. A cozinha só aceita um novo pedido quando tem espaço na chapa. Se aceitasse todos de uma vez, os pratos ficariam pela metade e nada sairia. O limite de WIP faz o mesmo com as tarefas do time.
 
 ### Princípios práticos
 
@@ -264,9 +371,29 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 | Mudanças | Podem entrar a qualquer momento | Em geral, só na próxima sprint |
 | Métrica comum | Lead time / throughput | Itens entregues por sprint |
 
+### 🧠 Revisão rápida
+
+**A coluna "Fazendo" tem WIP 2 e já está com 2 cartões. Você terminou outra tarefa e quer começar uma nova. O que fazer?**
+
+Esperar ou ajudar a terminar um dos cartões em andamento. Só se puxa uma tarefa quando há espaço na coluna.
+
+**O que é lead time?**
+
+O tempo entre a tarefa entrar no quadro e ser concluída. Quanto menor, mais rápido o valor chega ao cliente.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Kanban | fluxo de trabalho visível num quadro, com cartões que andam por colunas |
+| WIP | limite de cartões em andamento ao mesmo tempo em cada coluna |
+| Puxar | só se pega uma tarefa nova quando há espaço na coluna seguinte |
+| Lead time | tempo entre a tarefa entrar no quadro e ser concluída |
+| Kanban × Scrum | fluxo contínuo × sprints de duração fixa |
+
 ## OKR
 
-> 💡 **OKR em uma frase:** um **Objetivo** que diz aonde queremos chegar + alguns **Resultados-chave** numéricos que provam se chegamos.
+> 🗺️ **Nesta aula:** o OKR, em que um **Objetivo** que diz aonde queremos chegar + alguns **Resultados-chave** numéricos que provam se chegamos.
 
 ### O que é
 
@@ -277,6 +404,8 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 ### Estrutura
 
 ![Um objetivo qualitativo e seus resultados-chave mensuráveis.](../img/okr-estrutura.svg)
+
+> 💡 **Analogia:** uma viagem de carro. O objetivo é o destino ("chegar à praia"); os resultados-chave são as placas da estrada que confirmam o percurso ("faltam 50 km", "chegou ao litoral"). Sem as placas, você não sabe se está no caminho.
 
 | Parte | Características | Exemplo |
 | --- | --- | --- |
@@ -301,11 +430,31 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 - OKRs ambiciosos: atingir cerca de 70% já costuma ser considerado um bom resultado.
 - Acompanhe o progresso ao longo do ciclo, não só no fim.
 
-## Algumas ferramentas Ágeis
+### 🧠 Revisão rápida
 
-> 💡 Ferramenta não torna um time ágil — ela só ajuda a dar **transparência** ao trabalho. Escolha a mais simples que atenda o time. (Links limpos de parâmetros de rastreamento.)
+**"Lançar o novo extrato no app" é um bom KR?**
 
-### Resumo rápido
+Não: é uma tarefa (entrega), não um resultado medido. Um KR seria, por exemplo, "reduzir as ligações sobre extrato de 2 000 para 800 por mês".
+
+**Qual a diferença entre objetivo e resultado-chave?**
+
+O objetivo é qualitativo e diz aonde ir; os resultados-chave são números com prazo que mostram se chegamos.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Objetivo (O) | aonde queremos chegar, de forma qualitativa e inspiradora |
+| Resultado-chave (KR) | número com prazo que mostra se o objetivo foi atingido |
+| Ciclo | normalmente trimestral, revisado ao fim de cada ciclo |
+| Quantidade | de 3 a 5 objetivos por ciclo e de 2 a 5 resultados-chave por objetivo |
+| KR × tarefa | o KR mede resultado; a tarefa é só uma entrega |
+
+## Algumas ferramentas ágeis
+
+> 🗺️ **Nesta aula:** algumas ferramentas de times ágeis. Ferramenta não torna um time ágil — ela só ajuda a dar **transparência** ao trabalho. Escolha a mais simples que atenda o time.
+
+### 📌 Resumo
 
 | Ferramenta | Melhor para |
 | --- | --- |
@@ -344,6 +493,14 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 
 🔗 [https://www.pipefy.com/pt-br/](https://www.pipefy.com/pt-br/)
 
+### 🧠 Revisão rápida
+
+**Um time ágil precisa usar a ferramenta mais completa disponível?**
+
+Não. Escolha a mais simples que dê transparência ao trabalho do time.
+
+> ➡️ **Próximo passo:** a próxima seção é a linguagem Java: ambiente, sintaxe e os primeiros programas que você vai escrever.
+
 ## 📌 Resumo
 
 | Item | Em uma frase |
@@ -354,3 +511,7 @@ O Scrum Guide é o documento oficial (curto e gratuito, inclusive em português)
 | Scrum | framework com papéis (PO, Scrum Master, time), eventos (sprint, daily, review, retro) e artefatos (backlogs, incremento) |
 | Kanban | quadro visual do fluxo, com limite de trabalho em andamento |
 | OKR | objetivo qualitativo medido por resultados-chave numéricos |
+
+## 🧭 Cheat sheet da seção
+
+![Cheat sheet da seção 1: Git, branches, PR e métodos ágeis](../img/dio-cheat-principios.svg)

@@ -24,26 +24,28 @@ Os valores devem ser mostrados na mesma linha, separados por um espaço em branc
 
 ![Fibonacci: a janela de dois números anda](../img/dio-fibonacci.svg)
 
+> 💡 **Analogia:** é um trem de dois vagões. A cada passo, o vagão da frente (`atual`) passa a ser o de trás, e o novo vagão engatado na frente é a soma dos dois anteriores.
+
 ### Código
 
 <details>
 <summary>Ver resposta</summary>
 
 ```java
-package Fibonacci_facil;
+package fibonaccifacil;
 
 import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner leitor = new Scanner(System.in);
-    int N = leitor.nextInt();
+    int n = leitor.nextInt();
     int proximo, anterior = 0, atual = 1;
 
-    for (int i = 1; i <= N; i++) {
-      if (i == N) System.out.println(anterior); //Se n for 1 ele printa "0" e para
+    for (int i = 1; i <= n; i++) {
+      if (i == n) System.out.println(anterior); //Último termo: imprime sem espaço depois
 
       //Implemente a condição ideal para que possamos obter os valores solicitados:
-      else System.out.print(anterior + " "); //Senão, ele printa "0" e continua
+      else System.out.print(anterior + " "); //Demais termos: imprime com espaço depois
       proximo = anterior + atual;
       anterior = atual;
       atual = proximo;
@@ -51,6 +53,22 @@ public class Main {
   }
 }
 ```
+
+</details>
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Qual é o 6º termo da série com a sequência começando em 0 1?</summary>
+
+5 (0, 1, 1, 2, 3, 5).
+
+</details>
+
+<details>
+<summary>Ver resposta: Por que o código usa `println` no último valor?</summary>
+
+Para não deixar espaço depois do último número, como pede o enunciado.
 
 </details>
 
@@ -62,3 +80,7 @@ public class Main {
 | Três variáveis | `anterior`, `atual` e `proximo` "andam" a sequência |
 | Último valor | `println` sem espaço depois; os outros usam `print(valor + " ")` |
 | Limite do `int` | 2.147.483.647; acima disso, use `long` |
+
+## 🧭 Mapa da seção
+
+![Os cinco passos para resolver os desafios básicos](../img/dio-mapa-desafios1.svg)

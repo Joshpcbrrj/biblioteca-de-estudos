@@ -2,7 +2,17 @@
 
 > 🗺️ **Nesta aula:** o que é REST e o modelo de maturidade de Richardson, como criar endpoints com `@RestController`, documentar a API com Swagger e tratar erros em um só lugar com exception handlers.
 
+## De onde paramos
+
+Você já sabe criar componentes Spring. Agora vai expor esses componentes como endpoints HTTP, com o padrão REST.
+
 ## Introdução ao REST e RESTful
+
+> 🗺️ **Nesta aula:** o que é REST, a diferença entre REST e RESTful, as seis restrições de Fielding e os quatro níveis do modelo de maturidade de Richardson.
+
+### De onde paramos
+
+Você já sabe criar uma aplicação Spring Boot. Agora vai aprender o estilo de API que vai expor os dados dela pela web.
 
 ### O que é REST?
 
@@ -12,6 +22,8 @@
 - Os recursos são manipulados com os **métodos HTTP**: GET (ler), POST (criar), PUT/PATCH (alterar) e DELETE (remover).
 - O cliente recebe **representações** do recurso — normalmente em **JSON**, às vezes XML.
 - O servidor usa os **códigos de status** HTTP para indicar o resultado (200, 201, 404…).
+
+> 💡 **Analogia:** numa biblioteca, cada livro tem um endereço na estante (a URI) e há poucas ações possíveis — consultar, emprestar, devolver, descartar (os verbos). Você não precisa de um balcão diferente para cada livro: o mesmo conjunto de ações vale para todos.
 
 #### REST x RESTful
 
@@ -79,14 +91,19 @@ A resposta traz **links** para as ações e recursos relacionados. O cliente só
 
 ```json
 {
-  "nome": "John Doe",
-  "email": "john.doe@example.com",
+  "nome": "Ana Souza",
+  "email": "ana@exemplo.com",
   "_links": {
-    "self":     { "href": "/usuarios/1234" },
-    "pedidos":  { "href": "/usuarios/1234/pedidos" },
-    "carrinho": { "href": "/usuarios/1234/carrinho" },
-    "alterar":  { "href": "/usuarios/1234", "method": "PUT" },
-    "excluir":  { "href": "/usuarios/1234", "method": "DELETE" }
+    "self":
+      { "href": "/usuarios/1234" },
+    "pedidos":
+      { "href": "/usuarios/1234/pedidos" },
+    "alterar":
+      { "href": "/usuarios/1234",
+        "method": "PUT" },
+    "excluir":
+      { "href": "/usuarios/1234",
+        "method": "DELETE" }
   }
 }
 ```
@@ -100,11 +117,49 @@ No Spring, o projeto **Spring HATEOAS** ajuda a montar esses links.
 > - Os exemplos do modelo de Richardson estavam deslocados: a tabela do nível 1 já usava GET/PUT/DELETE (isso é **nível 2**) e a do nível 0 tinha várias URLs. Refiz os exemplos de cada nível.
 > - A imagem foi substituída por um diagrama, e o JSON do nível 3 foi traduzido.
 
+> ➡️ **Próximo passo:** **REST Controller**, para transformar métodos Java em endpoints HTTP.
+
+### 🧠 Revisão rápida
+
+**Quem descreveu o REST e quando?**
+
+Roy Fielding, na tese de doutorado de 2000.
+
+**Uma API com um único endpoint `POST /api` está em qual nível de Richardson?**
+
+Nível 0.
+
+**O que caracteriza o nível 2?**
+
+URIs por recurso + verbos HTTP com significado + códigos de status corretos.
+
+**O que é HATEOAS?**
+
+Respostas com links que mostram ao cliente as próximas ações possíveis (nível 3).
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| REST | Estilo de arquitetura com recursos, URIs e verbos HTTP. |
+| Stateless | Cada requisição é completa por si só. |
+| Richardson | Níveis 0 (RPC) a 3 (HATEOAS). |
+| Nível 2 | Onde está a maioria das APIs. |
+| HATEOAS | Links nas respostas guiam o cliente. |
+
 ## REST Controller
+
+> 🗺️ **Nesta aula:** o caminho de uma requisição até o controller, as anotações de mapeamento e de parâmetros e um controller REST completo com `ResponseEntity`.
+
+### De onde paramos
+
+Você já sabe o que é REST e quais são os verbos e códigos de status. Agora vai escrever a classe que expõe esses endpoints no Spring.
 
 **REST controllers** são as classes que expõem os **endpoints** da aplicação: recebem as requisições HTTP, chamam a camada de serviço e devolvem a resposta — normalmente em **JSON**.
 
 ![O DispatcherServlet encaminha a requisição ao controller certo, que delega ao service.](../img/rest-fluxo.svg)
+
+> 💡 **Analogia:** o controller é a recepção de um hotel. Ele recebe o hóspede (requisição), entende o pedido e chama o setor certo (service) — mas não arruma o quarto nem cozinha. Por isso a regra de negócio fica no service.
 
 ### Anotações mais usadas
 
@@ -130,34 +185,47 @@ public class UsuarioController {
 
   private final UsuarioService service;
 
-  public UsuarioController(UsuarioService service) {
+  public UsuarioController(
+      UsuarioService service) {
     this.service = service;
   }
 
+  // GET /usuarios?nome=ana
   @GetMapping
-  public List<Usuario> listar(@RequestParam(required = false) String nome) {
-    return service.listar(nome);  // GET /usuarios?nome=ana
+  public List<Usuario> listar(
+    @RequestParam(required = false)
+    String nome) {
+    return service.listar(nome);
   }
 
+  // GET /usuarios/7
   @GetMapping("/{id}")
-  public Usuario buscar(@PathVariable Long id) {
-    return service.buscar(id);  // GET /usuarios/7
+  public Usuario buscar(
+      @PathVariable Long id) {
+    return service.buscar(id);
   }
 
+  // 201 Created + cabeçalho Location
   @PostMapping
-  public ResponseEntity<Usuario> criar(@RequestBody Usuario usuario) {
+  public ResponseEntity<Usuario> criar(
+      @RequestBody Usuario usuario) {
     Usuario salvo = service.salvar(usuario);
-    URI location = URI.create("/usuarios/" + salvo.getId());
-    return ResponseEntity.created(location).body(salvo);  // 201 Created
+    URI location = URI.create(
+      "/usuarios/" + salvo.getId());
+    return ResponseEntity
+      .created(location).body(salvo);
   }
 
   @PutMapping("/{id}")
-  public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuario) {
+  public Usuario atualizar(
+      @PathVariable Long id,
+      @RequestBody Usuario usuario) {
     return service.atualizar(id, usuario);
   }
 
+  // 204 No Content
   @DeleteMapping("/{id}")
-  @ResponseStatus(HttpStatus.NO_CONTENT)  // 204 No Content
+  @ResponseStatus(HttpStatus.NO_CONTENT)
   public void excluir(@PathVariable Long id) {
     service.excluir(id);
   }
@@ -166,9 +234,44 @@ public class UsuarioController {
 
 > 💡 Use `ResponseEntity` quando precisar controlar o status, os cabeçalhos e o corpo da resposta ao mesmo tempo — como no `201 Created` com o cabeçalho `Location`.
 
+> ⚠️ **@PathVariable × @RequestParam:** o primeiro lê o caminho (`/usuarios/7`) e identifica **qual** recurso; o segundo lê a query (`?nome=ana`) e serve para **filtrar**, ordenar ou paginar.
+
 > 🛠️ **Ajustes:** o `@RequestMapping` foi descrito como a anotação que "indica qual verbo deve ser usado"; seu uso principal é definir o **caminho base**, e os verbos ficam com `@GetMapping`, `@PostMapping` etc. Corrigido o erro de digitação "Itilizada", as anotações viraram uma tabela e acrescentei `@PatchMapping`, `@ResponseStatus`, `ResponseEntity`, um exemplo completo de controller e um diagrama do fluxo da requisição.
 
+> ➡️ **Próximo passo:** **Swagger**, para documentar e testar esses endpoints no navegador.
+
+### 🧠 Revisão rápida
+
+**O que `@RestController` acrescenta a `@Controller`?**
+
+O `@ResponseBody`: o retorno dos métodos vira o corpo da resposta (JSON).
+
+**Qual anotação converte o JSON recebido num objeto Java?**
+
+`@RequestBody`.
+
+**Como devolver `201 Created` com o cabeçalho `Location`?**
+
+`ResponseEntity.created(uri).body(objeto)`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `@RestController` | Classe que devolve dados (JSON). |
+| `@GetMapping` etc. | Liga um método a um verbo e caminho. |
+| `@PathVariable` | Lê um trecho do caminho. |
+| `@RequestParam` | Lê um parâmetro de consulta. |
+| `@RequestBody` | Converte o corpo JSON em objeto. |
+| `ResponseEntity` | Controla status, cabeçalhos e corpo. |
+
 ## Swagger
+
+> 🗺️ **Nesta aula:** o que são o Swagger e a especificação OpenAPI, suas ferramentas e como gerar a documentação interativa num projeto Spring Boot com springdoc.
+
+### De onde paramos
+
+Você já cria controllers REST com endpoints. Agora vai gerar a documentação da API automaticamente e testá-la no navegador.
 
 ### Página do Swagger
 
@@ -184,6 +287,8 @@ Também em 2015 a **especificação** do Swagger foi doada à **OpenAPI Initiati
 - **Swagger** = as ferramentas da SmartBear que trabalham com essa especificação.
 
 ![Num projeto Spring Boot, o springdoc gera a especificação e o Swagger UI a exibe.](../img/swagger-fluxo.svg)
+
+> 💡 **Analogia:** a especificação OpenAPI é o cardápio do restaurante (o que existe, ingredientes, preço); o Swagger UI é o garçom que mostra o cardápio e deixa você provar cada prato ali mesmo.
 
 #### Vantagens
 
@@ -206,7 +311,9 @@ A biblioteca recomendada hoje é o **springdoc-openapi**. Basta adicionar a depe
 ```xml
 <dependency>
   <groupId>org.springdoc</groupId>
-  <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+  <artifactId>
+    springdoc-openapi-starter-webmvc-ui
+  </artifactId>
   <version>2.6.0</version>
 </dependency>
 ```
@@ -224,10 +331,13 @@ As anotações são opcionais e enriquecem a documentação:
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-  @Operation(summary = "Busca um usuário pelo id")
-  @ApiResponse(responseCode = "404", description = "Usuário não encontrado")
+  @Operation(
+    summary = "Busca um usuário pelo id")
+  @ApiResponse(responseCode = "404",
+    description = "Usuário não encontrado")
   @GetMapping("/{id}")
-  public Usuario buscar(@PathVariable Long id) { ... }
+  public Usuario buscar(
+      @PathVariable Long id) { ... }
 }
 ```
 
@@ -239,7 +349,38 @@ public class UsuarioController {
 > - "O Swagger gera a documentação com base nas anotações dos controladores" — quem faz isso em projetos Spring é uma biblioteca de integração (springdoc ou, antigamente, Springfox); o Swagger UI só exibe a especificação.
 > - Incluí a configuração com springdoc, os endereços padrão e um diagrama do fluxo.
 
+> ➡️ **Próximo passo:** **Exception handlers**, para devolver erros padronizados nas respostas da API.
+
+### 🧠 Revisão rápida
+
+**Qual a diferença entre OpenAPI e Swagger?**
+
+OpenAPI é a especificação (o formato); Swagger é o conjunto de ferramentas que trabalha com ela.
+
+**Qual biblioteca usar no Spring Boot 3?**
+
+`springdoc-openapi`. O Springfox está abandonado.
+
+**Em que endereço fica o Swagger UI por padrão?**
+
+`/swagger-ui.html`; a especificação JSON fica em `/v3/api-docs`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| OpenAPI | Especificação que descreve a API em YAML/JSON. |
+| Swagger UI | Página para ler e testar a API. |
+| springdoc | Gera a especificação a partir do código Spring. |
+| `@Operation` / `@Tag` | Enriquecem a documentação. |
+
 ## Exception handlers
+
+> 🗺️ **Nesta aula:** como transformar exceções em respostas HTTP padronizadas com `@RestControllerAdvice` e `@ExceptionHandler`, e o formato `ProblemDetail`.
+
+### De onde paramos
+
+Você já documenta a API com Swagger e sabe devolver respostas com status. Agora vai tratar os erros de forma centralizada, para que nenhum endpoint devolva um erro improvisado.
 
 Erros acontecem: dados inválidos enviados pelo cliente, registro inexistente, falha no banco ou num serviço externo. Numa API, o importante é que o cliente receba uma **resposta clara e padronizada** — com o **código de status** certo e uma mensagem útil —, sem expor detalhes internos como *stack traces*.
 
@@ -248,6 +389,8 @@ Erros acontecem: dados inválidos enviados pelo cliente, registro inexistente, f
 **Exception handlers** são métodos que **capturam exceções** lançadas pela aplicação e as transformam em **respostas HTTP**. No Spring, eles costumam ficar numa classe anotada com `@RestControllerAdvice` (ou `@ControllerAdvice`), que vale para **todos** os controllers.
 
 ![A exceção lançada no service é capturada pelo advice e vira uma resposta 404 em JSON.](../img/exc-advice.svg)
+
+> 💡 **Analogia:** é o SAC de uma empresa. Qualquer setor que tiver um problema encaminha para o mesmo atendimento, que responde ao cliente de forma educada e padronizada — em vez de cada setor improvisar a sua resposta.
 
 ### Como funciona
 
@@ -260,9 +403,12 @@ Erros acontecem: dados inválidos enviados pelo cliente, registro inexistente, f
 
 ```java
 // exceção do domínio
-public class UsuarioNaoEncontradoException extends RuntimeException {
-  public UsuarioNaoEncontradoException(Long id) {
-    super("Usuário " + id + " não encontrado");
+public class UsuarioNaoEncontradoException
+    extends RuntimeException {
+  public UsuarioNaoEncontradoException(
+      Long id) {
+    super("Usuário " + id
+      + " não encontrado");
   }
 }
 
@@ -270,23 +416,38 @@ public class UsuarioNaoEncontradoException extends RuntimeException {
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-  @ExceptionHandler(UsuarioNaoEncontradoException.class)
-  public ResponseEntity<Map<String, Object>> naoEncontrado(UsuarioNaoEncontradoException ex) {
-    return ResponseEntity.status(HttpStatus.NOT_FOUND)
-        .body(Map.of("status", 404, "erro", ex.getMessage()));
+  @ExceptionHandler(
+    UsuarioNaoEncontradoException.class)
+  public ResponseEntity<Map<String, Object>>
+      naoEncontrado(
+      UsuarioNaoEncontradoException ex) {
+    return ResponseEntity
+      .status(HttpStatus.NOT_FOUND)
+      .body(Map.of("status", 404,
+        "erro", ex.getMessage()));
   }
 
-  @ExceptionHandler(IllegalArgumentException.class)
-  public ResponseEntity<Map<String, Object>> requisicaoInvalida(IllegalArgumentException ex) {
+  @ExceptionHandler(
+    IllegalArgumentException.class)
+  public ResponseEntity<Map<String, Object>>
+      requisicaoInvalida(
+      IllegalArgumentException ex) {
     return ResponseEntity.badRequest()
-        .body(Map.of("status", 400, "erro", ex.getMessage()));
+      .body(Map.of("status", 400,
+        "erro", ex.getMessage()));
   }
 
-  @ExceptionHandler(Exception.class)  // rede de segurança para o resto
-  public ResponseEntity<Map<String, Object>> erroInesperado(Exception ex) {
-    // registre o erro completo no log, mas não envie detalhes ao cliente
-    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-        .body(Map.of("status", 500, "erro", "Erro interno. Tente novamente mais tarde."));
+  // rede de segurança para o resto
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity<Map<String, Object>>
+      erroInesperado(Exception ex) {
+    // registre o erro completo no log,
+    // mas não envie detalhes ao cliente
+    return ResponseEntity
+      .status(HttpStatus
+        .INTERNAL_SERVER_ERROR)
+      .body(Map.of("status", 500,
+        "erro", "Erro interno."));
   }
 }
 ```
@@ -302,7 +463,38 @@ public class GlobalExceptionHandler {
 
 > 🛠️ **Ajustes:** o texto explicava o conceito, mas não tinha nenhum código; acrescentei um exemplo completo com `@RestControllerAdvice`, a ordem em que o Spring procura o handler, o tipo `ProblemDetail` e um diagrama do fluxo no lugar da imagem.
 
+> ➡️ **Próximo passo:** **Projeto REST API**, que junta controllers, Swagger e tratamento de erros numa API completa.
+
+### 🧠 Revisão rápida
+
+**O que faz uma classe `@RestControllerAdvice`?**
+
+Reúne os `@ExceptionHandler` que valem para todos os controllers.
+
+**Por que não devolver o stack trace ao cliente?**
+
+Ele expõe detalhes internos (classes, tabelas, versões) que ajudam atacantes e não ajudam o usuário.
+
+**Se nenhum handler tratar a exceção, o que o cliente recebe?**
+
+A resposta de erro padrão do Spring Boot, normalmente 500.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `@ExceptionHandler` | Método que trata um tipo de exceção. |
+| `@RestControllerAdvice` | Classe com handlers globais. |
+| Status correto | 400, 404, 500… conforme o erro. |
+| `ProblemDetail` | Formato padrão de erro (RFC 9457). |
+
 ## Projeto REST API
+
+> 🗺️ **Nesta aula:** o projeto que junta REST, documentação com Swagger e tratamento de exceções em uma API Spring Boot.
+
+### De onde paramos
+
+Você já viu controllers, Swagger e handlers de exceção separadamente. Agora vai juntá-los numa API só.
 
 #### Spring Web REST API — o que o projeto cobre
 
@@ -319,6 +511,39 @@ public class GlobalExceptionHandler {
 #### Issue que me ajudou a achar o vídeo
 
 > 💡 Esse tipo de erro costuma vir do **Springfox**, que deixou de ser mantido e quebra em versões novas do Spring Boot. Em projetos novos, troque pelo **springdoc-openapi** (veja a página *Swagger*).
+
+### 📦 Meu projeto de API com Spring, documentada no Swagger
+
+> ➡️ **Próximo passo:** **Adicionando segurança a uma API REST com Spring**, para proteger os endpoints com login e permissões.
+
+### 🧠 Revisão rápida
+
+**Qual anotação devolve os erros de todos os controllers de forma padronizada?**
+
+`@RestControllerAdvice`, com métodos `@ExceptionHandler`.
+
+**Por que preferir o springdoc-openapi ao Springfox?**
+
+O Springfox está abandonado e costuma quebrar em versões novas do Spring Boot.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Projeto | API REST com controllers, Swagger e handlers de erro. |
+| Dependências | Confira as versões do Springfox: prefira o springdoc-openapi. |
+
+> ➡️ **Próximo passo:** **Validação de dados com Bean Validation**, para barrar dados inválidos na entrada da API.
+
+## 🧠 Revisão rápida
+
+**Qual a diferença entre `@Controller` e `@RestController`?**
+
+`@RestController` devolve os dados diretamente (JSON), em vez de uma view.
+
+**Qual anotação trata as exceções de todos os controllers em um só lugar?**
+
+`@RestControllerAdvice`.
 
 ## 📌 Resumo
 

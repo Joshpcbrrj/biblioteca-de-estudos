@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** os cinco princípios SOLID com exemplos em Java e as práticas de código limpo do dia a dia.
 
+## De onde paramos
+
+Você já escreve classes, herança e interfaces. Agora vai usar cinco princípios para decidir como organizar essas classes para que o código continue fácil de mudar.
+
 ## O que é SOLID
 
 **SOLID reúne cinco princípios de design orientado a objetos**, popularizados por Robert C. Martin ("Uncle Bob"). O objetivo é ter código fácil de mudar e de testar, em que uma alteração não quebre partes distantes do sistema.
@@ -11,6 +15,8 @@
 **Uma classe deve ter um único motivo para mudar.**
 
 ![S: uma classe, um motivo para mudar](../img/dio-solid-srp.svg)
+
+> 💡 **Analogia:** numa cozinha de restaurante, quem cozinha não é quem cobra, e quem cobra não é quem entrega. Se uma pessoa faz tudo, qualquer mudança de uma tarefa atrapalha as outras.
 
 ```java
 // ❌ faz tudo: regra, persistência, e-mail e PDF
@@ -34,6 +40,8 @@ class ExtratoPdfGenerator { ... }  // relatório
 
 ![O: estender sem modificar (Strategy)](../img/dio-solid-ocp.svg)
 
+> 💡 **Analogia:** é como um benjamim na tomada. Você acrescenta um aparelho novo sem reformar a parede: o modelo novo entra pelo encaixe que já existe.
+
 ```java
 // ❌ todo tipo novo de tarifa obriga a mexer neste if/else
 BigDecimal tarifa(String tipo) {
@@ -49,6 +57,8 @@ class TarifaTed implements CalculadoraTarifa { ... }
 ```
 
 ![L, I e D em uma imagem](../img/dio-solid-lid.svg)
+
+> 💡 **Analogia:** **L** é a lâmpada compatível: qualquer marca precisa encaixar e acender do mesmo jeito. **I** é o controle remoto que só tem os botões que você usa. **D** é a tomada padrão: o aparelho não precisa saber de qual usina vem a energia.
 
 ## L: Liskov Substitution (substituição de Liskov)
 
@@ -122,6 +132,18 @@ if (!conta.isAtiva()) throw new ContaInativaException();
 - **DRY** (*Don't Repeat Yourself*) e **KISS** (*Keep It Simple*): evite duplicação, mas também abstrações antes da hora.
 
 > 💡 SOLID é um guia, e não uma lei. Aplicar todos os princípios em um script de 50 linhas gera complexidade sem ganho. O valor aparece em sistemas que crescem e são mantidos por equipes, que é o caso de um banco.
+
+## 🧠 Revisão rápida
+
+**Qual princípio pede interfaces pequenas em vez de uma interface grande?**
+
+I (Interface Segregation).
+
+**Por que um `TransferenciaService` que depende de uma interface `Notificador` é mais fácil de testar?**
+
+Porque o teste pode injetar um falso notificador (mock), sem enviar nada de verdade.
+
+> ➡️ **Próximo passo:** **Collections**, para aplicar esses princípios ao trabalhar com coleções de objetos.
 
 ## 📌 Resumo
 
