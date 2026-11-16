@@ -27,7 +27,7 @@ Skill `criar-livro-tecnologia`. A ementa aprovada de cada livro fica em `livros/
 
 | Livro (pasta) | Trilha | Índice no Notion (id) | Situação | Onde parou / o que falta |
 | --- | --- | --- | --- | --- |
-| `livros/wsl-do-zero` | wsl (1º) | 419345e2044381a2b27edff0235f85f2 | 🟡 escrevendo | Ementa aprovada em 2026-11-15; capítulos 1–11 criados vazios no Notion. Base: guia pessoal f39388c6… |
+| `livros/wsl-do-zero` | wsl (1º) | 419345e2044381a2b27edff0235f85f2 | 🟡 aguardando exportação | Capítulos 1–11, cheat sheet e índice prontos no Notion (2026-11-15). Falta: exportar, publicar, capa. Base: guia pessoal f39388c6… |
 | `livros/docker-do-zero` | docker (1º) | 419345e2044381a8a4aac8e2a8ddd1d1 | ⏸️ em espera | Ementa aprovada em 2026-11-15 (12 caps + próximos); começa depois do WSL. |
 
 Página do Notion onde os livros são criados: `notion_livros` do `biblioteca.yaml` (página "📗 Cursos criados a partir de ementa", dentro de Estudos).
