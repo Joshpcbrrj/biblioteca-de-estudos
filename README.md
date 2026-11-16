@@ -34,6 +34,7 @@ Livros escritos do zero com a skill `criar-livro-tecnologia`: a ementa é propos
 | Livro | Trilha | Ler | EPUB |
 | --- | --- | --- | --- |
 | Livro: WSL do zero: Linux no Windows para programar - Josué B. Almeida | wsl (1º) | [Abrir](livros/wsl-do-zero/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/wsl-do-zero.epub) |
+| Livro: Docker do zero - Josué B. Almeida | docker (1º) | [Abrir](livros/docker-do-zero/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/docker-do-zero.epub) |
 
 ## Como os livros são gerados
 

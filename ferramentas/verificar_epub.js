@@ -17,6 +17,10 @@ const fs = require('fs'); const path = require('path');
       if (erro) return ['XHTML inválido: ' + erro.textContent.trim().slice(0, 120)];
       const W = document.documentElement.clientWidth;
       return [...document.querySelectorAll('pre, code, table, img, p, li, blockquote, details')]
+        // o <code> dentro de um <pre> conta espaços "pendurados" no fim de
+        // cada linha quebrada (pre-wrap) e passa da tela sem aparecer; quem
+        // decide se o bloco cabe é o próprio <pre>
+        .filter(e => !(e.tagName.toUpperCase() === 'CODE' && e.closest('pre')))
         .filter(e => e.getBoundingClientRect().right > W + 2)
         .map(e => e.tagName + ': ' + (e.textContent || e.getAttribute('src') || '').trim().slice(0, 60));
     });

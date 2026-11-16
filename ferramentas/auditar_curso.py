@@ -49,7 +49,11 @@ def auditar_aula(caminho, primeira=False):
                 # saída real de terminal (bloco txt/sem linguagem) e linhas com URL
                 # não se quebram sem falsificar o comando: viram aviso
                 saida = lang in ('txt', 'text', '')
-                r['saida_longa' if saida or '://' in l else 'codigo_longo'].append(i)
+                # um "token" sem espaços com 40+ caracteres (URL, template
+                # Go {{...}} do --format, --mount a=b,c=d) também não tem onde quebrar
+                inteiro = max((len(t) for t in l.split()), default=0) >= 40 or '{{' in l
+                r['saida_longa' if saida or '://' in l or inteiro
+                  else 'codigo_longo'].append(i)
             if COMENT.match(l) or re.search(r'\s(//|#|--)\s', l):
                 tem_coment = True
             continue
