@@ -8,8 +8,8 @@
   },
   {
    "id": "419345e204438119abc2d8909d1fe94e",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: chuveiro elétrico em casa nova (caminho); prédio com gás encanado (arquitetura)"
   },
   {
    "id": "419345e20443814386c4cb81dfc46ec8",
@@ -23,8 +23,8 @@
   },
   {
    "id": "419345e20443814e968ff5b207522fa9",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: totem de autoatendimento x balcão (UI x CLI); contato na agenda do celular (contexto)"
   },
   {
    "id": "419345e2044381279b8bd2b602b8f8f9",
@@ -63,7 +63,7 @@
   },
   {
    "id": "419345e20443811a8e68df8c86cf7432",
-   "feito": false,
+   "feito": true,
    "nota": ""
   }
  ]
