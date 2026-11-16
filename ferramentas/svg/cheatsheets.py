@@ -184,7 +184,7 @@ S['sa-mapa-banco'] = ('santander-coders-backend', 'Banco de dados', 'Seção 6 �
 ])
 
 # ============================================================ DIO
-S['dio-mapa-principios'] = ('dio-banco-pan-java', 'Princípios de desenvolvimento', 'Seção 1 · Git, equipes ágeis e IDEs', [
+S['dio-cheat-principios'] = ('dio-banco-pan-java', 'Princípios de desenvolvimento', 'Seção 1 · Git, equipes ágeis e IDEs', [
  C('Git', 'git', ['controle de versão', 'commits com histórico', 'distribuído']),
  C('Commit', 'cmt', ['git add', 'git commit -m', 'mensagem no imperativo']),
  C('Branches', 'br', ['git switch -c', 'trabalho isolado', 'main estável']),
@@ -198,7 +198,7 @@ S['dio-mapa-principios'] = ('dio-banco-pan-java', 'Princípios de desenvolviment
  C('Atalhos', 'key', ['refatorar renomeando', 'formatar código', 'navegar por classes']),
  C('Boas práticas', 'ok', ['commits pequenos', 'branch por tarefa', 'revisar antes do merge']),
 ])
-S['dio-mapa-java'] = ('dio-banco-pan-java', 'Conhecendo o Java', 'Seção 2 · sintaxe e recursos da linguagem', [
+S['dio-cheat-java'] = ('dio-banco-pan-java', 'Conhecendo o Java', 'Seção 2 · sintaxe e recursos da linguagem', [
  C('Ambiente', 'jdk', ['JDK = compilar + rodar', 'javac → bytecode', 'JVM executa']),
  C('Sintaxe', '{;}', ['classe e main', 'ponto e vírgula', 'case sensitive']),
  C('Tipos', 'T', ['8 primitivos', 'String e objetos', 'var infere']),
@@ -212,7 +212,7 @@ S['dio-mapa-java'] = ('dio-banco-pan-java', 'Conhecendo o Java', 'Seção 2 · s
  C('Dinheiro', '$', ['BigDecimal', 'nunca double', 'setScale e RoundingMode'], code=['new BigDecimal("0.10")']),
  C('Datas', 'date', ['java.time', 'LocalDate, Period', 'DateTimeFormatter']),
 ])
-S['dio-mapa-desafios1'] = ('dio-banco-pan-java', 'Resolver um desafio', 'Seção 3 · roteiro para os desafios básicos', [
+S['dio-cheat-desafios-basicos'] = ('dio-banco-pan-java', 'Resolver um desafio', 'Seção 3 · roteiro para os desafios básicos', [
  C('Ler o enunciado', '1', ['o que entra?', 'o que sai?', 'limites dos valores']),
  C('Exemplo à mão', '2', ['resolva no papel', 'entrada → saída', 'confira o formato']),
  C('Ler a entrada', 'in', ['Scanner ou BufferedReader', 'nextInt, nextLine', 'cuidado com o Enter']),
@@ -226,21 +226,21 @@ S['dio-mapa-desafios1'] = ('dio-banco-pan-java', 'Resolver um desafio', 'Seção
  C('Testar', 'chk', ['casos do enunciado', 'bordas: 0, 1, máximo', 'saída idêntica']),
  C('Armadilhas', '!', ['espaço a mais na saída', 'int / int', 'Locale com vírgula']),
 ])
-S['dio-mapa-poo'] = ('dio-banco-pan-java', 'POO com Java', 'Seção 4 · objetos, princípios e qualidade', [
+S['dio-cheat-poo'] = ('dio-banco-pan-java', 'POO com Java', 'Seção 4 · classes, coleções, streams, testes e Maven', [
  C('Classe e objeto', 'new', ['molde e exemplar', 'atributos e métodos', 'construtor']),
- C('Encapsular', 'lock', ['private + métodos', 'regras no objeto', 'records imutáveis']),
- C('Herança', 'ext', ['extends', 'super', 'é um']),
- C('Interfaces', 'impl', ['contrato', 'várias por classe', 'default methods']),
- C('Polimorfismo', 'poly', ['@Override', 'tipo pela interface', 'objeto real decide']),
+ C('Encapsulamento', 'lock', ['private + métodos', 'regras no objeto', 'records imutáveis']),
+ C('Herança', 'ext', ['extends e super', 'é um', '@Override']),
+ C('Interfaces', 'impl', ['contrato de métodos', 'várias por classe', 'default methods']),
  C('SOLID', 'S', ['S: uma responsabilidade', 'O: aberto p/ extensão', 'D: dependa de abstração']),
- C('Código limpo', 'ok', ['nomes que explicam', 'funções curtas', 'sem duplicação']),
- C('Collections', '[ ]', ['List, Set, Map', 'Comparator', 'Streams']),
+ C('Collections', '[ ]', ['List, Set, Map', 'ArrayList e HashMap', 'Comparator']),
+ C('Streams', 'st', ['filter e map', 'collect', 'pipeline de dados']),
  C('Debug', 'dbg', ['breakpoint', 'step over / into', 'inspecionar variáveis']),
  C('Exceções', 'try', ['checked × unchecked', 'try-with-resources', 'exceção própria']),
  C('Maven', 'mvn', ['pom.xml', 'dependências', 'mvn package']),
  C('Testes', 'test', ['JUnit: AAA', 'Mockito: mock', 'TDD: red-green-refactor']),
+ C('Desafio POO', 'obj', ['modelar classes', 'métodos com regras', 'teste com main']),
 ])
-S['dio-mapa-bancos'] = ('dio-banco-pan-java', 'SQL e NoSQL', 'Seção 5 · relacional, documentos e chave-valor', [
+S['dio-cheat-bancos'] = ('dio-banco-pan-java', 'SQL e NoSQL', 'Seção 5 · relacional, documentos e chave-valor', [
  C('Banco relacional', 'sql', ['tabelas e relações', 'esquema fixo', 'ACID']),
  C('DDL', 'ddl', ['CREATE TABLE', 'ALTER TABLE', 'DROP']),
  C('DML', 'dml', ['INSERT', 'UPDATE ... WHERE', 'DELETE ... WHERE']),
@@ -254,30 +254,30 @@ S['dio-mapa-bancos'] = ('dio-banco-pan-java', 'SQL e NoSQL', 'Seção 5 · relac
  C('Quando usar', '?', ['SQL: relações e consistência', 'NoSQL: escala e flexibilidade', 'depende do acesso']),
  C('Armadilhas', '!', ['UPDATE sem WHERE', 'SELECT * em produção', 'NoSQL sem chave boa']),
 ])
-S['dio-mapa-spring'] = ('dio-banco-pan-java', 'Produtividade com Spring', 'Seção 6 · da API REST ao banco na nuvem', [
- C('Protocolos', 'web', ['HTTP e HTTPS', 'TCP/IP', 'DNS']),
+S['dio-cheat-spring'] = ('dio-banco-pan-java', 'Spring e APIs', 'Seção 6 · HTTP, Spring Boot, REST, segurança, JPA e nuvem', [
+ C('HTTP', 'web', ['pedido e resposta', 'GET, POST, PUT, DELETE', 'códigos 2xx, 4xx, 5xx']),
+ C('TCP e UDP', 'net', ['TCP: confiável', 'UDP: rápido', 'HTTPS: porta 443']),
  C('Spring Boot', 'boot', ['starters', 'autoconfiguração', 'servidor embutido']),
- C('Injeção', 'DI', ['@Component, @Service', 'construtor injeta', 'beans e escopos']),
- C('Camadas', 'lyr', ['Controller', 'Service', 'Repository']),
+ C('Injeção', 'DI', ['@Component, @Service', 'construtor injeta', 'o container cria beans']),
  C('REST', 'api', ['@RestController', '@GetMapping, @PostMapping', 'JSON e status']),
  C('Documentar', 'doc', ['OpenAPI / Swagger', 'springdoc', 'testar no navegador']),
  C('Validação', 'val', ['@Valid', '@NotBlank, @Email', '400 com detalhes']),
- C('Segurança', 'lock', ['Spring Security', 'autenticação', 'perfis e permissões']),
+ C('Segurança', 'lock', ['autenticação: quem é', 'autorização: o que pode', 'SecurityFilterChain']),
  C('Spring Data JPA', 'jpa', ['@Entity', 'JpaRepository', 'consultas por nome']),
- C('Nuvem', 'aws', ['Amazon RDS', 'variáveis de ambiente', 'perfis dev / prod']),
+ C('Amazon RDS', 'aws', ['banco na nuvem', 'variáveis de ambiente', 'perfis dev / prod']),
  C('Padrões', 'gof', ['Singleton', 'Strategy', 'Facade']),
  C('Armadilhas', '!', ['senha no código', 'entidade exposta na API', 'N+1 consultas']),
 ])
-S['dio-mapa-desafios2'] = ('dio-banco-pan-java', 'Desafios intermediários', 'Seção 7 · decidir, contar e formatar', [
+S['dio-cheat-desafios-intermediarios'] = ('dio-banco-pan-java', 'Desafios intermediários', 'Seção 7 · decidir, contar, mapear e formatar', [
  C('Roteiro', '1-2', ['entrada e saída', 'exemplo no papel', 'código e teste']),
- C('Desafio POO', 'obj', ['modelar classes', 'métodos com regras', 'teste com main']),
  C('Animal', 'ani', ['classificar por perguntas', 'if aninhado', 'saída exata']),
  C('Quitanda do Zé', '$', ['preços e quantidades', 'total com 2 casas', 'BigDecimal']),
  C('Triângulo', 'tri', ['regra da desigualdade', 'perímetro ou área', 'double']),
  C('Espaços e vogais', 'abc', ['percorrer a String', 'charAt e contains', 'contadores']),
- C('Imposto de renda', 'IR', ['faixas progressivas', 'imposto por faixa', 'Isento']),
+ C('Imposto de renda', 'IR', ['faixas progressivas', 'imposto por faixa', 'isento abaixo do limite']),
  C('Decidir', 'if', ['faixas sem sobreposição', 'else if em ordem', 'limites com >= e <']),
  C('Texto', 'str', ['toLowerCase antes', 'split(" ")', 'StringBuilder']),
+ C('Map', 'map', ['chave → valor', 'tabela no lugar de ifs', 'dados fora da lógica']),
  C('Organizar', 'fn', ['métodos pequenos', 'nomes claros', 'sem números mágicos']),
  C('Mostrar', 'fmt', ['printf("%.2f%n")', 'Locale.US para ponto', 'sem espaço a mais']),
  C('Testar', 'chk', ['casos do enunciado', 'bordas das faixas', 'entrada vazia']),
