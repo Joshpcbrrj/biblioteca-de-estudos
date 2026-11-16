@@ -33,7 +33,7 @@ Livros escritos do zero com a skill `criar-livro-tecnologia`: a ementa é propos
 
 | Livro | Trilha | Ler | EPUB |
 | --- | --- | --- | --- |
-| _Nenhum ainda. O primeiro pode ser o seu: veja o [COMO-USAR.md](COMO-USAR.md)._ | | | |
+| Livro: WSL do zero: Linux no Windows para programar - Josué B. Almeida | wsl (1º) | [Abrir](livros/wsl-do-zero/) | [Baixar](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/wsl-do-zero.epub) |
 
 ## Como os livros são gerados
 
@@ -530,7 +530,7 @@ Padrão de aula, design, Notion e publicação: as duas skills leem daqui, e os 
 
 **Teste de cada aula:** ela responde por que isso existe, como funciona com um exemplo real e qual é o erro mais comum? Se faltar algo, complete.
 
-**Critério de pronto (automático):** depois da conversão, `auditar_curso.py <area>/<slug> --criterios` precisa sair sem erros. Os avisos (imagem sem analogia logo abaixo, tabela larga) são aceitáveis só se estiverem registrados no `ESTADO.md` com o motivo.
+**Critério de pronto (automático):** depois da conversão, `auditar_curso.py <area>/<slug> --criterios` precisa sair sem erros. Os avisos (imagem sem analogia logo abaixo, tabela larga, saída real de terminal ou linha com URL acima de 60 caracteres, que não se quebram sem falsificar o comando) são aceitáveis só se estiverem registrados no `ESTADO.md` com o motivo.
 
 ## Imagens (detalhes em _comum/DIDATICA_VISUAL.md)
 

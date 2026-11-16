@@ -21,7 +21,7 @@ import json, os, re, sys
 
 PERMITIDOS = {'README.md', 'metadata.yaml', 'capa.png', 'capa.svg', 'aulas', 'img', 'ementa.yaml'}
 SOBRAS = ['<callout', '<toggle', '<aside', '<page ', 'notion-file-block', '&lt;', '<unknown']
-SECOES = {'nesta_aula': r'Nesta (aula|lista)', 'de_onde': r'De onde paramos', 'revisao': r'Revisão rápida',
+SECOES = {'nesta_aula': r'(Nesta (aula|lista)|Neste capítulo)', 'de_onde': r'De onde paramos', 'revisao': r'Revisão rápida',
           'resumo': r'📌 Resumo', 'proximo': r'Próximo passo'}
 COMENT = re.compile(r'^\s*(//|#|--|/\*|\*|<!--|;|%)')
 TITULO = re.compile(r'^[^:]+: .+ - .+$')
@@ -32,7 +32,7 @@ def auditar_aula(caminho, primeira=False):
     texto = '\n'.join(linhas)
     r = {'imagens': [], 'sem_analogia': [], 'codigo_longo': [], 'tabela_larga': [],
          'codigo_sem_comentario': [], 'sobras_html': [], 'details_sem_branco': [],
-         'secoes_ausentes': []}
+         'secoes_ausentes': [], 'saida_longa': []}
     em_codigo, ini, tem_coment, lang = False, 0, False, ''
     for i, l in enumerate(linhas, 1):
         if l.lstrip().startswith('```'):
@@ -46,7 +46,10 @@ def auditar_aula(caminho, primeira=False):
             continue
         if em_codigo:
             if len(l) > 60:
-                r['codigo_longo'].append(i)
+                # saída real de terminal (bloco txt/sem linguagem) e linhas com URL
+                # não se quebram sem falsificar o comando: viram aviso
+                saida = lang in ('txt', 'text', '')
+                r['saida_longa' if saida or '://' in l else 'codigo_longo'].append(i)
             if COMENT.match(l) or re.search(r'\s(//|#|--)\s', l):
                 tem_coment = True
             continue
@@ -54,7 +57,8 @@ def auditar_aula(caminho, primeira=False):
         if m:
             r['imagens'].append(m.group(1))
             seguinte = '\n'.join(linhas[i:i + 3])
-            if 'Analogia' not in seguinte and 'mapa' not in m.group(1):
+            if 'Analogia' not in seguinte and 'mapa' not in m.group(1) \
+                    and 'cheatsheet' not in m.group(1):
                 r['sem_analogia'].append(m.group(1))
         if l.startswith('|') and l.count('|') - 1 > 4 and not re.match(r'^\|[\s:|-]+\|$', l):
             r['tabela_larga'].append(i)
@@ -79,7 +83,7 @@ def auditar_aula(caminho, primeira=False):
 
 
 ERROS = ['codigo_longo', 'codigo_sem_comentario', 'sobras_html', 'details_sem_branco', 'secoes_ausentes']
-AVISOS = ['sem_analogia', 'tabela_larga']
+AVISOS = ['sem_analogia', 'tabela_larga', 'saida_longa']
 
 
 def criterios(out):
