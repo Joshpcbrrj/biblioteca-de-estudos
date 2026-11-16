@@ -3,8 +3,8 @@
  "paginas": [
   {
    "id": "419345e204438114ac44c79dab0ee65b",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: praça de alimentação; campeonato de futebol (PIDs); aeroporto; fôrma de gelo"
   },
   {
    "id": "419345e204438119abc2d8909d1fe94e",
@@ -18,8 +18,8 @@
   },
   {
    "id": "419345e2044381b6901dc0351d9f3621",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: PABX (portas); partida de videogame (estados); fim de prova (stop x kill)"
   },
   {
    "id": "419345e20443814e968ff5b207522fa9",
@@ -33,8 +33,8 @@
   },
   {
    "id": "419345e2044381b79657e7bf0458069d",
-   "feito": false,
-   "nota": ""
+   "feito": true,
+   "nota": "analogias: transparências de retroprojetor (camadas); pasta entregue ao contador (contexto/.dockerignore). API em /tmp/api-livro"
   },
   {
    "id": "419345e2044381aeb213d17557a95b43",
