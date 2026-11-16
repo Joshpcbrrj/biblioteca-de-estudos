@@ -1,6 +1,6 @@
 <p align="center"><img src="capa.png" alt="Capa do livro" width="260"></p>
 
-# Dio: Banco Pan - Java developer
+# Dio: Java developer
 
 📥 **[Baixar o EPUB](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/dio-banco-pan-java.epub)**
 
@@ -50,7 +50,7 @@ Bootcamp de desenvolvimento back-end Java: Git e métodos ágeis, a linguagem Ja
 - [Primeiros passos com SQL](aulas/26-primeiros-passos-com-sql.md)
 - [Consultas SQL: SELECT, JOIN e agrupamentos (Adicionado pelo aluno para melhorar o estudo)](aulas/27-consultas-sql-select-join-e-agrupamentos.md)
 - [Introdução ao MongoDB (Banco de dados NoSQL)](aulas/28-introducao-ao-mongodb-banco-de-dados-nosql.md)
-- [Desafio: Boas práticas DynamoDB](aulas/29-desafio-boas-praticas-dynamodb.md)
+- [Boas práticas com Amazon DynamoDB](aulas/29-boas-praticas-com-amazon-dynamodb.md)
 
 ## 🌱 6. Produtividade com Spring Framework
 

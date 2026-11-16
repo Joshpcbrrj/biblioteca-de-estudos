@@ -27,6 +27,8 @@ O preço final do carro.
 
 ![Preço do carro: custo + porcentagens](../img/dio-fabrica.svg)
 
+> 💡 **Analogia:** pense numa loja que compra um produto por R$ 20.000 e acrescenta a sua margem e a taxa do governo sobre o **mesmo** valor original. Nenhuma das duas porcentagens incide sobre a outra.
+
 ## Código da resposta
 
 <details>
@@ -58,6 +60,22 @@ public class Main {
 </details>
 
 > 🛠️ **Ajustes no código:** variáveis como `Distribuidor`, `ValorImpostos` e `PercentualImpostos` começavam com maiúscula — em Java isso é reservado para **classes**; variáveis usam camelCase. Também juntei declaração e atribuição numa linha só e fechei o `Scanner`. Como a entrada é inteira, a divisão por 100 é inteira; se os valores pudessem ter centavos, o certo seria usar `double` (ou `BigDecimal`).
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Qual é o resultado de `7 / 2` em `int`? E de `7 / 2.0`?</summary>
+
+`3` (a divisão inteira descarta a parte decimal) e `3.5`.
+
+</details>
+
+<details>
+<summary>Ver resposta: Se o custo fosse 10000 e o distribuidor 50%, qual seria o valor do distribuidor?</summary>
+
+5000: `10000 * 50 / 100`.
+
+</details>
 
 ## 📌 Resumo
 

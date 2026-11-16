@@ -2,65 +2,90 @@
 
 > 🗺️ **Nesta aula:** o que é depurar, como ler a pilha de execução e o stack trace de um erro e os atalhos de debug mais usados nas IDEs.
 
-O debugging é o processo de encontrar e corrigir erros em um código. No Java, podemos utilizar diversas ferramentas para debuggar nosso código, como o Eclipse, IntelliJ IDEA, NetBeans, entre outros.
+## De onde paramos
 
-Algumas das principais técnicas de debugging incluem:
+Você já sabe escrever classes, métodos e coleções. Agora vai aprender a descobrir por que o programa se comporta de forma errada, sem adivinhar.
 
-- Usar pontos de interrupção (breakpoints) para pausar a execução do programa em um determinado ponto e examinar variáveis, estado do programa e executar o código linha a linha;
-- Usar ferramentas de inspeção de variáveis para examinar valores de variáveis em tempo de execução;
-- Usar logging para registrar mensagens de depuração em diferentes níveis de gravidade para ajudar a identificar onde ocorre um problema;
-- Usar ferramentas de profiling para identificar gargalos de desempenho no código.
+**Debugging** (depuração) é o processo de encontrar e corrigir erros em um código. No Java, as IDEs (IntelliJ IDEA, Eclipse, NetBeans, VS Code) trazem um depurador embutido.
 
-### Depuração/Debugging
+As principais técnicas são:
 
-Linguagens de alto nível tornam a depuração mais fácil, pois fornecem mais ferramentas para identificar erros, como o tratamento de exceções.
+- **Breakpoints**: pausar a execução numa linha e examinar variáveis e o estado do programa, avançando linha a linha.
+- **Inspeção de variáveis**: ver (e até alterar) valores em tempo de execução.
+- **Logging**: registrar mensagens em níveis de gravidade (`DEBUG`, `INFO`, `WARN`, `ERROR`) para descobrir onde algo dá errado — útil quando não dá para pausar o programa, como em produção.
+- **Profiling**: medir tempo e memória para achar gargalos de desempenho.
 
-Os depuradores funcionam assumindo o controle do tempo de execução de um programa e permitindo que você o observe e controle. Para fazer isso, ele mostra a pilha do programa e permite que você a atravesse em qualquer direção. Quando você está em um depurador, obtém uma imagem mais completa de um quadro de pilha do que quando olha os rastreamentos de pilha em uma mensagem de log.
+> 💡 **Analogia:** rodar o programa normalmente é assistir a um filme; o modo debug é ter o controle remoto na mão — pausar, avançar quadro a quadro e dar zoom em qualquer detalhe da cena.
 
-## Pilha de Execução de um Programa Java/Stack Trace
+### Depuração
 
-### Pilha de Execução:
+Linguagens de alto nível facilitam a depuração porque oferecem mais ferramentas para identificar erros, como o tratamento de exceções.
 
-Toda invocação de método é empilhada em uma estrutura de dados que isola a área de memória de cada um. Quando um método termina (retorna), ele volta para o método que o invocou.
+O depurador assume o controle da execução do programa e deixa você observá-lo e controlá-lo. Ele mostra a pilha do programa e permite navegar por ela em qualquer direção — uma visão mais completa de cada chamada do que a que se tem lendo um stack trace num log.
 
-### Stack Trace:
+## Pilha de execução e stack trace
+
+### Pilha de execução
+
+Toda chamada de método é **empilhada** numa estrutura que isola a área de memória de cada um (variáveis locais e parâmetros). Quando um método termina, ele sai do topo e a execução volta para o método que o chamou.
+
+### Stack trace
 
 É o **retrato da pilha de execução** no momento em que uma exceção aconteceu: a lista dos métodos que estavam em andamento, com classe, arquivo e número da linha de cada um. A **primeira linha** mostra onde o erro ocorreu; as seguintes mostram quem chamou quem, até o `main`.
 
 ![Cada chamada empilha um método; o stack trace lista do topo para a base.](../img/debug-stack.svg)
 
+Exemplo de leitura:
+
+```
+Exception in thread "main"
+  java.lang.ArithmeticException: / by zero
+    at Calc.dividir(Calc.java:12)
+    at Calc.media(Calc.java:7)
+    at Calc.main(Calc.java:3)
+```
+
+1. A primeira linha diz **qual** erro: divisão inteira por zero.
+2. `at Calc.dividir(Calc.java:12)` diz **onde**: linha 12 do método `dividir`.
+3. As linhas abaixo mostram o caminho: `main` chamou `media`, que chamou `dividir`.
+
+> 💡 Em stack traces longos, cheios de linhas de bibliotecas, procure a **primeira linha que aponta para um arquivo seu** — normalmente é ali que está a causa.
+
 > 🛠️ **Ajuste:** o texto original dizia que o stack trace "busca a próxima linha onde a exceção pode surgir". Ele não prevê nada: é um **registro** de onde a execução estava quando o problema ocorreu. Também se lê **de cima para baixo** (a linha do topo é a mais recente), e não de baixo para cima como dizia o comentário do código.
 
-### Analisando pilha de código com o “Thread.dumpStack”
+### Analisando a pilha com `Thread.dumpStack`
 
 **Código**
 
 ```java
 public class Debugging {
   public static void main(String[] args) {
-    System.out.println("Entrou no método 'main'");
+    System.out.println("Entrou em main");
     a();
-    System.out.println("Finalizou o programa no método 'main'");
+    System.out.println("Saiu de main");
   }
 
-  public static void a(){
-    System.out.println("Entrou no método 'a'");
+  public static void a() {
+    System.out.println("Entrou em a");
     b();
-    System.out.println("Finalizou o método 'a'");
+    System.out.println("Saiu de a");
   }
-  public static void b(){
-    System.out.println("Entrou no método 'b'");
-    for(int i = 0; i <= 5; i++){
+
+  public static void b() {
+    System.out.println("Entrou em b");
+    for (int i = 0; i <= 5; i++) {
       System.out.println(i);
     }
     c();
-    System.out.println("Finalizou o método 'b'");
+    System.out.println("Saiu de b");
   }
-  public static void c(){
-    System.out.println("Entrou no método 'c'");
-    // Mostra a pilha atual: a linha de cima é o método em execução (c), a de baixo é o main
+
+  public static void c() {
+    System.out.println("Entrou em c");
+    // Mostra a pilha atual: em cima c,
+    // depois b, a e, embaixo, main
     Thread.dumpStack();
-    System.out.println("Finalizou o método 'c'");
+    System.out.println("Saiu de c");
   }
 }
 ```
@@ -71,20 +96,24 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    String[] alunos = {"Ana", "Camila", "Bruna", "Lucas"};
+    String[] alunos =
+      {"Ana", "Camila", "Bruna", "Lucas"};
 
-    double media = calcularMediaTurma(alunos, scan);
-    System.out.printf("A média da turma é %.2f%n", media);
+    double media =
+      calcularMediaTurma(alunos, scan);
+    System.out.printf(
+      "Média da turma: %.2f%n", media);
   }
 
-  public static double calcularMediaTurma(String[] alunos, Scanner scanner){
+  public static double calcularMediaTurma(
+      String[] alunos, Scanner scanner) {
     double soma = 0;
-    for (String aluno : alunos){
-      System.out.printf("Nota do aluno %s: ", aluno);
+    for (String aluno : alunos) {
+      System.out.printf(
+        "Nota de %s: ", aluno);
       double nota = scanner.nextDouble();
       soma += nota;
     }
-
     return soma / alunos.length;
   }
 }
@@ -97,6 +126,8 @@ public class Main {
 > - `class main` → `class Main` e `Calculadora_media_turma` → `calcularMediaTurma` (métodos começam com minúscula e usam camelCase).
 > - No primeiro exemplo, o método `c()` imprimia "Entrou no método 'a'".
 
+> ⚠️ O `Scanner` usa o idioma do sistema: num computador em português, a nota 7,5 deve ser digitada com **vírgula**; digitar 7.5 lança `InputMismatchException`. Para forçar o ponto, use `scan.useLocale(Locale.US)`.
+
 ### Atalhos de debug mais usados
 
 | Ação | IntelliJ | Eclipse |
@@ -108,6 +139,8 @@ public class Main {
 | Sair do método (*step out*) | `Shift + F8` | `F7` |
 | Continuar até o próximo breakpoint | `F9` | `F8` |
 
+> 💡 Clique com o botão direito num breakpoint para torná-lo **condicional** (ex.: `i == 4`). O programa só para quando a condição for verdadeira — ótimo para laços longos.
+
 ### Referências úteis
 
 - [https://www.hostgator.com.br/blog/debug-desenvolvimento-web/](https://www.hostgator.com.br/blog/debug-desenvolvimento-web/)
@@ -116,13 +149,29 @@ public class Main {
 - [https://www.sentinelone.com/blog/java-stack-trace-understanding/](https://www.sentinelone.com/blog/java-stack-trace-understanding/)
 - [https://www.caelum.com.br/apostila-java-orientacao-objetos/excecoes-e-controle-de-erros#exercicio-para-comecar-com-os-conceitos](https://www.caelum.com.br/apostila-java-orientacao-objetos/excecoes-e-controle-de-erros#exercicio-para-comecar-com-os-conceitos)
 
+> ➡️ **Próximo passo:** na próxima aula você vai tratar erros previstos com `try/catch` e criar as suas próprias exceções.
+
+## 🧠 Revisão rápida
+
+**Num stack trace, qual linha mostra onde o erro aconteceu?**
+
+A primeira linha `at ...` (o topo da pilha). As de baixo mostram quem chamou.
+
+**Qual a diferença entre *step over* e *step into*?**
+
+*Step over* executa a linha inteira (inclusive métodos chamados nela); *step into* entra no método chamado para segui-lo por dentro.
+
+**O que acontece com um método na pilha quando ele termina?**
+
+Ele sai do topo e a execução volta para quem o chamou.
+
 ## 📌 Resumo
 
 | Item | Em uma frase |
 | --- | --- |
-| Debugging | pausar o programa e inspecionar variáveis para achar a causa de um erro |
-| Breakpoint | ponto onde a execução para no modo debug |
-| Pilha de execução | lista dos métodos em andamento; o último chamado fica no topo |
-| Stack trace | a pilha impressa no erro: leia de cima para baixo e procure a primeira linha do seu código |
-| `Thread.dumpStack()` | imprime a pilha atual sem precisar de um erro |
-| Passo a passo | step over (próxima linha), step into (entra no método), step out (sai dele) |
+| Debugging | Pausar o programa e inspecionar variáveis para achar a causa de um erro. |
+| Breakpoint | Ponto onde a execução para no modo debug. |
+| Pilha de execução | Métodos em andamento; o último chamado fica no topo. |
+| Stack trace | A pilha impressa no erro: leia de cima para baixo e procure a primeira linha do seu código. |
+| `Thread.dumpStack()` | Imprime a pilha atual sem precisar de um erro. |
+| Passo a passo | Step over (próxima linha), step into (entra no método), step out (sai dele). |

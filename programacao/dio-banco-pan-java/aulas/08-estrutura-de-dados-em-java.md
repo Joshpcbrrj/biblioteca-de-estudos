@@ -2,9 +2,13 @@
 
 > 🗺️ **Nesta aula:** como montar estruturas de dados com nós e referências (pilha, fila, listas encadeadas, duplamente encadeadas e circulares, árvore binária) e quais classes prontas do Java fazem o mesmo papel.
 
+## De onde paramos
+
+Você já guarda vários valores em arrays, que têm tamanho fixo. Agora vai ver estruturas que crescem e encolhem conforme o uso.
+
 ## Introdução e conceitos básicos
 
-> 💡 Antes de pilhas, filas, listas e árvores, três ideias-base: **como o Java copia valores**, o que é um **nó** e como **generics** tornam essas estruturas reutilizáveis para qualquer tipo.
+> 🗺️ **Nesta aula:** três ideias-base antes de pilhas, filas, listas e árvores: **como o Java copia valores**, o que é um **nó** e como **generics** tornam essas estruturas reutilizáveis para qualquer tipo.
 
 ### Tipos de dados no Java
 
@@ -23,6 +27,8 @@
 
 ![Copiar um primitivo duplica o valor; copiar um objeto duplica só a referência.](../img/ed-atribuicao.svg)
 
+> 💡 **Analogia:** copiar um primitivo é tirar xerox de um documento; copiar uma referência é passar o endereço da mesma casa. Quem reformar a casa muda o que os dois "endereços" mostram.
+
 **Mostrando em código**
 
 ```java
@@ -31,23 +37,27 @@ package com.projeto.atribuicaoreferencia;
 
 public class Main {
   public static void main(String[] args) {
-    // Primitivos: b recebe uma CÓPIA do valor de a
+    // b recebe uma CÓPIA do valor de a
     int a = 1;
     int b = a;
     System.out.println("Tipo primitivo");
-    System.out.println("a = " + a + ", b = " + b); // a = 1, b = 1
+    // a = 1, b = 1
+    System.out.println("a = " + a + ", b = " + b);
 
     a = 2;
-    System.out.println("a = " + a + ", b = " + b); // a = 2, b = 1 (b não mudou)
+    // a = 2, b = 1 (b não mudou)
+    System.out.println("a = " + a + ", b = " + b);
 
-    // Objetos: objB recebe uma cópia da REFERÊNCIA de objA
+    // objB recebe a REFERÊNCIA de objA
     MeuObj objA = new MeuObj(1);
     MeuObj objB = objA;
     System.out.println("\nObjetos");
-    System.out.println("objA = " + objA + ", objB = " + objB); // 1 e 1
+    // 1 e 1
+    System.out.println(objA + " " + objB);
 
     objA.setNum(2);
-    System.out.println("objA = " + objA + ", objB = " + objB); // 2 e 2 (mesmo objeto!)
+    // 2 e 2 (mesmo objeto!)
+    System.out.println(objA + " " + objB);
   }
 }
 ```
@@ -85,6 +95,8 @@ public class MeuObj {
 - O **encadeamento** é a ligação entre os nós: cada um sabe quem vem depois. Isso permite percorrer os dados em sequência e **inserir ou remover** nós apenas trocando referências — sem deslocar elementos, como aconteceria em um array.
 - A última referência da estrutura é `null`, indicando o fim. Em uma árvore, por exemplo, as **folhas** têm as referências para filhos iguais a `null`.
 
+> 💡 **Analogia:** pense numa caça ao tesouro. Cada pista (nó) traz um prêmio (dado) e o local da próxima pista (referência). A última pista diz "fim" (`null`).
+
 **Mostrando em código (classe No)**
 
 ```java
@@ -104,11 +116,12 @@ public class Main {
     No no4 = new No("Conteúdo no4");
     no3.setProximoNo(no4);
 
-    System.out.println(no1);  // no1
-    System.out.println(no1.getProximoNo());  // no2
-    System.out.println(no1.getProximoNo().getProximoNo());  // no3
-    System.out.println(no1.getProximoNo().getProximoNo().getProximoNo()); // no4
-    System.out.println(no1.getProximoNo().getProximoNo().getProximoNo().getProximoNo()); // null
+    // percorre a cadeia até o null
+    No atual = no1;
+    while (atual != null) {
+      System.out.println(atual);
+      atual = atual.getProximoNo();
+    }
   }
 }
 ```
@@ -126,11 +139,19 @@ public class No {
     this.proximoNo = null;
   }
 
-  public String getConteudo() { return conteudo; }
-  public void setConteudo(String conteudo) { this.conteudo = conteudo; }
+  public String getConteudo() {
+    return conteudo;
+  }
+  public void setConteudo(String conteudo) {
+    this.conteudo = conteudo;
+  }
 
-  public No getProximoNo() { return proximoNo; }
-  public void setProximoNo(No proximoNo) { this.proximoNo = proximoNo; }
+  public No getProximoNo() {
+    return proximoNo;
+  }
+  public void setProximoNo(No proximoNo) {
+    this.proximoNo = proximoNo;
+  }
 
   @Override
   public String toString() {
@@ -138,6 +159,8 @@ public class No {
   }
 }
 ```
+
+> 💡 O original encadeava chamadas como `no1.getProximoNo().getProximoNo().getProximoNo()` para chegar a cada nó. O laço `while (atual != null)` faz o mesmo percurso para qualquer tamanho de cadeia: é a forma padrão de percorrer nós.
 
 ### Generics
 
@@ -181,7 +204,8 @@ package com.projeto.no;
 
 public class Main {
   public static void main(String[] args) {
-    // aqui o tipo do conteúdo é String, mas poderia ser qualquer outro
+    // aqui o conteúdo é String, mas
+    // poderia ser qualquer outro tipo
     No<String> no1 = new No<>("Conteúdo no1");
     No<String> no2 = new No<>("Conteúdo no2");
     no1.setProximoNo(no2);
@@ -189,16 +213,14 @@ public class Main {
     No<String> no3 = new No<>("Conteúdo no3");
     no2.setProximoNo(no3);
 
-    No<String> no4 = new No<>("Conteúdo no4");
-    no3.setProximoNo(no4);
+    No<String> atual = no1;
+    while (atual != null) {
+      System.out.println(atual);
+      atual = atual.getProximoNo();
+    }
 
-    System.out.println(no1);
-    System.out.println(no1.getProximoNo());
-    System.out.println(no1.getProximoNo().getProximoNo());
-    System.out.println(no1.getProximoNo().getProximoNo().getProximoNo());
-    System.out.println(no1.getProximoNo().getProximoNo().getProximoNo().getProximoNo()); // null
-
-    No<Integer> numero = new No<>(42); // a mesma classe com outro tipo
+    // a mesma classe com outro tipo
+    No<Integer> numero = new No<>(42);
   }
 }
 ```
@@ -217,10 +239,16 @@ public class No<T> {
   }
 
   public T getConteudo() { return conteudo; }
-  public void setConteudo(T conteudo) { this.conteudo = conteudo; }
+  public void setConteudo(T conteudo) {
+    this.conteudo = conteudo;
+  }
 
-  public No<T> getProximoNo() { return proximoNo; }
-  public void setProximoNo(No<T> proximoNo) { this.proximoNo = proximoNo; }
+  public No<T> getProximoNo() {
+    return proximoNo;
+  }
+  public void setProximoNo(No<T> proximoNo) {
+    this.proximoNo = proximoNo;
+  }
 
   @Override
   public String toString() {
@@ -229,11 +257,36 @@ public class No<T> {
 }
 ```
 
+### 🧠 Revisão rápida
+
+**Depois de `MeuObj x = new MeuObj(1); MeuObj y = x; y.setNum(9);`, quanto vale `x`?**
+
+9: `x` e `y` apontam para o mesmo objeto.
+
+**Como saber, percorrendo nós, que a lista acabou?**
+
+Quando a referência para o próximo nó é `null`.
+
+**`List<? extends Number>` aceita uma `List<Integer>`?**
+
+Sim: `Integer` é subclasse de `Number`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Primitivo | é copiado por valor: as duas variáveis ficam independentes |
+| Referência | copiar um objeto copia o endereço; as duas variáveis apontam para o mesmo objeto |
+| Nó | objeto com um dado e a referência para o próximo nó |
+| Generics | `<T>` torna a estrutura reutilizável para qualquer tipo, com o tipo checado pelo compilador |
+
 ## Pilhas (LIFO: last in, first out)
 
-> 💡 **Pilha (*stack*)** é uma estrutura **LIFO** — *Last In, First Out*: o último elemento a entrar é o primeiro a sair. Só se mexe no **topo**.
+> 🗺️ **Nesta aula:** a pilha, que é LIFO. **Pilha (*stack*)** é uma estrutura **LIFO** — *Last In, First Out*: o último elemento a entrar é o primeiro a sair. Só se mexe no **topo**.
 
 ![Inserção e remoção acontecem sempre no topo.](../img/pilha-lifo.svg)
+
+> 💡 **Analogia:** é uma pilha de pratos. Você só coloca e tira pratos do topo, então o prato colocado por último é o primeiro a sair.
 
 ### Onde pilhas aparecem
 
@@ -264,17 +317,16 @@ public class Main {
   public static void main(String[] args) {
     Pilha minhaPilha = new Pilha();
 
-    minhaPilha.push(new No(1));
-    minhaPilha.push(new No(2));
-    minhaPilha.push(new No(3));
-    minhaPilha.push(new No(4));
-    minhaPilha.push(new No(5));
-    minhaPilha.push(new No(6));
+    for (int i = 1; i <= 6; i++) {
+      minhaPilha.push(new No(i));
+    }
 
-    // a impressão sai do topo (6) para a base (1)
+    // sai do topo (6) para a base (1)
     System.out.println(minhaPilha);
 
-    System.out.println("Elemento removido: " + minhaPilha.pop()); // No{dado=6}
+    // No{dado=6}
+    System.out.println("Removido: "
+      + minhaPilha.pop());
     System.out.println(minhaPilha);
   }
 }
@@ -295,10 +347,14 @@ public class No {
   public No() {}
 
   public int getDado() { return dado; }
-  public void setDado(int dado) { this.dado = dado; }
+  public void setDado(int dado) {
+    this.dado = dado;
+  }
 
   public No getRefNo() { return refNo; }
-  public void setRefNo(No refNo) { this.refNo = refNo; }
+  public void setRefNo(No refNo) {
+    this.refNo = refNo;
+  }
 
   @Override
   public String toString() {
@@ -313,26 +369,26 @@ package com.projeto.pilha;
 
 public class Pilha {
   // referência para o nó do TOPO
-  private No refNoEntradaPilha;
+  private No topo;
 
   public Pilha() {
-    this.refNoEntradaPilha = null;
+    this.topo = null;
   }
 
   public boolean isEmpty() {
-    return refNoEntradaPilha == null;
+    return topo == null;
   }
 
-  // devolve o topo sem remover (também chamado de peek)
+  // devolve o topo sem remover (peek)
   public No top() {
-    return refNoEntradaPilha;
+    return topo;
   }
 
-  // coloca o novo nó no TOPO, apontando para o antigo topo
+  // novo nó vai para o TOPO e aponta
+  // para o antigo topo
   public void push(No novoNo) {
-    No refAuxiliar = refNoEntradaPilha;
-    refNoEntradaPilha = novoNo;
-    refNoEntradaPilha.setRefNo(refAuxiliar);
+    novoNo.setRefNo(topo);
+    topo = novoNo;
   }
 
   // remove e devolve o nó do topo
@@ -340,22 +396,20 @@ public class Pilha {
     if (isEmpty()) {
       return null;
     }
-    No noRemovido = refNoEntradaPilha;
-    refNoEntradaPilha = refNoEntradaPilha.getRefNo();
-    return noRemovido;
+    No removido = topo;
+    topo = topo.getRefNo();
+    return removido;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("-------------\n");
-    sb.append("    Pilha\n");
-    sb.append("-------------\n");
+    sb.append("--- Pilha ---\n");
 
-    No noAuxiliar = refNoEntradaPilha;
-    while (noAuxiliar != null) {
-      sb.append("[No{dado=").append(noAuxiliar.getDado()).append("}]\n");
-      noAuxiliar = noAuxiliar.getRefNo();
+    No aux = topo;
+    while (aux != null) {
+      sb.append("[").append(aux).append("]\n");
+      aux = aux.getRefNo();
     }
 
     sb.append("=============");
@@ -369,14 +423,35 @@ public class Pilha {
 > - O comentário do `push` dizia "acrescenta no fim da pilha" — ele acrescenta no **topo**.
 > - `return x == null ? true : false;` foi simplificado para `return x == null;` (a comparação já é um `boolean`).
 > - O método `Top()` virou `top()`: em Java, métodos começam com letra **minúscula**.
-> - O `while (true)` com `break` do `toString` virou `while (noAuxiliar != null)`, e a concatenação de `String` no laço foi trocada por `StringBuilder`.
-> - Nomes com `_` (`ref_no`, `minha_pilha`) passaram para camelCase.
+> - O `while (true)` com `break` do `toString` virou `while (aux != null)`, e a concatenação de `String` no laço foi trocada por `StringBuilder`.
+> - Nomes com `_` (`ref_no`, `minha_pilha`) passaram para camelCase, e `refNoEntradaPilha` virou `topo`, que diz o que guarda.
+
+### 🧠 Revisão rápida
+
+**Empilhe A, B, C e faça dois `pop()`. O que sai, e o que fica no topo?**
+
+Saem C e depois B; fica A no topo.
+
+**Qual o custo de `push` e `pop` nessa implementação?**
+
+O(1): só se mexe na referência do topo, sem percorrer nada.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| LIFO | o último elemento a entrar é o primeiro a sair |
+| `push` / `pop` | colocam e removem no topo |
+| `peek` | olha o topo sem remover |
+| Implementação | na prática, use `ArrayDeque` em vez de `java.util.Stack` |
 
 ## Filas (FIFO: first in, first out)
 
-> 💡 **Fila (*queue*)** é uma estrutura **FIFO** — *First In, First Out*: o primeiro elemento a entrar é o primeiro a sair. Entra-se pelo **fim** e sai-se pela **frente**.
+> 🗺️ **Nesta aula:** a fila, que é FIFO. **Fila (*queue*)** é uma estrutura **FIFO** — *First In, First Out*: o primeiro elemento a entrar é o primeiro a sair. Entra-se pelo **fim** e sai-se pela **frente**.
 
 ![Elementos entram no fim e saem pela frente, na ordem de chegada.](../img/fila-fifo.svg)
+
+> 💡 **Analogia:** é a fila do caixa do mercado. Quem chegou primeiro é atendido primeiro, e quem chega depois entra no fim da fila.
 
 ### Como funciona
 
@@ -405,6 +480,8 @@ public class Pilha {
 
 ![A referência de entrada aponta para o último a chegar; o primeiro da fila aponta para null.](../img/fila-encadeada.svg)
 
+> 💡 **Analogia:** é uma sala de espera em que cada pessoa sabe apenas quem chegou logo antes dela. Para descobrir quem é o primeiro, é preciso perguntar a todos até chegar ao começo da fila.
+
 A classe `Fila` guarda só uma referência, `refNoEntradaFila`, que aponta para o **último nó inserido**. Cada nó aponta para o que chegou **antes** dele, até o primeiro, que aponta para `null`. Por isso:
 
 - `enqueue` é rápido: o novo nó passa a ser a entrada e aponta para a antiga entrada.
@@ -432,12 +509,17 @@ public class Main {
     minhaFila.enqueue(new No("Quarto"));
 
     System.out.println("Fila: " + minhaFila);
-    System.out.println("\nObjeto removido: " + minhaFila.dequeue()); // Primeiro
-    System.out.println("\nNova fila: " + minhaFila);
+    // Primeiro
+    System.out.println("\nRemovido: "
+      + minhaFila.dequeue());
+    System.out.println("\nNova: " + minhaFila);
 
     minhaFila.enqueue(new No("Último"));
-    System.out.println("\nCom 'Último' adicionado: " + minhaFila);
-    System.out.println("\nPrimeiro da fila: " + minhaFila.first()); // Segundo
+    System.out.println("\nCom 'Último': "
+      + minhaFila);
+    // Segundo
+    System.out.println("\nPrimeiro: "
+      + minhaFila.first());
   }
 }
 ```
@@ -458,10 +540,14 @@ public class No {
   public No() {}
 
   public No getRefNo() { return refNo; }
-  public void setRefNo(No refNo) { this.refNo = refNo; }
+  public void setRefNo(No refNo) {
+    this.refNo = refNo;
+  }
 
   public Object getObject() { return object; }
-  public void setObject(Object object) { this.object = object; }
+  public void setObject(Object object) {
+    this.object = object;
+  }
 
   @Override
   public String toString() {
@@ -475,61 +561,66 @@ public class No {
 package com.projeto.filafifo;
 
 public class Fila {
-  private No refNoEntradaFila; // último nó inserido
+    // último nó inserido
+    private No refNoEntradaFila;
 
-  public Fila() {
-    this.refNoEntradaFila = null;
-  }
-
-  public boolean isEmpty() {
-    return refNoEntradaFila == null;
-  }
-
-  public void enqueue(No novoNo) {
-    novoNo.setRefNo(refNoEntradaFila);
-    refNoEntradaFila = novoNo;
-  }
-
-  public No dequeue() {
-    if (isEmpty()) return null;
-
-    No primeiroNo = refNoEntradaFila;
-    No noAuxiliar = null;
-    while (primeiroNo.getRefNo() != null) { // anda até o primeiro da fila
-      noAuxiliar = primeiroNo;
-      primeiroNo = primeiroNo.getRefNo();
+    public Fila() {
+        this.refNoEntradaFila = null;
     }
 
-    if (noAuxiliar == null) {
-      refNoEntradaFila = null;  // só havia um elemento
-    } else {
-      noAuxiliar.setRefNo(null);  // o penúltimo vira o primeiro
+    public boolean isEmpty() {
+        return refNoEntradaFila == null;
     }
-    return primeiroNo;
-  }
 
-  public No first() {
-    if (isEmpty()) return null;
-
-    No primeiroNo = refNoEntradaFila;
-    while (primeiroNo.getRefNo() != null) {
-      primeiroNo = primeiroNo.getRefNo();
+    public void enqueue(No novoNo) {
+        novoNo.setRefNo(refNoEntradaFila);
+        refNoEntradaFila = novoNo;
     }
-    return primeiroNo;
-  }
 
-  @Override
-  public String toString() {
-    if (isEmpty()) return "[]";
+    public No dequeue() {
+        if (isEmpty()) return null;
 
-    StringBuilder sb = new StringBuilder();
-    No noAuxiliar = refNoEntradaFila;
-    while (noAuxiliar != null) {
-      sb.append("[No{objeto=").append(noAuxiliar.getObject()).append("}]-->");
-      noAuxiliar = noAuxiliar.getRefNo();
+        No primeiro = refNoEntradaFila;
+        No aux = null;
+        // anda até o primeiro da fila
+        while (primeiro.getRefNo() != null) {
+            aux = primeiro;
+            primeiro = primeiro.getRefNo();
+        }
+
+        if (aux == null) {
+            // só havia um elemento
+            refNoEntradaFila = null;
+        } else {
+            // o penúltimo vira o primeiro
+            aux.setRefNo(null);
+        }
+        return primeiro;
     }
-    return sb.append("null").toString();
-  }
+
+    public No first() {
+        if (isEmpty()) return null;
+
+        No primeiro = refNoEntradaFila;
+        while (primeiro.getRefNo() != null) {
+            primeiro = primeiro.getRefNo();
+        }
+        return primeiro;
+    }
+
+    @Override
+    public String toString() {
+        if (isEmpty()) return "[]";
+
+        StringBuilder sb = new StringBuilder();
+        No aux = refNoEntradaFila;
+        while (aux != null) {
+            sb.append("[").append(aux.getObject())
+              .append("]-->");
+            aux = aux.getRefNo();
+        }
+        return sb.append("null").toString();
+    }
 }
 ```
 
@@ -549,12 +640,17 @@ public class Main {
     minhaFila.enqueue(4);
 
     System.out.println("Fila: " + minhaFila);
-    System.out.println("\nRemovido: " + minhaFila.dequeue()); // 1
-    System.out.println("\nNova fila: " + minhaFila);
+    // 1
+    System.out.println("\nRemovido: "
+      + minhaFila.dequeue());
+    System.out.println("\nNova: " + minhaFila);
 
     minhaFila.enqueue(5);
-    System.out.println("\nCom o 5 adicionado: " + minhaFila);
-    System.out.println("\nPrimeiro da fila: " + minhaFila.first()); // 2
+    System.out.println("\nCom o 5: "
+      + minhaFila);
+    // 2
+    System.out.println("\nPrimeiro: "
+      + minhaFila.first());
   }
 }
 ```
@@ -573,10 +669,14 @@ public class No<T> {
   }
 
   public No<T> getRefNo() { return refNo; }
-  public void setRefNo(No<T> refNo) { this.refNo = refNo; }
+  public void setRefNo(No<T> refNo) {
+    this.refNo = refNo;
+  }
 
   public T getObject() { return object; }
-  public void setObject(T object) { this.object = object; }
+  public void setObject(T object) {
+    this.object = object;
+  }
 
   @Override
   public String toString() {
@@ -590,58 +690,60 @@ public class No<T> {
 package com.projeto.filafifo;
 
 public class Fila<T> {
-  private No<T> refNoEntradaFila; // último nó inserido
+    // último nó inserido
+    private No<T> refNoEntradaFila;
 
-  public boolean isEmpty() {
-    return refNoEntradaFila == null;
-  }
-
-  public void enqueue(T object) {
-    No<T> novoNo = new No<>(object);
-    novoNo.setRefNo(refNoEntradaFila);
-    refNoEntradaFila = novoNo;
-  }
-
-  public T dequeue() {
-    if (isEmpty()) return null;
-
-    No<T> primeiroNo = refNoEntradaFila;
-    No<T> noAuxiliar = null;
-    while (primeiroNo.getRefNo() != null) {
-      noAuxiliar = primeiroNo;
-      primeiroNo = primeiroNo.getRefNo();
+    public boolean isEmpty() {
+        return refNoEntradaFila == null;
     }
 
-    if (noAuxiliar == null) {
-      refNoEntradaFila = null;
-    } else {
-      noAuxiliar.setRefNo(null);
+    public void enqueue(T object) {
+        No<T> novoNo = new No<>(object);
+        novoNo.setRefNo(refNoEntradaFila);
+        refNoEntradaFila = novoNo;
     }
-    return primeiroNo.getObject();
-  }
 
-  public T first() {
-    if (isEmpty()) return null;
+    public T dequeue() {
+        if (isEmpty()) return null;
 
-    No<T> primeiroNo = refNoEntradaFila;
-    while (primeiroNo.getRefNo() != null) {
-      primeiroNo = primeiroNo.getRefNo();
+        No<T> primeiro = refNoEntradaFila;
+        No<T> aux = null;
+        while (primeiro.getRefNo() != null) {
+            aux = primeiro;
+            primeiro = primeiro.getRefNo();
+        }
+
+        if (aux == null) {
+            refNoEntradaFila = null;
+        } else {
+            aux.setRefNo(null);
+        }
+        return primeiro.getObject();
     }
-    return primeiroNo.getObject();
-  }
 
-  @Override
-  public String toString() {
-    if (isEmpty()) return "[]";
+    public T first() {
+        if (isEmpty()) return null;
 
-    StringBuilder sb = new StringBuilder();
-    No<T> noAuxiliar = refNoEntradaFila;
-    while (noAuxiliar != null) {
-      sb.append("[No{objeto=").append(noAuxiliar.getObject()).append("}]-->");
-      noAuxiliar = noAuxiliar.getRefNo();
+        No<T> primeiro = refNoEntradaFila;
+        while (primeiro.getRefNo() != null) {
+            primeiro = primeiro.getRefNo();
+        }
+        return primeiro.getObject();
     }
-    return sb.append("null").toString();
-  }
+
+    @Override
+    public String toString() {
+        if (isEmpty()) return "[]";
+
+        StringBuilder sb = new StringBuilder();
+        No<T> aux = refNoEntradaFila;
+        while (aux != null) {
+            sb.append("[").append(aux.getObject())
+              .append("]-->");
+            aux = aux.getRefNo();
+        }
+        return sb.append("null").toString();
+    }
 }
 ```
 
@@ -652,11 +754,35 @@ public class Fila<T> {
 > - O `toString` de uma fila vazia devolvia `null`; agora devolve `"[]"`.
 > - Removi a versão intermediária (só mudava quem cria o nó) para não repetir quase o mesmo código três vezes — a evolução está descrita acima. Nomes com `_` passaram para camelCase.
 
+> 💡 **Para ir além:** guardando também uma referência para o primeiro nó (`head`) e fazendo cada nó apontar para o seguinte, o `dequeue` passa a custar O(1), sem percorrer a lista. É assim que as filas da biblioteca padrão funcionam.
+
+### 🧠 Revisão rápida
+
+**Enfileire A, B e C e faça um `dequeue()`. Quem sai, e quem fica na frente?**
+
+Sai A; B passa a ser o primeiro.
+
+**Por que o `dequeue` desta implementação é O(n)?**
+
+Porque só há referência para o último a entrar; para chegar ao primeiro é preciso percorrer todos os nós.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| FIFO | o primeiro elemento a entrar é o primeiro a sair |
+| `enqueue` / `dequeue` | entram pelo fim e saem pela frente |
+| `first` | olha a frente sem remover |
+| Implementação do curso | o `dequeue` percorre a lista toda: custo O(n) |
+| Na API | use `Queue` com `ArrayDeque`: `offer`, `poll` e `peek` |
+
 ## Listas encadeadas
 
-> 💡 **Lista encadeada** é uma sequência de nós ligados: cada nó guarda um dado e a referência para o próximo. Diferente de pilha e fila, ela permite inserir, ler e remover em **qualquer posição** (por índice).
+> 🗺️ **Nesta aula:** a lista encadeada, comparada com o array. **Lista encadeada** é uma sequência de nós ligados: cada nó guarda um dado e a referência para o próximo. Diferente de pilha e fila, ela permite inserir, ler e remover em **qualquer posição** (por índice).
 
 ![Para remover um nó, o anterior passa a apontar para o seguinte.](../img/lista-enc.svg)
+
+> 💡 **Analogia:** pense num trem. Para tirar um vagão do meio, basta desengatá-lo e ligar o vagão de trás ao da frente. Ninguém precisa mudar de lugar.
 
 ### Lista encadeada x array
 
@@ -677,21 +803,21 @@ package com.projeto.listaencadeada;
 
 public class Main {
   public static void main(String[] args) {
-    ListaEncadeada<String> minhaLista = new ListaEncadeada<>();
+    ListaEncadeada<String> lista =
+      new ListaEncadeada<>();
 
-    minhaLista.add("teste1");
-    minhaLista.add("teste2");
-    minhaLista.add("teste3");
-    minhaLista.add("teste4");
+    lista.add("teste1");
+    lista.add("teste2");
+    lista.add("teste3");
+    lista.add("teste4");
 
-    System.out.println(minhaLista.get(0)); // teste1
-    System.out.println(minhaLista.get(1)); // teste2
-    System.out.println(minhaLista.get(2)); // teste3
-    System.out.println(minhaLista.get(3)); // teste4
+    System.out.println(lista.get(0)); // teste1
+    System.out.println(lista.get(3)); // teste4
 
-    System.out.println(minhaLista);
-    System.out.println(minhaLista.remove(3)); // teste4
-    System.out.println(minhaLista);
+    System.out.println(lista);
+    // teste4
+    System.out.println(lista.remove(3));
+    System.out.println(lista);
   }
 }
 ```
@@ -710,10 +836,16 @@ public class No<T> {
   }
 
   public T getConteudo() { return conteudo; }
-  public void setConteudo(T conteudo) { this.conteudo = conteudo; }
+  public void setConteudo(T conteudo) {
+    this.conteudo = conteudo;
+  }
 
-  public No<T> getProximoNo() { return proximoNo; }
-  public void setProximoNo(No<T> proximoNo) { this.proximoNo = proximoNo; }
+  public No<T> getProximoNo() {
+    return proximoNo;
+  }
+  public void setProximoNo(No<T> proximoNo) {
+    this.proximoNo = proximoNo;
+  }
 
   @Override
   public String toString() {
@@ -727,74 +859,77 @@ public class No<T> {
 package com.projeto.listaencadeada;
 
 public class ListaEncadeada<T> {
-  private No<T> referenciaEntrada;
-  private int tamanho;
+    private No<T> entrada;
+    private int tamanho;
 
-  public boolean isEmpty() {
-    return referenciaEntrada == null;
-  }
-
-  public int size() {
-    return tamanho;
-  }
-
-  // adiciona no fim da lista
-  public void add(T conteudo) {
-    No<T> novoNo = new No<>(conteudo);
-    if (isEmpty()) {
-      referenciaEntrada = novoNo;
-    } else {
-      No<T> noAuxiliar = referenciaEntrada;
-      while (noAuxiliar.getProximoNo() != null) {
-        noAuxiliar = noAuxiliar.getProximoNo();
-      }
-      noAuxiliar.setProximoNo(novoNo);
+    public boolean isEmpty() {
+        return entrada == null;
     }
-    tamanho++;
-  }
 
-  private void validaIndice(int indice) {
-    if (indice < 0 || indice >= tamanho) {
-      throw new IndexOutOfBoundsException("Índice " + indice
-          + " inválido. A lista vai de 0 até " + (tamanho - 1) + ".");
+    public int size() {
+        return tamanho;
     }
-  }
 
-  private No<T> getNo(int indice) {
-    validaIndice(indice);
-    No<T> noAuxiliar = referenciaEntrada;
-    for (int i = 0; i < indice; i++) {
-      noAuxiliar = noAuxiliar.getProximoNo();
+    // adiciona no fim da lista
+    public void add(T conteudo) {
+        No<T> novoNo = new No<>(conteudo);
+        if (isEmpty()) {
+            entrada = novoNo;
+        } else {
+            No<T> aux = entrada;
+            while (aux.getProximoNo() != null) {
+                aux = aux.getProximoNo();
+            }
+            aux.setProximoNo(novoNo);
+        }
+        tamanho++;
     }
-    return noAuxiliar;
-  }
 
-  public T get(int indice) {
-    return getNo(indice).getConteudo();
-  }
-
-  public T remove(int indice) {
-    No<T> noAlvo = getNo(indice);
-    if (indice == 0) {
-      referenciaEntrada = noAlvo.getProximoNo();
-    } else {
-      No<T> noAnterior = getNo(indice - 1);
-      noAnterior.setProximoNo(noAlvo.getProximoNo());
+    private void validaIndice(int indice) {
+        if (indice < 0 || indice >= tamanho) {
+            throw new IndexOutOfBoundsException(
+                "Índice " + indice + " inválido: use"
+                + " de 0 a " + (tamanho - 1) + ".");
+        }
     }
-    tamanho--;
-    return noAlvo.getConteudo();
-  }
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    No<T> noAuxiliar = referenciaEntrada;
-    while (noAuxiliar != null) {
-      sb.append("[No{conteudo=").append(noAuxiliar.getConteudo()).append("}]--->");
-      noAuxiliar = noAuxiliar.getProximoNo();
+    private No<T> getNo(int indice) {
+        validaIndice(indice);
+        No<T> aux = entrada;
+        for (int i = 0; i < indice; i++) {
+            aux = aux.getProximoNo();
+        }
+        return aux;
     }
-    return sb.append("null").toString();
-  }
+
+    public T get(int indice) {
+        return getNo(indice).getConteudo();
+    }
+
+    public T remove(int indice) {
+        No<T> alvo = getNo(indice);
+        if (indice == 0) {
+            entrada = alvo.getProximoNo();
+        } else {
+            No<T> anterior = getNo(indice - 1);
+            // religa: anterior pula o alvo
+            anterior.setProximoNo(alvo.getProximoNo());
+        }
+        tamanho--;
+        return alvo.getConteudo();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        No<T> aux = entrada;
+        while (aux != null) {
+            sb.append("[").append(aux.getConteudo())
+              .append("]--->");
+            aux = aux.getProximoNo();
+        }
+        return sb.append("null").toString();
+    }
 }
 ```
 
@@ -805,11 +940,33 @@ public class ListaEncadeada<T> {
 > - Na classe `No<T>`, a referência `proximoNo` estava sem o tipo (`No` cru); passou a ser `No<T>`. O comentário "Wildcard" em `T conteudo` também foi removido: `T` é um **parâmetro de tipo**, não um wildcard.
 > - Removi o método `toString_enc()`, que não era usado, e padronizei nomes em camelCase (`is_empty` → `isEmpty`, `get_no` → `getNo`).
 
+### 🧠 Revisão rápida
+
+**Na lista teste1 → teste2 → teste3 → teste4, o que muda ao fazer `remove(2)`?**
+
+O nó teste2 passa a apontar para teste4; teste3 sai da lista. Nenhum outro nó muda de lugar.
+
+**Para ler muito por índice e quase não inserir no meio, qual estrutura escolher?**
+
+`ArrayList`: o acesso por índice é O(1), enquanto na lista encadeada é O(n).
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Lista encadeada | nós ligados em sequência; inserir e remover não deslocam elementos |
+| Acesso por índice | é O(n), porque o percurso começa sempre no primeiro nó |
+| Remover | o nó anterior passa a apontar para o seguinte |
+| Índice inválido | deve lançar `IndexOutOfBoundsException`, inclusive para valores negativos |
+| Contador | guardar o `tamanho` evita percorrer a lista para descobri-lo |
+
 ## Listas duplamente encadeadas
 
-> 💡 Na **lista duplamente encadeada**, cada nó guarda referências para o **anterior** e para o **próximo**. A lista conhece o primeiro nó (cabeça) e o último (cauda).
+> 🗺️ **Nesta aula:** a lista duplamente encadeada, que aponta para os dois vizinhos. Na **lista duplamente encadeada**, cada nó guarda referências para o **anterior** e para o **próximo**. A lista conhece o primeiro nó (cabeça) e o último (cauda).
 
 ![Setas para frente (próximo) e para trás (anterior).](../img/lista-dupla.svg)
+
+> 💡 **Analogia:** é uma estrada de mão dupla. Você pode seguir para a frente ou voltar pelo mesmo caminho, porque cada trecho conhece os dois vizinhos.
 
 ### Características
 
@@ -818,6 +975,8 @@ public class ListaEncadeada<T> {
 - Para acessar um índice no meio, ainda é preciso percorrer — mas dá para começar pela ponta mais próxima.
 - O custo é de memória: cada nó tem **uma referência a mais** que na lista simples.
 - A `java.util.LinkedList` é implementada exatamente assim.
+
+Exemplo do dia a dia: o histórico do navegador, em que dá para ir para a página anterior e para a seguinte.
 
 > 🛠️ **Ajuste:** o texto original dizia que cada nó "contém duas referências adicionais" em relação à lista simples. A diferença é de **uma** referência (o nó anterior); a lista simples já tem a do próximo.
 
@@ -829,21 +988,19 @@ package com.projeto.listaduplamenteencadeada;
 
 public class Main {
   public static void main(String[] args) {
-    ListaDuplamenteEncadeada<String> minhaLista = new ListaDuplamenteEncadeada<>();
+    ListaDuplamenteEncadeada<String> lista =
+      new ListaDuplamenteEncadeada<>();
 
-    minhaLista.add("c1");
-    minhaLista.add("c2");
-    minhaLista.add("c3");
-    minhaLista.add("c4");
-    minhaLista.add("c5");
-    minhaLista.add("c6");
-    minhaLista.add("c7");
-    System.out.println(minhaLista);
+    for (int i = 1; i <= 7; i++) {
+      lista.add("c" + i);
+    }
+    System.out.println(lista);
 
-    minhaLista.remove(3);  // remove c4
-    minhaLista.add(3, "99");  // insere 99 na posição 3
-    System.out.println("Novo elemento: " + minhaLista.get(3)); // 99
-    System.out.println(minhaLista);
+    lista.remove(3);  // remove c4
+    lista.add(3, "99");  // insere 99 na pos. 3
+    // 99
+    System.out.println("Novo: " + lista.get(3));
+    System.out.println(lista);
   }
 }
 ```
@@ -862,13 +1019,23 @@ public class NoDuplo<T> {
   }
 
   public T getConteudo() { return conteudo; }
-  public void setConteudo(T conteudo) { this.conteudo = conteudo; }
+  public void setConteudo(T conteudo) {
+    this.conteudo = conteudo;
+  }
 
-  public NoDuplo<T> getNoProximo() { return noProximo; }
-  public void setNoProximo(NoDuplo<T> noProximo) { this.noProximo = noProximo; }
+  public NoDuplo<T> getNoProximo() {
+    return noProximo;
+  }
+  public void setNoProximo(NoDuplo<T> no) {
+    this.noProximo = no;
+  }
 
-  public NoDuplo<T> getNoPrevio() { return noPrevio; }
-  public void setNoPrevio(NoDuplo<T> noPrevio) { this.noPrevio = noPrevio; }
+  public NoDuplo<T> getNoPrevio() {
+    return noPrevio;
+  }
+  public void setNoPrevio(NoDuplo<T> no) {
+    this.noPrevio = no;
+  }
 
   @Override
   public String toString() {
@@ -882,90 +1049,96 @@ public class NoDuplo<T> {
 package com.projeto.listaduplamenteencadeada;
 
 public class ListaDuplamenteEncadeada<T> {
-  private NoDuplo<T> primeiroNo;
-  private NoDuplo<T> ultimoNo;
-  private int tamanho;
+    private NoDuplo<T> primeiroNo;
+    private NoDuplo<T> ultimoNo;
+    private int tamanho;
 
-  public int size() {
-    return tamanho;
-  }
-
-  private NoDuplo<T> getNo(int indice) {
-    if (indice < 0 || indice >= tamanho) {
-      throw new IndexOutOfBoundsException("Índice inválido: " + indice);
-    }
-    NoDuplo<T> noAuxiliar = primeiroNo;
-    for (int i = 0; i < indice; i++) {
-      noAuxiliar = noAuxiliar.getNoProximo();
-    }
-    return noAuxiliar;
-  }
-
-  public T get(int indice) {
-    return getNo(indice).getConteudo();
-  }
-
-  // adiciona no fim
-  public void add(T elemento) {
-    NoDuplo<T> novoNo = new NoDuplo<>(elemento);
-    novoNo.setNoPrevio(ultimoNo);
-    if (primeiroNo == null) {
-      primeiroNo = novoNo;
-    } else {
-      ultimoNo.setNoProximo(novoNo);
-    }
-    ultimoNo = novoNo;
-    tamanho++;
-  }
-
-  // adiciona em uma posição específica
-  public void add(int indice, T elemento) {
-    if (indice == tamanho) {  // inserir no fim = add comum
-      add(elemento);
-      return;
-    }
-    NoDuplo<T> noAtual = getNo(indice); // nó que vai "andar uma casa"
-    NoDuplo<T> novoNo = new NoDuplo<>(elemento);
-
-    novoNo.setNoProximo(noAtual);
-    novoNo.setNoPrevio(noAtual.getNoPrevio());
-
-    if (indice == 0) {
-      primeiroNo = novoNo;
-    } else {
-      noAtual.getNoPrevio().setNoProximo(novoNo);
-    }
-    noAtual.setNoPrevio(novoNo);
-    tamanho++;
-  }
-
-  public void remove(int indice) {
-    NoDuplo<T> noAlvo = getNo(indice);
-
-    if (noAlvo == primeiroNo) {
-      primeiroNo = noAlvo.getNoProximo();
-    } else {
-      noAlvo.getNoPrevio().setNoProximo(noAlvo.getNoProximo());
+    public int size() {
+        return tamanho;
     }
 
-    if (noAlvo == ultimoNo) {
-      ultimoNo = noAlvo.getNoPrevio();
-    } else {
-      noAlvo.getNoProximo().setNoPrevio(noAlvo.getNoPrevio());
+    private NoDuplo<T> getNo(int indice) {
+        if (indice < 0 || indice >= tamanho) {
+            throw new IndexOutOfBoundsException(
+                "Índice inválido: " + indice);
+        }
+        NoDuplo<T> aux = primeiroNo;
+        for (int i = 0; i < indice; i++) {
+            aux = aux.getNoProximo();
+        }
+        return aux;
     }
-    tamanho--;
-  }
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    NoDuplo<T> noAuxiliar = primeiroNo;
-    while (noAuxiliar != null) {
-      sb.append("[No{conteudo=").append(noAuxiliar.getConteudo()).append("}]--->");
-      noAuxiliar = noAuxiliar.getNoProximo();
+    public T get(int indice) {
+        return getNo(indice).getConteudo();
     }
-    return sb.append("null").toString();
-  }
+
+    // adiciona no fim
+    public void add(T elemento) {
+        NoDuplo<T> novo = new NoDuplo<>(elemento);
+        novo.setNoPrevio(ultimoNo);
+        if (primeiroNo == null) {
+            primeiroNo = novo;
+        } else {
+            ultimoNo.setNoProximo(novo);
+        }
+        ultimoNo = novo;
+        tamanho++;
+    }
+
+    // adiciona em uma posição específica
+    public void add(int indice, T elemento) {
+        // inserir no fim = add comum
+        if (indice == tamanho) {
+            add(elemento);
+            return;
+        }
+        // nó que vai "andar uma casa"
+        NoDuplo<T> atual = getNo(indice);
+        NoDuplo<T> novo = new NoDuplo<>(elemento);
+
+        novo.setNoProximo(atual);
+        novo.setNoPrevio(atual.getNoPrevio());
+
+        if (indice == 0) {
+            primeiroNo = novo;
+        } else {
+            atual.getNoPrevio().setNoProximo(novo);
+        }
+        atual.setNoPrevio(novo);
+        tamanho++;
+    }
+
+    public void remove(int indice) {
+        NoDuplo<T> alvo = getNo(indice);
+
+        if (alvo == primeiroNo) {
+            primeiroNo = alvo.getNoProximo();
+        } else {
+            alvo.getNoPrevio()
+                .setNoProximo(alvo.getNoProximo());
+        }
+
+        if (alvo == ultimoNo) {
+            ultimoNo = alvo.getNoPrevio();
+        } else {
+            alvo.getNoProximo()
+                .setNoPrevio(alvo.getNoPrevio());
+        }
+        tamanho--;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        NoDuplo<T> aux = primeiroNo;
+        while (aux != null) {
+            sb.append("[").append(aux.getConteudo())
+              .append("]<-->");
+            aux = aux.getNoProximo();
+        }
+        return sb.append("null").toString();
+    }
 }
 ```
 
@@ -976,11 +1149,33 @@ public class ListaDuplamenteEncadeada<T> {
 > - `add(indice, elemento)` **no fim da lista** (índice igual ao tamanho) fazia `novo_no.setNo_proximo(ultimo_no)` — o novo nó apontava para **trás** como se fosse o próximo, criando um ciclo. Agora esse caso usa o `add` comum.
 > - `getNo` não validava o índice; um índice inválido causava `NullPointerException` em vez de uma mensagem clara.
 
+### 🧠 Revisão rápida
+
+**Para remover um nó do meio, quantas referências precisam mudar?**
+
+Duas: o **próximo** do anterior e o **anterior** do seguinte.
+
+**Por que inserir no fim é O(1) aqui e O(n) na lista simples do curso?**
+
+Porque esta lista guarda a referência da cauda (`ultimoNo`); a simples precisa percorrer até o último nó.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Dois ponteiros | cada nó guarda o anterior e o próximo |
+| Cabeça e cauda | a lista guarda o primeiro e o último nó |
+| Remover | religa duas referências, a do anterior e a do seguinte |
+| Inserir no fim | é O(1), graças à referência da cauda |
+| Na API | `java.util.LinkedList` é implementada assim |
+
 ## Listas circulares
 
-> 💡 Numa **lista circular**, o último nó aponta de volta para o primeiro, formando um ciclo. Não há `null` no fim: dá para percorrer a lista indefinidamente.
+> 🗺️ **Nesta aula:** a lista circular, em que o último nó volta ao primeiro. Numa **lista circular**, o último nó aponta de volta para o primeiro, formando um ciclo. Não há `null` no fim: dá para percorrer a lista indefinidamente.
 
 ![O último nó aponta para o primeiro.](../img/lista-circular.svg)
+
+> 💡 **Analogia:** pense numa mesa redonda de jogo de cartas. Depois do último jogador, a vez volta para o primeiro, sem fim.
 
 ### Características
 
@@ -998,24 +1193,28 @@ package com.projeto.listacircular;
 
 public class Main {
   public static void main(String[] args) {
-    ListaCircular<String> minhaLista = new ListaCircular<>();
+    ListaCircular<String> lista =
+      new ListaCircular<>();
 
-    minhaLista.add("C0");
-    System.out.println("Lista inicial: " + minhaLista);
+    lista.add("C0");
+    System.out.println("Inicial: " + lista);
 
-    minhaLista.remove(0);
-    System.out.println("Após remover: " + minhaLista);
+    lista.remove(0);
+    System.out.println("Após remover: " + lista);
 
-    minhaLista.add("C1");
-    minhaLista.add("C2");
-    minhaLista.add("C3"); // add insere no início: C3 -> C2 -> C1
-    System.out.println("Após inserções: " + minhaLista);
+    lista.add("C1");
+    lista.add("C2");
+    // add insere no início: C3 -> C2 -> C1
+    lista.add("C3");
+    System.out.println("Agora: " + lista);
 
-    System.out.println("Índice 1: " + minhaLista.get(1));  // C2
-    System.out.println("Índice 4: " + minhaLista.get(4) + "\n");  // dá a volta: C2
+    // C2
+    System.out.println("Índice 1: " + lista.get(1));
+    // dá a volta: C2
+    System.out.println("Índice 4: " + lista.get(4));
 
     for (int i = 0; i < 20; i++) {
-      System.out.println("Índice " + i + ": " + minhaLista.get(i));
+      System.out.println(i + ": " + lista.get(i));
     }
   }
 }
@@ -1034,10 +1233,14 @@ public class No<T> {
   }
 
   public T getConteudo() { return conteudo; }
-  public void setConteudo(T conteudo) { this.conteudo = conteudo; }
+  public void setConteudo(T conteudo) {
+    this.conteudo = conteudo;
+  }
 
   public No<T> getNoProximo() { return noProximo; }
-  public void setNoProximo(No<T> noProximo) { this.noProximo = noProximo; }
+  public void setNoProximo(No<T> noProximo) {
+    this.noProximo = noProximo;
+  }
 
   @Override
   public String toString() {
@@ -1051,81 +1254,88 @@ public class No<T> {
 package com.projeto.listacircular;
 
 public class ListaCircular<T> {
-  private No<T> cauda;  // entrada da lista (primeiro nó)
-  private No<T> cabeca; // último nó, que aponta de volta para a cauda
-  private int tamanho;
+    // entrada da lista (primeiro nó)
+    private No<T> cauda;
+    // último nó, que aponta de volta para a cauda
+    private No<T> cabeca;
+    private int tamanho;
 
-  public int size() {
-    return tamanho;
-  }
-
-  public boolean isEmpty() {
-    return tamanho == 0;
-  }
-
-  private No<T> getNo(int indice) {
-    if (isEmpty()) {
-      throw new IndexOutOfBoundsException("A lista está vazia!");
-    }
-    No<T> noAuxiliar = cauda;
-    for (int i = 0; i < indice; i++) { // pode passar do tamanho: a lista dá a volta
-      noAuxiliar = noAuxiliar.getNoProximo();
-    }
-    return noAuxiliar;
-  }
-
-  public T get(int indice) {
-    return getNo(indice).getConteudo();
-  }
-
-  public void remove(int indice) {
-    if (indice < 0 || indice >= tamanho) {
-      throw new IndexOutOfBoundsException("Índice inválido: " + indice);
+    public int size() {
+        return tamanho;
     }
 
-    if (tamanho == 1) {  // era o único elemento
-      cauda = null;
-      cabeca = null;
-    } else if (indice == 0) {  // remove o primeiro
-      cauda = cauda.getNoProximo();
-      cabeca.setNoProximo(cauda);
-    } else {
-      No<T> anterior = getNo(indice - 1);
-      No<T> removido = anterior.getNoProximo();
-      anterior.setNoProximo(removido.getNoProximo());
-      if (removido == cabeca) {  // removeu o último
-        cabeca = anterior;
-      }
+    public boolean isEmpty() {
+        return tamanho == 0;
     }
-    tamanho--;
-  }
 
-  // adiciona no INÍCIO da lista
-  public void add(T conteudo) {
-    No<T> novoNo = new No<>(conteudo);
-    if (isEmpty()) {
-      cabeca = novoNo;
-      cauda = novoNo;
-      novoNo.setNoProximo(novoNo); // aponta para si mesmo
-    } else {
-      novoNo.setNoProximo(cauda);
-      cabeca.setNoProximo(novoNo);
-      cauda = novoNo;
+    private No<T> getNo(int indice) {
+        if (isEmpty()) {
+            throw new IndexOutOfBoundsException(
+                "A lista está vazia!");
+        }
+        No<T> aux = cauda;
+        // pode passar do tamanho: dá a volta
+        for (int i = 0; i < indice; i++) {
+            aux = aux.getNoProximo();
+        }
+        return aux;
     }
-    tamanho++;
-  }
 
-  @Override
-  public String toString() {
-    if (isEmpty()) return "[]";
-    StringBuilder sb = new StringBuilder();
-    No<T> noAuxiliar = cauda;
-    for (int i = 0; i < tamanho; i++) {
-      sb.append("[").append(noAuxiliar).append("]--->");
-      noAuxiliar = noAuxiliar.getNoProximo();
+    public T get(int indice) {
+        return getNo(indice).getConteudo();
     }
-    return sb.append("(volta ao início)").toString();
-  }
+
+    public void remove(int indice) {
+        if (indice < 0 || indice >= tamanho) {
+            throw new IndexOutOfBoundsException(
+                "Índice inválido: " + indice);
+        }
+
+        if (tamanho == 1) {  // único elemento
+            cauda = null;
+            cabeca = null;
+        } else if (indice == 0) {  // o primeiro
+            cauda = cauda.getNoProximo();
+            cabeca.setNoProximo(cauda);
+        } else {
+            No<T> anterior = getNo(indice - 1);
+            No<T> removido = anterior.getNoProximo();
+            anterior.setNoProximo(
+                removido.getNoProximo());
+            if (removido == cabeca) { // o último
+                cabeca = anterior;
+            }
+        }
+        tamanho--;
+    }
+
+    // adiciona no INÍCIO da lista
+    public void add(T conteudo) {
+        No<T> novo = new No<>(conteudo);
+        if (isEmpty()) {
+            cabeca = novo;
+            cauda = novo;
+            novo.setNoProximo(novo); // aponta p/ si
+        } else {
+            novo.setNoProximo(cauda);
+            cabeca.setNoProximo(novo);
+            cauda = novo;
+        }
+        tamanho++;
+    }
+
+    @Override
+    public String toString() {
+        if (isEmpty()) return "[]";
+        StringBuilder sb = new StringBuilder();
+        No<T> aux = cauda;
+        for (int i = 0; i < tamanho; i++) {
+            sb.append("[").append(aux).append("]-->");
+            aux = aux.getNoProximo();
+        }
+        return sb.append("(volta ao início)")
+                 .toString();
+    }
 }
 ```
 
@@ -1136,15 +1346,38 @@ public class ListaCircular<T> {
 > - `remove` não rejeitava índices negativos.
 > - Na `Main`, a mensagem "Objeto de índice 3" imprimia `get(4)`; ajustei o texto.
 
+> ⚠️ Cuidado ao percorrer: como não há `null`, um `while (aux != null)` nunca termina. Por isso o `toString` conta até `tamanho`.
+
+### 🧠 Revisão rápida
+
+**Numa lista circular de 3 elementos, `get(7)` devolve o mesmo que qual índice?**
+
+O índice 1: 7 % 3 = 1.
+
+**Um nó sozinho numa lista circular aponta para quem?**
+
+Para ele mesmo.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Circular | o último nó aponta para o primeiro; não há `null` no fim |
+| Percurso | não use `while (aux != null)`; conte até o `tamanho` |
+| Round-robin | cada item recebe sua vez em rodízio |
+| Remover | se o nó removido era a cabeça, a cabeça passa a ser o anterior |
+
 ## Árvores binárias
 
-> 💡 Uma **árvore** organiza dados em **hierarquia**: um nó raiz no topo e, abaixo dele, nós filhos ligados por arestas. Na **árvore binária**, cada nó tem no máximo **dois** filhos.
+> 🗺️ **Nesta aula:** árvores e árvores binárias de busca, com inserção, remoção e os três percursos. Uma **árvore** organiza dados em **hierarquia**: um nó raiz no topo e, abaixo dele, nós filhos ligados por arestas. Na **árvore binária**, cada nó tem no máximo **dois** filhos.
 
 ### Estrutura de árvore
 
 Cada elemento da árvore é um **nó**, que guarda um valor (chave ou dado). Cada nó tem **um único pai** (menos a raiz) e pode ter vários filhos. Há vários tipos — binária, de busca binária, AVL, rubro-negra — usados em índices de banco de dados, sistemas de arquivos, menus e organogramas.
 
 ![Raiz, folhas, níveis e subárvores.](../img/arvore-termos.svg)
+
+> 💡 **Analogia:** pense num organograma de empresa. A diretoria é a raiz, cada gerente é um nó com até dois subordinados diretos e quem não tem subordinados é uma folha. Uma subárvore é só um setor inteiro.
 
 | Termo | Significado |
 | --- | --- |
@@ -1193,6 +1426,8 @@ Por isso a árvore declara `BinArvore<T extends Comparable<T>>`: ela só aceita 
 
 Existe ainda o percurso **em nível** (*level-order*), que visita a árvore andar por andar: 13, 10, 25, 2, 12, 20, 31, 29.
 
+> 💡 **Truque para memorizar:** o nome diz quando a **raiz** é visitada. *Pre* = antes dos filhos; *in* = no meio; *post* = depois.
+
 > 🛠️ **Correção:** a saída do pós-ordem estava como "2, 12, 10, 20, 29, 25 e 13" — faltava o **31**. O correto é **2, 12, 10, 20, 29, 31, 25, 13**.
 
 **Mostrando em código a árvore binária**
@@ -1205,23 +1440,24 @@ import com.projeto.arvorebinaria.model.Obj;
 
 public class Main {
   public static void main(String[] args) {
-    BinArvore<Obj> minhaArvore = new BinArvore<>();
+    BinArvore<Obj> arvore = new BinArvore<>();
 
-    minhaArvore.inserir(new Obj(13)); // raiz
-    minhaArvore.inserir(new Obj(10));
-    minhaArvore.inserir(new Obj(25));
-    minhaArvore.inserir(new Obj(2));
-    minhaArvore.inserir(new Obj(12));
-    minhaArvore.inserir(new Obj(20));
-    minhaArvore.inserir(new Obj(31));
-    minhaArvore.inserir(new Obj(29));
+    int[] valores = {13, 10, 25, 2, 12, 20, 31, 29};
+    for (int v : valores) {
+      arvore.inserir(new Obj(v)); // 13 é a raiz
+    }
 
-    minhaArvore.exibirEmOrdem();  // 2, 10, 12, 13, 20, 25, 29, 31
-    minhaArvore.exibirPreOrdem();  // 13, 10, 2, 12, 25, 20, 31, 29
-    minhaArvore.exibirPosOrdem();  // 2, 12, 10, 20, 29, 31, 25, 13
+    // 2, 10, 12, 13, 20, 25, 29, 31
+    arvore.exibirEmOrdem();
+    // 13, 10, 2, 12, 25, 20, 31, 29
+    arvore.exibirPreOrdem();
+    // 2, 12, 10, 20, 29, 31, 25, 13
+    arvore.exibirPosOrdem();
 
-    minhaArvore.remover(new Obj(13)); // remove a raiz (caso de dois filhos)
-    minhaArvore.exibirEmOrdem();  // 2, 10, 12, 20, 25, 29, 31
+    // remove a raiz (caso de dois filhos)
+    arvore.remover(new Obj(13));
+    // 2, 10, 12, 20, 25, 29, 31
+    arvore.exibirEmOrdem();
   }
 }
 ```
@@ -1230,7 +1466,7 @@ public class Main {
 // Classe BinNo<T>
 package com.projeto.arvorebinaria;
 
-// T precisa saber se comparar (limite superior: T extends Comparable<T>)
+// T precisa saber se comparar
 public class BinNo<T extends Comparable<T>> {
   private T conteudo;
   private BinNo<T> noEsq;
@@ -1241,13 +1477,19 @@ public class BinNo<T extends Comparable<T>> {
   }
 
   public T getConteudo() { return conteudo; }
-  public void setConteudo(T conteudo) { this.conteudo = conteudo; }
+  public void setConteudo(T conteudo) {
+    this.conteudo = conteudo;
+  }
 
   public BinNo<T> getNoEsq() { return noEsq; }
-  public void setNoEsq(BinNo<T> noEsq) { this.noEsq = noEsq; }
+  public void setNoEsq(BinNo<T> noEsq) {
+    this.noEsq = noEsq;
+  }
 
   public BinNo<T> getNoDir() { return noDir; }
-  public void setNoDir(BinNo<T> noDir) { this.noDir = noDir; }
+  public void setNoDir(BinNo<T> noDir) {
+    this.noDir = noDir;
+  }
 
   @Override
   public String toString() {
@@ -1261,96 +1503,109 @@ public class BinNo<T extends Comparable<T>> {
 package com.projeto.arvorebinaria;
 
 public class BinArvore<T extends Comparable<T>> {
-  private BinNo<T> raiz;
+    private BinNo<T> raiz;
 
-  // ---------- inserção ----------
-  public void inserir(T conteudo) {
-    raiz = inserir(raiz, new BinNo<>(conteudo));
-  }
-
-  private BinNo<T> inserir(BinNo<T> atual, BinNo<T> novo) {
-    if (atual == null) {
-      return novo; // achou a posição vazia
-    }
-    if (novo.getConteudo().compareTo(atual.getConteudo()) < 0) {
-      atual.setNoEsq(inserir(atual.getNoEsq(), novo));
-    } else {
-      atual.setNoDir(inserir(atual.getNoDir(), novo));
-    }
-    return atual;
-  }
-
-  // ---------- percursos ----------
-  public void exibirEmOrdem() {
-    System.out.println("\nIn-order:");
-    exibirEmOrdem(raiz);
-  }
-
-  private void exibirEmOrdem(BinNo<T> atual) {
-    if (atual != null) {
-      exibirEmOrdem(atual.getNoEsq());
-      System.out.print(atual.getConteudo() + ", ");
-      exibirEmOrdem(atual.getNoDir());
-    }
-  }
-
-  public void exibirPreOrdem() {
-    System.out.println("\nPre-order:");
-    exibirPreOrdem(raiz);
-  }
-
-  private void exibirPreOrdem(BinNo<T> atual) {
-    if (atual != null) {
-      System.out.print(atual.getConteudo() + ", ");
-      exibirPreOrdem(atual.getNoEsq());
-      exibirPreOrdem(atual.getNoDir());
-    }
-  }
-
-  public void exibirPosOrdem() {
-    System.out.println("\nPost-order:");
-    exibirPosOrdem(raiz);
-  }
-
-  private void exibirPosOrdem(BinNo<T> atual) {
-    if (atual != null) {
-      exibirPosOrdem(atual.getNoEsq());
-      exibirPosOrdem(atual.getNoDir());
-      System.out.print(atual.getConteudo() + ", ");
-    }
-  }
-
-  // ---------- remoção ----------
-  public void remover(T conteudo) {
-    raiz = remover(raiz, conteudo);
-  }
-
-  private BinNo<T> remover(BinNo<T> atual, T conteudo) {
-    if (atual == null) {
-      System.out.println("Conteúdo não encontrado: " + conteudo);
-      return null;
+    // ---------- inserção ----------
+    public void inserir(T conteudo) {
+        raiz = inserir(raiz, new BinNo<>(conteudo));
     }
 
-    int comparacao = conteudo.compareTo(atual.getConteudo());
-    if (comparacao < 0) {
-      atual.setNoEsq(remover(atual.getNoEsq(), conteudo));
-    } else if (comparacao > 0) {
-      atual.setNoDir(remover(atual.getNoDir(), conteudo));
-    } else {
-      // casos 1 e 2: nenhum ou um filho → o filho (ou null) ocupa o lugar
-      if (atual.getNoEsq() == null) return atual.getNoDir();
-      if (atual.getNoDir() == null) return atual.getNoEsq();
-
-      // caso 3: dois filhos → copia o sucessor e remove-o da subárvore direita
-      BinNo<T> sucessor = atual.getNoDir();
-      while (sucessor.getNoEsq() != null) {
-        sucessor = sucessor.getNoEsq();
-      }
-      atual.setConteudo(sucessor.getConteudo());
-      atual.setNoDir(remover(atual.getNoDir(), sucessor.getConteudo()));
+    private BinNo<T> inserir(BinNo<T> atual,
+                             BinNo<T> novo) {
+        if (atual == null) {
+            return novo; // achou a posição vazia
+        }
+        T valor = novo.getConteudo();
+        if (valor.compareTo(atual.getConteudo()) < 0) {
+            atual.setNoEsq(
+                inserir(atual.getNoEsq(), novo));
+        } else {
+            atual.setNoDir(
+                inserir(atual.getNoDir(), novo));
+        }
+        return atual;
     }
-    return atual;
-  }
+
+    // ---------- percursos ----------
+    public void exibirEmOrdem() {
+        System.out.println("\nIn-order:");
+        emOrdem(raiz);
+    }
+
+    private void emOrdem(BinNo<T> atual) {
+        if (atual != null) {
+            emOrdem(atual.getNoEsq());
+            System.out.print(atual.getConteudo() + ", ");
+            emOrdem(atual.getNoDir());
+        }
+    }
+
+    public void exibirPreOrdem() {
+        System.out.println("\nPre-order:");
+        preOrdem(raiz);
+    }
+
+    private void preOrdem(BinNo<T> atual) {
+        if (atual != null) {
+            System.out.print(atual.getConteudo() + ", ");
+            preOrdem(atual.getNoEsq());
+            preOrdem(atual.getNoDir());
+        }
+    }
+
+    public void exibirPosOrdem() {
+        System.out.println("\nPost-order:");
+        posOrdem(raiz);
+    }
+
+    private void posOrdem(BinNo<T> atual) {
+        if (atual != null) {
+            posOrdem(atual.getNoEsq());
+            posOrdem(atual.getNoDir());
+            System.out.print(atual.getConteudo() + ", ");
+        }
+    }
+
+    // ---------- remoção ----------
+    public void remover(T conteudo) {
+        raiz = remover(raiz, conteudo);
+    }
+
+    private BinNo<T> remover(BinNo<T> atual,
+                             T conteudo) {
+        if (atual == null) {
+            System.out.println(
+                "Não encontrado: " + conteudo);
+            return null;
+        }
+
+        int cmp = conteudo.compareTo(atual.getConteudo());
+        if (cmp < 0) {
+            atual.setNoEsq(
+                remover(atual.getNoEsq(), conteudo));
+        } else if (cmp > 0) {
+            atual.setNoDir(
+                remover(atual.getNoDir(), conteudo));
+        } else {
+            // casos 1 e 2: nenhum ou um filho:
+            // o filho (ou null) ocupa o lugar
+            if (atual.getNoEsq() == null)
+                return atual.getNoDir();
+            if (atual.getNoDir() == null)
+                return atual.getNoEsq();
+
+            // caso 3: dois filhos: copia o sucessor
+            // e remove-o da subárvore direita
+            BinNo<T> suc = atual.getNoDir();
+            while (suc.getNoEsq() != null) {
+                suc = suc.getNoEsq();
+            }
+            atual.setConteudo(suc.getConteudo());
+            atual.setNoDir(remover(atual.getNoDir(),
+                                   suc.getConteudo()));
+        }
+        return atual;
+    }
 }
 ```
 
@@ -1360,7 +1615,8 @@ Pacote `model`:
 // Classe abstrata ObjArvore<T>
 package com.projeto.arvorebinaria.model;
 
-public abstract class ObjArvore<T> implements Comparable<T> {
+public abstract class ObjArvore<T>
+    implements Comparable<T> {
   public abstract boolean equals(Object obj);
   public abstract int hashCode();
   public abstract int compareTo(T outro);
@@ -1375,34 +1631,36 @@ package com.projeto.arvorebinaria.model;
 import java.util.Objects;
 
 public class Obj extends ObjArvore<Obj> {
-  private Integer meuValor;
+    private Integer meuValor;
 
-  public Obj(Integer meuValor) {
-    this.meuValor = meuValor;
-  }
+    public Obj(Integer meuValor) {
+        this.meuValor = meuValor;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    Obj obj = (Obj) o;
-    return Objects.equals(meuValor, obj.meuValor);
-  }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Obj obj = (Obj) o;
+        return Objects.equals(meuValor, obj.meuValor);
+    }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(meuValor);
-  }
+    @Override
+    public int hashCode() {
+        return Objects.hash(meuValor);
+    }
 
-  @Override
-  public int compareTo(Obj outro) {
-    return Integer.compare(this.meuValor, outro.meuValor);
-  }
+    @Override
+    public int compareTo(Obj outro) {
+        return Integer.compare(this.meuValor,
+                               outro.meuValor);
+    }
 
-  @Override
-  public String toString() {
-    return meuValor.toString();
-  }
+    @Override
+    public String toString() {
+        return meuValor.toString();
+    }
 }
 ```
 
@@ -1413,14 +1671,45 @@ public class Obj extends ObjArvore<Obj> {
 > - O comentário "upperbounded wildcard" em `BinNo<T extends Comparable<T>>` foi corrigido: isso é um **parâmetro de tipo com limite superior** (*bounded type parameter*), não um *wildcard* (`?`).
 > - Nomes padronizados em camelCase (`exibir_em_ordem` → `exibirEmOrdem`, `no_esq` → `noEsq`) e pacote em minúsculas.
 
+### 🧠 Revisão rápida
+
+**Onde fica o valor 15 se for inserido na árvore do exemplo?**
+
+13 → direita (25) → esquerda (20) → esquerda de 20. Vira filho esquerdo do 20.
+
+**Qual percurso imprime os valores de uma BST em ordem crescente?**
+
+O in-order (esquerda, raiz, direita).
+
+**Se os valores forem inseridos já em ordem (1, 2, 3, 4…), como fica a árvore?**
+
+Desbalanceada: vira uma "linha" para a direita, e a busca passa a custar O(n). Árvores AVL e rubro-negras se rebalanceiam para evitar isso.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Raiz e folha | a raiz é o topo; a folha é o nó sem filhos |
+| Árvore binária | cada nó tem no máximo dois filhos |
+| BST | à esquerda ficam os menores e à direita os maiores; busca em O(log n) se balanceada |
+| `Comparable` | permite à árvore comparar os valores com `compareTo` |
+| Percursos | *pre*, *in* e *post* dizem quando a raiz é visitada |
+| Desbalanceamento | inserir valores em ordem transforma a árvore numa lista e torna a busca O(n) |
+
 ## Principais implementações das estruturas de dados do Java
 
+> 🗺️ **Nesta aula:** as implementações prontas do Java para cada estrutura: qual usar e quando.
+
 ### Equals and hashCode
+
+> 🗺️ **Nesta aula:** como `equals` e `hashCode` decidem igualdade em listas, conjuntos e mapas, e o contrato entre os dois.
 
 `equals()` **e** `hashCode()`são métodos da classe `Object`em Java, que permitem comparar e identificar objetos com base em seus valores.
 
 - O método `equals()`é usado para comparar dois objetos para determinar se eles são iguais ou não. Quando você chama o método `equals()`em um objeto, ele compara o objeto atual com outro objeto passado como parâmetro e retorna verdadeiro se ambos os objetos tiverem valores iguais.
 - O método `hashCode()`é usado para obter um código hash de um objeto. Um código hash é um número inteiro que é usado para identificar um objeto em uma coleção, como um HashMap ou HashSet. O código hash é gerado a partir dos valores dos atributos do objeto, e é importante que objetos iguais tenham o mesmo código hash, para que possam ser armazenados e recuperados corretamente de coleções.
+
+> 💡 **Analogia:** pense em um armário com gavetas numeradas. O `hashCode` é o número da gaveta onde o objeto é guardado; o `equals` é abrir a gaveta e conferir se o conteúdo é o mesmo. Se as gavetas têm números diferentes, nem é preciso conferir.
 
 ##### Exemplo em código
 
@@ -1509,9 +1798,32 @@ public class Carro {
 
 > 🛠️ **Ajuste:** o comentário do código dizia que os hashCodes de objetos diferentes são "números totalmente diferentes". Normalmente são, mas **não é garantido** — dois objetos diferentes podem ter o mesmo hash. A única garantia é no sentido contrário: objetos iguais têm hashes iguais. Dica: em projetos modernos, o atributo `marca` deveria ser `private`, e a IDE gera os dois métodos com *Generate → equals() and hashCode()*.
 
+#### 🧠 Revisão rápida
+
+**Se dois objetos têm `hashCode` diferentes, eles podem ser iguais?**
+
+Não. Objetos iguais têm sempre o mesmo `hashCode`.
+
+**O que acontece se só o `equals` for sobrescrito e o objeto for guardado num `HashSet`?**
+
+O `HashSet` pode não encontrá-lo, porque procura primeiro pelo hash.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `equals` | compara o conteúdo dos objetos |
+| `hashCode` | gera um número que identifica o objeto nas coleções baseadas em hash |
+| Contrato | objetos iguais têm sempre o mesmo `hashCode`; sobrescreva os dois juntos |
+| Sem sobrescrever | `equals` compara referências, igual a `==` |
+
 ### Pilhas (Stacks)
 
+> 🗺️ **Nesta aula:** a pilha (`Stack`) na API do Java, seus principais métodos e a alternativa recomendada.
+
 Em Java, uma stack (pilha) é uma estrutura de dados que segue o modelo LIFO (Last In, First Out), ou seja, o último elemento adicionado à pilha é o primeiro a ser removido.
+
+> 💡 **Analogia:** é uma pilha de cartas sobre a mesa. Você só mexe na carta de cima: coloca uma nova por cima (`push`) ou pega a de cima (`pop`).
 
 Na classe `java.util.Stack`, que estende `java.util.Vector`, temos os seguintes métodos principais:
 
@@ -1602,7 +1914,28 @@ public class Carro {
 }
 ```
 
+#### 🧠 Revisão rápida
+
+**Empilhe 1, 2 e 3 e depois chame `pop()`. Qual valor sai?**
+
+3, o último a entrar.
+
+**Qual método lê o topo sem removê-lo?**
+
+`peek()`.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `push` / `pop` | colocam e removem no topo da pilha |
+| `peek` | olha o topo sem remover |
+| `search` | devolve a posição a partir do topo (começando em 1) ou -1 |
+| Recomendação | `Deque` com `ArrayDeque` em vez de `java.util.Stack` |
+
 ### Fila (Queue/ Linkedlist)
+
+> 🗺️ **Nesta aula:** a interface `Queue`, seus métodos e as classes que a implementam.
 
 > 📖 **Resumo dos métodos da** `Queue`**:** cada operação tem uma versão que **lança exceção** e outra que **devolve um valor especial**.
 >
@@ -1614,7 +1947,7 @@ public class Carro {
 
 #### Interface Queue
 
-A interface `Queue`em Java define uma coleção de elementos em que a inserção ocorre no final e a remoção ocorre no início da coleção. Ela estende a interface `Collection`e adiciona métodos para manipular a fila, como adicionar elementos no final da fila, remover elementos no início da fila e verificar se a fila está vazia. Uma `Queue` é uma coleção de elementos organizados em ordem linear, onde o elemento mais antigo é sempre o primeiro a ser removido. É como uma fila em um supermercado ou em um banco, onde o primeiro cliente a chegar é o primeiro a ser atendido.
+A interface `Queue` em Java define uma coleção de elementos em que a inserção ocorre no final e a remoção ocorre no início da coleção. Ela estende a interface `Collection`e adiciona métodos para manipular a fila, como adicionar elementos no final da fila, remover elementos no início da fila e verificar se a fila está vazia. Uma `Queue` é uma coleção de elementos organizados em ordem linear, onde o elemento mais antigo é sempre o primeiro a ser removido. É como uma fila em um supermercado ou em um banco, onde o primeiro cliente a chegar é o primeiro a ser atendido.
 
 `Queue` é uma interface (e não uma classe) que define os principais métodos que uma fila deve suportar, como:
 
@@ -1627,11 +1960,28 @@ A interface `Queue`em Java define uma coleção de elementos em que a inserção
 
 ##### Outros usos
 
-a interface `queue` é apenas uma especificação que define um conjunto de métodos que uma fila deve implementar. Na linguagem Java, existem várias classes que implementam essa interface, cada uma delas com suas próprias particularidades e características. Aqui está uma breve descrição de algumas das classes mais comuns que implementam a interface `queue`:`ArrayDeque`: é uma classe que implementa a interface `Deque`, que por sua vez estende a interface `Queue`. Ela representa uma fila de elementos que podem ser adicionados e removidos tanto no final quanto no início da fila. Internamente, essa classe usa um array para armazenar seus elementos, e é altamente eficiente tanto para adicionar quanto para remover elementos.`LinkedList`: é uma classe que também implementa a interface `Deque`. Ela representa uma fila de elementos que podem ser adicionados e removidos tanto no final quanto no início da fila, bem como em qualquer posição intermediária. Internamente, essa classe usa uma estrutura de lista ligada para armazenar seus elementos, o que a torna menos eficiente do que a `ArrayDeque` em algumas operações.`PriorityQueue`: é uma classe que implementa a interface `Queue`, mas em vez de simplesmente armazenar seus elementos em ordem de chegada, ela os armazena em ordem de prioridade. Isso significa que cada elemento na fila tem uma "prioridade" associada a ele, e quando é adicionado à fila, ele é inserido na posição correta de acordo com sua prioridade.
+A interface `queue` é apenas uma especificação que define um conjunto de métodos que uma fila deve implementar. Na linguagem Java, existem várias classes que implementam essa interface, cada uma delas com suas próprias particularidades e características. Aqui está uma breve descrição de algumas das classes mais comuns que implementam a interface `queue`:
+
+1. `ArrayDeque`: é uma classe que implementa a interface `Deque`, que por sua vez estende a interface `Queue`. Ela representa uma fila de elementos que podem ser adicionados e removidos tanto no final quanto no início da fila. Internamente, essa classe usa um array para armazenar seus elementos, e é altamente eficiente tanto para adicionar quanto para remover elementos.
+2. `LinkedList`: é uma classe que também implementa a interface `Deque`. Ela representa uma fila de elementos que podem ser adicionados e removidos tanto no final quanto no início da fila, bem como em qualquer posição intermediária. Internamente, essa classe usa uma estrutura de lista ligada para armazenar seus elementos, o que a torna menos eficiente do que a `ArrayDeque` em algumas operações.
+3. `PriorityQueue`: é uma classe que implementa a interface `Queue`, mas em vez de simplesmente armazenar seus elementos em ordem de chegada, ela os armazena em ordem de prioridade. Isso significa que cada elemento na fila tem uma "prioridade" associada a ele, e quando é adicionado à fila, ele é inserido na posição correta de acordo com sua prioridade.
 
 #### Falando mais sobre LinkedList
 
-LinkedList é uma estrutura de dados que permite armazenar uma lista de elementos, onde cada elemento possui um ponteiro para o próximo **e para o anterior** (é uma lista **duplamente** encadeada). Isso permite que os elementos sejam inseridos e removidos de maneira eficiente, sem precisar realocar todos os elementos na lista. A classe LinkedList implementa a interface List, que define métodos como "add", "remove", "get", "set" e "size", além de outros métodos específicos para trabalhar com listas duplamente encadeadas, como:Alguns dos principais métodos da classe LinkedList são:`add(element)` → Adiciona um elemento ao final da lista.`addFirst(element)` →  Adiciona um elemento no início da lista.`addLast(element) `→  Adiciona um elemento no final da lista.`remove() `→  Remove e retorna o primeiro elemento da lista.`removeFirst()` →  Remove e retorna o primeiro elemento da lista.`removeLast()` → Remove e retorna o último elemento da lista.`get(index) `→ Retorna o elemento na posição especificada.`set(index, element)` → Substitui o elemento na posição especificada pelo novo elemento.`size()` →  Retorna o número de elementos na lista.`clear()` → Remove todos os elementos da lista.
+LinkedList é uma estrutura de dados que permite armazenar uma lista de elementos, onde cada elemento possui um ponteiro para o próximo **e para o anterior** (é uma lista **duplamente** encadeada). Isso permite que os elementos sejam inseridos e removidos de maneira eficiente, sem precisar realocar todos os elementos na lista. A classe LinkedList implementa a interface List, que define métodos como "add", "remove", "get", "set" e "size", além de outros métodos específicos para trabalhar com listas duplamente encadeadas, como:
+
+Alguns dos principais métodos da classe LinkedList são:
+
+- `add(element)` → Adiciona um elemento ao final da lista.
+- `addFirst(element)` →  Adiciona um elemento no início da lista.
+- `addLast(element) `→  Adiciona um elemento no final da lista.
+- `remove() `→  Remove e retorna o primeiro elemento da lista.
+- `removeFirst()` →  Remove e retorna o primeiro elemento da lista.
+- `removeLast()` → Remove e retorna o último elemento da lista.
+- `get(index) `→ Retorna o elemento na posição especificada.
+- `set(index, element)` → Substitui o elemento na posição especificada pelo novo elemento.
+- `size()` →  Retorna o número de elementos na lista.
+- `clear()` → Remove todos os elementos da lista.
 
 ##### Mostrando em código
 
@@ -1724,9 +2074,59 @@ public class Carro {
 }
 ```
 
+> 💡 **Analogia:** a fila do caixa do supermercado. Quem chega primeiro é atendido primeiro; `add`/`offer` entram no fim e `poll`/`remove` atendem a frente.
+
+#### 🧠 Revisão rápida
+
+**Qual método devolve `null`, em vez de lançar exceção, numa fila vazia?**
+
+`poll()` (e `peek()`).
+
+**Qual a diferença entre `add` e `offer`?**
+
+`add` lança exceção quando a fila está cheia; `offer` devolve `false`.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `add` / `offer` | inserem no fim; `add` lança exceção se não couber, `offer` devolve `false` |
+| `remove` / `poll` | removem da frente; `remove` lança exceção se vazia, `poll` devolve `null` |
+| `element` / `peek` | olham a frente sem remover, com a mesma diferença |
+| `ArrayDeque` | fila eficiente nas duas pontas, recomendada na maioria dos casos |
+| `LinkedList` | também é fila, mas além de lista; boa para inserir nas pontas |
+| `PriorityQueue` | sai pelo elemento de maior prioridade, não pela ordem de chegada |
+
 ### Listas (List)
 
-A interface `List`em Java define uma coleção de elementos ordenados que permite o acesso aos seus elementos por meio de um índice (posição). A interface `List`é uma subinterface da interface `Collection` e estende a mesma, portanto, ela herda todos os métodos da interface `Collection`. Além disso, a interface `List`<br /> adiciona métodos específicos para trabalhar com listas:`add(E element)`: adiciona um elemento ao final da lista.`add(int index, E element)`: adiciona um elemento em uma posição específica na lista.`get(int index)`: retorna o elemento na posição especificada na lista.`set(int index, E element)`: substitui o elemento na posição especificada na lista pelo elemento fornecido.`remove(int index)`: remove o elemento na posição especificada na lista.`indexOf(Object o)`: retorna o índice da primeira ocorrência do elemento especificado na lista.`lastIndexOf(Object o)`: retorna o índice da última ocorrência do elemento especificado na lista.`size()`: retorna o número de elementos na lista.`isEmpty()`: retorna `true` se a lista estiver vazia, ou seja, não contiver nenhum elemento.`contains(Object o)`: retorna `true` se a lista contiver o elemento especificado.`toArray()`: retorna um array contendo todos os elementos da lista na ordem em que aparecem.`addAll(Collection<? extends E> c)`: adiciona todos os elementos da coleção especificada à lista, na ordem em que aparecem na coleção.`clear()`: remove todos os elementos da lista.`subList(int fromIndex, int toIndex)`: retorna uma sub lista contendo os elementos da lista original entre os índices `fromIndex` e `toIndex`. A sub lista é uma visão da lista original, o que significa que as alterações feitas na sub lista serão refletidas na lista original e vice-versa.As classes que implementam a interface `List`em Java incluem:`ArrayList` → que é uma implementação de lista baseada em um **array dinâmico** (que cresce automaticamente).`LinkedList` **→** que é uma implementação de lista baseada em lista ligada. `Vector` → que é uma implementação de lista semelhante à `ArrayList`mas é sincronizada (ou seja, pode ser usada em ambientes multithread).
+> 🗺️ **Nesta aula:** a interface `List`, suas implementações (`ArrayList`, `LinkedList` e `Vector`) e quando usar cada uma.
+
+A interface `List` em Java define uma coleção de elementos ordenados que permite o acesso aos seus elementos por meio de um índice (posição). A interface `List`é uma subinterface da interface `Collection` e estende a mesma, portanto, ela herda todos os métodos da interface `Collection`. Além disso, a interface `List` adiciona métodos específicos para trabalhar com listas:
+
+- `add(E element)`: adiciona um elemento ao final da lista.
+- `add(int index, E element)`: adiciona um elemento em uma posição específica na lista.
+- `get(int index)`: retorna o elemento na posição especificada na lista.
+- `set(int index, E element)`: substitui o elemento na posição especificada na lista pelo elemento fornecido.
+- `remove(int index)`: remove o elemento na posição especificada na lista.
+- `indexOf(Object o)`: retorna o índice da primeira ocorrência do elemento especificado na lista.
+- `lastIndexOf(Object o)`: retorna o índice da última ocorrência do elemento especificado na lista.
+- `size()`: retorna o número de elementos na lista.
+- `isEmpty()`: retorna `true` se a lista estiver vazia, ou seja, não contiver nenhum elemento.
+- `contains(Object o)`: retorna `true` se a lista contiver o elemento especificado.
+- `toArray()`: retorna um array contendo todos os elementos da lista na ordem em que aparecem.
+- `addAll(Collection<? extends E> c)`: adiciona todos os elementos da coleção especificada à lista, na ordem em que aparecem na coleção.
+- `clear()`: remove todos os elementos da lista.
+- `subList(int fromIndex, int toIndex)`: retorna uma sub lista contendo os elementos da lista original entre os índices `fromIndex` e `toIndex`. A sub lista é uma visão da lista original, o que significa que as alterações feitas na sub lista serão refletidas na lista original e vice-versa.
+
+> 💡 **Analogia:** é uma fila de cadeiras numeradas num teatro. Você vai direto à cadeira pelo número (a cadeira 12 é o índice 11, porque a contagem começa em zero).
+
+##### As classes que implementam a interface `List`em Java incluem:
+
+`ArrayList` → que é uma implementação de lista baseada em um **array dinâmico** (que cresce automaticamente).
+
+`LinkedList` **→** que é uma implementação de lista baseada em lista ligada.
+
+`Vector` → que é uma implementação de lista semelhante à `ArrayList`mas é sincronizada (ou seja, pode ser usada em ambientes multithread).
 
 |  | `ArrayList` | `LinkedList` | `Vector` |
 | --- | --- | --- | --- |
@@ -1826,7 +2226,29 @@ public class Carro {
 }
 ```
 
+#### 🧠 Revisão rápida
+
+**Para acesso frequente por índice, qual lista escolher?**
+
+`ArrayList`: `get(i)` é O(1).
+
+**Por que `contains(new Carro("Kia"))` devolve `true` nesta classe?**
+
+Porque `Carro` sobrescreve `equals`, comparando a marca.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `List` | coleção ordenada com acesso por índice |
+| `ArrayList` | padrão para quase tudo; acesso por índice em O(1) |
+| `LinkedList` | boa para inserir e remover nas pontas; acesso por índice em O(n) |
+| `Vector` | sincronizada, mas mais lenta; use só em código legado |
+| `contains` / `indexOf` | usam `equals` para comparar |
+
 ### Set / HashSet
+
+> 🗺️ **Nesta aula:** a interface `Set`, que guarda elementos únicos, e as implementações `HashSet`, `LinkedHashSet` e `TreeSet`.
 
 #### Set
 
@@ -1845,6 +2267,8 @@ As implementações da interface `Set` em Java incluem `HashSet`, `TreeSet` e `L
 ##### Falando mais de HashSet
 
 `HashSet` é uma classe em Java que implementa a interface `Set`. É uma coleção que não permite elementos duplicados e não tem ordem definida para os elementos. Em outras palavras, ele armazena um conjunto de elementos únicos sem ordem garantida (a ordem depende do hash de cada elemento — não é aleatória, mas também não é previsível). Os elementos armazenados em um `HashSet` são acessados por meio de seu valor e não por um índice específico. Uma das principais vantagens do `HashSet` é que ele possui um tempo de acesso constante (O(1)) para a maioria das operações, o que o torna uma escolha eficiente para conjuntos de elementos grandes. No entanto, o `HashSet` não garante a ordem em que os elementos são armazenados. Se a ordem dos elementos é importante, é necessário usar uma outra classe, como o `LinkedHashSet`, que mantém a ordem em que os elementos foram adicionados à coleção.
+
+> 💡 **Analogia:** é uma sacola de bolinhas de gude. Não há duas bolinhas iguais, e a ordem em que elas caem não importa.
 
 |  | `HashSet` | `LinkedHashSet` | `TreeSet` |
 | --- | --- | --- | --- |
@@ -1945,13 +2369,37 @@ public class Carro implements Comparable<Carro>{
 
 > 🛠️ **Atenção no exemplo do** `TreeSet`**:** o `compareTo` de `String` diferencia maiúsculas de minúsculas e coloca **todas as maiúsculas antes** das minúsculas. Por isso `"honda"` aparece **depois** de `"Volkswagen"`, e não entre "Ford" e "Toyota". Para ordem alfabética de verdade, use `this.getMarca().compareToIgnoreCase(o.getMarca())` — ou padronize os nomes. Também corrigi os comentários "Mostdando" → "Mostrando".
 
+#### 🧠 Revisão rápida
+
+**Um `HashSet` aceita dois elementos iguais?**
+
+Não. Ele não guarda duplicatas.
+
+**Qual implementação de `Set` mantém a ordem de inserção?**
+
+`LinkedHashSet`.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `Set` | conjunto de elementos únicos, sem índice |
+| `HashSet` | o mais rápido; não garante ordem |
+| `LinkedHashSet` | mantém a ordem de inserção |
+| `TreeSet` | mantém a ordem natural ou de um `Comparator`; usa `compareTo` |
+| Duplicatas | são descartadas com base em `equals` e `hashCode` (ou `compareTo`, no `TreeSet`) |
+
 ### Map/ HashMap/ TreeMap
 
-#### Interface map
+> 🗺️ **Nesta aula:** a interface `Map`, que guarda pares chave-valor, e as implementações `HashMap` e `TreeMap`.
 
-estruturas de dados em Java que permitem armazenar e manipular pares de chave-valor.
+#### Interface Map
+
+Um mapa é uma das estruturas de dados em Java que permitem armazenar e manipular pares de chave-valor.
 
 A interface `Map` define um mapa de associações entre **chaves únicas** e valores (os valores podem se repetir). Cada chave pode ser associada a apenas um valor, mas diferentes chaves podem estar associadas ao mesmo valor. Se trata de uma estrutura de dados em Java que permite armazenar pares de chave e valor. A interface `Map` é genérica e tem a seguinte assinatura: `public interface Map<K, V>` **→ Onde** `K` **é a chave e** `V` **o valor**
+
+> 💡 **Analogia:** é uma agenda telefônica. O nome é a chave, que não se repete; o número é o valor associado. Procurar pelo nome é direto, sem folhear página por página.
 
 ##### Falando sobre HashMap
 
@@ -2040,6 +2488,54 @@ public class Main {
 > - O texto dizia que o `Map` associa chaves a "valores únicos". Quem é única é a **chave**; um `put` com chave repetida **substitui** o valor antigo.
 > - No exemplo, as chaves misturam maiúsculas e minúsculas (`"Name"`, `"idade"`, `"Media"`) e inglês com português. Como `"Name"` e `"name"` seriam chaves **diferentes**, é melhor padronizar (ex.: `"nome"`, `"idade"`, `"media"`, `"turma"`).
 > - Guardar todos os dados como `String` num `Map` funciona, mas para entidades como "aluno" o ideal é criar uma **classe** `Aluno` com atributos tipados e usar um `Map<String, Aluno>` (por matrícula, por exemplo).
+
+#### 🧠 Revisão rápida
+
+**O que acontece ao usar `put` com uma chave que já existe?**
+
+O valor antigo é substituído.
+
+**Qual implementação de `Map` mantém as chaves ordenadas?**
+
+`TreeMap`.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `Map<K, V>` | associa chaves únicas a valores; uma chave repetida substitui o valor antigo |
+| `HashMap` | o mais rápido; não garante ordem; aceita uma chave `null` |
+| `TreeMap` | mantém as chaves ordenadas; usa O(log n) nas operações |
+| `keySet` / `values` | devolvem as chaves e os valores |
+
+### 🧠 Revisão rápida
+
+**Para uma pilha, qual classe da API a documentação recomenda no lugar de `java.util.Stack`?**
+
+`ArrayDeque`, com `push`, `pop` e `peek`.
+
+### 📌 Resumo
+
+| Estrutura | Implementação recomendada |
+| --- | --- |
+| Pilha | `ArrayDeque` com `push`, `pop` e `peek` |
+| Fila | `Queue` com `ArrayDeque`: `offer`, `poll` e `peek` |
+| Lista | `ArrayList` para acesso por índice; `LinkedList` para inserções nas pontas |
+| Conjunto | `HashSet` sem ordem; `TreeSet` ordenado |
+| Mapa | `HashMap` sem ordem; `TreeMap` ordenado pela chave |
+| Igualdade | objetos usados em `HashSet` e `HashMap` precisam de `equals` e `hashCode` |
+
+> ➡️ **Próximo passo:** na próxima aula você organiza o código em métodos reutilizáveis.
+
+## 🧠 Revisão rápida
+
+**Qual estrutura usar para processar pedidos na ordem em que chegaram?**
+
+Fila (FIFO): `enqueue` ao chegar e `dequeue` ao atender.
+
+**Por que inserir no meio de uma lista encadeada é barato, mas acessar o índice 500 é caro?**
+
+Para inserir basta trocar duas referências; para chegar ao índice 500 é preciso percorrer 500 nós, um por um.
 
 ## 📌 Resumo
 

@@ -2,7 +2,17 @@
 
 > 🗺️ **Nesta aula:** como o NoSQL surgiu e quando usar no lugar do SQL, os conceitos do MongoDB (bancos, coleções e documentos), modelagem, comandos de CRUD, índices e agregações.
 
+## De onde paramos
+
+Você já consulta tabelas relacionadas com SQL. Agora vai ver um banco que guarda documentos flexíveis, sem um esquema fixo.
+
 ## Introdução de NoSQL no mercado
+
+> 🗺️ **Nesta aula:** como o NoSQL surgiu, os quatro tipos de banco não relacional e as diferenças entre SQL e NoSQL em estrutura, esquema, consulta, escala e transações.
+
+### De onde paramos
+
+Você já sabe modelar tabelas e consultar com SQL. Agora vai ver por que surgiram bancos que não usam tabelas e quando eles são a melhor escolha.
 
 ### Como o NoSQL chegou ao mercado
 
@@ -14,6 +24,8 @@
 - Depois vieram (ou ganharam força) **Redis**, **Couchbase**, **Neo4j** e o **Amazon DynamoDB** (2012), entre outros.
 
 Hoje, bancos NoSQL estão em finanças, saúde, e-commerce, redes sociais, jogos e IoT — muitas vezes **ao lado** de um banco relacional, cada um resolvendo a parte do problema em que é melhor.
+
+> 💡 **Analogia:** o banco relacional é um arquivo de aço com gavetas e fichas padronizadas — ótimo para ordem e conferência. O NoSQL é um conjunto de caixas organizadoras de formatos variados: cabe de tudo e dá para empilhar mais caixas quando o volume cresce.
 
 #### Tipos de banco NoSQL
 
@@ -50,6 +62,8 @@ Hoje, bancos NoSQL estão em finanças, saúde, e-commerce, redes sociais, jogos
 - **Relacional:** transações **ACID** completas são o ponto forte.
 - **NoSQL:** muitos priorizam disponibilidade e desempenho, com **consistência eventual**. Vários já oferecem transações (o MongoDB tem transações multidocumento desde a versão 4.0).
 
+> 💡 **ACID** = **A**tomicidade (tudo ou nada), **C**onsistência (regras sempre respeitadas), **I**solamento (transações não se atrapalham) e **D**urabilidade (confirmado não se perde). **Consistência eventual** quer dizer que todas as cópias ficam iguais, mas não no mesmo instante.
+
 #### Quando usar cada um
 
 | Use relacional quando… | Use NoSQL quando… |
@@ -64,9 +78,43 @@ Hoje, bancos NoSQL estão em finanças, saúde, e-commerce, redes sociais, jogos
 > - "Bancos relacionais escalam verticalmente" e "NoSQL não suporta SQL" eram absolutos demais; acrescentei as nuances (réplicas/sharding, CQL) e uma seção sobre transações.
 > - O resumo final virou uma tabela de "quando usar cada um", e as duas imagens foram refeitas como diagramas.
 
+> ➡️ **Próximo passo:** **MongoDB**, o primeiro banco NoSQL do curso, do conceito à agregação.
+
+### 🧠 Revisão rápida
+
+**Quais são os quatro tipos principais de NoSQL?**
+
+Documento, chave-valor, colunar e grafo.
+
+**Qual a diferença entre escalar na vertical e na horizontal?**
+
+Vertical: uma máquina mais forte. Horizontal: mais máquinas dividindo os dados.
+
+**Para um sistema de transferências bancárias, relacional ou NoSQL?**
+
+Relacional, pela garantia de transações ACID.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| NoSQL | Bancos não relacionais, criados para escala e flexibilidade. |
+| Tipos | Documento, chave-valor, colunar e grafo. |
+| Esquema | Rígido no SQL, flexível no NoSQL. |
+| Escala | Vertical (SQL) × horizontal (NoSQL). |
+| Transações | ACID no relacional; muitas vezes consistência eventual no NoSQL. |
+
 ## MongoDB
 
+> 🗺️ **Nesta seção:** o MongoDB do básico ao avançado — conceitos, instalação com Docker, modelagem de documentos, comandos de CRUD, índices e agregações. Siga as páginas na ordem.
+
 ### Conceitos iniciais
+
+> 🗺️ **Nesta aula:** o que é o MongoDB, como ele organiza os dados (database, collection, documento), sua história e onde é usado.
+
+#### De onde paramos
+
+Você já sabe quando um banco sem tabelas faz sentido. Agora vai conhecer o MongoDB, um dos bancos de documentos mais conhecidos, e entender como ele organiza os dados.
 
 #### O que é o MongoDB?
 
@@ -76,6 +124,8 @@ Foi projetado para ser **flexível** (esquema dinâmico), **escalável** (shardi
 
 ![Um database contém collections, e cada collection contém documentos.](../img/mongo-hierarquia.svg)
 
+> 💡 **Analogia:** o database é um armário, cada collection é uma gaveta e cada documento é uma ficha. Diferente do arquivo de aço do SQL, aqui as fichas da mesma gaveta não precisam ter os mesmos campos — a do Rui tem "vip", a da Ana não.
+
 | MongoDB | Equivalente aproximado no relacional |
 | --- | --- |
 | database | banco de dados |
@@ -84,6 +134,8 @@ Foi projetado para ser **flexível** (esquema dinâmico), **escalável** (shardi
 | field | coluna |
 | `_id` | chave primária |
 | documento embutido / `$lookup` | JOIN |
+
+> 💡 Se você não informar o `_id`, o MongoDB gera um **ObjectId** automaticamente: um identificador de 12 bytes que inclui o momento da criação do documento.
 
 #### Como surgiu?
 
@@ -104,11 +156,45 @@ O nome vem de *humongous* ("gigantesco"), e o banco é escrito principalmente em
 > - Acrescentei o terceiro fundador (Kevin Ryan), o nome original da empresa (10gen) e a tabela de equivalências com o modelo relacional.
 > - "Código aberto": desde 2018 o MongoDB usa a licença **SSPL**, que tem o código disponível, mas não é considerada open source pela OSI. Removi a lista de empresas usuárias, que não tinha fonte.
 
+> ➡️ **Próximo passo:** **Como instalar**, para subir o MongoDB num container Docker.
+
+#### 🧠 Revisão rápida
+
+**Qual é a hierarquia de dados do MongoDB?**
+
+database → collection → documento.
+
+**Em que formato o MongoDB guarda os documentos internamente?**
+
+BSON, um JSON binário com tipos extras (datas, ObjectId, números de vários tamanhos).
+
+**Qual campo funciona como chave primária?**
+
+`_id`, gerado automaticamente como ObjectId se você não informar.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| MongoDB | Banco NoSQL de documentos parecidos com JSON. |
+| BSON | Formato binário dos documentos. |
+| Collection | Grupo de documentos, como uma tabela flexível. |
+| `_id` | Identificador único de cada documento. |
+| Atlas | MongoDB gerenciado na nuvem. |
+
 ### Como instalar
+
+> 🗺️ **Nesta aula:** como subir o MongoDB num container Docker com `docker compose`, conectar pelo `mongosh` e quais interfaces gráficas usar.
+
+#### De onde paramos
+
+Você já sabe que o MongoDB guarda documentos em collections. Agora vai subir o banco na sua máquina sem instalá-lo diretamente no sistema.
 
 #### Instalando o MongoDB com Docker
 
 Rodar o MongoDB num **container** evita instalar o banco direto no sistema: basta ter o Docker e subir a imagem oficial `mongo`.
+
+> 💡 **Analogia:** o container é uma marmita fechada com o MongoDB pronto dentro. A **porta** é a tampinha por onde você acessa a comida; o **volume** é um pote de fora onde o que importa é guardado — jogue a marmita fora e o pote continua cheio.
 
 **Documentação do Docker**
 
@@ -130,11 +216,13 @@ services:
     restart: always
     environment:
       - MONGO_INITDB_ROOT_USERNAME=dio
-      - MONGO_INITDB_ROOT_PASSWORD=troque-esta-senha
+      - MONGO_INITDB_ROOT_PASSWORD=troque-isto
+    # porta do computador : porta do container
     ports:
-      - "27017:27017"  # porta do computador : porta do container
+      - "27017:27017"
+    # pasta local : pasta onde o Mongo grava
     volumes:
-      - ./data:/data/db  # pasta local : pasta onde o Mongo grava
+      - ./data:/data/db
 ```
 
 ##### 2. Subir o container
@@ -154,10 +242,14 @@ docker ps
 O shell atual do MongoDB é o **mongosh**:
 
 ```bash
-mongosh --host 127.0.0.1 --port 27017 -u dio -p --authenticationDatabase admin
+mongosh --host 127.0.0.1 --port 27017 \
+  -u dio -p \
+  --authenticationDatabase admin
 ```
 
 Sem valor depois de `-p`, o mongosh pede a senha de forma oculta, sem deixá-la no histórico do terminal.
+
+> 💡 Para parar tudo: `docker compose down`. Os dados continuam na pasta `./data` e voltam na próxima vez que você subir o container.
 
 #### Interfaces gráficas
 
@@ -176,11 +268,45 @@ Sem valor depois de `-p`, o mongosh pede a senha de forma oculta, sem deixá-la 
 > - Os blocos estavam marcados como JavaScript; agora são YAML e Bash.
 > - O **Robo 3T foi descontinuado**; a recomendação atual é o MongoDB Compass ou o Studio 3T Free.
 
+> ➡️ **Próximo passo:** **Schema design e boas práticas**, para decidir como organizar os documentos.
+
+#### 🧠 Revisão rápida
+
+**Qual a porta padrão do MongoDB?**
+
+27017. No `docker-compose.yml`, ela é ligada à mesma porta do computador.
+
+**Para que serve o volume `./data:/data/db`?**
+
+Para guardar os dados numa pasta do seu computador: eles sobrevivem mesmo se o container for apagado.
+
+**Qual comando abre o shell do MongoDB nas versões atuais?**
+
+`mongosh` (o antigo `mongo` foi removido no 6.0).
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Docker | Roda o MongoDB isolado num container. |
+| `ports` | Liga a porta do computador à do container. |
+| `volumes` | Mantém os dados fora do container. |
+| `mongosh` | Shell oficial para conectar ao banco. |
+| Compass | Interface gráfica oficial. |
+
 ### Schema design e boas práticas
+
+> 🗺️ **Nesta aula:** como decidir entre embutir e referenciar dados, a estratégia para cada tipo de relacionamento, boas práticas gerais e a diferença entre JSON e BSON.
+
+#### De onde paramos
+
+Você já subiu o MongoDB e conectou pelo mongosh. Agora vai decidir como modelar os documentos: juntar os dados ou separá-los.
 
 No MongoDB, a principal decisão de modelagem é: **guardar os dados relacionados juntos (embedding) ou separados (referência)?** A resposta depende de **como a aplicação lê e grava** esses dados.
 
-![Comentários embutidos no post x autor referenciado em outra coleção.](../img/mongo-embed-ref.svg)
+![Comentários embutidos no post × autor referenciado em outra coleção.](../img/mongo-embed-ref.svg)
+
+> 💡 **Analogia:** embutir é colar a foto dentro do álbum — abriu, viu tudo. Referenciar é escrever no álbum "a foto está na caixa 7" — o álbum fica leve e a foto pode aparecer em vários álbuns, mas você precisa ir buscá-la.
 
 #### Embedding
 
@@ -227,6 +353,21 @@ Exemplo: os autores ficam numa coleção própria, e cada post guarda só o `aut
 2. **Evite cadeias longas de referências.** Muitas "junções" seguidas indicam que o modelo está relacional demais.
 3. **Use referência para dados compartilhados** entre muitos documentos ou que crescem sem limite.
 
+**Exemplo de `$lookup`**
+
+```jsx
+// junta cada post com o seu autor
+db.posts.aggregate([
+  { $lookup: {
+      from: "autores",
+      localField: "autor_id",
+      foreignField: "_id",
+      as: "autor"
+  } }
+])
+// o campo "autor" vem como um array
+```
+
 #### Escolhendo pelo tipo de relacionamento
 
 ![Estratégias de modelagem sugeridas para cada cardinalidade.](../img/mongo-relacoes.svg)
@@ -258,9 +399,45 @@ Exemplo: os autores ficam numa coleção própria, e cada post guarda só o `aut
 > - "Evite negações (força o escaneamento completo da query)" virou "pode forçar a leitura da **coleção** inteira", que é o efeito real.
 > - "Use nome campos e objetivos curtos" foi corrigido para "nomes de campos curtos", com o motivo.
 > - O texto dizia que o BSON permite "melhor compactação"; na prática ele nem sempre é menor que o JSON — a vantagem é a velocidade e os tipos extras.
-> - As três imagens de schema design foram substituídas por dois diagramas: embedding x referência e estratégia por tipo de relacionamento.
+> - As três imagens de schema design foram substituídas por dois diagramas: embedding × referência e estratégia por tipo de relacionamento.
+
+> ➡️ **Próximo passo:** **Alguns comandos para manipulação de documentos**, com inserir, consultar, atualizar e excluir.
+
+#### 🧠 Revisão rápida
+
+**Qual a regra prática para decidir entre embutir e referenciar?**
+
+Embuta o que é lido junto; referencie o que cresce sem limite ou é compartilhado.
+
+**Qual o tamanho máximo de um documento?**
+
+16 MB.
+
+**Como modelar servidor e milhões de logs?**
+
+Cada log guarda o id do servidor (referência no lado filho). Embutir estouraria o documento.
+
+**O BSON é sempre menor que o JSON?**
+
+Não. A vantagem dele é a velocidade de leitura e os tipos extras.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Embedding | Dados juntos: uma leitura, até 16 MB. |
+| Referência | Coleções separadas ligadas por `_id`. |
+| `$lookup` | Estágio de agregação que "junta" coleções. |
+| Arrays sem limite | Evite: vire referência. |
+| BSON | JSON binário com tipos extras. |
 
 ### Alguns comandos para manipulação de documentos com o MongoDB
+
+> 🗺️ **Nesta aula:** os comandos do `mongosh` para databases e collections e o CRUD completo — inserir, consultar, atualizar e excluir documentos.
+
+#### De onde paramos
+
+Você já decidiu como modelar os documentos. Agora vai operar sobre eles pelo mongosh: criar, consultar, alterar e excluir.
 
 #### Documentação oficial
 
@@ -274,13 +451,17 @@ Os comandos abaixo são executados no **mongosh** (o shell do MongoDB). Lembre d
 // listar os databases
 show dbs
 
-// selecionar (ou preparar) um database
+// selecionar (ou preparar) um database;
+// ele só é criado de fato quando a primeira
+// collection/documento é gravado
 use loja
-// o database só é criado de fato quando a primeira collection/documento é gravado
 
-// criar uma collection explicitamente, com opções (ex.: validação)
+// criar uma collection com opções
+// (ex.: validação)
 db.createCollection("clientes", {
-  validator: { $jsonSchema: { required: ["nome"] } }
+  validator: {
+    $jsonSchema: { required: ["nome"] }
+  }
 })
 
 // listar as collections do database atual
@@ -291,7 +472,8 @@ show collections
 
 ```jsx
 // um documento (retorna o _id gerado)
-db.clientes.insertOne({ nome: "Ana", idade: 30 })
+db.clientes.insertOne(
+  { nome: "Ana", idade: 30 })
 
 // vários documentos
 db.clientes.insertMany([
@@ -303,18 +485,33 @@ db.clientes.insertMany([
 #### Consultar
 
 ```jsx
-db.clientes.find({})  // todos
-db.clientes.find({ idade: { $gt: 28 } })  // idade > 28
-db.clientes.find({ vip: true }, { nome: 1, _id: 0 })  // só o campo nome
-db.clientes.findOne({ nome: "Ana" })  // o primeiro que bater
+// todos
+db.clientes.find({})
+// idade > 28
+db.clientes.find({ idade: { $gt: 28 } })
+// só o campo nome
+db.clientes.find({ vip: true },
+                 { nome: 1, _id: 0 })
+// o primeiro que bater
+db.clientes.findOne({ nome: "Ana" })
 ```
+
+| Operador | Significa | Equivalente SQL |
+| --- | --- | --- |
+| `$eq` / `$ne` | igual / diferente | `=` / `<>` |
+| `$gt` / `$gte` | maior / maior ou igual | `>` / `>=` |
+| `$lt` / `$lte` | menor / menor ou igual | `<` / `<=` |
+| `$in` | está na lista | `IN` |
+| `$and` / `$or` | combinar condições | `AND` / `OR` |
+
+> 💡 **Analogia:** o filtro do `find` é um "molde" do documento que você procura. `{ nome: "Ana" }` significa "me traga os documentos com essa forma".
 
 #### Atualizar
 
 ```jsx
-// alterar campos específicos de UM documento
+// alterar campos de UM documento
 db.clientes.updateOne(
-  { nome: "Ana" },  // filtro: quem atualizar
+  { nome: "Ana" },  // filtro: quem
   { $set: { idade: 31 } }  // o que mudar
 )
 
@@ -324,13 +521,15 @@ db.clientes.updateMany(
   { $set: { faixa: "40+" } }
 )
 
-// substituir o documento inteiro (mantém o _id)
+// substituir o documento inteiro
+// (mantém o _id)
 db.clientes.replaceOne(
   { _id: ObjectId("...") },
   { nome: "Ana Souza", idade: 31 }
 )
 
-// "upsert": atualiza se existir, cria se não existir
+// "upsert": atualiza se existir,
+// cria se não existir
 db.clientes.updateOne(
   { nome: "Caio" },
   { $set: { idade: 22 } },
@@ -338,11 +537,16 @@ db.clientes.updateOne(
 )
 ```
 
+> ⚠️ Sem o `$set`, `replaceOne` troca o documento inteiro: campos que você não repetiu **somem**. Para mudar só um campo, use `updateOne` com `$set`.
+
 #### Excluir
 
 ```jsx
-db.clientes.deleteOne({ nome: "Rui" })  // o primeiro que bater
-db.clientes.deleteMany({ idade: { $lt: 18 } })  // todos que baterem
+// o primeiro que bater
+db.clientes.deleteOne({ nome: "Rui" })
+// todos que baterem
+db.clientes.deleteMany(
+  { idade: { $lt: 18 } })
 ```
 
 > 🛠️ **Ajustes:**
@@ -353,13 +557,47 @@ db.clientes.deleteMany({ idade: { $lt: 18 } })  // todos que baterem
 > - `use nome_do_database` não cria o banco na hora: ele só passa a existir quando algo é gravado nele.
 > - Corrigidos "jason" (era JSON) e os blocos marcados como Bash, que agora estão como JavaScript. Acrescentei `insertMany`, filtros com operadores e `findOne`.
 
+> ➡️ **Próximo passo:** **Performance, índices e agregações**, para tornar essas consultas mais rápidas.
+
+#### 🧠 Revisão rápida
+
+**Qual comando atualiza só um campo do primeiro documento encontrado?**
+
+`updateOne(filtro, { $set: { campo: valor } })`.
+
+**O que faz a opção `upsert: true`?**
+
+Atualiza se o documento existir; se não existir, cria um novo.
+
+**Como buscar clientes com idade maior que 28?**
+
+`db.clientes.find({ idade: { $gt: 28 } })`.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `use` / `show` | Seleciona database / lista bancos e coleções. |
+| `insertOne` / `insertMany` | Insere documentos. |
+| `find` / `findOne` | Consulta por filtro. |
+| `updateOne` / `updateMany` | Altera campos com `$set`. |
+| `deleteOne` / `deleteMany` | Remove documentos. |
+
 ### Performance, índices e agregações
+
+> 🗺️ **Nesta aula:** como os índices aceleram as consultas, os tipos de índice, como medir o desempenho e como montar agregações em pipeline.
+
+#### De onde paramos
+
+Você já sabe consultar, alterar e excluir documentos no mongosh. Agora vai acelerar essas consultas com índices e calcular resultados com agregações.
 
 #### Por que usar índices
 
 Sem índice, o MongoDB precisa ler **todos os documentos** da coleção para encontrar os que batem com o filtro (*COLLSCAN*). Com um índice — uma estrutura ordenada sobre um ou mais campos —, ele vai direto aos documentos certos (*IXSCAN*).
 
 ![Sem índice, todos os documentos são lidos; com índice, a busca vai direto ao documento.](../img/mongo-indice.svg)
+
+> 💡 **Analogia:** é o índice remissivo no fim de um livro. Sem ele, para achar "transação" você folheia página por página; com ele, vai direto à página 142.
 
 ##### Tipos de índice
 
@@ -373,13 +611,18 @@ Sem índice, o MongoDB precisa ler **todos os documentos** da coleção para enc
 | TTL | `{ criadoEm: 1 }, { expireAfterSeconds: 3600 }` | Apaga documentos automaticamente depois de um tempo. |
 
 ```jsx
-db.clientes.createIndex({ email: 1 }, { unique: true })
-db.pedidos.createIndex({ cliente: 1, data: -1 })
+db.clientes.createIndex(
+  { email: 1 }, { unique: true })
+db.pedidos.createIndex(
+  { cliente: 1, data: -1 })
 db.clientes.getIndexes()
 
 // a consulta usou índice?
-db.clientes.find({ email: "davi@email.com" }).explain("executionStats")
-// procure "IXSCAN" (usou índice) ou "COLLSCAN" (leu tudo)
+db.clientes
+  .find({ email: "davi@exemplo.com" })
+  .explain("executionStats")
+// procure "IXSCAN" (usou índice)
+// ou "COLLSCAN" (leu tudo)
 ```
 
 > ⚖️ Índices **aceleram leituras**, mas ocupam memória e deixam as **escritas** mais lentas (cada insert/update também atualiza o índice). Crie índices para as consultas que a aplicação realmente faz.
@@ -428,26 +671,34 @@ db.collection.aggregate([
 ])
 
 // para uma contagem simples também existe:
-db.collection.countDocuments({ status: "active" })
+db.collection.countDocuments(
+  { status: "active" })
 ```
 
 ##### Valores distintos
 
 ```jsx
-// forma direta: devolve um array com os valores únicos
-db.collection.distinct("field_name", { status: "active" })
+// forma direta: array com os valores únicos
+db.collection.distinct("field_name",
+  { status: "active" })
 
-// com agregação: agrupar pelo campo já gera um resultado por valor distinto
+// com agregação: agrupar pelo campo já
+// gera um resultado por valor distinto
 db.collection.aggregate([
   { $match: { status: "active" } },
   { $group: { _id: "$field_name" } },
-  { $project: { _id: 0, field_name: "$_id" } }
+  { $project:
+      { _id: 0, field_name: "$_id" } }
 ])
 
-// ou todos os valores únicos num só documento
+// ou todos os valores num só documento
 db.collection.aggregate([
   { $match: { status: "active" } },
-  { $group: { _id: null, uniqueValues: { $addToSet: "$field_name" } } }
+  { $group: {
+      _id: null,
+      uniqueValues:
+        { $addToSet: "$field_name" }
+  } }
 ])
 ```
 
@@ -456,6 +707,48 @@ db.collection.aggregate([
 > - No exemplo de *distinct*, o `$group` agrupava por `field_name` e ainda fazia `$addToSet` do mesmo campo, o que gerava um array com **um único valor** em cada grupo. Separei em duas formas corretas: um documento por valor distinto, ou todos os valores num único documento (`_id: null`). Também acrescentei o método `distinct()`.
 > - A seção de índices foi completada com os tipos, a criação (`createIndex`), a verificação com `explain()` e o custo dos índices nas escritas.
 > - O título da página tinha uma marcação HTML perdida e o erro "agregaões"; foi corrigido.
+
+> ➡️ **Próximo passo:** **Introdução ao DynamoDB**, outro banco NoSQL, agora um serviço gerenciado da AWS.
+
+#### 🧠 Revisão rápida
+
+**O que significam COLLSCAN e IXSCAN no `explain()`?**
+
+COLLSCAN: leu a coleção inteira. IXSCAN: usou um índice.
+
+**Qual o custo de criar muitos índices?**
+
+Mais memória usada e escritas mais lentas, porque cada índice também é atualizado.
+
+**Por que colocar o `$match` no começo do pipeline?**
+
+Para reduzir cedo o número de documentos e aproveitar os índices.
+
+**Qual estágio faz o papel de um JOIN?**
+
+`$lookup`.
+
+#### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Índice | Estrutura ordenada que evita ler a coleção toda. |
+| `explain()` | Mostra se a consulta usou índice. |
+| Pipeline | Estágios em sequência, cada um sobre o resultado do anterior. |
+| `$match` / `$group` | Filtra / agrupa e calcula. |
+| `$lookup` / `$unwind` | Junta coleções / desmonta arrays. |
+
+> ➡️ **Próximo passo:** **Boas práticas com Amazon DynamoDB**, outro banco NoSQL com outra lógica de modelagem.
+
+## 🧠 Revisão rápida
+
+**Qual a diferença entre coleção e documento no MongoDB?**
+
+A coleção agrupa documentos; o documento é um registro no formato JSON (BSON por dentro).
+
+**Quando embutir dados em vez de referenciar?**
+
+Quando eles são lidos juntos e não crescem sem limite.
 
 ## 📌 Resumo
 

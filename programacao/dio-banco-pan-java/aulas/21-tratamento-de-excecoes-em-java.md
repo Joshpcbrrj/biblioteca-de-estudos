@@ -1,6 +1,14 @@
 # Tratamento de exceções em Java
 
-> 💡 **Nesta aula:** uma **exceção** é um evento inesperado que interrompe o fluxo normal do programa: dividir por zero, abrir um arquivo que não existe, converter "abc" em número… Tratar exceções é decidir **o que o programa faz quando algo dá errado**, em vez de simplesmente quebrar.
+> 🗺️ **Nesta aula:** o que é uma exceção, a hierarquia `Error` / checked / unchecked, os blocos `try/catch/finally`, try-with-resources, `throw` × `throws` e como criar exceções próprias.
+
+> 💡 Uma **exceção** é um evento inesperado que interrompe o fluxo normal do programa: dividir por zero, abrir um arquivo que não existe, converter "abc" em número… Tratar exceções é decidir **o que o programa faz quando algo dá errado**, em vez de simplesmente quebrar.
+
+> 💡 **Analogia:** o `try` é o trapezista; o `catch` é a rede de proteção embaixo; o `finally` é a equipe que guarda o equipamento no fim do número, tenha ele dado certo ou não.
+
+## De onde paramos
+
+Até aqui os programas funcionam só no caminho feliz. Agora você vai decidir o que acontece quando algo sai do esperado.
 
 ## Palavras reservadas
 
@@ -38,6 +46,8 @@ Todas as exceções descendem de `Throwable`, que se divide em dois ramos: `Erro
 - Representam situações externas que fogem do controle do programa: arquivo inexistente, rede fora do ar, banco indisponível.
 - Exemplos: `IOException`, `FileNotFoundException`, `SQLException`.
 
+> 💡 **Regra de bolso:** se o problema é **culpa do programador** (índice errado, `null`), é unchecked — conserte o código. Se é **culpa do mundo lá fora** (arquivo, rede), é checked — o compilador obriga você a ter um plano B.
+
 ### ✨ Exceções personalizadas
 
 - Você pode criar suas próprias exceções para representar problemas do **seu domínio** (ex.: `SaldoInsuficienteException`).
@@ -67,16 +77,21 @@ Todas as exceções descendem de `Throwable`, que se divide em dois ramos: `Erro
 - Só deixa de rodar se a JVM for encerrada antes (ex.: `System.exit(0)`).
 - Pode conter outros blocos `try/catch/finally`.
 
+> ⚠️ Nunca deixe um `catch` vazio (`catch (Exception e) {}`). O erro some sem deixar rastro e fica muito difícil descobrir por que o programa se comporta errado. No mínimo, registre a mensagem.
+
 ### try-with-resources (Java 7+)
 
 Para recursos que precisam ser fechados (arquivos, conexões, `Scanner`), prefira declará-los no próprio `try`. Eles são fechados automaticamente, mesmo se houver exceção — dispensa o `finally` só para chamar `close()`.
 
 ```java
-try (BufferedReader br = new BufferedReader(new FileReader("dados.txt"))) {
+try (BufferedReader br = new BufferedReader(
+    new FileReader("dados.txt"))) {
   System.out.println(br.readLine());
 } catch (IOException e) {
-  System.out.println("Não foi possível ler o arquivo: " + e.getMessage());
-} // br.close() é chamado automaticamente
+  System.out.println("Falha ao ler: "
+    + e.getMessage());
+}
+// br.close() é chamado automaticamente
 ```
 
 ## throw x throws
@@ -101,31 +116,39 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     try {
-      System.out.println("Digite um número inteiro:");
-      int numero = Integer.parseInt(scanner.nextLine()); // NumberFormatException
+      System.out.println("Número inteiro:");
+      // NumberFormatException
+      int numero =
+        Integer.parseInt(sc.nextLine());
 
-      System.out.println("Digite o divisor:");
-      int divisor = Integer.parseInt(scanner.nextLine());
-      int resultado = numero / divisor;  // ArithmeticException se divisor = 0
-      System.out.println("Resultado: " + resultado);
+      System.out.println("Divisor:");
+      int divisor =
+        Integer.parseInt(sc.nextLine());
+      // ArithmeticException se divisor = 0
+      int resultado = numero / divisor;
+      System.out.println("= " + resultado);
 
-      int[] numeros = new int[5];
-      numeros[resultado] = 2;  // ArrayIndexOutOfBoundsException se resultado < 0 ou > 4
-      System.out.println("Gravado na posição " + resultado);
+      int[] nums = new int[5];
+      // ArrayIndexOutOfBoundsException
+      // se resultado < 0 ou > 4
+      nums[resultado] = 2;
+      System.out.println("Posição "
+        + resultado);
 
     } catch (NumberFormatException e) {
-      System.out.println("Erro: digite um número inteiro válido.");
+      System.out.println("Digite um inteiro.");
     } catch (ArithmeticException e) {
-      System.out.println("Erro: divisão por zero.");
+      System.out.println("Divisão por zero.");
     } catch (ArrayIndexOutOfBoundsException e) {
-      System.out.println("Erro: índice inválido do array.");
+      System.out.println("Índice inválido.");
     } catch (Exception e) {
-      // sempre por último: captura qualquer outra exceção
-      System.out.println("Erro inesperado: " + e.getMessage());
+      // sempre por último: pega o resto
+      System.out.println("Erro inesperado: "
+        + e.getMessage());
     } finally {
-      scanner.close();
+      sc.close();
       System.out.println("Fim do programa.");
     }
   }
@@ -143,46 +166,52 @@ public class Main {
 **Código — unchecked exception**
 
 ```java
-package tratamento_de_erros.unchecked_exceptions;
+package tratamentoerros.uncheckedexceptions;
 
 import javax.swing.*;
 
 public class Main {
 
   public static void main(String[] args) {
-    boolean continuarLoop = true;
+    boolean continuar = true;
 
     do {
-      String a = JOptionPane.showInputDialog("Numerador: ");
-      String b = JOptionPane.showInputDialog("Denominador: ");
+      String a = JOptionPane
+        .showInputDialog("Numerador: ");
+      String b = JOptionPane
+        .showInputDialog("Denominador: ");
 
       try {
-        int resultado = dividir(Integer.parseInt(a), Integer.parseInt(b));
-        System.out.println("O resultado é: " + resultado);
-        continuarLoop = false;
+        int r = dividir(Integer.parseInt(a),
+                Integer.parseInt(b));
+        System.out.println("Resultado: " + r);
+        continuar = false;
       }
-      // usuário digitou algo que não é número inteiro
+      // digitou algo que não é inteiro
       catch (NumberFormatException e) {
-        e.printStackTrace(); // pilha de chamadas no console
+        // pilha de chamadas no console
+        e.printStackTrace();
         JOptionPane.showMessageDialog(null,
-            "Erro! Aceitamos apenas números inteiros. " + e.getMessage());
+          "Só números inteiros. "
+          + e.getMessage());
       }
       // denominador igual a zero
       catch (ArithmeticException e) {
         e.printStackTrace();
         JOptionPane.showMessageDialog(null,
-            "Erro! O denominador não pode ser zero. " + e.getMessage());
+          "Denominador não pode ser 0. "
+          + e.getMessage());
       }
       finally {
-        System.out.println("Chegou no finally!");
+        System.out.println("Passou no finally");
       }
-    } while (continuarLoop);
+    } while (continuar);
 
     System.out.println("O código continua...");
   }
 
-  public static int dividir(int numerador, int denominador) {
-    return numerador / denominador;
+  public static int dividir(int num, int den) {
+    return num / den;
   }
 }
 ```
@@ -190,40 +219,46 @@ public class Main {
 **Código — checked exception**
 
 ```java
-package checked_exception;
+package tratamentoerros.checkedexception;
 
 import javax.swing.*;
 import java.io.*;
 
 public class Main {
   public static void main(String[] args) {
-    String nomeArquivo = "romances-Blake-Crouch.txt";
+    String arquivo = "romances.txt";
     try {
-      imprimirArquivoNoConsole(nomeArquivo);
+      imprimirArquivo(arquivo);
     }
-    // arquivo não encontrado (subtipo de IOException: precisa vir antes)
+    // subtipo de IOException: vem antes
     catch (FileNotFoundException e) {
       e.printStackTrace();
       JOptionPane.showMessageDialog(null,
-          "Erro! O arquivo que deseja imprimir não foi encontrado: " + e.getMessage());
+        "Arquivo não encontrado: "
+        + e.getMessage());
     }
-    // qualquer outro problema de leitura/escrita
+    // outro problema de leitura/escrita
     catch (IOException e) {
       e.printStackTrace();
       JOptionPane.showMessageDialog(null,
-          "Ocorreu um erro inesperado. Procure o suporte. " + e.getMessage());
+        "Erro inesperado. Fale com o "
+        + "suporte. " + e.getMessage());
     }
     finally {
-      System.out.println("Chegou no bloco finally!");
+      System.out.println("Passou no finally");
     }
 
-    System.out.println("Com ou sem exceção, o programa continua...");
+    System.out.println("O programa continua...");
   }
 
-  // "throws" repassa as exceções para quem chamar o método
-  public static void imprimirArquivoNoConsole(String nomeArquivo) throws IOException {
-    try (BufferedReader br = new BufferedReader(new FileReader(nomeArquivo))) {
-      BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+  // "throws" repassa as exceções
+  // para quem chamar o método
+  public static void imprimirArquivo(
+      String nome) throws IOException {
+    try (BufferedReader br = new BufferedReader(
+        new FileReader(nome))) {
+      BufferedWriter bw = new BufferedWriter(
+        new OutputStreamWriter(System.out));
       String linha;
       while ((linha = br.readLine()) != null) {
         bw.write(linha);
@@ -240,22 +275,25 @@ public class Main {
 **1º estudo — arquivo não encontrado**
 
 ```java
-package custom_exception;
+package tratamentoerros.customexception;
 
 import javax.swing.*;
 import java.io.*;
 
 public class Main {
   public static void main(String[] args) {
-    String nomeArquivo = JOptionPane.showInputDialog("Nome do arquivo a ser exibido: ");
+    String nome = JOptionPane
+      .showInputDialog("Nome do arquivo: ");
 
-    imprimirArquivoNoConsole(nomeArquivo);
-    System.out.println("\nCom ou sem exceção, o programa continua...");
+    imprimirArquivo(nome);
+    System.out.println("\nO programa continua...");
   }
 
-  public static void imprimirArquivoNoConsole(String nomeArquivo) {
-    try (BufferedReader br = lerArquivo(nomeArquivo)) {
-      BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+  public static void imprimirArquivo(
+      String nome) {
+    try (BufferedReader br = lerArquivo(nome)) {
+      BufferedWriter bw = new BufferedWriter(
+        new OutputStreamWriter(System.out));
       String linha;
       while ((linha = br.readLine()) != null) {
         bw.write(linha);
@@ -263,96 +301,128 @@ public class Main {
       }
       bw.flush();
     }
-    // exceção criada por nós, com mensagem amigável
-    catch (ImpossivelAberturaDeArquivoException e) {
-      JOptionPane.showMessageDialog(null, e.getMessage());
+    // nossa exceção, com mensagem amigável
+    catch (ArquivoIndisponivelException e) {
+      JOptionPane.showMessageDialog(
+        null, e.getMessage());
     } catch (IOException e) {
       JOptionPane.showMessageDialog(null,
-          "Ocorreu um erro inesperado. Fale com o suporte. " + e.getMessage());
+        "Erro inesperado. Fale com o "
+        + "suporte. " + e.getMessage());
       e.printStackTrace();
     }
   }
 
-  public static BufferedReader lerArquivo(String nomeArquivo) throws ImpossivelAberturaDeArquivoException {
-    File file = new File(nomeArquivo);
+  public static BufferedReader lerArquivo(
+      String nome)
+      throws ArquivoIndisponivelException {
+    File file = new File(nome);
     try {
-      return new BufferedReader(new FileReader(file));
+      return new BufferedReader(
+        new FileReader(file));
     } catch (FileNotFoundException e) {
-      // "traduz" a exceção técnica para uma do nosso domínio, preservando a causa
-      throw new ImpossivelAberturaDeArquivoException(file.getName(), file.getAbsolutePath(), e);
+      // "traduz" a exceção técnica para uma
+      // do nosso domínio, guardando a causa
+      throw new ArquivoIndisponivelException(
+        file.getName(),
+        file.getAbsolutePath(), e);
     }
   }
 }
 
-class ImpossivelAberturaDeArquivoException extends Exception {
+class ArquivoIndisponivelException
+    extends Exception {
   private final String nomeArquivo;
   private final String diretorio;
 
-  public ImpossivelAberturaDeArquivoException(String nomeArquivo, String diretorio, Throwable causa) {
-    super("O arquivo " + nomeArquivo + " não foi encontrado em " + diretorio, causa);
+  public ArquivoIndisponivelException(
+      String nomeArquivo, String diretorio,
+      Throwable causa) {
+    super("O arquivo " + nomeArquivo
+      + " não foi encontrado em "
+      + diretorio, causa);
     this.nomeArquivo = nomeArquivo;
     this.diretorio = diretorio;
   }
 
-  public String getNomeArquivo() { return nomeArquivo; }
-  public String getDiretorio() { return diretorio; }
+  public String getNomeArquivo() {
+    return nomeArquivo;
+  }
+  public String getDiretorio() {
+    return diretorio;
+  }
 }
 ```
 
 **2º estudo — divisão não exata**
 
 ```java
-package custom_exception;
+package tratamentoerros.customexception;
 
 import javax.swing.*;
 
 public class Main {
   public static void main(String[] args) {
-    int[] numeradores   = {4, 5, 8, 10, 9};
-    int[] denominadores = {2, 4, 0, 2, 8};
+    int[] nums = {4, 5, 8, 10, 9};
+    int[] dens = {2, 4, 0, 2, 8};
 
-    for (int i = 0; i < numeradores.length; i++) {
+    for (int i = 0; i < nums.length; i++) {
       try {
-        int resultado = dividirExato(numeradores[i], denominadores[i]);
-        System.out.println(numeradores[i] + " / " + denominadores[i] + " = " + resultado);
+        int r = dividirExato(nums[i], dens[i]);
+        System.out.println(nums[i] + " / "
+          + dens[i] + " = " + r);
       } catch (DivisaoNaoExataException e) {
-        JOptionPane.showMessageDialog(null, e.getMessage());
+        JOptionPane.showMessageDialog(
+          null, e.getMessage());
       } catch (ArithmeticException e) {
-        JOptionPane.showMessageDialog(null, "Não é possível dividir por zero.");
+        JOptionPane.showMessageDialog(
+          null, "Não divida por zero.");
       }
     }
     System.out.println("O programa continua...");
   }
 
-  public static int dividirExato(int numerador, int denominador) throws DivisaoNaoExataException {
-    if (numerador % denominador != 0) { // lança ArithmeticException se denominador = 0
-      throw new DivisaoNaoExataException("Divisão não exata!", numerador, denominador);
+  public static int dividirExato(int num,
+      int den)
+      throws DivisaoNaoExataException {
+    // se den = 0, o % já lança
+    // ArithmeticException
+    if (num % den != 0) {
+      throw new DivisaoNaoExataException(
+        "Divisão não exata!", num, den);
     }
-    return numerador / denominador;
+    return num / den;
   }
 }
 
-class DivisaoNaoExataException extends Exception {
+class DivisaoNaoExataException
+    extends Exception {
   private final int numerador;
   private final int denominador;
 
-  public DivisaoNaoExataException(String mensagem, int numerador, int denominador) {
-    super(mensagem + " " + numerador + " / " + denominador + " deixa resto.");
-    this.numerador = numerador;
-    this.denominador = denominador;
+  public DivisaoNaoExataException(
+      String msg, int num, int den) {
+    super(msg + " " + num + " / " + den
+      + " deixa resto.");
+    this.numerador = num;
+    this.denominador = den;
   }
 
-  public int getNumerador() { return numerador; }
-  public int getDenominador() { return denominador; }
+  public int getNumerador() {
+    return numerador;
+  }
+  public int getDenominador() {
+    return denominador;
+  }
 }
 ```
 
 > 🛠️ **Ajustes nos estudos de caso:**
 >
 > - **Leitura de arquivo (checked e 1º estudo):** o `do/while` escrevia a primeira linha antes de testar se ela era `null` — com arquivo vazio, `bw.write(null)` gerava `NullPointerException`. Troquei por `while ((linha = br.readLine()) != null)`. O `BufferedReader` não era fechado quando ocorria erro; agora usa **try-with-resources**. `new FileReader(file.getName())` descartava o caminho do arquivo; agora usa o próprio `File`.
-> - **Exceção personalizada:** passou a guardar a **causa** original (`FileNotFoundException`) e a mostrar o caminho absoluto.
+> - **Exceção personalizada:** passou a guardar a **causa** original (`FileNotFoundException`) e a mostrar o caminho absoluto. O nome `ImpossivelAberturaDeArquivoException` foi encurtado para `ArquivoIndisponivelException`.
 > - **2º estudo:** a classe `DivisaoNaoExataExecption` (com erro de digitação) não existia no código; criei `DivisaoNaoExataException`. A regra testava se o *numerador* era ímpar, e não se a divisão era exata (`numerador % denominador`). Os arrays tinham tamanhos diferentes (4 e 5), o que gerava `ArrayIndexOutOfBoundsException`, e o denominador 0 não era tratado — agora há um `catch (ArithmeticException)`.
-> - Nomes de métodos e pacotes ajustados para a convenção Java (`dividir`, `imprimirArquivoNoConsole`, pacotes em minúsculas) e mensagens corrigidas ("deseja", "pilha").
+> - Nomes de métodos e pacotes ajustados para a convenção Java (`dividir`, `imprimirArquivo`, pacotes em minúsculas) e mensagens corrigidas.
 
 ## 🔗 Referências
 
@@ -364,14 +434,38 @@ class DivisaoNaoExataException extends Exception {
 - [Oracle Docs — Exception](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html)
 - [Oracle Docs — RuntimeException](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html)
 
+> ➡️ **Próximo passo:** na próxima aula você conhece o Maven, a ferramenta que organiza o build e as dependências de um projeto Java.
+
+## 🧠 Revisão rápida
+
+**`NullPointerException` é checked ou unchecked?**
+
+Unchecked: herda de `RuntimeException`. O compilador não obriga a tratar.
+
+**Por que `catch (Exception e)` não pode vir antes de `catch (IOException e)`?**
+
+Porque `Exception` captura tudo, tornando o `catch` seguinte inalcançável — o código não compila.
+
+**O `finally` roda se o `try` tiver um `return`?**
+
+Sim. Só não roda se a JVM for encerrada antes (ex.: `System.exit`).
+
+**Qual a diferença entre `throw` e `throws`?**
+
+`throw` lança uma exceção agora; `throws` avisa, na assinatura, que o método pode lançá-la.
+
+**Para criar uma exceção própria que o compilador obrigue a tratar, estendo qual classe?**
+
+`Exception`. Estendendo `RuntimeException`, ela seria unchecked.
+
 ## 📌 Resumo
 
 | Item | Em uma frase |
 | --- | --- |
-| `Error` | falha grave da JVM (ex.: `OutOfMemoryError`); não se trata |
-| Unchecked | `RuntimeException` e filhas; erro de programação, o compilador não obriga tratar |
-| Checked | o compilador obriga tratar (`try/catch`) ou declarar (`throws`) |
-| `try / catch / finally` | tenta, trata o erro e executa a limpeza em qualquer caso |
-| try-with-resources | fecha sozinho os recursos abertos no `try (...)` |
-| `throw` × `throws` | lança uma exceção / avisa que o método pode lançá-la |
-| Exceção própria | classe que estende `Exception` ou `RuntimeException` com um nome do domínio |
+| `Error` | Falha grave da JVM (ex.: `OutOfMemoryError`); não se trata. |
+| Unchecked | `RuntimeException` e filhas; erro de programação, o compilador não obriga tratar. |
+| Checked | O compilador obriga tratar (`try/catch`) ou declarar (`throws`). |
+| `try / catch / finally` | Tenta, trata o erro e executa a limpeza em qualquer caso. |
+| try-with-resources | Fecha sozinho os recursos abertos no `try (...)`. |
+| `throw` × `throws` | Lança uma exceção / avisa que o método pode lançá-la. |
+| Exceção própria | Classe que estende `Exception` ou `RuntimeException` com um nome do domínio. |

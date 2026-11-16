@@ -12,6 +12,12 @@ spring.jpa.hibernate.ddl-auto=update
 
 > 🔐 Nunca deixe usuário e senha do banco fixos no código ou no repositório: use variáveis de ambiente (como acima) ou um serviço como o AWS Secrets Manager. Libere a porta do banco no *security group* só para os IPs ou serviços que precisam acessá-lo.
 
+> 💡 **Analogia:** o RDS é morar em um condomínio com zelador. Você escolhe o apartamento (o motor e o tamanho), e a administração cuida da manutenção, do backup e da segurança do prédio. A chave do seu apartamento (usuário e senha) continua sendo sua responsabilidade.
+
+## De onde paramos
+
+Você já cria repositórios JPA e conectou a API a um banco local. Agora vai trocar esse banco por um banco gerenciado na nuvem.
+
 ## Do banco local para o RDS em 4 passos
 
 1. **Criar a instância** no console da AWS (RDS → Criar banco de dados): escolha o motor, o tamanho da máquina, o usuário administrador e a senha.
@@ -69,6 +75,22 @@ java -jar api.jar --spring.profiles.active=prod
 | `none` | não mexe no banco |
 
 > ⚠️ Em produção, prefira `validate` ou `none` e crie as tabelas com uma ferramenta de migração como o **Flyway** ou o **Liquibase**. O `update` não remove colunas antigas e pode alterar tabelas de um jeito inesperado num banco com dados reais.
+
+> ➡️ **Próximo passo:** **Projeto: Conhecendo o Spring Data JPA na prática com Java**, para aplicar tudo em uma API completa.
+
+## 🧠 Revisão rápida
+
+**O que é o endpoint de uma instância RDS e onde ele entra?**
+
+É o endereço da instância; entra na URL JDBC do `application.properties`.
+
+**Por que o security group precisa liberar a porta do banco?**
+
+Porque ele funciona como firewall: sem liberar a porta para o seu IP ou para a API, a conexão é bloqueada.
+
+**Qual valor de `ddl-auto` evita alterar tabelas de produção?**
+
+`validate` ou `none`.
 
 ## 📌 Resumo
 

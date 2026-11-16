@@ -1,10 +1,10 @@
 # Sobre o curso
 
-> **🗺️ Sobre o curso:** bootcamp da DIO com o Banco Pan para formar desenvolvedores back-end Java. O caminho vai das práticas de equipe (Git e métodos ágeis) à linguagem Java, orientação a objetos, testes, bancos de dados SQL e NoSQL e, por fim, APIs REST com Spring Boot, segurança e acesso a dados com JPA. Os desafios de código entre as seções treinam a lógica com problemas curtos.
+> **🗺️ Sobre o curso:** bootcamp da DIO, financiado pelo Banco Pan, para formar desenvolvedores back-end Java. O caminho vai das práticas de equipe (Git e métodos ágeis) à linguagem Java, orientação a objetos, testes, bancos de dados SQL e NoSQL e, por fim, APIs REST com Spring Boot, segurança e acesso a dados com JPA. Os desafios de código entre as seções treinam a lógica com problemas curtos.
 
 > **Como estudar:** siga as seções na ordem. Cada aula começa com o quadro "Nesta aula" e termina com um **📌 Resumo**; para revisar, leia só os resumos. Nos desafios, tente resolver antes de abrir a resolução (**Ver resposta**).
 
-> **🔖 Legenda dos quadros:** 🗺️ visão geral da aula · 💡 dica · ⚠️ cuidado · 🛠️ correção ou ajuste no material original · 📌 resumo para revisão.
+> **🔖 Legenda dos quadros:** 🗺️ visão geral da aula · *(Adicionado pelo aluno para melhorar o estudo)* no título: aula criada para cobrir um tópico que faltava · 💡 dica · ⚠️ cuidado · 🛠️ correção ou ajuste no material original · 📌 resumo para revisão · 🧭 cheat sheet no fim de cada seção.
 
 ## Seções
 
@@ -18,6 +18,22 @@
 | 6. Produtividade com Spring | HTTP, Spring Boot, APIs REST, validação, segurança, JPA, nuvem e padrões de projeto |
 | 7. Desafios intermediários | Problemas com decisões encadeadas, faixas de valores e manipulação de texto |
 
+## Cheat sheets por seção
+
+![Cheat sheet da seção 1 (Princípios de desenvolvimento).](../img/dio-cheat-principios.svg)
+
+![Cheat sheet da seção 2 (Linguagem Java).](../img/dio-cheat-java.svg)
+
+![Cheat sheet da seção 3 (Desafios básicos).](../img/dio-cheat-desafios-basicos.svg)
+
+![Cheat sheet da seção 4 (Orientação a objetos).](../img/dio-cheat-poo.svg)
+
+![Cheat sheet da seção 5 (Bancos de dados).](../img/dio-cheat-bancos.svg)
+
+![Cheat sheet da seção 6 (Spring e APIs).](../img/dio-cheat-spring.svg)
+
+![Cheat sheet da seção 7 (Desafios intermediários).](../img/dio-cheat-desafios-intermediarios.svg)
+
 ## 📌 Resumo do curso
 
 | Seção | Ideia central | Ferramentas-chave |
@@ -29,5 +45,3 @@
 | 5. Bancos de dados | guardar e consultar dados | SQL, `JOIN`, `GROUP BY`, MongoDB, DynamoDB |
 | 6. Spring | APIs REST seguras e conectadas ao banco | Spring Boot, `@RestController`, Spring Security, JWT, Spring Data JPA |
 | 7. Desafios intermediários | combinar decisões, laços e texto | `Map`, `String`, `Locale` |
-
-> Os slides, PDFs e projetos compactados do curso original ficam só nas anotações pessoais; aqui estão os resumos, os códigos e os diagramas.

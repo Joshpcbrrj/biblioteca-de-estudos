@@ -2,9 +2,15 @@
 
 > 🗺️ **Nesta aula:** por que `double` erra contas de dinheiro, como usar `BigDecimal` (criação, arredondamento, divisão e comparação) e a API `java.time` para datas e horas.
 
+## De onde paramos
+
+Você já manipula textos. Agora vai tratar valores que representam dinheiro e datas, onde pequenos erros têm consequências reais.
+
 ## Por que não usar `double` para dinheiro
 
 ![Dinheiro: double × BigDecimal](../img/dio-bigdecimal.svg)
+
+> 💡 **Analogia:** o `double` é como uma régua de marcas binárias: alguns valores, como 0,1, ficam sempre entre duas marcas, sem encaixe exato. O `BigDecimal` é uma régua em base decimal, a mesma que usamos no troco.
 
 `double` guarda números em **binário**, e valores como 0,1 não têm representação exata:
 
@@ -58,6 +64,8 @@ No banco de dados, use `DECIMAL(15,2)` ou `NUMERIC`. Em JPA: `@Column(precision 
 
 ![As classes do java.time](../img/dio-java-time.svg)
 
+> 💡 **Analogia:** o `java.time` é um calendário organizado em gavetas: uma gaveta só para a data (`LocalDate`), outra só para a hora (`LocalTime`) e outra para o fuso (`ZonedDateTime`). Cada gaveta responde só ao que precisa.
+
 Esqueça `Date` e `Calendar`, que são mutáveis, confusos e têm meses começando em 0. Use `java.time`:
 
 | Classe | Representa | Exemplo |
@@ -97,6 +105,18 @@ Cuidado com o padrão: `MM` é mês e `mm` é minuto; `yyyy` é ano e `YYYY` é 
 
 > 💡 Regra prática: **grave e trafegue em UTC** (`Instant`, ou `OffsetDateTime` em JSON no formato ISO) e **converta para o fuso do usuário só na hora de exibir**. Como as classes de `java.time` são imutáveis, `plusDays` devolve uma nova data: guarde o resultado.
 
+> ➡️ **Próximo passo:** a próxima seção é de desafios de algoritmos básicos: problemas curtos para treinar a lógica do que você aprendeu.
+
+## 🧠 Revisão rápida
+
+**Qual o resultado de `new BigDecimal("2.0").equals(new BigDecimal("2.00"))`, e por quê?**
+
+`false`: `equals` considera a escala (casas decimais). Para comparar o valor, use `compareTo`, que dá `0`.
+
+**Por que `plusMonths(1)` em 31/01/2024 resulta em 29/02/2024?**
+
+O mês de fevereiro não tem dia 31; a API ajusta a data para o último dia válido do mês.
+
 ## 📌 Resumo
 
 | Item | Em uma frase |
@@ -108,3 +128,7 @@ Cuidado com o padrão: `MM` é mês e `mm` é minuto; `yyyy` é ano e `YYYY` é 
 | `LocalDate` / `LocalDateTime` | data e data-hora sem fuso, imutáveis |
 | `DateTimeFormatter` | converte data em texto e texto em data (`dd/MM/yyyy`) |
 | `ChronoUnit` / `Period` | diferença entre datas |
+
+## 🧭 Mapa da seção
+
+![Mapa mental para revisar a linguagem Java](../img/dio-mapa-java.svg)

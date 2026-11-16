@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** operadores relacionais e lógicos com suas tabelas-verdade, as estruturas de decisão `if`/`else` e `switch`, e os tipos de bloco de código do Java.
 
+## De onde paramos
+
+Você já sabe declarar variáveis e escrever métodos. Agora o programa vai aprender a escolher caminhos diferentes conforme os dados.
+
 ## Operadores relacionais
 
 > 💡 **Operadores relacionais** comparam dois operandos e devolvem sempre um `boolean` (`true` ou `false`). São a base de qualquer `if` ou laço.
@@ -53,11 +57,30 @@ public class ExercicioOperadoresRelacionais {
 
 > 🛠️ **Correções no código:** algumas mensagens não batiam com o operador usado — "menor ou igual" usava `<`, e "maior que" usava `>=`. Ajustei os operadores para corresponder ao texto. Também removi variáveis declaradas e nunca usadas (`d1`, `s1`…`s3`, `b1`, `b2`, `l1`, `l2`, `y1`, `st`) e adicionei o resultado esperado de cada linha.
 
+### 🧠 Revisão rápida
+
+**Por que `"Java" == "Java"` pode dar `true`, mas `new String("Java") == "Java"` dá `false`?**
+
+Literais iguais reaproveitam o mesmo objeto; `new` cria um objeto novo. Para comparar conteúdo, use `equals`.
+
+**Qual o valor de `'a' < 'b'`?**
+
+`true`: a comparação de `char` usa o código Unicode, e `'a'` vem antes de `'b'`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `==` / `!=` | igual e diferente; `=` atribui, `==` compara |
+| `>`, `>=`, `<`, `<=` | comparam tamanho e devolvem `boolean` |
+| Objetos | para `String` e outros objetos, use `.equals()` |
+| `char` | comparado pelo código Unicode: `'a' < 'b'` é `true` |
+
 ## Operadores lógicos
 
 > 💡 **Operadores lógicos** combinam valores ou expressões booleanas e devolvem um novo `boolean`. Permitem montar condições como "maior de idade **e** com documento".
 
-### Resumo
+### 📌 Resumo
 
 | Operação | Operador | Verdadeiro quando… |
 | --- | --- | --- |
@@ -141,11 +164,23 @@ public class ExercicioOperadoresLogicos {
 }
 ```
 
+### 🧠 Revisão rápida
+
+**Qual o resultado de `true ^ true`?**
+
+`false`: o XOR só é verdadeiro quando as partes são diferentes.
+
+**Por que `&&` é mais seguro que `&` numa checagem como `cliente != null && cliente.isAtivo()`?**
+
+Por causa do curto-circuito: com `&&`, se `cliente` for nulo, a segunda parte nem é avaliada, e o programa não quebra com `NullPointerException`.
+
 ## Estruturas de controle de fluxo
 
 > 💡 **Estruturas de controle de fluxo** decidem **qual** trecho do código roda, **quantas vezes** roda e **quando parar**.
 
 ![Os três grupos de estruturas de controle.](../img/fluxo-tipos.svg)
+
+> 💡 **Analogia:** pense no trânsito de uma cidade. Os semáforos decidem por onde seguir (decisão), as voltas numa pista se repetem (repetição) e a placa de saída encerra o percurso (interrupção).
 
 | Grupo | Estruturas | Para quê |
 | --- | --- | --- |
@@ -159,50 +194,53 @@ public class ExercicioOperadoresLogicos {
 
 ![Fluxo da segunda parte do exercício.](../img/if-ferias.svg)
 
+> 💡 **Analogia:** é um porteiro com uma lista. Ele confere o mês informado e só libera a entrada de férias se o mês estiver na lista (janeiro, julho ou dezembro).
+
 ```java
 import java.util.Scanner;
 
 public class ExercicioControleDeFluxo1 {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    System.out.println("Digite o número do mês atual: ");
+    System.out.println("Número do mês atual: ");
     int mesAtual = input.nextInt();
 
     if (mesAtual == 1) {
-      System.out.println("Estamos no mês de Janeiro");
+      System.out.println("Mês: Janeiro");
     } else if (mesAtual == 2) {
-      System.out.println("Estamos no mês de Fevereiro");
+      System.out.println("Mês: Fevereiro");
     } else if (mesAtual == 3) {
-      System.out.println("Estamos no mês de Março");
+      System.out.println("Mês: Março");
     } else if (mesAtual == 4) {
-      System.out.println("Estamos no mês de Abril");
+      System.out.println("Mês: Abril");
     } else if (mesAtual == 5) {
-      System.out.println("Estamos no mês de Maio");
+      System.out.println("Mês: Maio");
     } else if (mesAtual == 6) {
-      System.out.println("Estamos no mês de Junho");
+      System.out.println("Mês: Junho");
     } else if (mesAtual == 7) {
-      System.out.println("Estamos no mês de Julho");
+      System.out.println("Mês: Julho");
     } else if (mesAtual == 8) {
-      System.out.println("Estamos no mês de Agosto");
+      System.out.println("Mês: Agosto");
     } else if (mesAtual == 9) {
-      System.out.println("Estamos no mês de Setembro");
+      System.out.println("Mês: Setembro");
     } else if (mesAtual == 10) {
-      System.out.println("Estamos no mês de Outubro");
+      System.out.println("Mês: Outubro");
     } else if (mesAtual == 11) {
-      System.out.println("Estamos no mês de Novembro");
+      System.out.println("Mês: Novembro");
     } else if (mesAtual == 12) {
-      System.out.println("Estamos no mês de Dezembro");
+      System.out.println("Mês: Dezembro");
     } else {
-      System.out.println("Erro! Mês inválido. Escolha entre 1 e 12.");
+      System.out.println("Mês inválido (1 a 12).");
     }
 
-    if (mesAtual == 1 || mesAtual == 7 || mesAtual == 12) {
-      System.out.println("Período de férias disponível.");
+    if (mesAtual == 1 || mesAtual == 7
+        || mesAtual == 12) {
+      System.out.println("Férias disponíveis.");
     } else if (mesAtual < 1 || mesAtual > 12) {
       System.out.println("Erro no mês escolhido!");
     } else {
-      System.out.println("Período de férias indisponível. "
-          + "Os meses de férias são janeiro, julho e dezembro.");
+      System.out.println("Férias indisponíveis. "
+        + "Meses de férias: jan, jul e dez.");
     }
 
     input.close();
@@ -213,10 +251,13 @@ public class ExercicioControleDeFluxo1 {
 > ✨ **Versão mais enxuta:** quando há uma lista de valores fixos, um array evita a longa cadeia de `else if`:
 >
 > ```java
-> String[] meses = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
->     "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+> String[] meses = {"Janeiro", "Fevereiro",
+>   "Março", "Abril", "Maio", "Junho",
+>   "Julho", "Agosto", "Setembro",
+>   "Outubro", "Novembro", "Dezembro"};
 > if (mesAtual >= 1 && mesAtual <= 12) {
->   System.out.println("Estamos no mês de " + meses[mesAtual - 1]);
+>   System.out.println("Mês: "
+>     + meses[mesAtual - 1]);
 > }
 > ```
 
@@ -233,25 +274,26 @@ public class ExercicioControleDeFluxo2 {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
 
-    System.out.println("Digite o número do dia da semana (de 1 a 7):");
-    int numeroDiaSemana = input.nextInt();
+    System.out.println("Dia da semana (1 a 7):");
+    int dia = input.nextInt();
 
-    // switch "enhanced" (Java 14+): sem break, com ->
-    switch (numeroDiaSemana) {
-      case 1 -> System.out.println("Hoje é domingo");
-      case 2 -> System.out.println("Hoje é segunda-feira");
-      case 3 -> System.out.println("Hoje é terça-feira");
-      case 4 -> System.out.println("Hoje é quarta-feira");
-      case 5 -> System.out.println("Hoje é quinta-feira");
-      case 6 -> System.out.println("Hoje é sexta-feira");
-      case 7 -> System.out.println("Hoje é sábado");
-      default -> System.out.println("Erro! Opção inválida.");
+    // switch "enhanced" (Java 14+): sem break
+    switch (dia) {
+      case 1 -> System.out.println("Domingo");
+      case 2 -> System.out.println("Segunda");
+      case 3 -> System.out.println("Terça");
+      case 4 -> System.out.println("Quarta");
+      case 5 -> System.out.println("Quinta");
+      case 6 -> System.out.println("Sexta");
+      case 7 -> System.out.println("Sábado");
+      default -> System.out.println("Inválido.");
     }
 
-    System.out.println("Digite um número de 1 a 5:");
+    System.out.println("Número de 1 a 5:");
     int numeroDaSorte = input.nextInt();
 
-    // switch tradicional: precisa de break para não "cair" no próximo case
+    // tradicional: precisa de break para
+    // não "cair" no próximo case
     switch (numeroDaSorte) {
       case 1, 2, 3:
         System.out.println("Certo");
@@ -263,7 +305,7 @@ public class ExercicioControleDeFluxo2 {
         System.out.println("Talvez");
         break;
       default:
-        System.out.println("Valor não definido.");
+        System.out.println("Não definido.");
     }
 
     input.close();
@@ -276,7 +318,28 @@ public class ExercicioControleDeFluxo2 {
 > - `case 1, 2, 3` (vários valores no mesmo `case`) também exige **Java 14+**. Em versões antigas, escreva `case 1: case 2: case 3:`.
 > - O enunciado pedia o `switch` a partir de uma **String** (o nome do dia). Isso também é possível: `switch (dia) { case "segunda" -> ... }`.
 
+### 🧠 Revisão rápida
+
+**No `switch` tradicional sem nenhum `break`, o que imprime para `numeroDaSorte = 4`?**
+
+"Errado", "Talvez" e "Não definido.": sem `break`, a execução cai nos casos seguintes.
+
+**O `switch` com seta pode devolver um valor? Como?**
+
+Sim: `String nome = switch (dia) { case 1 -> "Domingo"; default -> "?"; };`
+
+### 📌 Resumo
+
+| Grupo | Em uma frase |
+| --- | --- |
+| Decisão | `if`, `else if`, `else`, `switch` e ternário escolhem o caminho |
+| Repetição | `for`, `for-each`, `while` e `do-while` repetem um bloco |
+| Interrupção | `break` sai do laço, `continue` pula a volta, `return` encerra o método |
+| `switch` com seta | sem `break` e sem cair no próximo caso (Java 14+) |
+
 ## Blocos de código
+
+> 🗺️ **Nesta aula:** o que é um bloco de código, os três tipos de bloco e a ordem em que cada um executa.
 
 > 💡 Um **bloco de código** é um conjunto de instruções agrupadas entre chaves `{ }` e executadas juntas. Ele também define o **escopo** das variáveis declaradas dentro dele.
 
@@ -290,6 +353,8 @@ public class ExercicioControleDeFluxo2 {
 
 ![Cada tipo de bloco roda em um momento diferente.](../img/blocos-tipos.svg)
 
+> 💡 **Analogia:** pense numa festa. A decoração é feita uma única vez (bloco estático); cada convidado que chega recebe a sua pulseira (bloco de instância); e a atração só acontece quando chega a sua hora (bloco local).
+
 | Tipo | Onde fica | Quando executa |
 | --- | --- | --- |
 | Estático (`static { }`) | Direto no corpo da classe | **Uma única vez**, quando a classe é carregada pela JVM |
@@ -301,32 +366,34 @@ public class ExercicioControleDeFluxo2 {
 ```java
 public class ExemploBlocosCodigo {
 
-  // Bloco ESTÁTICO: roda uma vez, quando a classe é carregada
+  // ESTÁTICO: uma vez, ao carregar a classe
   static {
-    System.out.println("1) Bloco estático: classe carregada.");
+    System.out.println("1) Bloco estático");
   }
 
-  // Bloco de INSTÂNCIA: roda a cada new, antes do construtor
+  // INSTÂNCIA: a cada new, antes do construtor
   {
-    System.out.println("3) Bloco de instância: objeto sendo criado.");
+    System.out.println("3) Bloco de instância");
   }
 
   public ExemploBlocosCodigo() {
-    System.out.println("4) Construtor executado.");
+    System.out.println("4) Construtor");
   }
 
   public static void main(String[] args) {
-    System.out.println("2) Início do main.");
+    System.out.println("2) Início do main");
 
-    // Bloco LOCAL: suas variáveis só existem aqui dentro
+    // LOCAL: variáveis só existem aqui dentro
     {
       int numero = 10;
-      System.out.println("Bloco local, número = " + numero);
+      System.out.println("Local: " + numero);
     }
-    // System.out.println(numero); // ERRO: numero não existe fora do bloco
+    // ERRO: numero não existe fora do bloco
+    // System.out.println(numero);
 
     new ExemploBlocosCodigo();
-    new ExemploBlocosCodigo(); // bloco de instância roda de novo; o estático não
+    // instância roda de novo; estático não
+    new ExemploBlocosCodigo();
   }
 }
 ```
@@ -334,16 +401,47 @@ public class ExemploBlocosCodigo {
 **Saída:**
 
 ```
-1) Bloco estático: classe carregada.
-2) Início do main.
-Bloco local, número = 10
-3) Bloco de instância: objeto sendo criado.
-4) Construtor executado.
-3) Bloco de instância: objeto sendo criado.
-4) Construtor executado.
+1) Bloco estático
+2) Início do main
+Local: 10
+3) Bloco de instância
+4) Construtor
+3) Bloco de instância
+4) Construtor
 ```
 
 > 🛠️ **Correção no exemplo:** o código original chamava de "bloco de instância" um bloco `{ }` **dentro de um método de instância** — que na verdade é um **bloco local**. Um bloco de instância de verdade fica **direto no corpo da classe** e roda a cada `new`, antes do construtor. Reescrevi o exemplo para mostrar os três tipos e a ordem em que executam.
+
+### 🧠 Revisão rápida
+
+**Se o programa criar 5 objetos, quantas vezes rodam o bloco estático e o de instância?**
+
+Estático: 1 vez. De instância: 5 vezes (uma por `new`).
+
+**Por que usar chaves mesmo num `if` de uma linha só?**
+
+Para não errar ao adicionar uma segunda linha depois: sem chaves, só a primeira fica dentro do `if`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Bloco | instruções entre `{ }`, que também definem o escopo das variáveis |
+| Estático | roda uma vez, quando a classe é carregada |
+| De instância | roda a cada `new`, antes do construtor |
+| Local | roda quando a execução do método chega a ele |
+
+> ➡️ **Próximo passo:** na próxima aula você vai repetir ações com laços (`while`, `do-while` e `for`) e guardar vários valores em arrays.
+
+## 🧠 Revisão rápida
+
+**Qual a diferença entre `if` com vários `if` seguidos e `if` com `else if`?**
+
+Com `else if`, só um caminho é executado; com `if`s separados, todos os que forem verdadeiros rodam.
+
+**No `switch` tradicional, o que acontece se faltar o `break`?**
+
+A execução continua no `case` seguinte (fall-through), mesmo que o valor não seja aquele.
 
 ## 📌 Resumo
 

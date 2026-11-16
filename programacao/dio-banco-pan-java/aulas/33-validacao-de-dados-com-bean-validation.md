@@ -2,11 +2,17 @@
 
 > 🗺️ **Nesta aula:** como validar os dados que chegam na API com Bean Validation: anotações no DTO, `@Valid` no controller e respostas de erro legíveis.
 
+## De onde paramos
+
+Você já cria endpoints REST que recebem dados no corpo da requisição. Agora vai garantir que só entrem dados válidos.
+
 ## O problema
 
 Uma API não pode confiar no que recebe: valor negativo em transferência, CPF vazio, e-mail inválido. Validar tudo com `if` em cada controller gera código repetido. **A Bean Validation (Jakarta Validation) permite declarar as regras com anotações**, e o Spring as aplica automaticamente.
 
 ![Bean Validation: barrar dados inválidos na entrada](../img/dio-bean-validation.svg)
+
+> 💡 **Analogia:** é o porteiro de uma boate com uma lista de regras na porta: idade mínima, documento válido, nome na lista. Ele não precisa entrar para conferir cada pessoa, e quem não cumpre a regra nem chega ao salão.
 
 ## Dependência
 
@@ -105,6 +111,22 @@ Para validar `@PathVariable` e `@RequestParam` (por exemplo, `@Positive Long id`
 ## Validação de formato × regra de negócio
 
 Bean Validation cuida do **formato** dos dados. Regras que dependem do banco ou do estado do sistema, como "CPF já cadastrado" ou "saldo insuficiente", ficam no **service**, com exceções próprias tratadas no `@RestControllerAdvice` (normalmente 409 Conflict ou 422 Unprocessable Entity).
+
+> ➡️ **Próximo passo:** **Adicionando segurança a uma API REST com Spring**, para controlar quem pode acessar cada endpoint.
+
+## 🧠 Revisão rápida
+
+**Sem a dependência `spring-boot-starter-validation`, o que acontece com as anotações do DTO?**
+
+São ignoradas em silêncio: nenhuma validação roda e nenhum erro aparece.
+
+**O que o `@Valid` no parâmetro do controller faz?**
+
+Dispara a validação do corpo da requisição; se falhar, o Spring responde 400.
+
+**Regra de "CPF já cadastrado": vai na anotação ou no serviço?**
+
+No serviço: depende do banco, então não é validação de formato.
 
 ## 📌 Resumo
 

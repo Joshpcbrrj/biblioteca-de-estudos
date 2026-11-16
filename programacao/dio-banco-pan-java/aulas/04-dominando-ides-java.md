@@ -2,9 +2,17 @@
 
 > 🗺️ **Nesta aula:** a história e as características do Java, a diferença entre JDK, JRE e JVM, e os primeiros passos com as IDEs Eclipse e IntelliJ, com os atalhos mais úteis.
 
+## De onde paramos
+
+Você já entende como um time organiza o trabalho. Agora é hora de preparar o computador para programar em Java.
+
 ## História do java e alguns conceitos importantes
 
-> 💡 **Resumo:** Java nasceu na Sun (1995), hoje pertence à Oracle e roda em qualquer sistema que tenha uma **JVM**: você compila uma vez para **bytecode** e executa em qualquer lugar.
+> 🗺️ **Nesta aula:** Java nasceu na Sun (1995), hoje pertence à Oracle e roda em qualquer sistema que tenha uma **JVM**: você compila uma vez para **bytecode** e executa em qualquer lugar.
+
+### De onde paramos
+
+Você já sabe como um time organiza o trabalho com Git e ágil. Agora vai entender de onde vem o Java e por que ele roda em tantos lugares.
 
 ### Um pouco de história
 
@@ -39,11 +47,13 @@
 2. O compilador `javac` gera um arquivo `.class` com **bytecode**, um formato intermediário que não depende do sistema operacional.
 3. A **JVM** de cada sistema (Windows, Linux, macOS…) lê esse bytecode e o executa.
 
-Assim não é preciso reescrever nem recompilar o programa para cada sistema: quem se adapta é a JVM.
+> 💡 **Analogia:** é como um livro escrito em uma língua só, com um intérprete diferente em cada país. Assim não é preciso reescrever nem recompilar o programa para cada sistema: quem se adapta é a JVM.
 
 ### C x Java: ciclo de uma aplicação
 
 ![Em C, um executável por sistema; em Java, um único bytecode.](../img/c-vs-java.svg)
+
+> 💡 **Analogia:** em C, é como traduzir o mesmo livro para cada idioma. Em Java, o livro é escrito uma vez em uma língua intermediária, e cada leitor usa o seu próprio intérprete (a JVM).
 
 |  | C | Java |
 | --- | --- | --- |
@@ -72,15 +82,42 @@ Assim não é preciso reescrever nem recompilar o programa para cada sistema: qu
 
 ![O JDK contém o JRE, que contém a JVM.](../img/jdk-jre-jvm.svg)
 
+> 💡 **Analogia:** pense num carro. A JVM é o motor, o JRE é o carro pronto para dirigir e o JDK é a oficina completa, com as ferramentas para montar e consertar o carro.
+
 - **JVM** (*Java Virtual Machine*) → a máquina virtual que **executa** o bytecode.
 - **JRE** (*Java Runtime Environment*) → JVM + bibliotecas padrão: o necessário para **rodar** programas Java.
 - **JDK** (*Java Development Kit*) → JRE + ferramentas de desenvolvimento (`javac`, `jar`, `javadoc`, `jshell`, depurador): o necessário para **programar**.
 
 > 📌 Desde o Java 11, a Oracle não distribui mais o JRE separado: na prática, você instala o **JDK** (por exemplo, o Azul Zulu ou o Eclipse Temurin).
 
+### 🧠 Revisão rápida
+
+**Um usuário que só vai rodar um programa Java precisa do JDK?**
+
+Não, basta uma JVM com as bibliotecas (o JRE). Quem programa precisa do JDK, que também traz o compilador.
+
+**O que o `javac` gera a partir de `Ola.java`?**
+
+O arquivo `Ola.class`, com bytecode, que qualquer JVM sabe executar.
+
+> ➡️ **Próximo passo:** na próxima aula você instala e configura uma IDE para escrever Java, começando pelo Eclipse.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Java | criado na Sun em 1995; hoje pertence à Oracle |
+| Bytecode | formato intermediário que roda em qualquer sistema com JVM |
+| JVM, JRE e JDK | executa, roda e programa, nessa ordem de inclusão |
+| Edições | SE para aplicações gerais; Jakarta EE para sistemas corporativos |
+
 ## Eclipse
 
 > 💡 **Eclipse:** IDE gratuita e de código aberto, criada pela IBM e mantida pela Eclipse Foundation. Seu ponto forte é a extensibilidade por **plug-ins**.
+
+### De onde paramos
+
+Você já tem o JDK instalado. Agora escolhe a IDE em que vai escrever seus programas, e o Eclipse é a primeira opção.
 
 ### Links úteis
 
@@ -120,9 +157,30 @@ Assim não é preciso reescrever nem recompilar o programa para cada sistema: qu
 
 > 🛠️ **Correções:** o atalho de formatar código no Eclipse é `Ctrl + Shift + F` (no texto original estava `Alt + Shift + F`). Para gerar construtor/getters/setters, o menu direto é `Alt + Shift + S`. E `Alt + Shift + X` abre o menu "Run As"; em seguida aperte `J` para rodar como Java Application. No Linux, `Ctrl + Alt + ↓` pode estar ocupado pelo sistema.
 
+### 🧠 Revisão rápida
+
+**Qual atalho abre o menu "Run As" no Eclipse?**
+
+`Alt + Shift + X`; depois, `J` roda como Java Application.
+
+> ➡️ **Próximo passo:** na próxima página você conhece a IntelliJ IDEA, outra IDE muito usada no mercado Java.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Eclipse | IDE gratuita e extensível por plug-ins, mantida pela Eclipse Foundation |
+| `Ctrl + Espaço` | sugestões de autocompletar |
+| `Ctrl + Shift + O` | organiza os imports |
+| `Ctrl + Shift + F` | formata o código |
+
 ## IntelliJ
 
 > 💡 **IntelliJ IDEA:** IDE da JetBrains, muito usada no mercado Java. A versão **Community** é gratuita; a **Ultimate** é paga e traz suporte completo a Spring, bancos de dados e web.
+
+### De onde paramos
+
+Você já conhece o Eclipse. Agora vai ver a IntelliJ IDEA, com atalhos e um jeito rápido de criar a primeira classe.
 
 ### Links úteis
 
@@ -176,6 +234,25 @@ Assim não é preciso reescrever nem recompilar o programa para cada sistema: qu
 | Ir para a declaração (entrar na classe/método) | `Ctrl + B` ou `Ctrl + clique` |
 
 > 🛠️ **Correções:** o painel de projeto é mostrado/escondido com `Alt + 1` (`Shift + F12` restaura o layout padrão das janelas). E `Ctrl + Shift + ↑/↓` move o **bloco/método** inteiro; para mover só a **linha**, use `Alt + Shift + ↑/↓`.
+
+### 🧠 Revisão rápida
+
+**Qual atalho gera construtor e getters/setters dentro da classe no IntelliJ?**
+
+`Alt + Insert`.
+
+> ➡️ **Próximo passo:** com a IDE escolhida, você escreve a primeira classe Java e entende a sua sintaxe em *Aprendendo a sintaxe Java*.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| IntelliJ IDEA | IDE da JetBrains; a versão Community é gratuita e a Ultimate é paga |
+| `psvm`  • `Tab` | gera o método `main` |
+| `Ctrl + Shift + F10` | roda o arquivo atual na primeira vez; depois, `Shift + F10` |
+| `Shift + F6` | renomeia em todo o projeto |
+
+> ➡️ **Próximo passo:** na próxima aula você escreve a primeira classe Java e entende a sua sintaxe.
 
 ## 📌 Resumo
 

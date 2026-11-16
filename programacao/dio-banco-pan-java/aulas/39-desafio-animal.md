@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** desafio de decisões encadeadas: descobrir o animal a partir de três palavras, com `if` aninhados ou com um `Map`. Tente resolver antes de abrir a resolução.
 
+## De onde paramos
+
+Você já lê entradas com `Scanner` e escreve `if` aninhados. Agora vai usar essas duas ferramentas para descobrir um animal por uma sequência de perguntas.
+
 ## Desafio
 
 Leia 3 palavras que classificam um animal, seguindo a árvore abaixo de cima para baixo, e descubra qual animal foi escolhido.
@@ -29,6 +33,8 @@ O nome do animal correspondente.
 3. Usar a 3ª palavra (alimentação) para escolher entre os dois animais do grupo.
 4. Imprimir o animal.
 
+> 💡 **Analogia:** é o jogo "Adivinha quem é?". Cada pergunta corta metade das opções até sobrar só um personagem — cada `if` é uma pergunta.
+
 ## Código
 
 <details>
@@ -45,25 +51,30 @@ public class Main {
     String an2 = sc.nextLine().trim();
     String an3 = sc.nextLine().trim();
 
-    if (an1.equals("vertebrado") && an2.equals("ave")) {
+    boolean vert = an1.equals("vertebrado");
+    boolean inv = an1.equals("invertebrado");
+
+    if (vert && an2.equals("ave")) {
       if (an3.equals("carnivoro")) {
         System.out.println("aguia");
       } else if (an3.equals("onivoro")) {
         System.out.println("pomba");
       }
-    } else if (an1.equals("vertebrado") && an2.equals("mamifero")) {
+    } else if (vert
+        && an2.equals("mamifero")) {
       if (an3.equals("onivoro")) {
         System.out.println("homem");
       } else if (an3.equals("herbivoro")) {
         System.out.println("vaca");
       }
-    } else if (an1.equals("invertebrado") && an2.equals("inseto")) {
+    } else if (inv && an2.equals("inseto")) {
       if (an3.equals("hematofago")) {
         System.out.println("pulga");
       } else if (an3.equals("herbivoro")) {
         System.out.println("lagarta");
       }
-    } else if (an1.equals("invertebrado") && an2.equals("anelideo")) {
+    } else if (inv
+        && an2.equals("anelideo")) {
       if (an3.equals("hematofago")) {
         System.out.println("sanguessuga");
       } else if (an3.equals("onivoro")) {
@@ -81,6 +92,7 @@ public class Main {
 > - Removido o `import java.io.IOException`, que não era usado.
 > - Variáveis renomeadas de `AN1`, `AN2`, `AN3` para `an1`, `an2`, `an3`. Em Java, nomes só em maiúsculas são convenção para constantes.
 > - Adicionado `.trim()`, que remove espaços extras no fim da linha (causa comum de "resposta errada" em juízes online).
+> - As comparações repetidas da 1ª palavra viraram as variáveis `vert` e `inv`, para encurtar as linhas.
 
 ### Alternativa: tabela em vez de ifs
 
@@ -95,23 +107,46 @@ Map<String, String> animais = Map.of(
   "vertebrado ave onivoro", "pomba",
   "vertebrado mamifero onivoro", "homem",
   "vertebrado mamifero herbivoro", "vaca",
-  "invertebrado inseto hematofago", "pulga",
-  "invertebrado inseto herbivoro", "lagarta",
-  "invertebrado anelideo hematofago", "sanguessuga",
-  "invertebrado anelideo onivoro", "minhoca");
+  "invertebrado inseto hematofago",
+      "pulga",
+  "invertebrado inseto herbivoro",
+      "lagarta",
+  "invertebrado anelideo hematofago",
+      "sanguessuga",
+  "invertebrado anelideo onivoro",
+      "minhoca");
 
-System.out.println(animais.get(an1 + " " + an2 + " " + an3));
+System.out.println(animais.get(
+    an1 + " " + an2 + " " + an3));
 ```
 
 </details>
 
 Os dados ficam separados da lógica: incluir um animal novo é só adicionar uma linha.
 
+> ➡️ **Próximo passo:** **Desafio quitanda do seu Zé**, com preço por faixa e desconto condicional.
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Por que comparar textos com `equals` e não com `==`?</summary>
+
+`==` compara se são o mesmo objeto na memória; `equals` compara o conteúdo.
+
+</details>
+
+<details>
+<summary>Ver resposta: Qual a vantagem do `Map` sobre os `if` aninhados?</summary>
+
+Separa os dados da lógica: um animal novo é só uma linha nova.
+
+</details>
+
 ## 📌 Resumo
 
 | Item | O que o desafio pratica |
 | --- | --- |
-| `nextLine().trim()` | ler uma palavra por linha sem espaços sobrando |
-| `equals` | comparar textos pelo conteúdo, nunca com `==` |
-| `if` aninhados | descer na árvore de decisão: ramo, classe e alimentação |
-| `Map.of` | trocar a cadeia de `if` por uma tabela chave → resposta |
+| `nextLine().trim()` | Ler uma palavra por linha sem espaços sobrando. |
+| `equals` | Comparar textos pelo conteúdo, nunca com `==`. |
+| `if` aninhados | Descer na árvore de decisão: ramo, classe e alimentação. |
+| `Map.of` | Trocar a cadeia de `if` por uma tabela chave → resposta. |

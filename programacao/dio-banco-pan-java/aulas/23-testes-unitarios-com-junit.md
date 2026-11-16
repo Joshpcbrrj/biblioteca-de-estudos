@@ -2,11 +2,23 @@
 
 > 🗺️ **Nesta aula:** o que são testes unitários, como escrever testes com JUnit 5 (assertions, assumptions e ciclo de vida) e boas práticas para manter os testes úteis.
 
+## De onde paramos
+
+Você já sabe montar um projeto com Maven. Agora vai escrever testes automatizados que confirmam se o código faz o esperado.
+
 ## O que são testes unitários
+
+> 🗺️ **Nesta aula:** o que é um teste unitário, por que escrever testes, a estrutura AAA com um exemplo completo e a história do JUnit.
+
+### De onde paramos
+
+Você já escreve classes e métodos e roda o programa para ver se funciona. Agora vai aprender a confirmar isso automaticamente, sem depender de você testar à mão.
 
 **Testes unitários** são testes automatizados que verificam se pequenas partes do código — as **unidades**, normalmente um método ou uma classe — funcionam como esperado, **isoladas** do resto do sistema.
 
 Quem escreve é o próprio desenvolvedor, e o objetivo é ter a garantia de que cada unidade continua correta mesmo depois de mudanças no código.
+
+> 💡 **Analogia:** antes de montar um carro, cada peça é testada sozinha na bancada — o freio freia? a lâmpada acende? O teste unitário é essa bancada: se a peça falhar, você sabe exatamente qual é, sem precisar montar o carro inteiro.
 
 > 💡 **Por que vale a pena?**
 >
@@ -52,19 +64,25 @@ class PessoaTest {
 
   @Test
   void deveSerMaiorDeIdadeCom25Anos() {
-    Pessoa pessoa = new Pessoa("João", 25);  // Arrange
-    boolean maior = pessoa.ehMaiorDeIdade();  // Act
-    assertTrue(maior);  // Assert
+    // Arrange
+    Pessoa p = new Pessoa("Ana", 25);
+    // Act
+    boolean maior = p.ehMaiorDeIdade();
+    // Assert
+    assertTrue(maior);
   }
 
   @Test
   void naoDeveSerMaiorDeIdadeCom17Anos() {
-    assertFalse(new Pessoa("Ana", 17).ehMaiorDeIdade());
+    assertFalse(
+      new Pessoa("Bia", 17).ehMaiorDeIdade());
   }
 
+  // caso de borda
   @Test
-  void deveSerMaiorDeIdadeExatamenteCom18Anos() { // caso de borda
-    assertTrue(new Pessoa("Rui", 18).ehMaiorDeIdade());
+  void deveSerMaiorDeIdadeCom18Anos() {
+    assertTrue(
+      new Pessoa("Rui", 18).ehMaiorDeIdade());
   }
 }
 ```
@@ -87,7 +105,38 @@ Hoje ele é integrado a todas as IDEs principais e às ferramentas de build (Mav
 
 > 🛠️ **Ajuste histórico:** o texto dizia que o JUnit foi criado "num projeto de IDE chamado Smalltalk no ambiente Java". Smalltalk é uma **linguagem de programação**, não uma IDE; o JUnit é uma adaptação para Java do SUnit, que Kent Beck havia criado para Smalltalk.
 
+> ➡️ **Próximo passo:** **Aprofundando nos recursos**, com assertions, assumptions e o ciclo de vida dos testes.
+
+### 🧠 Revisão rápida
+
+**O que significam as três letras de AAA?**
+
+Arrange (preparar), Act (executar) e Assert (conferir).
+
+**O que é um caso de borda? Dê um exemplo desta aula.**
+
+Um valor no limite da regra. Aqui, a idade exatamente 18, onde um `>` no lugar de `>=` erraria.
+
+**Qual é o pacote do JUnit 5?**
+
+`org.junit.jupiter`.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Teste unitário | Verifica uma unidade de código, isolada e automaticamente. |
+| AAA | Arrange → Act → Assert. |
+| Caso de borda | Testa o limite da regra. |
+| JUnit 5 | Platform + Jupiter + Vintage. |
+
 ## Aprofundando nos recursos
+
+> 🗺️ **Nesta aula:** como adicionar o JUnit 5 ao projeto, as principais assertions e assumptions e as anotações do ciclo de vida dos testes.
+
+### De onde paramos
+
+Você já sabe o que é um teste unitário e a estrutura AAA. Agora vai usar os recursos do JUnit 5 no dia a dia.
 
 ### Adicionando o JUnit 5 ao projeto
 
@@ -110,6 +159,8 @@ O jeito mais simples é usar o artefato agregador `junit-jupiter`, que já traz 
 - O nome da classe de teste segue a classe testada, com o sufixo `Test` (ex.: `Pessoa` → `PessoaTest`). Esse é o padrão que o Maven Surefire procura para executar.
 - Dê nomes que descrevam o comportamento: `deveLancarErroQuandoSaldoForInsuficiente()`.
 
+> 💡 **Analogia:** antes de um avião decolar, a equipe confere uma lista: motor, combustível, portas. Cada item é uma assertion; se um deles estiver errado, o voo não sai, e a lista mostra exatamente o que falhou.
+
 ### Assertions
 
 **Assertions** (afirmações) comparam o resultado obtido com o esperado. Se a afirmação for verdadeira, o teste passa; se for falsa, o teste **falha**.
@@ -124,6 +175,8 @@ O jeito mais simples é usar o artefato agregador `junit-jupiter`, que já traz 
 | `assertAll(...)` | Agrupa várias verificações e reporta todas as falhas de uma vez. |
 
 > 📌 Em `assertEquals`, a ordem importa: primeiro o **esperado**, depois o **atual**. Invertidos, as mensagens de falha ficam confusas.
+
+> ⚠️ Para comparar `double`, use a versão com tolerância: `assertEquals(0.3, 0.1 + 0.2, 0.0001)`. Sem ela, o teste falha, porque `0.1 + 0.2` dá `0.30000000000000004`.
 
 ### Assumptions
 
@@ -158,18 +211,21 @@ class ExemploTest {
 
   @Test
   void soRodaNoWindows() {
-    // se não for Windows, o teste é ignorado (não falha)
-    assumeTrue(System.getProperty("os.name").startsWith("Windows"));
+    // fora do Windows, o teste é
+    // ignorado (não falha)
+    assumeTrue(System.getProperty("os.name")
+      .startsWith("Windows"));
 
-    String caminhoArquivo = "C:\\arquivo.txt";
-    assertNotNull(caminhoArquivo);
+    String caminho = "C:\\arquivo.txt";
+    assertNotNull(caminho);
   }
 
   @Test
   void deveLancarExcecaoAoDividirPorZero() {
-    assertThrows(ArithmeticException.class, () -> {
-      int x = 10 / 0;
-    });
+    assertThrows(ArithmeticException.class,
+      () -> {
+        int x = 10 / 0;
+      });
   }
 }
 ```
@@ -200,7 +256,9 @@ class ExemploTest {
 
   @BeforeAll
   static void configurarConexao() {
-    conexao = new ConexaoBancoDeDados("localhost", "5432", "usuario", "senha");
+    conexao = new ConexaoBancoDeDados(
+      "localhost", "5432",
+      "usuario", "senha");
     conexao.conectar();
   }
 
@@ -211,33 +269,73 @@ class ExemploTest {
 
   @BeforeEach
   void antesDeCadaTeste() {
-    conexao.iniciarTransacao();  // nova transação para cada teste
+    // nova transação para cada teste
+    conexao.iniciarTransacao();
   }
 
   @AfterEach
   void depoisDeCadaTeste() {
-    conexao.rollbackTransacao();  // desfaz o que o teste alterou
+    // desfaz o que o teste alterou
+    conexao.rollbackTransacao();
   }
 
   @Test
   void testeUm() {
-    // usa a conexão aberta no @BeforeAll e a transação do @BeforeEach
+    // usa a conexão do @BeforeAll e
+    // a transação do @BeforeEach
   }
 
   @Test
   void testeDois() {
-    // começa com o banco limpo, graças ao rollback do @AfterEach
+    // começa com o banco limpo, graças
+    // ao rollback do @AfterEach
   }
 }
 ```
 
 > 📌 `ConexaoBancoDeDados` é uma classe ilustrativa, não faz parte do JUnit. No JUnit 4, as anotações equivalentes eram `@BeforeClass`, `@Before`, `@After` e `@AfterClass`.
 
+> 💡 Outras anotações úteis: `@DisplayName("texto")` dá um nome legível ao teste no relatório; `@Disabled` desliga um teste temporariamente; `@ParameterizedTest` roda o mesmo teste com vários valores.
+
 ### Projeto de exemplo com Maven
 
 Para rodar os testes do projeto: `mvn test`.
 
+> ➡️ **Próximo passo:** **Boas práticas**, para escrever testes fáceis de ler e de manter.
+
+### 🧠 Revisão rápida
+
+**Em `assertEquals`, qual argumento vem primeiro?**
+
+O valor **esperado**; depois, o atual.
+
+**Qual a diferença entre uma assertion e uma assumption que falham?**
+
+A assertion falha o teste; a assumption só o marca como ignorado.
+
+**Por que `@BeforeAll` precisa ser `static`?**
+
+Porque o JUnit cria uma instância nova da classe para cada teste; um método que roda uma vez só não pode depender de uma instância.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `junit-jupiter` | Dependência única com API e engine do JUnit 5. |
+| Assertions | Conferem o resultado; falham o teste. |
+| Assumptions | Conferem o ambiente; pulam o teste. |
+| `@BeforeEach` / `@AfterEach` | Rodam em volta de cada teste. |
+| `@BeforeAll` / `@AfterAll` | Rodam uma vez por classe (`static`). |
+
 ## Boas práticas
+
+> 🗺️ **Nesta aula:** boas práticas para escrever testes úteis — nomes, simplicidade, TDD, organização, automação e os princípios FIRST.
+
+> 💡 **Analogia:** um bom teste é como uma etiqueta de bagagem clara: diz de quem é a mala e para onde vai, sem precisar abrir. Um nome vago como "testeSaque" é uma etiqueta sem destino.
+
+### De onde paramos
+
+Você já conhece os recursos do JUnit 5. Agora vai aprender a escrever testes que continuam úteis conforme o projeto cresce.
 
 ### 🧼 Busque simplicidade
 
@@ -255,10 +353,35 @@ Para rodar os testes do projeto: `mvn test`.
 2. **Green:** escreva o código mais simples possível para o teste passar.
 3. **Refactor:** melhore o código (nomes, duplicações, design), mantendo os testes verdes.
 
+**Exemplo de um ciclo TDD**
+
+```java
+// 1. RED: o teste vem primeiro e falha
+// (Calculadora ainda não existe)
+@Test
+void deveSomarDoisNumeros() {
+  assertEquals(5,
+    new Calculadora().somar(2, 3));
+}
+
+// 2. GREEN: o mínimo para passar
+class Calculadora {
+  int somar(int a, int b) {
+    return a + b;
+  }
+}
+
+// 3. REFACTOR: aqui não há o que melhorar;
+// o próximo ciclo começa com outro teste,
+// por exemplo deveSomarNegativos().
+```
+
 ### 🗂️ Busque organização
 
 - **Nomenclatura padronizada:** classes `NomeDaClasseTest`, no mesmo pacote da classe testada.
 - **Testes determinísticos:** o mesmo teste deve dar sempre o mesmo resultado. Evite depender de data/hora atual, ordem de execução, aleatoriedade ou serviços externos sem controle.
+
+> ⚠️ Um teste que às vezes passa e às vezes falha (*flaky*) é pior que nenhum: a equipe aprende a ignorá-lo. Se o código usa a data atual, receba um `Clock` como parâmetro para poder fixá-lo no teste.
 
 ### 🤖 Economize tempo automatizando
 
@@ -277,6 +400,46 @@ Para rodar os testes do projeto: `mvn test`.
 ### 📚 Exemplos de JUnit 5
 
 🔗 [junit5-exemplos/src/test/java/com/github/willyancaetano/junit at master · willyancaetano/junit5-exemplos](https://github.com/willyancaetano/junit5-exemplos/tree/master/src/test/java/com/github/willyancaetano/junit)
+
+> ➡️ **Próximo passo:** **Testes com Mockito**, para testar classes que dependem de outras.
+
+### 🧠 Revisão rápida
+
+**Quais são as três etapas do TDD, em ordem?**
+
+Red (teste que falha), Green (código mínimo que passa) e Refactor (melhorar sem quebrar).
+
+**O que quer dizer o "I" de FIRST?**
+
+*Independent*: um teste não pode depender de outro nem da ordem de execução.
+
+**Cobertura de 100% garante que o código está correto?**
+
+Não. Ela só diz que as linhas foram executadas; os testes ainda precisam conferir os resultados certos.
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Nome do teste | Descreve o comportamento esperado. |
+| Um teste, uma coisa | Facilita achar a causa da falha. |
+| TDD | Red → Green → Refactor. |
+| Determinístico | Mesmo resultado sempre. |
+| FIRST | Fast, Independent, Repeatable, Self-validating, Timely. |
+
+> 💡 **Analogia:** um teste unitário é a checagem de um eletrodoméstico antes de sair da fábrica. Liga-se a peça, confere-se uma função de cada vez e o resultado é aprovado ou reprovado, sem montar o carro inteiro.
+
+> ➡️ **Próximo passo:** **Testes com Mockito**, para testar classes que dependem de outras.
+
+## 🧠 Revisão rápida
+
+**Qual a diferença entre `assertTrue` e `assumeTrue`?**
+
+`assertTrue` reprova o teste quando a condição é falsa; `assumeTrue` só pula o teste.
+
+**Qual anotação roda antes de *cada* teste?**
+
+`@BeforeEach`.
 
 ## 📌 Resumo
 

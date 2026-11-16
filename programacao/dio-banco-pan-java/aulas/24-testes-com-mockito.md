@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** por que usar objetos falsos (mocks) nos testes, como escrever um teste com Mockito, os recursos principais e como usar mocks em testes do Spring.
 
+## De onde paramos
+
+Você já escreve testes unitários com JUnit. Agora vai testar classes que dependem de outras, sem precisar subir o banco ou a rede.
+
 ## Por que "mockar"
 
 Um **teste unitário** testa uma classe **isolada**. Mas um `TransferenciaService` depende de repositório, banco de dados, serviço de notificação... Subir tudo isso deixaria o teste lento e frágil.
@@ -9,6 +13,8 @@ Um **teste unitário** testa uma classe **isolada**. Mas um `TransferenciaServic
 **Um mock é um objeto falso que imita uma dependência:** você define o que ele responde e, depois, confere como ele foi usado. **Mockito** é a biblioteca padrão para isso em Java e já vem no `spring-boot-starter-test`.
 
 ![Teste com Mockito: Arrange, Act, Assert](../img/dio-mockito.svg)
+
+> 💡 **Analogia:** um mock é como um dublê de cinema. Ele parece o ator, faz exatamente a cena que o roteiro pede e, depois, o diretor confere se ele fez o que devia. Não é o ator real, e nem precisa ser.
 
 ## A classe que vamos testar
 
@@ -133,6 +139,18 @@ class TransferenciaControllerTest {
 - Mocke **dependências externas** (repositórios, clientes HTTP, filas), e não objetos simples de dados (entidades, DTOs, `BigDecimal`).
 - Um teste deve verificar **um comportamento**, com um nome que o descreva (`deveFalharSemSaldo...`).
 - Mocks demais costumam indicar uma classe com responsabilidades demais (veja SOLID).
+
+> ➡️ **Próximo passo:** **Desafio POO**, para modelar um domínio completo com as ferramentas desta seção.
+
+## 🧠 Revisão rápida
+
+**Por que o `TransferenciaService` recebe as dependências pelo construtor?**
+
+Para que o teste possa trocar os repositórios e serviços reais por mocks.
+
+**Se um método de `verify` usa `eq(1L)`, os outros argumentos podem ser valores fixos?**
+
+Não: se um argumento usa matcher, todos precisam usar matcher.
 
 ## 📌 Resumo
 

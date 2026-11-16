@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** por que `String` é imutável, como comparar textos com `equals`, os métodos mais usados, formatação, text blocks e quando usar `StringBuilder`.
 
+## De onde paramos
+
+Você já sabe criar métodos que recebem e devolvem valores. Agora vai ver o tipo mais usado em Java: o texto.
+
 ## `String` é imutável
 
 **Uma vez criada, uma** `String` **nunca muda.** Todo método que parece alterá-la devolve, na verdade, uma **nova** String:
@@ -74,6 +78,8 @@ String sql = """
 
 ![Concatenar em laço × StringBuilder](../img/dio-stringbuilder.svg)
 
+> 💡 **Analogia:** concatenar com `+` dentro de um laço é como reescrever a folha inteira a cada palavra nova. O `StringBuilder` é um caderno em que você só acrescenta linhas no fim.
+
 Como String é imutável, concatenar com `+` dentro de um laço cria um objeto novo a cada volta e copia todo o texto de novo. Com milhares de itens, isso fica lento:
 
 ```java
@@ -95,6 +101,18 @@ Outros métodos: `insert`, `deleteCharAt`, `reverse` (útil para palíndromos) e
 - `StringBuffer`: é sincronizado (thread-safe) e mais lento. Hoje raramente é necessário.
 
 Fora de laços, o `+` comum está ótimo: o compilador já otimiza `"Olá, " + nome + "!"`.
+
+> ➡️ **Próximo passo:** na próxima aula você trabalha com dinheiro de forma segura (`BigDecimal`) e com datas (`java.time`).
+
+## 🧠 Revisão rápida
+
+**Por que `nome.toUpperCase();` sozinho não muda a variável `nome`?**
+
+Porque a String é imutável: o método devolve uma nova String, que precisa ser guardada (`nome = nome.toUpperCase();`).
+
+**Por que `"pan".equals(entrada)` é mais seguro que `entrada.equals("pan")`?**
+
+Se `entrada` for `null`, a chamada `entrada.equals(...)` lança `NullPointerException`; invertendo, o resultado é `false`.
 
 ## 📌 Resumo
 

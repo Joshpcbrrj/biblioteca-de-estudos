@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** desafio de preço por faixa de peso com desconto condicional: calcular o valor de uma compra de frutas usando `if` e operadores lógicos. Tente resolver antes de abrir a resolução.
 
+## De onde paramos
+
+Você já calcula com variáveis e decide com `if`. Agora vai combinar uma faixa de preço com uma condição de desconto.
+
 ## Desafio
 
 Seu Zé vende frutas com a seguinte tabela de preços:
@@ -32,6 +36,8 @@ O valor a ser pago.
 > 🛠️ **Correção:** a tabela do 3º exemplo estava embaralhada (entradas 5 e 15 com saídas 4.3 e 19.35). A saída 19.35 corresponde à entrada **5 kg de morango e 5 kg de maçã**, como mostra a conta acima. Também corrigido "quintanda" → "quitanda".
 
 ![Quitanda: preço por faixa e desconto](../img/dio-quitanda.svg)
+
+> 💡 **Analogia:** é a tabela de frete de uma transportadora: o preço por quilo muda ao passar de uma faixa, e o desconto só aparece quando o pedido fica grande o bastante.
 
 ## Resolução
 
@@ -73,6 +79,24 @@ public class Main {
 > 💡 O operador ternário `condição ? a : b` substitui o `if/else` quando só se escolhe entre dois valores. O resultado é o mesmo da versão com `if`, que também está correta.
 
 > ⚠️ O `println(double)` imprime o valor "cru" do `double`, o que funciona nos exemplos do desafio. Em outros casos, pode aparecer algo como `13.950000000000001`. Para um valor monetário, formate com `String.format(Locale.US, "%.2f", precoTotal)` ou use `BigDecimal`.
+
+> ➡️ **Próximo passo:** **Desafio triângulo**, que verifica uma regra geométrica antes de calcular.
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Por que o desconto usa `||` e não `&&`?</summary>
+
+Porque basta uma das condições valer (total acima de R$ 25,00 ou mais de 8 kg).
+
+</details>
+
+<details>
+<summary>Ver resposta: Como aplicar 10% de desconto com uma multiplicação?</summary>
+
+Multiplicando o total por 0,90.
+
+</details>
 
 ## 📌 Resumo
 

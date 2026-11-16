@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** desafio de faixas progressivas: calcular o imposto de renda somando a parte de cada faixa, com `if`/`else if` e saída formatada. Tente resolver antes de abrir a resolução.
 
+## De onde paramos
+
+Você já usa `if`/`else if` e formata saídas. Agora vai aplicar faixas progressivas, em que cada faixa cobra só a parte do salário que cai dentro dela.
+
 ## Desafio
 
 No país de Lolipad, todos pagam seus impostos com alegria: lá não há corrupção e todo o dinheiro arrecadado volta para a população. A moeda é o Loli, cujo símbolo é R$.
@@ -18,6 +22,8 @@ Leia um salário com duas casas decimais e calcule o Imposto de Renda devido, se
 O imposto é **progressivo**: cada alíquota incide apenas sobre a parte do salário dentro da sua faixa. Para R$ 3.002,00, são 8% sobre R$ 1.000,00 mais 18% sobre R$ 2,00, totalizando **R$ 80,36**.
 
 ![Exemplo do cálculo faixa a faixa para um salário de R$ 3002,00.](../img/ir-faixas.svg)
+
+> 💡 **Analogia:** pense em baldes empilhados. O salário enche primeiro o balde isento (até 2000), depois o de 8% (até 3000), depois o de 18%… Cada balde cobra a sua taxa só sobre a água que está dentro dele.
 
 ## Entrada
 
@@ -56,7 +62,8 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    Scanner leitor = new Scanner(System.in).useLocale(Locale.US);
+    Scanner leitor = new Scanner(System.in)
+      .useLocale(Locale.US);
     double renda = leitor.nextDouble();
     double imposto;
 
@@ -65,15 +72,19 @@ public class Main {
     } else if (renda <= 3000.0) {
       imposto = (renda - 2000.0) * 0.08;
     } else if (renda <= 4500.0) {
-      imposto = (renda - 3000.0) * 0.18 + 1000.0 * 0.08;
+      imposto = (renda - 3000.0) * 0.18
+          + 1000.0 * 0.08;
     } else {
-      imposto = (renda - 4500.0) * 0.28 + 1500.0 * 0.18 + 1000.0 * 0.08;
+      imposto = (renda - 4500.0) * 0.28
+          + 1500.0 * 0.18
+          + 1000.0 * 0.08;
     }
 
     if (imposto == 0.0) {
       System.out.println("Isento");
     } else {
-      System.out.println(String.format(Locale.US, "R$ %.2f", imposto));
+      System.out.println(String.format(
+        Locale.US, "R$ %.2f", imposto));
     }
   }
 }
@@ -88,11 +99,33 @@ public class Main {
 
 > 💡 Em sistemas reais de dinheiro, use `BigDecimal` em vez de `double`. O `double` tem erros de arredondamento binário (por exemplo, `0.1 + 0.2` dá `0.30000000000000004`).
 
+> ➡️ **Próximo passo:** você concluiu o curso. Para revisar, use o 🧭 mapa desta seção e o 📌 Resumo do curso no índice.
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Quanto paga quem ganha R$ 3.500,00?</summary>
+
+(3500 − 3000) × 0,18 + 80 = 90 + 80 = **R$ 170,00**.
+
+</details>
+
+<details>
+<summary>Ver resposta: Por que usar `Locale.US` no `String.format`?</summary>
+
+Para garantir o ponto como separador decimal, independentemente do idioma do computador.
+
+</details>
+
 ## 📌 Resumo
 
 | Item | O que o desafio pratica |
 | --- | --- |
-| Imposto progressivo | cada alíquota incide só sobre a parte do salário dentro da sua faixa |
-| `if` / `else if` | testar as faixas da menor para a maior |
-| Faixas cheias | somar o imposto das faixas anteriores: R$ 80 (8%) e R$ 270 (18%) |
-| Saída | `String.format(Locale.US, "R$ %.2f", valor)` garante o ponto decimal |
+| Imposto progressivo | Cada alíquota incide só sobre a parte do salário dentro da sua faixa. |
+| `if` / `else if` | Testar as faixas da menor para a maior. |
+| Faixas cheias | Somar o imposto das faixas anteriores: R$ 80 (8%) e R$ 270 (18%). |
+| Saída | `String.format(Locale.US, "R$ %.2f", valor)` garante o ponto decimal. |
+
+## 🧭 Mapa da seção
+
+![Mapa mental para revisar os desafios intermediários](../img/dio-mapa-desafios2.svg)

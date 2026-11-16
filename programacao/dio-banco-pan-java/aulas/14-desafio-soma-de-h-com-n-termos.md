@@ -28,13 +28,15 @@ Na saída será impresso o valor que representa a soma dos termos.
 
 ![H com N = 4 termos](../img/dio-harmonica.svg)
 
+> 💡 **Analogia:** imagine um bolo que você reparte em fatias cada vez menores: meio bolo, depois um terço do que sobrou, e assim por diante. Cada termo é a fatia nova que você acrescenta ao total.
+
 ### Código
 
 <details>
 <summary>Ver resposta</summary>
 
 ```java
-package soma_h_com_n_termos;
+package somahcomntermos;
 
 import java.util.Scanner;
 
@@ -54,6 +56,22 @@ public class Main {
   }
 }
 ```
+
+</details>
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Por que `1 / i` com `int` dá zero a partir de `i = 2`?</summary>
+
+A divisão de inteiros descarta a parte decimal: 1 / 2 vira 0. Use `1.0 / i`.
+
+</details>
+
+<details>
+<summary>Ver resposta: Por que o `Math.round` é usado?</summary>
+
+Porque o enunciado pede o valor arredondado para o inteiro mais próximo, como mostram os exemplos.
 
 </details>
 

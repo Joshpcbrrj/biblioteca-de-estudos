@@ -25,6 +25,8 @@ O **primeiro valor** de saída é a **quantidade de valores positivos**. A próx
 
 ![Positivos e média: contador + acumulador](../img/dio-positivos.svg)
 
+> 💡 **Analogia:** é uma catraca de estádio. O contador anota quantas pessoas passaram (cada positivo conta 1), e o acumulador soma o valor pago por cada uma. No fim, a média é o total dividido pelo número de pessoas.
+
 ### Código da resposta
 
 <details>
@@ -32,7 +34,7 @@ O **primeiro valor** de saída é a **quantidade de valores positivos**. A próx
 
 ```java
 //Classe "main"
-package Imprimindo_Positivos_e_Média;
+package positivosemedia;
 
 import java.util.Scanner;
 public class Main {
@@ -65,6 +67,22 @@ public class Main {
 > 🧮 **Conferindo o exemplo:** os positivos são 7, 6, 4,6 e 12 → **4 valores**. Média = (7 + 6 + 4,6 + 12) / 4 = 29,6 / 4 = **7,4**.
 
 > 🛠️ **Cuidado com o idioma do computador:** `System.out.printf("%.1f%n", media)` usa o *locale* da máquina. Num Windows em português, a saída sai como `7,4` (com vírgula), e um corretor automático que espera `7.4` marca como errado. Para garantir o ponto: `System.out.printf(Locale.US, "%.1f%n", media);` (com `import java.util.Locale;`). Pelo mesmo motivo, `nextDouble()` pode exigir que o usuário digite `4,6` em vez de `4.6` — use `new Scanner(System.in).useLocale(Locale.US)` para padronizar.
+
+## 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Por que o contador e o acumulador começam em zero?</summary>
+
+Para que o primeiro valor somado seja o total certo: somar zero não muda nada.
+
+</details>
+
+<details>
+<summary>Ver resposta: Se o enunciado pedisse a média de todos os 6 valores, o que mudaria no código?</summary>
+
+O `if (x > 0)` sairia, e a divisão passaria a ser por 6.
+
+</details>
 
 ## 📌 Resumo
 

@@ -1,8 +1,14 @@
 # Estruturas de repetição e arrays em Java
 
-> 🧭 **Nesta aula:** como repetir código com `while`, `do-while` e `for`, e como guardar vários valores em vetores e matrizes — com exercícios resolvidos.
+> 🗺️ **Nesta aula:** como repetir código com `while`, `do-while` e `for`, e como guardar vários valores em vetores e matrizes — com exercícios resolvidos.
+
+## De onde paramos
+
+Até aqui você escreveu decisões com `if`. Agora o programa vai repetir ações e lidar com vários valores de uma vez.
 
 ## Visão geral
+
+> 🗺️ **Nesta aula:** laços de repetição (`while`, `do-while`, `for`), incremento, atribuição composta e arrays.
 
 > 💡 **Laços** repetem um bloco de código; **arrays** guardam vários valores do mesmo tipo em uma única variável. Os dois quase sempre andam juntos: usamos um laço para percorrer um array.
 
@@ -21,13 +27,19 @@ Servem para executar um bloco várias vezes — enquanto uma condição for verd
 
 ![O while testa antes de entrar no bloco.](../img/loop-while.svg)
 
+> 💡 **Analogia:** é a fila de um brinquedo. O funcionário confere, antes de cada entrada, se ainda há vaga. Se a fila já estiver vazia, ninguém entra.
+
 #### `do-while` — teste no final
 
 ![O do-while executa o bloco e só depois testa.](../img/loop-dowhile.svg)
 
+> 💡 **Analogia:** é um quiosque de lanches: a pessoa faz o pedido pelo menos uma vez e, só depois, o atendente pergunta se ela quer mais.
+
 #### `for` — repetição contada
 
 ![O for reúne inicialização, condição e incremento.](../img/loop-for.svg)
+
+> 💡 **Analogia:** é uma corrida com voltas contadas. A largada é a inicialização, a checagem de quantas voltas faltam é a condição, e cada volta concluída é o incremento.
 
 #### Comandos complementares
 
@@ -37,7 +49,7 @@ Servem para executar um bloco várias vezes — enquanto uma condição for verd
 ```java
 for (int i = 1; i <= 10; i++) {
   if (i % 2 == 0) continue; // pula os pares
-  if (i > 7) break;  // para tudo depois do 7
+  if (i > 7) break;  // para depois do 7
   System.out.print(i + " "); // 1 3 5 7
 }
 ```
@@ -45,17 +57,17 @@ for (int i = 1; i <= 10; i++) {
 ### Incremento e decremento: pré x pós
 
 ```java
-// Pré-fixado (++i): incrementa ANTES de usar o valor
-System.out.println("Incremento pré-fixado:");
+// Pré (++i): incrementa ANTES de usar
+System.out.println("Pré-fixado:");
 for (int i = 0; i < 5; ++i) {
-  System.out.println("Valor de i: " + i);
+  System.out.println("i = " + i);
 }
 
-// Pós-fixado (j++): usa o valor e DEPOIS incrementa
-System.out.println("Incremento pós-fixado:");
+// Pós (j++): usa e DEPOIS incrementa
+System.out.println("Pós-fixado:");
 int j = 0;
 while (j < 5) {
-  System.out.println("Valor de j: " + j);
+  System.out.println("j = " + j);
   j++;
 }
 ```
@@ -90,7 +102,8 @@ int[] numeros = {10, 20, 30};
 Uma única "fila" de elementos, acessados por um índice.
 
 ```java
-double[] c = new double[12]; // 12 posições: c[0] até c[11]
+// 12 posições: c[0] até c[11]
+double[] c = new double[12];
 
 c[0] = -45;
 c[1] = 6;
@@ -108,20 +121,62 @@ c[11] = 78;
 
 ![Cada posição do vetor tem um índice, começando em 0.](../img/array-1d.svg)
 
+> 💡 **Analogia:** é um armário de gavetas numeradas. Cada gaveta guarda um valor e tem um número, começando em 0 (a primeira gaveta).
+
+Percorrer o vetor com `for-each`, quando não se precisa do índice:
+
+```java
+double soma = 0;
+for (double valor : c) {
+  soma += valor;
+}
+```
+
 #### Array multidimensional (matriz)
 
 Um array de arrays: um índice para a **linha** e outro para a **coluna**.
 
 ```java
-double[][] a = new double[3][4]; // 3 linhas e 4 colunas
-a[1][2] = 9.5;  // linha 1, coluna 2
+// 3 linhas e 4 colunas
+double[][] a = new double[3][4];
+a[1][2] = 9.5; // linha 1, coluna 2
 ```
 
 ![Na matriz, o primeiro índice é a linha e o segundo, a coluna.](../img/array-2d.svg)
 
+> 💡 **Analogia:** é uma planilha. O primeiro número escolhe a faixa horizontal (a linha) e o segundo escolhe a faixa vertical (a coluna), como numa batalha naval.
+
 > 🛠️ **Ajuste:** o texto original dizia "temos um índice para coluna e outro para linhas" — a ordem correta no Java é `[linha][coluna]`.
 
+### 🧠 Revisão rápida
+
+**Num menu que deve aparecer pelo menos uma vez, qual laço usar?**
+
+`do-while`: ele executa o bloco antes de testar a condição.
+
+**Quantas vezes roda `for (int i = 10; i > 0; i -= 3)`?**
+
+4 vezes: i = 10, 7, 4 e 1.
+
+**Qual o índice do último elemento de `int[] v = new int[8]`?**
+
+7 (`v.length - 1`).
+
+### 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| `while` | testa antes de cada volta; pode não executar nenhuma vez |
+| `do-while` | executa uma vez e depois testa; bom para validar entrada |
+| `for` | repetição contada, com inicialização, condição e incremento |
+| `break` / `continue` | sai do laço / pula para a próxima volta |
+| `++i` × `i++` | o pré-incremento soma antes de usar; o pós-incremento usa e depois soma |
+| Array | tamanho fixo, índices de 0 até `length - 1` |
+| Matriz | array de arrays, indexada como `[linha][coluna]` |
+
 ## Exercícios de estruturas de repetição
+
+> 🗺️ **Nesta aula:** seis exercícios de laços: validação, contagem, média, tabuada e fatorial.
 
 > 💡 Seis exercícios para praticar `while`, `do-while` e `for`. Tente resolver antes de abrir o código. Os nomes de variáveis foram ajustados para **camelCase**, a convenção do Java.
 
@@ -389,7 +444,36 @@ public class Ex6Fatorial {
 
 > 🛠️ **Correção:** com `int`, o fatorial **estoura** a partir de 13! (o resultado passa de 2,1 bilhões e vira um número errado, sem nenhum aviso). Com `long` o cálculo é correto até 20!. Também tratei números negativos, que antes resultavam em 1.
 
+### 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: Qual laço usar para pedir uma nota até ela ficar entre 0 e 10?</summary>
+
+`do-while`: a leitura acontece pelo menos uma vez, e o teste vem depois.
+
+</details>
+
+<details>
+<summary>Ver resposta: Por que o Exercício 3 começa o maior número em `Integer.MIN_VALUE`, e não em 0?</summary>
+
+Porque, com 0, uma sequência só de negativos faria o programa dizer que o maior é 0, valor que nunca foi digitado.
+
+</details>
+
+### 📌 Resumo
+
+| Exercício | O que pratica |
+| --- | --- |
+| 1. Nome e idade | `while (true)` com `break` como condição de saída |
+| 2. Nota válida | `do-while` para validar a entrada |
+| 3. Maior e média | `for` acumulando valores; média com `double` |
+| 4. Pares e ímpares | contagem com `%` dentro de um `for` |
+| 5. Tabuada | validação com `do-while` e `for` de 1 a 10 |
+| 6. Fatorial | `for` decrescente e tipo `long` para não estourar |
+
 ## Exercícios de arrays
+
+> 🗺️ **Nesta aula:** quatro exercícios com vetores e matrizes: inverter, contar, sortear e montar uma matriz.
 
 > 💡 Quatro exercícios para praticar vetores e matrizes. Os nomes foram ajustados para **camelCase** e as classes para **PascalCase**, seguindo as convenções do Java.
 
@@ -578,6 +662,45 @@ public class Ex4MatrizForEach {
 </details>
 
 > 🛠️ **Correção:** `random.nextInt(0, 9)` gera de **0 a 8** — o 9 nunca aparecia. O correto é `nextInt(10)`. Também removi o `import java.util.Arrays` da versão com for-each, que não era usado.
+
+### 🧠 Revisão rápida
+
+<details>
+<summary>Ver resposta: No Exercício 1, por que a posição espelhada é `length - 1 - i`?</summary>
+
+Porque o índice 0 precisa ir para o último índice (`length - 1`), e assim por diante: a posição `i` vai para `length - 1 - i`.
+
+</details>
+
+<details>
+<summary>Ver resposta: Por que `random.nextInt(10)` gera de 0 a 9?</summary>
+
+O limite superior do `nextInt` é exclusivo: o valor 10 nunca é sorteado.
+
+</details>
+
+### 📌 Resumo
+
+| Exercício | O que pratica |
+| --- | --- |
+| 1. Ordem inversa | copiar um vetor para outro, de trás para frente |
+| 2. Consoantes | `char`, `Character` e `StringBuilder` |
+| 3. Aleatórios | `Random` e o uso de um laço `for-each` |
+| 4. Matriz 4×4 | matriz aninhada, percorrida linha por linha |
+
+### Meu workspace do curso (Feito no IntelliJ)
+
+> ➡️ **Próximo passo:** na próxima aula você organiza dados em estruturas mais flexíveis, como pilhas, filas e listas.
+
+## 🧠 Revisão rápida
+
+**Qual laço escolher quando você sabe exatamente quantas voltas serão dadas?**
+
+`for`, pois reúne início, condição e passo na mesma linha.
+
+**Um `while` com condição falsa desde o início executa alguma vez?**
+
+Não: o teste é feito antes da primeira volta. Já o `do-while` executa pelo menos uma vez.
 
 ## 📌 Resumo
 

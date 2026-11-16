@@ -2,6 +2,10 @@
 
 > 🗺️ **Nesta aula:** um projeto de API para uma academia que aplica o Spring Data JPA na prática: modelo de dados, relacionamentos entre entidades, fluxo do back-end e documentação com Swagger.
 
+## De onde paramos
+
+Você já viu como o Spring Data JPA mapeia entidades, consultas e transações. Agora vai aplicar isso em um projeto de API completo.
+
 ## Objetivo do projeto
 
 Conhecer na prática os principais conceitos de **mapeamento objeto-relacional (ORM)** com o **Spring Data JPA**. Para isso, desenvolvemos uma API REST para o domínio de uma **academia de ginástica**, com foco na modelagem das entidades e nos relacionamentos entre elas.
@@ -22,55 +26,68 @@ São três entidades:
 @Entity
 @Table(name = "tb_alunos")
 public class Aluno {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(
+        strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  private String nome;
+    private String nome;
 
-  @Column(unique = true)
-  private String cpf;
+    @Column(unique = true)
+    private String cpf;
 
-  private String bairro;
-  private LocalDate dataDeNascimento;
+    private String bairro;
+    private LocalDate dataDeNascimento;
 
-  @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
-  @JsonIgnore // evita recursão infinita ao serializar Aluno -> avaliacoes -> aluno...
-  private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
+    @OneToMany(mappedBy = "aluno",
+               fetch = FetchType.LAZY)
+    // evita recursão infinita no JSON:
+    // Aluno -> avaliacoes -> aluno -> ...
+    @JsonIgnore
+    private List<AvaliacaoFisica> avaliacoes =
+        new ArrayList<>();
 }
 
 @Entity
 @Table(name = "tb_avaliacoes")
 public class AvaliacaoFisica {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(
+        strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @ManyToOne
-  @JoinColumn(name = "aluno_id") // dono do relacionamento: aqui fica a FK
-  private Aluno aluno;
+    // dono do relacionamento: aqui fica a FK
+    @ManyToOne
+    @JoinColumn(name = "aluno_id")
+    private Aluno aluno;
 
-  private LocalDateTime dataDaAvaliacao = LocalDateTime.now();
-  private double peso;
-  private double altura;
+    private LocalDateTime dataDaAvaliacao =
+        LocalDateTime.now();
+    private double peso;
+    private double altura;
 }
 
 @Entity
 @Table(name = "tb_matriculas")
 public class Matricula {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(
+        strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @OneToOne
-  @JoinColumn(name = "aluno_id", unique = true)
-  private Aluno aluno;
+    @OneToOne
+    @JoinColumn(name = "aluno_id",
+                unique = true)
+    private Aluno aluno;
 
-  private LocalDateTime dataDaMatricula = LocalDateTime.now();
+    private LocalDateTime dataDaMatricula =
+        LocalDateTime.now();
 }
 ```
 
 > 💡 **Quem é o dono do relacionamento?** O lado com `@JoinColumn` é o dono: é na tabela dele que fica a chave estrangeira. O lado com `mappedBy` só espelha o relacionamento e não gera coluna.
+
+> 💡 **Analogia:** cada ficha de avaliação física tem o nome do aluno escrito nela (a FK). O aluno não precisa anotar todas as suas fichas: para listá-las, basta procurar as fichas com o nome dele — é isso que o `mappedBy` faz.
 
 ## Fluxo do back-end
 
@@ -95,12 +112,28 @@ Slides do curso:
 
 Meu projeto:
 
+> ➡️ **Próximo passo:** **Explorando Padrões de Projetos na Prática com Java**, para reconhecer soluções clássicas em código real.
+
+## 🧠 Revisão rápida
+
+**Em qual tabela fica a FK do relacionamento aluno–avaliação?**
+
+Em `tb_avaliacoes` (`aluno_id`), o lado `@ManyToOne` com `@JoinColumn`.
+
+**Para que serve o `@JsonIgnore` na lista de avaliações?**
+
+Para evitar a recursão infinita ao converter Aluno ↔ AvaliacaoFisica em JSON.
+
+**Qual valor de `ddl-auto` usar em produção?**
+
+`validate` ou `none`, com migrações versionadas (Flyway/Liquibase).
+
 ## 📌 Resumo
 
 | Item | Em uma frase |
 | --- | --- |
-| Entidades | `Aluno`, `AvaliacaoFisica` e `Matricula`, cada uma numa tabela |
-| 1–N | `@OneToMany(mappedBy = ...)` no lado "um" e `@ManyToOne`  • `@JoinColumn` no lado "muitos" |
-| 1–1 | `@OneToOne`: cada aluno tem no máximo uma matrícula |
-| `@JsonIgnore` | evita a recursão infinita ao transformar entidades ligadas em JSON |
-| Camadas | controller → service → repository → banco |
+| Entidades | `Aluno`, `AvaliacaoFisica` e `Matricula`, cada uma numa tabela. |
+| 1–N | `@OneToMany(mappedBy = ...)` no lado "um" e `@ManyToOne`  • `@JoinColumn` no lado "muitos". |
+| 1–1 | `@OneToOne`: cada aluno tem no máximo uma matrícula. |
+| `@JsonIgnore` | Evita a recursão infinita ao transformar entidades ligadas em JSON. |
+| Camadas | Controller → service → repository → banco. |
