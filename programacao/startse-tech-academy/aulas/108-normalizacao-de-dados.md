@@ -22,11 +22,11 @@ Imagine uma planilha de pedidos em que o nome e o endereço do cliente se repete
 
 ## Ponto de partida: uma tabela "planilha"
 
-| pedido | cliente | cidade | produtos | precos |
-| --- | --- | --- | --- | --- |
-| 1 | Ana | Recife | café, chá | 39.90, 19.90 |
-| 2 | Ana | Recife | café | 39.90 |
-| 3 | Beto | Natal | bolo | 25.00 |
+| pedido | cliente (cidade) | produtos | precos |
+| --- | --- | --- | --- |
+| 1 | Ana (Recife) | café, chá | 39.90, 19.90 |
+| 2 | Ana (Recife) | café | 39.90 |
+| 3 | Beto (Natal) | bolo | 25.00 |
 
 Problemas: listas dentro da célula, Ana e Recife repetidos e o preço do café repetido.
 
@@ -34,12 +34,12 @@ Problemas: listas dentro da célula, Ana e Recife repetidos e o preço do café 
 
 Cada célula guarda **um único valor**, sem listas nem grupos repetidos. A lista de produtos vira uma linha por item:
 
-| pedido | cliente | cidade | produto | preco |
-| --- | --- | --- | --- | --- |
-| 1 | Ana | Recife | café | 39.90 |
-| 1 | Ana | Recife | chá | 19.90 |
-| 2 | Ana | Recife | café | 39.90 |
-| 3 | Beto | Natal | bolo | 25.00 |
+| pedido | cliente (cidade) | produto | preco |
+| --- | --- | --- | --- |
+| 1 | Ana (Recife) | café | 39.90 |
+| 1 | Ana (Recife) | chá | 19.90 |
+| 2 | Ana (Recife) | café | 39.90 |
+| 3 | Beto (Natal) | bolo | 25.00 |
 
 ## 2ª Forma Normal (2FN): depender da chave inteira
 

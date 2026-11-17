@@ -66,8 +66,9 @@ def auditar_aula(caminho, primeira=False):
                 r['sem_analogia'].append(m.group(1))
         if l.startswith('|') and l.count('|') - 1 > 4 and not re.match(r'^\|[\s:|-]+\|$', l):
             r['tabela_larga'].append(i)
+        l_sem_codigo = re.sub(r'`[^`]*`', '', l)  # nomes de tags em `código` não são sobra
         for s in SOBRAS:
-            if s in l:
+            if s in l_sem_codigo:
                 r['sobras_html'].append(i)
                 break
         if l.strip().startswith('<summary>') and i < len(linhas) and linhas[i].strip() != '':
@@ -75,7 +76,7 @@ def auditar_aula(caminho, primeira=False):
         if l.strip() == '</details>' and i >= 2 and linhas[i - 2].strip() != '':
             r['details_sem_branco'].append(i)
     nome = os.path.basename(caminho)
-    if not nome.startswith('00-'):
+    if not re.match(r'0+-', nome):
         for k, rx in SECOES.items():
             # a primeira aula não tem aula anterior para retomar
             if k == 'de_onde' and primeira:
@@ -125,7 +126,7 @@ def main():
     aulas_dir = os.path.join(base, 'aulas')
     usadas = set()
     nomes = [f for f in sorted(os.listdir(aulas_dir)) if f.endswith('.md')]
-    primeira = next((f for f in nomes if not f.startswith('00-')), None)
+    primeira = next((f for f in nomes if not re.match(r'0+-', f)), None)
     for f in nomes:
         if f.endswith('.md'):
             r = auditar_aula(os.path.join(aulas_dir, f), f == primeira)

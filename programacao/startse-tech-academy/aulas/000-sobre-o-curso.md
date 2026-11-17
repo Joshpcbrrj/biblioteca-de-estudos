@@ -6,6 +6,10 @@ Cada aula segue o mesmo roteiro: **Nesta aula** → **De onde paramos** → cont
 
 **Legenda dos quadros:** 🗺️ o que a aula cobre · 💡 dica · ⚠️ correção ou cuidado · 🧠 revisão rápida · ➡️ próximo passo · 📌 resumo
 
+![Os seis grandes blocos do curso, em ordem.](../img/st-caminho-curso.svg)
+
+> 💡 **Analogia:** o curso é como construir uma casa: primeiro entender o terreno (fundamentos), depois levantar paredes e pintar (páginas), guardar as plantas e versões (Git), instalar a parte elétrica (JavaScript), ligar o prédio à rede (servidor) e, por fim, montar o depósito (dados).
+
 ## 📌 Resumo do curso
 
 | Módulo | Ideia central | Chave |

@@ -1,0 +1,600 @@
+{
+ "curso": "startse-tech-academy",
+ "paginas": [
+  {
+   "id": "edb22e3c81324069a22eadc8ff723cc8",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato encontrado; ainda falta comparar com aulas/ do repositório"
+  },
+  {
+   "id": "552f895c62cb4c28825104c92b1616e4",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato encontrado; ainda falta comparar com aulas/ do repositório"
+  },
+  {
+   "id": "e30d2b8cf2a2454dbf4461389a40d285",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato encontrado; ainda falta comparar com aulas/ do repositório"
+  },
+  {
+   "id": "891fd58284604ed685a7f9e21c62dff9",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato encontrado; ainda falta comparar com aulas/ do repositório"
+  },
+  {
+   "id": "408345e2044381a5ad18f5d634b875ee",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato encontrado; ainda falta comparar com aulas/ do repositório"
+  },
+  {
+   "id": "c86d3e1a08af4fb8bb82b3e5da521925",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato encontrado; ainda falta comparar com aulas/ do repositório"
+  },
+  {
+   "id": "1627593cd77449faba7623fc8b760213",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "2be89baefccb4f5a8fad5082d350e4c3",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato; cheat sheet do módulo já na página"
+  },
+  {
+   "id": "2d9dc900a27d4c00bdc3bfa4fe992faf",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato; cheat sheet do módulo já na página"
+  },
+  {
+   "id": "408345e20443817e970de63f7196c9b8",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato; cheat sheet do módulo já na página"
+  },
+  {
+   "id": "84b8464631654d24aae801a94a287252",
+   "feito": true,
+   "nota": "revisado no Notion; sem erro de fato; cheat sheet do módulo já na página"
+  },
+  {
+   "id": "5888a2bd0ed740629089770cb2423be5",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "9dae62bbe780408781115773bbc348cd",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "ef7f8cb9c63f4006ae6f5553e66451fd",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "53c8b5b6584a4836a8dc78e073000837",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "7eae038d33d24d94b10bde8f9be4f6ed",
+   "feito": true,
+   "nota": "revisada; sem erro; ok"
+  },
+  {
+   "id": "1a516ab11d9040488aa1ab90db565883",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "e5762100f64542ec8ab821ab60524124",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "40b345e204438155af92dd4a96153c85",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "7e2c4ec6cf994907a85f71040d66fe7f",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e2044381b0b121d05256144a8b",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "b20e947d357843b0bfffa44c30d173bb",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "0727639b03444442a2a2dd917839fec7",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "39462b9de6574fd3a5051134b16b5021",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "52f42696b40f416b9b80c633f9969b7a",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "d23a8cd9fce7445e92015d922f91cb06",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "ab0dcc3d6e37403d8361a9c8c27f7a4e",
+   "feito": true,
+   "nota": "revisada; sem ajuste (conta de especificidade conferida)"
+  },
+  {
+   "id": "408345e2044381f59b0ee4185e49b316",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "eeceff63da41431f8af7816c496fd774",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "5b7e3f00fad2409c88284567bb052d1d",
+   "feito": true,
+   "nota": "revisada; sem ajuste (conferido h1 2em, button/input sem herança de fonte)"
+  },
+  {
+   "id": "eb8668e21b5f403babb47a19a5ef98f4",
+   "feito": true,
+   "nota": "revisada; contas conferidas; sem ajuste"
+  },
+  {
+   "id": "665470cd4b8a4c90a6aba507322eab63",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "2a9704c005294b4d930a9543d633521b",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "c15873ece0504318b0905868b117e472",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "b401e4096a6748529a2b8cfcc95dd38d",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "408345e2044381afbe94dfff414d471f",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "a31a6b9ec99a409a8902ac3d2365d4ae",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "ee64cf3079384d35921f4f3f35a7efbf",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "c7bc92d56602483caf15fcbc1f2d69cd",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "be4653b69aeb48c48815dea4d3fc84e9",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "cf2a457bba054c8bbb5dbc1a5ef7cde2",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "08ebc74918d1435f9a4533e5066f1c4f",
+   "feito": true,
+   "nota": "revisada; sem ajuste (contas flex-grow conferidas)"
+  },
+  {
+   "id": "0ab4857e96b145bf8f82f06bd85531f1",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "b411872f943642d3ae43349c2d32de5e",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "64c922aa82304fc3b6159c2a1e616dfa",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "e3aba43404754e3eb70047eda5914409",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "84eb4bc42eb94e17a8c947df1d01ebd1",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "be7a98b00dd4429f8ef5f5a6134f4aac",
+   "feito": true,
+   "nota": "AJUSTADO (Modulos I a V)"
+  },
+  {
+   "id": "6b103f2e98a448d09dfeae923c4f7931",
+   "feito": true,
+   "nota": "AJUSTADO: sem que um sobrescreva"
+  },
+  {
+   "id": "171935eafd98407aa1455f94b638a753",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "8d59bd28dcd44184ba164495616157d0",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "e88b727c82b64cc8bfe3575edcf277b9",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e2044381be813ed29c850c2c72",
+   "feito": true,
+   "nota": "AJUSTADO: lista 1 a 4, README sem link"
+  },
+  {
+   "id": "8b06696ff21849aabce54bdb127d5c21",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "a4477272a8974a1b9814c7930f0c4e5a",
+   "feito": true,
+   "nota": "AJUSTADO: stash@{0}"
+  },
+  {
+   "id": "968b56e95d054154a31621684b401ddb",
+   "feito": true,
+   "nota": "AJUSTADO: link gitignore"
+  },
+  {
+   "id": "670d9954ab044cfea7a9042b95d516cc",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "4e7f76ac77474226b5ab4b21a11bd65a",
+   "feito": true,
+   "nota": "AJUSTADO: mapa removido"
+  },
+  {
+   "id": "c6c83aa4dcdb4ce69ff36798a996fa9c",
+   "feito": true,
+   "nota": "AJUSTADO: titulo JS (verificar no indice)"
+  },
+  {
+   "id": "efd42c29b5834bf9b398911ca834003d",
+   "feito": true,
+   "nota": "revisada; sem ajuste (exemplos conferidos)"
+  },
+  {
+   "id": "96e161ee50bc480ba0f674618b5c915a",
+   "feito": true,
+   "nota": "AJUSTADO: lista de operadores e legenda"
+  },
+  {
+   "id": "4fa7f45a9feb445ba70c2a0e030923bd",
+   "feito": true,
+   "nota": "revisada; sem ajuste (contas e saídas conferidas)"
+  },
+  {
+   "id": "470ce1c8715e4ecab7be6c6728765440",
+   "feito": true,
+   "nota": "AJUSTADO: resumo retorno antecipado"
+  },
+  {
+   "id": "ee2fcfd36c3047249e7aae5c74e1430a",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "4ef3f020123542b4b889e062134be56e",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e2044381a38533ebc7f11fc745",
+   "feito": true,
+   "nota": "revisada; sem ajuste (exemplo de produtos e contas conferidos)"
+  },
+  {
+   "id": "539f270a43fd4da1a12d7af2ac87dfd0",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e20443812a9521c786dfb8367c",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "d87ba1d69b4e44008096d9a23007ae30",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e2044381619dc3c99a59ddcdb4",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e2044381afa6bee7e2e7165892",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "7d80eb5e92b940549b35cd0e9f372fb0",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "89aba4080546404fa01cc60ce5d71cf2",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "d781928483294d3082d68dce43bb99f3",
+   "feito": true,
+   "nota": "AJUSTADO: saida de innerHTML/textContent"
+  },
+  {
+   "id": "658d5fee823d407181a97236bddacdc0",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e2044381d09757eb453920e34c",
+   "feito": true,
+   "nota": "verificado: referencias ok; sem ajuste"
+  },
+  {
+   "id": "aa4b8b28950d4b518e38edcd6e38d724",
+   "feito": true,
+   "nota": "revisada; sem ajuste (código e fórmula do conversor conferidos)"
+  },
+  {
+   "id": "35ead2fa245f4f779e6f149a0f86ca4c",
+   "feito": true,
+   "nota": "AJUSTADO: mapa removido, R\\$"
+  },
+  {
+   "id": "b1acc3ed47f44be3ae861ff3ac5765fe",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "73c03cb9dd524863a720d058dacbd249",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "868649aa305a4c7e96c5957d9f455ee7",
+   "feito": true,
+   "nota": "AJUSTADO: comentario inline-flex"
+  },
+  {
+   "id": "4c3d1e5522d3432fb7af68e69493ea52",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "cd862a2044354c21acdb6de3deae1190",
+   "feito": true,
+   "nota": "AJUSTADO: versao 5.3; resposta 12 colunas. CDN nao alterado (nao verificado)"
+  },
+  {
+   "id": "fab6ad18f7224817bb12522b64fcf949",
+   "feito": true,
+   "nota": "AJUSTADO: mark->span, id header-nav->menu-principal, mapa removido"
+  },
+  {
+   "id": "4ace8d0861bc4b929758af048f6214d7",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "5428a6693bbc4e319e7f0ad754ffcb08",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "82123780413a40dfa2162c48d8b5cd06",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "20634d4e8774409a8b620aa8cb4e4fa7",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "8485b9fe3d02421f9d9ba5474ac1a3a2",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "8986133030d64ad78e9ffef7bd658a97",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "518cce78c49b405780cc4d67bdae5412",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e204438196b2f8e00ece68ff75",
+   "feito": true,
+   "nota": "ok: referência 'Herança, extends e super' existe no módulo IX"
+  },
+  {
+   "id": "76c8984a4cfd4dc190513f22c4b3e50a",
+   "feito": true,
+   "nota": "AJUSTADO: mapa removido"
+  },
+  {
+   "id": "59a2064d402d4e888abda080ba42c4df",
+   "feito": true,
+   "nota": "AJUSTADO: titulo"
+  },
+  {
+   "id": "af9d5402ec5c4e3e9102d9c8b3c5c25b",
+   "feito": true,
+   "nota": "AJUSTADO: titulo e Socket.IO"
+  },
+  {
+   "id": "408345e20443814c86cafaf137e99cf2",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "014ea6141b89484bbe31a17a8f5ac694",
+   "feito": true,
+   "nota": "AJUSTADO: titulo"
+  },
+  {
+   "id": "e5014968c4734623a862fc6e5245ef96",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "65796b5280564da7929c92acb489ff5e",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "68f674de64fb4f67bfad1f182815eae1",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "9b78c1e6cf6546b2a9903c25b1b3f398",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "7930d0a1af664f0da988a5319bda85f5",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e204438196b3f0c2683d982168",
+   "feito": true,
+   "nota": "AJUSTADO: PUT feita, mapa removido"
+  },
+  {
+   "id": "1a37d067f8fa450c844a04a49a33caa6",
+   "feito": true,
+   "nota": "AJUSTADO: escape"
+  },
+  {
+   "id": "018ad5918e3b445cb295ad408b51de09",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "a7f4041e60d048b794c7eb304a57a84b",
+   "feito": true,
+   "nota": "AJUSTADO: escapes, links https, mapa ausente"
+  },
+  {
+   "id": "bfaf72eb73dd4fd1bfce013c33c536d2",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e204438101a4f7d2c14b69385f",
+   "feito": true,
+   "nota": "AJUSTE: precisao decimal 39.90 em tabelas pt-BR (opcional: 39,90)"
+  },
+  {
+   "id": "f7abd23ad0d14e8c9616f32910516052",
+   "feito": true,
+   "nota": "revisada; sem ajuste maior"
+  },
+  {
+   "id": "51c5e28fef904e20a2594551a69223c5",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "ac03ccfdaa36482ea6433e9015cfc57e",
+   "feito": true,
+   "nota": "revisada; sem ajuste (contas do exercicio conferidas)"
+  },
+  {
+   "id": "7113474a8f054c2f9e0fed5d17a4199a",
+   "feito": true,
+   "nota": "AJUSTADO: GROUP BY"
+  },
+  {
+   "id": "408345e20443818c966dd388585b0ec8",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "c4fd628fe53e449d82b1f2e6efc4f29f",
+   "feito": true,
+   "nota": "revisada; limites conferidos; sem ajuste"
+  },
+  {
+   "id": "7db9a62302e545df9044dbbbb2593f89",
+   "feito": true,
+   "nota": "AJUSTADO: R$"
+  },
+  {
+   "id": "40dcda2a618c4bae804498b8c6cceefb",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "43f366b7b1bb46afa4bd4eb8f8628c27",
+   "feito": true,
+   "nota": "AJUSTADO: DELIMITER"
+  },
+  {
+   "id": "408345e2044381c3a6f0f7336e3b9430",
+   "feito": true,
+   "nota": "revisada; sem ajuste"
+  },
+  {
+   "id": "408345e2044381409a66e5c34f123aa4",
+   "feito": true,
+   "nota": "AJUSTADO: autocommit, mapa removido"
+  }
+ ]
+}
