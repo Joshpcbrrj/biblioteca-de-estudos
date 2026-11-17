@@ -1,6 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2560" viewBox="0 0 1600 2560"><defs>
-<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1E46"/><stop offset="1" stop-color="#132F6B"/></linearGradient>
-<radialGradient id="halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#2563EB" stop-opacity="0.35"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
-<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#E2E8F0"/></marker>
-</defs>
-<rect width="1600" height="2560" fill="url(#bg)"/><rect x="60" y="60" width="1480" height="2440" rx="28" fill="none" stroke="#3B5BA9" stroke-width="4"/><text x="800" y="230" font-family="Helvetica, Arial, sans-serif" font-size="52" font-weight="bold" fill="#93C5FD" text-anchor="middle" letter-spacing="10">UDEMY / YOUTUBE</text><rect x="710" y="275" width="180" height="8" rx="4" fill="#F59E0B"/><text x="800" y="450" font-family="Helvetica, Arial, sans-serif" font-size="138" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">Lógica de</text><text x="800" y="615" font-family="Helvetica, Arial, sans-serif" font-size="138" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">programação com</text><text x="800" y="780" font-family="Helvetica, Arial, sans-serif" font-size="138" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">Portugol Studio</text><circle cx="800" cy="1450" r="560" fill="url(#halo)"/><circle cx="800" cy="1450" r="470" fill="#0F2A5F" stroke="#3B82F6" stroke-width="6"/><rect x="670" y="1040" width="260" height="84" rx="42" fill="#F3F4F6"/><text x="800" y="1097" font-family="Helvetica, Arial, sans-serif" font-size="44" font-weight="bold" fill="#0B1E46" text-anchor="middle" letter-spacing="0">início</text><path d="M800,1124L800,1178" stroke="#E2E8F0" stroke-width="8" fill="none" marker-end="url(#a)"/><polygon points="630,1185 1000,1185 970,1275 600,1275" fill="#DBEAFE"/><text x="800" y="1244" font-family="Menlo, Consolas, monospace" font-size="42" font-weight="bold" fill="#0B1E46" text-anchor="middle" letter-spacing="0">leia(nota)</text><path d="M800,1275L800,1325" stroke="#E2E8F0" stroke-width="8" fill="none" marker-end="url(#a)"/><polygon points="800,1330 1020,1450 800,1570 580,1450" fill="#F59E0B"/><text x="800" y="1465" font-family="Helvetica, Arial, sans-serif" font-size="44" font-weight="bold" fill="#0B1E46" text-anchor="middle" letter-spacing="0">nota ≥ 7?</text><path d="M580,1450H500V1610" stroke="#E2E8F0" stroke-width="8" fill="none" marker-end="url(#a)"/><path d="M1020,1450H1100V1610" stroke="#E2E8F0" stroke-width="8" fill="none" marker-end="url(#a)"/><text x="538" y="1425" font-family="Helvetica, Arial, sans-serif" font-size="36" font-weight="bold" fill="#BBF7D0" text-anchor="middle" letter-spacing="0">sim</text><text x="1062" y="1425" font-family="Helvetica, Arial, sans-serif" font-size="36" font-weight="bold" fill="#FECACA" text-anchor="middle" letter-spacing="0">não</text><rect x="360" y="1615" width="280" height="96" rx="14" fill="#22C55E"/><text x="500" y="1676" font-family="Helvetica, Arial, sans-serif" font-size="42" font-weight="bold" fill="#052E16" text-anchor="middle" letter-spacing="0">aprovado</text><rect x="960" y="1615" width="280" height="96" rx="14" fill="#F87171"/><text x="1100" y="1676" font-family="Helvetica, Arial, sans-serif" font-size="42" font-weight="bold" fill="#450A0A" text-anchor="middle" letter-spacing="0">estudar +</text><path d="M500,1711V1770H770" stroke="#E2E8F0" stroke-width="8" fill="none" marker-end="url(#a)"/><path d="M1100,1711V1770H830" stroke="#E2E8F0" stroke-width="8" fill="none" marker-end="url(#a)"/><rect x="690" y="1735" width="220" height="74" rx="37" fill="#F3F4F6"/><text x="800" y="1785" font-family="Helvetica, Arial, sans-serif" font-size="42" font-weight="bold" fill="#0B1E46" text-anchor="middle" letter-spacing="0">fim</text><text x="800" y="2075" font-family="Menlo, Consolas, monospace" font-size="44" font-weight="normal" fill="#93C5FD" text-anchor="middle" letter-spacing="0">programa { funcao inicio() { ... } }</text><text x="800" y="2190" font-family="Helvetica, Arial, sans-serif" font-size="58" font-weight="normal" fill="#E2E8F0" text-anchor="middle" letter-spacing="0">Curso de Bóson Treinamentos</text><rect x="300" y="2265" width="1000" height="4" fill="#3B5BA9"/><text x="800" y="2380" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="0">Criado por: Josué B. Almeida</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2560" width="1600" height="2560">
+  <defs>
+    <marker id="ah" markerWidth="24" markerHeight="24" refX="15" refY="12" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L24,12 L0,24 z" fill="#F7F1E1"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="2560" fill="#F7F1E1"/>
+  <rect width="1600" height="48" fill="#C8102E"/>
+  <rect y="2512" width="1600" height="48" fill="#0F6B3A"/>
+  <g font-family="Liberation Sans, Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="800" y="250" font-size="54" font-weight="700" letter-spacing="14" fill="#0F6B3A">UDEMY / YOUTUBE</text>
+    <rect x="720" y="290" width="160" height="12" fill="#C8102E"/>
+    <g font-size="148" font-weight="700" fill="#0B3D24">
+      <text x="800" y="520">Lógica de</text>
+      <text x="800" y="685">programação com</text>
+      <text x="800" y="850">Portugol Studio</text>
+    </g>
+  </g>
+  <circle cx="800" cy="1420" r="470" fill="#0F6B3A"/>
+  <circle cx="800" cy="1420" r="470" fill="none" stroke="#C8102E" stroke-width="14" stroke-dasharray="2 34" stroke-linecap="round" transform="translate(0,0)"/>
+  <g font-family="Liberation Sans, Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="700">
+    <g stroke="#F7F1E1" stroke-width="8" fill="none" stroke-linejoin="round">
+      <path d="M800,1080 V1148" marker-end="url(#ah)"/>
+      <path d="M600,1330 H560 V1600" marker-end="url(#ah)"/>
+      <path d="M1000,1330 H1040 V1600" marker-end="url(#ah)"/>
+      <path d="M560,1690 V1770 H700"/>
+      <path d="M1040,1690 V1770 H900"/>
+    </g>
+    <rect x="680" y="1010" width="240" height="70" rx="35" fill="#F7F1E1"/>
+    <text x="800" y="1057" font-size="40" fill="#0B3D24">início</text>
+    <polygon points="800,1150 1000,1330 800,1510 600,1330" fill="#D6213A"/>
+    <text x="800" y="1346" font-size="46" fill="#F7F1E1">nota ≥ 7?</text>
+    <text x="585" y="1302" font-size="34" fill="#BFE8CF" text-anchor="end">sim</text>
+    <text x="1015" y="1302" font-size="34" fill="#FFC2CB" text-anchor="start">não</text>
+    <rect x="440" y="1610" width="240" height="80" rx="14" fill="#F7F1E1"/>
+    <text x="560" y="1664" font-size="40" fill="#0F6B3A">aprovado</text>
+    <rect x="920" y="1610" width="240" height="80" rx="14" fill="#F7F1E1"/>
+    <text x="1040" y="1664" font-size="40" fill="#C8102E">estudar +</text>
+    <rect x="700" y="1740" width="200" height="60" rx="30" fill="#F7F1E1"/>
+    <text x="800" y="1782" font-size="36" fill="#0B3D24">fim</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="800" y="2090" font-family="DejaVu Sans Mono, monospace" font-size="46" fill="#0F6B3A">programa { funcao inicio() { ... } }</text>
+    <text x="800" y="2190" font-family="Liberation Sans, Arial, sans-serif" font-size="52" fill="#0B3D24">Curso de Bóson Treinamentos</text>
+    <rect x="300" y="2260" width="1000" height="4" fill="#C8102E"/>
+    <text x="800" y="2380" font-family="Liberation Sans, Arial, sans-serif" font-size="68" font-weight="700" fill="#0B3D24">Criado por: Josué B. Almeida</text>
+  </g>
+</svg>
