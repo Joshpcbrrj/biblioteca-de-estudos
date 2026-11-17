@@ -12,6 +12,10 @@ Este curso forma um desenvolvedor web do zero: primeiro os fundamentos (computad
 
 > 💡 **Analogia:** programar é como dar instruções a um GPS para alguém que nunca saiu de casa. "Vá até a padaria" não serve; é preciso dizer "saia pela porta, vire à direita, ande 200 metros, atravesse na faixa".
 
+O computador faz bilhões de operações por segundo, mas não decide nada sozinho. Ele é rápido e obediente, nunca criativo. Programar preenche exatamente essa lacuna: você pensa uma vez, ele repete sem errar e sem cansar.
+
+Pense numa loja com 300 produtos que vai dar 10% de desconto. Na mão, é abrir produto por produto, calcular e digitar o novo preço: umas duas horas de trabalho, com erros de digitação pelo caminho. Um programa faz o mesmo em menos de um segundo, e na milésima vez continua acertando. O ganho não é a inteligência da máquina: é a repetição sem desgaste.
+
 - Uma **linguagem de programação** é um conjunto de regras de **sintaxe** (como escrever) e **semântica** (o que cada coisa significa). Exemplos: C, C++, Java, Python e JavaScript, cada uma com características e usos próprios.
 - Programar vai além de digitar código. O trabalho passa por várias etapas:
   1. **entender o problema**;
@@ -19,9 +23,21 @@ Este curso forma um desenvolvedor web do zero: primeiro os fundamentos (computad
   3. **codificar**;
   4. **testar e depurar** (encontrar e corrigir erros).
 
+![As quatro etapas, e o vaivém entre testar e codificar.](../img/st-etapas-programar.svg)
+
+> 💡 **Analogia:** programar é como cozinhar uma receita nova. Entender é saber para quantas pessoas é o prato, planejar é escrever os passos, codificar é cozinhar e testar é provar. Se faltar sal, você volta ao fogão.
+
+Na prática, as etapas não têm o mesmo tamanho. Quem está começando imagina que codificar é o trabalho todo, mas entender o problema e testar costumam levar mais tempo do que escrever o código. No exemplo do desconto: **entender** é descobrir se o desconto também vale para produtos que já estão em promoção; **planejar** é decidir que você vai percorrer a lista e multiplicar cada preço por 0,9; **codificar** são três ou quatro linhas; **testar** é conferir se um produto de R$ 10,00 virou R$ 9,00 e se nenhum preço terminou negativo.
+
+As etapas também não são uma fila de mão única. Testar quase sempre devolve você para o código, e às vezes mostra que o problema foi mal entendido desde o começo. Descobrir isso cedo é barato; descobrir depois de o sistema estar no ar, não.
+
 ## O que é algoritmo?
 
+Antes de escrever qualquer linha de código, você precisa saber o que vai mandar o computador fazer. O algoritmo é esse plano, escrito de um jeito que não deixe dúvida.
+
 **Algoritmo é uma sequência finita, ordenada e sem ambiguidade de passos que resolve um problema.** Uma receita de bolo é um algoritmo; um programa é um algoritmo escrito numa linguagem que o computador entende.
+
+As três palavras da definição carregam peso. **Finita** quer dizer que acaba: um passo que manda voltar para si mesmo para sempre não é algoritmo, é um travamento. **Ordenada** quer dizer que a sequência importa: assar antes de misturar dá outro resultado. E **sem ambiguidade** é a mais traiçoeira das três. "Separe os alunos aprovados" parece claro, mas aprovado é nota acima de 7 ou de 7 para cima? E quem passou de nota mas faltou demais? O computador não pergunta: ele aplica a regra que você escreveu, mesmo quando você escreveu a errada.
 
 Um bom algoritmo é:
 
@@ -58,6 +74,10 @@ function maiorDeTres(a, b, c) {
 console.log(maiorDeTres(7, 42, 13));
 ```
 
+Vale percorrer o algoritmo com valores de verdade. Com A = 7, B = 42 e C = 13, o passo 2 guarda 7 em `maior`. No passo 3, 42 é maior que 7, então `maior` passa a valer 42. No passo 4, 13 não é maior que 42, e nada muda. Sobra 42, que é a resposta certa. Repare que o passo 2 não é desperdício: sem um candidato inicial, não haveria com o que comparar o B.
+
+> ⚠️ **Armadilha comum:** começar com `maior = 0` em vez do primeiro valor. Parece inofensivo e funciona em quase todo teste, até aparecerem três números negativos: com -5, -2 e -9, o resultado sairia 0, que não é nenhum dos três. Comece sempre pelo primeiro valor da lista.
+
 > 💡 Algoritmos não são exclusivos da computação: estão na matemática, na logística e no dia a dia. A diferença é que, para o computador, cada passo precisa ser **totalmente explícito**.
 
 ## Níveis das linguagens de programação
@@ -70,6 +90,10 @@ console.log(maiorDeTres(7, 42, 13));
 - **Assembly**: apelidos legíveis (*mnemônicos*) para as instruções de máquina. Um programa chamado *assembler* faz a tradução.
 - **Baixo/médio nível** (C, C++, Rust): dão controle fino da memória e do hardware, com alto desempenho.
 - **Alto nível** (Python, JavaScript, Java): mais próximas da linguagem humana. Escondem detalhes do hardware e o mesmo código roda em máquinas diferentes.
+
+Para enxergar a diferença, pegue a tarefa mais simples que existe: somar 2 e 3. Em alto nível, você escreve `soma = 2 + 3`, uma linha que se lê quase como português. Em Assembly, a mesma conta vira três instruções separadas: carregue 2 num registrador, some 3 a ele, guarde o resultado na memória. Em linguagem de máquina, cada uma dessas instruções é uma sequência de bits como `10110000 00000010`. É o mesmo trabalho, descrito em três níveis de detalhe.
+
+Não existe nível melhor, existe nível adequado. Quanto mais baixo, mais controle sobre memória e desempenho, e mais trabalho e chance de errar. Quanto mais alto, mais rápido você produz e mais o mesmo código roda em máquinas diferentes, ao custo de abrir mão do controle fino. É por isso que o software de um freio ABS é escrito em C, e um site é escrito em JavaScript: são exigências diferentes, não níveis de habilidade diferentes.
 
 Um **compilador** ou um **interpretador** faz a ponte entre o código de alto nível e o binário. Isso é detalhado na aula "Como as linguagens de programação funcionam".
 
