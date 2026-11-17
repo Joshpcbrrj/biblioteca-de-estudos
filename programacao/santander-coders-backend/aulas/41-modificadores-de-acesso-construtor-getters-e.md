@@ -129,12 +129,15 @@ Encapsule a classe `Produto` com nome e preço privados. O preço não pode ser 
 <summary>Ver resposta</summary>
 
 ```java
+// private: só a própria classe acessa os campos
 public class Produto {
   private String nome;
   private double preco;
 
+    // o construtor passa pelo setter, que valida o preço
   public Produto(String nome, double preco) {
     this.nome = nome;
+        // usa o setter para não pular a validação
     setPreco(preco);
   }
 
@@ -147,6 +150,7 @@ public class Produto {
   }
 
   public void setPreco(double preco) {
+        // impede preço negativo em qualquer ponto do código
     if (preco < 0) {
       throw new IllegalArgumentException(
           "Preço não pode ser negativo");

@@ -80,6 +80,8 @@ public void setNome(String nome) {
 
 ![Cada objeto com seu estado; o static compartilhado](../img/poo-instancia-static.svg)
 
+> 💡 **Analogia:** Como um prédio: cada apartamento tem seus próprios móveis (atributos de instância), mas a caixa de correspondência é uma só, compartilhada por todos (static).
+
 |  | De instância | static |
 | --- | --- | --- |
 | Pertence a | cada objeto | à classe |

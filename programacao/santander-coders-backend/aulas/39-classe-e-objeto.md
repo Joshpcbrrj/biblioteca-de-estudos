@@ -88,17 +88,21 @@ Crie a classe `Livro` com título, autor e páginas, um construtor e o método `
 <summary>Ver resposta</summary>
 
 ```java
+// molde: descreve como todo livro é
 public class Livro {
   String titulo;
   String autor;
   int paginas;
 
+    // construtor: recebe os dados de um livro novo
   Livro(String titulo, String autor, int paginas) {
+        // this.titulo é o atributo; titulo é o parâmetro
     this.titulo = titulo;
     this.autor = autor;
     this.paginas = paginas;
   }
 
+    // método: usa os dados deste livro específico
   void descrever() {
     System.out.println(titulo + ", de " + autor
         + " (" + paginas + " páginas)");
@@ -109,6 +113,7 @@ public class Livro {
 ```java
 public class Main {
   public static void main(String[] args) {
+        // cada new cria um objeto separado na memória
     Livro a = new Livro("Dom Casmurro",
         "Machado de Assis", 256);
     Livro b = new Livro("Vidas Secas",

@@ -2,9 +2,9 @@
 
 > 🗺️ **Nesta aula:** o que é versionamento de código, sistemas centralizados e distribuídos, o que é o Git, suas características e como ele guarda cada versão (commits, árvores e blobs).
 
-## Onde começamos
+## De onde paramos
 
-Este bootcamp de back-end começa por uma ferramenta que você vai usar em todos os outros módulos: o controle de versão. Antes de escrever algoritmos, Java ou SQL, é preciso saber guardar, comparar e compartilhar o código com segurança.
+Esta é a primeira aula de conteúdo, então não há nada a retomar. Este bootcamp de back-end começa por uma ferramenta que você vai usar em todos os outros módulos: o controle de versão. Antes de escrever algoritmos, Java ou SQL, é preciso saber guardar, comparar e compartilhar o código com segurança.
 
 ## O que é versionamento
 

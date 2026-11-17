@@ -87,11 +87,14 @@ O que este código mostra?
 
 ```java
 try {
+    // array de 3 posições: índices 0, 1 e 2
   int[] v = new int[3];
+    // o índice 3 não existe: lança exceção
   v[3] = 10;
   System.out.println("A");
 } catch (ArrayIndexOutOfBoundsException e) {
   System.out.println("B");
+// finally roda sempre, com ou sem erro
 } finally {
   System.out.println("C");
 }

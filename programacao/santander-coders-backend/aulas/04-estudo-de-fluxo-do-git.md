@@ -83,9 +83,11 @@ Você criou `app.js` e alterou `index.html` (que já estava no repositório). Qu
 <summary>Ver resposta</summary>
 
 ```bash
+# Passo 1: guarda a correção do título no histórico
 git add index.html
 git commit -m "fix: corrige título da página"
 
+# Passo 2: guarda o script em um commit separado
 git add app.js
 git commit -m "feat: adiciona script principal"
 ```

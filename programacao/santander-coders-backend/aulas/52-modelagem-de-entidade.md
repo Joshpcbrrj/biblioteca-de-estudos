@@ -58,6 +58,7 @@ CREATE TABLE clientes (
 CREATE TABLE pedidos (
   id integer GENERATED ALWAYS AS IDENTITY
     PRIMARY KEY,
+    -- chave estrangeira: aponta para um cliente existente
   cliente_id integer NOT NULL
     REFERENCES clientes (id),
   data timestamptz DEFAULT now()

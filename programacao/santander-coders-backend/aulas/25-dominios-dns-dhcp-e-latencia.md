@@ -58,6 +58,8 @@ O **DHCP** (Dynamic Host Configuration Protocol) entrega automaticamente as conf
 
 ![As quatro mensagens: Discover, Offer, Request, Ack](../img/dhcp-dora.svg)
 
+> 💡 **Analogia:** Como alugar uma mesa num coworking: você pergunta se há vaga (Discover), a recepção oferece uma mesa (Offer), você confirma o pedido (Request) e a recepção registra a reserva (Ack).
+
 O endereço é **emprestado** por um tempo (lease). Antes de vencer, o aparelho pede renovação; se sair da rede, o IP volta para o servidor e pode ser dado a outro.
 
 > 💡 **Analogia:** o DHCP é a recepção de um hotel: você chega, pede um quarto, recebe a chave (o IP) por alguns dias e, ao sair, o quarto fica livre para o próximo hóspede.

@@ -31,10 +31,14 @@ Testa **depois**: o corpo roda pelo menos uma vez. Repare no `;` depois do `whil
 
 ![A única diferença é onde fica o teste](../img/java-do-while.svg)
 
+> 💡 **Analogia:** o while é o porteiro que confere o convite antes de você entrar; o do-while é a degustação no supermercado: você prova primeiro e só depois decide se quer mais.
+
 ```java
+// começa em 0; o corpo roda antes do primeiro teste
 int c = 0;
 do {
   System.out.println("Contador: " + c);
+  // sem este passo, o laço nunca termina
   c++;
 } while (c < 5);
 ```
@@ -42,6 +46,7 @@ do {
 Com `c = 0` os dois laços mostram a mesma coisa. A diferença aparece quando a condição já começa falsa: com `c = 10`, o while não mostra nada e o do-while mostra "Contador: 10" uma vez.<br />Uso típico: menus e validação de entrada, em que é preciso ler antes de decidir.
 
 ```java
+// lê ao menos uma vez; repete se a nota for inválida
 Scanner in = new Scanner(System.in);
 int nota;
 do {
@@ -49,8 +54,6 @@ do {
   nota = in.nextInt();
 } while (nota < 0 || nota > 10);
 ```
-
-> 💡 **Analogia:** o while é o porteiro que confere o convite antes de você entrar; o do-while é a degustação no supermercado: você prova primeiro e só depois decide se quer mais.
 
 ## for
 
@@ -87,6 +90,7 @@ Percorre todos os elementos de um array ou coleção, sem índice.
 
 ```java
 int[] numeros = {10, 20, 30, 40};
+// para cada n, pega o próximo valor do array
 for (int n : numeros) {
   System.out.println(n);
 }
@@ -149,8 +153,10 @@ for (int i = 0; i < 10; i++) {
 Um padrão comum é o laço "infinito" de propósito, que só termina pelo `break`:
 
 ```java
+// laço infinito de propósito: só termina com break
 while (true) {
   String cmd = in.nextLine();
+  // equals compara o texto, não a referência
   if (cmd.equals("sair")) {
     break;
   }
@@ -232,6 +238,7 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
+    // acumulador (soma) e contador (quantidade)
     Scanner in = new Scanner(System.in);
     int soma = 0;
     int quantidade = 0;
@@ -240,6 +247,7 @@ public class Main {
     do {
       System.out.print("Número (0 para sair): ");
       n = in.nextInt();
+      // o 0 é o sinal de parada, não entra na conta
       if (n != 0) {
         soma += n;
         quantidade++;

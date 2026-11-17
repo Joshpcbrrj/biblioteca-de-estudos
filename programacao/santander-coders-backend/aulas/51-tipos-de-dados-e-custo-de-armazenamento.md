@@ -109,6 +109,7 @@ O `id`, o `ativo` e o `criado_em` se preenchem sozinhos.
 ### Datas e horas
 
 ```sql
+-- timestamptz guarda data, hora e fuso horário
 CREATE TABLE eventos (
   id serial PRIMARY KEY,
   nome_evento varchar(100),
@@ -117,6 +118,7 @@ CREATE TABLE eventos (
   data_hora_evento timestamptz
 );
 
+-- as colunas vêm antes dos valores, na mesma ordem
 INSERT INTO eventos
   (nome_evento, data_evento,
    horario_evento, data_hora_evento)

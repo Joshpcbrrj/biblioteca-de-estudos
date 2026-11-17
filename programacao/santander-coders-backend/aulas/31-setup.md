@@ -10,6 +10,8 @@ Os algoritmos do primeiro módulo foram escritos em pseudocódigo. Agora vamos e
 
 ![O compilador gera bytecode, e a JVM o executa](../img/java-compilacao.svg)
 
+> 💡 **Analogia:** Como um tradutor: o código-fonte é o texto original, o compilador traduz tudo para uma língua intermediária (bytecode), e a JVM é o leitor de cada país que entende essa tradução.
+
 - **JVM** (Java Virtual Machine): executa o bytecode. Existe uma JVM para cada sistema, e é por isso que o mesmo programa roda em Windows, Linux e macOS.
 - **JRE** (Java Runtime Environment): JVM + bibliotecas padrão. Basta para **rodar** programas.
 - **JDK** (Java Development Kit): JRE + ferramentas de desenvolvimento, como o compilador `javac`. É o que você precisa para **programar**.
@@ -77,8 +79,11 @@ Ou baixe o IntelliJ direto:
 Crie o arquivo `Main.java`:
 
 ```java
+// Toda classe pública fica em um arquivo com o mesmo nome
 public class Main {
+  // o programa começa a rodar por este método
   public static void main(String[] args) {
+    // escreve a mensagem no terminal
     System.out.println("Olá, Java!");
   }
 }

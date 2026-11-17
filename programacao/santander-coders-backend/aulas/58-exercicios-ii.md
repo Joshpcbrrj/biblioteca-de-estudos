@@ -27,6 +27,7 @@ Você vai cadastrar 5 jogos no catálogo de uma loja de games usando uma única 
 Um `INSERT INTO` com vários grupos de valores separados por vírgula:
 
 ```sql
+-- insere cinco jogos com nome e preço
 INSERT INTO jogos (nome, preco)
 VALUES ('Jogo A', 199.90),
        ('Jogo B', 149.90),

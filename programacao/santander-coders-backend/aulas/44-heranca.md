@@ -21,6 +21,7 @@ Uma classe **filha** (subclasse) herda os atributos e métodos de uma classe **p
 
 ```java
 // classe base
+// superclasse: o que todo animal tem em comum
 class Animal {
   protected String nome;
 
@@ -36,6 +37,7 @@ class Animal {
 
 ```java
 // Cachorro é um Animal: herda nome e emitirSom
+// extends: Cachorro herda tudo de Animal
 class Cachorro extends Animal {
   private String raca;
 
@@ -77,12 +79,14 @@ public class Main {
 A subclasse pode dar **sua própria versão** de um método herdado, com o mesmo nome e os mesmos parâmetros.
 
 ```java
+// superclasse: o que todo animal tem em comum
 class Animal {
   public void emitirSom() {
     System.out.println("O animal emite um som.");
   }
 }
 
+// extends: Cachorro herda tudo de Animal
 class Cachorro extends Animal {
   @Override
   public void emitirSom() {
@@ -105,6 +109,7 @@ Para aproveitar o comportamento do pai e acrescentar algo:
 ```java
 @Override
 public void emitirSom() {
+    // super chama a versão original, da classe Animal
   super.emitirSom();
   System.out.println("...e abana o rabo.");
 }
@@ -120,6 +125,7 @@ Crie `Funcionario` (nome, salário e o método `calcularBonus()` = 10% do salár
 <summary>Ver resposta</summary>
 
 ```java
+// classe base com nome e salário
 class Funcionario {
   protected String nome;
   protected double salario;
@@ -134,13 +140,16 @@ class Funcionario {
   }
 }
 
+// Gerente reaproveita nome e salário e muda o bônus
 class Gerente extends Funcionario {
   Gerente(String nome, double salario) {
+        // chama o construtor de Funcionario
     super(nome, salario);
   }
 
   @Override
   double calcularBonus() {
+        // 20%, sobrescrevendo os 10% da classe base
     return salario * 0.20;
   }
 }

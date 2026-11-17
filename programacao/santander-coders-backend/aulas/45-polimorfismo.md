@@ -15,6 +15,7 @@ Uma variável do tipo da **superclasse** pode guardar um objeto de qualquer **su
 > 💡 **Analogia:** o botão "play" de um controle universal. Você aperta o mesmo botão (a mesma chamada), mas a TV, o som e o videogame reagem cada um do seu jeito (a versão de cada objeto).
 
 ```java
+// versão base: todos os animais emitem som
 class Animal {
   public void emitirSom() {
     System.out.println("O animal emite um som.");
@@ -25,6 +26,7 @@ class Animal {
   }
 }
 
+// cada subclasse redefine emitirSom à sua maneira
 class Cachorro extends Animal {
   @Override
   public void emitirSom() {
@@ -32,6 +34,7 @@ class Cachorro extends Animal {
   }
 }
 
+// mesmo método, outro comportamento: é o polimorfismo
 class Gato extends Animal {
   @Override
   public void emitirSom() {
@@ -68,7 +71,8 @@ Saída: O cachorro late: Au au!, Eu sou um animal!, O gato mia: Miau!, Eu sou um
 3. pode ter também métodos **concretos**, atributos e construtores, que são herdados normalmente.
 
 ```java
-abstract class Animal {
+abstract // versão base: todos os animais emitem som
+class Animal {
   // sem corpo: cada subclasse implementa
   public abstract void emitirSom();
 
@@ -78,6 +82,7 @@ abstract class Animal {
   }
 }
 
+// cada subclasse redefine emitirSom à sua maneira
 class Cachorro extends Animal {
   @Override
   public void emitirSom() {
@@ -161,10 +166,13 @@ Crie a classe abstrata `Forma` com o método abstrato `area()` e as subclasses `
 <summary>Ver resposta</summary>
 
 ```java
+// abstract: não se cria Forma diretamente
 abstract class Forma {
+    // cada forma calcula a própria área
   abstract double area();
 }
 
+// implementa area() com a fórmula do retângulo
 class Retangulo extends Forma {
   private final double base, altura;
 
@@ -174,10 +182,12 @@ class Retangulo extends Forma {
   }
 
   double area() {
+        // área do retângulo: base vezes altura
     return base * altura;
   }
 }
 
+// implementa area() com a fórmula do círculo
 class Circulo extends Forma {
   private final double raio;
 
@@ -186,6 +196,7 @@ class Circulo extends Forma {
   }
 
   double area() {
+        // área do círculo: π vezes raio ao quadrado
     return Math.PI * raio * raio;
   }
 }

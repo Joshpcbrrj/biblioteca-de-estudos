@@ -69,10 +69,13 @@ Crie a classe `Contador` com um atributo `static int total` que aumenta a cada o
 <summary>Ver resposta</summary>
 
 ```java
+// conta quantos objetos foram criados
 public class Contador {
+    // static: uma só variável para a classe inteira
   private static int total = 0;
 
   public Contador() {
+        // cada new Contador() soma 1
     total++;
   }
 

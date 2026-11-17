@@ -79,7 +79,7 @@ Você criou um repositório vazio no GitHub e tem um projeto local com commits. 
 <summary>Ver resposta</summary>
 
 ```bash
-git remote add origin https://github.com/usuario/meu-projeto.git
+git remote add origin https://github.com/usuario/projeto.git
 git branch -M main
 git push -u origin main
 

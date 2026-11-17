@@ -160,6 +160,8 @@ z >>>= 2;
 
 ![Para tipos maiores a conversão é automática; para menores, exige (tipo)](../img/java-casting.svg)
 
+> 💡 **Analogia:** Como guardar água: um copo de 300 ml cabe num balde sem derramar, e isso é automático. Já despejar um balde num copo exige que você decida, de propósito, jogar o excedente fora.
+
 1. **Implícito (widening)**: de um tipo menor para um maior. Não há perda, então é automático.
 2. **Explícito (narrowing)**: de um tipo maior para um menor. Pode perder informação, então você precisa escrever o tipo entre parênteses.
 
@@ -180,18 +182,24 @@ int inteiro = (int) preco;
 ## Lendo do teclado com Scanner
 
 ```java
+// importa a classe que lê o teclado
 import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
+    // o Scanner lê o que o usuário digita no terminal
     Scanner entrada = new Scanner(System.in);
 
+    // print mantém o cursor na mesma linha da pergunta
     System.out.print("Seu nome: ");
+    // nextLine lê a linha inteira, com espaços
     String nome = entrada.nextLine();
     System.out.print("Sua idade: ");
+    // nextInt lê só o número
     int idade = entrada.nextInt();
 
     System.out.println(nome + " tem " + idade);
+    // libera o recurso de leitura ao final
     entrada.close();
   }
 }
@@ -209,15 +217,18 @@ Leia dois números inteiros e mostre a soma, a divisão com casas decimais e o r
 <summary>Ver resposta</summary>
 
 ```java
+// importa a classe que lê o teclado
 import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
+    // lê os dois números digitados
     Scanner in = new Scanner(System.in);
     int a = in.nextInt();
     int b = in.nextInt();
 
     System.out.println("Soma: " + (a + b));
+    // (double) antes de a evita a divisão inteira
     System.out.println("Divisão: " + (double) a / b);
     System.out.println("Resto: " + a % b);
   }

@@ -14,6 +14,7 @@ Herança e polimorfismo são poderosos, mas usados sem critério deixam o sistem
 **Exemplo de herança adequada**
 
 ```java
+// superclasse: guarda o que todos os animais têm
 class Animal {
   protected String nome;
 
@@ -26,7 +27,9 @@ class Animal {
   }
 }
 
+// Cachorro herda nome e emitirSom de Animal
 class Cachorro extends Animal {
+    // o construtor repassa o nome para a classe pai
   public Cachorro(String nome) {
     super(nome);
   }

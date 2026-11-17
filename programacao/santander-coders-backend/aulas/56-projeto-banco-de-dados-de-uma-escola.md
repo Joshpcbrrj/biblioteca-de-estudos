@@ -21,6 +21,7 @@ Modelo feito no Visual Paradigm (arquivo do curso):
 A tabela referenciada (`disciplinas`) precisa existir antes das que apontam para ela.
 
 ```sql
+-- tabela pai: cada disciplina existe uma só vez
 CREATE TABLE disciplinas (
   id_disciplina integer NOT NULL,
   nome varchar(40) NOT NULL,
@@ -32,6 +33,7 @@ CREATE TABLE disciplinas (
 > ⚠️ **Correção:** o original abria e fechava a tabela `disciplinas` com chaves `{ }`, o que é erro de sintaxe. SQL usa parênteses. Também faltava o `;` no fim dos comandos, necessário quando se roda mais de um de uma vez.
 
 ```sql
+-- FOREIGN KEY liga o professor a uma disciplina
 CREATE TABLE professores (
   id_professor integer,
   nome varchar(60),
@@ -44,6 +46,7 @@ CREATE TABLE professores (
 ```
 
 ```sql
+-- livros também se ligam a uma disciplina
 CREATE TABLE livros (
   id_livro integer,
   nome varchar(100),
@@ -67,6 +70,7 @@ CREATE TABLE livros (
 ### Inserir
 
 ```sql
+-- as tabelas pai são preenchidas antes das filhas
 INSERT INTO disciplinas (id_disciplina, nome, ementa)
 VALUES (1, 'português', 'literatura e gramática'),
        (2, 'matemática', 'álgebra e geometria');
@@ -102,6 +106,7 @@ JOIN disciplinas d
 ### Importar de um CSV
 
 ```sql
+-- importa um arquivo CSV com cabeçalho para a tabela
 COPY disciplinas (id_disciplina, nome, ementa)
 FROM 'C:\dados\disciplinas.csv'
 DELIMITER ','

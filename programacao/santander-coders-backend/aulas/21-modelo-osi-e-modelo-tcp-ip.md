@@ -53,6 +53,8 @@ O nome da unidade muda conforme a camada: **segmento** no transporte, **pacote**
 
 ![O TCP abre a conexão antes de enviar dados](../img/tcp-handshake.svg)
 
+> 💡 **Analogia:** Como uma ligação telefônica: alguém diz "alô?", o outro responde "oi, pode falar?", e só então a conversa começa. Sem essa confirmação inicial, ninguém sabe se o outro está do outro lado.
+
 |  | TCP | UDP |
 | --- | --- | --- |
 | Conexão | abre antes (3 vias) | não abre |
