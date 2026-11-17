@@ -14,6 +14,8 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 
 ## 🌿 Git e versionamento
 
+![Cheat sheet da seção Git e versionamento](img/sa-mapa-git.svg)
+
 - [O que é versionamento](aulas/02-o-que-e-versionamento.md)
 - [Instalação e configuração inicial do Git](aulas/03-instalacao-e-configuracao-inicial-do-git.md)
 - [Estudo de fluxo do Git](aulas/04-estudo-de-fluxo-do-git.md)
@@ -22,6 +24,8 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 - [Branches, gitignore e merge](aulas/07-branches-gitignore-e-merge.md)
 
 ## 🧭 Introdução a algoritmos
+
+![Cheat sheet da seção Introdução a algoritmos](img/sa-mapa-algoritmos.svg)
 
 - [Fluxo simples sequencial](aulas/08-fluxo-simples-sequencial.md)
 - [Tipos de dados](aulas/09-tipos-de-dados.md)
@@ -35,6 +39,8 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 - [Exercícios 2](aulas/17-exercicios-2.md)
 
 ## 🌐 Redes e sistemas
+
+![Cheat sheet da seção Redes e sistemas](img/sa-mapa-redes.svg)
 
 - [Definição e breve história das redes](aulas/18-definicao-e-breve-historia-das-redes.md)
 - [Infraestrutura de redes e principais equipamentos](aulas/19-infraestrutura-de-redes-e-principais.md)
@@ -52,6 +58,8 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 
 ## ☕ Introdução ao Java
 
+![Cheat sheet da seção Introdução ao Java](img/sa-mapa-java.svg)
+
 - [Setup](aulas/31-setup.md)
 - [Variáveis](aulas/32-variaveis.md)
 - [Tabela verdade](aulas/33-tabela-verdade.md)
@@ -62,6 +70,8 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 - [Funções](aulas/38-funcoes.md)
 
 ## 🧱 Programação orientada a objetos
+
+![Cheat sheet da seção Programação orientada a objetos](img/sa-mapa-poo.svg)
 
 - [Classe e objeto](aulas/39-classe-e-objeto.md)
 - [Métodos e atributos da classe](aulas/40-metodos-e-atributos-da-classe.md)
@@ -76,6 +86,8 @@ Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado
 - [Exercícios II](aulas/49-exercicios-ii.md)
 
 ## 🐘 Banco de dados com PostgreSQL
+
+![Cheat sheet da seção Banco de dados com PostgreSQL](img/sa-mapa-banco.svg)
 
 - [Baixar e instalar o PostgreSQL](aulas/50-baixar-e-instalar-o-postgresql.md)
 - [Tipos de dados e custo de armazenamento](aulas/51-tipos-de-dados-e-custo-de-armazenamento.md)

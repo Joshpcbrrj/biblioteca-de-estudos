@@ -8,6 +8,32 @@ Cada aula segue o mesmo roteiro: **Nesta aula** → **De onde paramos** → cont
 
 Os códigos em Java e SQL foram testados; os diagramas foram redesenhados para leitura em e-readers.
 
+## 🧭 Mapas das seções
+
+### Git e versionamento
+
+![Cheat sheet da seção Git e versionamento](../img/sa-mapa-git.svg)
+
+### Introdução a algoritmos
+
+![Cheat sheet da seção Introdução a algoritmos](../img/sa-mapa-algoritmos.svg)
+
+### Redes e sistemas
+
+![Cheat sheet da seção Redes e sistemas](../img/sa-mapa-redes.svg)
+
+### Introdução ao Java
+
+![Cheat sheet da seção Introdução ao Java](../img/sa-mapa-java.svg)
+
+### Programação orientada a objetos
+
+![Cheat sheet da seção Programação orientada a objetos](../img/sa-mapa-poo.svg)
+
+### Banco de dados com PostgreSQL
+
+![Cheat sheet da seção Banco de dados com PostgreSQL](../img/sa-mapa-banco.svg)
+
 ## 📌 Resumo do curso
 
 | Seção | Ideia central | Conceitos-chave |
