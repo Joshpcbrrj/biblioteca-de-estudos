@@ -60,11 +60,11 @@ Da maior para a menor precedência. A tabela é a referência geral das linguage
 | Igualdade | `==`, `!=` | ED |
 | E bit a bit | `&` | ED |
 | OU-exclusivo bit a bit | `^` | ED |
-| OU bit a bit | `\|` | ED |
+| OU bit a bit | <code>&#124;</code> | ED |
 | E lógico | `&&` (no Portugol, `e`) | ED |
-| OU lógico | `\|\|` (no Portugol, `ou`) | ED |
+| OU lógico | <code>&#124;&#124;</code> (no Portugol, `ou`) | ED |
 | Condicional (ternário) | `? :` | DE |
-| Atribuição | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `<<=`, `>>=`, `&=`, `^=`, `\|=` | DE |
+| Atribuição | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `<<=`, `>>=`, `&=`, `^=`, <code>&#124;=</code> | DE |
 
 > 💡 Na dúvida, use parênteses. Eles não mudam o resultado quando a ordem já está certa e deixam a intenção clara para quem lê: `(a * b) + c` é mais fácil de ler que `a * b + c`.
 

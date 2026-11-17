@@ -25,6 +25,8 @@ faca {
 
 ![faca-enquanto: executa primeiro, testa depois](../img/bo-faca-fluxo.svg)
 
+> 💡 **Analogia:** o fluxo do `faca-enquanto` é a porta de um restaurante self-service: você entra e se serve primeiro, e só na saída o caixa pergunta se você quer voltar para repetir. Ninguém é barrado antes da primeira rodada.
+
 ## Os três laços lado a lado
 
 | Laço | Testa a condição | Mínimo de voltas | Use quando |

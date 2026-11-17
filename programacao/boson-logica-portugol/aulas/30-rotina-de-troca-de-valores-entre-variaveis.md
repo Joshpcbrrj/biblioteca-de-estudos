@@ -33,6 +33,8 @@ Pense em dois copos, um com suco e outro com leite. Para trocar o conteúdo, voc
 
 ![Os três passos da troca com variável auxiliar](../img/tr-passos.svg)
 
+> 💡 **Analogia:** é como dois jogadores trocando de camisa no vestiário. Um deles pendura a camisa no banco (`aux`), veste a do colega e, por fim, o colega pega a camisa que ficou no banco. Seguir essa ordem é o que evita que as duas camisas se misturem.
+
 > 💡 As três variáveis precisam ser do mesmo tipo: para trocar dois inteiros, `aux` também deve ser `inteiro`.
 
 ## Projeto: trocando os valores de x e y

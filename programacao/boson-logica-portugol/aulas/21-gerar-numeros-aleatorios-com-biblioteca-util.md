@@ -116,7 +116,7 @@ Use `u.sorteia(0, 1)` e trate 0 como cara e 1 como coroa, com um `se`.
 
 Sim: cada sorteio é independente, como lançar o dado de novo.
 
-> ➡️ **Próximo passo:** decisões, bibliotecas e sorteios juntos na **2ª Lista de exercícios**.
+> ➡️ **Próximo passo:** conhecer as funções mais úteis das bibliotecas `Matematica`, `Texto` e `Tipos`: **Funções úteis das bibliotecas Matematica, Texto e Tipos**.
 
 ## 📌 Resumo
 

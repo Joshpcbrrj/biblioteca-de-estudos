@@ -30,7 +30,7 @@ O que é lógica, algoritmo e programa, e como preparar o ambiente.
 1. Introdução à Lógica de Programação com Portugol Studio
 2. Algoritmo, Fluxograma e Diagrama de Chapin
 3. Como baixar e instalar o Portugol Studio no Windows, Linux e Mac
-4. Recursos do Portugol Studio: comentários, caracteres especiais e depuração
+4. Recursos do Portugol Studio: comentários, caracteres especiais e depuração (Adicionado pelo aluno para melhorar o estudo)
 
 ### Variáveis, tipos de dados e operadores
 
@@ -43,7 +43,7 @@ Guardar dados na memória, ler e mostrar valores e fazer contas e comparações.
 9. Entrada e Saída de Dados com Leia e Escreva
 10. Operadores e Expressões Aritméticas
 11. Operadores de incremento e decremento
-12. Operadores de atribuição compostos (+=, -=, *=, /=)
+12. Operadores de atribuição compostos (+=, -=, *=, /=) (Adicionado pelo aluno para melhorar o estudo)
 13. Como usar Operadores e Expressões Relacionais (ou de Comparação)
 14. Operadores Lógicos e, ou e não (Operadores booleanos)
 15. 1ª Lista de exercícios
@@ -58,41 +58,42 @@ Fazer o programa escolher caminhos, e usar bibliotecas prontas.
 19. Estrutura de Decisão Condicional Escolha Caso
 20. Como usar Bibliotecas e suas Funções no Portugol Studio
 21. Gerar números aleatórios com biblioteca “Util”
-22. 2ª Lista de exercícios
+22. Funções úteis das bibliotecas Matematica, Texto e Tipos (Adicionado pelo aluno para melhorar o estudo)
+23. 2ª Lista de exercícios
 
 ### Estruturas de controle de repetição
 
 Repetir blocos de código com enquanto, para, faça-enquanto e laços aninhados, e conferir a lógica com o teste de mesa.
 
-23. Laço de Repetição “Enquanto”
-24. Laço de Repetição “Para”
-25. Laço de Repetição “Faça-Enquanto”
-26. Encadeamento de Laços de Repetição Para e Enquanto
-27. Teste de mesa: simulando o programa no papel
-28. 3ª Lista de exercícios
+24. Laço de Repetição “Enquanto”
+25. Laço de Repetição “Para”
+26. Laço de Repetição “Faça-Enquanto” (Adicionado pelo aluno para melhorar o estudo)
+27. Encadeamento de Laços de Repetição Para e Enquanto
+28. Teste de mesa: simulando o programa no papel (Adicionado pelo aluno para melhorar o estudo)
+29. 3ª Lista de exercícios
 
 ### Estruturas de dados básicas
 
 Vetores e matrizes, com troca, ordenação e pesquisa.
 
-29. Rotina de Troca de Valores entre Variáveis
-30. Declaração e Atribuição de Valores a Vetores
-31. Manipulação de Vetores com Laço Para
-32. Ordenação de Vetores com o algoritmo Selection Sort
-33. Algoritmo de Pesquisa Linear em Vetores
-34. Algoritmo de pesquisa binária em vetores
-35. Como criar e manipular Matrizes (Vetores bidimensionais)
-36. 4ª Lista de exercícios
+30. Rotina de Troca de Valores entre Variáveis
+31. Declaração e Atribuição de Valores a Vetores
+32. Manipulação de Vetores com Laço Para
+33. Ordenação de Vetores com o algoritmo Selection Sort
+34. Algoritmo de Pesquisa Linear em Vetores
+35. Algoritmo de pesquisa binária em vetores
+36. Como criar e manipular Matrizes (Vetores bidimensionais)
+37. 4ª Lista de exercícios
 
 ### Sub-rotinas (funções e procedimentos)
 
 Dividir o programa em funções reutilizáveis, recursão e precedência de operadores.
 
-37. Sub-rotinas (Funções e Procedimentos)
-38. Passagem de parâmetros por valor e por referência
-39. Recursividade (Funções recursivas)
-40. 8 exemplos de Associatividade e Precedência de Operadores em Programação
-41. 5ª Lista de exercícios
+38. Sub-rotinas (Funções e Procedimentos)
+39. Passagem de parâmetros por valor e por referência (Adicionado pelo aluno para melhorar o estudo)
+40. Recursividade (Funções recursivas)
+41. 8 exemplos de Associatividade e Precedência de Operadores em Programação
+42. 5ª Lista de exercícios
 
 ## 📌 Resumo do curso
 

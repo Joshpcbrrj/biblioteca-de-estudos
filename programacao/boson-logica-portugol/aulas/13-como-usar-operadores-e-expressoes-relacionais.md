@@ -21,6 +21,8 @@ São os operadores que **comparam dois valores** (operandos): o da esquerda com 
 
 ![Comparar é perguntar: com n1 = 7 e n2 = 3, cada pergunta tem uma resposta lógica](../img/r-pergunta.svg)
 
+> 💡 **Analogia:** comparar é fazer uma pergunta de sim ou não a um fiscal de fila: "você é maior de idade?", "sua senha é igual à cadastrada?". A resposta é sempre uma de duas: verdadeiro ou falso, nunca "talvez".
+
 ## Projeto: comparando dois números
 
 **Código**
