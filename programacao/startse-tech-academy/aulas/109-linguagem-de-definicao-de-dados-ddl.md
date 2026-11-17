@@ -8,6 +8,8 @@ Com as tabelas normalizadas no papel, é hora de criá-las no banco e saber alte
 
 ## O que é a DDL
 
+Um banco de dados só guarda informação depois que alguém decidiu o formato dela: que tabelas existem, que colunas cada uma tem e que tipo de valor cabe em cada coluna. Essa decisão é feita com a DDL, e costuma ser feita poucas vezes, no começo do projeto e a cada mudança importante. Já guardar e consultar registros acontece milhares de vezes por dia. Por isso a DDL é rara, mas pesada: errar um `DROP` custa muito mais que errar um `INSERT`.
+
 ![DDL mexe na estrutura; DML, nos dados](../img/st-ddl-2.svg)
 
 > 💡 **Analogia:** pense numa estante de livros. A DDL cuida da **estante**: montar (`CREATE`), pôr ou tirar prateleiras (`ALTER`) e jogar a estante fora (`DROP`). A DML cuida dos **livros**: guardar, trocar e tirar alguns escolhidos (`DELETE ... WHERE`). O `TRUNCATE` fica no meio: esvazia todas as prateleiras de uma vez, mas a estante continua lá.
@@ -23,6 +25,8 @@ Com as tabelas normalizadas no papel, é hora de criá-las no banco e saber alte
 | `RENAME` | renomeia (MySQL: `RENAME TABLE a TO b`) |
 
 ## Criando
+
+Repare no que o `CREATE TABLE` abaixo declara. Cada coluna tem nome, tipo e, quando preciso, uma regra: `NOT NULL` impede o campo vazio, `UNIQUE` impede dois clientes com o mesmo e-mail e `DEFAULT CURRENT_TIMESTAMP` preenche a data sozinha. O banco passa a recusar dados inválidos, sem depender de o programa lembrar de checar. Com `IF NOT EXISTS`, rodar o script duas vezes não dá erro, o que é útil quando você refaz o ambiente. O índice do final não muda os dados: ele só ajuda a achar produtos pelo nome mais rápido, como o índice remissivo de um livro.
 
 ```sql
 CREATE DATABASE loja;
@@ -48,6 +52,8 @@ CREATE INDEX idx_produtos_nome ON produtos(nome);
 
 ## Alterando
 
+Sistemas evoluem. Um dia o cadastro precisa da data de nascimento, outro dia o nome ganha mais caracteres. Em vez de apagar a tabela e perder os clientes, o `ALTER TABLE` muda a estrutura com os dados no lugar. Cada linha abaixo faz uma mudança só, e você pode combiná-las conforme a necessidade. Ao adicionar uma coluna `NOT NULL` numa tabela que já tem linhas, informe um `DEFAULT`; senão o banco não sabe o que colocar nas linhas antigas e recusa o comando.
+
 ```sql
 -- nova coluna
 ALTER TABLE clientes ADD COLUMN data_nascimento DATE;
@@ -65,6 +71,8 @@ ALTER TABLE clientes
 ```
 
 ## Apagando
+
+São três níveis de estrago, do menor ao maior. `TRUNCATE` apaga todas as linhas e mantém a tabela pronta para receber novos dados, o que serve para limpar uma tabela de logs. `DROP TABLE` remove a tabela inteira, com estrutura e dados. `DROP DATABASE` leva junto todas as tabelas do banco. O `IF EXISTS` evita erro se o objeto já foi removido, mas não protege você de apagar o objeto errado. Antes de rodar qualquer um dos três em produção, confirme em qual banco você está conectado.
 
 ```sql
 -- apaga todas as linhas, rápido; a estrutura fica

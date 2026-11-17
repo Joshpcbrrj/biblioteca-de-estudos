@@ -4,6 +4,8 @@
 
 ## De onde paramos
 
+Até aqui o Node foi só teoria. Neste projeto você vai vê-lo funcionar: um programa JavaScript que roda no seu terminal, sem navegador, e que consegue fazer o que a página não pode, como ler e gravar arquivos do computador. O projeto é pequeno de propósito. O objetivo é você fixar o ciclo que vai repetir em todo projeto Node: criar, configurar, executar, automatizar.
+
 Você conhece o Node e o npm. Agora vamos juntar os dois num projeto mínimo, passo a passo.
 
 ![Projeto Node em 4 passos](../img/st-node-2.svg)
@@ -11,6 +13,8 @@ Você conhece o Node e o npm. Agora vamos juntar os dois num projeto mínimo, pa
 > 💡 **Analogia:** criar um projeto Node é como abrir uma pequena empresa. O `npm init` faz o registro (o `package.json` é o contrato social, com nome, versão e responsável); o `index.js` é a sede; e os `scripts` são os atalhos do dia a dia, como "abrir a loja" (`npm start`).
 
 ## 1. Iniciar o projeto
+
+O `package.json` é a ficha de identidade do projeto: nome, versão, ponto de entrada e as bibliotecas de que ele depende. Sem ele, o npm não sabe o que instalar nem como rodar o projeto. Quem pegar seu projeto no GitHub depois só precisa de `npm install` para ter tudo de volta. Se você não tem opinião sobre as perguntas, `npm init -y` aceita todas as sugestões e você ajusta o arquivo à mão quando precisar.
 
 Crie uma pasta, abra o terminal nela e rode:
 
@@ -48,6 +52,8 @@ console.log("Uma vez Flamengo, sempre Flamengo!!!");
 
 ## 3. Executar
 
+O Node lê o arquivo de cima para baixo, executa cada linha e termina. Você deve ver a frase no terminal e o prompt voltar. Se aparecer `Cannot find module`, o nome do arquivo ou a pasta do terminal estão errados: confira com `ls` onde você está. A forma `node .` usa o campo `main` do `package.json`, por isso os dois precisam combinar.
+
 ```bash
 # executa o arquivo indicado
 node index.js
@@ -56,6 +62,8 @@ node .
 ```
 
 ## 4. Criar scripts no package.json
+
+Scripts são apelidos para comandos longos. Em vez de lembrar `node --watch index.js`, a equipe inteira roda `npm run dev`. Isso vale para qualquer comando: testar, compilar, formatar. Em projetos grandes o `package.json` vira o painel de controle: quem chega novo lê a seção `scripts` e já sabe o que pode ser feito. Dois nomes têm atalho: `npm start` e `npm test` dispensam o `run`.
 
 ```json
 {
@@ -77,6 +85,8 @@ npm run dev
 ```
 
 ## 5. Um passo além: ler e gravar arquivos
+
+O programa grava `nota.txt` e depois lê o mesmo arquivo de volta. A palavra `await` faz o Node esperar a operação terminar antes de seguir para a próxima linha; sem ela, a leitura poderia começar antes de a gravação acabar e você leria um arquivo vazio. O segundo argumento, `"utf8"`, diz ao Node para devolver texto legível, e não bytes crus. Rode duas vezes: a segunda grava por cima da primeira, porque `writeFile` substitui o conteúdo.
 
 O que o navegador não deixa fazer, o Node faz: acessar arquivos do computador.
 

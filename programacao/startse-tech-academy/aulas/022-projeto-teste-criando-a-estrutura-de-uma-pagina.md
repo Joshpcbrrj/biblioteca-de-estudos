@@ -8,9 +8,13 @@ O módulo apresentou as tags de conteúdo, as tags semânticas, tabelas, formul�
 
 ## Objetivo
 
+Escrever a estrutura sem CSS de layout parece pouco, mas é o que separa uma página bem feita de uma que só parece bonita. Leitores de tela, buscadores e o próprio CSS dependem das tags certas para entender o que é menu, o que é conteúdo e o que é propaganda. Quem monta a estrutura primeiro descobre cedo se o conteúdo faz sentido, e depois estiliza sem medo de precisar refazer tudo.
+
 Usar o site do **W3Schools** como referência e reproduzir **só a estrutura** da página com tags semânticas, sem se preocupar com o visual. É um ótimo exercício: antes de escrever qualquer CSS, desenhe as "caixas" e decida qual tag representa cada uma.
 
 ## Layout planejado
+
+Antes de digitar, olhe o desenho e nomeie cada região com a pergunta "o que é isto?", e não "como isto parece?". A faixa do topo é o cabeçalho do site (`header`). As duas faixas de links são navegações, mas diferentes entre si, por isso cada uma leva um `aria-label`. O miolo é o conteúdo principal (`main`), que existe uma vez por página. A coluna lateral com anúncios é conteúdo complementar (`aside`) e a faixa do fim é o rodapé (`footer`). A tabela abaixo resume a escolha de cada tag.
 
 ![Cabeçalho com menu, duas barras de navegação, conteúdo principal com seções, barra lateral e rodapé.](../img/w3s-wireframe-2.svg)
 
@@ -26,6 +30,8 @@ Usar o site do **W3Schools** como referência e reproduzir **só a estrutura** d
 | Créditos | `<footer>` com `<address>` | rodapé com contato |
 
 ## Projeto completo
+
+Leia o código de cima para baixo seguindo o desenho: `header`, as duas `nav`, `main` com suas `section` e `article`, `aside` e `footer`. Dois pontos merecem atenção. Primeiro, há dois `header` na página: um do site e outro dentro do `main`, que pertence só àquele conteúdo; isso é permitido, pois `header` é do contexto em que está. Segundo, cada `section` tem um título (`h2`), e cada `article` tem o seu (`h3`): a hierarquia de títulos conta a mesma história que a estrutura. O pequeno bloco `style` serve apenas para você enxergar a página; o layout de verdade vem no módulo de CSS.
 
 **Código revisado**
 
@@ -149,6 +155,8 @@ console.log("Teste 2");</code></pre>
 > ⚠️ Erros comuns neste projeto: esquecer de fechar um `<article>` (o seguinte fica aninhado dentro dele); escrever `<section>` como texto sem escapar os sinais (use `&lt;section&gt;`); colocar código de várias linhas só em `<code>` (use `<pre><code>`); e deixar `href=""`, que recarrega a página (o placeholder usual é `#`).
 
 ## Desafio
+
+O formulário novo é um bom teste de integração: ele reúne `section`, título, `label` ligado a `input` por `for` e `id`, e `required`. Depois de montar, clique em cada rótulo. Se o cursor cair no campo certo, a ligação está correta, e é isso que um leitor de tela também usa. Confira ainda se o campo de e-mail recusa texto sem `@`, comportamento que o navegador entrega de graça com `type="email"`.
 
 Acrescente à página uma seção "Fale conosco" com um formulário de nome, e-mail e mensagem, usando o que você viu em "Formulários em HTML".
 

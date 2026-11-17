@@ -8,6 +8,8 @@ Na aula anterior você viu o que é o DOM e o padrão selecionar → escutar →
 
 ## Conteúdo e atributos
 
+A forma mais comum de mexer numa página é trocar o que está escrito nela. `textContent` troca o texto puro e é a escolha segura: se o valor vier de um usuário e contiver `<script>`, ele aparece como texto, sem rodar. Já `setAttribute` e a propriedade direta (`link.href`) fazem o mesmo trabalho com atributos como `href`, `src` e `alt`. Use a propriedade quando ela existir, porque é mais curta; use `setAttribute` para atributos personalizados, como `data-id`.
+
 ```jsx
 const titulo = document.querySelector("#titulo");
 // troca o texto (seguro)
@@ -22,6 +24,8 @@ link.target = "_blank";
 
 ## Estilos
 
+Cada propriedade CSS tem um correspondente em JavaScript, escrito em camelCase: `background-color` vira `backgroundColor`, `font-size` vira `fontSize`. O valor é sempre um texto, com a unidade junto (`"16px"`, não `16`). O problema é que `el.style` escreve **inline**, e estilo inline vence quase qualquer regra do arquivo CSS. Em projetos maiores isso vira uma bagunça difícil de achar. Por isso a próxima seção, `classList`, é o caminho preferido.
+
 ```jsx
 const caixa = document.querySelector("#caixa");
 // propriedades CSS em camelCase
@@ -35,6 +39,8 @@ caixa.style.fontSize = "16px";
 
 ## Classes
 
+A ideia é dividir o trabalho: o CSS descreve **como** cada estado se parece (`.ativo`, `.oculto`, `.erro`) e o JavaScript só decide **quando** aplicar cada classe. Num menu que abre e fecha, o CSS define `.aberto { display: block; }` e o JavaScript faz `menu.classList.toggle("aberto")` a cada clique. Se o designer quiser mudar a cor do estado aberto, ele mexe só no CSS. O `toggle` com segundo argumento é útil quando você já sabe o estado desejado: `toggle("erro", temErro)` liga a classe quando `temErro` é `true` e desliga quando é `false`, sem `if`.
+
 ```jsx
 caixa.classList.add("ativo");
 caixa.classList.remove("oculto");
@@ -47,6 +53,8 @@ caixa.classList.replace("azul", "verde");
 ```
 
 ## Eventos
+
+Um evento é um aviso do navegador de que algo aconteceu: um clique, uma tecla, o envio de um formulário. `addEventListener` registra uma função que o navegador chama quando o aviso chega. Essa função recebe o objeto `event`, que carrega os detalhes: `event.target` é o elemento que originou o evento, e `event.target.value` é o texto atual de um campo. No `submit`, o navegador recarrega a página por padrão; `event.preventDefault()` cancela isso, para você validar os dados com JavaScript antes de enviá-los. Esquecer essa linha é a causa mais comum de "minha página pisca e perde tudo".
 
 ```jsx
 const botao = document.querySelector("#botao");
@@ -104,6 +112,8 @@ filho.closest(".card");
 
 ## Criando e removendo elementos
 
+O fluxo tem sempre três passos: criar o elemento na memória (`createElement`), configurá-lo (texto, classes) e só então encaixá-lo na página (`append` ou `prepend`). Enquanto você não encaixa, o elemento existe mas ninguém o vê. Isso permite montar um card inteiro antes de mostrá-lo, o que evita a página piscar. Para remover, `elemento.remove()` resolve em uma linha. É o mesmo mecanismo que sites como o de uma lista de tarefas usam para cada item que você adiciona ou apaga.
+
 ```jsx
 const novo = document.createElement("div");
 novo.textContent = "Novo elemento";
@@ -132,6 +142,8 @@ el.closest(".pai");
 ```
 
 ## Exercício
+
+Antes de olhar a resposta, separe o problema nos três passos de sempre: **selecionar** os três elementos, **escutar** o clique do botão e **alterar** a lista. Dentro do clique, a ordem importa: primeiro leia e limpe o texto com `trim()`, depois ignore se estiver vazio, só então crie o `<li>`. Teste com um campo vazio, com só espaços e com um texto normal. Os dois primeiros não devem criar nada.
 
 Crie uma lista de tarefas mínima: um `<input>`, um botão "Adicionar" e uma `<ul>`. Ao clicar, o texto do campo vira um novo `<li>` e o campo é limpo. Campos vazios devem ser ignorados.
 
