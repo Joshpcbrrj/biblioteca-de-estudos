@@ -16,7 +16,7 @@ No módulo 1, cada variável guardava **um** valor, e o laço `para` repetia um 
 
 Imagine guardar as notas de 30 alunos com 30 variáveis (`nota1`, `nota2`...). Inviável. **Um vetor é uma única variável com várias posições do mesmo tipo**, e cada posição é acessada por um **índice**.
 
-![O vetor nomes, com 5 posições; nomes[3] guarda "Ana".](../img/vetor.svg)
+![O vetor nomes, com 5 posições; nomes[3] guarda "Ana".](../img/vetor-2.svg)
 
 > 💡 **Analogia:** um vetor é a fileira de caixas de correio de um prédio. O prédio tem um nome só (o nome do vetor), cada caixa tem um número (o índice) e todas guardam o mesmo tipo de coisa: cartas. Para entregar uma carta à caixa 3, ninguém precisa de um prédio novo; basta dizer "prédio nomes, caixa 3".
 
@@ -127,6 +127,12 @@ Monte 2 vetores de 5 números; o usuário escolhe a operação (+ − × ÷), fe
 <summary>Ver resposta comentada</summary>
 
 ```
+para i de 1 ate 5 faca
+   escreva("a", i, ": ")
+   leia(a[i])
+   escreva("b", i, ": ")
+   leia(b[i])
+fimpara
 leia(op)
 para i de 1 ate 5 faca
    escolha op
@@ -139,6 +145,9 @@ para i de 1 ate 5 faca
       caso "/"
          se b[i] <> 0 entao  // evita divisão por zero
             r[i] <- a[i] / b[i]
+         senao
+            escreval("Divisão por zero na posição ", i)
+            r[i] <- 0
          fimse
    fimescolha
    escreval(a[i], " ", op, " ", b[i], " = ", r[i])
@@ -186,7 +195,7 @@ Na aula anterior, os dados entraram num vetor e foram procurados um por um. Muit
 
 O bubble sort compara **pares vizinhos** e troca os dois de lugar se estiverem fora de ordem. Ao fim de cada passada, o maior valor ainda não ordenado "borbulha" até o final. Repetindo isso, o vetor fica ordenado.
 
-![Ordenando [5, 3, 8, 1] em três passadas.](../img/bubble.svg)
+![Ordenando [5, 3, 8, 1] em três passadas.](../img/bubble-2.svg)
 
 > 💡 **Analogia:** imagine organizar uma fila de alunos por altura, mas só podendo comparar quem está lado a lado. Você anda do começo ao fim da fila e, sempre que alguém é mais alto que o vizinho da frente, os dois trocam de lugar. No fim da primeira caminhada, o mais alto já chegou ao final, como a bolha que sobe até a superfície do refrigerante. Cada nova caminhada leva o próximo mais alto para o seu lugar.
 
@@ -304,14 +313,14 @@ O vetor guarda uma **fila** de valores, e um `para` basta para percorrê-lo. No 
 
 **Uma matriz é um "vetor de vetores": os dados ficam em linhas e colunas, e cada posição é acessada por dois índices**, `m[linha, coluna]`.
 
-![Matriz 4 × 5; em destaque, a posição m[2,3] (linha 2, coluna 3).](../img/matriz.svg)
+![Matriz 4 × 5; em destaque, a posição m[2,3] (linha 2, coluna 3).](../img/matriz-2.svg)
 
 > 💡 **Analogia:** é o tabuleiro de batalha naval. Para atirar, você não diz só "casa 13": diz a linha e a coluna, como "B5". Na matriz é igual: `m[2, 3]` é "linha 2, coluna 3". E, assim como num cinema, cada poltrona tem fileira e número, e dá para percorrer a sala fileira por fileira.
 
 ```
 var
    // 10 linhas × 10 colunas = 100 posições
-   sala : vetor[1..10, 1..10] de caractere
+   sala : matriz[1..10, 1..10] de caractere
 inicio
    // linha 2, coluna 3
    sala[2, 3] <- "X"
@@ -447,7 +456,7 @@ Um programa de 500 linhas em um bloco só é difícil de ler, testar e corrigir.
 - **reuso:** a mesma rotina é chamada em vários lugares;
 - **manutenção:** um erro é corrigido em um lugar só.
 
-![O programa principal chama um procedimento e uma função; só a função devolve valor.](../img/funcao.svg)
+![O programa principal chama um procedimento e uma função; só a função devolve valor.](../img/funcao-2.svg)
 
 > 💡 **Analogia:** uma função é como uma máquina de suco: você coloca as frutas (argumentos), ela trabalha por dentro e devolve o suco (retorno). Um procedimento é como um aspirador de pó: você liga, ele faz o serviço, mas não te entrega nada nas mãos. Em ambos, quem usa não precisa saber como funcionam por dentro, só o que entra e o que acontece.
 
@@ -604,7 +613,7 @@ Um **banco de dados relacional** guarda os dados em **tabelas**: cada **linha** 
 | **U** | Update (alterar) | `UPDATE` |
 | **D** | Delete (apagar) | `DELETE` |
 
-![O modelo usado nesta aula.](../img/er-mercado.svg)
+![O modelo usado nesta aula.](../img/er-mercado-2.svg)
 
 > 💡 **Analogia:** pense num supermercado. Cada corredor tem uma placa com número e nome ("1 · frios"): é a tabela `categorias`. Cada produto tem uma etiqueta que diz só o número do corredor (a chave estrangeira `categoriaid`), sem repetir o nome. A nota fiscal (a venda) lista vários produtos, e cada produto aparece em muitas notas: as linhas da nota são a tabela associativa `itensvendas`.
 
@@ -651,7 +660,7 @@ Lendo em voz alta: "crie a tabela clientes, com um id inteiro que é a chave pri
 -- texto e datas entre aspas simples; o id é gerado sozinho
 INSERT INTO clientes (nome, cpf, data_nascimento, email)
 VALUES ('Ana Souza', '12212212222',
-        '1997-10-03', 'ana@exemplo.com');
+    '1997-10-03', 'ana@exemplo.com');
 
 UPDATE clientes SET email = 'novo@exemplo.com'
 WHERE id = 1;
@@ -744,7 +753,7 @@ SELECT * FROM clientes WHERE nome LIKE 'An%';
 
 #### Juntando tabelas: `INNER JOIN`
 
-![O JOIN casa cada produto com a sua categoria.](../img/join.svg)
+![O JOIN casa cada produto com a sua categoria.](../img/join-2.svg)
 
 > 💡 **Analogia:** voltando ao supermercado, a etiqueta do queijo diz só "corredor 1". O JOIN é o funcionário que lê esse número, vai até a placa do corredor 1 e escreve "frios" ao lado do queijo, na mesma linha do relatório. Produtos cuja etiqueta aponta para um corredor que não existe ficam de fora do INNER JOIN.
 
@@ -880,7 +889,7 @@ A primeira linguagem orientada a objetos foi o **Simula** (1967); o paradigma se
 - **Construtor:** método especial executado no `new`, que inicializa os atributos.
 - `this`**:** dentro da classe, refere-se ao objeto que está sendo criado ou usado.
 
-![Uma classe Cliente e três objetos criados a partir dela.](../img/classe-objeto.svg)
+![Uma classe Cliente e três objetos criados a partir dela.](../img/classe-objeto-2.svg)
 
 > 💡 **Analogia:** a classe é a forminha de biscoito; os objetos são os biscoitos. Com uma forminha só, você faz quantos biscoitos quiser, todos com o mesmo formato (os mesmos atributos e métodos), mas cada um pode ter cobertura própria (valores próprios). O construtor é o momento em que você aperta a forminha na massa e decora o biscoito recém-cortado.
 

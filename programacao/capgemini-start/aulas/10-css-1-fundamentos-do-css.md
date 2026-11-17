@@ -21,7 +21,7 @@ O currículo em HTML está completo, mas tem a cara padrão do navegador: fonte 
 
 ### Sintaxe
 
-![Seletor, propriedade e valor.](../img/css-anatomia.svg)
+![Seletor, propriedade e valor.](../img/css-anatomia-2.svg)
 
 > 💡 **Analogia:** uma regra CSS é um bilhete para a equipe de decoração de um prédio. O seletor diz **onde** agir ("em todos os quartos das crianças"), e cada declaração diz **o que** fazer lá ("parede: azul; cortina: branca;"). O HTML construiu os cômodos; o CSS só decide como eles ficam.
 
@@ -77,7 +77,7 @@ Quando duas regras definem a mesma propriedade para o mesmo elemento, o navegado
 2. **Especificidade**: o seletor mais "específico" vence.
 3. **Ordem**: com especificidade igual, vence a regra que aparece **por último**.
 
-![Do mais forte (em cima) ao mais fraco.](../img/css-especificidade.svg)
+![Do mais forte (em cima) ao mais fraco.](../img/css-especificidade-2.svg)
 
 > 💡 **Analogia:** é a hierarquia de uma empresa. Quando chegam ordens diferentes sobre a mesma tarefa, vale a de quem tem o cargo mais alto: a do diretor (id) passa por cima da do gerente (classe), que passa por cima da do colega (tag). Entre duas pessoas do mesmo cargo, vale a ordem mais recente. E o `!important` é um bilhete assinado pelo presidente: atropela tudo, por isso deve ser raro.
 
@@ -372,12 +372,19 @@ Texto precisa se destacar do fundo. A WCAG pede contraste mínimo de **4,5:1** p
 
 No módulo 0, você viu que computadores contam em binário. O hexadecimal é a base 16 (0–9 e a–f), e cada par vale de 0 a 255:
 
-| Cor | R | G | B | Resultado |
-| --- | --- | --- | --- | --- |
-| `#ff0000` | ff = 255 | 00 = 0 | 00 = 0 | vermelho puro |
-| `#000000` | 0 | 0 | 0 | preto |
-| `#ffffff` | 255 | 255 | 255 | branco |
-| `#808080` | 128 | 128 | 128 | cinza médio |
+| Cor | R | G |
+| --- | --- | --- |
+| `#ff0000` | ff = 255 | 00 = 0 |
+| `#000000` | 0 | 0 |
+| `#ffffff` | 255 | 255 |
+| `#808080` | 128 | 128 |
+
+| Cor | B | Resultado |
+| --- | --- | --- |
+| `#ff0000` | 00 = 0 | vermelho puro |
+| `#000000` | 0 | preto |
+| `#ffffff` | 255 | branco |
+| `#808080` | 128 | cinza médio |
 
 ### 🧠 Revisão rápida
 
@@ -408,7 +415,7 @@ Diminuindo a luminosidade: `hsl(217 82% 40%)`.
 
 ### De onde paramos
 
-A aula anterior usou `background-color` para pintar o fundo. Mas o fundo de uma caixa também pode ser uma imagem ou um degradê, como o banner no topo de um site. Lembra da aula de imagens, que perguntava "isto é conteúdo ou decoração?"? Decoração é aqui.
+A aula anterior usou `background-color` para pintar o fundo. Mas o fundo de uma caixa também pode ser uma imagem ou um degradê, como o banner no topo de um site. Na aula de imagens, você viu a diferença entre conteúdo e decoração. Decoração é aqui.
 
 ### Propriedades de fundo
 
@@ -570,9 +577,7 @@ h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?
-family=Inter:wght@400;700&display=swap">
-<!-- (o endereço acima é uma linha só) -->
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
 ```
 
 ```css
@@ -706,7 +711,7 @@ Nas aulas de HTML, você viu elementos de **bloco** e **em linha**, e a regra "e
 
 ### Toda caixa tem quatro camadas
 
-![De dentro para fora: conteúdo, padding, borda e margem.](../img/box-model.svg)
+![De dentro para fora: conteúdo, padding, borda e margem.](../img/box-model-2.svg)
 
 > 💡 **Analogia:** pense num quadro pendurado na parede. A foto é o **conteúdo**; o passe-partout branco em volta dela é o **padding** (faz parte do quadro e tem a cor do fundo); a moldura é a **borda**; e o espaço vazio de parede até o próximo quadro é a **margem**. Aumentar o passe-partout deixa o quadro maior; aumentar a margem só afasta os vizinhos.
 
@@ -857,7 +862,7 @@ nav a {
 
 ### `position`: tirando a caixa do fluxo
 
-![Os cinco valores de position.](../img/css-position.svg)
+![Os cinco valores de position.](../img/css-position-2.svg)
 
 > 💡 **Analogia:** imagine a página como um rolo de papel passando atrás de uma janela. `static` é o desenho impresso no papel, no seu lugar. `relative` é o mesmo desenho, só que deslocado um pouco; o espaço original continua reservado. `absolute` é um adesivo colado em cima de outro desenho (o pai com `relative`), sem ocupar espaço no papel. `fixed` é um adesivo colado no vidro da janela: o papel rola e ele fica parado. E `sticky` rola junto com o papel até encostar na borda da janela, e aí gruda.
 
@@ -953,7 +958,7 @@ Na aula anterior, colocar caixas lado a lado exigia `inline-block` ou `float`, e
 
 **Flexbox organiza itens em uma direção (linha ou coluna) e distribui o espaço entre eles.** Você aplica `display: flex` no **container** (o pai), e os **filhos diretos** viram itens flexíveis.
 
-![Eixo principal (justify-content) e eixo cruzado (align-items).](../img/flex-eixos.svg)
+![Eixo principal (justify-content) e eixo cruzado (align-items).](../img/flex-eixos-2.svg)
 
 > 💡 **Analogia:** pense numa prateleira de livros. A prateleira é o **container**; os livros são os **itens**. O comprimento da prateleira é o **eixo principal**: `justify-content` decide se os livros ficam encostados num canto, no meio ou espalhados com espaço entre eles. A altura da prateleira é o **eixo cruzado**: `align-items` decide se os livros ficam apoiados embaixo, centralizados ou esticados até o teto. Virar a prateleira de pé (`flex-direction: column`) troca os dois eixos.
 
@@ -1072,7 +1077,7 @@ O Flexbox organiza itens em uma direção. O Grid trabalha com linhas e colunas 
 
 Os dois são combinados o tempo todo: Grid para o esqueleto, Flexbox dentro de cada parte.
 
-![As linhas da grade são numeradas a partir de 1.](../img/grid-linhas.svg)
+![As linhas da grade são numeradas a partir de 1.](../img/grid-linhas-2.svg)
 
 > 💡 **Analogia:** o Grid é um tabuleiro de batalha naval. As **linhas** da grade são os riscos do tabuleiro, numerados a partir de 1; as **células** são os quadradinhos entre eles. Para posicionar um navio, você não diz "quadradinho 2", e sim "do risco 1 ao risco 3": é isso que `grid-column: 1 / 3` faz. E `-1` é sempre o último risco, seja qual for o tamanho do tabuleiro.
 

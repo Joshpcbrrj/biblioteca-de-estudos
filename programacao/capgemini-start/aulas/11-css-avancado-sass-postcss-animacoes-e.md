@@ -198,7 +198,7 @@ Em projetos grandes, o CSS puro tinha limitações: não havia variáveis, era p
 
 ### Pré-processadores
 
-![Você escreve numa linguagem estendida; o compilador gera o CSS que o navegador entende.](../img/preprocessador.svg)
+![Você escreve numa linguagem estendida; o compilador gera o CSS que o navegador entende.](../img/preprocessador-2.svg)
 
 > 💡 **Analogia:** pense nos atalhos de texto do celular. Você configura uma vez que "end" vira "Rua das Flores, 123, apto 45" e, daí em diante, digita só "end". O pré-processador funciona igual: você escreve `$azul` ou `@include botao`, e o compilador expande tudo no CSS completo antes de entregar ao navegador, que nunca vê os atalhos.
 
@@ -219,7 +219,7 @@ Em projetos grandes, o CSS puro tinha limitações: não havia variáveis, era p
 
 ### Pós-processadores: PostCSS
 
-![O PostCSS transforma CSS em CSS por meio de plugins.](../img/postcss.svg)
+![O PostCSS transforma CSS em CSS por meio de plugins.](../img/postcss-2.svg)
 
 > 💡 **Analogia:** o PostCSS é um lava-rápido em túnel. O carro (seu CSS) entra, passa por várias estações (os plugins), e cada uma faz um serviço: uma lava, outra encera, outra seca. No fim sai o **mesmo carro**, só que melhorado. Você escolhe quais estações ligar.
 
@@ -236,7 +236,7 @@ O CSS evoluiu e hoje faz nativamente muito do que antes exigia um pré-processad
 | Cálculos | funções do Sass | `calc()`, `min()`, `max()`, `clamp()` |
 | Cores derivadas | `darken()` | `color-mix()` |
 
-Mesmo assim, o Sass continua muito usado em projetos existentes e em frameworks (o Angular cria projetos com SCSS). Saber ler e escrever SCSS ainda é exigido em vagas de front-end.
+Mesmo assim, o Sass continua muito usado em projetos existentes e em frameworks (o Angular cria projetos com SCSS). Saber ler e escrever SCSS continua útil, porque ele aparece em muitos projetos de front-end.
 
 ### 🧠 Revisão rápida
 
@@ -623,7 +623,7 @@ Sass e Less transformam uma linguagem estendida em CSS. O PostCSS entra **depois
 
 ### O que é
 
-![O CSS entra, passa pelos plugins e sai transformado.](../img/postcss.svg)
+![O CSS entra, passa pelos plugins e sai transformado.](../img/postcss-2.svg)
 
 > 💡 **Analogia:** o PostCSS é uma equipe de revisores que passa no texto depois de escrito, cada um com uma única tarefa. Um acrescenta as adaptações para leitores antigos (**autoprefixer**), outro aponta erros e padroniza o estilo (**stylelint**), outro corta tudo que sobra para o texto ficar curto (**cssnano**). Sem revisores contratados (plugins), o PostCSS devolve o texto como recebeu.
 
@@ -688,7 +688,7 @@ No `package.json`, a lista de navegadores que você suporta (Browserslist):
 npx postcss src/estilo.css -o dist/estilo.css
 ```
 
-> 💡 O autoprefixer só acrescenta o que a sua lista de navegadores exige. Com uma lista atual, `display: flex` não recebe prefixo nenhum; já `user-select` ainda precisa de `-webkit-` no Safari.
+> 💡 O autoprefixer só acrescenta o que a sua lista de navegadores exige. Com uma lista atual, `display: flex` não recebe prefixo nenhum; já `user-select` recebe `-webkit-` só se a lista incluir navegadores mais antigos.
 
 ### 🧠 Revisão rápida
 
@@ -760,9 +760,7 @@ Vantagens: todas as classes têm a **mesma especificidade baixa** (uma classe s�
 
 ```html
 <!-- o CSS do Bootstrap, por CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/
-npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<!-- (o endereço acima é uma linha só) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
 <div class="container">
   <div class="row">
@@ -942,3 +940,7 @@ Cada componente tem o seu arquivo `.scss`, e o Angular isola o estilo automatica
 | BEM | `.bloco__elemento--modificador` |
 | Bootstrap · Tailwind | componentes prontos · classes utilitárias |
 | CSS-in-JS | estilo dentro do componente React (Styled Components, em manutenção) |
+
+## 🧭 Cheat sheet da etapa
+
+![Cheat sheet da etapa de CSS: 12 cards para revisar do seletor ao layout responsivo.](../img/cap-mapa-css.svg)

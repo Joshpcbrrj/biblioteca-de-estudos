@@ -23,3 +23,11 @@
   - ⚠️ cuidado: erro comum ou algo que mudou nas versões atuais;
   - ➡️ o que vem a seguir.
 - **Pratique:** digite os exemplos em vez de copiar, e mude valores para ver o que acontece.
+
+## 📌 Resumo
+
+| Item | Em uma frase |
+| --- | --- |
+| Trilha | Siga as seis etapas na ordem: lógica, web, estilo, interatividade, front-end e back-end. |
+| Revisão | Leia o resumo de cada aula e responda à revisão rápida antes de abrir as respostas. |
+| Legenda | Os quadros 🗺️, 💡, ⚠️ e ➡️ marcam, nesta ordem, a visão geral, a analogia, o cuidado e o próximo passo. |

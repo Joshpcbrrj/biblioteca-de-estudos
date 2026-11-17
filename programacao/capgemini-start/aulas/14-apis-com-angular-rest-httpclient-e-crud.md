@@ -25,7 +25,7 @@ Três peças que você já viu se juntam aqui: os **verbos e status HTTP** (mód
 
 Na web, uma API é um serviço que recebe **requisições HTTP** (de um site, um app de celular ou outro sistema), consulta o banco de dados e devolve os dados, normalmente em **JSON**. Isso permite que o mesmo back-end atenda o site, o app e parceiros.
 
-![O front-end pede; a API acessa o banco e devolve JSON.](../img/api-rest.svg)
+![O front-end pede; a API acessa o banco e devolve JSON.](../img/api-rest-2.svg)
 
 > 💡 **Analogia:** a API é o garçom entre o salão e a cozinha. O front-end (o cliente) faz o pedido seguindo o cardápio (a documentação); a API leva à cozinha (o banco de dados) e volta com o prato pronto, em JSON. O mesmo garçom atende quem está no salão, no delivery ou no balcão: site, app e parceiros usam a mesma API.
 
@@ -210,7 +210,7 @@ O HttpClient devolve um **Observable** (da biblioteca **RxJS**), e não uma Prom
 | não pode ser cancelada | pode ser cancelada (`unsubscribe`) |
 | `then` / `await` | `subscribe` / operadores |
 
-![HttpClient: nada acontece sem subscribe](../img/cap-httpclient.svg)
+![HttpClient: nada acontece sem subscribe](../img/cap-httpclient-2.svg)
 
 > 💡 **Analogia:** uma Promise é como pedir uma pizza: você liga, ela chega uma vez. Um Observable é como assinar uma revista: nada chega até você assinar (`subscribe`), podem chegar várias edições, e dá para cancelar.
 
@@ -425,7 +425,7 @@ export const routes: Routes = [
 ];
 ```
 
-O `ProdutoService` é o da página "Consumindo APIs com HttpClient e Observables", com `api = "http://localhost:3000/produtos"` e `id: string`.
+O `ProdutoService` é o da página "Consumindo APIs com HttpClient e Observables", com `api = "http://localhost:3000/produtos"`. Troque o tipo do `id` de `number` para `string` em `buscar`, `atualizar`, `excluir` e na interface `Produto`.
 
 ### Lista com exclusão
 
@@ -587,3 +587,7 @@ Praticamente só o endereço `api` no service (e talvez o tipo do `id`).
 | Observable | só executa com `subscribe` ou pipe `async` |
 | Interceptor | adiciona o token em todas as requisições |
 | json-server | API REST falsa a partir de um `db.json`, para treinar |
+
+## 🧭 Cheat sheet da etapa
+
+![Cheat sheet da etapa de Angular: 12 cards para revisar de componentes ao CRUD.](../img/cap-mapa-angular.svg)

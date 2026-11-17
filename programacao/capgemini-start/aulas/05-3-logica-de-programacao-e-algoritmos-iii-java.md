@@ -52,7 +52,7 @@ O Portugol rodava dentro de um programa só (o VisuAlg ou o Portugol Studio), qu
 
 ### JDK, JRE e JVM
 
-![Um contém o outro: para programar, basta instalar o JDK.](../img/jdk-jre-jvm.svg)
+![Um contém o outro: para programar, basta instalar o JDK.](../img/jdk-jre-jvm-2.svg)
 
 > 💡 **Analogia:** a JVM é o **motor**: é ela que faz o programa andar. O JRE é o **carro pronto**: motor mais tudo o que é preciso para dirigir (as bibliotecas). O JDK é a **oficina inteira**: o carro e ainda as ferramentas para montar e consertar carros novos (o compilador `javac`). Quem só dirige precisa do carro; quem constrói precisa da oficina.
 
@@ -66,7 +66,7 @@ O Portugol rodava dentro de um programa só (o VisuAlg ou o Portugol Studio), qu
 
 Prefira uma versão **LTS** (suporte de longo prazo), como o **Java 21** ou o **Java 17**. Há duas boas opções gratuitas:
 
-🔗 [Download the Latest Java LTS Free](https://www.oracle.com/br/java/technologies/downloads/#jdk19-windows)
+🔗 [Download the Latest Java LTS Free](https://www.oracle.com/br/java/technologies/downloads/)
 
 🔗 [https://adoptium.net/](https://adoptium.net/)
 
@@ -85,7 +85,7 @@ Uma **IDE** (ambiente de desenvolvimento integrado) junta editor, compilador, de
 
 🔗 [Apache NetBeans Releases](https://netbeans.apache.org/download/index.html)
 
-No Windows, o instalador `.exe` é o caminho mais simples. Outras IDEs populares para Java: **IntelliJ IDEA Community** (a mais usada no mercado) e **Eclipse**. O VS Code também funciona, com o *Extension Pack for Java*.
+No Windows, o instalador `.exe` é o caminho mais simples. Outras IDEs populares para Java: **IntelliJ IDEA Community** (muito usada no mercado) e **Eclipse**. O VS Code também funciona, com o *Extension Pack for Java*.
 
 ### 3. O primeiro programa
 
@@ -169,7 +169,7 @@ Onde o Java é usado: sistemas de bancos e grandes empresas (back-end), aplicati
 
 ### Como um programa Java é executado
 
-![javac gera bytecode; a JVM de cada sistema o executa.](../img/java-exec.svg)
+![javac gera bytecode; a JVM de cada sistema o executa.](../img/java-exec-2.svg)
 
 > 💡 **Analogia:** o bytecode é como um livro escrito numa língua universal. Cada sistema (Windows, Linux, macOS) tem o seu "tradutor" (a JVM), que lê esse livro na hora. Por isso o mesmo `.class` roda em qualquer lugar onde exista uma JVM, sem precisar reescrever o livro para cada país.
 
@@ -1325,7 +1325,7 @@ A POO organiza o programa em **objetos que representam entidades do mundo real**
 
 [Programação estruturada x Programação orientada a objetos Devmidia](https://app.notion.com/p/995956a9ce7147edae1a21cd1839015b?pvs=21)
 
-![Os quatro pilares, com exemplos desta aula.](../img/pilares-poo.svg)
+![Os quatro pilares, com exemplos desta aula.](../img/pilares-poo-2.svg)
 
 > 💡 **Analogia:** pense num carro. **Abstração:** para dirigir, você só precisa de volante, pedais e câmbio, não da química da gasolina. **Encapsulamento:** o motor fica fechado sob o capô; você só mexe nele pelo acelerador. **Herança:** um carro esportivo é um carro com alguns extras. **Polimorfismo:** "acelerar" faz coisas diferentes num carro elétrico e num a gasolina, mas o pedal é o mesmo.
 
@@ -1442,7 +1442,7 @@ Uma classe pode ter **vários construtores** com parâmetros diferentes (**sobre
 
 A herança serve para **reaproveitar** o que é comum: escreve-se uma vez na classe pai, e as filhas herdam tudo e acrescentam o que é específico. Teste da relação: "**é um tipo de**" (Vendedor *é um tipo de* Funcionário).
 
-![Funcionário é a superclasse; Vendedor e Motorista, as subclasses.](../img/heranca-func.svg)
+![Funcionário é a superclasse; Vendedor e Motorista, as subclasses.](../img/heranca-func-2.svg)
 
 > 💡 **Analogia:** é como a receita de bolo básico de uma família. Todos os bolos da casa herdam a massa (farinha, ovos, açúcar). O de chocolate acrescenta cacau; o de laranja troca o leite por suco. Ninguém reescreve a massa do zero: cada receita nova parte da básica e muda só o que é dela, como o `Vendedor` e o `Motorista` partem do `Funcionario`.
 
@@ -2192,7 +2192,7 @@ O editor tem três modos:
 
 ### Componentes básicos
 
-![Os componentes de uma tela de login típica.](../img/swing-login.svg)
+![Os componentes de uma tela de login típica.](../img/swing-login-2.svg)
 
 > 💡 **Analogia:** montar uma tela Swing é como montar um quadro de avisos. O `JFrame` é a moldura; os `JPanel` são as divisórias de cortiça; os `JLabel` são os cartazes fixos; os `JTextField` são as fichas em branco que alguém preenche; e o `JButton` é a campainha: nada acontece até alguém apertar, e aí o evento é disparado.
 
@@ -2373,7 +2373,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
 ### De onde paramos
 
-Você já tem todas as peças separadas: SQL (módulo 2), Java, orientação a objetos e telas Swing (este módulo). Nas próximas 8 aulas, elas se juntam num sistema só, o **TodoApp**: um gerenciador de projetos e tarefas. A primeira etapa não tem código nenhum, e isso é de propósito.
+Você já tem todas as peças separadas: SQL (módulo 2), Java, orientação a objetos e telas Swing (este módulo). Nas próximas aulas, elas se juntam num sistema só, o **TodoApp**: um gerenciador de projetos e tarefas. A primeira etapa não tem código nenhum, e isso é de propósito.
 
 ### Por que planejar antes de codar
 
@@ -2474,7 +2474,7 @@ SELECT DATABASE();
 
 ### Criando as tabelas
 
-![projects (1) → tasks (N).](../img/er-todo.svg)
+![projects (1) → tasks (N).](../img/er-todo-2.svg)
 
 > 💡 **Analogia:** cada projeto é uma pasta de arquivo, e cada tarefa é uma folha guardada dentro dela, com o número da pasta anotado no canto (`idProject`). Não existe folha solta: toda folha precisa de uma pasta que exista. E, se você jogar a pasta no lixo, as folhas vão junto: é o `ON DELETE CASCADE`.
 
@@ -2645,6 +2645,20 @@ As telas prontas, em Swing, estão na aula "Projeto TodoApp 7: telas com Swing".
 
 > ➡️ **Próximo passo:** com banco e telas desenhados, é hora de abrir o NetBeans e organizar o código: **Projeto TodoApp 4: arquitetura MVC e classes modelo**.
 
+### 🧠 Revisão rápida
+
+**Qual a diferença entre wireframe e protótipo de alta fidelidade?**
+
+O wireframe usa caixas cinzas, sem cores, para definir posições. O de alta fidelidade usa cores, fontes e ícones reais, e serve para validar com o cliente antes de codar.
+
+**Por que o protótipo vem antes do código?**
+
+Porque mudar um desenho leva minutos; mudar uma tela pronta, horas.
+
+**Quantas telas tem o TodoApp e qual o tipo de cada uma?**
+
+Uma janela principal (JFrame) e duas caixas de diálogo (JDialog), para cadastrar projeto e tarefa.
+
 ### 📌 Resumo
 
 | Item | Em uma frase |
@@ -2667,7 +2681,7 @@ Já temos tabelas (aula 2) e o desenho das telas (aula 3). Se todo o código (te
 
 **MVC (Model-View-Controller)** divide o projeto em três camadas, cada uma com uma responsabilidade. Assim, mudar a tela não exige mexer no banco, e vice-versa.
 
-![A view pede ao controller; o controller usa o model e o banco.](../img/mvc.svg)
+![A view pede ao controller; o controller usa o model e o banco.](../img/mvc-2.svg)
 
 > 💡 **Analogia:** num restaurante, o salão com mesas e cardápio é a **view**: é onde o cliente vê e pede. O garçom e a cozinha são o **controller**: recebem o pedido, aplicam as regras da casa e buscam o que for preciso na despensa (o banco). Os pratos e ingredientes, com seus nomes e porções, são o **model**. Dá para reformar o salão sem trocar a cozinha, e mudar o fornecedor sem mexer no cardápio.
 
@@ -2962,7 +2976,7 @@ A `ConnectionFactory` já abre e fecha conexões. Agora os controllers usam essa
 
 ### O roteiro de todo método
 
-![Os seis passos se repetem em todos os métodos do controller.](../img/jdbc-passos.svg)
+![Os seis passos se repetem em todos os métodos do controller.](../img/jdbc-passos-2.svg)
 
 > 💡 **Analogia:** é como pagar uma conta na agência bancária. Você pega um formulário com campos em branco (o SQL com `?`), entra na agência (abre a conexão), entrega o formulário ao caixa (prepara o comando), preenche cada campo no espaço certo (os `setX`), o caixa processa (executa) e, no fim, você sai e a porta se fecha (o `finally`). O caixa nunca lê o que você escreveu como uma ordem nova: só como o valor de cada campo.
 
@@ -3252,7 +3266,7 @@ Os controllers (aula 6) já gravam e leem do banco, mas só um `main` de teste o
 
 ### As três telas
 
-![A tela principal e os dois formulários de cadastro.](../img/todo-telas.svg)
+![A tela principal e os dois formulários de cadastro.](../img/todo-telas-2.svg)
 
 > 💡 **Analogia:** a tela principal é um fichário aberto na mesa: as abas à esquerda são os projetos, e as folhas à direita são as tarefas da aba escolhida. Os formulários são a ficha em branco que você preenche no balcão: enquanto está escrevendo, o fichário fica de lado (é o diálogo **modal**). Só depois de entregar ou rasgar a ficha você volta ao fichário, já com a folha nova no lugar.
 
@@ -3423,6 +3437,20 @@ usuário clica em "Salvar" (TaskDialogScreen)
 
 > ➡️ **Próximo passo:** um projeto deste tamanho merece um histórico de versões e um lugar seguro na nuvem, em vez de arquivos `.rar`. É o que ensina a próxima aula: **Git e GitHub: versionando o projeto**.
 
+### 🧠 Revisão rápida
+
+**Quantas camadas tem o TodoApp e quais são?**
+
+Quatro: model (os dados), util (conexão), controller (CRUD no banco) e view (telas).
+
+**Por onde passa um clique em "Salvar" até chegar ao banco?**
+
+View (valida e monta o objeto), model (o objeto), controller (save) e, por fim, um PreparedStatement que executa o INSERT.
+
+**Qual arquivo cria as tabelas do projeto?**
+
+O Banco_de_dados.sql, executado no phpMyAdmin.
+
 ### 📌 Resumo do projeto
 
 | Camada | Classes | Responsabilidade |
@@ -3464,7 +3492,7 @@ git --version  # confere a instalação
 
 ### As três áreas do Git
 
-![O caminho de uma alteração: da pasta ao GitHub.](../img/git-remoto.svg)
+![O caminho de uma alteração: da pasta ao GitHub.](../img/git-remoto-2.svg)
 
 > 💡 **Analogia:** é como despachar uma encomenda. A mesa onde você mexe nas coisas é a **pasta de trabalho**. A caixa aberta, onde você vai colocando só o que quer mandar, é o **staging** (`git add`). Fechar a caixa com fita e etiqueta é o **commit**: aquele envio fica registrado com uma descrição. E levar as caixas ao centro de distribuição, onde outras pessoas podem buscá-las, é o `git push` para o GitHub.
 
@@ -3637,3 +3665,7 @@ Para desenvolver sem arriscar a versão que funciona. Só se junta à `main` qua
 | MVC | model (dados), view (telas), controller (regras e banco) |
 | JDBC | `PreparedStatement` com `?` evita SQL Injection |
 | Git | `add` → `commit` → `push`; uma branch por funcionalidade |
+
+## 🧭 Cheat sheet da etapa
+
+![Cheat sheet da etapa de lógica: 12 cards para revisar do algoritmo ao TodoApp em Java.](../img/cap-mapa-logica.svg)

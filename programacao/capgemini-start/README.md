@@ -41,3 +41,14 @@ Formação full stack do zero: lógica de programação, HTML, CSS e JavaScript,
 
 - [Java 1 · Fundamentos da linguagem](aulas/15-java-1-fundamentos-da-linguagem.md)
 - [Java 2 · Orientação a objetos, coleções e back-end](aulas/16-java-2-orientacao-a-objetos-colecoes-e-back-end.md)
+
+## 🧭 Cheat sheets
+
+Cada etapa termina com um cheat sheet para revisar em uma olhada:
+
+- [Etapa 1 · Lógica de programação](aulas/05-3-logica-de-programacao-e-algoritmos-iii-java.md#-cheat-sheet-da-etapa)
+- [Etapa 2 · Web e HTML](aulas/09-html-avancado-seo-acessibilidade-seguranca-e-pwa.md#-cheat-sheet-da-etapa)
+- [Etapa 3 · CSS](aulas/11-css-avancado-sass-postcss-animacoes-e.md#-cheat-sheet-da-etapa)
+- [Etapa 4 · JavaScript](aulas/12-javascript-fundamentos-dom-eventos-e-jquery.md#-cheat-sheet-da-etapa)
+- [Etapa 5 · Angular](aulas/14-apis-com-angular-rest-httpclient-e-crud.md#-cheat-sheet-da-etapa)
+- [Etapa 6 · Java](aulas/16-java-2-orientacao-a-objetos-colecoes-e-back-end.md#-cheat-sheet-da-etapa)

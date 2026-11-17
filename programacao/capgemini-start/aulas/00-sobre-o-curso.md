@@ -25,3 +25,8 @@
 | 6. Java | back-end orientado a objetos | classes, coleções, exceções, Spring Boot, CORS |
 
 > Os PDFs, slides e projetos (`.por`, `.rar`) do programa ficam só nas anotações pessoais; aqui estão os resumos, os códigos e os diagramas.
+
+## 🧭 Cheat sheets
+
+Cada etapa termina com um cheat sheet de revisão: lógica (fim da aula Java 3), web e HTML (fim da aula HTML avançado), CSS (fim da aula CSS avançado), JavaScript, Angular (fim da aula de APIs) e Java (fim da aula Java 2).
+

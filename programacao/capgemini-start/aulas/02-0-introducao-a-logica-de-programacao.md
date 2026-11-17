@@ -8,6 +8,10 @@
 
 > 🗺️ **Nesta aula:** como a humanidade saiu do ábaco e chegou à ideia de uma máquina que segue um **programa**, e por que o **0 e 1** virou a base de todos os computadores.
 
+### De onde paramos
+
+Esta é a primeira aula do programa, então não é preciso saber nada de computação. Você vai ver de onde vieram as ideias que fazem um computador funcionar.
+
 ### Por que começar pela história?
 
 Programar é dar instruções a uma máquina. Antes de escrever a primeira instrução, ajuda muito entender **de onde veio essa ideia**: por que o computador precisa de um programa, por que ele trabalha com 0 e 1 e por que tem uma parte que calcula e outra que guarda dados. Cada uma dessas respostas apareceu em algum momento da história, e todas elas voltam nas próximas aulas.
@@ -21,7 +25,7 @@ A palavra "computar" vem do latim *computare*, que significa **calcular**. Duran
 3. **Máquinas programáveis:** as instruções ficam fora da máquina, em cartões, e podem ser trocadas.
 4. **Uma base matemática com dois valores** (verdadeiro e falso), que mais tarde permitiu construir circuitos eletrônicos.
 
-![Os principais marcos antes do século XX.](../img/hist-linha.svg)
+![Os principais marcos antes do século XX.](../img/hist-linha-2.svg)
 
 > 💡 **Analogia:** pense na evolução de uma cozinha. O ábaco é o caderninho onde você anota as contas enquanto faz tudo de cabeça. A Pascalina é a batedeira: a máquina faz o trabalho sozinha. O tear de Jacquard é uma máquina de pão que lê receitas em fichas: troque a ficha e sai outro pão, sem mexer na máquina. O computador é a cozinha inteira automática, capaz de seguir qualquer receita que você entregar.
 
@@ -111,7 +115,7 @@ Na aula anterior, vimos que o computador junta três ideias: um **programa troc�
 
 Para representar 0 e 1, um circuito precisa de **interruptores**: com corrente é 1, sem corrente é 0. Um computador usa milhões (hoje, bilhões) deles. A história das gerações é a história de como esse interruptor foi ficando menor.
 
-![Válvula → transistor → circuito integrado → microprocessador.](../img/geracoes.svg)
+![Válvula → transistor → circuito integrado → microprocessador.](../img/geracoes-2.svg)
 
 > 💡 **Analogia:** pense na iluminação de casa. A válvula é a lâmpada incandescente antiga: grande, quente e queima com frequência. O transistor é um LED: faz o mesmo trabalho, pequeno e quase frio. O circuito integrado é uma fita com milhares de LEDs grudados. E o microprocessador é uma cidade inteira de LEDs dentro de um grão de arroz. A função nunca mudou (acender ou apagar, 1 ou 0); o que muda é o tamanho, o custo e a energia.
 
@@ -214,7 +218,7 @@ No século IV a.C., o filósofo grego **Aristóteles** organizou a lógica pela 
 - Premissa 2: Sócrates é um ser humano.
 - Conclusão: logo, Sócrates é mortal.
 
-![Validade (a estrutura) é diferente de verdade (o conteúdo).](../img/silogismo.svg)
+![Validade (a estrutura) é diferente de verdade (o conteúdo).](../img/silogismo-2.svg)
 
 > 💡 **Analogia:** pense numa receita de bolo. A **validade** é a receita estar bem escrita, com os passos na ordem certa. A **verdade** é usar os ingredientes certos. Se a receita é perfeita, mas você troca açúcar por sal (uma premissa falsa), o bolo sai ruim: válido, porém falso. Se os ingredientes são ótimos, mas os passos estão fora de ordem, nada garante o bolo: premissas verdadeiras, raciocínio inválido.
 
@@ -319,7 +323,7 @@ Existe uma categoria no meio do caminho: o **firmware**. É um software gravado 
 
 Um computador funciona em **camadas**, como um prédio. Cada andar só conversa com o andar vizinho, e isso esconde a complexidade de baixo para quem está em cima.
 
-![Do usuário ao hardware, passando por aplicativos e sistema operacional.](../img/camadas.svg)
+![Do usuário ao hardware, passando por aplicativos e sistema operacional.](../img/camadas-2.svg)
 
 > 💡 **Analogia:** num restaurante, você (o usuário) faz o pedido ao garçom (o aplicativo). O garçom não cozinha: entrega a comanda ao chefe de cozinha (o sistema operacional), que decide qual fogão e qual cozinheiro vão preparar cada prato e divide a cozinha entre todos os pedidos. Os fogões e panelas (o hardware) fazem o trabalho de fato. Você nunca precisa saber a marca do fogão para jantar.
 
@@ -384,7 +388,7 @@ Todo computador segue o mesmo esquema:
 
 No meio do caminho, os dados ficam guardados na **memória**. Esse mesmo esquema vai aparecer nos seus programas: quase todo algoritmo **lê** dados, **processa** e **mostra** um resultado.
 
-![Entrada, processamento (CPU + RAM na placa-mãe), saída e armazenamento.](../img/partes-pc.svg)
+![Entrada, processamento (CPU + RAM na placa-mãe), saída e armazenamento.](../img/partes-pc-2.svg)
 
 > 💡 **Analogia:** é você resolvendo um problema de matemática numa prova. Os olhos leem o enunciado (entrada), o cérebro faz as contas (CPU), o rascunho em cima da mesa guarda as contas pela metade (RAM), a folha de respostas entregue ao professor fica guardada para sempre (SSD) e a resposta que você fala em voz alta é a saída. Se o vento levar o rascunho, as contas somem; o que já foi passado a limpo, não.
 
@@ -463,7 +467,7 @@ Porque existe uma troca que não tem como escapar:
 
 A solução é montar uma **hierarquia**: o que a CPU usa o tempo todo fica no topo, bem perto dela, em memórias pequenas e rapidíssimas. O resto fica mais abaixo, em memórias grandes e lentas.
 
-![Quanto mais perto da CPU, mais rápida e menor a memória.](../img/memorias.svg)
+![Quanto mais perto da CPU, mais rápida e menor a memória.](../img/memorias-2.svg)
 
 > 💡 **Analogia:** pense na sua cozinha. O sal e o óleo ficam do lado do fogão (registradores): cabem poucos, mas estão na mão. Os temperos mais usados ficam na prateleira de cima da pia (cache). Os mantimentos da semana ficam no armário (RAM). E as compras do mês, na despensa dos fundos (SSD/HD): cabe muito, mas buscar lá demora. Quanto mais você usa uma coisa, mais perto ela fica.
 
@@ -553,6 +557,8 @@ Até aqui olhamos para o hardware: as peças e as memórias. Agora passamos para
 | **Aplicativo** | resolve uma tarefa do usuário final | navegador, Word, Photoshop, WhatsApp |
 | **Ferramenta de desenvolvimento** | ajuda a criar outros softwares | VS Code, compiladores, Git |
 
+> 💡 **Analogia:** pense num condomínio. O sistema operacional é a administração: cuida das áreas comuns (energia, água, portaria), dá acesso a cada morador e impede que um atrapalhe o outro. Os aplicativos são os moradores, que usam essas áreas sem precisar saber como a caixa d'água funciona. Os drivers são os encanadores e eletricistas contratados para cada apartamento, cada um conhecendo um tipo de instalação.
+
 Outra classificação comum é pela **licença**: **software livre/código aberto** (o código pode ser lido e modificado, como Linux e VS Code) × **proprietário** (o código é fechado, como Windows e Photoshop).
 
 ### Linguagens de programação
@@ -603,7 +609,7 @@ Na aula anterior vimos que escrevemos programas em linguagens próximas da nossa
 
 Em uma linguagem compilada, um programa chamado **compilador** lê **todo** o código-fonte, verifica se há erros e o traduz de uma vez para **linguagem de máquina**, gerando um **executável** (no Windows, um `.exe`). Depois disso, o executável roda direto no processador, sem precisar do código-fonte nem do compilador.
 
-![Fonte → compilador → executável → CPU, e os níveis de linguagem.](../img/compilacao.svg)
+![Fonte → compilador → executável → CPU, e os níveis de linguagem.](../img/compilacao-2.svg)
 
 > 💡 **Analogia:** compilar é mandar traduzir um livro inteiro antes de lançá-lo. A tradução demora, mas depois qualquer leitor lê rápido, sem tradutor ao lado (o executável roda direto). Só que a edição em português não serve na Alemanha: para outro sistema ou processador, é preciso fazer uma nova tradução (compilar de novo).
 
@@ -664,7 +670,7 @@ Em uma linguagem interpretada não existe um executável final. Um programa cham
 
 Exemplos: **JavaScript, Python, PHP, Ruby**.
 
-![Em cima, a linguagem interpretada; embaixo, o caminho do Java.](../img/interpretacao.svg)
+![Em cima, a linguagem interpretada; embaixo, o caminho do Java.](../img/interpretacao-2.svg)
 
 > 💡 **Analogia:** a linguagem compilada é um livro já traduzido; a interpretada é uma palestra com **intérprete simultâneo**, que traduz cada frase enquanto o palestrante fala: funciona em qualquer país que tenha um intérprete, mas é um pouco mais lento. O Java fica no meio: o texto é escrito numa língua neutra (o bytecode), e cada país tem o seu intérprete dessa língua (a JVM).
 
@@ -729,7 +735,7 @@ Esta aula fecha a parte sobre o computador. Ela junta as peças das aulas anteri
 
 ### Do clique ao resultado
 
-![As cinco etapas da execução de um programa.](../img/execucao.svg)
+![As cinco etapas da execução de um programa.](../img/execucao-2.svg)
 
 > 💡 **Analogia:** abrir um programa é como fazer uma receita. Você pede o prato (o clique), alguém acha o livro de receitas na estante (o SSD) e o abre na bancada (a RAM). O cozinheiro (a CPU) lê um passo, entende o que ele pede e o executa, e então passa para o próximo, sem parar. Se a campainha toca no meio (um evento), ele atende e volta para a receita.
 
@@ -828,6 +834,8 @@ console.log(idade >= 18); // false
 
 Toda a lógica que o computador usa se apoia em três princípios. Eles parecem óbvios, e é justamente por isso que funcionam como regras de segurança.
 
+> 💡 **Analogia:** pense num juiz de futebol marcando um lance de impedimento. Ele decide **uma coisa de cada vez** (identidade: o lance é aquele lance), não marca impedimento e não marca "não impedimento" ao mesmo tempo (não contradição), e sempre chega a uma decisão, sem "meio impedimento" (terceiro excluído). Os três princípios são as regras que tornam a decisão do juiz confiável.
+
 #### 1. Princípio da identidade
 
 **Toda coisa é igual a si mesma.** Uma cadeira é uma cadeira. No código, um valor comparado com ele mesmo dá verdadeiro: `x === x` é `true`.
@@ -898,7 +906,7 @@ Além dos princípios que já vimos (não contradição e terceiro excluído), v
 
 ### Os operadores lógicos
 
-![NÃO, E e OU, com a sintaxe usada em Java e JavaScript.](../img/operadores-logicos.svg)
+![NÃO, E e OU, com a sintaxe usada em Java e JavaScript.](../img/operadores-logicos-2.svg)
 
 > 💡 **Analogia:** o **E** é uma porta com duas fechaduras: ela só abre se as duas chaves girarem. O **OU** é uma casa com duas portas: basta uma estar aberta para você entrar. O **NÃO** é um interruptor invertido: quando você "liga", a luz apaga. E o **XOR** é o interruptor de escada: a luz acende quando só um dos dois interruptores está para cima.
 
@@ -1053,6 +1061,8 @@ Até aqui vimos como o computador funciona e como ele toma decisões com a lógi
 
 Um **programa** é um algoritmo escrito em uma linguagem que o computador entende (Java, JavaScript...). Por isso se aprende primeiro a pensar no algoritmo e só depois na linguagem.
 
+> 💡 **Analogia:** pense numa receita de bolo. A receita é o algoritmo; os ingredientes são as **entradas**; cada passo de mexer, assar e esfriar é o **processamento**; e o bolo pronto é a **saída**. Se a receita diz "asse até dourar" sem dizer quanto tempo, ela é ambígua: cada cozinheiro assa de um jeito. Um algoritmo precisa dizer exatamente o que fazer em cada passo.
+
 ### Características de um bom algoritmo
 
 | Característica | O que significa | Exemplo do que **não** fazer |
@@ -1117,7 +1127,7 @@ Já sabemos o que é um algoritmo e quais características ele precisa ter. Mas,
 
 ### O roteiro
 
-![Entender, identificar, planejar, testar e refinar.](../img/resolver-problema.svg)
+![Entender, identificar, planejar, testar e refinar.](../img/resolver-problema-2.svg)
 
 > 💡 **Analogia:** é como planejar uma viagem de carro. Primeiro você entende aonde precisa chegar e até que horas (entender). Depois vê o que tem: carro, dinheiro, mapa (entradas) e o que espera no fim (saída). Traça a rota no mapa (planejar), refaz o trajeto com o dedo para ver se não esqueceu uma estrada (teste de mesa) e, se achar um caminho mais curto, ajusta (refinar). Sair dirigindo sem rota é o mesmo que começar pelo código.
 
@@ -1210,13 +1220,13 @@ fim
 
 **Fluxograma é o algoritmo desenhado com formas e setas**, lido de cima para baixo. Cada forma tem um significado:
 
-![Os cinco símbolos básicos.](../img/fluxograma-simbolos.svg)
+![Os cinco símbolos básicos.](../img/fluxograma-simbolos-2.svg)
 
 > 💡 **Analogia:** os símbolos do fluxograma são como placas de trânsito: o formato já diz o que fazer antes mesmo de você ler o texto. O oval é a placa de "início" e "fim" da estrada, o paralelogramo é o posto onde se recebe ou entrega algo, o retângulo é um trecho de trabalho, e o losango é a bifurcação, onde você escolhe a esquerda (sim) ou a direita (não).
 
 O mesmo algoritmo da média, em fluxograma:
 
-![A decisão (losango) divide o fluxo em dois caminhos, que se juntam antes do fim.](../img/fluxograma-media.svg)
+![A decisão (losango) divide o fluxo em dois caminhos, que se juntam antes do fim.](../img/fluxograma-media-2.svg)
 
 ✅ mostra visualmente os caminhos e as decisões. ❌ trabalhoso de desenhar e de manter.
 
@@ -1291,7 +1301,7 @@ Já sabemos **em que formato** escrever um algoritmo. Esta aula trata de **como*
 
 Quase todo algoritmo se divide em três fases. Identificá-las antes de escrever ajuda muito:
 
-![Entrada → processamento → saída.](../img/ipo.svg)
+![Entrada → processamento → saída.](../img/ipo-2.svg)
 
 > 💡 **Analogia:** é um liquidificador. As frutas e o leite que você coloca são a **entrada**; o motor batendo é o **processamento**; o suco no copo é a **saída**. Antes de ligar, você sempre sabe o que vai pôr e que suco quer tirar. Com o algoritmo é igual: decida o que entra e o que deve sair antes de pensar no "como".
 
