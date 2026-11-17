@@ -8,6 +8,8 @@ Os pilares da POO já usaram classes em vários exemplos. Agora vamos olhar a si
 
 ## O que é uma classe
 
+Sem classes, criar dez usuários significaria escrever dez objetos à mão, cada um com os mesmos campos e as mesmas funções copiadas. Se um campo mudasse, você mudaria dez vezes. A classe resolve isso: você descreve **uma vez** o que todo usuário tem e faz, e depois cria quantos precisar com uma linha cada. É o que torna possível um sistema com milhares de objetos parecidos, como produtos, pedidos e clientes.
+
 **Uma classe é um molde para criar objetos com a mesma estrutura: os mesmos atributos e os mesmos métodos.** Cada objeto criado a partir dela é uma **instância**, com seus próprios valores.
 
 ![Uma classe, várias instâncias.](../img/classe-instancias-2.svg)
@@ -15,6 +17,8 @@ Os pilares da POO já usaram classes em vários exemplos. Agora vamos olhar a si
 > 💡 **Analogia:** a classe é a forma de biscoito; as instâncias são os biscoitos. Todos saem com o mesmo formato (os mesmos atributos e métodos), mas cada um pode ter uma cobertura diferente (os valores). Ter a forma não enche o pote: só o `new` assa um biscoito de verdade.
 
 ## Anatomia de uma classe
+
+Leia a classe de cima para baixo. Os campos no topo dão o valor inicial que todo objeto nasce com. O `constructor` roda uma vez, na hora do `new`, e recebe os dados que vão preencher cada objeto, usando `this` para guardá-los, de modo que `this.nome = nome` significa "o nome deste objeto recebe o nome que chegou". Abaixo ficam os métodos, que são as ações. Todo objeto criado enxerga os mesmos métodos, mas guarda os seus próprios dados.
 
 ```jsx
 class Pessoa {
@@ -64,6 +68,8 @@ pessoa1.idade;  // 25
 
 ## Regras e convenções
 
+Estas regras evitam erros comuns de quem está começando. O `new` é obrigatório porque é ele quem cria o objeto vazio, liga o `this` a ele e chama o construtor: sem o `new`, nada disso acontece, e o JavaScript avisa com um erro. O PascalCase (primeira letra maiúscula em cada palavra) não é regra da linguagem, mas é um acordo universal que deixa claro, ao ler `new Pedido()`, que `Pedido` é uma classe e não uma função qualquer.
+
 - Nome de classe em **PascalCase** (`ContaBancaria`, `CarrinhoDeCompras`).
 - Classes **precisam** de `new`: `Pessoa("João")` sem `new` gera `TypeError`.
 - Diferente das funções, classes **não têm hoisting** útil: declare antes de usar.
@@ -71,6 +77,8 @@ pessoa1.idade;  // 25
 - Não coloque vírgulas entre os métodos (não é um objeto literal).
 
 ## Recursos modernos
+
+Estes recursos servem para proteger e organizar os dados. O campo `#estoque` com o `#` na frente é **privado**: só o código dentro da classe consegue lê-lo ou alterá-lo, o que impede que alguém de fora coloque um valor absurdo, como estoque negativo. O `static` guarda um dado da classe inteira, como um contador de produtos criados. Cada um aparece com calma nas próximas aulas, então por ora basta reconhecer a sintaxe.
 
 ```jsx
 class Produto {

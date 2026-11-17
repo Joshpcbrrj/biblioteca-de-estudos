@@ -8,6 +8,8 @@ Os índices deixam as consultas rápidas. Falta garantir que operações que pre
 
 ## O que é uma transação
 
+Pense numa transferência de R$ 100 entre duas contas. Por baixo são dois comandos: tirar 100 de uma conta e pôr 100 na outra. Se o servidor cair entre os dois, o dinheiro some: saiu de uma conta e não chegou na outra. A transação existe para impedir isso. Tudo dentro dela vale como um bloco só: se qualquer parte falhar, o banco desfaz o que já tinha feito e as contas voltam ao estado original.
+
 **Uma transação agrupa vários comandos em uma unidade: ou todos são gravados, ou nenhum é.** O exemplo clássico é uma transferência bancária: tirar o dinheiro de uma conta e colocar na outra precisa acontecer **junto**. Se o sistema cair no meio, o dinheiro não pode sumir.
 
 ![COMMIT confirma tudo; ROLLBACK desfaz tudo.](../img/transacao-2.svg)
@@ -15,6 +17,8 @@ Os índices deixam as consultas rápidas. Falta garantir que operações que pre
 > 💡 **Analogia:** é o caixa do supermercado. Ele passa todos os produtos (os comandos), mas a compra só vale quando o pagamento é aprovado e a nota sai (`COMMIT`). Se o cartão for recusado, o caixa cancela a compra **inteira** (`ROLLBACK`): você não sai com metade das sacolas. E, depois de a nota sair, a compra está registrada mesmo que falte luz no minuto seguinte (durabilidade).
 
 ## Comandos (TCL)
+
+O ciclo tem sempre três movimentos. `START TRANSACTION` abre o bloco. Dentro dele você roda os comandos normalmente, mas as mudanças ainda são provisórias: só você as vê. No fim, `COMMIT` confirma e torna tudo definitivo para todo mundo, ou `ROLLBACK` descarta tudo como se nada tivesse acontecido. A decisão costuma ser tomada pelo programa: se todos os comandos deram certo, `COMMIT`; se algum falhou, `ROLLBACK`.
 
 ```sql
 -- ou BEGIN
@@ -36,6 +40,8 @@ ROLLBACK;
 
 ## ACID: as quatro garantias
 
+A sigla ACID resume o que se espera de um banco confiável, e cada letra responde a um medo real. **Atomicidade**: "e se cair no meio?" Tudo ou nada. **Consistência**: "e se violar uma regra?" O banco recusa e mantém as chaves e restrições valendo. **Isolamento**: "e se dois clientes comprarem o último item ao mesmo tempo?" Cada transação age como se estivesse sozinha. **Durabilidade**: "e se faltar luz depois de confirmar?" O que foi confirmado sobrevive.
+
 | Letra | Propriedade | Significa |
 | --- | --- | --- |
 | **A** | Atomicidade | tudo ou nada: sem transferência pela metade |
@@ -44,6 +50,8 @@ ROLLBACK;
 | **D** | Durabilidade | depois do `COMMIT`, o dado sobrevive a uma queda |
 
 ## Níveis de isolamento
+
+Isolamento total é seguro, mas obriga as transações a esperarem umas pelas outras, e isso deixa o sistema lento. Por isso os bancos deixam você escolher quanto isolamento quer. O padrão de cada banco já serve para a maioria dos casos. Os níveis mais altos entram em cena em operações delicadas, como fechar o caixa do dia, em que ler um valor que muda no meio do cálculo daria um resultado errado.
 
 Isolamento total custa desempenho, então os bancos oferecem níveis:
 

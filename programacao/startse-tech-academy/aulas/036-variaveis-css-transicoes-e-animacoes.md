@@ -8,6 +8,8 @@ A aula de cores mostrou uma variável `--cor-primaria` de passagem, e a de pseud
 
 ## Variáveis CSS (custom properties)
 
+Num site grande, a mesma cor azul aparece em dezenas de regras. Se o designer pedir um azul diferente, você teria de achar e trocar todas, e é fácil esquecer alguma. Com uma variável, você define o azul uma vez e o usa em todo lugar com `var(--cor-primaria)`. Trocar o valor no `:root` muda o site inteiro. É a forma mais simples de manter o visual consistente, e é a base do modo escuro.
+
 **Variáveis guardam um valor para reutilizar no CSS inteiro.** Mude em um lugar, e o site todo muda.
 
 ```css
@@ -47,6 +49,8 @@ document.documentElement.style
 
 ## Transições: suavizar mudanças
 
+Sem transição, um botão muda de cor de uma vez ao passar o mouse, e o olho percebe um "pulo". Com `transition`, a mudança leva um tempo curto, como 0,2 segundo, e parece natural. Você declara a transição no estado **normal** do elemento, e não no `:hover`. Assim ela vale na ida e na volta: o botão suaviza ao receber o mouse e também ao perdê-lo.
+
 Uma **transição** anima a passagem entre dois estados, como normal → `:hover`.
 
 ```css
@@ -76,6 +80,8 @@ Formato: `transition: propriedade duração curva atraso`. Curvas comuns: `ease`
 | `skew(10deg)` | inclina |
 
 ## Animações com `@keyframes`
+
+A transição só vai de um estado a outro quando algo a dispara. A animação roda por conta própria e pode ter várias etapas. Primeiro você descreve os quadros no `@keyframes`, com `from` e `to` ou com porcentagens, e depois aplica a animação ao elemento com `animation`. Um bom uso é o efeito de aparecer ao carregar a página: o elemento começa invisível e deslocado, e termina visível no lugar. O valor `infinite` repete sem parar, útil para indicadores de carregamento.
 
 Para movimentos que rodam sozinhos ou têm várias etapas:
 
@@ -111,6 +117,8 @@ Propriedades de `animation`:
 > 💡 **Analogia:** uma transição é como um dimmer de luz: você gira o botão e a lâmpada passa suavemente de apagada para acesa, só quando alguém mexe. Uma animação com `@keyframes` é como o pisca-pisca de Natal: segue uma sequência programada sozinha, quantas vezes você mandar.
 
 ## Respeite quem prefere menos movimento
+
+Movimento excessivo pode causar tontura e náusea em algumas pessoas, e o sistema operacional permite que elas peçam menos animação. O bloco acima lê esse pedido e reduz as durações a quase zero, mantendo o site funcional e sem efeitos. Incluir isso é um gesto simples de cuidado, e vale ser parte do seu CSS padrão desde o começo.
 
 Algumas pessoas sentem tontura com animações. O sistema operacional permite pedir "reduzir movimento", e o CSS consegue ler isso:
 

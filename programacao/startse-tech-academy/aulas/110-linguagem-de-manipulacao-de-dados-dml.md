@@ -10,6 +10,10 @@ A DDL criou as tabelas vazias. Agora vamos preenchê-las e consultá-las: é aqu
 
 Se a DDL é montar a estante, a DML é o uso diário dela. Quatro verbos cobrem quase tudo o que um sistema faz com um banco: criar um registro (`INSERT`), mudar um registro (`UPDATE`), remover um registro (`DELETE`) e ler registros (`SELECT`). Os desenvolvedores chamam isso de CRUD (create, read, update, delete), e quase toda tela de sistema, do cadastro de clientes ao carrinho de compras, é uma combinação dessas quatro operações.
 
+![As quatro ações do CRUD e seus nomes em SQL e HTTP.](../img/st-crud-sql.svg)
+
+> 💡 **Analogia:** é como a agenda de contatos do celular: adicionar um contato (`INSERT`), buscar (`SELECT`), editar (`UPDATE`) e excluir (`DELETE`).
+
 **DML (Data Manipulation Language) são os comandos que mexem nos dados: inserir, atualizar, apagar e consultar.** A DDL define as tabelas; a DML preenche e usa.
 
 ## INSERT: inserir

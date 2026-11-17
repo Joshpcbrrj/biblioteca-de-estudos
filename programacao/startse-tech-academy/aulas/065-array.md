@@ -46,6 +46,10 @@ Mesmo declarado com `const`, o conteúdo do array pode mudar. O que não pode é
 
 Os métodos se dividem em dois grupos, e a coluna "Altera o original?" da tabela é a pista. Os que **alteram** (`push`, `pop`, `splice`, `sort`, `reverse`) mudam o array de verdade, e quem usava a versão antiga vê a mudança. Os que **devolvem algo novo** (`slice`, `join`, `concat`) deixam o original intacto. Num código maior, essa diferença decide se um bug aparece ou não, porque um `sort` feito num lugar muda o array em todos os outros.
 
+![Métodos que alteram o original e métodos que devolvem algo novo.](../img/st-altera-array.svg)
+
+> 💡 **Analogia:** alterar o original é como riscar o seu próprio caderno; devolver algo novo é tirar uma fotocópia e riscar só a cópia.
+
 | Método | O que faz | Altera o original? |
 | --- | --- | --- |
 | `push(x)` / `pop()` | adiciona / remove no **final** | sim |

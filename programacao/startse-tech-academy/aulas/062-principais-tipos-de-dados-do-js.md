@@ -63,6 +63,10 @@ let temSol = false;
 
 Quando você escreve `if (nome)`, o JavaScript precisa de um sim ou não, então converte o valor. A lista dos falsy é curta e vale decorar: `false`, `0`, `""` (texto vazio), `null`, `undefined` e `NaN`. Todo o resto é truthy. A pegadinha é o texto `"0"` e o array vazio `[]`: ambos são truthy, porque o primeiro é um texto com um caractere e o segundo é um objeto.
 
+![Os oito valores falsy; todo o resto é truthy.](../img/st-falsy.svg)
+
+> 💡 **Analogia:** é como uma lista de convidados barrados na porta: só oito nomes estão nela, e qualquer outro entra, mesmo que pareça estranho, como o texto "0".
+
 Em um `if`, qualquer valor vira booleano. São **falsy** apenas: `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined` e `NaN`. **Todo o resto é truthy**, inclusive `"0"`, `"false"`, `[]` e `{}`.
 
 ## undefined e null

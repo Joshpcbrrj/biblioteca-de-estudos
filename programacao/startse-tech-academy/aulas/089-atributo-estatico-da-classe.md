@@ -8,6 +8,8 @@ Na aula de classes, cada instância tinha seus próprios dados. Às vezes, poré
 
 ## O que é um membro estático
 
+Imagine contar quantos usuários o sistema já criou. Esse número não pertence a nenhum usuário em particular: é um dado do grupo. Se cada objeto guardasse a sua própria cópia, ninguém saberia o total. O `static` resolve isso mantendo uma cópia única, na própria classe, que todos podem consultar e atualizar. É a ponte entre "dados de cada um" e "dados de todos".
+
 **Um atributo ou método** `static` **pertence à própria classe, e não a cada objeto.** Existe uma cópia só, acessada pelo nome da classe: `Classe.membro`.
 
 ![A instância não enxerga o membro estático.](../img/static-2.svg)
@@ -39,6 +41,8 @@ console.log(instancia.atributoEstatico);  // undefined
 
 ## Contador de instâncias
 
+Acompanhe passo a passo. A classe começa com `total = 0`. Cada vez que alguém faz `new Usuario(...)`, o construtor roda e soma 1 ao total. Após criar três usuários, `Usuario.total` vale 3. Note que a soma é feita pelo nome da classe e não por `this`, porque `this` dentro do construtor é o objeto novo, e o contador mora na classe. Um teste rápido: crie dois objetos e imprima `Usuario.total`; deve aparecer 2.
+
 ```jsx
 class Usuario {
   static total = 0;
@@ -63,6 +67,8 @@ Usuario.contar();  // "2 usuários criados"
 Dentro de um método **estático**, `this` é a própria classe: `this.total` funcionaria no lugar de `Usuario.total`.
 
 ## Quando usar
+
+A pergunta que decide é: este dado ou esta função depende de um objeto específico? Se depende (o nome de um usuário), é de instância. Se não depende (converter dólar em real, validar um CPF, somar dois números), pode ser estática, e você a usa direto, sem criar nada. É por isso que `Math.max()` funciona sem `new Math()`. Os métodos fábrica seguem a mesma lógica: criam uma instância de um jeito específico, como `Data.deTexto("25/12/2023")`, e fazem sentido na classe, mas não em um objeto já existente.
 
 - **Contadores e caches** compartilhados entre todas as instâncias.
 - **Constantes** da classe: `static TAXA_JUROS = 0.02`.

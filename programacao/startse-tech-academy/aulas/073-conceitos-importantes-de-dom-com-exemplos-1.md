@@ -6,6 +6,10 @@
 
 Na aula anterior você viu o que é o DOM e o padrão selecionar → escutar → alterar. Agora vamos conhecer as ferramentas de cada etapa.
 
+![Selecionar, escutar e alterar: o caminho de quase todo código de DOM.](../img/st-dom-tres-passos.svg)
+
+> 💡 **Analogia:** é como uma campainha de casa: você escolhe a porta (selecionar), liga a campainha à luz da sala (escutar) e, quando alguém aperta, a luz acende (alterar).
+
 ## Conteúdo e atributos
 
 A forma mais comum de mexer numa página é trocar o que está escrito nela. `textContent` troca o texto puro e é a escolha segura: se o valor vier de um usuário e contiver `<script>`, ele aparece como texto, sem rodar. Já `setAttribute` e a propriedade direta (`link.href`) fazem o mesmo trabalho com atributos como `href`, `src` e `alt`. Use a propriedade quando ela existir, porque é mais curta; use `setAttribute` para atributos personalizados, como `data-id`.

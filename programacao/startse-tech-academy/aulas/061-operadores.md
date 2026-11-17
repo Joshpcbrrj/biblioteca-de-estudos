@@ -8,6 +8,8 @@ Você já guarda valores em variáveis. Agora vamos operar sobre eles: somar, co
 
 ## Aritméticos
 
+As quatro operações funcionam como na matemática, e o `%` (resto da divisão) é o menos óbvio e o mais útil. `10 % 3` dá 1, porque 10 dividido por 3 tem resto 1. Com ele você descobre se um número é par (`n % 2 === 0`), faz um contador voltar ao começo depois de chegar a um limite e separa horas de minutos. Vale ver como a conta sai com valores de verdade: `x = 5` e `y = 2` dão 7, 3, 10 e 2,5 nas quatro primeiras operações.
+
 ```jsx
 let x = 5;
 let y = 2;
@@ -26,6 +28,8 @@ O `%` é ótimo para saber se um número é par (`n % 2 === 0`).
 
 ## Atribuição
 
+Os operadores de atribuição são atalhos para um padrão que você vai escrever o tempo todo: pegar o valor atual, mudá-lo e guardar de volta. Em vez de `total = total + preco`, escreva `total += preco`. O resultado é o mesmo, com menos chance de errar o nome da variável. No exemplo, `x` começa em 10 e vai sendo atualizado a cada linha, de modo que cada resultado serve de ponto de partida da próxima.
+
 ```jsx
 let x = 10;
 x += 5;  // x = x + 5  → 15
@@ -37,6 +41,8 @@ x **= 3;  // x = x ** 3  → 8
 ```
 
 ## Incremento e decremento
+
+`i++` é o atalho de `i = i + 1`, e aparece em quase todo laço, para contar voltas. A posição do `++` muda o resultado quando ele está dentro de uma expressão: `a++` entrega o valor atual e só depois soma, e `++a` soma primeiro e entrega o valor novo. Se isso parece confuso, use o `++` sozinho em uma linha, onde não há diferença.
 
 ```jsx
 let i = 5;
@@ -53,6 +59,8 @@ console.log(++a);  // 7
 
 ## Comparação
 
+Comparar devolve sempre `true` ou `false`, e é o que alimenta todo `if` e todo laço. A escolha importante é entre `===` e `==`. O `===` compara o valor e o tipo, então `5 === "5"` é falso, como se espera. O `==` tenta converter antes, e passa a dizer que `0 == ""` é verdadeiro, o que costuma gerar bugs difíceis de achar. Por isso a regra é simples: use sempre `===` e `!==`.
+
 | Operador | Significado | `5` comparado a `"5"` |
 | --- | --- | --- |
 | `===` | igual (valor **e** tipo) | `false` |
@@ -65,6 +73,8 @@ Também há `>`, `<`, `>=` e `<=`.
 > ⚠️ **Use sempre** `===` **e** `!==`**.** O `==` converte os tipos antes de comparar e gera resultados estranhos: `0 == ""` é `true`, `null == undefined` é `true`, `"0" == false` é `true`.
 
 ## Lógicos
+
+Os operadores lógicos combinam condições, como as palavras "e", "ou" e "não" numa frase. Para entrar num show, a pessoa precisa ter ingresso **e** ser maior de idade (`&&`). Para ganhar desconto, basta ser estudante **ou** idoso (`||`). O curto-circuito explica um truque comum: em `usuario && usuario.nome`, se `usuario` for `null`, o JavaScript nem tenta ler `.nome` e evita um erro.
 
 ```jsx
 let x = 5, y = 3, z = 7;

@@ -74,6 +74,10 @@ ALTER TABLE clientes
 
 São três níveis de estrago, do menor ao maior. `TRUNCATE` apaga todas as linhas e mantém a tabela pronta para receber novos dados, o que serve para limpar uma tabela de logs. `DROP TABLE` remove a tabela inteira, com estrutura e dados. `DROP DATABASE` leva junto todas as tabelas do banco. O `IF EXISTS` evita erro se o objeto já foi removido, mas não protege você de apagar o objeto errado. Antes de rodar qualquer um dos três em produção, confirme em qual banco você está conectado.
 
+![DELETE, TRUNCATE e DROP lado a lado.](../img/st-delete-truncate-drop.svg)
+
+> 💡 **Analogia:** é como limpar uma sala: tirar alguns objetos (`DELETE`), esvaziar tudo e manter a sala (`TRUNCATE`) ou demolir a própria sala (`DROP`).
+
 ```sql
 -- apaga todas as linhas, rápido; a estrutura fica
 TRUNCATE TABLE logs;
