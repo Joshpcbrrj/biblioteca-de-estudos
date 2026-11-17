@@ -10,6 +10,10 @@ Na aula anterior você viu que um programa é um algoritmo escrito numa linguage
 
 Quando você digita um endereço e aperta Enter, acontece uma pequena viagem de ida e volta que dura milissegundos. O navegador não sabe onde fica o site, então primeiro pergunta ao **DNS** qual é o endereço IP correspondente. Com o IP em mãos, ele abre uma conexão com o servidor e envia uma **requisição** HTTP pedindo a página. O servidor processa o pedido, talvez consulte um banco de dados, e devolve uma **resposta** com o HTML. Por fim, o navegador lê esse HTML e pede os arquivos extras (CSS, imagens, JavaScript) para montar a página na sua tela. Entender esse caminho ajuda a localizar problemas: site fora do ar, página lenta ou imagem que não carrega têm causas em etapas diferentes.
 
+![As cinco etapas de uma requisição, do endereço digitado à página na tela.](../img/st-caminho-requisicao.svg)
+
+> 💡 **Analogia:** é como encomendar uma pizza: você procura o endereço da pizzaria na lista (DNS), liga, faz o pedido (requisição), a pizzaria prepara e entrega (resposta) e só então você põe a mesa (o navegador monta a página).
+
 Quando você digita um endereço no navegador, acontece mais ou menos isto:
 
 ![Primeiro o DNS descobre o IP; depois a requisição HTTP vai até o servidor e a resposta volta.](../img/web-caminho.svg)

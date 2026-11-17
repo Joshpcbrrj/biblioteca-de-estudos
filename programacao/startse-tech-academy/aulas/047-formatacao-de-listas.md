@@ -128,6 +128,40 @@ No projeto, a lista usa `list-style: square inside` e um fundo azul claro nos it
 
 > ⚠️ **Correções:** `square` é um quadrado **cheio**, não "vazado" (o vazado é o `circle`). O `lang="en"` do projeto virou `pt-BR`.
 
+## Exercício
+
+Transforme uma lista `ul` de links em um menu horizontal limpo: sem marcadores, sem recuo e com os itens lado a lado.
+
+<details>
+<summary>Ver resposta</summary>
+
+```html
+<!-- lista de links que vira o menu -->
+<ul class="menu">
+  <li><a href="#">Início</a></li>
+  <li><a href="#">Cursos</a></li>
+  <li><a href="#">Contato</a></li>
+</ul>
+```
+
+```css
+/* menu horizontal, sem marcadores nem recuo */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 16px;
+}
+```
+
+Teste: os marcadores e o recuo somem, e os três itens ficam na mesma linha.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Como tirar os marcadores e o recuo de uma lista de menu?**

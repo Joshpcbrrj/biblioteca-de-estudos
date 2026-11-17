@@ -115,6 +115,10 @@ O **fluxograma** mostra o mesmo algoritmo de forma visual:
 
 Qualquer algoritmo, por mais complexo que seja, é feito da combinação de apenas três estruturas. A **sequência** executa os passos um depois do outro, na ordem em que foram escritos. A **decisão** (`se... então... senão`) escolhe entre caminhos conforme uma condição ser verdadeira ou falsa. A **repetição** (`enquanto`, `para`) executa um bloco várias vezes até uma condição mudar. Uma receita de macarrão tem as três: seguir os passos em ordem (sequência), verificar se a água ferveu (decisão) e provar até o ponto certo (repetição). Reconhecer qual estrutura um problema pede é metade do trabalho de resolvê-lo.
 
+![Sequência, decisão e repetição: as três estruturas de todo algoritmo.](../img/st-tres-estruturas.svg)
+
+> 💡 **Analogia:** são as três peças de uma ferrovia: o trilho reto (sequência), o desvio com agulha (decisão) e o anel em que o trem dá voltas (repetição).
+
 Qualquer algoritmo, por maior que seja, é feito de três peças combinadas:
 
 ![Sequência, decisão e repetição.](../img/estruturas-basicas.svg)

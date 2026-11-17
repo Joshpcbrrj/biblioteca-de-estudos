@@ -44,6 +44,10 @@ DROP INDEX idx_clientes_email ON clientes;
 
 Criar o índice não garante que o banco vai usá-lo: certas formas de escrever a consulta o tornam inútil. O caso mais comum é aplicar uma **função na coluna** indexada: `WHERE UPPER(email) = 'ANA@EXEMPLO.COM'` obriga o banco a calcular o valor para cada linha, ignorando o índice. Algo parecido acontece com `LIKE '%texto'`, em que o início do texto é desconhecido, e com o uso de **tipos diferentes** na comparação. Em tabelas muito pequenas, o banco também prefere ler tudo, porque é mais rápido do que consultar o índice. A regra de ouro é: compare a coluna **pura** com um valor, e use `EXPLAIN` para confirmar.
 
+![Consultas que aproveitam o índice e consultas que o ignoram.](../img/st-indice-uso.svg)
+
+> 💡 **Analogia:** é como uma lista telefônica ordenada por sobrenome: achar “Silva” é rápido; achar quem tem “va” no fim do sobrenome obriga a ler a lista inteira.
+
 ```sql
 -- função na coluna → não usa o índice
 WHERE YEAR(data_pedido) = 2023

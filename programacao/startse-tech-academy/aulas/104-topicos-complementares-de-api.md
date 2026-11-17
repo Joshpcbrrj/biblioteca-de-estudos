@@ -81,6 +81,10 @@ Guardar respostas por um tempo, no navegador, em um CDN ou no servidor (Redis), 
 
 Por segurança, o navegador bloqueia por padrão que uma página de um domínio leia respostas de outro domínio. Se o seu site em `meusite.com` tentar chamar `api.outro.com`, o navegador pode recusar e mostrar um erro de **CORS** (*Cross-Origin Resource Sharing*) no console. O erro **não** é um bug no seu código JavaScript: é o servidor da API quem precisa autorizar a origem, enviando o cabeçalho `Access-Control-Allow-Origin`. Por isso, quando você constrói a própria API, deve configurar quais origens terão permissão; e quando consome uma API de terceiros que não libera a sua origem, a solução é chamar a API a partir do seu back-end.
 
+![As quatro famílias de códigos de status HTTP.](../img/st-status-http.svg)
+
+> 💡 **Analogia:** os códigos são as respostas de um atendente: 2xx é “resolvido”, 3xx é “foi para outro balcão”, 4xx é “você preencheu algo errado” e 5xx é “o sistema daqui caiu”.
+
 Por segurança, o navegador **bloqueia** que uma página em `site-a.com` leia respostas de uma API em `api-b.com`, a menos que a API autorize com o cabeçalho `Access-Control-Allow-Origin`. É a causa do famoso erro "*blocked by CORS policy*". A correção é feita **no servidor** (no Express: o pacote `cors`), não no front-end.
 
 ## Monitoramento

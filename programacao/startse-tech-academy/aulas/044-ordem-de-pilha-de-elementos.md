@@ -40,6 +40,10 @@ A solução é subir o z-index do **ancestral** ou mover o elemento (por exemplo
 
 Transbordamento acontece quando o conteúdo é maior que a caixa que o contém, como um texto longo dentro de um quadro de altura fixa. O CSS deixa você escolher o que fazer com a sobra. `visible` (o padrão) deixa o conteúdo vazar por fora; `hidden` corta o que passa; `scroll` sempre mostra barras de rolagem; e `auto` mostra a barra **só quando necessário**, que é a escolha mais comum para áreas roláveis. Cuidado com o `hidden`: ele esconde o conteúdo sem aviso, e o visitante nunca saberá que existia mais coisa ali.
 
+![Os quatro valores de overflow e o que cada um faz com a sobra.](../img/st-overflow-valores.svg)
+
+> 💡 **Analogia:** é como um copo cheio demais: `visible` deixa transbordar na mesa, `hidden` joga fora o excesso, e `scroll` ou `auto` põem uma régua ao lado para você ler o resto.
+
 Quando o conteúdo é maior que a caixa (que tem altura ou largura fixa), o `overflow` define o que acontece com o excesso:
 
 ![Os quatro valores mais usados.](../img/overflow.svg)
@@ -132,6 +136,42 @@ Também dá para controlar cada eixo: `overflow-x` e `overflow-y`.
 **Experimente:** dê `z-index: 10` à preta e veja ela passar para a frente.
 
 > ⚠️ **Correção:** as anotações diziam que o `z-index` só funciona com `position`. Ele **também funciona em itens flex e grid**, mesmo sem `position`. O `lang="en"` do projeto também virou `pt-BR`.
+
+## Exercício
+
+Crie um aviso (modal) que cobre a página: uma camada escura transparente em tela cheia e, por cima dela, uma caixa branca centralizada. Garanta que a caixa fique acima da camada escura e esta acima do resto da página.
+
+<details>
+<summary>Ver resposta</summary>
+
+```html
+<div class="fundo"></div>
+<div class="caixa">Tem certeza?</div>
+```
+
+```css
+.fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.caixa {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 24px;
+  /* maior que o fundo */
+  z-index: 20;
+}
+```
+
+Teste: a caixa aparece no centro, com o resto da página escurecido. O `z-index` só funciona em elementos com `position` diferente de `static`.
+
+</details>
 
 ## 🧠 Revisão rápida
 

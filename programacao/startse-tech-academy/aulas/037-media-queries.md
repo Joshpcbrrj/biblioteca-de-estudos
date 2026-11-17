@@ -180,6 +180,12 @@ A base (celular) é a coluna; a media query só troca a direção nas telas maio
 
 </details>
 
+## Resumo visual: faixas de largura
+
+![Faixas comuns de largura e o layout de cada uma.](../img/st-breakpoints-media.svg)
+
+> 💡 **Analogia:** as faixas são os tamanhos P, M e G das roupas: a mesma peça (o conteúdo) é cortada em medidas diferentes para caber bem em cada corpo (cada tela).
+
 ## 🧠 Revisão rápida
 
 **O que é mobile first?**

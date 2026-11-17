@@ -104,6 +104,12 @@ Nem "current" nem "incoming": editar à mão foi o caminho certo.
 
 </details>
 
+## Resumo visual: resolvendo um conflito
+
+![Os quatro passos para resolver um conflito.](../img/st-conflito-git.svg)
+
+> 💡 **Analogia:** é como dois revisores que editaram o mesmo parágrafo de um texto: ninguém sabe qual versão vale, então o autor lê as duas, escreve a versão final e retira as anotações de revisão.
+
 ## 🧠 Revisão rápida
 
 **O que separa a versão atual da que está chegando?**

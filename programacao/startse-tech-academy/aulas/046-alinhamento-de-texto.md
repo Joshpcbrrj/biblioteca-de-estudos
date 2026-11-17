@@ -99,6 +99,36 @@ h1 { text-shadow: 2px 2px 4px rgba(0,0,0,.3); }
 
 > ⚠️ **Correções:** `vertical-align: justify` não existe (`justify` é valor de `text-align`). As descrições de `sub` e `super` estavam trocadas: `sub` desce (subscrito) e `super` sobe (sobrescrito). Faltava avisar que `vertical-align` só funciona em elementos inline e células de tabela, o motivo de ele "não funcionar" em divs. `dashed` é **tracejada**, não pontilhada (pontilhada é `dotted`). E `text-decoration-style` sozinho não tem efeito: precisa de uma `text-decoration-line`.
 
+## Exercício
+
+Estilize um título centralizado, um parágrafo justificado e links sem sublinhado que ganham sublinhado só quando o mouse passa por cima.
+
+<details>
+<summary>Ver resposta</summary>
+
+```css
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* o sublinhado volta só no hover */
+a:hover {
+  text-decoration: underline;
+}
+```
+
+Teste: passe o mouse sobre um link e veja o sublinhado aparecer e sumir.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Como centralizar uma `div` de 300px na página?**

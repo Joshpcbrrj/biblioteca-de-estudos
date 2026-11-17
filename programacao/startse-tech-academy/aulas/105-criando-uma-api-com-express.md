@@ -200,6 +200,12 @@ app.get("/tarefas", (req, res) => {
 
 </details>
 
+## Resumo visual: o caminho da requisição
+
+![Da chegada da requisição até a resposta.](../img/st-express-fluxo.svg)
+
+> 💡 **Analogia:** é a entrada de um prédio: a portaria (os middlewares) confere e prepara o visitante, o porteiro (o roteador) o encaminha ao andar certo (a rota) e quem mora lá responde. Sem apartamento com aquele número, o porteiro avisa que não existe (404).
+
 ## 🧠 Revisão rápida
 
 **O que acontece sem `app.use(express.json())`?**

@@ -66,6 +66,10 @@ O “nível” mede a **distância entre a linguagem e a máquina**. Linguagens 
 
 O computador só executa código de máquina, então toda linguagem precisa ser traduzida de algum jeito, e existem duas estratégias. O **compilador** traduz o programa **inteiro** de uma vez, antes da execução, e gera um arquivo executável: a execução fica rápida, e os erros de sintaxe aparecem antes de rodar. O **interpretador** lê e executa o programa **linha por linha**, na hora: não há etapa de compilação, o que facilita testar e corrigir, mas costuma ser mais lento. Pense em um livro estrangeiro: o compilador é a tradução completa publicada de uma vez; o interpretador é o intérprete que traduz a fala em tempo real.
 
+![Compilador e interpretador comparados.](../img/st-compilador-interpretador.svg)
+
+> 💡 **Analogia:** o compilador é o livro traduzido e impresso antes de chegar à livraria; o interpretador é o intérprete de uma palestra, que traduz na hora, frase a frase.
+
 ![Compilação antecipada, interpretação em tempo real e o modelo híbrido com bytecode e JIT.](../img/compila-interpreta.svg)
 
 > 💡 **Analogia:** o compilador é o tradutor de um livro: traduz a obra inteira antes, e depois qualquer um lê rápido. O interpretador é o intérprete numa palestra: traduz frase por frase enquanto o palestrante fala; é mais lento, mas não precisa esperar o texto ficar pronto.

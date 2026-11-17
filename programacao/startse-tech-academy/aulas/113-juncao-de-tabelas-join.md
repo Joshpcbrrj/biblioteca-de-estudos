@@ -131,6 +131,12 @@ WHERE c.id IS NULL;
 
 </details>
 
+## Resumo visual: os tipos de JOIN
+
+![O que cada tipo de JOIN devolve.](../img/st-join-tipos.svg)
+
+> 💡 **Analogia:** imagine duas listas de uma festa: a de convidados e a de quem confirmou presença. O `INNER JOIN` mostra só quem está nas duas; o `LEFT JOIN` mostra todos os convidados, com um espaço em branco para quem não confirmou.
+
 ## 🧠 Revisão rápida
 
 **Qual JOIN mostra só os registros que têm par nos dois lados?**

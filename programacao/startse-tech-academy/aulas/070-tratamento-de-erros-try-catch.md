@@ -36,6 +36,10 @@ Quando uma linha do `try` falha, as linhas seguintes do `try` são puladas e a e
 
 Saber o nome do erro economiza tempo, porque o nome já aponta o que procurar. `ReferenceError` significa que você usou uma variável que não existe (geralmente um erro de digitação). `TypeError` indica que você usou um valor do jeito errado, como chamar `.toUpperCase()` em um número ou ler uma propriedade de `null`; é o erro mais frequente no dia a dia. `SyntaxError` aparece quando o código está mal escrito, e o programa nem chega a rodar. Use esses nomes como pista: ao ver `Cannot read properties of undefined`, você já sabe que algum objeto esperado não chegou.
 
+![Os erros mais comuns do JavaScript e o que costumam indicar.](../img/st-tipos-erro-js.svg)
+
+> 💡 **Analogia:** é como o diagnóstico de um médico: o nome da doença já aponta onde procurar o tratamento, e o nome do erro já aponta onde procurar o defeito.
+
 | Erro | Exemplo |
 | --- | --- |
 | `ReferenceError` | usar uma variável que não existe |
@@ -152,7 +156,7 @@ Não. Só em falha de rede. Confira `resp.ok` e lance o erro você mesmo.
 
 Para manter o `stack`, que mostra onde o erro aconteceu.
 
-> ➡️ **Próximo passo:** com o código crescendo, é hora de dividi-lo em arquivos: **Módulos: import e export**.
+> ➡️ **Próximo passo:** agora que você sabe lançar e tratar erros, vamos garantir que o código continue certo a cada mudança: **Testes automatizados com node:test**.
 
 ## 📌 Resumo
 

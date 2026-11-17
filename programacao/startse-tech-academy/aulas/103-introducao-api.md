@@ -104,6 +104,12 @@ Identifique as partes desta requisição: `GET https://api.loja.com/v2/produtos?
 
 </details>
 
+## Resumo visual: métodos HTTP e CRUD
+
+![Cada método HTTP corresponde a uma operação de CRUD.](../img/st-metodos-http-crud.svg)
+
+> 💡 **Analogia:** é o fichário de uma biblioteca: consultar uma ficha (`GET`), cadastrar uma nova (`POST`), corrigir os dados de uma existente (`PATCH`) e descartar a ficha (`DELETE`).
+
 ## 🧠 Revisão rápida
 
 **O que é um endpoint?**

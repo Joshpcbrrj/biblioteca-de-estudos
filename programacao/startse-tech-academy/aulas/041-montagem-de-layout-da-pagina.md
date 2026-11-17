@@ -138,6 +138,44 @@ body {
 
 > ⚠️ **Ajustes no projeto:** o `<section>` que envolvia o conteúdo virou `<main>`, porque é o conteúdo principal da página. O e-mail de exemplo tinha acento antes do `@`, o que a maioria dos servidores e formulários não aceita, e virou `contato@meusite.com`. Os links do menu passaram de `display: inline` com `margin-right` para Flexbox com `gap`, que não deixa margem sobrando no último item. E uma media query faz o `aside` descer para baixo do artigo em telas pequenas.
 
+## Exercício
+
+Monte o layout clássico de uma página: cabeçalho no topo, uma coluna de menu de 200 px à esquerda, o conteúdo ocupando o resto e um rodapé embaixo. Use Flexbox.
+
+<details>
+<summary>Ver resposta</summary>
+
+```html
+<!-- topo, corpo em duas colunas e rodapé -->
+<header>Cabeçalho</header>
+<div class="corpo">
+  <nav>Menu</nav>
+  <main>Conteúdo</main>
+</div>
+<footer>Rodapé</footer>
+```
+
+```css
+.corpo {
+  display: flex;
+}
+
+nav {
+  /* largura fixa, não encolhe */
+  width: 200px;
+  flex-shrink: 0;
+}
+
+main {
+  /* ocupa o espaço que sobrou */
+  flex: 1;
+}
+```
+
+Teste: ao redimensionar a janela, o menu mantém 200 px e o conteúdo se ajusta.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Por que preferir classes a IDs para estilizar o layout?**

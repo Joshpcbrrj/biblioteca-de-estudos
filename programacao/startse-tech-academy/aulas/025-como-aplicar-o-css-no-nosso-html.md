@@ -65,6 +65,10 @@ Vantagens do CSS externo:
 
 Quando duas regras CSS tentam mandar na mesma propriedade, o navegador não escolhe ao acaso: ele segue uma ordem de prioridade. Primeiro vem a **origem**: o estilo escrito direto no elemento (`style=""`) vence o de um arquivo. Depois vem a **especificidade**: um seletor de id (`#menu`) vale mais que um de classe (`.menu`), que vale mais que um de tag (`nav`). Se ainda houver empate, vence a regra que aparece **por último** no código. Por isso a ordem dos `<link>` importa. Evite resolver conflitos com `!important`: ele funciona, mas cada uso obriga o próximo, e o CSS vira uma disputa difícil de manter.
 
+![A ordem de desempate quando duas regras CSS conflitam.](../img/st-prioridade-css.svg)
+
+> 💡 **Analogia:** é como o desempate num campeonato: o primeiro critério decide e só se houver empate o jogo passa ao critério seguinte.
+
 1. `!important` vence declarações normais. Use só em último caso.
 2. **Especificidade**: estilo inline > `#id` > `.classe` / `[atributo]` / `:pseudo-classe` > `elemento`.
 3. **Ordem**: com a mesma especificidade, vence a regra que aparece **por último**.
@@ -142,6 +146,35 @@ img, picture, video, svg {
 }
 input, button, textarea, select { font: inherit; }
 ```
+
+## Exercício
+
+Aplique o mesmo estilo (títulos `h1` em azul) das três formas: inline, em uma tag `style` e em um arquivo externo. Depois responda: se as três estiverem ativas ao mesmo tempo com cores diferentes, qual vence?
+
+<details>
+<summary>Ver resposta</summary>
+
+```html
+<!-- 1. inline: dentro da própria tag -->
+<h1 style="color: blue;">Título</h1>
+
+<!-- 2. interna: no <head> -->
+<style>
+  h1 { color: blue; }
+</style>
+
+<!-- 3. externa: arquivo estilo.css ligado no <head> -->
+<link rel="stylesheet" href="estilo.css">
+```
+
+```css
+/* estilo.css */
+h1 { color: blue; }
+```
+
+Se as três forem usadas com cores diferentes, vence o **inline**, pois tem a maior prioridade. Entre a interna e a externa, vale a que vier por último no código. Teste: ponha `red` no inline e confira que o título fica vermelho.
+
+</details>
 
 ## 🧠 Revisão rápida
 

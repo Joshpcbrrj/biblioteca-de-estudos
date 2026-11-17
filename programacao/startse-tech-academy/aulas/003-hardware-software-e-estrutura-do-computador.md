@@ -47,6 +47,10 @@ O hardware é a parte física, mas sem instruções ele é só um conjunto de pe
 
 Por dentro, o computador só entende dois estados elétricos: ligado e desligado. Chamamos cada um deles de **bit** (0 ou 1). Um bit sozinho diz muito pouco, então eles são agrupados: oito bits formam um **byte**, que pode representar 256 combinações diferentes (de 0 a 255) e guarda, por exemplo, uma letra. Textos, fotos, músicas e programas são, no fim, longas sequências de bytes. Isso explica as unidades que você vê no dia a dia: um KB tem cerca de mil bytes, um MB mil KB, e um GB mil MB. Uma foto de 3 MB tem mais ou menos três milhões de bytes.
 
+![As unidades de armazenamento, do bit ao gigabyte.](../img/st-unidades-bytes.svg)
+
+> 💡 **Analogia:** é como as medidas de líquido: o bit é a gota, o byte é um copinho de oito gotas, e KB, MB e GB são a garrafa, o galão e a piscina.
+
 O computador só entende dois estados elétricos, representados por **0** e **1**. Cada um é um **bit**. Juntando bits, representa-se qualquer coisa:
 
 | Unidade | Tamanho | Exemplo |

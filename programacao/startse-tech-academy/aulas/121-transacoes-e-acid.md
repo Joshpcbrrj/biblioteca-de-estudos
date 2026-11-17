@@ -133,7 +133,7 @@ Cada comando solto é confirmado automaticamente.
 
 Usando consultas parametrizadas (`?`) em vez de concatenar texto.
 
-> ➡️ **Próximo passo:** fim do curso! Volte ao índice para revisar o **Resumo do curso** e escolher seu próximo projeto.
+> ➡️ **Próximo passo:** juntar tudo, ligando a API do Express a um banco SQL: **Integrando Node.js e SQL: API com banco de dados**.
 
 ## 📌 Resumo
 

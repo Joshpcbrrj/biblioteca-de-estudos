@@ -51,6 +51,10 @@ Por baixo dos panos, uma branch é só um **ponteiro leve para um commit**. Cria
 
 Os comandos a seguir formam o dia a dia com ramos. `git branch` lista os ramos e mostra em qual você está. `git switch -c nova-feature` cria um ramo e já troca para ele; `git switch main` volta para a principal. `git merge nome-do-ramo`, executado estando na `main`, traz as mudanças do outro ramo. Se as duas linhas alteraram o mesmo trecho do mesmo arquivo, acontece um **conflito de merge**: o Git marca os dois trechos no arquivo e pede que você escolha o que fica. Não é um erro, e sim uma pergunta que o Git não consegue responder sozinho. Resolva, salve, faça `git add` e conclua com um commit.
 
+![Os comandos do dia a dia com ramos.](../img/st-git-ramos-comandos.svg)
+
+> 💡 **Analogia:** abrir um ramo é abrir uma trilha nova na floresta: a estrada principal continua livre enquanto você explora, e, se a trilha não dá em nada, é só abandoná-la.
+
 ```bash
 # lista as branches (* marca a atual)
 git branch

@@ -111,6 +111,40 @@ Regra de ouro: **se existe uma tag HTML que faz isso, use a tag**. ARIA errado �
 | O foco aparece? | defina um `:focus-visible` |
 | O contraste passa de 4,5:1? | escureça o texto ou clareie o fundo |
 
+## Exercício
+
+O trecho abaixo tem quatro problemas de acessibilidade. Encontre-os e corrija:
+
+```html
+<!-- trecho com quatro problemas -->
+<div onclick="enviar()">Enviar</div>
+<img src="grafico.png">
+<input type="text" placeholder="E-mail">
+<a href="/promo">Clique aqui</a>
+```
+
+<details>
+<summary>Ver resposta</summary>
+
+```html
+<!-- botão de verdade: recebe foco e responde ao Enter -->
+<button type="button" onclick="enviar()">Enviar</button>
+
+<!-- alt descreve o conteúdo da imagem -->
+<img src="grafico.png" alt="Vendas crescem 20% em 2026">
+
+<!-- o rótulo fica ligado ao campo pelo for/id -->
+<label for="email">E-mail</label>
+<input type="text" id="email" name="email">
+
+<!-- o texto do link diz para onde ele vai -->
+<a href="/promo">Ver as promoções do mês</a>
+```
+
+Teste: use só o teclado (`Tab` e `Enter`) e confirme que o botão recebe foco; clique no rótulo e veja o campo ganhar foco.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Qual o `alt` certo para uma imagem só decorativa?**

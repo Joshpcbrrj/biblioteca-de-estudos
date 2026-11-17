@@ -116,7 +116,7 @@ Porque HTMLCollection não tem `forEach`. Converta com `Array.from`.
 
 A ao vivo se atualiza quando o DOM muda; a estática é uma foto do momento da busca.
 
-> ➡️ **Próximo passo:** até aqui os dados estavam no código. Agora vamos buscá-los de um servidor em **JSON e fetch: consumindo APIs**.
+> ➡️ **Próximo passo:** até aqui, tudo se perdia ao recarregar a página. Vamos guardar dados no navegador em **Web Storage: localStorage e sessionStorage**.
 
 ## 📌 Resumo
 

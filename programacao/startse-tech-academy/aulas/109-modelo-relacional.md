@@ -36,6 +36,10 @@ O banco garante a consistência com **restrições**:
 
 Toda tabela precisa de uma chave primária, e há duas escolhas. A **chave natural** é um dado que já existe no mundo real e é único, como o CPF ou o e-mail. Parece conveniente, mas dados reais mudam: a pessoa troca de e-mail, o CPF pode ser digitado errado, e como a chave é copiada em outras tabelas, corrigir um valor vira uma operação trabalhosa. A **chave substituta** é um número sem significado criado pelo próprio banco (`id` autoincrementado). Como não representa nada do mundo real, nunca precisa mudar. A prática mais comum é usar um `id` como chave primária e declarar o CPF ou e-mail como `UNIQUE`.
 
+![Chave natural e chave substituta lado a lado.](../img/st-chave-natural-substituta.svg)
+
+> 💡 **Analogia:** o CPF é como o nome escrito no crachá: precisa estar certo e, às vezes, muda; o número de matrícula é só um código interno que nunca precisa ser corrigido.
+
 - **Natural**: um dado real que já é único (`cpf`). Problema: pode mudar ou ter formato complicado.
 - **Substituta (surrogate)**: um número gerado só para identificar (`id AUTO_INCREMENT` ou UUID). É a escolha mais comum. Use `UNIQUE` nas naturais.
 

@@ -68,6 +68,10 @@ Descreve a cor de um jeito mais humano:
 
 As duas deixam algo transparente, mas atuam em alvos diferentes, e confundi-las é um erro clássico. O alfa do `rgba` (o quarto número) afeta **somente aquela cor**: um fundo `rgba(0, 0, 0, 0.5)` fica meio transparente, e o texto dentro continua totalmente nítido. Já `opacity: 0.5` afeta o **elemento inteiro**, com fundo, borda, texto e filhos, deixando tudo apagado. Se você quer um cartão com fundo translúcido e texto legível, use `rgba` no `background`; use `opacity` só quando quiser mesmo que o elemento todo desbote, como em um botão desativado.
 
+![rgba afeta só a cor; opacity afeta o elemento inteiro.](../img/st-rgba-opacity.svg)
+
+> 💡 **Analogia:** o `rgba` é um vidro fosco na janela, que só muda aquela superfície; a `opacity` é apagar a luz do cômodo inteiro, e tudo o que está dentro escurece junto.
+
 ```css
 /* só o FUNDO fica translúcido */
 .a { background-color: rgb(0 0 0 / 50%); }

@@ -45,6 +45,10 @@ Todo processo de software, ágil ou tradicional, passa por cinco atividades gen�
 
 A diferença está em **quando você aprende que errou**. No modelo em **cascata**, as fases acontecem em sequência (requisitos, projeto, código, testes, entrega) e o cliente só vê o produto no final; se o entendimento inicial estava errado, o erro aparece meses depois e custa caro. Nos métodos **ágeis** (Scrum, Kanban), o trabalho é dividido em ciclos curtos, de uma a quatro semanas, e cada ciclo entrega uma parte funcionando para o cliente avaliar, corrigindo a rota cedo. A cascata funciona bem quando os requisitos são estáveis e bem conhecidos; o ágil, quando há incerteza e mudanças, que é o caso da maior parte dos produtos digitais.
 
+![Diferenças práticas entre cascata e métodos ágeis.](../img/st-cascata-agil.svg)
+
+> 💡 **Analogia:** a cascata é construir a casa inteira e só entregar a chave no fim; o ágil entrega um cômodo de cada vez, e o morador pode dizer cedo que queria a cozinha maior.
+
 |  | Cascata | Ágil (Scrum, Kanban) |
 | --- | --- | --- |
 | Ciclo | cada etapa uma vez, em sequência | ciclos curtos que se repetem |

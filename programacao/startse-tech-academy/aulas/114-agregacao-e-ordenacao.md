@@ -50,6 +50,10 @@ Regra: toda coluna do `SELECT` que **não** está dentro de uma função de agre
 
 Os dois filtram, mas em momentos diferentes da consulta, e a ordem explica tudo. O `WHERE` age **antes** do agrupamento, escolhendo quais linhas entram na conta. O `HAVING` age **depois**, escolhendo quais grupos aparecem no resultado, e por isso é o único que enxerga o valor de uma agregação como `SUM(valor)`. Exemplo: "vendas de 2024 (`WHERE`) por vendedor, mostrando só quem passou de R$ 10 mil (`HAVING`)". Se você tentar `WHERE SUM(valor) > 10000`, o banco devolve erro, porque a soma ainda não existe naquele momento. Regra prática: filtro sobre uma coluna comum vai no `WHERE`; filtro sobre um resultado agregado vai no `HAVING`.
 
+![WHERE filtra linhas antes de agrupar; HAVING filtra grupos depois.](../img/st-where-having.svg)
+
+> 💡 **Analogia:** o `WHERE` é o porteiro, que barra gente na entrada antes de formar as turmas; o `HAVING` é o fiscal, que só olha cada turma depois de formada e decide quais ficam.
+
 - `WHERE` filtra **linhas**, **antes** de agrupar. Não aceita funções de agregação.
 - `HAVING` filtra **grupos**, **depois** de agregar.
 

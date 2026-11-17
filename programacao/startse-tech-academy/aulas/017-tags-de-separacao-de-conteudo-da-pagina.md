@@ -109,6 +109,42 @@ Os elementos em linha acompanham o texto, como as palavras destacadas numa frase
 
 Fica lado a lado como `inline`, mas aceita `width`, `height` e margens como `block`. É útil para botões e badges. Para layouts completos, use **Flexbox** e **Grid** (módulo V).
 
+## Exercício
+
+Monte o esqueleto de um blog usando só tags semânticas: um cabeçalho com o nome do site e um menu, uma área principal com dois artigos (cada um com título e texto), uma barra lateral e um rodapé. Nenhuma `div` é permitida.
+
+<details>
+<summary>Ver resposta</summary>
+
+```html
+<!-- esqueleto do blog, sem nenhuma div -->
+<body>
+  <header>
+    <h1>Meu blog</h1>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/sobre">Sobre</a>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h2>Primeiro post</h2>
+      <p>Texto do primeiro post.</p>
+    </article>
+    <article>
+      <h2>Segundo post</h2>
+      <p>Texto do segundo post.</p>
+    </article>
+  </main>
+  <aside>Links e categorias</aside>
+  <footer>© 2026 Meu blog</footer>
+</body>
+```
+
+Teste: cada bloco tem um papel claro (`header`, `nav`, `main`, `article`, `aside`, `footer`) e não sobrou nenhuma `div`.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Um card de produto numa loja é `<section>` ou `<article>`?**

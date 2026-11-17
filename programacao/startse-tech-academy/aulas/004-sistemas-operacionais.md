@@ -39,6 +39,10 @@ O sistema operacional é o intermediário entre os programas e o hardware, e a r
 
 São dois conceitos parecidos que confundem iniciantes. Um **programa** é um arquivo parado no disco, com instruções prontas para executar, como uma receita de bolo no caderno. Um **processo** é esse programa **em execução**: carregado na memória, com seus dados, recebendo tempo do processador, como a receita sendo preparada de fato na cozinha. Você pode abrir o mesmo programa três vezes e ter três processos independentes, cada um com seu estado. Quando um programa trava, o que você encerra no gerenciador de tarefas é o processo, e o programa continua intacto no disco.
 
+![Programa e processo: o que cada um é.](../img/st-programa-processo.svg)
+
+> 💡 **Analogia:** o programa é a partitura guardada na estante; o processo é a música sendo tocada agora, e a mesma partitura pode estar sendo tocada por várias orquestras ao mesmo tempo.
+
 Um **programa** é um arquivo parado no disco (ex.: `code.exe`). Quando você o abre, o SO cria um **processo**: o programa em execução, com memória própria e um número de identificação (PID). Abrir o navegador duas vezes cria dois processos do mesmo programa. O Gerenciador de Tarefas (Windows) e o Monitor de Atividade (macOS) listam os processos.
 
 ## Tipos de sistemas operacionais

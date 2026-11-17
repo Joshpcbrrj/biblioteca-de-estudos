@@ -68,6 +68,10 @@ const nome = await buscarUsuario("octocat");
 
 O `await` é tão confortável que muita gente o coloca em tudo, e isso cria um problema de desempenho silencioso. Se você escreve `await a(); await b();`, a segunda operação só começa depois que a primeira termina, mesmo quando uma não depende da outra. Para duas requisições de 1 segundo cada, o total é de 2 segundos. Quando as tarefas são independentes, dispare todas de uma vez e espere o conjunto com `Promise.all`: o total cai para cerca de 1 segundo. A pergunta que resolve a dúvida é: "a segunda tarefa precisa do resultado da primeira?" Se sim, sequencial; se não, paralelo.
 
+![Duas tarefas de 1 segundo: 2 s em sequência, 1 s em paralelo.](../img/st-await-sequencial-paralelo.svg)
+
+> 💡 **Analogia:** é como pôr duas panelas no fogo: se você espera a primeira ferver para só então ligar a segunda, o jantar demora o dobro; ligar as duas juntas poupa tempo, a menos que a segunda precise do caldo da primeira.
+
 ![await em sequência × Promise.all](../img/st-async.svg)
 
 > 💡 **Analogia:** fazer café da manhã. Com `await` em sequência, você liga a cafeteira, espera o café ficar pronto e só então põe o pão na torradeira. Com `Promise.all`, liga as duas coisas ao mesmo tempo e espera as duas terminarem: o café da manhã sai bem mais rápido. Só faz sentido esperar em fila quando uma etapa depende da outra.

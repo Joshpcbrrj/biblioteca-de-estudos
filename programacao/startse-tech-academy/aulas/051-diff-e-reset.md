@@ -76,6 +76,35 @@ O caso mais frequente é o "commitei cedo demais": você fez o commit, percebeu 
 
 > ⚠️ **Correção:** as anotações diziam que `git diff` sem argumentos compara o diretório de trabalho com o último commit. Na verdade, ele compara com a **staging area**. Para comparar com o último commit, use `git diff HEAD`.
 
+## Exercício
+
+Com um repositório que já tem um commit, acrescente uma linha ao `nota.txt` e veja o que mudou. Grave um segundo commit e depois desfaça esse commit mantendo a linha nova como mudança preparada. Por fim, descarte tudo com `--hard` e confira o arquivo.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+echo "mais" >> nota.txt
+
+# mostra a linha acrescentada
+git diff
+
+git add nota.txt
+git commit -m "Segundo commit"
+
+# desfaz o commit; a mudança continua staged
+git reset --soft HEAD~1
+git status --short
+
+# apaga o commit E a mudança (cuidado!)
+git reset --hard
+cat nota.txt
+```
+
+Teste: depois do `--soft`, o `status` mostra `M  nota.txt`; depois do `--hard`, o arquivo volta a ter só a linha "oi". Testei esta sequência antes de escrevê-la.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Você deu `git add` em tudo e o `git diff` não mostra nada. Por quê?**

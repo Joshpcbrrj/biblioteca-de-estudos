@@ -102,6 +102,34 @@ a1b2c3d Adiciona página inicial
 
 Cada linha é um commit: à esquerda, o começo do hash; à direita, a mensagem.
 
+## Exercício
+
+Crie uma pasta `meu-projeto`, inicie um repositório, crie o arquivo `nota.txt` com uma linha e faça o primeiro commit. Confira o resultado no histórico.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+mkdir meu-projeto
+cd meu-projeto
+
+# cria o repositório na branch main
+git init -b main
+
+echo "oi" > nota.txt
+
+# prepara e grava
+git add nota.txt
+git commit -m "Primeiro commit"
+
+# confere o histórico
+git log --oneline
+```
+
+Teste: o `git log --oneline` mostra uma linha com o hash e "Primeiro commit". Se o Git pedir nome e e-mail, rode a configuração inicial desta aula.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Qual a diferença entre Git e GitHub?**

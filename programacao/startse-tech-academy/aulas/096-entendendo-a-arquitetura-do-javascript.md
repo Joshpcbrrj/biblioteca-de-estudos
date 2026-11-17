@@ -71,6 +71,10 @@ Mesmo com `0 ms`, o `setTimeout` roda **por último**: primeiro termina todo o c
 
 O JavaScript ofereceu três gerações de ferramentas para lidar com o que demora, cada uma resolvendo um problema da anterior. Os **callbacks** são o modelo original: você passa uma função para ser chamada ao final, mas encadear várias gera a pirâmide de funções aninhadas conhecida como *callback hell*. As **Promises** representam um resultado futuro e permitem encadear etapas com `.then()` e tratar erros com `.catch()`. O **async/await** é a sintaxe mais recente, que deixa o código assíncrono com cara de código sequencial. Todas são a mesma ideia por baixo; hoje, a escolha mais comum em código novo é `async/await`.
 
+![Callbacks, Promises e async/await: cada um resolve um problema do anterior.](../img/st-evolucao-async.svg)
+
+> 💡 **Analogia:** é a evolução do recado: primeiro, bilhetes escondidos dentro de outros bilhetes (callbacks); depois, uma encomenda com código de rastreio (Promises); por fim, o simples “me avise quando chegar” (async/await).
+
 - **Callbacks**: passar uma função para ser chamada depois. Muitos aninhados viram o **callback hell**.
 - **Promises** (ES2015): objeto que representa um resultado futuro, com `.then()` e `.catch()`.
 - **async/await** (ES2017): a mesma Promise, escrita como código sequencial.

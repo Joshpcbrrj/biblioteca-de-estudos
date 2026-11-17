@@ -138,6 +138,10 @@ Observe que a filha **não acessa** `#saldo` diretamente: campos privados não s
 
 Herança é poderosa, mas cria um vínculo forte: se a classe pai mudar, todas as filhas mudam junto, e uma hierarquia profunda vira um quebra-cabeça em que ninguém sabe de qual nível veio cada comportamento. O teste para decidir é a frase "**é um**": `ContaPoupanca` **é uma** `Conta`, então herança faz sentido. Já `Carro` **tem um** `Motor`, e nesse caso o certo é a **composição**: o carro guarda um objeto motor em um atributo. Se você só quer reaproveitar um código e a frase "é um" soa estranha, não use herança.
 
+![Herança (é um) e composição (tem um).](../img/st-heranca-composicao.svg)
+
+> 💡 **Analogia:** herança é parentesco, você é um membro da família; composição é a mochila com bolsos, que tem peças dentro sem ser nenhuma delas.
+
 - Quando a relação não é "é um", e sim "tem um". Um `Carro` **tem um** `Motor`, então use **composição** (um atributo `this.motor`).
 - Para reaproveitar uma função só. Uma função utilitária ou um módulo resolve melhor.
 - Em cadeias muito profundas (A → B → C → D...), uma mudança no topo quebra tudo embaixo.

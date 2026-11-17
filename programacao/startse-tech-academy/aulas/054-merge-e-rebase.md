@@ -46,6 +46,10 @@ Depois do rebase, um `git merge feature` na `main` vira fast-forward, e o histó
 
 Os dois comandos chegam ao mesmo destino (juntar o trabalho de dois ramos), mas contam histórias diferentes. O **merge** preserva o histórico como aconteceu, com o ramo paralelo e um commit de junção: é honesto e seguro, mas o gráfico pode ficar cheio de cruzamentos. O **rebase** reescreve seus commits como se tivessem sido feitos depois da última novidade da `main`: o histórico fica numa linha reta e limpa, mas os commits ganham novos identificadores. A regra de ouro: **nunca faça rebase em commits que já foram enviados e que outras pessoas usam**, porque reescrever histórico compartilhado bagunça o trabalho de todos. Em ramos só seus, o rebase é uma ótima forma de organizar antes de abrir o PR.
 
+![Merge e rebase: mesmo destino, histórias diferentes.](../img/st-merge-rebase.svg)
+
+> 💡 **Analogia:** o merge junta dois diários mantendo cada página com a sua data; o rebase reescreve as páginas do seu diário como se você as tivesse começado depois do último capítulo do outro.
+
 |  | Merge | Rebase |
 | --- | --- | --- |
 | Histórico | real, com bifurcações | linear, mais fácil de ler |

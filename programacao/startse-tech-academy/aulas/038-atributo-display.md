@@ -119,6 +119,41 @@ p.ex5, p.ex6 {
 
 > ⚠️ **Bugs corrigidos:** `maring: 10px` virou `margin` (com o erro de digitação, a propriedade era ignorada). O comentário aninhado `/*/* ... */*/` sobre o `.ex2` não é suportado pelo CSS: fechava no primeiro `*/` e o resto estragava o seletor, descartando a regra `visibility: hidden`. As regras idênticas de `.ex5` e `.ex6` foram agrupadas, e a meta `X-UA-Compatible` (para o Internet Explorer, descontinuado) foi removida. Nas anotações, os exemplos de CSS também estavam marcados como HTML.
 
+## Exercício
+
+Crie um menu horizontal com três links usando `display`, sem Flexbox. Depois faça um botão "Mostrar/Ocultar" simples apenas com a classe `.oculto` que some com o elemento e libera o espaço dele.
+
+<details>
+<summary>Ver resposta</summary>
+
+```html
+<!-- menu e um texto que será ocultado -->
+<nav>
+  <a href="#">Início</a>
+  <a href="#">Cursos</a>
+  <a href="#">Contato</a>
+</nav>
+<p class="oculto">Sou um texto escondido.</p>
+```
+
+```css
+/* links em linha, mas com largura e altura */
+nav a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #eee;
+}
+
+/* some e não ocupa espaço */
+.oculto {
+  display: none;
+}
+```
+
+Teste: os links ficam lado a lado com o respiro do `padding`, e o parágrafo oculto não deixa lacuna. Com `visibility: hidden` a lacuna permaneceria.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Por que `width: 200px` não funciona num `span`?**

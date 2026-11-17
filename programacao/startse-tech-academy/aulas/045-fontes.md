@@ -107,6 +107,31 @@ Três hábitos tornam o texto bonito e leve. Primeiro, **use poucas fontes**: du
 - Carregue **só os pesos que usa**: cada peso é um arquivo a mais para baixar.
 - Defina a fonte no `body` e deixe a herança fazer o resto.
 
+## Exercício
+
+Defina a tipografia de uma página: texto do corpo em uma fonte sem serifa com plano B, títulos em negrito com 2 vezes o tamanho do texto, e parágrafos com espaçamento entre linhas confortável de leitura.
+
+<details>
+<summary>Ver resposta</summary>
+
+```css
+body {
+  /* se a primeira não existir, usa a seguinte */
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+```
+
+Teste: o `h1` fica com 32 px (2 × 16) e o texto ganha respiro entre as linhas. Trocar o nome da primeira fonte por um inexistente mostra o plano B funcionando.
+
+</details>
+
 ## 🧠 Revisão rápida
 
 **Por que terminar o `font-family` com uma família genérica?**

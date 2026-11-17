@@ -142,6 +142,12 @@ O `main.js` só precisa importar `media`; ela usa `somar` internamente.
 
 </details>
 
+## Resumo visual: dois arquivos conversando
+
+![O export em um arquivo e o import em outro.](../img/st-modulos-fluxo.svg)
+
+> 💡 **Analogia:** é a tomada e o plugue: o `export` deixa uma tomada disponível no arquivo, e o `import` é o plugue de quem quer usar aquela energia. Sem tomada, não há o que encaixar.
+
 ## 🧠 Revisão rápida
 
 **Qual a diferença entre export nomeado e padrão?**

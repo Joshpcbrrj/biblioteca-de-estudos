@@ -194,6 +194,51 @@ p {
 
 > ⚠️ **Bugs corrigidos no projeto:** o `#sticky` não tinha `top`, então **nunca grudava**; ele também tinha `overflow-y: scroll` e altura fixa, o que o transformava numa caixa com rolagem própria. O documento terminava com `<body>` em vez de `</body>`. E os IDs foram padronizados em minúsculas, porque IDs diferenciam maiúsculas de minúsculas.
 
+## Exercício
+
+Crie um cartão de produto de 200 px de largura com uma etiqueta "NOVO" fixa no canto superior direito do cartão (não da página).
+
+<details>
+<summary>Ver resposta</summary>
+
+```html
+<!-- cartão com a etiqueta dentro dele -->
+<div class="cartao">
+  <span class="etiqueta">NOVO</span>
+  <h3>Fone de ouvido</h3>
+  <p>R$ 120,00</p>
+</div>
+```
+
+```css
+.cartao {
+  /* referência para o filho absoluto */
+  position: relative;
+  width: 200px;
+  padding: 16px;
+  border: 1px solid #ccc;
+}
+
+.etiqueta {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: red;
+  color: white;
+  padding: 2px 6px;
+}
+```
+
+Teste: a etiqueta fica no canto do cartão. Se você tirar o `position: relative` do cartão, ela vai para o canto da página.
+
+</details>
+
+## Resumo visual: os valores de position
+
+![Cada valor de position, sua referência e se ocupa espaço.](../img/st-position-valores.svg)
+
+> 💡 **Analogia:** pense em um mural de avisos. O `static` é o aviso na fila normal; o `relative` é o mesmo aviso deslocado um pouco, mantendo seu lugar reservado; o `absolute` é um papel colado em qualquer ponto da moldura; o `fixed` é um adesivo no vidro, que não se mexe quando o mural rola.
+
 ## 🧠 Revisão rápida
 
 **Um `.selo` com `position: absolute` foi parar no canto da página, e não no canto do card. Por quê?**

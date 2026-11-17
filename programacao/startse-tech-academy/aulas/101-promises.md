@@ -146,6 +146,12 @@ Um `throw` dentro de um `then` rejeita a Promise seguinte, que cai no `catch`.
 
 </details>
 
+## Resumo visual: os três estados
+
+![pending, fulfilled e rejected.](../img/st-promise-estados.svg)
+
+> 💡 **Analogia:** é o rastreio de uma encomenda online: primeiro "em preparação" (`pending`), depois "entregue" (`fulfilled`) ou "devolvida" (`rejected`). Uma vez entregue ou devolvida, o status não muda mais.
+
 ## 🧠 Revisão rápida
 
 **Quais são os estados de uma Promise?**
