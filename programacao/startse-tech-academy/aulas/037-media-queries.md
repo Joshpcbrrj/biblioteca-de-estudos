@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** como aplicar estilos diferentes para cada tamanho de tela com media queries, a estratégia mobile first e as condições mais usadas (largura, orientação, impressão, modo escuro).
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo V](../img/st-mapa-05.svg)
+
 ## De onde paramos
 
 O módulo IV ensinou a estilizar elementos: cores, fundos, caixas e unidades. Mas o mesmo site é aberto num celular de 360px e num monitor de 1920px. Este módulo trata da **página como um todo**, e começa pelo que permite que ela se adapte a qualquer tela.

@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que forma uma linguagem de programação e as três camadas de regras (léxica, sintática e semântica) que o computador confere antes de executar seu código.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo II](../img/st-mapa-02.svg)
+
 ## De onde paramos
 
 No módulo I você viu que o computador só executa linguagem de máquina e que existem linguagens de alto nível mais próximas de nós. Agora vamos olhar para dentro dessas linguagens: do que são feitas e como o computador decide se o que você escreveu é válido.

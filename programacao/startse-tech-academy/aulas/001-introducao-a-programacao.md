@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que é programar, o que é um algoritmo e como as linguagens se organizam do nível da máquina ao nível humano.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo I](../img/st-mapa-01.svg)
+
 ## Onde começamos
 
 Este curso forma um desenvolvedor web do zero: primeiro os fundamentos (computador, internet, lógica), depois o front-end (HTML, CSS, JavaScript), o versionamento com Git e, por fim, o back-end (Node.js) e o banco de dados (SQL). Tudo parte de duas ideias: **programa** e **algoritmo**.

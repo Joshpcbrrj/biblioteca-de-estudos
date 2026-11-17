@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que é CSS, como uma regra é escrita, por que se chama "cascata" e como a linguagem evoluiu até hoje.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo IV](../img/st-mapa-04.svg)
+
 ## De onde paramos
 
 O módulo III terminou com páginas bem estruturadas, mas com a aparência padrão do navegador. O CSS é a segunda camada do front-end: ele decide como cada coisa aparece.

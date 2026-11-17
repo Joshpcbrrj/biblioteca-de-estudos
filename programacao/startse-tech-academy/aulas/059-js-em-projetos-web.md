@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** de onde veio o JavaScript, o que é ECMAScript, as características da linguagem, o papel do JS ao lado de HTML e CSS e as formas de colocar um script na página.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo VII](../img/st-mapa-07.svg)
+
 ## De onde paramos
 
 Com HTML você monta a estrutura e com CSS a aparência. Mas a página ainda não **reage**: não valida um formulário, não abre um menu, não calcula nada. É isso que o JavaScript acrescenta.

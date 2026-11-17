@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que é um paradigma de programação, como funcionam a programação estruturada e a orientada a objetos, o mesmo exemplo nos dois estilos e quando usar cada um.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo IX](../img/st-mapa-09.svg)
+
 ## De onde paramos
 
 No módulo de JavaScript você escreveu funções e objetos literais, e viu uma primeira classe. Este módulo organiza isso em uma forma de pensar: a **programação orientada a objetos**. Primeiro, vamos compará-la com o estilo que você já usa.

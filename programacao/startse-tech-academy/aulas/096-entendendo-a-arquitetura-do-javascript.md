@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** como o JavaScript faz várias coisas com uma thread só: call stack, APIs do ambiente, filas de microtasks e de tarefas, o event loop e as formas de escrever código assíncrono.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo X](../img/st-mapa-10.svg)
+
 ## De onde paramos
 
 No módulo de JavaScript, o `fetch` usava `await` e "esperava" a resposta sem travar a página. Antes de levar o JavaScript para o servidor com o Node, vamos entender como isso funciona por dentro.

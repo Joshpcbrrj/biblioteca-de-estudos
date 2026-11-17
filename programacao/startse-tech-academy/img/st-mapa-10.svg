@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1371" viewBox="0 0 1200 1371" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<defs><linearGradient id="gT0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9DBEF5"/><stop offset=".33" stop-color="#C3ADEE"/><stop offset=".66" stop-color="#F5AE9B"/><stop offset="1" stop-color="#EBCF6E"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1L9,5L1,9" fill="none" stroke="#7A7F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#FAF9F6"/>
+<text x="600.0" y="86" text-anchor="middle" style="font-size:54px;font-weight:900;fill:#1E1E1E;letter-spacing:1px">NODE.JS</text>
+<text x="600.0" y="128" text-anchor="middle" style="font-size:23px;fill:#55555F">Módulo X · JavaScript no servidor</text>
+<rect x="510.0" y="146" width="180" height="6" rx="3" fill="url(#gT0)"/>
+<path d="M354.6666666666667,489 C388.6666666666667,493 388.6666666666667,525 358.6666666666667,526" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,765 C388.6666666666667,769 388.6666666666667,801 358.6666666666667,802" fill="none" stroke="#B4472B" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M354.6666666666667,1041 C388.6666666666667,1045 388.6666666666667,1077 358.6666666666667,1078" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,489 C773.3333333333334,493 773.3333333333334,525 743.3333333333334,526" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,765 C773.3333333333334,769 773.3333333333334,801 743.3333333333334,802" fill="none" stroke="#1C7A7A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M739.3333333333334,1041 C773.3333333333334,1045 773.3333333333334,1077 743.3333333333334,1078" fill="none" stroke="#2F5FB3" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,489 C1158.0,493 1158.0,525 1128.0,526" fill="none" stroke="#21835A" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,765 C1158.0,769 1158.0,801 1128.0,802" fill="none" stroke="#6B44B8" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<path d="M1124.0,1041 C1158.0,1045 1158.0,1077 1128.0,1078" fill="none" stroke="#8A6A00" stroke-width="3" stroke-dasharray="1.5 7" stroke-linecap="round" opacity=".75" marker-end="url(#a)"/>
+<!-- Card 1: Arquitetura -->
+<g>
+<rect x="36.0" y="201" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="196" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="54.0" y="214" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="83.0" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#2F5FB3">arq</text>
+<text x="126.0" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">1. Arquitetura</text>
+<circle cx="70.0" cy="293" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,293 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="300" style="font-size:20px;fill:#3A3A44">cliente e servidor</text>
+<circle cx="70.0" cy="330" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,330 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="337" style="font-size:20px;fill:#3A3A44">API no meio</text>
+<circle cx="70.0" cy="367" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M65.5,367 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="374" style="font-size:20px;fill:#3A3A44">camadas</text>
+</g>
+<!-- Card 5: Assíncrono -->
+<g>
+<rect x="420.6666666666667" y="201" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="196" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="214" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="467.6666666666667" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#8A6A00">async</text>
+<text x="510.6666666666667" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">5. Assíncrono</text>
+<circle cx="454.6666666666667" cy="293" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,293 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="300" style="font-size:20px;fill:#3A3A44">callbacks</text>
+<circle cx="454.6666666666667" cy="330" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,330 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="337" style="font-size:20px;fill:#3A3A44">Promises</text>
+<circle cx="454.6666666666667" cy="367" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,367 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="374" style="font-size:20px;fill:#3A3A44">async / await</text>
+</g>
+<!-- Card 9: Express -->
+<g>
+<rect x="805.3333333333334" y="201" width="358.6666666666667" height="293" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="196" width="358.6666666666667" height="293" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="214" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="852.3333333333334" y="252" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#21835A">exp</text>
+<text x="895.3333333333334" y="252" style="font-size:24px;font-weight:800;fill:#1E1E1E">9. Express</text>
+<circle cx="839.3333333333334" cy="293" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,293 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="300" style="font-size:20px;fill:#3A3A44">app.get / post</text>
+<circle cx="839.3333333333334" cy="330" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,330 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="337" style="font-size:20px;fill:#3A3A44">req.params, req.body</text>
+<circle cx="839.3333333333334" cy="367" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M834.8333333333334,367 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="374" style="font-size:20px;fill:#3A3A44">res.json</text>
+<rect x="823.3333333333334" y="403" width="322.6666666666667" height="72" rx="10" fill="#F0F0F0" stroke="#D6D2CA" stroke-width="1.4"/>
+<text x="837.3333333333334" y="429" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">app.get('/x', (req, res)</text>
+<text x="837.3333333333334" y="456" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:17.5px;font-weight:700;fill:#2B2B2B;white-space:pre">  =&gt; res.json(dados));</text>
+</g>
+<!-- Card 2: Node.js -->
+<g>
+<rect x="36.0" y="534" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="529" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="54.0" y="547" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="83.0" y="585" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">node</text>
+<text x="126.0" y="585" style="font-size:24px;font-weight:800;fill:#1E1E1E">2. Node.js</text>
+<circle cx="70.0" cy="626" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,626 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="633" style="font-size:20px;fill:#3A3A44">V8 fora do navegador</text>
+<circle cx="70.0" cy="663" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,663 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="670" style="font-size:20px;fill:#3A3A44">event loop</text>
+<circle cx="70.0" cy="700" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M65.5,700 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="707" style="font-size:20px;fill:#3A3A44">não bloqueante</text>
+</g>
+<!-- Card 6: Arquivos -->
+<g>
+<rect x="420.6666666666667" y="534" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="529" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="547" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="467.6666666666667" y="585" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#1C7A7A">fs</text>
+<text x="510.6666666666667" y="585" style="font-size:24px;font-weight:800;fill:#1E1E1E">6. Arquivos</text>
+<circle cx="454.6666666666667" cy="626" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,626 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="633" style="font-size:20px;fill:#3A3A44">fs/promises</text>
+<circle cx="454.6666666666667" cy="663" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,663 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="670" style="font-size:20px;fill:#3A3A44">readFile</text>
+<circle cx="454.6666666666667" cy="700" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M450.1666666666667,700 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="707" style="font-size:20px;fill:#3A3A44">writeFile</text>
+</g>
+<!-- Card 10: Middleware -->
+<g>
+<rect x="805.3333333333334" y="534" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="529" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="547" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="852.3333333333334" y="585" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:24px;font-weight:700;fill:#6B44B8">mw</text>
+<text x="895.3333333333334" y="585" style="font-size:24px;font-weight:800;fill:#1E1E1E">10. Middleware</text>
+<circle cx="839.3333333333334" cy="626" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,626 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="633" style="font-size:20px;fill:#3A3A44">express.json()</text>
+<circle cx="839.3333333333334" cy="663" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,663 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="670" style="font-size:20px;fill:#3A3A44">next()</text>
+<circle cx="839.3333333333334" cy="700" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M834.8333333333334,700 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="707" style="font-size:20px;fill:#3A3A44">log e validação</text>
+</g>
+<!-- Card 3: npm -->
+<g>
+<rect x="36.0" y="810" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="805" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#94D8B8" stroke-width="2.2"/>
+<rect x="54.0" y="823" width="58" height="58" rx="14" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/>
+<text x="83.0" y="861" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#21835A">npm</text>
+<text x="126.0" y="861" style="font-size:24px;font-weight:800;fill:#1E1E1E">3. npm</text>
+<circle cx="70.0" cy="902" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,902 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="909" style="font-size:20px;fill:#3A3A44">npm init</text>
+<circle cx="70.0" cy="939" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,939 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="946" style="font-size:20px;fill:#3A3A44">npm install</text>
+<circle cx="70.0" cy="976" r="10" fill="#DDF5EA" stroke="#94D8B8" stroke-width="1.6"/><path d="M65.5,976 l3,3.2 l6,-6.4" fill="none" stroke="#21835A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="983" style="font-size:20px;fill:#3A3A44">package.json</text>
+</g>
+<!-- Card 7: HTTP -->
+<g>
+<rect x="420.6666666666667" y="810" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="805" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#9DBEF5" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="823" width="58" height="58" rx="14" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/>
+<text x="467.6666666666667" y="861" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#2F5FB3">http</text>
+<text x="510.6666666666667" y="861" style="font-size:24px;font-weight:800;fill:#1E1E1E">7. HTTP</text>
+<circle cx="454.6666666666667" cy="902" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,902 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="909" style="font-size:20px;fill:#3A3A44">request e response</text>
+<circle cx="454.6666666666667" cy="939" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,939 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="946" style="font-size:20px;fill:#3A3A44">verbos</text>
+<circle cx="454.6666666666667" cy="976" r="10" fill="#E3EEFF" stroke="#9DBEF5" stroke-width="1.6"/><path d="M450.1666666666667,976 l3,3.2 l6,-6.4" fill="none" stroke="#2F5FB3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="983" style="font-size:20px;fill:#3A3A44">status codes</text>
+</g>
+<!-- Card 11: Variáveis de ambiente -->
+<g>
+<rect x="805.3333333333334" y="810" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="805" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#EBCF6E" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="823" width="58" height="58" rx="14" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/>
+<text x="852.3333333333334" y="861" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#8A6A00">env</text>
+<text x="895.3333333333334" y="849" style="font-size:24px;font-weight:800;fill:#1E1E1E">11. Variáveis de</text>
+<text x="895.3333333333334" y="877" style="font-size:24px;font-weight:800;fill:#1E1E1E">ambiente</text>
+<circle cx="839.3333333333334" cy="902" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,902 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="909" style="font-size:20px;fill:#3A3A44">process.env</text>
+<circle cx="839.3333333333334" cy="939" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,939 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="946" style="font-size:20px;fill:#3A3A44">.env fora do Git</text>
+<circle cx="839.3333333333334" cy="976" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M834.8333333333334,976 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="983" style="font-size:20px;fill:#3A3A44">PORT</text>
+</g>
+<!-- Card 4: Módulos -->
+<g>
+<rect x="36.0" y="1086" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="36.0" y="1081" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#C3ADEE" stroke-width="2.2"/>
+<rect x="54.0" y="1099" width="58" height="58" rx="14" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/>
+<text x="83.0" y="1137" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#6B44B8">mod</text>
+<text x="126.0" y="1137" style="font-size:24px;font-weight:800;fill:#1E1E1E">4. Módulos</text>
+<circle cx="70.0" cy="1178" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1178 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1185" style="font-size:20px;fill:#3A3A44">require / import</text>
+<circle cx="70.0" cy="1215" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1215 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1222" style="font-size:20px;fill:#3A3A44">module.exports</text>
+<circle cx="70.0" cy="1252" r="10" fill="#EEE6FB" stroke="#C3ADEE" stroke-width="1.6"/><path d="M65.5,1252 l3,3.2 l6,-6.4" fill="none" stroke="#6B44B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90.0" y="1259" style="font-size:20px;fill:#3A3A44">ESM</text>
+</g>
+<!-- Card 8: APIs REST -->
+<g>
+<rect x="420.6666666666667" y="1086" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="420.6666666666667" y="1081" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#F5AE9B" stroke-width="2.2"/>
+<rect x="438.6666666666667" y="1099" width="58" height="58" rx="14" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/>
+<text x="467.6666666666667" y="1137" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#B4472B">api</text>
+<text x="510.6666666666667" y="1137" style="font-size:24px;font-weight:800;fill:#1E1E1E">8. APIs REST</text>
+<circle cx="454.6666666666667" cy="1178" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1178 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1185" style="font-size:20px;fill:#3A3A44">recursos e rotas</text>
+<circle cx="454.6666666666667" cy="1215" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1215 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1222" style="font-size:20px;fill:#3A3A44">JSON</text>
+<circle cx="454.6666666666667" cy="1252" r="10" fill="#FFE7E0" stroke="#F5AE9B" stroke-width="1.6"/><path d="M450.1666666666667,1252 l3,3.2 l6,-6.4" fill="none" stroke="#B4472B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="474.6666666666667" y="1259" style="font-size:20px;fill:#3A3A44">CRUD</text>
+</g>
+<!-- Card 12: Testar APIs -->
+<g>
+<rect x="805.3333333333334" y="1086" width="358.6666666666667" height="236" rx="16" fill="#3A3226" opacity=".07"/>
+<rect x="805.3333333333334" y="1081" width="358.6666666666667" height="236" rx="16" fill="#fff" stroke="#93D2D2" stroke-width="2.2"/>
+<rect x="823.3333333333334" y="1099" width="58" height="58" rx="14" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/>
+<text x="852.3333333333334" y="1137" text-anchor="middle" style="font-family:'Courier New',Menlo,Consolas,monospace;font-size:19px;font-weight:700;fill:#1C7A7A">test</text>
+<text x="895.3333333333334" y="1137" style="font-size:24px;font-weight:800;fill:#1E1E1E">12. Testar APIs</text>
+<circle cx="839.3333333333334" cy="1178" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1178 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1185" style="font-size:20px;fill:#3A3A44">Postman / Insomnia</text>
+<circle cx="839.3333333333334" cy="1215" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1215 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1222" style="font-size:20px;fill:#3A3A44">curl</text>
+<circle cx="839.3333333333334" cy="1252" r="10" fill="#DDF3F3" stroke="#93D2D2" stroke-width="1.6"/><path d="M834.8333333333334,1252 l3,3.2 l6,-6.4" fill="none" stroke="#1C7A7A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="859.3333333333334" y="1259" style="font-size:20px;fill:#3A3A44">casos de erro</text>
+</g>
+</svg>

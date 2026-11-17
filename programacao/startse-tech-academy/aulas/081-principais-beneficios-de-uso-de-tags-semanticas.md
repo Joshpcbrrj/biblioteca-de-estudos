@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que são tags semânticas e por que usá-las: legibilidade, acessibilidade, SEO, recursos nativos do navegador e CSS mais simples, com regras práticas de uso.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo VIII](../img/st-mapa-08.svg)
+
 ## De onde paramos
 
 No módulo III você montou páginas com `<header>`, `<nav>` e `<footer>`. Este módulo aprofunda esse uso e mostra por que ele importa tanto quanto a aparência.

@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que é HTML, a pilha TCP/IP por onde ele viaja, a história da linguagem até o HTML5 e as partes de um elemento HTML.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo III](../img/st-mapa-03.svg)
+
 ## De onde paramos
 
 O módulo II terminou com algoritmos e lógica. O HTML é diferente: não descreve passos, descreve **conteúdo**. É a primeira das três camadas do front-end que você vai dominar.

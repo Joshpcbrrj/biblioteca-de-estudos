@@ -85,10 +85,10 @@ Formação de programação do zero ao full stack: fundamentos de computação e
 - [Gitignore](aulas/056-gitignore.md)
 - [Git revert](aulas/057-git-revert.md)
 - [Resolvendo conflitos na prática](aulas/058-resolvendo-conflitos-na-pratica.md)
-- [JS em projetos web](aulas/059-js-em-projetos-web.md)
 
 ## ⚡ Módulo VII · JavaScript
 
+- [JS em projetos web](aulas/059-js-em-projetos-web.md)
 - [Variáveis e constantes](aulas/060-variaveis-e-constantes.md)
 - [Operadores](aulas/061-operadores.md)
 - [Principais tipos de dados do JS](aulas/062-principais-tipos-de-dados-do-js.md)
@@ -108,11 +108,11 @@ Formação de programação do zero ao full stack: fundamentos de computação e
 - [Seletores](aulas/076-seletores.md)
 - [Web Storage: localStorage e sessionStorage (Adicionado pelo aluno para melhorar o estudo)](aulas/077-web-storage-localstorage-e-sessionstorage.md)
 - [JSON e fetch: consumindo APIs (Adicionado pelo aluno para melhorar o estudo)](aulas/078-json-e-fetch-consumindo-apis.md)
+- [Alguns projetos teste](aulas/079-alguns-projetos-teste.md)
 - [Projeto: simulador de financiamento com HTML, CSS e JS](aulas/080-projeto-simulador-de-financiamento-com-html-css.md)
 
 ## 🏛️ Módulo VIII · HTML semântico e container
 
-- [Alguns projetos teste](aulas/079-alguns-projetos-teste.md)
 - [Principais benefícios de uso de tags semânticas](aulas/081-principais-beneficios-de-uso-de-tags-semanticas.md)
 - [Principais tags semânticas do HTML](aulas/082-principais-tags-semanticas-do-html.md)
 - [Flexbox](aulas/083-flexbox.md)
@@ -131,11 +131,11 @@ Formação de programação do zero ao full stack: fundamentos de computação e
 - [Getters e setters](aulas/093-getters-e-setters.md)
 - [Herança, extends e super (Adicionado pelo aluno para melhorar o estudo)](aulas/094-heranca-extends-e-super.md)
 - [Objeto](aulas/095-objeto.md)
-- [🔄 Entendendo a arquitetura do JavaScript](aulas/096-entendendo-a-arquitetura-do-javascript.md)
-- [🟢 Entendendo o Node.js](aulas/097-entendendo-o-node-js.md)
 
 ## 🟢 Módulo X · Node.js
 
+- [🔄 Entendendo a arquitetura do JavaScript](aulas/096-entendendo-a-arquitetura-do-javascript.md)
+- [🟢 Entendendo o Node.js](aulas/097-entendendo-o-node-js.md)
 - [npm e package.json (Adicionado pelo aluno para melhorar o estudo)](aulas/098-npm-e-package-json.md)
 - [🧪 Teste prático com o Node.js](aulas/099-teste-pratico-com-o-node-js.md)
 - [Callback](aulas/100-callback.md)

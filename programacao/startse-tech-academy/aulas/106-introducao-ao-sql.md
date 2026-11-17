@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que é SQL, como funciona um banco de dados relacional (tabelas, linhas, colunas e chaves), as subdivisões da linguagem, os comandos essenciais, convenções e onde praticar.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo XI](../img/st-mapa-11.svg)
+
 ## De onde paramos
 
 A API de tarefas do módulo anterior guardava os dados num array, que some quando o servidor reinicia. Para guardar dados de forma permanente, organizada e segura, usamos um **banco de dados**, e a linguagem para conversar com ele é o SQL.

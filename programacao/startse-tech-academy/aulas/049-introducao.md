@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que é o Git, como ele guarda o histórico, a configuração inicial e o fluxo básico `status → add → commit → log`.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa do módulo: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Mapa mental para revisar o módulo VI](../img/st-mapa-06.svg)
+
 ## De onde paramos
 
 Nos módulos III a V você escreveu muitos arquivos HTML e CSS. Imagine perder uma versão que funcionava, ou duas pessoas editando o mesmo arquivo ao mesmo tempo. O Git resolve isso, e é a ferramenta que todo time usa, inclusive para os projetos de JavaScript e Node dos próximos módulos.
