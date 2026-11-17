@@ -67,17 +67,13 @@ Anote os seletores e propriedades que você não conhecia: eles viram uma colinh
 
 ## 🧠 Revisão rápida
 
-<details><summary>Qual a diferença entre um seletor de tipo e um seletor de classe?</summary>
+**Qual a diferença entre um seletor de tipo e um seletor de classe?**
 
 O seletor de tipo (`p`) escolhe todos os elementos daquela tag. O de classe (`.destaque`) escolhe só os elementos com aquele nome em `class`.
 
-</details>
-
-<details><summary>Por que praticar em jogos em vez de só ler?</summary>
+**Por que praticar em jogos em vez de só ler?**
 
 O jogo dá retorno imediato: se o seletor está errado, a fase não passa. Esse ciclo fixa o que você leu na aula.
-
-</details>
 
 ## 📌 Resumo
 

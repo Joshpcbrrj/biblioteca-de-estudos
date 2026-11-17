@@ -60,7 +60,10 @@ def reindentar(code):
     return '\n'.join(' ' * ((len(l) - len(l.lstrip(' '))) // 2) + l.lstrip(' ') if l.strip() else l for l in linhas)
 
 def esc_cell(s):
-    return s.replace('|', '\\|').replace('\n',' ').strip()
+    s = s.replace('|', '\\|').replace('\n',' ').strip()
+    # dentro de `código`, o Pandoc mostra a barra do \|: troca por entidade HTML
+    return re.sub(r'`([^`]*\\\|[^`]*)`', lambda m: '<code>' + m.group(1)
+                  .replace('\\|', '&#124;').replace('<', '&lt;') + '</code>', s)
 
 class Conv:
     def __init__(self, is_list, imgdir, path=None, depth=0):
