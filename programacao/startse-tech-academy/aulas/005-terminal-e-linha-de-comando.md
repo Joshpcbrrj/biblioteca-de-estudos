@@ -28,9 +28,9 @@ cd -  # volta para a pasta anterior
 
 ![O mesmo arquivo pode ser apontado por um caminho absoluto ou relativo.](../img/terminal-caminhos-2.svg)
 
-**Caminho absoluto** parte da raiz (`/home/ana/projetos`); **caminho relativo** parte da pasta atual (`css/style.css`). `..` significa "a pasta acima" e `.` significa "a pasta atual".
-
 > 💡 **Analogia:** o caminho absoluto é o endereço completo com cidade e CEP; o relativo é "duas casas depois da padaria". O segundo só funciona se você souber onde está agora, e é isso que o `pwd` responde.
+
+**Caminho absoluto** parte da raiz (`/home/ana/projetos`); **caminho relativo** parte da pasta atual (`css/style.css`). `..` significa "a pasta acima" e `.` significa "a pasta atual".
 
 ## Criando, copiando, movendo e apagando
 
@@ -90,9 +90,13 @@ Pelo terminal, crie a estrutura `meu-site/` com `index.html`, `css/style.css` e 
 <summary>Ver resposta</summary>
 
 ```bash
+# cria a pasta e as subpastas (-p cria o que faltar)
 mkdir -p meu-site/css meu-site/js
+# entra na pasta: os caminhos agora são relativos a ela
 cd meu-site
+# cria os arquivos vazios, cada um no seu lugar
 touch index.html css/style.css js/main.js
+# lista tudo, inclusive o conteúdo das subpastas
 ls -R
 ```
 

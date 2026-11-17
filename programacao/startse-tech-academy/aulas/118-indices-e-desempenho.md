@@ -77,6 +77,7 @@ No MySQL, observe a coluna `type`: `ALL` significa varredura completa (ruim em t
 A consulta abaixo é lenta numa tabela com 5 milhões de pedidos. Proponha um índice e reescreva o filtro para que ele seja usado.
 
 ```sql
+-- funções na coluna impedem o uso do índice
 SELECT id, total
 FROM pedidos
 WHERE cliente_id = 42
@@ -88,6 +89,7 @@ WHERE cliente_id = 42
 <summary>Ver resposta</summary>
 
 ```sql
+-- índice composto: cliente primeiro, depois data
 CREATE INDEX idx_pedidos_cliente_data
   ON pedidos(cliente_id, data_pedido);
 

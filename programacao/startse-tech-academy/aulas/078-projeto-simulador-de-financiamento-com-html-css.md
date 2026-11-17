@@ -40,9 +40,11 @@ R$ 12.000 financiados em 12 meses, sem carência, com taxa mensal de 1%: a amort
         content="width=device-width, initial-scale=1.0">
   <title>Simulador de financiamento</title>
   <link rel="stylesheet" href="style.css">
+  <!-- defer: o script roda depois do HTML -->
   <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- main: formulário e tabela do simulador -->
   <main class="container">
     <h1>Simulador de financiamento (SAC)</h1>
 

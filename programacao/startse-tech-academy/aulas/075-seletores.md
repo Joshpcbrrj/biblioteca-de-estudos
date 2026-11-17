@@ -86,9 +86,13 @@ Escreva o seletor para cada caso: (a) o elemento com id `carrinho`; (b) todos os
 <summary>Ver resposta</summary>
 
 ```jsx
+// seletor de id: o elemento com id="carrinho"
 document.querySelector("#carrinho");
+// seletor de classe: botões dentro de .card
 document.querySelectorAll(".card button");
+// seletor de tag: o primeiro link dentro de nav
 document.querySelector("nav a");
+// seletor de atributo: todos os inputs com required
 document.querySelectorAll("input[required]");
 ```
 

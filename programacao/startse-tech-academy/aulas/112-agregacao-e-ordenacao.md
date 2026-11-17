@@ -19,6 +19,7 @@ Com JOINs você monta listas detalhadas. Mas relatórios costumam pedir resumos:
 | `MAX` / `MIN` | maior / menor | números, datas e texto |
 
 ```sql
+-- cada função resume a coluna inteira em um valor
 SELECT
   SUM(valor) AS total_vendas,
   AVG(valor) AS media_vendas,
@@ -88,6 +89,7 @@ Na tabela `pedidos(id, cliente_id, data_pedido, total)`, escreva uma consulta qu
 <summary>Ver resposta</summary>
 
 ```sql
+-- HAVING filtra os grupos, depois do GROUP BY
 SELECT
   cliente_id,
   COUNT(*)   AS qtd_pedidos,

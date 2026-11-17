@@ -104,11 +104,13 @@ let $elemento, _interno;
 Qual será a saída de cada `console.log`? Algum deles dá erro?
 
 ```jsx
+// taxa é const; saldo é let
 const taxa = 0.05;
 let saldo = 1000;
 saldo = saldo + saldo * taxa;
 console.log(saldo);
 
+// e aqui: o que acontece?
 taxa = 0.1;
 console.log(taxa);
 ```

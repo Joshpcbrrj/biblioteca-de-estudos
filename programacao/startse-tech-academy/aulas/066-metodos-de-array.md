@@ -11,6 +11,7 @@ Na aula de arrays você percorreu listas com `for`. Funciona, mas o laço manual
 **Os métodos de array recebem uma função (callback) que é chamada para cada item**, e cada método tem um propósito: transformar, filtrar, somar, buscar. O código fica mais curto e mais fácil de ler.
 
 ```jsx
+// array de objetos: nome, preço, categoria, estoque
 const produtos = [
   { nome: "Café", preco: 39.9,
     categoria: "bebida", estoque: 10 },

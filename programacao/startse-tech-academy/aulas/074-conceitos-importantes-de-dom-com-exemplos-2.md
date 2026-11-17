@@ -15,6 +15,7 @@ Quando um evento acontece em um elemento, ele **"sobe"** pela árvore (pai, avô
 > 💡 **Analogia:** a delegação é como a recepcionista de um prédio. Em vez de colocar um porteiro em cada apartamento, uma única pessoa na portaria recebe todas as entregas e olha a etiqueta (`event.target`) para saber de qual apartamento é. Quando um morador novo chega, ela já atende sem precisar contratar ninguém.
 
 ```html
+<!-- o id permite ao JavaScript encontrar a lista -->
 <ul id="minhaLista">
   <li>Item 1</li>
   <li>Item 2</li>
@@ -84,6 +85,7 @@ Atributos `data-*` são o jeito padrão de guardar informações no HTML para o 
 ## Inserindo em posições específicas
 
 ```html
+<!-- div com id: referência para o JavaScript -->
 <div id="container">
   <p>Texto 1</p>
   <p>Texto 3</p>
@@ -119,9 +121,10 @@ Outros métodos: `el.after(x)`, `el.append(x)` (dentro, no fim), `el.prepend(x)`
 const div = document.querySelector("#minhaDiv");
 
 // HTML como texto
-div.innerHTML;  // o HTML interno, com as quebras e os espaços da indentação
+// o HTML interno, com as quebras e os espaços
+div.innerHTML;
 // todo o texto, inclusive o escondido
-div.textContent;  // todo o texto, com os espaços da indentação
+div.textContent;
 // só o texto VISÍVEL (respeita o CSS)
 div.innerText;  // "Texto original"
 
@@ -151,9 +154,11 @@ Na lista de tarefas, cada `<li>` tem um botão `<button class="remover">x</butto
 <summary>Ver resposta</summary>
 
 ```jsx
+// um listener na lista toda (delegação)
 const lista = document.querySelector("#lista");
 
 lista.addEventListener("click", (e) => {
+  // acha o botão .remover mais próximo do clique
   const botao = e.target.closest(".remover");
   if (!botao) return;
   botao.closest("li").remove();

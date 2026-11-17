@@ -50,6 +50,7 @@ if (nome) {
 - Evite muitos níveis de `if` aninhados. Uma técnica é o **retorno antecipado**: trate os casos inválidos primeiro e saia da função.
 
 ```jsx
+// cada if barra a compra; o último confere o saldo
 function podeComprar(usuario) {
   if (!usuario) return false;
   if (usuario.idade < 18) return false;
@@ -88,6 +89,7 @@ console.log(`Hoje é ${nomeDia}`);
 - Sem o `break`, a execução **continua no próximo case** (fall-through). Às vezes isso é útil para agrupar casos:
 
 ```jsx
+// case 1 sem break cai no case 7 (mesma mensagem)
 switch (dia) {
   case 1:
   case 7:

@@ -40,6 +40,7 @@ Um laço contínuo: **se a call stack está vazia**, executa todas as microtasks
 ## Teste a ordem de execução
 
 ```jsx
+// a ordem real: síncrono, microtask, macrotask
 console.log("1. início");
 
 setTimeout(() => {
@@ -87,6 +88,7 @@ Para cálculos realmente pesados, os **Web Workers** (no navegador) e os **Worke
 Qual a ordem de saída?
 
 ```jsx
+// qual a ordem das letras no console?
 console.log("A");
 setTimeout(() => console.log("B"), 0);
 Promise.resolve()

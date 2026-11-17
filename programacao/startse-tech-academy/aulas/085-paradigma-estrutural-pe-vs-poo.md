@@ -22,6 +22,7 @@ Um **paradigma** é um estilo de organizar o código. Os dois mais comuns no in�
 - Simples e direta para scripts, automações e problemas pequenos.
 
 ```jsx
+// estrutural: dados soltos e funções separadas
 let saldo = 1000;
 
 function depositar(saldo, valor) {
@@ -87,6 +88,7 @@ Um sistema de biblioteca precisa registrar livros e empréstimos. Liste quais se
 <summary>Ver resposta (uma possibilidade)</summary>
 
 ```jsx
+// POO: cada classe junta dados e ações
 class Livro {
   constructor(titulo, autor) {
     this.titulo = titulo;

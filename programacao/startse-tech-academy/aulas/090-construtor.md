@@ -74,6 +74,7 @@ Validar no construtor garante que nunca exista um objeto em estado inválido.
 Com muitos parâmetros, a ordem vira um problema (`new Usuario("Ana", null, true, 3)`: o que era cada um?). Receba um objeto com desestruturação:
 
 ```jsx
+// objeto como parâmetro: a ordem não importa
 class Usuario {
   constructor({ nome, email, ativo = true, nivel = 1 }) {
     this.nome = nome;

@@ -26,6 +26,7 @@ Uma página com cabeçalho, menu, dois artigos (cada um com autor, texto e figur
   <title>Layout com tags semânticas</title>
 </head>
 <body>
+  <!-- header: título e subtítulo da página -->
   <header>
     <h1>Página teste</h1>
     <p>Subtítulo</p>
@@ -121,6 +122,7 @@ Dez caixas que quebram de linha automaticamente e ficam centralizadas.
 <body>
   <h1>Testando o Flexbox</h1>
 
+  <!-- contêiner flex: os filhos ficam lado a lado -->
   <div class="flex-container">
     <div>01</div><div>02</div><div>03</div>
     <div>04</div><div>05</div><div>06</div>
@@ -172,6 +174,7 @@ Layout com `grid-template-areas` e um rodapé em Flexbox dentro do grid.
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- contêiner grid: cada filho ocupa uma área -->
   <div class="grid-container">
     <header>Header</header>
     <main><p>Conteúdo</p></main>

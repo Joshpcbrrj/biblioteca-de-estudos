@@ -20,6 +20,7 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
   <title>Meu site</title>
 </head>
 <body>
+  <!-- header: topo com título e menu -->
   <header>
     <h1>Meu site</h1>
     <nav>
@@ -68,6 +69,7 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 - Só precisa de uma caixa para estilizar? → `<div>`.
 
 ```html
+<!-- section agrupa o tema; article é cada produto -->
 <main>
   <section>
     <h2>Produtos</h2>
@@ -88,6 +90,7 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 ### `<figure>` e `<figcaption>`
 
 ```html
+<!-- figure liga a imagem à legenda -->
 <figure>
   <img src="grafico.png"
        alt="Vendas crescendo 20% no trimestre">
@@ -98,6 +101,7 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 ### `<time>`, `<mark>` e `<address>`
 
 ```html
+<!-- datetime: a data em formato de máquina -->
 <p>Publicado em
   <time datetime="2023-08-15">15 de agosto</time>.
 </p>
@@ -116,6 +120,7 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 ### `<details>` e `<summary>`: acordeão sem JavaScript
 
 ```html
+<!-- details: abre e fecha sem JavaScript -->
 <details>
   <summary>Informações adicionais</summary>
   <p>Fabricado com materiais sustentáveis.</p>
@@ -127,6 +132,7 @@ O `<summary>` é o título clicável; o restante fica oculto até o clique. Use 
 ### `<datalist>`: sugestões em um campo
 
 ```html
+<!-- datalist: sugestões para o campo de texto -->
 <label for="fruta">Escolha uma fruta:</label>
 <input id="fruta" list="lista-frutas">
 <datalist id="lista-frutas">
@@ -141,10 +147,12 @@ Diferente do `<select>`, o usuário pode digitar um valor que não está na list
 ### `<progress>` e `<meter>`
 
 ```html
+<!-- progress: andamento de uma tarefa -->
 <label for="download">Download:</label>
 <progress id="download" value="50" max="100">
   50%</progress>
 
+<!-- meter: medida dentro de uma faixa -->
 <label for="disco">Uso do disco:</label>
 <meter id="disco" value="0.7"
        low="0.5" high="0.85">70%</meter>
@@ -168,6 +176,7 @@ Monte a estrutura semântica de um card de receita com: título, data de publica
 <summary>Ver resposta</summary>
 
 ```html
+<!-- article: a receita faz sentido sozinha -->
 <article>
   <header>
     <h2>Bolo de cenoura</h2>

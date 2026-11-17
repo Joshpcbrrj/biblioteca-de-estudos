@@ -66,6 +66,8 @@ A borda tem três partes: **largura**, **estilo** e **cor**. O estilo é obrigat
 
 ![Os oito estilos de borda.](../img/border-styles-2.svg)
 
+> 💡 **Analogia:** os estilos de borda são como molduras de quadro. A `solid` é a moldura lisa e firme, a `dashed` é um tracejado, como um recorte que se marca com régua, e a `dotted` são pontinhos, como uma linha de costura.
+
 ```css
 /* forma curta: largura estilo cor */
 .box { border: 1px solid black; }
@@ -108,6 +110,7 @@ Crie um card com 24px de espaço interno, borda cinza de 1px, cantos de 8px, som
 <summary>Ver resposta</summary>
 
 ```css
+/* cartão: espaço interno, borda e sombra */
 .card {
   padding: 24px;
   border: 1px solid #d1d5db;

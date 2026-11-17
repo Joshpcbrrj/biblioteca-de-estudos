@@ -47,6 +47,8 @@ O push só funciona se o remoto **não tiver nada que você não tenha**. Se alg
 
 ![O pull é um fetch seguido de um merge.](../img/fetch-pull-2.svg)
 
+> 💡 **Analogia:** o `fetch` é checar a caixa de correio e separar as cartas novas sem abrir nem misturar com as suas. O `pull` é o fetch seguido de um merge: você abre as cartas e já junta ao seu caderno.
+
 ```bash
 git fetch origin
 # o que chegou e ainda não está na main
@@ -74,9 +76,12 @@ Você criou um repositório vazio no GitHub e tem um projeto local com dois comm
 <summary>Ver resposta</summary>
 
 ```bash
+# liga o repositório local ao endereço remoto
 git remote add origin \
   https://github.com/usuario/meu-site.git
+# renomeia a branch atual para main
 git branch -M main
+# envia a main e guarda o vínculo (-u)
 git push -u origin main
 ```
 

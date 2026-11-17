@@ -31,6 +31,7 @@ while (contador <= 5) {
 Executa o bloco **primeiro** e testa depois: roda **pelo menos uma vez**.
 
 ```jsx
+// do...while: executa o bloco antes de testar a condição
 let contador = 1;
 
 do {
@@ -61,6 +62,7 @@ A ordem de execução é: início (uma vez) → testa a condição → executa o
 A forma mais legível de percorrer arrays, strings, Map e Set.
 
 ```jsx
+// for...of percorre os valores de um array
 const frutas = ["maçã", "uva", "kiwi"];
 
 for (const fruta of frutas) {
@@ -71,6 +73,7 @@ for (const fruta of frutas) {
 ## `for...in`: percorrer as chaves de um objeto
 
 ```jsx
+// for...in percorre as chaves de um objeto
 const pessoa = { nome: "Ana", idade: 28 };
 
 for (const chave in pessoa) {

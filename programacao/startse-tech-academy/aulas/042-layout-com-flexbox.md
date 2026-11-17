@@ -59,9 +59,13 @@ Tudo no Flexbox gira em torno de dois eixos:
 
 ![Os seis valores mais usados.](../img/flex-justify-2.svg)
 
+> 💡 **Analogia:** o `justify-content` é como distribuir livros numa estante. O `flex-start` empurra tudo para o começo, o `center` junta no meio e o `space-between` põe o primeiro e o último nas pontas e espaça o resto.
+
 ### `align-items`: alinhamento no eixo transversal
 
 ![stretch, flex-start, center e flex-end.](../img/flex-align-2.svg)
+
+> 💡 **Analogia:** o `align-items` é como alinhar quadros numa parede. O `stretch` estica todos até a mesma altura, o `flex-start` cola no topo e o `flex-end` na base.
 
 Há também `baseline`, que alinha os itens pela linha de base do texto (útil quando os itens têm fontes de tamanhos diferentes).
 
@@ -106,6 +110,7 @@ Num contêiner de 600px com três itens de 100px, sobram 300px. Com `flex-grow: 
 ### Centralizar qualquer coisa
 
 ```css
+/* o contêiner centraliza o filho nos dois eixos */
 .pai {
   display: flex;
   justify-content: center;
@@ -215,6 +220,7 @@ Faça uma barra de navegação com o logo à esquerda e os links à direita, tod
 <summary>Ver resposta</summary>
 
 ```css
+/* barra de navegação: links nas pontas */
 .barra {
   display: flex;
   justify-content: space-between;

@@ -139,6 +139,7 @@ let copia = { ...obj1 };
 Diga o resultado de cada linha:
 
 ```jsx
+// atenção: texto e número se comportam diferente
 typeof "42"
 typeof 42
 Number("3" + "4")

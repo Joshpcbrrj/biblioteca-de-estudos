@@ -103,6 +103,7 @@ for (const [chave, valor] of Object.entries(pessoa)) {
 Para criar muitos objetos parecidos, use uma **classe**:
 
 ```jsx
+// class: molde para criar objetos com nome e idade
 class Pessoa {
   constructor(nome, idade) {
     this.nome = nome;
@@ -110,6 +111,7 @@ class Pessoa {
   }
 }
 
+// new cria um objeto novo a partir do molde
 const pessoa1 = new Pessoa("João", 25);
 const pessoa2 = new Pessoa("Maria", 30);
 ```

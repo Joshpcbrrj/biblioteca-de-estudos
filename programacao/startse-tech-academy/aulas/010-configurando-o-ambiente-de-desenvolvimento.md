@@ -10,6 +10,8 @@ Você já sabe que o código passa por um compilador ou interpretador. No desenv
 
 ![O kit básico e a organização de um projeto](../img/st-ambiente-2.svg)
 
+> 💡 **Analogia:** é a caixa de ferramentas de um marceneiro. O VS Code é a bancada onde se trabalha, o navegador é o espelho para ver o resultado, o Git é o caderno que anota cada mudança e o Node é a máquina que faz o JavaScript funcionar fora do navegador.
+
 | Ferramenta | Para quê |
 | --- | --- |
 | **Navegador** (Chrome, Edge ou Firefox) | ver o site e usar o DevTools |
@@ -19,14 +21,16 @@ Você já sabe que o código passa por um compilador ou interpretador. No desenv
 
 Instale sempre a versão **LTS** do Node, que é a de suporte longo e a mais estável.
 
-> 💡 **Analogia:** é a caixa de ferramentas de um marceneiro. O VS Code é a bancada onde se trabalha, o navegador é o espelho para ver o resultado, o Git é o caderno que anota cada mudança e o Node é a máquina que faz o JavaScript funcionar fora do navegador.
-
 ## Conferindo as instalações
 
 ```bash
+# versão do VS Code: confirma que o comando code existe
 code --version
+# confirma que o Git está instalado
 git --version
+# versão do Node.js: roda JavaScript fora do navegador
 node -v
+# versão do npm, o gerenciador de pacotes que vem com o Node
 npm -v
 ```
 

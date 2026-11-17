@@ -109,6 +109,8 @@ Em vez de números, você nomeia as áreas e "desenha" o layout em texto:
 
 ![Layout corrigido: menu, conteúdo e barra lateral sem sobreposição.](../img/grid-projeto-2.svg)
 
+> 💡 **Analogia:** o layout corrigido é como a planta de um apartamento com paredes definidas. Menu, conteúdo e barra lateral têm cada um a sua sala, e nenhum invade a vizinha.
+
 **Código revisado**
 
 ```html
@@ -184,6 +186,7 @@ Monte uma galeria de cards que mostre quantas colunas de pelo menos 180px couber
 <summary>Ver resposta</summary>
 
 ```css
+/* cada coluna tem no mínimo 180px */
 .galeria {
   display: grid;
   grid-template-columns:

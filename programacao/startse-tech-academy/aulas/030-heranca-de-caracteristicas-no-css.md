@@ -77,10 +77,12 @@ Faça todos os links de um rodapé escuro ficarem com a mesma cor branca do text
 <summary>Ver resposta</summary>
 
 ```css
+/* footer: rodapé escuro com texto claro */
 footer {
   background: #111;
   color: white;
 }
+/* o link herda a cor do rodapé */
 footer a { color: inherit; }
 ```
 

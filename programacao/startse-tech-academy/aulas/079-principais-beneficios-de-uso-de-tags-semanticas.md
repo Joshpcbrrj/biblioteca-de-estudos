@@ -52,6 +52,7 @@ Seletores como `header nav a` ou `article > h2` funcionam sem criar classes para
 Reescreva com tags semânticas:
 
 ```html
+<!-- só divs: as classes não dizem nada ao navegador -->
 <div class="topo"><div class="menu">...</div></div>
 <div class="conteudo">
   <div class="post">...</div>
@@ -63,6 +64,7 @@ Reescreva com tags semânticas:
 <summary>Ver resposta</summary>
 
 ```html
+<!-- tags semânticas: o nome já diz o papel -->
 <header>
   <nav>...</nav>
 </header>

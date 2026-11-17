@@ -30,6 +30,7 @@ Quase todas podem ser escritas **junto da coluna** ou **no fim da tabela**. A fo
 ## NOT NULL e DEFAULT
 
 ```sql
+-- NOT NULL exige valor; DEFAULT preenche sozinho
 CREATE TABLE usuarios (
   id        INT PRIMARY KEY AUTO_INCREMENT,
   username  VARCHAR(50)  NOT NULL,
@@ -101,6 +102,7 @@ A tabela referenciada (`clientes`) precisa existir **antes**.
 ## CHECK
 
 ```sql
+-- CHECK: o banco recusa valores fora da regra
 CREATE TABLE funcionarios (
   id      INT PRIMARY KEY,
   nome    VARCHAR(50) NOT NULL,
@@ -132,6 +134,7 @@ Crie a tabela `reservas` de um hotel com: id, quarto (obrigatório), data de ent
 <summary>Ver resposta</summary>
 
 ```sql
+-- as regras do negócio viram constraints
 CREATE TABLE reservas (
   id        INT PRIMARY KEY AUTO_INCREMENT,
   quarto    INT NOT NULL,

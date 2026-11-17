@@ -13,10 +13,14 @@ Até aqui as páginas só mostravam conteúdo: textos, imagens, tabelas. Um form
 > 💡 **Analogia:** um formulário HTML é como uma ficha de papel num balcão. O `label` é o texto impresso ao lado de cada espaço, o `name` é o nome da coluna onde o atendente vai lançar a resposta, e o `action` é o guichê para onde a ficha é entregue.
 
 ```html
+<!-- action: para onde vão os dados -->
 <form action="/contato" method="post">
+  <!-- for liga o rótulo ao campo com o mesmo id -->
   <label for="nome">Nome</label>
+  <!-- required impede o envio com o campo vazio -->
   <input id="nome" name="nome" required>
 
+  <!-- type="email": o navegador valida o formato -->
   <label for="email">E-mail</label>
   <input id="email" name="email"
          type="email" required>
@@ -73,8 +77,11 @@ O `placeholder` (texto de exemplo dentro do campo) **não substitui** o label: e
 | `file` | arquivo | upload; exige `method="post"` e `enctype="multipart/form-data"` |
 
 ```html
+<!-- fieldset agrupa opções de um mesmo tema -->
 <fieldset>
   <legend>Forma de pagamento</legend>
+  <!-- radios com o mesmo name: só uma opção vale -->
+  <!-- checked deixa o Pix marcado desde o início -->
   <label>
     <input type="radio" name="pag" value="pix"
            checked> Pix
@@ -91,6 +98,7 @@ O `placeholder` (texto de exemplo dentro do campo) **não substitui** o label: e
 ## Listas de opções e texto longo
 
 ```html
+<!-- select: lista suspensa; o value vazio é um aviso -->
 <label for="estado">Estado</label>
 <select id="estado" name="estado">
   <option value="">Selecione</option>
@@ -115,11 +123,14 @@ O `placeholder` (texto de exemplo dentro do campo) **não substitui** o label: e
 O navegador confere os dados antes de enviar, sem nenhuma linha de JavaScript:
 
 ```html
+<!-- pattern: formato exigido; title explica ao usuário -->
 <input name="cep" required
        pattern="[0-9]{5}-[0-9]{3}"
        title="Formato 00000-000">
+<!-- min e max: o navegador recusa valores fora da faixa -->
 <input type="number" name="idade"
        min="18" max="120">
+<!-- minlength e maxlength: tamanho do texto -->
 <input name="usuario" minlength="3"
        maxlength="20">
 ```
@@ -139,6 +150,7 @@ Crie um formulário de cadastro com: nome (obrigatório), e-mail (obrigatório),
 <summary>Ver resposta</summary>
 
 ```html
+<!-- cada rótulo liga-se ao campo pelo id -->
 <form action="/cadastro" method="post">
   <label for="nome">Nome</label>
   <input id="nome" name="nome" required>
@@ -147,16 +159,19 @@ Crie um formulário de cadastro com: nome (obrigatório), e-mail (obrigatório),
   <input id="email" name="email"
          type="email" required>
 
+  <!-- type="password" esconde a senha; mínimo de 8 -->
   <label for="senha">Senha</label>
   <input id="senha" name="senha"
          type="password" minlength="8" required>
 
+  <!-- select: o usuário escolhe um plano -->
   <label for="plano">Plano</label>
   <select id="plano" name="plano">
     <option value="basico">Básico</option>
     <option value="pro">Pro</option>
   </select>
 
+  <!-- checkbox obrigatório: sem aceitar, não envia -->
   <label>
     <input type="checkbox" name="termos" required>
     Aceito os termos

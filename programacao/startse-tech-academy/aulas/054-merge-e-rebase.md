@@ -38,6 +38,8 @@ git rebase main
 
 ![C3 e C4 viram C3' e C4': mesmo conteúdo, hashes novos.](../img/rebase-antes-depois-2.svg)
 
+> 💡 **Analogia:** o rebase é como copiar seus capítulos e recolá-los depois da versão mais nova do livro. O texto é o mesmo, mas cada página ganha um novo número (hash), porque agora está em outra ordem.
+
 Depois do rebase, um `git merge feature` na `main` vira fast-forward, e o histórico fica uma **linha reta**, sem commits de merge.
 
 ## Qual usar?

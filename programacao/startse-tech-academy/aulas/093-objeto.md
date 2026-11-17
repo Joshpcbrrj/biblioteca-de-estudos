@@ -53,6 +53,7 @@ pessoa1.saudacao();  // Olá, sou João, 25 anos.
 ## 3. Classe: a forma moderna (recomendada)
 
 ```jsx
+// saudacao() fica no prototype, um só para todos
 class Pessoa {
   constructor(nome, idade) {
     this.nome = nome;
@@ -109,6 +110,7 @@ Object.freeze(pessoa2);
 Sem rodar, diga o resultado de cada linha:
 
 ```jsx
+// B estende A, mas não declara nenhum método
 class A { ola() { return "A"; } }
 class B extends A {}
 const b = new B();

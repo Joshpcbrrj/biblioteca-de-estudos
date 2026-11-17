@@ -95,6 +95,7 @@ Escreva o azul puro em hexadecimal, em RGB e em HSL, e um azul com 30% de opacid
 <summary>Ver resposta</summary>
 
 ```css
+/* o mesmo azul, em quatro formas de escrita */
 .a { color: #0000FF; }
 .b { color: rgb(0 0 255); }
 .c { color: hsl(240 100% 50%); }

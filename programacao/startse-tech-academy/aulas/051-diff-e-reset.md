@@ -47,6 +47,8 @@ O `git reset` move a branch atual (e o `HEAD`) para outro commit. Os commits "à
 
 ![soft guarda tudo preparado, mixed guarda como modificado e hard descarta.](../img/reset-modos-2.svg)
 
+> 💡 **Analogia:** pense em desfazer a montagem de um pacote. O `soft` tira o pacote do correio, mas deixa os itens já separados na mesa, prontos para reembalar. O `mixed` devolve os itens à bancada, sem separação. O `hard` joga tudo fora.
+
 ```bash
 # desfaz o último commit; alterações ficam staged
 git reset --soft HEAD~1

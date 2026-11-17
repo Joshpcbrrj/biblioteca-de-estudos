@@ -55,6 +55,7 @@ O resultado é: Resultado da operação  (2 s depois)
 Nas APIs antigas do Node, o callback recebe **o erro como primeiro argumento**:
 
 ```jsx
+// padrão do Node: o erro vem no 1º parâmetro
 const fs = require("fs");
 
 fs.readFile("dados.txt", "utf8", (erro, conteudo) => {
@@ -72,6 +73,8 @@ Quando uma operação depende do resultado da anterior, os callbacks vão se ani
 
 ![A mesma sequência com callbacks, Promises e async/await.](../img/callback-hell-2.svg)
 
+> 💡 **Analogia:** callbacks aninhados são como bonecas russas: para chegar à última, você abre uma dentro da outra. Promises e `async/await` põem as bonecas lado a lado, em fila.
+
 É por isso que existem as **Promises** e o **async/await**, os próximos tópicos. Callbacks continuam muito usados em eventos e em métodos de array, mas, para operações assíncronas em sequência, prefira Promises.
 
 > ⚠️ **Correção:** a definição dizia que o callback é executado "após a conclusão de uma operação assíncrona", mas callbacks também podem ser **síncronos** (`map`, `forEach`).
@@ -84,6 +87,7 @@ Escreva uma função `esperar(ms, callback)` que chame o callback depois de `ms`
 <summary>Ver resposta</summary>
 
 ```jsx
+// cada passo depende do anterior: callbacks aninhados
 function esperar(ms, callback) {
   setTimeout(callback, ms);
 }

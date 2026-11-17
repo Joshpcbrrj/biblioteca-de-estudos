@@ -42,6 +42,7 @@ Nomes com espaço vão entre aspas: `"Times New Roman"`.
 2. Copie os `<link>` para o `<head>`:
 
 ```html
+<!-- preconnect: conexão antecipada com as fontes -->
 <link rel="preconnect"
   href="https://fonts.googleapis.com">
 <link rel="preconnect"

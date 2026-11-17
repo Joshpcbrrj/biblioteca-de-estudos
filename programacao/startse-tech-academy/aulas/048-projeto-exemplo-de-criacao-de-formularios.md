@@ -175,6 +175,7 @@ Acrescente ao formulário um campo de telefone opcional que aceite só o formato
 ```html
 <div class="campo">
   <label for="telefone">Telefone:</label>
+  <!-- pattern: valida o formato (11) 91234-5678 -->
   <input type="tel" id="telefone" name="telefone"
     placeholder="(11) 91234-5678"
     pattern="\(\d{2}\) \d{5}-\d{4}">

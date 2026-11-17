@@ -97,6 +97,7 @@ Pacotes do npm são importados **pelo nome**, sem `./` (`import express from "ex
 Carrega um módulo só quando precisar, o que deixa a página inicial mais leve:
 
 ```jsx
+// import(): carrega o arquivo só no clique
 botaoGrafico.addEventListener("click", async () => {
   const { desenharGrafico } =
     await import("./grafico.js");

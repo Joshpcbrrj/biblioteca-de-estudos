@@ -54,6 +54,7 @@ DELETE FROM clientes WHERE id = 3;
 ## SELECT: consultar
 
 ```sql
+-- os 10 primeiros clientes ativos de Recife, por nome
 SELECT nome, email
 FROM clientes
 WHERE cidade = 'Recife' AND ativo = TRUE

@@ -69,6 +69,7 @@ Crie uma view `vw_produtos_baratos` com nome e preço dos produtos abaixo de R$ 
 <summary>Ver resposta</summary>
 
 ```sql
+-- a view guarda a consulta, não os dados
 CREATE VIEW vw_produtos_baratos AS
 SELECT nome, preco
 FROM produtos

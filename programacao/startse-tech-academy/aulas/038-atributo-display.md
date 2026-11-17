@@ -27,6 +27,7 @@ A aula de media queries mostrou como mudar estilos conforme a tela. Muitas dessa
 Cada tag já nasce com um `display` padrão: `div`, `p`, `h1` e `ul` são `block`; `span`, `a`, `strong` e `img` são `inline`. O CSS pode trocar isso:
 
 ```css
+/* inline: o tamanho do texto; block: a linha toda */
 span   { display: inline; }
 div    { display: block; }
 button { display: inline-block;

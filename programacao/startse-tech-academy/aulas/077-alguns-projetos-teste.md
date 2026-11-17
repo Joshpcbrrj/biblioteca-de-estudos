@@ -17,7 +17,8 @@ Ao enviar o formulário, mostra uma saudação com o nome digitado e esconde o f
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
   <title>Formulário simples de login</title>
   <script src="index.js" defer></script>
 </head>
@@ -25,6 +26,7 @@ Ao enviar o formulário, mostra uma saudação com o nome digitado e esconde o f
   <h1 id="t1">Introdução ao JavaScript</h1>
   <h2 id="t2"></h2>
 
+  <!-- sem action: o JavaScript trata o envio -->
   <form id="formularioLogin">
     <label for="nomeUsuario">Usuário</label>
     <input type="text" id="nomeUsuario" required>
@@ -37,14 +39,17 @@ Ao enviar o formulário, mostra uma saudação com o nome digitado e esconde o f
 ```
 
 ```jsx
-document.querySelector("#t1").textContent = "JavaScript - Introdução";
-document.querySelector("#t2").textContent = "Alterando o comportamento de um formulário";
+document.querySelector("#t1").textContent =
+  "JavaScript - Introdução";
+document.querySelector("#t2").textContent =
+  "Alterando o comportamento de um formulário";
 
 const form = document.querySelector("#formularioLogin");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();  // não recarrega a página
-  const nome = document.querySelector("#nomeUsuario").value.trim();
+  const nome = document
+    .querySelector("#nomeUsuario").value.trim();
   alert(`Olá, ${nome}! Seja bem-vindo!`);
   form.hidden = true;  // esconde o formulário
 });
@@ -59,7 +64,8 @@ form.addEventListener("submit", (event) => {
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
   <title>Opções de cor de fundo</title>
   <script src="index.js" defer></script>
 </head>
@@ -68,6 +74,7 @@ form.addEventListener("submit", (event) => {
   <h2>Mexendo com a cor de fundo</h2>
 
   <label for="coresFundo">Escolha a cor de fundo:</label>
+  <!-- value de cada option é uma cor do CSS -->
   <select id="coresFundo">
     <option value="white">Branco</option>
     <option value="lightblue">Azul</option>
@@ -85,10 +92,12 @@ form.addEventListener("submit", (event) => {
 const menu = document.querySelector("#coresFundo");
 
 menu.addEventListener("change", () => {
-  document.body.style.backgroundColor = menu.value;  // value já é a opção selecionada
+  // value já é a opção selecionada
+  document.body.style.backgroundColor = menu.value;
 });
 
-document.querySelector("#imprimir").addEventListener("click", () => window.print());
+document.querySelector("#imprimir")
+  .addEventListener("click", () => window.print());
 ```
 
 ## Projeto 3: conversor de quilômetros para milhas
@@ -102,15 +111,18 @@ document.querySelector("#imprimir").addEventListener("click", () => window.print
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
   <title>Conversor de km para milhas</title>
   <script src="index.js" defer></script>
 </head>
 <body>
   <h1>Conversão de km para milhas</h1>
 
-  <input type="number" id="valorKm" value="1" min="0" step="any">
+  <input type="number" id="valorKm"
+    value="1" min="0" step="any">
   <label for="valorKm"><b>km</b></label> =
+  <!-- output: elemento próprio para resultados -->
   <output id="resultado">0.621</output> <b>milhas</b>
 
   <button type="button" id="botaoCalcular">Calcular</button>
@@ -122,14 +134,18 @@ document.querySelector("#imprimir").addEventListener("click", () => window.print
 const KM_PARA_MILHA = 0.621371;
 
 function calculaKmMilha() {
-  const km = Number(document.querySelector("#valorKm").value);
-  document.querySelector("#resultado").textContent = (km * KM_PARA_MILHA).toFixed(3);
+  const campo = document.querySelector("#valorKm");
+  const km = Number(campo.value);
+  const milhas = (km * KM_PARA_MILHA).toFixed(3);
+  document.querySelector("#resultado").textContent = milhas;
 }
 
-document.querySelector("#botaoCalcular").addEventListener("click", calculaKmMilha);
+document.querySelector("#botaoCalcular")
+  .addEventListener("click", calculaKmMilha);
 
 // A variável km existe só DENTRO da função (escopo local).
-// Um console.log(km) aqui fora lançaria "ReferenceError: km is not defined".
+// Um console.log(km) aqui fora lançaria
+// "ReferenceError: km is not defined".
 ```
 
 ## Projeto 4: lista de tarefas
@@ -143,7 +159,8 @@ Adicionar, marcar, remover e ações em massa (marcar, desmarcar ou limpar todas
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
   <title>Lista de tarefas</title>
   <link rel="stylesheet" href="style.css">
   <script src="index.js" defer></script>
@@ -151,13 +168,19 @@ Adicionar, marcar, remover e ações em massa (marcar, desmarcar ou limpar todas
 <body>
   <h1>Lista de tarefas</h1>
   <div class="barra">
-    <input type="text" id="caixaDeTexto" placeholder="Tarefa" aria-label="Nova tarefa">
-    <button id="botaoAdicionar" aria-label="Adicionar">&#10011;</button>
+    <input type="text" id="caixaDeTexto"
+      placeholder="Tarefa" aria-label="Nova tarefa">
+    <button id="botaoAdicionar"
+      aria-label="Adicionar">&#10011;</button>
+    <!-- hidden: só aparece quando há tarefas -->
     <select id="listaSuspensa" hidden>
       <option value="">-- Selecione uma opção</option>
-      <option value="marcar">Marcar todas as tarefas</option>
-      <option value="desmarcar">Desmarcar todas as tarefas</option>
-      <option value="limpar">Limpar todas as tarefas</option>
+      <option value="marcar">
+        Marcar todas as tarefas</option>
+      <option value="desmarcar">
+        Desmarcar todas as tarefas</option>
+      <option value="limpar">
+        Limpar todas as tarefas</option>
     </select>
   </div>
   <ul id="listaTarefas"></ul>
@@ -167,6 +190,7 @@ Adicionar, marcar, remover e ações em massa (marcar, desmarcar ou limpar todas
 ```
 
 ```css
+/* fundo escuro e espaço para o footer fixo */
 body {
   background: rgb(3, 3, 59);
   color: white;
@@ -192,7 +216,8 @@ ul {
   padding: 0;
 }
 li {
-  position: relative;  /* referência para o botão remover */
+  /* referência para o botão remover */
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -219,10 +244,13 @@ footer {
 ```
 
 ```jsx
-const listaTarefas = document.querySelector("#listaTarefas");
+const listaTarefas =
+  document.querySelector("#listaTarefas");
 const caixaTexto = document.querySelector("#caixaDeTexto");
-const botaoAdicionar = document.querySelector("#botaoAdicionar");
-const listaSuspensa = document.querySelector("#listaSuspensa");
+const botaoAdicionar =
+  document.querySelector("#botaoAdicionar");
+const listaSuspensa =
+  document.querySelector("#listaSuspensa");
 
 function adicionar() {
   const texto = caixaTexto.value.trim();
@@ -236,7 +264,8 @@ function adicionar() {
 
 botaoAdicionar.addEventListener("click", adicionar);
 caixaTexto.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") adicionar();  // Enter também adiciona
+  // Enter também adiciona
+  if (e.key === "Enter") adicionar();
 });
 
 function criaTarefa(texto) {
@@ -246,7 +275,8 @@ function criaTarefa(texto) {
   const remover = document.createElement("button");
 
   checkbox.type = "checkbox";
-  span.className = "texto";  // classe, não id: ids não podem se repetir
+  // classe, não id: ids não podem se repetir
+  span.className = "texto";
   span.textContent = texto;
   remover.className = "remover";
   remover.textContent = "✕";
@@ -274,12 +304,14 @@ listaSuspensa.addEventListener("change", () => {
 
   if (acao === "marcar" || acao === "desmarcar") {
     const marcar = acao === "marcar";
-    for (const li of listaTarefas.children) {  // const: evita criar variável global
+    // const: evita criar variável global
+    for (const li of listaTarefas.children) {
       li.querySelector("input").checked = marcar;
       li.classList.toggle("realizada", marcar);
     }
   } else if (acao === "limpar") {
-    listaTarefas.replaceChildren();  // remove todos os filhos
+    // remove todos os filhos
+    listaTarefas.replaceChildren();
     atualizaListaSuspensa();
   }
 
@@ -304,6 +336,7 @@ Na lista de tarefas, faça as tarefas sobreviverem ao recarregamento da página,
 <summary>Ver resposta</summary>
 
 ```jsx
+// grava texto e estado de cada tarefa
 function salvar() {
   const tarefas = [...listaTarefas.children].map(li => ({
     texto: li.querySelector(".texto").textContent,
@@ -312,6 +345,7 @@ function salvar() {
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
 }
 
+// recria as tarefas salvas ao abrir a página
 function carregar() {
   const salvas = JSON.parse(
     localStorage.getItem("tarefas") ?? "[]"

@@ -12,7 +12,8 @@ O módulo V apresentou o Flexbox com um layout de página. Agora, com a estrutur
 
 ```css
 .container {
-  /* flex: o contêiner ocupa a linha toda (bloco); inline-flex faria ele agir como inline */
+  /* flex: o contêiner ocupa a linha toda (bloco) */
+  /* inline-flex: ele agiria como inline */
   display: flex;
 }
 ```
@@ -39,6 +40,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ![Define para onde aponta o eixo principal.](../img/flex-direction-2.svg)
 
+> 💡 **Analogia:** o `flex-direction` decide como a corda do varal é esticada: de lado a lado (`row`) ou de cima para baixo (`column`). As roupas seguem a corda.
+
 ```css
 .container {
   /* padrão; também: row-reverse,
@@ -50,6 +53,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 ### `flex-wrap`
 
 ![Sem wrap, os itens encolhem para caber numa linha só.](../img/flex-wrap-2.svg)
+
+> 💡 **Analogia:** sem `wrap`, você aperta todas as roupas numa corda só. Com `wrap`, quando a corda enche, as roupas seguintes vão para uma segunda corda.
 
 ```css
 .container {
@@ -65,6 +70,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ![Distribuição do espaço livre ao longo do eixo principal.](../img/flex-justify-2.svg)
 
+> 💡 **Analogia:** o `justify-content` é a forma de espalhar as roupas pela corda: todas numa ponta, todas no meio ou com folgas iguais entre elas.
+
 ```css
 .container {
   /* também: flex-start, flex-end, space-between,
@@ -76,6 +83,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 ### `align-items`: eixo transversal
 
 ![Alinhamento de cada item dentro da linha.](../img/flex-align-2.svg)
+
+> 💡 **Analogia:** o `align-items` é a altura em que cada roupa fica presa: rente à corda, centralizada ou esticada até o chão.
 
 ```css
 .container {
@@ -91,6 +100,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ![Só tem efeito quando há mais de uma linha.](../img/align-content-2.svg)
 
+> 💡 **Analogia:** o `align-content` só importa quando há várias cordas: ele decide se elas ficam juntas no alto, no meio ou espalhadas pela parede.
+
 ```css
 .container {
   /* obrigatório para ter várias linhas */
@@ -104,6 +115,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 ### `gap`
 
 ![O espaço fica só entre os itens.](../img/flex-gap-2.svg)
+
+> 💡 **Analogia:** o `gap` é a folga fixa entre um pregador e o seguinte. Ela existe só entre as roupas, nunca nas pontas da corda.
 
 ```css
 .container {
@@ -120,6 +133,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ![O item com menor order aparece primeiro.](../img/flex-order-2.svg)
 
+> 💡 **Analogia:** o `order` é uma senha presa em cada roupa: elas são penduradas pela ordem da senha, não pela ordem em que saíram do cesto.
+
 ```css
 .container .item-3 { order: -1; }
 ```
@@ -127,6 +142,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 ### `flex-grow`, `flex-shrink` e `flex-basis`
 
 ![O espaço LIVRE é dividido na proporção do flex-grow.](../img/flex-grow-2.svg)
+
+> 💡 **Analogia:** o `flex-grow` reparte a sobra de corda: uma roupa com `2` ganha o dobro da sobra de uma roupa com `1`.
 
 ```css
 .item {
@@ -149,6 +166,8 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ![Sobrescreve o align-items do contêiner para um item só.](../img/align-self-2.svg)
 
+> 💡 **Analogia:** o `align-self` é a exceção: uma única roupa presa em altura diferente das outras, sem mudar a regra do varal.
+
 ```css
 .container .item-3 { align-self: flex-end; }
 ```
@@ -163,6 +182,7 @@ Faça uma barra de navegação com o logo à esquerda e os links à direita, tod
 <summary>Ver resposta</summary>
 
 ```html
+<!-- barra: logo de um lado, links do outro -->
 <header class="barra">
   <a class="logo" href="/">Loja</a>
   <nav class="links">
@@ -174,6 +194,7 @@ Faça uma barra de navegação com o logo à esquerda e os links à direita, tod
 ```
 
 ```css
+/* wrap: os links descem se faltar espaço */
 .barra {
   display: flex;
   justify-content: space-between;

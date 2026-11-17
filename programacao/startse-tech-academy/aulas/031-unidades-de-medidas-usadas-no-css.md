@@ -26,8 +26,10 @@ Artigo do W3C sobre unidades (em português):
 Unidade fixa. Ótima para bordas, sombras e detalhes que não devem escalar.
 
 ```css
+/* largura fixa de 300px, não importa o tamanho da tela */
 .container {
   width: 300px;
+  /* borda cinza fina ao redor da caixa */
   border: 1px solid #ccc;
 }
 ```

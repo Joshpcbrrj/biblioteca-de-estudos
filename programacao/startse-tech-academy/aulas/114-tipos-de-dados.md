@@ -90,6 +90,7 @@ Escolha o tipo de cada coluna de uma tabela `usuarios`: id, nome, e-mail, UF, da
 <summary>Ver resposta</summary>
 
 ```sql
+-- cada coluna com o tipo mais justo para o dado
 CREATE TABLE usuarios (
   id          INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   nome        VARCHAR(100) NOT NULL,

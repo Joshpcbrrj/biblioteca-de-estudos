@@ -89,10 +89,12 @@ li::marker { color: #1a73e8; }
 ## Exemplo: sublinhado animado
 
 ```css
+/* .menu a: posição de referência para a linha */
 .menu a {
   position: relative;
   text-decoration: none;
 }
+/* ::after: elemento falso no fim do link */
 .menu a::after {
   content: "";
   position: absolute;
@@ -115,6 +117,7 @@ Numa lista de tarefas, risque o texto dos itens cujo checkbox está marcado, sem
 <summary>Ver resposta</summary>
 
 ```css
+/* span após um input marcado: riscado e claro */
 input:checked + span {
   text-decoration: line-through;
   opacity: .6;

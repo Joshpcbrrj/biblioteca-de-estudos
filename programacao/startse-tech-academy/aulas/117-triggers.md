@@ -48,6 +48,7 @@ DELIMITER ;
 ## Exemplo 1: atualizar a data de modificação
 
 ```sql
+-- antes de cada UPDATE, grava a data da alteração
 DELIMITER $$
 CREATE TRIGGER trg_clientes_atualizado
 BEFORE UPDATE ON clientes
@@ -63,6 +64,7 @@ No MySQL, o mesmo resultado sai sem trigger: `atualizado_em TIMESTAMP DEFAULT CU
 ## Exemplo 2: histórico de preços (auditoria)
 
 ```sql
+-- tabela que guarda cada mudança de preço
 CREATE TABLE historico_precos (
   id           INT PRIMARY KEY AUTO_INCREMENT,
   produto_id   INT,
@@ -88,6 +90,7 @@ DELIMITER ;
 ## Exemplo 3: baixar o estoque
 
 ```sql
+-- depois de inserir o item, baixa o estoque
 DELIMITER $$
 CREATE TRIGGER trg_itens_baixa_estoque
 AFTER INSERT ON itens_pedido
@@ -117,6 +120,7 @@ Crie uma trigger que impeça cadastrar um produto com preço negativo, trocando 
 <summary>Ver resposta</summary>
 
 ```sql
+-- antes de inserir, corrige preço negativo
 DELIMITER $$
 CREATE TRIGGER trg_produtos_preco_minimo
 BEFORE INSERT ON produtos

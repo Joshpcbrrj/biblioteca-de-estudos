@@ -21,10 +21,12 @@ Uma API REST de **tarefas** com as quatro operações básicas (CRUD), usando **
 ## Preparando
 
 ```bash
+# cria a pasta do projeto e inicia o npm
 mkdir api-tarefas
 cd api-tarefas
 npm init -y
 npm install express cors
+# type=module: permite usar import e export
 npm pkg set type=module
 npm pkg set scripts.dev="node --watch server.js"
 ```
@@ -71,7 +73,9 @@ app.get("/tarefas/:id", (req, res) => {
 app.post("/tarefas", (req, res) => {
   const titulo = String(req.body.titulo ?? "").trim();
   if (!titulo) {
-    return res.status(400).json({ erro: "Título obrigatório" });
+    return res
+      .status(400)
+      .json({ erro: "Título obrigatório" });
   }
   const nova = { id: proximoId++, titulo, feita: false };
   tarefas.push(nova);
@@ -126,7 +130,8 @@ Middleware é uma função que roda **antes** das rotas, por exemplo para regist
 
 ```jsx
 app.use((req, res, next) => {
-  console.log(new Date().toISOString(), req.method, req.url);
+  const hora = new Date().toISOString();
+  console.log(hora, req.method, req.url);
   // passa para o próximo; sem isso, a requisição trava
   next();
 });
@@ -176,6 +181,7 @@ Acrescente à API um filtro: `GET /tarefas?feita=true` deve devolver só as conc
 <summary>Ver resposta</summary>
 
 ```jsx
+// ?feita=true filtra; sem o parâmetro, vem tudo
 app.get("/tarefas", (req, res) => {
   const { feita } = req.query;
   if (feita === undefined) {

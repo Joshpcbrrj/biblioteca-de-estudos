@@ -28,6 +28,8 @@ Os dados ficam em **tabelas** (linhas e colunas), e as tabelas se ligam por **ch
 
 ![Cada grupo de comandos tem um papel.](../img/sql-categorias-2.svg)
 
+> 💡 **Analogia:** pense numa biblioteca. A DDL constrói e reforma as estantes, a DML põe, troca e retira livros, a DQL consulta o catálogo, a DCL decide quem tem a chave e a TCL confirma ou desfaz um lote de mudanças.
+
 ## Os comandos essenciais
 
 ```sql
@@ -81,6 +83,7 @@ Escreva os comandos para: (a) criar a tabela `produtos` com `id`, `nome` (obriga
 <summary>Ver resposta</summary>
 
 ```sql
+-- DDL cria a estrutura; DML mexe nos dados
 CREATE TABLE produtos (
   id    INT PRIMARY KEY AUTO_INCREMENT,
   nome  VARCHAR(100) NOT NULL,

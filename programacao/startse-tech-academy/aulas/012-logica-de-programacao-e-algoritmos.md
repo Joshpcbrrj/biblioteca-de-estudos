@@ -25,6 +25,8 @@ Um quebra-cabeça clássico, proposto em aula, para treinar o pensamento algorí
 
 ![Os 7 movimentos da solução mínima.](../img/hanoi-passos.svg)
 
+> 💡 **Analogia:** cada movimento é como abrir caminho numa mudança: primeiro você tira as caixas pequenas de cima, depois leva a grande e, por fim, recoloca as pequenas sobre ela.
+
 ### Algoritmo que funciona para qualquer número de discos
 
 ```
@@ -169,7 +171,7 @@ Condições podem ser combinadas com três operadores:
 | Operador | Pseudocódigo | JavaScript | Verdadeiro quando |
 | --- | --- | --- | --- |
 | E | `e` | `&&` | as duas partes são verdadeiras |
-| OU | `ou` | `\|\|` | pelo menos uma parte é verdadeira |
+| OU | `ou` | <code>&#124;&#124;</code> | pelo menos uma parte é verdadeira |
 | NÃO | `não` | `!` | inverte o valor |
 
 Tabela-verdade de E e OU (V = verdadeiro, F = falso):
@@ -270,6 +272,6 @@ Não: é a falácia da afirmação do consequente.
 | Estruturas básicas | sequência, decisão e repetição |
 | Teste de mesa | executar à mão, anotando cada variável |
 | Variável | espaço na memória com nome e valor |
-| E / OU / NÃO | `&&` / `\|\|` / `!` |
+| E / OU / NÃO | `&&` / <code>&#124;&#124;</code> / `!` |
 | Dedução | conclusão garantida pelas premissas |
 | Hanói | 2ⁿ − 1 movimentos; recursão resolve |

@@ -84,6 +84,7 @@ O E e o OU param assim que sabem o resultado (**curto-circuito**). Por isso apar
 Um `if/else` em uma linha, que **devolve um valor**:
 
 ```jsx
+// operador ternário: condição ? se verdadeiro : se falso
 let idade = 18;
 let mensagem = idade >= 18
   ? "Maior de idade"
@@ -125,6 +126,7 @@ Como na matemática, `**` vem primeiro, depois `*`, `/` e `%`, e por fim `+` e `
 Sem rodar, diga o resultado de cada expressão:
 
 ```jsx
+// pense na precedência e nos tipos antes de responder
 2 + 3 * 4
 (2 + 3) * 4
 10 % 3

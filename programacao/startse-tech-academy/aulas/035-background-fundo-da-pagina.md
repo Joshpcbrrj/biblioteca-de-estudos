@@ -104,6 +104,7 @@ Crie um banner de 400px de altura com a imagem `img/cidade.jpg` cobrindo tudo, c
 <summary>Ver resposta</summary>
 
 ```css
+/* banner com foto escurecida por degradê */
 .banner {
   height: 400px;
   color: white;

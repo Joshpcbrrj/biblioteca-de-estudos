@@ -50,6 +50,7 @@ document.documentElement.style
 Uma **transição** anima a passagem entre dois estados, como normal → `:hover`.
 
 ```css
+/* transition: anima a cor e a posição */
 .botao {
   background: var(--cor-primaria);
   transition: background-color .2s ease,
@@ -79,6 +80,7 @@ Formato: `transition: propriedade duração curva atraso`. Curvas comuns: `ease`
 Para movimentos que rodam sozinhos ou têm várias etapas:
 
 ```css
+/* @keyframes: quadros de início e fim */
 @keyframes aparecer {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -130,6 +132,7 @@ Crie um botão que, ao passar o mouse, cresça 5% e escureça a cor em 0,2 s, us
 <summary>Ver resposta</summary>
 
 ```css
+/* :root: variável reutilizável no CSS */
 :root { --cor-botao: hsl(220 90% 50%); }
 
 .botao {

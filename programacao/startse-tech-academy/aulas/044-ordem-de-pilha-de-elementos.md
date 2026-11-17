@@ -42,6 +42,8 @@ Quando o conteúdo é maior que a caixa (que tem altura ou largura fixa), o `ove
 
 ![Os quatro valores mais usados.](../img/overflow-2.svg)
 
+> 💡 **Analogia:** o `overflow` decide o que fazer quando o conteúdo é maior que a caixa, como uma pizza grande demais para a caixa. O `visible` deixa a pizza passar para fora, o `hidden` corta o excesso, o `scroll` põe uma janela para ver o resto e o `auto` só põe a janela quando ela é necessária.
+
 | Valor | Comportamento |
 | --- | --- |
 | `visible` | padrão: o conteúdo vaza para fora da caixa |

@@ -70,6 +70,7 @@ O espelho do LEFT: inclui o **pedido 13** com `nome = NULL`. Na prática, quase 
 Inclui Beto **e** o pedido 13. PostgreSQL e SQL Server têm `FULL JOIN`; no **MySQL**, simule com `UNION`:
 
 ```sql
+-- MySQL não tem FULL JOIN: une LEFT e RIGHT
 SELECT c.nome, p.id
 FROM clientes c
 LEFT JOIN pedidos p ON p.cliente_id = c.id
@@ -82,6 +83,7 @@ RIGHT JOIN pedidos p ON p.cliente_id = c.id;
 ## Juntando várias tabelas
 
 ```sql
+-- cada JOIN liga uma tabela pela chave estrangeira
 SELECT c.nome, pr.nome AS produto, ip.quantidade
 FROM pedidos p
 JOIN clientes     c  ON c.id = p.cliente_id

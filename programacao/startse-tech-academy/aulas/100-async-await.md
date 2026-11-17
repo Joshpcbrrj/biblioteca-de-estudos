@@ -103,6 +103,7 @@ for (const id of ids) {
 Reescreva com `async/await` e `try/catch`:
 
 ```jsx
+// encadeado: cada then recebe o resultado anterior
 fetch("/api/pedidos/7")
   .then((r) => r.json())
   .then((pedido) =>
@@ -116,6 +117,7 @@ fetch("/api/pedidos/7")
 <summary>Ver resposta</summary>
 
 ```jsx
+// o mesmo fluxo com await: lê de cima para baixo
 async function mostrarCliente() {
   try {
     const r1 = await fetch("/api/pedidos/7");

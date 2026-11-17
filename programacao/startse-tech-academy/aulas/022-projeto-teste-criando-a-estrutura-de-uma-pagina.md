@@ -47,6 +47,7 @@ Usar o site do **W3Schools** como referência e reproduzir **só a estrutura** d
   </style>
 </head>
 <body>
+  <!-- header: cabeçalho do site, com logo e menus -->
   <header>
     <figure>
       <img src="img/logo.png" alt="Logo do site">
@@ -63,6 +64,7 @@ Usar o site do **W3Schools** como referência e reproduzir **só a estrutura** d
     <a href="#">Login</a>
   </header>
 
+  <!-- aria-label separa as navegações para leitores -->
   <nav aria-label="Linguagens">
     <ul>
       <li><a href="#">HTML</a></li>
@@ -81,7 +83,9 @@ Usar o site do **W3Schools** como referência e reproduzir **só a estrutura** d
     </ul>
   </nav>
 
+  <!-- main: o conteúdo principal, um por página -->
   <main>
+    <!-- header deste conteúdo, não do site -->
     <header>
       <h1>HTML &lt;section&gt; Tag</h1>
       <button type="button">Anterior</button>
@@ -122,11 +126,13 @@ console.log("Teste 2");</code></pre>
     </section>
   </main>
 
+  <!-- aside: conteúdo complementar ao principal -->
   <aside>
     <h2>Publicidade</h2>
     <img src="img/anuncio1.png" alt="Anúncio 1">
   </aside>
 
+  <!-- footer: rodapé com créditos e contato -->
   <footer>
     <p>Site de estudo, sem fins comerciais.</p>
     <address>
@@ -150,6 +156,7 @@ Acrescente à página uma seção "Fale conosco" com um formulário de nome, e-m
 <summary>Ver resposta</summary>
 
 ```html
+<!-- section: agrupa campos de um mesmo tema -->
 <section>
   <h2>Fale conosco</h2>
   <form action="/contato" method="post">

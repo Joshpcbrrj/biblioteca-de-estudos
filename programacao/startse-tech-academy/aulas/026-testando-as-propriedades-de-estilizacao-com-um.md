@@ -19,17 +19,20 @@ Três páginas que usam o **mesmo** arquivo CSS externo, cada uma testando uma f
 ## CSS externo (`estilo.css`)
 
 ```css
+/* o body vale para toda a página */
 body {
   background-color: aquamarine;
   font-size: 16px;
 }
 
+/* h1: título grande, com cor escura */
 h1 {
   font-size: 120px;
   background-color: aqua;
   color: rgba(4, 4, 70, 0.71);
 }
 
+/* os parágrafos têm fonte maior e fundo próprio */
 p {
   font-size: 35px;
   background-color: white;
@@ -43,8 +46,10 @@ p {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- charset: garante os acentos corretos -->
   <meta charset="utf-8">
   <title>Teste de CSS externo</title>
+  <!-- liga o arquivo de estilo externo -->
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -132,6 +137,7 @@ Na `pagina3.html`, faça só o primeiro parágrafo voltar ao estilo do `estilo.c
 Dê uma classe ao parágrafo e repita o estilo externo numa regra mais específica dentro do `<style>`:
 
 ```css
+/* p.normal: só parágrafos com class="normal" */
 p.normal {
   color: rgb(97, 9, 109);
   background-color: white;

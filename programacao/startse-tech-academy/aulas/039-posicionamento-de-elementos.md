@@ -23,6 +23,7 @@ Fluxo normal do documento. **Ignora** `top`, `left`, `right`, `bottom` e `z-inde
 Desloca o elemento **a partir da posição onde ele estaria**. O espaço original **continua reservado**: os vizinhos não se mexem.
 
 ```css
+/* relative: move em relação ao lugar original */
 .elemento {
   position: relative;
   top: 20px;  /* desce 20px */
@@ -52,6 +53,7 @@ Também é muito usado **sem** deslocamento, apenas para servir de referência a
 Sai do fluxo e fica **preso à janela** do navegador: não se move ao rolar a página. É usado em menus fixos, botões flutuantes e banners de cookies.
 
 ```css
+/* fixed: fica parado ao rolar a página */
 .menu {
   position: fixed;
   top: 0;
@@ -91,6 +93,7 @@ Comporta-se como `relative` até a rolagem atingir o limite definido; a partir d
 Quando o conteúdo é maior que a caixa, `overflow` decide o que fazer: `visible` (vaza, o padrão), `hidden` (corta), `scroll` (barras sempre) ou `auto` (barras só quando precisa). Use `overflow-x` e `overflow-y` para cada eixo. Mais detalhes na aula "Ordem de pilha de elementos".
 
 ```css
+/* auto: barra de rolagem só se precisar */
 .caixa {
   height: 200px;
   overflow-y: auto;

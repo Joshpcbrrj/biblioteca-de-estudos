@@ -53,6 +53,7 @@ Quem evolui o padrão é o **TC39** (Comitê Técnico 39 da Ecma), com represent
 <body>
   <h1>Introdução ao JavaScript</h1>
 
+  <!-- script no fim: o h1 já existe -->
   <script>
     console.log("Olá! Seja bem-vindo!");
   </script>
@@ -113,6 +114,7 @@ Crie um `index.html` com um `<h1>` e um arquivo `app.js` que mostre no console a
 <head>
   <meta charset="UTF-8">
   <title>Teste</title>
+  <!-- defer: roda depois de ler o HTML -->
   <script src="app.js" defer></script>
 </head>
 <body>

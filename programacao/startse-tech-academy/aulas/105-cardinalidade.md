@@ -41,6 +41,7 @@ Um registro de A se liga a **vários** de B, mas cada B pertence a **um** A. É 
 - **No banco:** a chave estrangeira fica no lado **N** (o "muitos").
 
 ```sql
+-- a FK garante que o cliente do pedido existe
 CREATE TABLE pedidos (
   id         INT PRIMARY KEY,
   cliente_id INT NOT NULL,

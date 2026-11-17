@@ -47,6 +47,7 @@ WHERE id NOT IN (
 Testa se a subconsulta devolve **alguma linha**. Costuma ser a forma mais clara e eficiente de perguntar "tem ou não tem".
 
 ```sql
+-- clientes que não têm nenhum pedido
 SELECT c.nome
 FROM clientes c
 WHERE NOT EXISTS (
@@ -85,6 +86,7 @@ FROM (
 Uma **CTE** (Common Table Expression) dá nome a uma subconsulta antes do `SELECT` principal. Ela está disponível no MySQL 8+, PostgreSQL e SQL Server.
 
 ```sql
+-- CTE: dá nome à subconsulta e a reutiliza abaixo
 WITH gastos AS (
   SELECT cliente_id, SUM(total) AS gasto
   FROM pedidos

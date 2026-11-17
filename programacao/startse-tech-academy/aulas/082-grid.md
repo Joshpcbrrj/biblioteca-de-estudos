@@ -36,6 +36,7 @@ O Flexbox organiza itens em uma direção. Para o esqueleto de uma página, com 
 > 💡 **Analogia:** o `fr` é como dividir uma pizza depois de separar os pedaços reservados. Em `200px 1fr 2fr`, primeiro sai a fatia fixa de 200px; o que sobra é dividido em 3 partes iguais, e uma pessoa leva 1 parte enquanto a outra leva 2.
 
 ```css
+/* 3 colunas: uma fixa e duas proporcionais */
 .container {
   display: grid;
   grid-template-columns: 200px 1fr 2fr;
@@ -59,6 +60,8 @@ grid-template-columns:
 
 ![Itens são posicionados pelas linhas da grade, não pelas células.](../img/grid-linhas-2.svg)
 
+> 💡 **Analogia:** as linhas da grade são como as ruas numeradas de um bairro planejado. Um terreno "da rua 1 à rua 3" ocupa dois quarteirões: você informa as ruas, não os quarteirões.
+
 ```css
 /* da linha 1 à 3 = 2 colunas */
 .destaque { grid-column: 1 / 3; }
@@ -73,6 +76,7 @@ grid-template-columns:
 ## Áreas nomeadas
 
 ```css
+/* areas: desenha o layout com nomes */
 .pagina {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -91,6 +95,7 @@ footer { grid-area: footer; }
 Para o celular, basta redesenhar as áreas numa media query:
 
 ```css
+/* no celular: uma coluna, áreas empilhadas */
 @media (max-width: 600px) {
   .pagina {
     grid-template-columns: 1fr;
@@ -118,6 +123,7 @@ Crie uma galeria de fotos que mostre quantas colunas couberem (cada uma com no m
 <summary>Ver resposta</summary>
 
 ```css
+/* auto-fill: cria colunas enquanto couber */
 .galeria {
   display: grid;
   grid-template-columns:

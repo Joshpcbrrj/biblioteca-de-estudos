@@ -34,6 +34,8 @@ git status -s
 
 ![A feature nasce de C2 e evolui separada da main.](../img/branch-conceito-2.svg)
 
+> 💡 **Analogia:** uma branch é como um marcador de página. Ele aponta para um ponto do livro, e mover o marcador não copia o texto. Você pode criar outro marcador no mesmo ponto e seguir por outro caminho sem mexer no original.
+
 Por baixo dos panos, uma branch é só um **ponteiro leve para um commit**. Criar uma branch não copia arquivos, por isso é instantâneo. O `HEAD` indica em qual branch você está agora.
 
 ### Principais conceitos

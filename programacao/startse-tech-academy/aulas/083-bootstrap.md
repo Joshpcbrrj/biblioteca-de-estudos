@@ -78,6 +78,7 @@ A estrutura é sempre `container` → `row` → `col`. Cada linha tem **12 colun
 ## Componentes
 
 ```html
+<!-- btn + variação: o Bootstrap estiliza pelo nome -->
 <button class="btn btn-primary">Salvar</button>
 <button class="btn btn-outline-danger">Excluir</button>
 

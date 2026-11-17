@@ -81,6 +81,7 @@ Breakpoints comuns (não são regra, ajuste ao seu conteúdo): **600px**, **768p
 ### Impressão
 
 ```css
+/* @media print: só vale ao imprimir */
 @media print {
   .header, .footer, nav { display: none; }
   body { color: black; background: white; }
@@ -163,6 +164,7 @@ Faça um `nav` com 4 links que fiquem um embaixo do outro no celular e em linha 
 <summary>Ver resposta</summary>
 
 ```css
+/* celular: coluna; 768px+: lado a lado */
 nav { display: flex; flex-direction: column; }
 
 @media (min-width: 768px) {

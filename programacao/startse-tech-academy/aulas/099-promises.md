@@ -25,6 +25,7 @@ Depois de **settled** (cumprida ou rejeitada), a Promise **nunca mais muda** de 
 ## Criando uma Promise
 
 ```jsx
+// resolve: deu certo; reject: deu errado
 const minhaPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
     const deuCerto = Math.random() > 0.3;
@@ -118,6 +119,7 @@ Usando a função `esperar` acima, faça uma função `sortear()` que, depois de
 <summary>Ver resposta</summary>
 
 ```jsx
+// throw dentro do then vira rejeição da Promise
 function sortear() {
   return esperar(500).then(() => {
     if (Math.random() < 0.1) {

@@ -37,7 +37,9 @@ JSON.stringify(dados, null, 2);
 Uso comum: guardar dados no `localStorage`, que só aceita texto.
 
 ```jsx
+// localStorage guarda texto: vira JSON antes
 localStorage.setItem("carrinho", JSON.stringify(carrinho));
+// ?? "[]": lista vazia se nada foi salvo
 const salvo = JSON.parse(
   localStorage.getItem("carrinho") ?? "[]"
 );
@@ -135,6 +137,7 @@ Usando a API `https://jsonplaceholder.typicode.com/todos?_limit=5`, escreva uma 
 <summary>Ver resposta</summary>
 
 ```jsx
+// busca 5 tarefas e devolve os títulos concluídos
 async function titulosConcluidos() {
   const resp = await fetch(
     "https://jsonplaceholder.typicode.com/todos?_limit=5"
@@ -146,6 +149,7 @@ async function titulosConcluidos() {
     .map(t => t.title);
 }
 
+// chama a função e imprime o resultado no console
 titulosConcluidos().then(console.log);
 ```
 
