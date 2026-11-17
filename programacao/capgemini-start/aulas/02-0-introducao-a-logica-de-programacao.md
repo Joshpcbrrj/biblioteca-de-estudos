@@ -1228,6 +1228,8 @@ O mesmo algoritmo da média, em fluxograma:
 
 ![A decisão (losango) divide o fluxo em dois caminhos, que se juntam antes do fim.](../img/fluxograma-media-2.svg)
 
+> 💡 **Analogia:** uma triagem na porta de um evento. Quem tem convite segue para uma fila e quem não tem segue para outra, mas as duas filas terminam no mesmo salão (o fim).
+
 ✅ mostra visualmente os caminhos e as decisões. ❌ trabalhoso de desenhar e de manter.
 
 ### Comparando
@@ -1241,7 +1243,9 @@ O mesmo algoritmo da média, em fluxograma:
 E o mesmo algoritmo em Java, para comparar:
 
 ```java
+// média simples das três notas
 double media = (nota1 + nota2 + nota3) / 3;
+// nota mínima para aprovação é 7
 if (media >= 7) {
   System.out.println("Aprovado");
 } else {

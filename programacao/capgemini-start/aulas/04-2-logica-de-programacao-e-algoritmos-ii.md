@@ -806,12 +806,19 @@ HAVING COUNT(*) > 3;
 Um `SELECT` completo sempre segue esta ordem (nem todas são obrigatórias):
 
 ```sql
+-- seleciona as colunas que devem aparecer
 SELECT   colunas
+-- de qual tabela os dados vêm
 FROM     tabela
+-- junta com outra tabela pela condição
 JOIN     outra ON condição
+-- filtra as linhas antes de agrupar
 WHERE    filtro de linhas
+-- agrupa as linhas pela coluna
 GROUP BY coluna
+-- filtra os grupos já formados
 HAVING   filtro de grupos
+-- ordena o resultado final
 ORDER BY coluna;
 ```
 
@@ -930,16 +937,21 @@ console.log(c1.apresentar())
 **Feito em JavaScript**
 
 ```jsx
+// lista que vai guardar os 5 clientes
 const clientes = []
+// repete 5 vezes, uma para cada cadastro
 for (let i = 0; i < 5; i++) {
   console.log(`${i + 1}º cadastro de 5`)
+  // pede os dados e cria um novo Cliente
   clientes.push(new Cliente(
     readlineSync.question('Nome: '),
     readlineSync.question('RG: '),
     readlineSync.question('Idade: ')
   ))
 }
+// limpa a tela antes de mostrar o resultado
 console.clear()
+// mostra a apresentação de cada cliente
 clientes.forEach(c => console.log(c.apresentar()))
 ```
 

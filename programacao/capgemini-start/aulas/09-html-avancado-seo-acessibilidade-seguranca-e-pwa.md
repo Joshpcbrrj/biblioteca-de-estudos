@@ -188,9 +188,12 @@ A maior parte da acessibilidade vem de usar a tag certa:
 ### 3. Formulários com rótulo
 
 ```html
+<!-- o rótulo é ligado ao campo pelo id -->
 <label for="cpf">CPF</label>
+<!-- inputmode abre o teclado numérico no celular -->
 <input id="cpf" name="cpf" inputmode="numeric"
        aria-describedby="cpf-dica">
+<!-- dica que leitores de tela leem junto ao campo -->
 <small id="cpf-dica">Somente números</small>
 ```
 

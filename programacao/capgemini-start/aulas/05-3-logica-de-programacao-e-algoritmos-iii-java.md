@@ -92,8 +92,11 @@ No Windows, o instalador `.exe` é o caminho mais simples. Outras IDEs populares
 No NetBeans: **File → New Project → Java with Maven → Java Application**, dê um nome e clique em **Finish**. Na classe principal, escreva:
 
 ```java
+// classe principal: o arquivo leva o mesmo nome
 public class Main {
+  // ponto de entrada: a JVM começa a executar aqui
   public static void main(String[] args) {
+    // imprime a mensagem no console
     System.out.println("Olá, Java!");
   }
 }
@@ -610,11 +613,14 @@ Os parênteses em `(a + b)` são importantes: sem eles, o Java juntaria os texto
 <summary>Ver resposta</summary>
 
 ```java
+// lê dois números digitados pelo usuário
 double a = sc.nextDouble();
 double b = sc.nextDouble();
+// as quatro operações com os dois números
 System.out.println("Soma: " + (a + b));
 System.out.println("Sub:  " + (a - b));
 System.out.println("Mult: " + (a * b));
+// divisão por zero não existe: testa antes
 if (b != 0) {
   System.out.println("Div:  " + (a / b));
 } else {
@@ -645,10 +651,14 @@ System.out.printf("Consumo: %.2f km/l%n",
 <summary>Ver resposta</summary>
 
 ```java
+// nome completo (nextLine lê a linha inteira)
 String nome = sc.nextLine();
+// salário fixo e total de vendas do mês
 double fixo = sc.nextDouble();
 double vendas = sc.nextDouble();
+// comissão de 15% sobre as vendas
 double total = fixo + vendas * 0.15;
+// %.2f: duas casas decimais
 System.out.printf("%s | fixo: %.2f | final: %.2f%n",
     nome, fixo, total);
 ```
@@ -661,11 +671,15 @@ System.out.printf("%s | fixo: %.2f | final: %.2f%n",
 <summary>Ver resposta</summary>
 
 ```java
+// nome do aluno
 String nome = sc.nextLine();
+// as três notas
 double n1 = sc.nextDouble();
 double n2 = sc.nextDouble();
 double n3 = sc.nextDouble();
+// média aritmética simples
 double media = (n1 + n2 + n3) / 3;
+// %.1f: uma casa decimal
 System.out.printf("%s - média %.1f%n", nome, media);
 ```
 
@@ -746,8 +760,10 @@ System.out.printf("5x de R$ %.2f%n", compra / 5);
 <summary>Ver resposta</summary>
 
 ```java
+// preço de custo e percentual de lucro
 double custo = sc.nextDouble();
 double perc = sc.nextDouble();
+// o lucro é uma porcentagem do custo
 double venda = custo * (1 + perc / 100);
 System.out.printf("Venda: R$ %.2f%n", venda);
 ```
@@ -760,8 +776,11 @@ System.out.printf("Venda: R$ %.2f%n", venda);
 <summary>Ver resposta</summary>
 
 ```java
+// preço de fábrica
 double fabrica = sc.nextDouble();
+// impostos: acrescenta 45% ao preço de fábrica
 double comImpostos = fabrica * 1.45;
+// margem do varejo: mais 28% até o consumidor
 double consumidor = comImpostos * 1.28;
 System.out.printf("Consumidor: R$ %.2f%n", consumidor);
 ```
@@ -776,7 +795,9 @@ System.out.printf("Consumidor: R$ %.2f%n", consumidor);
 <summary>Ver resposta</summary>
 
 ```java
+// lê um inteiro
 int n = sc.nextInt();
+// só imprime se a condição for verdadeira
 if (n > 10) {
   System.out.println("Maior que 10");
 }
@@ -808,7 +829,9 @@ if (a > b) {
 <summary>Ver resposta</summary>
 
 ```java
+// lê um inteiro
 int n = sc.nextInt();
+// && (E): precisa estar entre 100 e 200, inclusive
 if (n >= 100 && n <= 200) {
   System.out.println("Dentro");
 } else {
@@ -824,10 +847,13 @@ if (n >= 100 && n <= 200) {
 <summary>Ver resposta</summary>
 
 ```java
+// média de três notas lidas direto na expressão
 double m = (sc.nextDouble() + sc.nextDouble()
     + sc.nextDouble()) / 3;
+// faixas de decisão, da maior para a menor
 if (m >= 7) {
   System.out.println("Aprovado");
+// entre 5 (sem incluir) e 7: recuperação
 } else if (m > 5) {
   System.out.println("Recuperação");
 } else {
@@ -865,7 +891,9 @@ System.out.println(cont + " no intervalo");
 <summary>Ver resposta</summary>
 
 ```java
+// repete 10 vezes: uma para cada pessoa
 for (int i = 0; i < 10; i++) {
+  // lê a idade da pessoa atual
   int idade = sc.nextInt();
   if (idade >= 18) {
     System.out.println("Maior de idade");
@@ -908,12 +936,15 @@ System.out.println("Mulheres: " + m);
 <summary>Ver resposta</summary>
 
 ```java
+// contadores: quantos até 2000, e o total
 int ate2000 = 0, total = 0;
 char resp;
+// do...while: roda pelo menos uma vez
 do {
   int ano = sc.nextInt();
   double valor = sc.nextDouble();
   double taxa;
+  // taxa maior para compras até 2000
   if (ano <= 2000) {
     taxa = 0.12;
     ate2000++;
@@ -925,7 +956,9 @@ do {
   System.out.printf("Desconto %.2f | Pagar %.2f%n",
       desc, valor - desc);
   System.out.print("Continuar (S/N)? ");
+  // primeira letra da resposta, em maiúscula
   resp = sc.next().toUpperCase().charAt(0);
+// repete enquanto a resposta não for N
 } while (resp != 'N');
 System.out.println("Até 2000: " + ate2000);
 System.out.println("Total: " + total);
@@ -1001,7 +1034,9 @@ System.out.printf("Média venda %.2f%n", somaV / 10);
 <summary>Ver resposta</summary>
 
 ```java
+// lê um inteiro
 int n = sc.nextInt();
+// || (OU): basta uma das três condições
 if (n > 80 || n < 25 || n == 40) {
   System.out.println("Condição atendida");
 }
@@ -1036,11 +1071,13 @@ for (int i = 0; i < n; i++) {
 <summary>Ver resposta</summary>
 
 ```java
+// lê dois inteiros
 int a = sc.nextInt();
 int b = sc.nextInt();
 if (a == b) {
   System.out.println("Iguais");
 } else {
+  // Math.max devolve o maior dos dois
   System.out.println("Diferentes; maior = "
       + Math.max(a, b));
 }
@@ -1054,13 +1091,16 @@ if (a == b) {
 <summary>Ver resposta</summary>
 
 ```java
+// lê um número e devolve o nome por extenso
 int n = sc.nextInt();
+// switch que produz um valor (Java 14 ou mais novo)
 String extenso = switch (n) {
   case 1 -> "Um";
   case 2 -> "Dois";
   case 3 -> "Três";
   case 4 -> "Quatro";
   case 5 -> "Cinco";
+  // default: qualquer outro número
   default -> "Número inválido";
 };
 System.out.println(extenso);
@@ -1173,13 +1213,16 @@ System.out.println(java.util.Arrays.toString(v));
 <summary>Ver resposta</summary>
 
 ```java
+// calculadora: dois números e um operador
 double a = sc.nextDouble();
 double b = sc.nextDouble();
 char op = sc.next().charAt(0);
+// switch com setas: cada caso faz uma operação
 switch (op) {
   case '+' -> System.out.println(a + b);
   case '-' -> System.out.println(a - b);
   case '*' -> System.out.println(a * b);
+  // a divisão precisa testar o zero
   case '/' -> {
     if (b == 0) {
       System.out.println("Erro: divisão por zero");
@@ -1201,16 +1244,21 @@ switch (op) {
 <summary>Ver resposta</summary>
 
 ```java
+// lê os três lados do triângulo
 int a = sc.nextInt();
 int b = sc.nextInt();
 int c = sc.nextInt();
+// cada lado precisa ser menor que a soma dos outros
 boolean forma = a < b + c
     && b < a + c
     && c < a + b;
+// primeiro testa se existe triângulo
 if (!forma) {
   System.out.println("Não forma triângulo");
+// os três lados iguais: equilátero
 } else if (a == b && b == c) {
   System.out.println("Equilátero");
+// dois lados iguais: isósceles
 } else if (a == b || a == c || b == c) {
   System.out.println("Isósceles");
 } else {
@@ -1230,8 +1278,10 @@ Nível 1 → R$ 12/h · Nível 2 → R$ 17/h · Nível 3 → R$ 25/h.
 <summary>Ver resposta</summary>
 
 ```java
+// nível do funcionário e horas trabalhadas
 int nivel = sc.nextInt();
 double horas = sc.nextDouble();
+// o valor da hora depende do nível
 double valorHora = switch (nivel) {
   case 1 -> 12;
   case 2 -> 17;
@@ -1251,10 +1301,13 @@ Infantil A 5–7 · Infantil B 8–10 · Juvenil A 11–13 · Juvenil B 14–17 
 <summary>Ver resposta</summary>
 
 ```java
+// idade da pessoa
 int i = sc.nextInt();
 String cat;
+// || (OU): fora da faixa de 5 a 25 anos
 if (i < 5 || i > 25) {
   cat = "Idade fora da faixa etária";
+// as faixas: a primeira que bater define a categoria
 } else if (i <= 7) {
   cat = "Infantil A";
 } else if (i <= 10) {
@@ -1281,8 +1334,10 @@ Tratar primeiro o caso inválido simplifica o resto: daí em diante, basta testa
 <summary>Ver resposta</summary>
 
 ```java
+// tipo de consumidor e consumo em kWh
 int tipo = sc.nextInt();
 double kwh = sc.nextDouble();
+// tarifa por kWh conforme o tipo
 double tarifa = switch (tipo) {
   case 1 -> 0.60;
   case 2 -> 0.48;
@@ -1478,13 +1533,16 @@ public class Vendedor extends Funcionario {
 ```
 
 ```java
+// herda salário e comportamento de Funcionario
 public class Motorista extends Funcionario {
   private int entregas;
 
+  // o construtor define o salário-base
   public Motorista() {
     setSalario(3500);
   }
 
+  // sobrescreve o cálculo: soma R$ 5 por entrega
   @Override
   public double calculaSalario() {
     return getSalario() + entregas * 5;
@@ -2021,17 +2079,21 @@ Duas classes: `Compromisso` (os 4 atributos, com a `Data` do exercício 8) e `Ag
 <summary>Ver resposta</summary>
 
 ```java
+// protected: as subclasses também acessam o valor
 public class Ingresso {
   protected double valor;
 
+  // o construtor recebe o valor do ingresso
   public Ingresso(double valor) {
     this.valor = valor;
   }
 
+  // getter: devolve o valor
   public double getValor() {
     return valor;
   }
 
+  // mostra o valor formatado em reais
   public void imprimirValor() {
     System.out.printf("R$ %.2f%n", getValor());
   }
@@ -2078,6 +2140,7 @@ Repare no polimorfismo: `imprimirValor()` foi escrito só no pai, mas chama a ve
 <summary>Ver resposta</summary>
 
 ```java
+// cada método faz uma operação com dois números
 public class Calculadora {
   public double somar(double a, double b) {
     return a + b;
@@ -2088,6 +2151,7 @@ public class Calculadora {
   public double multiplicar(double a, double b) {
     return a * b;
   }
+  // impede a divisão por zero: lança uma exceção
   public double dividir(double a, double b) {
     if (b == 0) {
       throw new ArithmeticException(
@@ -2479,7 +2543,9 @@ SELECT DATABASE();
 > 💡 **Analogia:** cada projeto é uma pasta de arquivo, e cada tarefa é uma folha guardada dentro dela, com o número da pasta anotado no canto (`idProject`). Não existe folha solta: toda folha precisa de uma pasta que exista. E, se você jogar a pasta no lixo, as folhas vão junto: é o `ON DELETE CASCADE`.
 
 ```sql
+-- tabela de projetos: cada linha é um projeto
 CREATE TABLE projects (
+  -- chave primária, que o banco incrementa sozinho
   id          INT NOT NULL AUTO_INCREMENT,
   name        VARCHAR(50)  NOT NULL,
   description VARCHAR(255) NULL,
@@ -2488,20 +2554,25 @@ CREATE TABLE projects (
   PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
+-- tabela de tarefas, ligada a um projeto
 CREATE TABLE tasks (
   id          INT NOT NULL AUTO_INCREMENT,
+  -- chave estrangeira: a tarefa pertence a um projeto
   idProject   INT NOT NULL,
   name        VARCHAR(100) NOT NULL,
   description VARCHAR(255) NULL,
+  -- sim ou não: a tarefa foi concluída?
   completed   BOOLEAN NOT NULL DEFAULT FALSE,
   notes       VARCHAR(255) NULL,
   deadline    DATE NOT NULL,
   createdAt   DATETIME NOT NULL,
   updatedAt   DATETIME NOT NULL,
   PRIMARY KEY (id),
+  -- garante que idProject existe em projects
   CONSTRAINT fk_tasks_projects
     FOREIGN KEY (idProject)
     REFERENCES projects(id)
+    -- apagar o projeto apaga as tarefas dele
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
@@ -2829,6 +2900,7 @@ Temos as tabelas no MySQL (aula 2) e as classes `Project` e `Task` em Java (aula
 No Maven, dentro de `<dependencies>` do `pom.xml`:
 
 ```xml
+<!-- driver JDBC: permite ao Java conversar com o MySQL -->
 <dependency>
   <groupId>com.mysql</groupId>
   <artifactId>mysql-connector-j</artifactId>
@@ -2930,9 +3002,11 @@ try (Connection conn =
 Antes de seguir, confirme que a ponte funciona (com o MySQL do XAMPP ligado):
 
 ```java
+// abre a conexão com o banco
 public static void main(String[] args) {
   Connection c = ConnectionFactory.getConnection();
   System.out.println("Conectado!");
+  // fecha a conexão ao final, liberando o recurso
   ConnectionFactory.closeConnection(c, null);
 }
 ```

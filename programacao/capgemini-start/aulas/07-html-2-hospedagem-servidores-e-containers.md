@@ -392,6 +392,10 @@ Abra `http://localhost:8080` e você verá a página padrão do Nginx, rodando s
 Lembra de instalar o XAMPP para ter um MySQL? Com Docker, basta isto:
 
 ```bash
+# sobe um MySQL em segundo plano (-d) com o banco "loja"
+# -p: porta 3306 do PC -> porta 3306 do container
+# -v: guarda os dados num volume, para não se perder
+# senha de exemplo: não use em produção
 docker run -d --name mysql \
   -e MYSQL_ROOT_PASSWORD=senha123 \
   -e MYSQL_DATABASE=loja \
@@ -416,12 +420,19 @@ EXPOSE 80
 Exemplo para uma API Node:
 
 ```docker
+# imagem base: Node 20 em Linux Alpine (leve)
 FROM node:20-alpine
+# pasta de trabalho dentro do container
 WORKDIR /app
+# copia só os arquivos de dependências (cache de camadas)
 COPY package*.json ./
+# instala só as dependências de produção
 RUN npm ci --omit=dev
+# copia o restante do código
 COPY . .
+# documenta a porta que a aplicação usa
 EXPOSE 3000
+# comando executado quando o container inicia
 CMD ["node", "server.js"]
 ```
 
