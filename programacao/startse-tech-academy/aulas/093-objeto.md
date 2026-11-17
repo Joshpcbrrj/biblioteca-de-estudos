@@ -8,6 +8,8 @@ Você aprendeu classes, herança e `super`. Para fechar o módulo, vamos ver o q
 
 ## Objetos em POO
 
+Você já criou objetos de três jeitos sem se dar conta: com `{}`, com `class` e com `function`. Os três existem porque o JavaScript evoluiu ao longo dos anos, e cada um traz uma ideia diferente. Entender os três é o que permite ler código antigo e novo, e saber o que a `class` faz por baixo da sintaxe bonita.
+
 **Em POO, um objeto é uma entidade com estado (propriedades) e comportamento (métodos).** Em JavaScript, há três formas principais de criá-los.
 
 ## 1. Objeto literal: um objeto único
@@ -29,6 +31,8 @@ pessoa2.saudacao();  // Olá, sou Maria, 30 anos.
 Ideal para configurações, dados vindos de uma API (JSON) e objetos que só existem uma vez.
 
 ## 2. Função construtora: a forma antiga (antes do ES6)
+
+Antes de 2015, não existia `class`. Quem queria vários objetos parecidos escrevia uma função, chamada com `new`, que preenchia `this`. Os métodos iam no `prototype`, uma espécie de armário compartilhado: uma única cópia de cada método, usada por todos os objetos. Se cada objeto guardasse a sua cópia dentro do construtor, mil objetos teriam mil funções iguais, e isso desperdiça memória. É por esse motivo que a correção abaixo importa.
 
 ```jsx
 function Pessoa(nome, idade) {
@@ -70,6 +74,8 @@ class Pessoa {
 Por baixo dos panos, a classe faz **exatamente o que a função construtora com prototype faz**: é uma sintaxe mais clara para o mesmo mecanismo.
 
 ## Como o JavaScript encontra os métodos
+
+Quando você escreve `pessoa1.saudacao()`, o JavaScript segue um roteiro. Primeiro procura `saudacao` no próprio `pessoa1`. Não achou? Sobe para o protótipo dele e procura de novo. Ainda não? Sobe para o protótipo do protótipo, até chegar ao topo. Se não encontrar em lugar nenhum, devolve `undefined`. Esse caminho é a **cadeia de protótipos**, e é ele que faz a herança funcionar: um objeto "herda" o que está acima na cadeia, sem ter uma cópia própria.
 
 ![Se a propriedade não está no objeto, o JS sobe pela cadeia de protótipos.](../img/prototipo-2.svg)
 

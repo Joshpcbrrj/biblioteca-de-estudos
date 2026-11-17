@@ -8,6 +8,8 @@ O event loop executa um callback quando uma operação termina. Vamos ver como e
 
 ## O que é um callback
 
+Um programa nem sempre pode esperar. Ler um arquivo, buscar dados na rede ou aguardar um clique leva tempo, e se o programa parasse até acabar, a tela travaria. A solução é dizer: "faça isso, e **quando terminar, chame esta função**". Essa função entregue para ser chamada depois é o callback. Nos eventos do navegador você já usa isso sem perceber: o `addEventListener` recebe uma função e a chama quando o clique acontece.
+
 **Um callback é uma função passada como argumento para outra função, para ser chamada depois.** "Depois" pode ser logo em seguida (callback síncrono) ou quando algo terminar, como um timer, uma requisição ou um clique (callback assíncrono).
 
 > 💡 **Analogia:** um callback é como deixar seu telefone na recepção de uma oficina: "quando o carro ficar pronto, me liga". Você não fica plantado esperando; vai fazer outras coisas, e a oficina executa a ligação (o callback) quando o serviço termina.
@@ -23,6 +25,8 @@ botao.addEventListener("click", () => {
 ```
 
 ## Exemplo assíncrono
+
+Acompanhe a ordem, porque é a parte que confunde. O programa chama `fazerAlgoAssincrono` e passa o callback. Dentro dela, o `setTimeout` agenda a chamada para daqui a 2 segundos e **a função termina na hora**, sem esperar. A linha seguinte do programa roda logo, e por isso "Isto aparece primeiro!" vem antes. Passados os 2 segundos, o callback é chamado e imprime o resultado. O código não é executado de cima para baixo no tempo, e sim em ordem de conclusão.
 
 ```jsx
 function fazerAlgoAssincrono(callback) {
@@ -52,6 +56,8 @@ O resultado é: Resultado da operação  (2 s depois)
 
 ## Tratando erros: o padrão "error-first" do Node
 
+Operações assíncronas podem falhar: o arquivo não existe, a rede cai. Como o `try/catch` comum não consegue pegar um erro que acontece depois, o Node adotou uma convenção: o primeiro argumento do callback é sempre o erro, ou `null` se tudo deu certo. Por isso o código começa com `if (erro)` e só depois usa o resultado. Esquecer essa verificação é a causa de muitos "cannot read property of undefined" em código Node antigo.
+
 Nas APIs antigas do Node, o callback recebe **o erro como primeiro argumento**:
 
 ```jsx
@@ -68,6 +74,8 @@ fs.readFile("dados.txt", "utf8", (erro, conteudo) => {
 ```
 
 ## Callback hell
+
+Imagine três passos em que cada um depende do anterior: ler o usuário, depois seus pedidos, depois os itens do pedido. Com callbacks, cada passo vai para dentro do anterior, e o código avança para a direita, em pirâmide. O problema real não é o visual: é que o tratamento de erro se repete em cada nível e fica fácil esquecer um. As Promises resolvem isso permitindo escrever os mesmos passos em fila, que é o assunto da próxima aula.
 
 Quando uma operação depende do resultado da anterior, os callbacks vão se aninhando e o código vira uma "pirâmide", difícil de ler e de tratar erros:
 

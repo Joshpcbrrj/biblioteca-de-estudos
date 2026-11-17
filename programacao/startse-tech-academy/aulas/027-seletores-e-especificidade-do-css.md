@@ -8,9 +8,13 @@ No teste prático, você viu regras vencendo e perdendo. O motivo quase sempre �
 
 ## O que são seletores?
 
+Para estilizar algo, primeiro você precisa dizer **o quê**. O seletor é essa resposta, escrita em CSS: "todos os parágrafos", "só os links do menu", "o primeiro item da lista". Um bom seletor é preciso: pega exatamente o que você quer, sem precisar de uma classe em cada elemento. Os seletores deixam o HTML limpo e concentram as decisões visuais no CSS, onde elas devem ficar.
+
 **Seletores são padrões que dizem a quais elementos uma regra CSS se aplica.** Quanto melhor você domina os seletores, menos classes e ids precisa espalhar pelo HTML.
 
 ## Seletores mais usados
+
+Eles se dividem em três grupos. Os **simples** escolhem por nome (`p`), classe (`.destaque`) ou id (`#logo`). Os **combinadores** escolhem pela relação entre elementos: `ul li` (qualquer descendente), `div > p` (filho direto), `h2 + p` (irmão logo depois). Os **de estado e posição**, como `a:hover` e `li:first-child`, escolhem pelo que o elemento está fazendo ou por onde está. O caso do dia a dia é o da classe, que você reaproveita em vários elementos e é fácil de achar no código.
 
 | Seletor | Exemplo | Seleciona |
 | --- | --- | --- |
@@ -58,6 +62,8 @@ li:nth-child(odd) { background: #f5f5f5; }
 > ⚠️ `[class="botao"]` só casa quando o atributo é **exatamente** `"botao"`; `class="botao grande"` fica de fora. Para classes, use `.botao`. E um `::before` sem seletor na frente se aplica a **todos** os elementos da página.
 
 ## Especificidade: quem vence o conflito
+
+Imagine duas regras que dizem cores diferentes para o mesmo parágrafo. O navegador não pode obedecer as duas, e a especificidade é o critério de desempate. Ela dá uma pontuação a cada seletor, e o de maior pontuação vence, não importando a ordem. Só quando há empate vale a ordem: ganha o que vem por último. Isso explica o clássico "escrevi a regra e nada mudou": uma regra mais específica, escrita antes ou em outro arquivo, estava vencendo a sua.
 
 Quando duas regras estilizam a mesma propriedade do mesmo elemento, vence a **mais específica**. Pense num placar de três colunas:
 

@@ -8,6 +8,8 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 
 ## A estrutura de uma página semântica
 
+Escolher a tag certa não muda o visual, e é por isso que muita gente a ignora. Mas muda o que máquinas entendem: um leitor de tela pula direto para o `main` ou lista todas as navegações; o buscador sabe qual é o conteúdo principal e qual é anúncio; e outro desenvolvedor lê o código e entende a estrutura sem decifrar nomes de classe. A semântica é uma comunicação com quem não vê a página como você.
+
 ![A estrutura de uma página semântica](../img/st-semanticas-2.svg)
 
 > 💡 **Analogia:** pense num jornal. O `header` é o nome do jornal no topo, o `nav` é o índice de cadernos, o `main` é o miolo com as matérias, cada `article` é uma matéria que poderia ser recortada e lida sozinha, cada `section` é um caderno temático (Esportes, Economia), o `aside` é o box "saiba mais" ao lado, e o `footer` é o expediente no fim.
@@ -52,6 +54,8 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 
 ## Tags estruturais
 
+Uma forma de memorizar é ler a página como um jornal, de cima para baixo. O `header` abre a página, o `nav` oferece o caminho, o `main` entrega o assunto e, dentro dele, cada `article` é uma matéria que faria sentido sozinha. O `aside` é o box lateral, que complementa, e o `footer` fecha com créditos e contato. A coluna "Pode repetir?" da tabela é a que mais gera dúvida: só o `main` é único; as demais aparecem de novo dentro de artigos e seções.
+
 | Tag | Representa | Pode repetir? |
 | --- | --- | --- |
 | `<header>` | cabeçalho da página ou de uma seção/artigo | ✅ (um por seção) |
@@ -87,6 +91,8 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 
 ## Tags de conteúdo
 
+Estas tags dão significado a pedaços menores. O `figure` com `figcaption` liga uma imagem à sua legenda, de modo que leitores de tela as tratam como uma unidade. O `time` guarda a data num formato que o computador entende, mesmo que o texto diga "ontem" ou "15 de agosto". O `mark` destaca um trecho, como um marca-texto. E o `address` é só para contato do autor, e não serve para qualquer endereço de rua escrito no meio do texto.
+
 ### `<figure>` e `<figcaption>`
 
 ```html
@@ -116,6 +122,8 @@ Você viu por que a semântica importa. Agora vamos conhecer as tags uma a uma e
 `<time datetime>` dá a data num formato que máquinas entendem. `<address>` é para **informações de contato** do autor ou da página, e não para qualquer endereço postal no texto.
 
 ## Elementos interativos nativos
+
+O HTML moderno traz alguns componentes prontos, que antes exigiam JavaScript e bibliotecas. Um acordeão (`details`), uma caixa de sugestões (`datalist`) e uma barra de progresso (`progress`) funcionam sem uma linha de script, são acessíveis pelo teclado e ainda são lidos por leitores de tela. Antes de procurar uma biblioteca para algo, vale checar se o HTML já não tem a tag certa.
 
 ### `<details>` e `<summary>`: acordeão sem JavaScript
 

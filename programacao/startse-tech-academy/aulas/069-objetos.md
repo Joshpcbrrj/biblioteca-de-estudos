@@ -16,6 +16,8 @@ Arrays guardam listas em ordem. Mas um produto tem nome, preço e estoque, e cad
 
 ## Criando (objeto literal)
 
+Um objeto literal é escrito entre chaves, com pares `chave: valor` separados por vírgula. É a forma mais direta de descrever uma coisa: em vez de três variáveis soltas (`nome`, `idade`, `cidade`), você tem um único objeto `pessoa` que carrega as três. Passar `pessoa` para uma função é passar tudo de uma vez, e isso deixa o código mais curto e mais difícil de errar. Os valores podem ser de qualquer tipo, até outros objetos e arrays.
+
 ```jsx
 const pessoa = {
   nome: "João",
@@ -27,6 +29,8 @@ const pessoa = {
 ```
 
 ## Acessando e alterando
+
+Há duas formas de ler uma propriedade. O ponto (`pessoa.nome`) é a mais comum e a mais limpa. Os colchetes (`pessoa["nome completo"]`) servem quando a chave tem espaço ou quando o nome vem de uma variável, como num formulário em que o usuário escolhe qual campo ver. Para alterar ou criar uma propriedade, basta atribuir: `pessoa.idade = 26` muda o valor, e `pessoa.pais = "Brasil"` cria uma chave nova. Ler uma chave que não existe devolve `undefined`, sem erro.
 
 ```jsx
 // notação de ponto
@@ -47,6 +51,8 @@ pessoa.telefone;  // undefined
 ```
 
 ## Métodos e `this`
+
+Quando o valor de uma propriedade é uma função, ela vira um **método**: uma ação que o objeto sabe fazer. Dentro do método, `this` aponta para o objeto que o chamou, então `this.nome` lê o nome daquele objeto. Isso permite que a mesma função se comporte de forma diferente em objetos diferentes. A armadilha é a arrow function: ela não tem um `this` próprio e usa o de fora, então `this.nome` viraria `undefined`. Em métodos de objeto, use sempre a forma curta `saudacao() { ... }`.
 
 ```jsx
 const pessoa = {
@@ -83,6 +89,8 @@ usuario.endereco?.rua;  // undefined, sem erro
 ```
 
 ## Percorrendo
+
+Para trabalhar com todas as propriedades, você tem quatro caminhos. O `for...in` visita cada chave. `Object.keys` devolve só as chaves, `Object.values` só os valores e `Object.entries` devolve pares `[chave, valor]`, ótimo para transformar um objeto em lista ou tabela. Num carrinho de compras, por exemplo, `Object.values(precos)` lista os preços, e você pode somá-los com um laço.
 
 ```jsx
 for (const chave in pessoa) {
