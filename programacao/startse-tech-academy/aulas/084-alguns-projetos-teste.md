@@ -4,6 +4,8 @@
 
 ## De onde paramos
 
+Cada projeto desta aula treina uma ferramenta de layout, e vale compará-las. As tags semânticas dizem **o que** cada bloco é. O Flexbox organiza itens **em uma direção**, numa linha ou numa coluna. O Grid organiza **em duas direções** ao mesmo tempo, linhas e colunas. O Bootstrap, no desafio final, entrega tudo pronto em classes. Ao terminar, você deve saber qual escolher para cada situação.
+
 Você estudou semântica, Flexbox, Grid e Bootstrap. Agora vamos aplicar. Tente montar cada projeto pela descrição antes de abrir o código revisado.
 
 ## Projeto 1: layout com tags semânticas
@@ -105,6 +107,8 @@ Uma página com cabeçalho, menu, dois artigos (cada um com autor, texto e figur
 
 ## Projeto 2: testando o Flexbox
 
+O ponto central é o `flex-wrap: wrap`. Sem ele, as dez caixas tentariam caber numa linha só e ficariam espremidas; com ele, o navegador passa as que não cabem para a linha de baixo. O `justify-content: center` centraliza cada linha, e o `gap` abre espaço entre as caixas sem a soma estranha de margens. Redimensione a janela: o número de caixas por linha muda sozinho, sem uma linha de JavaScript.
+
 Dez caixas que quebram de linha automaticamente e ficam centralizadas.
 
 **Código revisado**
@@ -158,6 +162,8 @@ Dez caixas que quebram de linha automaticamente e ficam centralizadas.
 **Experimente:** troque `justify-content` por `space-between`, `flex: 0 0 110px` por `flex: 1 1 110px` e redimensione a janela.
 
 ## Projeto 3: testando o Grid
+
+No Grid, você desenha o layout com nomes. A propriedade `grid-template-areas` descreve o mapa da página em texto, por exemplo cabeçalho no topo, menu e conteúdo no meio, rodapé embaixo, e cada elemento diz em que área quer ficar. Isso deixa o código quase tão legível quanto o desenho. Reorganizar a página para o celular vira trocar o mapa dentro de uma media query, sem mexer no HTML.
 
 Layout com `grid-template-areas` e um rodapé em Flexbox dentro do grid.
 

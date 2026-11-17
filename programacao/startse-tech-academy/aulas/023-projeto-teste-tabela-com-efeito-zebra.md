@@ -8,6 +8,8 @@ A aula de tabelas mostrou a estrutura e as bordas. Este projeto acrescenta um po
 
 ## Objetivo
 
+Tabela de dados cansa o olho: quando as linhas têm a mesma cor, é fácil perder a linha ao ler da esquerda para a direita. O efeito zebra resolve isso alternando as cores, e o destaque no `:hover` mostra qual linha está sob o cursor. Os dois efeitos são feitos só com CSS, sem alterar o HTML, e servem de primeiro contato com seletores que escolhem elementos por posição.
+
 Criar uma tabela de contatos estilizada com:
 
 - **efeito zebra**: linhas alternando de cor, o que facilita a leitura;
@@ -19,6 +21,8 @@ Criar uma tabela de contatos estilizada com:
 > 💡 **Analogia:** o efeito zebra funciona como o papel de formulário contínuo antigo, com faixas alternadas: o olho não "pula" de linha ao atravessar a tabela da esquerda para a direita. O `:hover` é como passar uma régua por baixo da linha que você está lendo.
 
 ## Os seletores que fazem a mágica
+
+O `:nth-child` conta os filhos de um elemento a partir de 1. Em `tbody tr:nth-child(odd)`, o navegador olha cada linha do corpo da tabela, descobre a posição dela e aplica o estilo se for ímpar: linhas 1, 3, 5. A lista `even` pega 2, 4, 6. Com uma fórmula como `3n`, você escolhe uma a cada três. Note o `tbody` na frente: sem ele, a linha do cabeçalho entraria na contagem e a zebra começaria errada.
 
 ```css
 /* 1ª, 3ª, 5ª... */
@@ -40,6 +44,8 @@ tbody tr:hover {
 > ⚠️ Se as duas regras usarem `even`, a segunda sobrescreve a primeira e o efeito some. Também evite mudar `font-size` ou `font-weight` no `:hover`: a letra muda de largura e a tabela "pula" a cada passada do mouse.
 
 ## Projeto completo
+
+Antes de olhar o resultado, leia o HTML e localize três coisas: a `caption`, que dá nome à tabela, o `thead` com células mescladas por `colspan`, e o `tbody` com os dados. O CSS só trata do visual. Se amanhã o `tbody` ganhar vinte linhas novas, a zebra continua certa sem tocar em nada, porque a regra descreve uma posição, e não linhas específicas.
 
 **Código revisado**
 

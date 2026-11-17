@@ -8,6 +8,8 @@ A aula anterior escolheu a fonte e o tamanho. Agora o texto precisa ser posicion
 
 ## Alinhamento horizontal: `text-align`
 
+Todo texto precisa estar em algum lugar dentro da caixa. Em português, o normal é à esquerda, e o `text-align` serve para mudar isso quando faz sentido: títulos centralizados, preços à direita, parágrafos justificados em colunas de jornal. Cuidado com o `justify` em colunas estreitas: o navegador estica os espaços entre as palavras e abre buracos feios no texto.
+
 Alinha o **conteúdo em linha** (texto, imagens, links) dentro de um elemento de bloco.
 
 ![Os quatro valores principais.](../img/text-align-2.svg)
@@ -31,6 +33,8 @@ Os valores `start` e `end` são a versão "inteligente" de left e right: eles se
 
 ## Alinhamento vertical: `vertical-align`
 
+A confusão clássica é tentar centralizar um texto dentro de uma `div` alta com `vertical-align: middle` e ver que nada acontece. Isso é esperado: a propriedade só vale para elementos em linha e células de tabela. O uso mais comum é alinhar um pequeno ícone com a altura do texto ao lado dele. Para centralizar o conteúdo de uma caixa, use Flexbox, tema de um módulo à frente.
+
 **Só funciona em elementos inline, inline-block e células de tabela.** Num `<div>` ou `<p>` comum ele não tem efeito; para isso, use Flexbox ou Grid.
 
 | Valor | O que faz |
@@ -50,6 +54,8 @@ td { vertical-align: top; }
 ```
 
 ## Decoração de texto: `text-decoration`
+
+O exemplo mais comum é tirar o sublinhado dos links com `text-decoration: none`, muito usado em menus. A forma completa existe para casos finos: um sublinhado ondulado vermelho lembra o corretor ortográfico, e um traço no meio (`line-through`) mostra um preço antigo riscado. Se você tirar o sublinhado de links dentro de um texto corrido, dê outra pista visual (cor ou negrito), senão o leitor não percebe que a palavra é clicável.
 
 Ela é composta por várias partes, e o **estilo só aparece se houver uma linha definida**:
 
@@ -79,6 +85,8 @@ nav a { text-decoration: none; }
 | `wavy` | ondulada |
 
 ## Outras propriedades úteis
+
+Estas três mexem na aparência sem alterar o texto do HTML. `text-transform: uppercase` mostra em maiúsculas, mas quem copia o texto ainda copia o original. `text-indent` cria o recuo de parágrafo dos livros. `text-shadow` aceita quatro valores: deslocamento horizontal, vertical, desfoque e cor. Sombras fortes prejudicam a leitura, então prefira valores suaves como o do exemplo.
 
 ```css
 /* uppercase | lowercase | capitalize */

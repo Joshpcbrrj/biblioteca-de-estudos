@@ -8,9 +8,13 @@ Nas aulas de escopo e de POO apareceu a frase "em modo estrito, o `this` vira `u
 
 ## O que é o modo estrito
 
+O JavaScript nasceu em 1995 e foi feito para ser tolerante: se você errava, ele seguia em frente. Isso ajudava iniciantes, mas escondia erros reais. Se a linguagem passasse a ser rígida de uma hora para outra, milhões de sites antigos quebrariam. A solução foi deixar a rigidez opcional: quem quer ser avisado dos erros liga o modo estrito, e o resto da web continua funcionando.
+
 **O modo estrito (**`"use strict"`**), criado no ES5, transforma em erros vários comportamentos que o JavaScript antes aceitava em silêncio.** Isso ajuda a achar bugs mais cedo e deixa o código mais seguro e previsível.
 
 ## Como ativar
+
+A regra de ouro é a posição: o `"use strict"` precisa ser a primeira instrução, porque o navegador só reconhece a diretiva ali. Colocado depois de qualquer outra linha, vira apenas um texto solto, sem efeito e sem aviso. No arquivo inteiro vale para todas as funções. Dentro de uma função, vale só para ela, o que é útil quando você está migrando um código antigo aos poucos.
 
 ```jsx
 // na PRIMEIRA instrução do arquivo:
@@ -27,6 +31,8 @@ function teste() {
 > 💡 **Na prática, você quase não precisa escrever isso:** o corpo de uma `class` e os **módulos ES** (`<script type="module">`, arquivos com `import`/`export`) **já são estritos automaticamente**.
 
 ## O que muda
+
+A tabela abaixo é uma lista de erros que antes passavam em silêncio e agora aparecem. O mais importante na prática é o primeiro: a variável não declarada. Sem o modo estrito, um erro de digitação em `totl = 100` cria uma variável global nova, e o bug só aparece muito depois, longe da causa. Com ele, o erro surge na hora e no lugar certo.
 
 !["use strict": falhas silenciosas viram erro](../img/st-strict-2.svg)
 

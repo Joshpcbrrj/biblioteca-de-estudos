@@ -8,6 +8,8 @@ Na aula de operadores, `"5" + 2` deu `"52"` e `"5" - 2` deu `3`. Isso acontece p
 
 ## Primitivos e objetos
 
+Cada valor em JavaScript tem um tipo, e o tipo decide o que você pode fazer com ele. Você soma números, junta textos e percorre arrays, mas somar um texto com um número dá resultados surpreendentes. A linguagem tenta converter por conta própria, e é aí que nascem os bugs. Conhecer os tipos é a forma de prever o resultado antes de rodar o código.
+
 O JavaScript tem **7 tipos primitivos** e um tipo para todo o resto: **object**. Arrays, funções e datas são, por baixo dos panos, objetos.
 
 ![Primitivos guardam o próprio valor; objetos são acessados por referência.](../img/tipos-js-2.svg)
@@ -15,6 +17,8 @@ O JavaScript tem **7 tipos primitivos** e um tipo para todo o resto: **object**.
 > 💡 **Analogia:** um primitivo é como uma nota de dinheiro: se você dá uma cópia a alguém, cada um tem a sua. Um objeto é como o endereço de uma casa escrito num papel: copiar o papel não cria outra casa; as duas pessoas vão à mesma casa, e se uma pintar a parede, a outra vê a parede pintada.
 
 ## Number
+
+Tudo o que é numérico, inteiro ou decimal, é do tipo `Number`. O ponto flutuante tem um limite curioso: `0.1 + 0.2` não dá exatamente `0.3`, porque o computador guarda os números em binário e algumas frações não cabem direito. Isso não é um erro do JavaScript, e acontece em quase todas as linguagens. Por isso dinheiro se guarda em centavos, como número inteiro, e só vira reais na hora de mostrar na tela.
 
 Inteiros e decimais são o mesmo tipo.
 
@@ -56,6 +60,8 @@ let temSol = false;
 ```
 
 ### Truthy e falsy
+
+Quando você escreve `if (nome)`, o JavaScript precisa de um sim ou não, então converte o valor. A lista dos falsy é curta e vale decorar: `false`, `0`, `""` (texto vazio), `null`, `undefined` e `NaN`. Todo o resto é truthy. A pegadinha é o texto `"0"` e o array vazio `[]`: ambos são truthy, porque o primeiro é um texto com um caractere e o segundo é um objeto.
 
 Em um `if`, qualquer valor vira booleano. São **falsy** apenas: `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined` e `NaN`. **Todo o resto é truthy**, inclusive `"0"`, `"false"`, `[]` e `{}`.
 
@@ -114,6 +120,8 @@ Boolean("texto");  // true
 Valores de `input`, `prompt` e da URL chegam sempre como **string**: converta antes de fazer contas.
 
 ## Valor × referência
+
+Aqui está o motivo do diagrama do começo da aula. Com primitivos, `let b = a` copia o valor: mudar `b` não afeta `a`. Com objetos, `let obj2 = obj1` copia apenas o endereço: os dois nomes apontam para o mesmo objeto, e mudar por um aparece no outro. Quando precisar de uma cópia independente, use `structuredClone(obj)` ou o espalhamento `{ ...obj }` para objetos simples.
 
 ```jsx
 let a = 10;
