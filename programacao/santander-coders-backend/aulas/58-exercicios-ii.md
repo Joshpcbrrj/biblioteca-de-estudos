@@ -136,7 +136,7 @@ ORDER BY gasto DESC;
 
 </details>
 
-> ➡️ **Fim do curso.** Volte ao índice para ver o resumo de todos os módulos.
+> ➡️ **Próximo passo:** volte ao índice para ver o resumo de todos os módulos.
 
 ## 📌 Resumo
 
