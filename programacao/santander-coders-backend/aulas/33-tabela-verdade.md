@@ -124,11 +124,13 @@ if (temCupom ^ temFidelidade) {
 }
 ```
 
-> ⚠️ **Correção:** o exemplo original de votação usava `maiorDe18 ^ idoso`. Uma pessoa de 70 anos tem as duas condições verdadeiras, e o XOR dá **false**: o programa a impediria de votar. O XOR só serve quando os dois ao mesmo tempo devem ser rejeitados. Para "maior de 18 ou idoso" o operador certo seria o OU.
+> ⚠️ **Correção:** o exemplo original de votação usava `maiorDe18 ^ idoso`. Uma pessoa de 70 anos tem as duas condições verdadeiras, e o XOR dá **false**: o programa a impediria de votar. O XOR só serve quando ter os dois ao mesmo tempo deve ser recusado. Para "maior de 18 ou idoso" o operador certo seria o OU.
 
 ## Curto-circuito
 
 ![Com o primeiro lado falso, o segundo nem roda](../img/java-curto-circuito.svg)
+
+> 💡 **Analogia:** é um porteiro com duas barreiras. Se a primeira já barra a entrada, a segunda nem chega a ser consultada.
 
 O `&&` para de avaliar assim que encontra um false, e o OU para no primeiro true: o resultado já está decidido. Isso evita erros:
 

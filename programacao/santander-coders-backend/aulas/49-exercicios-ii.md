@@ -30,7 +30,7 @@ Qual a definição de polimorfismo?
 
 ## Questão 3
 
-Qual destas frases é verdadeira sobre o valor padrão de uma String?
+Qual é o valor padrão de um atributo do tipo String que não foi inicializado?
 
 <details>
 <summary>Ver resposta</summary>
@@ -115,3 +115,7 @@ try {
 | 3 | Valores padrão |
 | 4 | Comentários |
 | Desafios | Set e try/catch/finally |
+
+## 🧭 Mapa da seção
+
+![Cheat sheet para revisar POO em Java](../img/sa-mapa-poo.svg)

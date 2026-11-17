@@ -53,6 +53,8 @@ git config --global core.editor "code --wait"
 
 ![O nível mais específico tem prioridade](../img/git-config-niveis.svg)
 
+> 💡 **Analogia:** é como as regras de uma casa. A regra geral vale para todos os cômodos (`--global`), mas a regra de um cômodo específico (o repositório atual) prevalece sobre a geral.
+
 ## Conferindo
 
 ```bash

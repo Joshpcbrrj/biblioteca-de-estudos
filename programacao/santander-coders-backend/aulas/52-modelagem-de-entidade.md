@@ -35,6 +35,8 @@ Diz **quantos** de cada lado participam do relacionamento.
 
 ![1:1, 1:N e N:M](../img/cardinalidade.svg)
 
+> 💡 **Analogia:** 1:1 é um cidadão e seu passaporte; 1:N é uma mãe e seus filhos; N:M é alunos e disciplinas, em que cada aluno cursa várias e cada disciplina tem vários alunos.
+
 | Tipo | Exemplo | Como vira tabela |
 | --- | --- | --- |
 | 1:1 | pessoa e passaporte | FK com UNIQUE num dos lados |

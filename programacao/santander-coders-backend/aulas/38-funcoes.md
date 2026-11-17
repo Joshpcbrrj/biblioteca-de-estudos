@@ -178,3 +178,7 @@ Não: recebe uma cópia do valor. Ele só consegue alterar o conteúdo de objeto
 | Sobrecarga | Mesmo nome, parâmetros diferentes. |
 | Por valor | O método recebe cópias; em objetos, cópia da referência. |
 | Recursão | Método que chama a si mesmo até o caso base. |
+
+## 🧭 Mapa da seção
+
+![Cheat sheet para revisar a introdução ao Java](../img/sa-mapa-java.svg)

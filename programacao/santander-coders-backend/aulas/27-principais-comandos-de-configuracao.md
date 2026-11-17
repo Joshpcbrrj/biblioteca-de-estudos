@@ -79,6 +79,8 @@ Mostra cada roteador (**salto**) entre você e o destino, com a latência de cad
 
 ![Cada TTL a mais revela um salto](../img/tracert-ttl.svg)
 
+> 💡 **Analogia:** é um pedágio que manda um aviso de volta a cada cabine. O pacote com TTL baixo para na cabine e avisa quem o enviou, e assim o caminho aparece cabine por cabine.
+
 O truque está no campo **TTL** (Time to Live) do pacote IP: cada roteador diminui o TTL em 1 e, quando ele chega a zero, descarta o pacote e avisa a origem com uma mensagem ICMP "Time Exceeded". O tracert manda pacotes com TTL 1, 2, 3... e anota quem responde.
 
 ```powershell

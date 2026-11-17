@@ -12,6 +12,8 @@ Criar o modelo de entidade e relacionamento e implementá-lo em tabelas do Postg
 
 ![Disciplinas, professores e livros](../img/der-escola.svg)
 
+> 💡 **Analogia:** é a planta de uma escola: cada tabela é uma sala com seus móveis (colunas), e as chaves estrangeiras são as portas que ligam uma sala à outra.
+
 Modelo feito no Visual Paradigm (arquivo do curso):
 
 ## Criando as tabelas
@@ -133,7 +135,8 @@ WHERE id_disciplina = 8;
 
 Acrescente a tabela `alunos (id_aluno, nome, email)` e a matrícula de alunos em disciplinas, sabendo que cada aluno cursa várias disciplinas.
 
-**Ver resposta**
+<details>
+<summary>Ver resposta</summary>
 
 ```sql
 CREATE TABLE alunos (
@@ -151,6 +154,8 @@ CREATE TABLE matriculas (
   PRIMARY KEY (id_aluno, id_disciplina)
 );
 ```
+
+</details>
 
 ## 🧠 Revisão rápida
 

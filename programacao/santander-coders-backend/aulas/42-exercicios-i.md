@@ -52,12 +52,12 @@ Para **sair do switch** depois de executar o case escolhido. Sem ele, a execuç�
 
 ## Questão 5
 
-É verdade que as variáveis estáticas são...
+O que caracteriza uma variável `static`?
 
 <details>
 <summary>Ver resposta</summary>
 
-...variáveis que pertencem à **classe** e são **compartilhadas por todos os objetos** dela: só existe uma cópia, acessada por `NomeDaClasse.variavel`.
+Variável que pertence à **classe** e é **compartilhada por todos os objetos** dela: só existe uma cópia, acessada por `NomeDaClasse.variavel`.
 
 </details>
 

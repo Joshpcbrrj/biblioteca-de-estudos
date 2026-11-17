@@ -38,6 +38,8 @@ git push -u origin main
 
 ![Se o remoto tem commits que você não tem, o push é rejeitado.](../img/push.svg)
 
+> 💡 **Analogia:** é como enviar um documento para um arquivo compartilhado. O arquivo só aceita a sua versão se ela for a mais nova; se alguém já subiu uma versão depois da sua, você baixa, junta e só então envia.
+
 O push só funciona se o remoto não tiver commits que você ainda não tem. Se alguém enviou algo antes, faça `git pull`, resolva eventuais conflitos e tente de novo.
 
 ## `git fetch` e `git pull`: receber alterações
@@ -46,6 +48,8 @@ O push só funciona se o remoto não tiver commits que você ainda não tem. Se 
 - `git pull` = `git fetch` + `git merge`: baixa e já integra na branch atual.
 
 ![O pull é um fetch seguido de um merge.](../img/fetch-pull.svg)
+
+> 💡 **Analogia:** o fetch é olhar a caixa de correspondência e ler os envelopes sem guardá-los no arquivo. O pull é ler e já arquivar tudo na pasta certa.
 
 ```bash
 git fetch origin

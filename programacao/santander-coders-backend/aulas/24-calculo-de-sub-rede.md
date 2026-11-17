@@ -47,6 +47,8 @@ Para achar a rede, faz-se um **AND** bit a bit entre o IP e a máscara: o bit do
 
 ![O AND zera a parte de host](../img/subrede-and.svg)
 
+> 💡 **Analogia:** o AND funciona como uma peneira. Só continua de pé o bit que passa pelas duas peneiras (1 nos dois); o resto, que é a parte de host, fica para trás.
+
 | Item | Valor |
 | --- | --- |
 | Rede | 192.168.10.0 |

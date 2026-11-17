@@ -10,6 +10,8 @@ Já sabemos declarar variáveis e decidir caminhos. Quase todo programa, porém,
 
 ![Cada caractere tem um índice, começando em 0](../img/java-string-indices.svg)
 
+> 💡 **Analogia:** é uma rua com casas numeradas. Cada letra ocupa uma casa, e a numeração começa na primeira casa, que é a de número 0.
+
 Uma `String` é uma sequência de caracteres. Ela é **imutável**: os métodos não alteram o texto original, sempre devolvem uma String nova.
 
 | Método | O que faz | Exemplo → resultado |

@@ -30,6 +30,8 @@ Uma **VPN** (Virtual Private Network) cria um **túnel criptografado** sobre uma
 
 ![Quem intercepta o túnel vê só dados embaralhados](../img/vpn-tunel.svg)
 
+> 💡 **Analogia:** a VPN é como um caminhão blindado. A mercadoria (os dados) segue pela mesma estrada pública, mas dentro de um compartimento lacrado que só o destino consegue abrir.
+
 - Todo o tráfego vai cifrado entre o aparelho e o servidor VPN.
 - Para os sites, o IP de origem passa a ser o do servidor VPN, o que também é usado para aparecer em outro país.
 
@@ -51,6 +53,8 @@ Uma **VPN** (Virtual Private Network) cria um **túnel criptografado** sobre uma
 O atacante se coloca entre as duas partes, por exemplo numa rede Wi-Fi aberta falsa. Ele pode **ler** tudo o que passa e até **alterar** as mensagens, sem que nenhum dos lados perceba.
 
 ![O atacante fica no meio do caminho](../img/mitm.svg)
+
+> 💡 **Analogia:** é um carteiro que abre as cartas, lê, troca um trecho e fecha de novo antes de entregar. Quem envia e quem recebe não percebe a troca.
 
 > ⚠️ No original, a descrição do man-in-the-middle terminava no meio da frase. Ela foi completada acima.
 

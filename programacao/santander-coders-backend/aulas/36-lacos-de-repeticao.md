@@ -12,6 +12,8 @@ Testa a condição **antes** de cada volta. Se ela já começar falsa, o corpo n
 
 ![O while testa, executa e volta a testar](../img/java-while.svg)
 
+> 💡 **Analogia:** é ler um livro enquanto ainda houver páginas: você confere se ainda há página, lê uma, e repete até acabar.
+
 ```java
 int c = 0;
 while (c < 5) {
@@ -56,6 +58,8 @@ Junta inicialização, condição e atualização numa linha. Ideal quando se sa
 
 ![A ordem em que cada parte do for roda](../img/java-for.svg)
 
+> 💡 **Analogia:** é uma ronda de vigia. O ponto de partida é definido uma vez, a condição é conferida antes de cada volta e o passo é dado no fim.
+
 ```java
 for (int i = 0; i < 3; i++) {
   System.out.println("i = " + i);
@@ -78,6 +82,8 @@ for (int i = 10; i >= 0; i -= 2) {
 Percorre todos os elementos de um array ou coleção, sem índice.
 
 ![A cada volta, n recebe o próximo elemento](../img/java-foreach.svg)
+
+> 💡 **Analogia:** é passar uma caixa de cartas de mão em mão. Cada pessoa recebe a próxima carta, sem precisar saber em que posição ela estava na caixa.
 
 ```java
 int[] numeros = {10, 20, 30, 40};
@@ -115,6 +121,8 @@ System.out.println((double) soma / qtd);
 - `continue`: pula o resto desta volta e vai para a próxima.
 
 ![Quais valores cada um deixa passar](../img/java-break-continue.svg)
+
+> 💡 **Analogia:** é uma esteira de controle de qualidade. O break desliga a esteira de vez; o continue descarta só a peça atual e deixa a esteira seguir.
 
 ```java
 for (int i = 0; i < 10; i++) {
@@ -155,6 +163,8 @@ while (true) {
 Um laço dentro do outro: para **cada** volta do externo, o interno roda **inteiro**.
 
 ![3 × 3 voltas: o interno recomeça a cada linha](../img/java-aninhados.svg)
+
+> 💡 **Analogia:** é um relógio. A cada passo da hora (laço externo), o ponteiro dos minutos (laço interno) dá uma volta completa.
 
 Exemplo: a tabuada de 1 a 10.
 

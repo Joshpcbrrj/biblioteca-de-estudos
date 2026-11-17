@@ -4,7 +4,16 @@
 
 ## De onde paramos
 
-As tabelas estão normalizadas: cada informação num lugar só. Agora é preciso **buscar** os dados, filtrando o que interessa e juntando de novo o que a normalização separou.<br />Os exemplos usam a tabela `produtos` da aula de tipos de dados, com cinco produtos: Caneca (39,90, cozinha), Prato (25,00, cozinha), Caderno (18,50, papelaria), Caneta (3,20, papelaria) e Mochila (150,00, acessórios).
+As tabelas estão normalizadas: cada informação num lugar só. Agora é preciso **buscar** os dados, filtrando o que interessa e juntando de novo o que a normalização separou.<br />Os exemplos usam a tabela `produtos` da aula de tipos de dados, com cinco produtos: Caneca (39,90, cozinha), Prato (25,00, cozinha), Caderno (18,50, papelaria), Caneta (3,20, papelaria) e Mochila (150,00, acessórios). Para reproduzir os exemplos, insira esses cinco produtos (se a tabela ainda tiver os da aula anterior, apague-os antes com `DELETE FROM produtos;`):
+
+```sql
+INSERT INTO produtos (nome, preco, categoria)
+VALUES ('Caneca', 39.90, 'cozinha'),
+       ('Prato', 25.00, 'cozinha'),
+       ('Caderno', 18.50, 'papelaria'),
+       ('Caneta', 3.20, 'papelaria'),
+       ('Mochila', 150.00, 'acessórios');
+```
 
 ## SELECT e WHERE
 
@@ -93,6 +102,8 @@ ORDER BY d.nome, p.nome;
 `p` e `d` são **apelidos** das tabelas, para escrever menos.
 
 ![O que cada JOIN devolve](../img/joins.svg)
+
+> 💡 **Analogia:** o INNER JOIN é uma festa com lista de convidados nos dois lados: só entra quem está nas duas listas. O LEFT JOIN é a lista da casa: todos da lista da esquerda aparecem, mesmo sem par na outra.
 
 | JOIN | Devolve |
 | --- | --- |

@@ -14,6 +14,8 @@ Uma **rede de computadores** é um conjunto de dispositivos interligados que tro
 
 ![Cada tipo de rede cabe dentro do próximo](../img/tipos-rede.svg)
 
+> 💡 **Analogia:** são caixas-bonecas. A PAN cabe dentro da LAN, que cabe na MAN, que cabe na WAN. Cada rede maior é formada por redes menores.
+
 | Sigla | Nome | Alcance |
 | --- | --- | --- |
 | PAN | Personal Area Network | alguns metros (fone Bluetooth, relógio) |
@@ -44,9 +46,13 @@ A ideia que tornou a internet possível: em vez de reservar uma linha inteira pa
 
 ![Os pacotes podem seguir caminhos diferentes](../img/comutacao-pacotes.svg)
 
+> 💡 **Analogia:** é como enviar um livro em capítulos por correios diferentes. Cada capítulo pode seguir uma rota, e o destinatário os junta na ordem certa ao final.
+
 ## Breve história
 
 ![Marcos da história das redes](../img/historia-redes.svg)
+
+> 💡 **Analogia:** é a história de uma cidade que cresce. Cada marco abre ruas que ligam bairros antes separados, até formar uma malha única.
 
 - **1969, ARPANET**: criada pela agência de pesquisa do Departamento de Defesa dos EUA (ARPA) para ligar computadores de universidades e centros de pesquisa. Já usava comutação de pacotes.
 - **1974, TCP/IP**: Vint Cerf e Bob Kahn publicam o protocolo que permite ligar redes diferentes entre si.

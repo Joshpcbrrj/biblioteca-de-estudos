@@ -18,6 +18,8 @@ A staging area existe para você fazer commits **pequenos e com um assunto só**
 
 ![O ciclo de vida de um arquivo e os comandos que o fazem mudar de estado.](../img/ciclo-estados.svg)
 
+> 💡 **Analogia:** pense numa encomenda. Você a monta na bancada (diretório de trabalho), separa na caixa de envio (staging) e só então ela é lacrada e arquivada (commit).
+
 | Estado | Significa |
 | --- | --- |
 | `untracked` | arquivo novo, que o Git ainda não acompanha |

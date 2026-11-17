@@ -37,11 +37,15 @@ O **TCP/IP** é o modelo que a internet usa de fato. Ele junta algumas camadas d
 
 ![Equivalência entre os dois modelos](../img/osi-tcpip.svg)
 
+> 💡 **Analogia:** são duas formas de contar o mesmo prédio. O OSI tem sete andares; o TCP/IP junta alguns deles em quatro. O prédio é o mesmo.
+
 ## Encapsulamento
 
 Quando você envia algo, os dados **descem** as camadas e cada uma acrescenta seu cabeçalho. Na chegada, eles **sobem** e cada camada retira o seu.
 
 ![Dados, segmento, pacote e quadro](../img/encapsulamento.svg)
+
+> 💡 **Analogia:** é como embrulhar um presente em camadas. Cada camada acrescenta o seu embrulho com uma etiqueta; quem recebe desfaz um embrulho de cada vez, na ordem inversa.
 
 O nome da unidade muda conforme a camada: **segmento** no transporte, **pacote** na rede, **quadro** no enlace e **bits** na física.
 

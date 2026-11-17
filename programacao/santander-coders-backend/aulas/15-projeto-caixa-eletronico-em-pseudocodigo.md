@@ -24,6 +24,8 @@ Criar um caixa eletrônico que mostra um menu repetidamente até o usuário esco
 
 ![O menu volta ao início até a opção Sair](../img/alg-caixa-fluxo.svg)
 
+> 💡 **Analogia:** é como um caixa de banco de verdade. O menu fica na tela, o cliente escolhe uma opção, e a máquina só libera o dinheiro depois de conferir o saldo.
+
 ## Pseudocódigo
 
 ```

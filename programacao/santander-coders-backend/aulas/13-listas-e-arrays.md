@@ -8,6 +8,8 @@ Na Questão 5 da lista anterior apareceu um vetor `v(5)`. Agora vamos ver com ca
 
 ![O array tem tamanho fixo; a lista cresce e diminui](../img/array-lista.svg)
 
+> 💡 **Analogia:** o array é um estacionamento com vagas numeradas e quantidade fixa. A lista é uma fila que cresce conforme as pessoas chegam.
+
 ## Array (vetor)
 
 - Guarda uma quantidade **fixa** de elementos do **mesmo tipo**, definida na criação.

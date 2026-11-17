@@ -10,6 +10,8 @@ Esta lista fecha o módulo de algoritmos. Use teste de mesa: anote o valor de ca
 
 A equipe de desenvolvimento está testando um algoritmo que faz cálculos. O fluxograma abaixo mostra como ele funciona:
 
+![](../img/1.png)
+
 ![O mesmo fluxograma, redesenhado na vertical](../img/q1-fluxo.svg)
 
 Ao executar o algoritmo, qual é o valor de C impresso ao final?
@@ -145,7 +147,7 @@ Saldo de conta corrente insuficiente
 Até logo!
 ```
 
-Entre as alternativas da prova, quais poderiam ser X e Y, respectivamente?
+Quais valores de X e Y, nessa ordem, tornam essa sequência possível?
 
 <details>
 <summary>Ver resposta</summary>
@@ -153,7 +155,7 @@ Entre as alternativas da prova, quais poderiam ser X e Y, respectivamente?
 **300 e 1500.**
 
 - O resgate deu certo, então X ≤ 500 (a poupança). Com X = 300: saldo = 1300 e poupança = 200.
-- A aplicação foi negada, então Y > 1300. Y = 1500 serve.<br />Qualquer par com X ≤ 500 e Y > 1000 + X funcionaria; a resposta é a alternativa que respeita as duas condições.
+- A aplicação foi negada, então Y > 1300. Y = 1500 serve.<br />Qualquer par com X ≤ 500 e Y > 1000 + X funciona; 300 e 1500 é um exemplo.
 
 </details>
 
@@ -205,3 +207,7 @@ Qual a última linha impressa se o usuário digitar, nessa ordem, `Luiza`, `9` e
 | 3 | Atribuição e ordem de execução |
 | 4 | Decisões aninhadas dentro de um laço |
 | 5 | Concatenação de textos |
+
+## 🧭 Mapa da seção
+
+![Cheat sheet para revisar a introdução a algoritmos](../img/sa-mapa-algoritmos.svg)

@@ -17,6 +17,8 @@ A palavra tem dois sentidos em TI:
 
 ![Cada parte de um endereço web](../img/url-partes.svg)
 
+> 💡 **Analogia:** é como um endereço postal lido de trás para frente: primeiro o país (.br), depois a categoria (com.br), o nome da loja (exemplo) e, por fim, o setor (www).
+
 > 💡 No .br, o domínio de topo é o código do país, e `com.br`, `gov.br`, `org.br` são categorias embaixo dele. Os domínios .br são registrados no Registro.br, do NIC.br.
 
 ## DNS
@@ -26,6 +28,8 @@ O **DNS** (Domain Name System) é a "agenda de contatos" da internet: traduz nom
 ### Como funciona uma resolução
 
 ![O resolvedor vai de cima para baixo na hierarquia](../img/dns-resolucao.svg)
+
+> 💡 **Analogia:** é como procurar uma pessoa numa empresa perguntando de setor em setor. A recepção indica o departamento, o departamento indica a sala, e só a sala tem o telefone que você quer.
 
 1. O navegador olha seu cache. Se não sabe, pergunta ao **resolvedor** (normalmente o DNS do provedor ou um público).
 2. O resolvedor pergunta a um **servidor raiz**. Ele não sabe o IP, mas responde quais servidores cuidam do `.com`.
@@ -73,6 +77,8 @@ O endereço é **emprestado** por um tempo (lease). Antes de vencer, o aparelho 
 Uma **CDN** (Content Delivery Network) é uma rede de servidores espalhados pelo mundo que guardam **cópias em cache** do conteúdo de um site: imagens, vídeos, CSS e JavaScript.
 
 ![Cada usuário é atendido pelo servidor mais próximo](../img/cdn.svg)
+
+> 💡 **Analogia:** é como ter filiais de uma loja em cada bairro. O cliente é atendido na filial mais próxima, e o depósito central recebe muito menos visitas.
 
 Benefícios:
 

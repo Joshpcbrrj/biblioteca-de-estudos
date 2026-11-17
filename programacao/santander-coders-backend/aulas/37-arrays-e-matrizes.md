@@ -69,6 +69,8 @@ Todo objeto Java tem o método `toString()`, chamado automaticamente pelo `print
 
 ![notas[linha][coluna]](../img/java-matriz.svg)
 
+> 💡 **Analogia:** é uma planilha de notas. A linha identifica o aluno e a coluna identifica a prova, como as coordenadas de uma cadeira num cinema.
+
 ```java
 double[][] notas = {
   {7.5, 8.0, 9.0},

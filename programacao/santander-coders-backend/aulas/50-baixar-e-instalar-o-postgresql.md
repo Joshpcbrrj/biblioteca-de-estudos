@@ -23,7 +23,7 @@ O **PostgreSQL** (ou Postgres) é um SGBD relacional gratuito, de código aberto
 
 🔗 [PostgreSQL: Downloads](https://www.postgresql.org/download/)
 
-> ⚠️ **Atualização:** o original mandava escolher a versão 14. Ela deixa de receber correções em novembro de 2026. Instale a versão estável mais recente (18 ou mais nova); tudo o que o curso usa funciona nela.
+> ⚠️ **Atualização:** o original mandava escolher a versão 14. Ela deixou de receber correções em 12 de novembro de 2026. Instale a versão estável mais recente (18 ou mais nova); tudo o que o curso usa funciona nela.
 
 No Windows, o instalador (da EDB) instala junto:
 

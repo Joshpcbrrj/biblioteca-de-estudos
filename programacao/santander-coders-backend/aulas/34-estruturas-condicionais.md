@@ -36,6 +36,8 @@ if (idade >= 18) {
 
 ![Os testes descem em ordem até o primeiro verdadeiro](../img/java-else-if.svg)
 
+> 💡 **Analogia:** é a triagem de um pronto-socorro. A enfermeira confere os critérios de cima para baixo, encaixa o paciente na primeira categoria que se aplica e não olha as seguintes.
+
 Testa as condições em ordem e executa só a primeira verdadeira.
 
 ```java

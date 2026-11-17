@@ -8,6 +8,8 @@ Já sabemos o que é uma rede. Agora vamos abrir a caixa e ver as peças que a f
 
 ![Do aparelho até a internet](../img/rede-domestica.svg)
 
+> 💡 **Analogia:** é o caminho de uma encomenda: sai da sua mesa, passa pela expedição de casa (switch), pela portaria que decide a rota (roteador) e chega ao caminhão da operadora (modem).
+
 ## Placa de rede (NIC)
 
 **NIC** (Network Interface Card) é o hardware que liga o computador à rede. Ela converte os dados do computador em sinais que viajam pelo meio (elétricos no cabo, ondas de rádio no Wi-Fi) e faz o caminho inverso na recepção.

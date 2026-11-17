@@ -55,7 +55,7 @@ public class Main {
 }
 ```
 
-Saída: Au au!, Eu sou um animal!, Miau!, Eu sou um animal!<br />O ganho: o laço não precisa de `if (é cachorro) ... else if (é gato)`. Ao criar uma classe `Vaca`, o laço continua igual.
+Saída: O cachorro late: Au au!, Eu sou um animal!, O gato mia: Miau!, Eu sou um animal!<br />O ganho: o laço não precisa de `if (é cachorro) ... else if (é gato)`. Ao criar uma classe `Vaca`, o laço continua igual.
 
 > ⚠️ Pela variável `Animal a` só dá para chamar métodos que existem em `Animal`. Se `Cachorro` tem `latir()`, `a.latir()` não compila. Para isso é preciso testar e converter: `if (a instanceof Cachorro c) { c.latir(); }` (Java 16+).
 
