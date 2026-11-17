@@ -24,6 +24,8 @@ O diagrama ER mostrou entidades e relacionamentos. Agora vamos passar para o **m
 
 ## Integridade
 
+O modelo relacional não é só uma forma de organizar tabelas: ele inclui **regras que mantêm os dados consistentes**. A integridade de entidade diz que toda linha precisa de uma chave primária única e nunca vazia, para que seja possível identificar cada registro sem dúvida. A integridade referencial diz que uma chave estrangeira só pode apontar para algo que **existe**: não dá para registrar um pedido para um cliente que não está cadastrado. Na prática, o banco recusa a operação que quebraria a regra, e você descobre o erro na hora, não meses depois em um relatório com números estranhos.
+
 O banco garante a consistência com **restrições**:
 
 - **de entidade**: toda tabela tem PK, sem valores nulos ou repetidos;
@@ -32,12 +34,14 @@ O banco garante a consistência com **restrições**:
 
 ## Chave natural × chave substituta
 
+Toda tabela precisa de uma chave primária, e há duas escolhas. A **chave natural** é um dado que já existe no mundo real e é único, como o CPF ou o e-mail. Parece conveniente, mas dados reais mudam: a pessoa troca de e-mail, o CPF pode ser digitado errado, e como a chave é copiada em outras tabelas, corrigir um valor vira uma operação trabalhosa. A **chave substituta** é um número sem significado criado pelo próprio banco (`id` autoincrementado). Como não representa nada do mundo real, nunca precisa mudar. A prática mais comum é usar um `id` como chave primária e declarar o CPF ou e-mail como `UNIQUE`.
+
 - **Natural**: um dado real que já é único (`cpf`). Problema: pode mudar ou ter formato complicado.
 - **Substituta (surrogate)**: um número gerado só para identificar (`id AUTO_INCREMENT` ou UUID). É a escolha mais comum. Use `UNIQUE` nas naturais.
 
 ## Exemplo: montando as tabelas de uma loja
 
-![Tabelas de uma loja e suas ligações](../img/st-relacional-2.svg)
+![Tabelas de uma loja e suas ligações](../img/st-relacional.svg)
 
 > 💡 **Analogia:** a chave estrangeira é o número da mesa anotado na comanda de um restaurante. O sistema do caixa só aceita a comanda se a mesa 12 existir de verdade (integridade referencial). E, para montar o salão, primeiro se colocam as mesas e só depois se distribuem as comandas: por isso as tabelas referenciadas são criadas antes das que apontam para elas.
 

@@ -49,7 +49,9 @@ Em projetos com Node, instale com `npm install bootstrap`.
 
 ## O grid responsivo
 
-![A mesma marcação vira 1, 2 ou 3 colunas conforme a largura da tela.](../img/bootstrap-grid-2.svg)
+O grid do Bootstrap divide a largura da página em **12 colunas** e deixa você dizer quantas cada bloco ocupa em cada tamanho de tela. A estrutura tem três níveis: o `.container` limita a largura e centraliza o conteúdo, a `.row` cria uma linha e as `.col-*` são as colunas. Como a soma deve ser 12, `col-6` ocupa metade e `col-4` ocupa um terço. O truque da responsividade está nos prefixos: `col-12 col-md-6 col-lg-4` significa “um bloco por linha no celular, dois por linha em tablets e três em telas grandes”. Ou seja, você descreve o layout inteiro apenas com nomes de classe, sem escrever uma única media query.
+
+![A mesma marcação vira 1, 2 ou 3 colunas conforme a largura da tela.](../img/bootstrap-grid.svg)
 
 > 💡 **Analogia:** o Bootstrap é como montar móveis planejados com módulos de tamanho padrão. Cada parede (linha) comporta 12 módulos; você decide quantos módulos cada armário ocupa (`col-4`, `col-6`) e, conforme o tamanho do cômodo (a tela), os armários se reorganizam sozinhos.
 
@@ -114,6 +116,8 @@ Outros componentes muito usados: `navbar`, `modal`, `dropdown`, `carousel`, `acc
 - Use as **variáveis CSS** (`--bs-primary`, `--bs-body-font-family`) ou, com Sass, as variáveis `$primary` e afins, para mudar cores e fontes do tema inteiro.
 
 ## Vantagens e cuidados
+
+O Bootstrap acelera o trabalho porque entrega, prontos e testados em vários navegadores, um grid, botões, formulários, menus e modais. Para protótipos e sistemas internos, isso economiza dias. Os cuidados aparecem quando o projeto cresce. O primeiro é que sites feitos só com as classes padrão tendem a ficar parecidos uns com os outros. O segundo é o peso: carregar o framework inteiro para usar dois componentes deixa a página mais lenta. O terceiro é a dependência: quem não entende CSS puro sofre quando precisa fugir do padrão. Por isso, aprenda CSS primeiro e use o Bootstrap como ferramenta, e não como muleta.
 
 | ✅ Vantagens | ⚠️ Cuidados |
 | --- | --- |

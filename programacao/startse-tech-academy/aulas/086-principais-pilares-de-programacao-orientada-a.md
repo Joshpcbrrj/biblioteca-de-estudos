@@ -6,7 +6,7 @@
 
 Você viu que a POO junta dados e comportamento em objetos. Quatro ideias, os **pilares**, orientam como desenhar essas classes.
 
-![Os quatro pilares, com um exemplo de cada.](../img/pilares-poo-2.svg)
+![Os quatro pilares, com um exemplo de cada.](../img/pilares-poo.svg)
 
 > 💡 **Analogia:** pense num carro. **Encapsulamento**: o motor fica fechado sob o capô, e você só usa pedais e volante. **Abstração**: você sabe que "acelerar" faz andar, sem precisar entender a injeção eletrônica. **Herança**: um carro elétrico é um carro, com tudo que um carro tem e algo a mais. **Polimorfismo**: "acelerar" funciona em qualquer carro, mas cada motor faz isso do seu jeito.
 
@@ -33,6 +33,8 @@ pessoa1.saudacao();  // Olá, sou João, 25 anos.
 ```
 
 ## 1. Encapsulamento
+
+Encapsular é **esconder os detalhes internos de um objeto e expor só o que os outros precisam usar**. A razão é proteger a consistência: se qualquer código puder mexer livremente no saldo de uma conta, é só uma questão de tempo para alguém deixá-lo negativo por engano. Com atributos privados (`#saldo`) e métodos públicos (`depositar`, `sacar`), todas as mudanças passam por regras que você controla. Outra vantagem é a liberdade de mudança: como quem usa a classe só conhece os métodos públicos, você pode reescrever o funcionamento interno sem quebrar o restante do sistema. Pense no painel de um carro: você usa volante e pedais e não precisa conhecer o motor.
 
 **Esconder o estado interno e permitir mudanças só pelos métodos**, que podem validar as regras. Em JavaScript, campos com `#` são **realmente privados**.
 
@@ -122,6 +124,8 @@ new Cachorro("Bobby").falar();  // Bobby late.
 Veja `super` e quando **não** usar herança na aula **Herança, extends e super**.
 
 ## 4. Polimorfismo
+
+Polimorfismo significa “muitas formas”: **o mesmo pedido, respondido de maneiras diferentes por objetos diferentes**. Se `Cachorro`, `Gato` e `Vaca` herdam de `Animal` e cada um sobrescreve `emitirSom()`, você pode percorrer uma lista de animais e chamar `animal.emitirSom()` sem se preocupar com o tipo de cada um: cada objeto responde do seu jeito. O ganho é que o código que usa os objetos não precisa de uma cadeia de `if` verificando tipos, e novos tipos podem ser adicionados sem alterar esse código. É um dos principais motivos para o uso de orientação a objetos em sistemas que crescem.
 
 **Objetos de classes diferentes respondem à mesma chamada, cada um à sua maneira.** O código que chama não precisa saber o tipo exato.
 

@@ -43,6 +43,8 @@ Todo processo de software, ágil ou tradicional, passa por cinco atividades gen�
 
 ## Cascata × métodos ágeis
 
+A diferença está em **quando você aprende que errou**. No modelo em **cascata**, as fases acontecem em sequência (requisitos, projeto, código, testes, entrega) e o cliente só vê o produto no final; se o entendimento inicial estava errado, o erro aparece meses depois e custa caro. Nos métodos **ágeis** (Scrum, Kanban), o trabalho é dividido em ciclos curtos, de uma a quatro semanas, e cada ciclo entrega uma parte funcionando para o cliente avaliar, corrigindo a rota cedo. A cascata funciona bem quando os requisitos são estáveis e bem conhecidos; o ágil, quando há incerteza e mudanças, que é o caso da maior parte dos produtos digitais.
+
 |  | Cascata | Ágil (Scrum, Kanban) |
 | --- | --- | --- |
 | Ciclo | cada etapa uma vez, em sequência | ciclos curtos que se repetem |
@@ -54,6 +56,8 @@ Todo processo de software, ágil ou tradicional, passa por cinco atividades gen�
 - **Kanban**: um quadro com colunas como **A fazer → Fazendo → Feito**. Os cartões andam da esquerda para a direita, e limita-se quantos cartões podem ficar em "Fazendo" ao mesmo tempo, para terminar antes de começar algo novo.
 
 ## TDD: desenvolvimento guiado por testes
+
+No TDD, a ordem usual é invertida: você escreve o **teste antes do código**. O ciclo tem três passos curtos, repetidos várias vezes. Primeiro, “vermelho”: escreva um teste para algo que ainda não existe e veja-o falhar. Depois, “verde”: escreva o código mais simples possível para o teste passar. Por fim, “refatore”: melhore o código sem quebrar o teste. O benefício é duplo: o teste obriga você a pensar no que o código deve fazer antes de escrevê-lo, e deixa uma rede de segurança que avisa na hora quando uma mudança futura estraga algo que já funcionava.
 
 ![Escreva o teste, faça passar, melhore o código, e repita.](../img/tdd-ciclo.svg)
 

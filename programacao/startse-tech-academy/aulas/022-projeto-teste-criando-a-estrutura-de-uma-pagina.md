@@ -16,7 +16,7 @@ Usar o site do **W3Schools** como referência e reproduzir **só a estrutura** d
 
 Antes de digitar, olhe o desenho e nomeie cada região com a pergunta "o que é isto?", e não "como isto parece?". A faixa do topo é o cabeçalho do site (`header`). As duas faixas de links são navegações, mas diferentes entre si, por isso cada uma leva um `aria-label`. O miolo é o conteúdo principal (`main`), que existe uma vez por página. A coluna lateral com anúncios é conteúdo complementar (`aside`) e a faixa do fim é o rodapé (`footer`). A tabela abaixo resume a escolha de cada tag.
 
-![Cabeçalho com menu, duas barras de navegação, conteúdo principal com seções, barra lateral e rodapé.](../img/w3s-wireframe-2.svg)
+![Cabeçalho com menu, duas barras de navegação, conteúdo principal com seções, barra lateral e rodapé.](../img/w3s-wireframe.svg)
 
 > 💡 **Analogia:** montar a estrutura antes do visual é como levantar as paredes de uma casa antes de pintar. Primeiro se decide onde fica a sala, a cozinha e o corredor (as tags); a cor das paredes (o CSS) vem depois e pode mudar sem derrubar nada.
 

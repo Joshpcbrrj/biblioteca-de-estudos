@@ -8,6 +8,8 @@ A aula de cores mostrou como pintar o fundo com `background-color`. Agora vamos 
 
 ## Propriedades de fundo
 
+O fundo é a camada de baixo de qualquer elemento, e ele pode ser feito de três materiais ao mesmo tempo: uma cor, uma imagem e um gradiente. O navegador os empilha, com a imagem sobre a cor. Isso permite um truque muito usado: definir uma cor parecida com a da imagem como reserva, de modo que, se a imagem demorar a carregar ou falhar, o texto branco continua legível sobre um fundo escuro, em vez de sumir sobre o branco.
+
 Qualquer elemento pode ter um fundo com cor, imagem, gradiente, ou tudo junto.
 
 ### `background-color`
@@ -36,7 +38,7 @@ Por padrão a imagem **se repete** nos dois eixos até cobrir o elemento.
 
 ### `background-repeat`, `background-size` e `background-position`
 
-![Como a imagem preenche o elemento com cada valor.](../img/background-size-2.svg)
+![Como a imagem preenche o elemento com cada valor.](../img/background-size.svg)
 
 > 💡 **Analogia:** pense numa foto e num porta-retratos de outro formato. `cover` amplia a foto até não sobrar nenhum espaço vazio, mesmo que as bordas fiquem cortadas; `contain` encolhe a foto até ela caber inteira, mesmo que sobrem faixas vazias; `repeat` é um papel de parede, que repete o mesmo desenho lado a lado.
 
@@ -71,6 +73,8 @@ Por padrão a imagem **se repete** nos dois eixos até cobrir o elemento.
 > 💡 Para testar posicionamento, aplique o fundo num elemento próprio (como uma `<div class="banner">`), e não no `body`: o fundo do body cobre a janela inteira e atrapalha a leitura do teste.
 
 ## Gradientes
+
+Um gradiente é uma transição suave entre duas ou mais cores, e a vantagem é que ele não é um arquivo de imagem: o navegador o desenha. Isso significa zero bytes para baixar, nitidez em qualquer tela e a possibilidade de mudar as cores só no CSS. O `linear-gradient` vai em uma direção (`to right`, `45deg`), e o `radial-gradient` irradia a partir de um centro. Um uso prático é sobrepor um gradiente escuro, semitransparente, a uma foto, para o texto branco por cima ficar legível.
 
 Gradientes são **imagens geradas pelo CSS**, então se usam com `background-image` (ou `background`):
 

@@ -8,13 +8,17 @@ No módulo de JavaScript você escreveu funções e objetos literais, e viu uma 
 
 ## Dois jeitos de organizar um programa
 
+A pergunta de fundo é simples: num programa, quem manda no quê? No estilo estruturado, as funções mandam: elas recebem os dados de fora, mexem e devolvem. No estilo orientado a objetos, os objetos mandam: cada um guarda os seus dados e sabe o que pode fazer com eles. Nenhum é o certo, e a maioria dos sistemas reais mistura os dois. A diferença aparece quando o programa cresce: com centenas de funções mexendo em dados soltos, fica difícil saber quem alterou o quê.
+
 Um **paradigma** é um estilo de organizar o código. Os dois mais comuns no início da carreira são o **estruturado** (ou procedural) e o **orientado a objetos** (POO). O JavaScript permite os dois e ainda o funcional.
 
-![No estruturado, dados e funções andam separados; na POO, eles vivem juntos no objeto.](../img/pe-vs-poo-2.svg)
+![No estruturado, dados e funções andam separados; na POO, eles vivem juntos no objeto.](../img/pe-vs-poo.svg)
 
 > 💡 **Analogia:** o estilo estruturado é como uma cozinha comunitária: os ingredientes ficam na despensa geral e qualquer cozinheiro pega e mexe neles seguindo uma receita. A POO é como uma praça de alimentação: cada quiosque (objeto) guarda seus próprios ingredientes e só os funcionários dele (os métodos) podem usá-los; os outros apenas fazem pedidos no balcão.
 
 ## Programação estruturada
+
+O exemplo abaixo mostra o estilo em ação: o saldo é uma variável solta, e `depositar` e `sacar` recebem o saldo, calculam e devolvem um valor novo. É direto e fácil de seguir, e para um script pequeno é ótimo. O risco está no que a linguagem não impede: qualquer parte do programa pode fazer `saldo = -500` sem passar por nenhuma regra, e você só percebe quando algo dá errado.
 
 - O código é dividido em **funções** que recebem dados, processam e devolvem resultados.
 - A ênfase está na **sequência de passos** (sequência, decisão e repetição).
@@ -37,6 +41,8 @@ saldo = sacar(saldo, 200);
 ```
 
 ## Programação orientada a objetos
+
+Na versão com classe, o saldo passa a ser privado (`#saldo`) e só muda por meio de `depositar` e `sacar`. Essas duas funções podem recusar um valor negativo ou um saque maior que o saldo, e como só elas têm acesso, a regra vale sempre. Os dados e as regras ficam juntos, num lugar só. Se amanhã surgir uma conta poupança com regras próprias, você cria uma nova classe sem tocar no código que já funciona.
 
 - O código é organizado em **objetos** que juntam **dados** (atributos) e **comportamentos** (métodos).
 - **Classes** são os moldes; objetos são as **instâncias**.
@@ -66,6 +72,8 @@ conta.saldo;  // 800
 ```
 
 ## Comparação
+
+Use a tabela como um mapa de decisão. Para uma automação de 50 linhas, um script estruturado é mais rápido de escrever e mais fácil de ler. Para um sistema com clientes, pedidos, produtos e regras que se cruzam, as classes dão organização e protegem os dados. Perceba também que cada estilo tem o seu risco: a estruturada pode virar um "espaguete" ao crescer, e a POO pode virar um excesso de classes quando o problema era simples.
 
 |  | Estruturada | Orientada a objetos |
 | --- | --- | --- |

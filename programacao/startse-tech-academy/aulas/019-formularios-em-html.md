@@ -8,7 +8,7 @@ Até aqui as páginas só mostravam conteúdo: textos, imagens, tabelas. Um form
 
 ## A tag `<form>`
 
-![Cada campo tem um label ligado pelo id e um name que vira a chave do dado enviado.](../img/form-anatomia-2.svg)
+![Cada campo tem um label ligado pelo id e um name que vira a chave do dado enviado.](../img/form-anatomia.svg)
 
 > 💡 **Analogia:** um formulário HTML é como uma ficha de papel num balcão. O `label` é o texto impresso ao lado de cada espaço, o `name` é o nome da coluna onde o atendente vai lançar a resposta, e o `action` é o guichê para onde a ficha é entregue.
 
@@ -36,6 +36,8 @@ Até aqui as páginas só mostravam conteúdo: textos, imagens, tabelas. Um form
 | `name` (em cada campo) | a **chave** do dado enviado; campo sem `name` não é enviado |
 
 ### GET × POST
+
+O método decide por onde os dados viajam. No `GET`, eles vão escritos no fim do endereço (`/busca?termo=notebook`), e por isso ficam no histórico, podem ser salvos nos favoritos e compartilhados por link. É ideal para buscas e filtros. No `POST`, os dados vão no corpo da requisição, longe da barra de endereços, o que serve para cadastros, login e pagamentos. Uma regra prática: se repetir a ação duas vezes não faz mal (uma busca), use `GET`; se muda algo no servidor (criar uma conta), use `POST`.
 
 |  | GET | POST |
 | --- | --- | --- |
@@ -97,6 +99,8 @@ O `placeholder` (texto de exemplo dentro do campo) **não substitui** o label: e
 
 ## Listas de opções e texto longo
 
+Quando as respostas possíveis são poucas e conhecidas, uma lista fecha as opções e evita erros de digitação. No `select`, o usuário vê o texto de cada `option`, mas o que vai para o servidor é o `value`: ele pode ser uma sigla (`RJ`) enquanto a tela mostra o nome completo. Para uma resposta livre e longa, como uma mensagem, use o `textarea`, que aceita várias linhas.
+
 ```html
 <!-- select: lista suspensa; o value vazio é um aviso -->
 <label for="estado">Estado</label>
@@ -112,6 +116,8 @@ O `placeholder` (texto de exemplo dentro do campo) **não substitui** o label: e
 
 ## Botões
 
+Um formulário precisa de um jeito de ser enviado, e o botão faz isso. A pegadinha é que todo `button` dentro de um `form` é `submit` por padrão. Se você quer um botão que só abre uma janela ou muda algo na tela, declare `type="button"`; sem isso, o clique envia o formulário e recarrega a página sem que você queira.
+
 | `type` | Faz |
 | --- | --- |
 | `submit` | envia o formulário (o padrão dentro de um `<form>`) |
@@ -119,6 +125,8 @@ O `placeholder` (texto de exemplo dentro do campo) **não substitui** o label: e
 | `button` | não faz nada sozinho; usado com JavaScript |
 
 ## Validação nativa do HTML5
+
+Sem validação, o servidor recebe qualquer coisa: e-mails sem arroba, idades negativas, campos vazios. Os atributos abaixo fazem uma primeira triagem no próprio navegador, com mensagens de erro prontas, e o usuário corrige antes de enviar. O mais poderoso é o `pattern`, que recebe uma expressão regular: no exemplo do CEP, `[0-9]{5}-[0-9]{3}` exige cinco dígitos, um hífen e três dígitos. Sempre acompanhe o `pattern` de um `title`, que explica ao usuário o formato esperado.
 
 O navegador confere os dados antes de enviar, sem nenhuma linha de JavaScript:
 

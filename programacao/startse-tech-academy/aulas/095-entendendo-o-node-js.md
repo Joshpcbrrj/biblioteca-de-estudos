@@ -10,13 +10,15 @@ Você entendeu o event loop. O Node.js usa esse mesmo modelo para rodar JavaScri
 
 **Node.js é um ambiente de execução (runtime) que roda JavaScript fora do navegador, no servidor ou no seu computador.** Ele foi criado em 2009 por Ryan Dahl e usa o motor **V8**, o mesmo do Chrome.
 
-![V8 executa o JavaScript; a libuv cuida do event loop e do I/O assíncrono.](../img/node-arquitetura-2.svg)
+![V8 executa o JavaScript; a libuv cuida do event loop e do I/O assíncrono.](../img/node-arquitetura.svg)
 
 > 💡 **Analogia:** se o JavaScript é um motor de carro, o navegador é o carro de passeio onde ele veio montado. O Node.js tira esse mesmo motor (o V8) e o instala num caminhão de entregas: ele perde o painel e o rádio (o DOM), mas ganha carroceria e ferramentas para carregar arquivos, falar com bancos de dados e atender clientes pela rede.
 
 O Node **não é uma linguagem nem um framework**: é a plataforma. A linguagem continua sendo JavaScript, e frameworks como o **Express** rodam em cima dele.
 
 ## Por que ele é eficiente
+
+O Node usa um único fio de execução (*single thread*), e isso parece uma fraqueza, mas funciona porque quase todo o tempo de um servidor é gasto **esperando**: o banco responder, o arquivo ser lido, a rede entregar os dados. Em vez de parar e aguardar, o Node registra "me avise quando terminar" e já atende a próxima pessoa. Esse modelo é chamado de **E/S não bloqueante** (*non-blocking I/O*), e o *event loop* é o mecanismo que devolve cada resultado ao código no momento certo. O ponto fraco é o trabalho que exige cálculo pesado e contínuo, que bloqueia o fio único e deixa todos os usuários esperando.
 
 Em vez de criar uma thread por requisição, o Node usa **uma thread principal com I/O não bloqueante**. Enquanto espera o banco de dados responder, ele atende outras requisições. Isso o torna ótimo para aplicações com **muita entrada e saída** (APIs, chats, streaming) e menos indicado para **cálculo pesado de CPU** (processar vídeo, por exemplo), que travaria a thread.
 
@@ -28,6 +30,8 @@ Em vez de criar uma thread por requisição, o Node usa **uma thread principal c
 4. **Comunidade enorme** e muitos frameworks: Express, Fastify, NestJS, Next.js.
 
 ## O que muda em relação ao navegador
+
+A linguagem é a mesma, mas o ambiente é outro, e isso muda o que está disponível. No navegador existem `window`, `document` e o DOM, porque o código mexe em páginas. No Node não há página, então esses objetos não existem; em troca, você ganha acesso ao sistema: ler e gravar arquivos (`fs`), criar servidores (`http`) e ler variáveis de ambiente (`process.env`). Uma consequência prática: o código que você escreveu para o navegador não roda no Node se usar `document`, e o código de servidor não roda no navegador se usar `fs`.
 
 | Navegador | Node.js |
 | --- | --- |

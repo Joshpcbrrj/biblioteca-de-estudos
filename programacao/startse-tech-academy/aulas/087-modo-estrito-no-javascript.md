@@ -34,7 +34,7 @@ function teste() {
 
 A tabela abaixo é uma lista de erros que antes passavam em silêncio e agora aparecem. O mais importante na prática é o primeiro: a variável não declarada. Sem o modo estrito, um erro de digitação em `totl = 100` cria uma variável global nova, e o bug só aparece muito depois, longe da causa. Com ele, o erro surge na hora e no lugar certo.
 
-!["use strict": falhas silenciosas viram erro](../img/st-strict-2.svg)
+!["use strict": falhas silenciosas viram erro](../img/st-strict.svg)
 
 > 💡 **Analogia:** o modo normal é um professor bonzinho que deixa passar erros de ortografia sem dizer nada; o aluno só descobre na prova final. O modo estrito é o professor exigente que marca de vermelho na hora: dá mais trabalho no começo, mas o erro aparece cedo, quando é fácil de corrigir.
 

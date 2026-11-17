@@ -58,6 +58,8 @@ Exemplos: redes sociais, lojas virtuais, webmail, internet banking e ferramentas
 
 ## Front-end e back-end
 
+Uma aplicação web tem duas metades que trabalham juntas. O **front-end** é tudo o que roda no navegador e que o usuário vê e toca: layout, botões, formulários, animações, feito com HTML, CSS e JavaScript. O **back-end** roda no servidor, longe dos olhos do usuário, e cuida das regras de negócio, do acesso ao banco de dados, da autenticação e da segurança. Uma regra útil: **nunca confie no front-end** para proteger algo importante, porque o usuário pode alterar o que roda no navegador dele. Validações no front-end melhoram a experiência; as validações que valem de verdade ficam no back-end.
+
 ![O front-end consome a API; o back-end aplica as regras e fala com o banco.](../img/front-back.svg)
 
 > 💡 **Analogia:** num restaurante, o front-end é o salão (cardápio, mesas, garçom) e o back-end é a cozinha (receitas, estoque, regras). A API é a janela de pedidos entre os dois: o garçom entrega o pedido num formato combinado e recebe o prato pronto.
@@ -76,6 +78,8 @@ Exemplos: redes sociais, lojas virtuais, webmail, internet banking e ferramentas
 Neste curso você passa pelas três camadas: HTML, CSS e JavaScript no front-end (módulos III a IX), Node.js no back-end (módulo X) e SQL no banco de dados (módulo XI).
 
 ## API e JSON
+
+Front-end e back-end precisam conversar, e a **API** (interface de programação de aplicações) é o contrato dessa conversa: ela lista quais pedidos o servidor aceita e como serão as respostas. O formato mais usado para trocar os dados é o **JSON**, um texto simples e organizado em pares de chave e valor, que qualquer linguagem consegue ler e escrever. Quando um app de clima mostra a temperatura, por trás há um pedido a uma API e uma resposta em JSON como `{"cidade": "Recife", "temp": 29}`. Aprender a ler esse formato abre as portas para usar milhares de serviços prontos.
 
 O front-end e o back-end conversam por meio de uma **API** (*Application Programming Interface*): um conjunto de **endpoints** (URLs e métodos HTTP) com um formato combinado de entrada e saída. Por exemplo, `GET /api/produtos` devolve a lista de produtos.
 

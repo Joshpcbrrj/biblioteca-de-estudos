@@ -25,7 +25,7 @@ console.log(pessoa1.idade);  // 25
 
 ## O que acontece no `new`
 
-![O que acontece no new](../img/st-construtor-2.svg)
+![O que acontece no new](../img/st-construtor.svg)
 
 > 💡 **Analogia:** o construtor é a montagem de um móvel que acabou de sair da fábrica. O `new` entrega a caixa (o objeto vazio); o construtor encaixa as peças com as medidas e cores que você pediu (os parâmetros) e confere se nada está faltando (a validação) antes de entregar o móvel pronto.
 
@@ -35,12 +35,16 @@ console.log(pessoa1.idade);  // 25
 
 ## Regras
 
+O construtor segue regras fixas, e conhecê-las evita erros de iniciante. Cada classe tem **no máximo um** `constructor`; se você não escrever nenhum, o JavaScript cria um vazio. Ele não tem `return` (retornar um objeto diferente é possível, mas quase nunca recomendado) e só roda quando você usa `new`: chamar `Pessoa("Ana")` sem `new` gera `TypeError`. Dentro dele, `this` é o objeto que está sendo criado, e é ali que você deve deixar o objeto **pronto para uso**, com todos os atributos obrigatórios preenchidos e válidos.
+
 - **Só pode existir um** `constructor` por classe. Dois geram `SyntaxError`.
 - Se você não escrever um, a classe ganha um **construtor vazio** implícito.
 - Ele pode ter qualquer quantidade de parâmetros, valores padrão e validações.
 - Em uma classe filha (`extends`), é **obrigatório chamar** `super(...)` antes de usar `this`.
 
 ## Valores padrão e validação
+
+Um objeto mal formado causa bugs que só aparecem muito depois de ele ser criado, então o construtor é o melhor lugar para **barrar o erro na origem**. Os valores padrão (`constructor(nome, ativo = true)`) cobrem o caso em que o argumento não foi enviado. A validação cobre o caso em que foi enviado, mas está errado: você verifica a regra e lança um `Error` com mensagem clara, como "idade não pode ser negativa". Repare na diferença de papel: o valor padrão **completa** o que falta; a validação **recusa** o que não serve.
 
 ```jsx
 class Produto {

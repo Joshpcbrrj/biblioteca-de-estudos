@@ -104,6 +104,8 @@ Controlam o "card" que aparece quando o link é compartilhado no WhatsApp, Linke
 
 ### Links especiais: e-mail, telefone e WhatsApp
 
+Antes dos links especiais, vale fixar o básico do link comum: o atributo `href` guarda o destino, e o texto entre as tags é o que a pessoa clica. O **texto do link** importa: “clique aqui” não diz nada para quem usa leitor de tela e para o Google, enquanto “baixar o guia de HTML” diz tudo. Ao abrir em outra aba com `target="_blank"`, acrescente `rel="noopener noreferrer"`, que impede a página aberta de ter controle sobre a sua. Os links especiais abaixo usam o mesmo `href`, só trocando o protocolo (`mailto:`, `tel:`) para que o clique abra o aplicativo certo.
+
 ```html
 <!-- mailto: abre o programa de e-mail já
      com o assunto preenchido -->
@@ -252,6 +254,8 @@ Força uma quebra de linha **dentro** de um texto, por exemplo em endereços ou 
 > 💡 Não use `<br>` para criar espaço entre elementos. Espaçamento é papel do CSS (`margin`, `padding`, `gap`).
 
 ## Listas
+
+Sempre que você tiver uma série de itens relacionados, o HTML tem uma tag própria, e usar a certa transmite o sentido da informação. A lista **não ordenada** (`<ul>`) é para itens sem sequência, como ingredientes, e o navegador a marca com bolinhas. A lista **ordenada** (`<ol>`) é para passos em que a ordem importa, e ela numera automaticamente. Em ambas, cada item vai dentro de um `<li>`. Menus de navegação também são listas de links: o aspecto de bolinhas se remove depois com CSS, mas a estrutura de lista continua ajudando a acessibilidade.
 
 - `<ul>`: lista **não ordenada**, com marcadores.
 - `<ol>`: lista **ordenada**, numerada. Aceita `start="5"`, `reversed` e `type="a"`.

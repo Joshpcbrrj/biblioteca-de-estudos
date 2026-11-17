@@ -14,7 +14,9 @@ Alterações em partes diferentes do arquivo, ou em arquivos diferentes, o Git j
 
 ## Como o conflito aparece no arquivo
 
-![Os marcadores separam a versão atual da versão que está chegando.](../img/conflito-editor-2.svg)
+Quando o Git não consegue juntar sozinho, ele escreve os dois trechos dentro do próprio arquivo, separados por marcadores. A linha `<<<<<<< HEAD` abre o bloco e, abaixo dela, fica a **sua versão** (a do ramo em que você está). A linha `=======` separa as duas. Abaixo, até `>>>>>>> nome-do-ramo`, fica a **versão que chegou**. Seu trabalho é decidir o resultado final: manter uma das versões, a outra, ou combinar as duas, e depois **apagar os três marcadores**. O erro mais comum de iniciantes é resolver o conteúdo, mas deixar os marcadores no arquivo, o que quebra o código.
+
+![Os marcadores separam a versão atual da versão que está chegando.](../img/conflito-editor.svg)
 
 > 💡 **Analogia:** é como duas pessoas corrigindo a mesma frase de um contrato com canetas diferentes. Se uma mexeu no parágrafo 2 e a outra no 5, basta juntar. Se as duas reescreveram a mesma frase, alguém precisa ler as duas versões e decidir o texto final; o Git marca as duas no papel e espera essa decisão.
 
@@ -70,6 +72,8 @@ git merge --abort
 > ⚠️ **Correção:** a aula dizia que "o Git irá criar um commit informando o conflito". Na verdade, o Git **não** cria commit nenhum durante o conflito: ele pausa a operação, e só o commit que **você** faz depois de resolver a finaliza.
 
 ## Como evitar conflitos
+
+Não dá para eliminar todos os conflitos, mas há hábitos que reduzem muito a frequência e o tamanho deles. **Traga as novidades com frequência**: um `git pull` ao começar o dia evita que seu ramo se afaste da `main`. **Faça mudanças pequenas e integre rápido**: ramos que vivem semanas acumulam divergências. **Combine com o time quem mexe em qual arquivo**, especialmente em arquivos grandes e compartilhados. E evite reformatar arquivos inteiros junto com mudanças de lógica, porque uma simples troca de espaços por tabulações faz o Git ver todas as linhas como alteradas.
 
 - Faça `git pull` com frequência para trabalhar sempre sobre a versão mais recente.
 - Mantenha branches **curtas**: integre pequenas partes, em vez de semanas de trabalho de uma vez.

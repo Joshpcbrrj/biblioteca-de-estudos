@@ -12,7 +12,9 @@ Você já sabe enviar e receber commits com `push` e `pull`. Agora vamos ver com
 
 ## O fluxo de pull request
 
-![O fluxo de pull request](../img/st-pull-request-2.svg)
+O pull request (PR) é o pedido formal para juntar o seu ramo à linha principal, e a sua importância está na **revisão**: outra pessoa lê suas mudanças, comenta, sugere melhorias e só então aprova. O fluxo típico é: você cria uma branch para a tarefa, faz os commits, envia a branch com `git push` e abre o PR no GitHub com um título claro e uma descrição do que mudou e como testar. Os revisores comentam, você ajusta com novos commits (que entram automaticamente no PR) e, após a aprovação, o PR é mesclado. Mesmo trabalhando sozinho, abrir PRs para si mesmo ajuda a rever o próprio código com outros olhos.
+
+![O fluxo de pull request](../img/st-pull-request.svg)
 
 > 💡 **Analogia:** um pull request é como entregar um texto ao editor de um jornal antes de ele ir para a gráfica. Você escreve no seu rascunho (a branch), entrega com um bilhete explicando o que mudou, o editor sugere ajustes, você corrige, e só depois de aprovado o texto entra na edição oficial (a `main`).
 
@@ -39,6 +41,8 @@ git push -u origin feat/formulario-contato
 > 💡 **Fork:** para contribuir com um projeto em que você não tem permissão de escrita, faça um *fork* (uma cópia do repositório na sua conta), trabalhe nele e abra o PR para o original.
 
 ## Boas mensagens de commit
+
+Daqui a seis meses, a mensagem do commit será a única pista de **por que** uma mudança foi feita, e você não vai se lembrar. Mensagens como “ajustes” ou “fix” não ajudam ninguém. Uma boa mensagem tem uma primeira linha curta (até uns 50 caracteres), no imperativo e dizendo o que o commit faz: “Adiciona validação de e-mail no cadastro”. Se precisar explicar o motivo, deixe uma linha em branco e escreva um parágrafo depois. Cada commit deve tratar de **uma única mudança lógica**: assim o histórico vira uma narrativa fácil de ler e, se um dos commits causar problema, é simples desfazer só ele.
 
 Um histórico legível vale ouro quando algo quebra. O padrão **Conventional Commits** é muito usado:
 

@@ -8,7 +8,7 @@ Você já escreve páginas com tags semânticas, imagens, tabelas e formulários
 
 ## Por que importa
 
-![Quem lê a página nem sempre vê a tela](../img/st-acessibilidade-2.svg)
+![Quem lê a página nem sempre vê a tela](../img/st-acessibilidade.svg)
 
 > 💡 **Analogia:** acessibilidade na web é como rampa e elevador num prédio. Quem sobe de escada nem percebe que eles existem, mas para quem usa cadeira de rodas são a diferença entre entrar ou ficar na calçada. No site, as "rampas" são o `alt`, o `label`, o foco visível e as tags certas.
 
@@ -49,6 +49,8 @@ Descreva **a informação** que a imagem passa, e não "imagem de...".
 
 ## 3. Formulários com rótulo
 
+Um campo de formulário sem rótulo é uma caixa sem nome: quem enxerga deduz pelo contexto visual, mas o leitor de tela só anuncia “campo de edição”, sem dizer o que digitar. O `<label>` resolve isso ao ligar o texto ao campo pelo atributo `for`, que deve ser igual ao `id` do `<input>`. Como bônus, clicar no rótulo coloca o foco no campo, o que ajuda quem tem dificuldade de acertar alvos pequenos, como o celular. Evite usar só o `placeholder` no lugar do rótulo: ele some assim que a pessoa começa a digitar, e o contraste costuma ser baixo.
+
 ```html
 <label for="email">E-mail</label>
 <input id="email" type="email"
@@ -58,6 +60,8 @@ Descreva **a informação** que a imagem passa, e não "imagem de...".
 O `placeholder` **não substitui** o `label`: ele some quando a pessoa digita e costuma ter pouco contraste.
 
 ## 4. Teclado e foco
+
+Muita gente não usa mouse: pessoas com deficiência motora, usuários de leitor de tela e até quem prefere agilidade. Para elas, a tecla `Tab` percorre os elementos interativos (links, botões, campos) na ordem do HTML, e o **foco** é o contorno que mostra onde elas estão. Dois erros comuns quebram essa experiência: remover o contorno com `outline: none` sem oferecer algo no lugar, e criar um botão com `<div onclick>`, que o teclado não alcança. A solução é usar `<button>` e `<a>` de verdade, que já vêm com foco e teclado, e testar sua página navegando só com o `Tab`.
 
 - Teste o site só com `Tab`, `Shift + Tab`, `Enter` e `Espaço`. Tudo que é clicável precisa ser alcançável.
 - **Nunca** remova o contorno de foco sem colocar outro no lugar:

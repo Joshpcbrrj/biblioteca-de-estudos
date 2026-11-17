@@ -20,6 +20,8 @@ O módulo II terminou com algoritmos e lógica. O HTML é diferente: não descre
 
 ## O modelo TCP/IP
 
+O HTML só pode viajar porque a internet tem regras comuns de comunicação, e o modelo TCP/IP organiza essas regras em camadas, cada uma resolvendo um problema. Pense no correio: você escreve a carta (aplicação, onde estão o HTTP e o HTML), ela é dividida e numerada para não se perder (transporte, com o TCP), recebe um endereço de destino (internet, com o IP) e segue pelos meios físicos, como cabos e sinais de Wi-Fi (acesso à rede). Cada camada só precisa conhecer a vizinha, e por isso dá para trocar o Wi-Fi por um cabo sem mudar o site. Você não precisa decorar as camadas, mas saber que elas existem explica por que a web funciona em qualquer aparelho.
+
 O HTML viaja pela internet sobre a pilha de protocolos **TCP/IP**.
 
 ![Aplicação, transporte, internet e acesso à rede.](../img/tcpip-camadas.svg)
@@ -60,6 +62,8 @@ O HTML viaja pela internet sobre a pilha de protocolos **TCP/IP**.
 > ⚠️ Não houve um "HTML 1.0" oficial: o primeiro padrão foi o HTML 2.0. E **não existe "HTML6"**: desde 2019, o HTML é um padrão vivo, sem números de versão.
 
 ## Componentes de um elemento HTML
+
+Um elemento HTML é formado por peças que se repetem em toda a página, e reconhecê-las torna qualquer código legível. A **tag de abertura** (`<p>`) diz que algo começou; a **tag de fechamento** (`</p>`) diz que terminou, e entre elas fica o **conteúdo**. Dentro da tag de abertura podem existir **atributos**, que acrescentam informações no formato `nome="valor"`, como `href` em um link ou `alt` em uma imagem. Alguns elementos não têm conteúdo e por isso não têm fechamento, como `<img>` e `<br>`. Chamamos tudo isso junto, da abertura ao fechamento, de elemento; e a palavra “tag” se refere só à marcação entre `< >`.
 
 ![Tag de abertura (com atributo e valor), conteúdo e tag de fechamento formam o elemento.](../img/html-anatomia.svg)
 

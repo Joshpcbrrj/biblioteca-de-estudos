@@ -10,7 +10,7 @@ Arrays guardam listas em ordem. Mas um produto tem nome, preço e estoque, e cad
 
 **Um objeto agrupa dados relacionados em pares de chave e valor.** Ele representa uma "coisa" (uma pessoa, um produto, um pedido) com suas características (**propriedades**) e ações (**métodos**).
 
-![Cada chave aponta para um valor; quando o valor é uma função, chamamos de método.](../img/objeto-2.svg)
+![Cada chave aponta para um valor; quando o valor é uma função, chamamos de método.](../img/objeto.svg)
 
 > 💡 **Analogia:** um objeto é como uma ficha cadastral. Cada linha da ficha tem um rótulo (a chave: "Nome", "Idade") e o que foi preenchido (o valor). Um array é uma lista numerada; um objeto é uma ficha com campos nomeados, em que você procura pelo nome do campo, e não pela posição.
 

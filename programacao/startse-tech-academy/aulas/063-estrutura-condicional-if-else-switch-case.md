@@ -10,7 +10,7 @@ Você já sabe comparar valores (`===`, `>`, `&&`). Agora vamos usar o resultado
 
 Executa blocos diferentes de acordo com uma condição. As condições são testadas **de cima para baixo** e só o **primeiro** bloco verdadeiro é executado.
 
-![Assim que uma condição é verdadeira, as de baixo são ignoradas.](../img/if-else-cadeia-2.svg)
+![Assim que uma condição é verdadeira, as de baixo são ignoradas.](../img/if-else-cadeia.svg)
 
 > 💡 **Analogia:** uma cadeia de `if/else if` é como a triagem de um pronto-socorro: o atendente percorre a lista de perguntas de cima para baixo e encaminha o paciente para a **primeira** fila que se aplica, sem continuar perguntando. O `else` é o "atendimento geral" de quem não se encaixou em nada.
 
@@ -60,6 +60,8 @@ function podeComprar(usuario) {
 
 ## `switch`
 
+Quando você precisa comparar **um mesmo valor** com várias opções exatas (dia da semana, código de status, opção de menu), uma cadeia longa de `else if` fica repetitiva. O `switch` organiza isso em uma lista de `case`, cada um com um valor. O JavaScript compara com `===` e executa o primeiro `case` que combinar. A armadilha clássica é esquecer o `break`: sem ele, a execução **continua** nos `case` seguintes (o chamado *fall-through*), e você recebe vários resultados de uma vez. O `default` funciona como o `else` e cobre qualquer valor não previsto. Para condições com faixas (`nota >= 7`), prefira `if`.
+
 Compara **um valor** com vários casos possíveis. É mais legível que uma sequência longa de `else if` testando a mesma variável.
 
 ```jsx
@@ -103,6 +105,8 @@ switch (dia) {
 > ⚠️ Esquecer o `break` é o erro mais comum com `switch`: o código de todos os casos seguintes também roda, até encontrar um `break` ou o fim.
 
 ## Alternativas mais curtas
+
+Para decisões simples, o JavaScript tem atalhos que deixam o código menor. O **operador ternário** (`condição ? seVerdadeiro : seFalso`) escolhe entre dois valores em uma linha, ideal para atribuir: `const status = nota >= 7 ? "Aprovado" : "Reprovado"`. O operador `&&` executa algo só se a condição for verdadeira, e o `||` oferece um valor reserva. Esses atalhos são úteis, mas têm limite: se você precisar aninhar ternário dentro de ternário, volte para o `if`, que é muito mais fácil de ler. Código curto só é bom quando continua claro.
 
 ```jsx
 // ternário: escolher entre dois valores

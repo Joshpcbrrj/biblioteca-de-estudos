@@ -8,9 +8,11 @@ Na normalização, os dados foram separados em várias tabelas. Para responder p
 
 ## O que é um JOIN
 
+Em um banco bem organizado, os dados ficam **separados em tabelas** para não se repetirem: os clientes em uma, os pedidos em outra. O problema é que as perguntas de negócio cruzam as duas: "qual cliente fez este pedido?". O `JOIN` resolve isso juntando linhas de tabelas diferentes **quando uma coluna combina**, normalmente a chave estrangeira de uma com a chave primária da outra (`pedidos.cliente_id = clientes.id`). A tabela resultante é temporária: existe só durante a consulta, e os dados originais continuam intactos. O tipo de JOIN que você escolhe define o que acontece com as linhas que **não** encontram par.
+
 **JOIN combina linhas de duas ou mais tabelas a partir de uma coluna em comum, normalmente a chave estrangeira.**
 
-![A parte azul é o que cada tipo de JOIN retorna.](../img/joins-2.svg)
+![A parte azul é o que cada tipo de JOIN retorna.](../img/joins.svg)
 
 > 💡 **Analogia:** numa festa, você tem a lista de convidados e a pilha de presentes, cada um com um cartão dizendo quem deu. O **INNER JOIN** mostra só os convidados que trouxeram presente. O **LEFT JOIN** mostra todos os convidados, com ou sem presente (quem não trouxe aparece com o campo vazio). O **RIGHT JOIN** mostra todos os presentes, inclusive os sem cartão. E o **FULL JOIN** mostra tudo dos dois lados.
 
@@ -81,6 +83,8 @@ RIGHT JOIN pedidos p ON p.cliente_id = c.id;
 ```
 
 ## Juntando várias tabelas
+
+Quando a informação está espalhada em três ou mais tabelas, basta encadear os `JOIN`s, um depois do outro, cada um com seu próprio `ON`. Pense como uma trilha: pedidos → clientes para saber quem comprou, e pedidos → produtos para saber o que foi comprado. O banco resolve da esquerda para a direita, juntando o resultado anterior com a próxima tabela. Use **apelidos** curtos (`FROM pedidos p JOIN clientes c ON ...`) para manter a consulta legível e prefixe as colunas com eles (`c.nome`), porque colunas com o mesmo nome em tabelas diferentes, como `id`, geram erro de ambiguidade.
 
 ```sql
 -- cada JOIN liga uma tabela pela chave estrangeira

@@ -28,6 +28,10 @@ botao.addEventListener("click", () => {
 
 Acompanhe a ordem, porque é a parte que confunde. O programa chama `fazerAlgoAssincrono` e passa o callback. Dentro dela, o `setTimeout` agenda a chamada para daqui a 2 segundos e **a função termina na hora**, sem esperar. A linha seguinte do programa roda logo, e por isso "Isto aparece primeiro!" vem antes. Passados os 2 segundos, o callback é chamado e imprime o resultado. O código não é executado de cima para baixo no tempo, e sim em ordem de conclusão.
 
+![A ordem real de execução do exemplo assíncrono.](../img/st-ordem-callback.svg)
+
+> 💡 **Analogia:** é como pôr pão no forno com timer: você agenda, volta ao balcão e atende outros clientes; quando o timer toca (o callback), você tira o pão.
+
 ```jsx
 function fazerAlgoAssincrono(callback) {
   setTimeout(() => {
@@ -79,7 +83,7 @@ Imagine três passos em que cada um depende do anterior: ler o usuário, depois 
 
 Quando uma operação depende do resultado da anterior, os callbacks vão se aninhando e o código vira uma "pirâmide", difícil de ler e de tratar erros:
 
-![A mesma sequência com callbacks, Promises e async/await.](../img/callback-hell-2.svg)
+![A mesma sequência com callbacks, Promises e async/await.](../img/callback-hell.svg)
 
 > 💡 **Analogia:** callbacks aninhados são como bonecas russas: para chegar à última, você abre uma dentro da outra. Promises e `async/await` põem as bonecas lado a lado, em fila.
 

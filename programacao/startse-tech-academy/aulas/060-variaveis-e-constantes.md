@@ -31,7 +31,7 @@ console.log(x);  // "Hello world!"
 | Usar antes de declarar | erro | erro | `undefined` |
 | Quando usar | **padrão** | valor muda | evite |
 
-![let e const ficam presas ao bloco; var vaza para a função inteira.](../img/escopo-2.svg)
+![let e const ficam presas ao bloco; var vaza para a função inteira.](../img/escopo.svg)
 
 > 💡 **Analogia:** uma variável é uma caixa com etiqueta. Com `let`, você pode trocar o que está dentro da caixa; com `const`, a caixa é lacrada depois de cheia. O escopo de bloco é como deixar a caixa dentro de um quarto: quem está fora do quarto (fora das chaves) não a enxerga. Já a `var` é uma caixa que "vaza" do quarto para a casa inteira (a função).
 
@@ -58,6 +58,8 @@ let l = 1;
 
 ## Constantes
 
+Nem todo valor deve mudar. O valor de π, a URL base de uma API e o número máximo de tentativas de login são **fixos**, e declará-los com `const` faz o JavaScript protegê-los: qualquer tentativa de reatribuição gera `TypeError`. Isso funciona como uma trava de segurança que revela bugs cedo, em vez de deixá-los passar. Um detalhe que surpreende: `const` impede **reatribuir a variável**, mas não impede **alterar o conteúdo** de um array ou objeto. `const lista = []; lista.push(1)` funciona, porque a lista continua sendo a mesma. Um bom hábito é começar tudo com `const` e trocar para `let` só quando perceber que o valor precisa mudar.
+
 `const` cria uma variável que **não pode receber outro valor**. Ela precisa ser inicializada na declaração.
 
 ```jsx
@@ -75,6 +77,8 @@ console.log(comprimento);  // 18.8496
 > 💡 `const` impede a **reatribuição**, não a alteração do conteúdo. Um objeto ou array declarado com `const` ainda pode ter itens alterados: `const lista = []; lista.push(1);` funciona.
 
 ## Regras para nomes
+
+Existem duas camadas de regra: o que a linguagem **exige** e o que a comunidade **recomenda**. A linguagem exige que o nome comece com letra, `_` ou `$`, não tenha espaços e não seja uma palavra reservada (`class`, `return`, `let`). Ela também diferencia maiúsculas de minúsculas: `idade` e `Idade` são variáveis diferentes. A comunidade recomenda `camelCase` (`totalDoPedido`), nomes que dizem o que o valor **significa** (`precoComDesconto`, e não `x2`) e constantes fixas em `MAIUSCULAS_COM_UNDERLINE`. Um bom nome dispensa comentário: quem lê entende o código sem precisar adivinhar.
 
 ```jsx
 // ✅ textos sempre entre aspas

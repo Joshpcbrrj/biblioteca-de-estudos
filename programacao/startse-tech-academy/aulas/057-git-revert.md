@@ -8,13 +8,17 @@ Na aula de reset você viu como voltar a branch para trás, mas só em commits q
 
 ## O que o `git revert` faz
 
+Histórico compartilhado é como um livro-razão: depois que outras pessoas já copiaram suas páginas, você não pode arrancar uma e fingir que ela não existiu. O `reset` faz exatamente isso, e por isso causa problemas se o commit já foi enviado. O `revert` segue outra lógica: em vez de apagar o erro, ele acrescenta um lançamento novo que o cancela. O histórico só cresce, e todo mundo continua concordando sobre o que aconteceu.
+
 **O** `git revert` **desfaz um commit criando um commit novo com as alterações inversas.** Se o commit original adicionou uma linha, o revert a remove; se apagou, o revert a devolve. O commit original continua no histórico, apenas anulado por outro. Por isso é a forma segura de desfazer algo já compartilhado.
 
-![O revert acrescenta um commit; o reset remove commits da branch.](../img/revert-vs-reset-2.svg)
+![O revert acrescenta um commit; o reset remove commits da branch.](../img/revert-vs-reset.svg)
 
 > 💡 **Analogia:** o revert é como uma errata num jornal. A notícia errada já foi impressa e distribuída, então não dá para arrancar a página da casa de cada leitor (isso seria o reset). Em vez disso, a edição seguinte publica uma correção que anula o erro, e as duas ficam registradas.
 
 ## Como usar
+
+O fluxo é sempre o mesmo: ache o commit problemático com `git log --oneline`, copie o hash curto dele e rode `git revert` com esse hash. O Git abre o editor com uma mensagem pronta ("Revert ..."), que você só confirma. O resultado é um commit novo no topo da branch, e depois você pode enviar com `git push` normalmente, sem forçar nada. A opção `-n` serve para reverter vários commits e juntar tudo num único commit no final.
 
 ```bash
 # encontre o hash do commit a desfazer
@@ -40,6 +44,8 @@ git revert HEAD~2..HEAD
 > 💡 Na notação `A..B`, o commit **A não entra**: são revertidos os commits depois de A até B. Para incluir A, use `A^..B`. O Git reverte do mais novo para o mais antigo, criando um commit para cada um (ou um só, se usar `-n` e commitar no fim).
 
 ## Revert × Reset
+
+A regra prática cabe em uma frase: o que já está no GitHub, você desfaz com `revert`; o que só existe no seu computador, você pode desfazer com `reset`. A diferença que mais importa é o commit do meio. Se o bug veio de um commit antigo, mas dois commits bons vieram depois, o `reset` os levaria juntos, e o `revert` desfaz só o problemático, mantendo o resto do trabalho da equipe.
 
 |  | `git revert` | `git reset` |
 | --- | --- | --- |

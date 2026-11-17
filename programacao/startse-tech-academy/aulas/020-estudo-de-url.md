@@ -25,6 +25,8 @@ Links (`href`), imagens (`src`) e formulários (`action`) apontam todos para URL
 
 ## URLs absolutas × relativas
 
+A diferença está em **de onde** o endereço é contado. Uma URL **absoluta** traz o endereço completo, com protocolo e domínio (`https://exemplo.com/img/foto.png`), e funciona de qualquer lugar; é obrigatória para apontar para outros sites. Uma URL **relativa** conta a partir do arquivo onde está escrita (`img/foto.png`, `../index.html`): ela é mais curta e continua certa mesmo que o site mude de domínio. Para arquivos do seu próprio projeto, prefira sempre a relativa. O `../` significa “subir uma pasta”, e a maior parte dos erros de “imagem que não aparece” vem de um caminho relativo contado a partir da pasta errada.
+
 Dentro do seu site, você raramente escreve a URL completa. Estando em `https://site.com/blog/post.html`:
 
 | Tipo | Exemplo | Resultado |
@@ -38,6 +40,8 @@ Dentro do seu site, você raramente escreve a URL completa. Estando em `https://
 É a mesma lógica dos caminhos no terminal: `..` sobe uma pasta e o nome sozinho parte da pasta atual.
 
 ## Caracteres especiais (URL encoding)
+
+Uma URL só pode conter um conjunto limitado de caracteres: espaços, acentos e símbolos como `&` ou `?` têm significado especial ou não são permitidos. Para enviar esses caracteres com segurança, a URL usa a **codificação por porcentagem**: o caractere vira `%` seguido de dois dígitos hexadecimais. Um espaço vira `%20`, e `ç` vira `%C3%A7`. É por isso que, ao copiar um endereço com acento, aparecem sequências estranhas. Você raramente faz isso à mão: o JavaScript oferece `encodeURIComponent()` para codificar o valor de um parâmetro e evitar que um `&` digitado pelo usuário quebre a consulta.
 
 URLs só aceitam um conjunto limitado de caracteres. Espaços, acentos e símbolos são **codificados** com `%` seguido do código hexadecimal:
 

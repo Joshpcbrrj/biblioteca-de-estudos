@@ -53,7 +53,7 @@ input:valid { border-color: green; }
 
 Leia o diagrama e o código juntos, pensando em quem vai usar. O `fieldset` com `legend` agrupa os dados pessoais e é anunciado por leitores de tela. Cada `label` tem `for` igual ao `id` do campo, o que faz o clique no rótulo focar o campo e aumenta a área de toque no celular. O `required` impede o envio vazio sem uma linha de JavaScript. A primeira `option` do `select` é desabilitada e funciona como placeholder, obrigando uma escolha consciente. Por fim, todo campo tem `name`, que é a chave com que o valor chega ao servidor: sem `name`, o campo simplesmente não é enviado.
 
-![O resultado do projeto e a tag responsável por cada parte.](../img/form-contato-2.svg)
+![O resultado do projeto e a tag responsável por cada parte.](../img/form-contato.svg)
 
 > 💡 **Analogia:** o `fieldset` é como uma moldura num formulário de papel com o título "Dados pessoais" no canto: ele junta os campos que andam juntos. A validação do navegador é o atendente que confere a ficha no balcão antes de aceitá-la; o servidor é o setor que confere tudo de novo, porque não dá para confiar só no balcão.
 

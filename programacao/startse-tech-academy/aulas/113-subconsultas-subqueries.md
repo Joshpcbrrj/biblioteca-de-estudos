@@ -8,7 +8,9 @@ Com agregação você calcula a média de preços. Mas e para listar "os produto
 
 ## O que é uma subconsulta
 
-![Subconsulta: a de dentro roda primeiro](../img/st-subconsulta-2.svg)
+Algumas perguntas têm duas etapas: “quais produtos custam mais que a **média**?”. Para responder, você precisa primeiro descobrir a média e só depois comparar. Uma **subconsulta** é um `SELECT` escrito dentro de outro, entre parênteses: o banco resolve o de dentro primeiro e usa o resultado no de fora. Ela pode aparecer em três lugares e devolver três formatos: um único valor (usado em comparações com `=`, `>`), uma lista de valores (usada com `IN`) ou uma tabela inteira (usada no `FROM`, como se fosse uma tabela comum). Identificar o que a subconsulta devolve é o primeiro passo para escolher a forma certa de usá-la.
+
+![Subconsulta: a de dentro roda primeiro](../img/st-subconsulta.svg)
 
 > 💡 **Analogia:** para dizer quem é "alto" numa turma, você primeiro precisa saber a altura média. Então faz duas perguntas, uma dentro da outra: "qual é a média?" (a subconsulta) e, com essa resposta na mão, "quem está acima dela?" (a consulta de fora). Como as bonecas russas do ícone, a de dentro se resolve primeiro e entrega o resultado para a de fora.
 
@@ -99,6 +101,8 @@ WHERE g.gasto > (SELECT AVG(gasto) FROM gastos);
 ```
 
 ## Subconsulta ou JOIN?
+
+Muitas perguntas podem ser respondidas das duas maneiras, e a escolha é mais de clareza do que de regra. Prefira o **JOIN** quando precisar mostrar colunas de mais de uma tabela no resultado (o nome do cliente ao lado do total do pedido). Prefira a **subconsulta** quando só precisa **filtrar** ou comparar, e não exibir, os dados da outra tabela (clientes que fizeram pedido, produtos acima da média). `EXISTS` costuma ser a forma mais clara de perguntar “havia algum?”. Quando a consulta ficar com vários níveis aninhados e difícil de ler, use uma CTE (`WITH`) para dar nome a cada etapa. Em bancos modernos, o desempenho das duas costuma ser parecido, então priorize a legibilidade.
 
 Muitas subconsultas podem ser reescritas como JOIN, e o resultado é o mesmo. Use o que ficar **mais legível**: `EXISTS` para "tem ou não tem", JOIN quando precisar de colunas das duas tabelas e CTE quando a consulta tiver várias etapas. Na dúvida sobre desempenho, compare com `EXPLAIN`.
 

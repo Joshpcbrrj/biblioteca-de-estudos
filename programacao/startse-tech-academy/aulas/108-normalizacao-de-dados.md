@@ -8,13 +8,15 @@ Você sabe criar tabelas e ligá-las por chaves. Mas como decidir **quais** tabe
 
 ## O que é normalização
 
+Imagine uma planilha de pedidos em que o nome e o endereço do cliente se repetem em toda linha. Se ele mudar de endereço, você precisa corrigir dezenas de linhas, e basta esquecer uma para o banco passar a contar duas verdades. Essas falhas têm nomes: anomalia de **atualização** (mudar em um lugar e esquecer outro), de **inserção** (não poder cadastrar um cliente sem pedido) e de **exclusão** (apagar o único pedido e perder os dados do cliente). A **normalização** é o processo de organizar as tabelas, por etapas chamadas formas normais, para que cada informação fique guardada **em um único lugar**.
+
 **Normalização é o processo de organizar as tabelas para que cada informação fique guardada em um lugar só.** Isso evita **redundância** e as chamadas **anomalias**:
 
 - **de atualização**: a cidade da Ana muda, mas está repetida em 50 pedidos, e um deles fica desatualizado;
 - **de inserção**: não dá para cadastrar um produto que ainda não foi vendido;
 - **de exclusão**: apagar o único pedido de um cliente apaga também os dados do cliente.
 
-![Antes, a cidade da Ana se repete; depois, ela fica num lugar só.](../img/normalizacao-2.svg)
+![Antes, a cidade da Ana se repete; depois, ela fica num lugar só.](../img/normalizacao.svg)
 
 > 💡 **Analogia:** é a diferença entre um caderno de recados e uma agenda de contatos. No caderno, você escreve o endereço da Ana em todo recado sobre ela; quando ela se muda, precisa caçar e corrigir cada página, e sempre escapa uma. Na agenda, o endereço fica **uma vez** no contato da Ana, e os recados só dizem "Ana". Normalizar é passar do caderno para a agenda.
 
@@ -59,6 +61,8 @@ Está na 2FN e **nenhuma coluna depende de outra coluna que não seja a chave**.
 Resumo fácil de lembrar: cada coluna deve depender **"da chave, da chave inteira e de nada além da chave"**.
 
 ## Desnormalizar de propósito
+
+Normalizar evita repetição e inconsistência, mas tem um custo: os dados ficam espalhados em várias tabelas, e consultá-los exige `JOIN`s. Em alguns cenários, vale **quebrar a regra de propósito** e repetir um dado para ganhar velocidade. Exemplos: guardar o nome do cliente dentro do pedido para o relatório não precisar juntar tabelas, ou manter um campo `total` calculado em vez de somar os itens a cada consulta. A diferença entre desnormalizar e bagunçar está na intenção: você só desnormaliza **depois** de modelar corretamente, com um ganho de desempenho medido e sabendo que precisará manter as cópias sincronizadas.
 
 Às vezes **repetir dados é a escolha certa**:
 

@@ -8,9 +8,11 @@ Suas consultas funcionam, mas com poucas linhas tudo é rápido. Com milhões de
 
 ## O que é um índice
 
+Sem índice, para achar um cliente pelo e-mail o banco precisa **ler a tabela inteira**, linha por linha: com mil registros é imperceptível; com dez milhões, a consulta demora segundos ou minutos. O índice é uma estrutura auxiliar, organizada e ordenada, que permite ao banco ir direto ao ponto, como o índice remissivo no fim de um livro, que aponta a página em vez de obrigar você a folhear tudo. O ganho vem com uma troca: o índice ocupa espaço em disco e precisa ser atualizado a cada alteração na tabela. Por isso se criam índices nas colunas mais usadas em `WHERE`, `JOIN` e `ORDER BY`, e não em todas.
+
 **Um índice é uma estrutura auxiliar que permite ao banco achar linhas sem ler a tabela inteira.** Na maioria dos bancos ele é uma **árvore B (B-tree)** ordenada pelos valores da coluna.
 
-![Sem índice, o banco lê tudo; com índice, desce pela árvore.](../img/indice-2.svg)
+![Sem índice, o banco lê tudo; com índice, desce pela árvore.](../img/indice.svg)
 
 > 💡 **Analogia:** é o índice remissivo no fim de um livro de biologia. Sem ele, para achar "fotossíntese" você folheia as 500 páginas (a varredura completa). Com ele, vai direto à letra F e lê "página 212". O preço: toda vez que o livro ganha um capítulo novo, alguém precisa atualizar o índice, e ele ocupa páginas extras. Por isso índices aceleram a leitura, mas deixam a escrita um pouco mais lenta.
 
@@ -39,6 +41,8 @@ DROP INDEX idx_clientes_email ON clientes;
 - Um índice composto `(cliente_id, data_pedido)` serve para buscas por `cliente_id` sozinho ou por `cliente_id` e `data_pedido` juntos, mas **não** por `data_pedido` sozinha (regra do prefixo à esquerda).
 
 ## Quando o índice NÃO é usado
+
+Criar o índice não garante que o banco vai usá-lo: certas formas de escrever a consulta o tornam inútil. O caso mais comum é aplicar uma **função na coluna** indexada: `WHERE UPPER(email) = 'ANA@EXEMPLO.COM'` obriga o banco a calcular o valor para cada linha, ignorando o índice. Algo parecido acontece com `LIKE '%texto'`, em que o início do texto é desconhecido, e com o uso de **tipos diferentes** na comparação. Em tabelas muito pequenas, o banco também prefere ler tudo, porque é mais rápido do que consultar o índice. A regra de ouro é: compare a coluna **pura** com um valor, e use `EXPLAIN` para confirmar.
 
 ```sql
 -- função na coluna → não usa o índice

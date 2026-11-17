@@ -16,7 +16,7 @@ Os principais bancos relacionais (SGBDs) são **PostgreSQL**, **MySQL/MariaDB**,
 
 Os dados ficam em **tabelas** (linhas e colunas), e as tabelas se ligam por **chaves**.
 
-![A chave estrangeira cliente_id liga cada pedido ao seu cliente.](../img/sql-tabela-2.svg)
+![A chave estrangeira cliente_id liga cada pedido ao seu cliente.](../img/sql-tabela.svg)
 
 > 💡 **Analogia:** um banco relacional é como uma pasta de planilhas, uma aba para cada assunto. Na aba **clientes**, cada pessoa tem um número de cadastro único (a chave primária), como uma matrícula. Na aba **pedidos**, em vez de copiar nome e endereço em toda compra, a comanda anota só o número do cliente (a chave estrangeira). Para saber quem comprou, basta procurar esse número na outra aba.
 
@@ -26,7 +26,9 @@ Os dados ficam em **tabelas** (linhas e colunas), e as tabelas se ligam por **ch
 
 ## As subdivisões da linguagem
 
-![Cada grupo de comandos tem um papel.](../img/sql-categorias-2.svg)
+O SQL é uma linguagem única, mas seus comandos se agrupam por finalidade, o que ajuda a lembrar o que cada um faz. A **DDL** (definição de dados) cria e altera a **estrutura**: `CREATE`, `ALTER`, `DROP`. A **DML** (manipulação de dados) trabalha com o **conteúdo** das tabelas: `INSERT`, `UPDATE`, `DELETE`. A **DQL** (consulta) lê os dados: `SELECT`. A **DCL** (controle) define quem pode fazer o quê: `GRANT`, `REVOKE`. E a **TCL** (transação) agrupa operações para que ou todas aconteçam, ou nenhuma: `COMMIT`, `ROLLBACK`. Antes de escrever um comando, pergunte-se: estou mexendo na estrutura, no conteúdo, lendo ou controlando acesso?
+
+![Cada grupo de comandos tem um papel.](../img/sql-categorias.svg)
 
 > 💡 **Analogia:** pense numa biblioteca. A DDL constrói e reforma as estantes, a DML põe, troca e retira livros, a DQL consulta o catálogo, a DCL decide quem tem a chave e a TCL confirma ou desfaz um lote de mudanças.
 
@@ -62,6 +64,8 @@ ORDER BY nome;
 > ⚠️ `UPDATE` **e** `DELETE` **sem** `WHERE` **afetam TODAS as linhas da tabela.** Antes de rodar, teste o filtro com um `SELECT ... WHERE` igual e confira quantas linhas aparecem.
 
 ## Convenções
+
+O SQL aceita muita liberdade na escrita, mas combinar algumas convenções torna as consultas legíveis para toda a equipe. Escreva as **palavras reservadas em maiúsculas** (`SELECT`, `FROM`, `WHERE`) para diferenciá-las dos nomes de tabelas e colunas. Use nomes em **minúsculas com underline** (`data_nascimento`) e sem acentos nem espaços, o que evita problemas entre sistemas. Coloque cada cláusula principal em uma linha e finalize cada comando com **ponto e vírgula**. Prefira nomes de tabela no plural (`clientes`) e evite `SELECT *` em código de produção: liste as colunas de que precisa.
 
 - Palavras-chave em MAIÚSCULAS (`SELECT`, `FROM`) e nomes em minúsculas com `_` (`data_pedido`). Não é obrigatório, mas facilita a leitura.
 - Texto entre **aspas simples**: `'Recife'`.

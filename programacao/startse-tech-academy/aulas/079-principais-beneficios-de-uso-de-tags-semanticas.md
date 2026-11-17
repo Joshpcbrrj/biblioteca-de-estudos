@@ -8,9 +8,11 @@ No módulo III você montou páginas com `<header>`, `<nav>` e `<footer>`. Este 
 
 ## O que são tags semânticas
 
+Uma tag **semântica** é aquela cujo nome descreve o papel do conteúdo, e não só como ele aparece. `<div>` e `<span>` são neutras: dizem apenas “isto é uma caixa”. Já `<header>`, `<nav>`, `<main>`, `<article>` e `<footer>` dizem “cabeçalho”, “menu de navegação”, “conteúdo principal”, “matéria independente” e “rodapé”. Visualmente, no navegador, não há diferença, porque o CSS pode fazer qualquer tag parecer com qualquer outra. A diferença está para quem **lê o código**: pessoas, buscadores e tecnologias assistivas passam a entender a estrutura da página sem precisar adivinhar.
+
 **Tags semânticas descrevem o significado do conteúdo, e não só a aparência.** Um `<div>` é uma caixa genérica; um `<nav>` diz "isto é a navegação", e um `<article>`, "isto é um conteúdo independente". Visualmente podem ser idênticos: a diferença está em quem **lê** o código, seja pessoa, navegador, buscador ou leitor de tela.
 
-![Mesma aparência, significados muito diferentes.](../img/semantica-vs-div-2.svg)
+![Mesma aparência, significados muito diferentes.](../img/semantica-vs-div.svg)
 
 > 💡 **Analogia:** é a diferença entre caixas de mudança todas iguais e caixas etiquetadas "cozinha", "quarto" e "banheiro". Por fora parecem a mesma coisa, mas quem chega (o leitor de tela, o Google, o colega de equipe) sabe na hora o que tem dentro de cada uma e onde colocá-la.
 
@@ -39,6 +41,8 @@ Mecanismos de busca entendem melhor o que é conteúdo principal, o que é menu 
 Seletores como `header nav a` ou `article > h2` funcionam sem criar classes para tudo.
 
 ## Regras práticas
+
+Para aplicar na prática, siga poucas regras. Use **um único** `<main>` por página, com o conteúdo principal. Use `<header>` e `<footer>` para topo e rodapé, tanto da página quanto de uma seção. Marque menus de navegação com `<nav>`. Use `<article>` para algo que faria sentido sozinho (uma matéria, um comentário) e `<section>` para um grupo de conteúdo com um título. Respeite a **hierarquia de títulos**: um `<h1>` por página, depois `<h2>`, `<h3>`, sem pular níveis só por causa do tamanho da letra. E quando não houver tag semântica adequada, aí sim use `<div>`.
 
 - Use `<div>` (e `<span>`) só quando **nenhuma** tag semântica fizer sentido, por exemplo como um wrapper só para layout.
 - Não escolha a tag pela aparência: estilo é papel do CSS.

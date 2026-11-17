@@ -8,9 +8,11 @@ Os pilares da POO apresentaram a herança em poucas linhas. Agora vamos ver os d
 
 ## O que é herança
 
+Sem herança, `Cachorro`, `Gato` e `Passaro` repetiriam os mesmos atributos (`nome`, `idade`) e os mesmos métodos (`comer`, `dormir`) em três lugares, e uma correção precisaria ser feita três vezes. A herança coloca o que é comum em **uma classe pai** (`Animal`), e cada classe filha recebe isso de graça e acrescenta apenas o que é só dela. A filha também pode **sobrescrever** um método do pai, dando a ele um comportamento próprio: todos os animais fazem `emitirSom()`, mas cada um faz um som diferente.
+
 **Herança é quando uma classe (filha) é criada a partir de outra (pai), recebendo automaticamente os atributos e métodos dela.** A filha pode **acrescentar** coisas novas e **sobrescrever** comportamentos. A relação é sempre "é um": um `Cachorro` **é um** `Animal`.
 
-![Cachorro e Gato herdam de Animal e sobrescrevem falar().](../img/heranca-2.svg)
+![Cachorro e Gato herdam de Animal e sobrescrevem falar().](../img/heranca.svg)
 
 > 💡 **Analogia:** herança é como uma receita de família adaptada. A filha recebe a receita do bolo da avó inteira (o que herda), pode acrescentar cobertura (métodos novos) ou trocar o açúcar por mel (sobrescrever). O `super` é ligar para a avó e perguntar "como você fazia essa parte?" antes de dar o seu toque.
 
@@ -133,6 +135,8 @@ c.saldo;  // -300
 Observe que a filha **não acessa** `#saldo` diretamente: campos privados não são visíveis na subclasse. Ela usa os métodos públicos do pai.
 
 ## Quando NÃO usar herança
+
+Herança é poderosa, mas cria um vínculo forte: se a classe pai mudar, todas as filhas mudam junto, e uma hierarquia profunda vira um quebra-cabeça em que ninguém sabe de qual nível veio cada comportamento. O teste para decidir é a frase "**é um**": `ContaPoupanca` **é uma** `Conta`, então herança faz sentido. Já `Carro` **tem um** `Motor`, e nesse caso o certo é a **composição**: o carro guarda um objeto motor em um atributo. Se você só quer reaproveitar um código e a frase "é um" soa estranha, não use herança.
 
 - Quando a relação não é "é um", e sim "tem um". Um `Carro` **tem um** `Motor`, então use **composição** (um atributo `this.motor`).
 - Para reaproveitar uma função só. Uma função utilitária ou um módulo resolve melhor.

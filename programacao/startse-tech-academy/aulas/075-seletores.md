@@ -10,11 +10,13 @@ Nas aulas de DOM, todo exemplo começava com `document.querySelector`. Esse é s
 
 Antes de alterar um elemento, o JavaScript precisa **encontrá-lo** no DOM. Os métodos de seleção recebem um id, uma classe, uma tag ou um seletor CSS e devolvem o elemento (ou uma lista deles).
 
-![Atenção ao tipo de retorno: um elemento, uma NodeList ou uma HTMLCollection.](../img/seletores-retorno-2.svg)
+![Atenção ao tipo de retorno: um elemento, uma NodeList ou uma HTMLCollection.](../img/seletores-retorno.svg)
 
 > 💡 **Analogia:** pense numa escola. `getElementById` é chamar um aluno pela matrícula: só existe um. `querySelector` é pedir "o primeiro aluno de camiseta azul"; `querySelectorAll` tira uma foto de todos os de camiseta azul agora. Já a HTMLCollection é a lista de chamada da turma, que se atualiza sozinha quando chega aluno novo.
 
 ## Os métodos
+
+Existem cinco métodos principais, e a diferença entre eles é o que devolvem. `getElementById` devolve um único elemento (ou `null`), porque o id é único na página. `querySelector` também devolve um só elemento, o primeiro que casar com o seletor CSS. Já `getElementsByClassName`, `getElementsByTagName` e `querySelectorAll` devolvem **coleções**, que podem ter zero, um ou vários itens. Isso importa porque o código que vem depois muda: com um elemento você escreve `el.textContent = "Oi"`; com uma coleção, precisa percorrer cada item. Antes de usar o resultado, pergunte-se: "isto é um elemento ou uma lista deles?"
 
 ```jsx
 // 1. Por id: UM elemento (ou null). Sem o # !
@@ -41,6 +43,8 @@ const lis = document.getElementsByTagName("li");
 - **NodeList** do `querySelectorAll` é **estática** (uma foto do momento) e tem `forEach`.
 
 ## Qual usar?
+
+O motivo de `querySelector` ser o favorito é a **reutilização de conhecimento**: você já sabe escrever seletores CSS, então não precisa decorar quatro métodos diferentes. `querySelector("#menu")` faz o mesmo que `getElementById("menu")`, e `querySelectorAll(".card")` faz o mesmo que `getElementsByClassName("card")`, com a vantagem de aceitar combinações como `.card button` ou `input[required]`. A exceção é o desempenho em casos extremos, em que `getElementById` é um pouco mais rápido, mas a diferença só aparece em milhares de buscas por segundo.
 
 Na prática, `querySelector` **e** `querySelectorAll` resolvem quase tudo, porque aceitam qualquer seletor CSS que você já conhece:
 

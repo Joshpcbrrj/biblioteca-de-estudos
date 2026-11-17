@@ -22,6 +22,8 @@ Exemplos populares: C, C++, Java, C#, Python, JavaScript, Go, Rust, PHP, Ruby, S
 
 ## As 3 camadas de uma linguagem
 
+Para um programa ser aceito, ele precisa passar por três filtros, do mais simples ao mais profundo. O primeiro é o **léxico**: as palavras e símbolos usados existem na linguagem? O segundo é o **sintático**: essas palavras estão dispostas numa ordem válida? O terceiro é o **semântico**: a frase faz sentido e faz o que você pretendia? Em português, “gato” passa no léxico, “O gato bebe” passa no sintático e “O gato bebe a mesa” passa nos dois, mas falha no semântico. O computador consegue conferir bem os dois primeiros filtros; o terceiro depende de você e dos seus testes.
+
 Assim como o português tem vocabulário, gramática e significado, toda linguagem de programação tem três camadas de regras:
 
 ![A mesma linha de código analisada nas camadas léxica, sintática e semântica.](../img/ling-3-camadas.svg)
@@ -67,6 +69,8 @@ const x = "abc" * 2;
 ```
 
 ## Erro em tempo de compilação × em tempo de execução
+
+O momento em que o erro aparece muda o tamanho do estrago. O erro de **compilação** (ou de sintaxe) é detectado **antes** de o programa rodar, como um parêntese esquecido, e o programa nem inicia: é o erro mais fácil de resolver, porque a mensagem aponta a linha. O erro de **execução** aparece **durante** o uso, como dividir por zero ou acessar uma posição que não existe, e pode surgir só com certos dados, quando o usuário já está usando o sistema. Há ainda o erro de **lógica**, o mais difícil: o programa roda sem reclamar, mas dá a resposta errada. Esse só é achado com testes e teste de mesa.
 
 - Erros **léxicos e sintáticos** são encontrados **antes** de rodar: o editor sublinha e o programa nem começa.
 - Muitos erros **semânticos** só aparecem **durante a execução**, quando aquela linha roda (como o `ReferenceError` acima).

@@ -12,7 +12,7 @@ Cada valor em JavaScript tem um tipo, e o tipo decide o que você pode fazer com
 
 O JavaScript tem **7 tipos primitivos** e um tipo para todo o resto: **object**. Arrays, funções e datas são, por baixo dos panos, objetos.
 
-![Primitivos guardam o próprio valor; objetos são acessados por referência.](../img/tipos-js-2.svg)
+![Primitivos guardam o próprio valor; objetos são acessados por referência.](../img/tipos-js.svg)
 
 > 💡 **Analogia:** um primitivo é como uma nota de dinheiro: se você dá uma cópia a alguém, cada um tem a sua. Um objeto é como o endereço de uma casa escrito num papel: copiar o papel não cria outra casa; as duas pessoas vão à mesma casa, e se uma pintar a parede, a outra vê a parede pintada.
 

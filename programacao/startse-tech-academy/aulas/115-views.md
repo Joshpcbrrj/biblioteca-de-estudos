@@ -10,7 +10,7 @@ Algumas consultas, como "quanto cada cliente já gastou", se repetem em vários 
 
 **Uma view é uma consulta** `SELECT` **salva no banco com um nome, que pode ser usada como se fosse uma tabela.** Ela não armazena dados: cada vez que você consulta a view, o banco executa a consulta por trás dela.
 
-![A view junta clientes e pedidos e expõe só as colunas necessárias.](../img/view-sql-2.svg)
+![A view junta clientes e pedidos e expõe só as colunas necessárias.](../img/view-sql.svg)
 
 > 💡 **Analogia:** uma view é uma **janela** para dentro do depósito. Quem olha por ela vê só a parte que a janela enquadra (as colunas e linhas escolhidas), sem entrar no depósito nem mexer nas prateleiras escondidas. E a janela mostra a cena **ao vivo**: se algo muda lá dentro, você vê na hora. A view materializada é diferente: é uma **foto** tirada pela janela, rápida de olhar, mas que precisa ser tirada de novo para ficar atualizada.
 
@@ -37,6 +37,8 @@ DROP VIEW vw_resumo_clientes;
 
 ## Para que servem
 
+Uma view é uma consulta com nome, e isso traz três ganhos práticos. O primeiro é a **simplicidade**: uma consulta com cinco `JOIN`s e filtros complicados vira `SELECT * FROM v_pedidos_completos`, e todo o time passa a usar a mesma lógica, sem copiar e colar. O segundo é a **segurança**: você pode dar acesso a uma view que mostra só algumas colunas (por exemplo, sem o salário) e negar o acesso à tabela original. O terceiro é a **estabilidade**: se a estrutura das tabelas mudar, você ajusta a view e os relatórios que a usam continuam funcionando sem alteração.
+
 - **Simplificar**: um JOIN complicado é escrito uma vez e reaproveitado em vários relatórios.
 - **Segurança**: o usuário recebe permissão só na view (`GRANT SELECT ON vw_... TO analista`), sem ver colunas sensíveis como `cpf` ou `senha_hash`.
 - **Abstração**: se a estrutura das tabelas mudar, basta ajustar a view, e quem a usa não percebe.
@@ -56,6 +58,8 @@ WITH CHECK OPTION;
 ```
 
 ## View × view materializada
+
+Uma view comum **não guarda dados**: toda vez que é consultada, o banco executa a consulta de novo, e o resultado está sempre atualizado. Isso é ótimo para consultas leves, mas pode ser lento se a consulta for pesada. A **view materializada** guarda o **resultado** em disco, como uma foto tirada num momento; consultá-la é muito rápido, mas os dados podem ficar defasados até que ela seja atualizada (`REFRESH MATERIALIZED VIEW`, no PostgreSQL). Escolha pela necessidade: se precisa do dado em tempo real, view comum; se precisa de velocidade e aceita alguns minutos de atraso, como em relatórios e painéis, view materializada.
 
 Uma view comum roda a consulta **toda vez**. Em consultas pesadas, o **PostgreSQL** e o **Oracle** oferecem a **view materializada** (`CREATE MATERIALIZED VIEW`), que **guarda o resultado** e é atualizada sob demanda (`REFRESH MATERIALIZED VIEW`). O MySQL não tem esse recurso nativo.
 

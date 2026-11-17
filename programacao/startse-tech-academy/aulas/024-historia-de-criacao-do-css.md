@@ -8,6 +8,8 @@ O módulo III terminou com páginas bem estruturadas, mas com a aparência padr�
 
 ## O que é CSS?
 
+Uma página só com HTML é como um documento de texto sem formatação: tudo preto sobre branco, com fonte padrão e sem espaçamento. Isso funciona para quem só quer ler, mas nenhuma empresa publica um site assim. O CSS é o que transforma o conteúdo em um site com identidade: cores da marca, fontes, espaços, layout. E faz isso sem alterar o conteúdo, o que é a grande vantagem de separar as duas linguagens.
+
 **CSS (*Cascading Style Sheets*, ou folhas de estilo em cascata) é a linguagem que define a aparência dos documentos HTML**: cores, fontes, tamanhos, espaçamentos, layout, efeitos e animações.
 
 - O CSS **separa a apresentação do conteúdo**. O HTML diz *o que* é cada coisa; o CSS diz *como* ela aparece.
@@ -16,9 +18,11 @@ O módulo III terminou com páginas bem estruturadas, mas com a aparência padr�
 
 ### Como uma regra funciona
 
+Leia a regra como uma frase: "para **todos os parágrafos** (seletor), **a cor** (propriedade) **é azul** (valor), e **o tamanho da fonte** é **18 pixels**". Toda regra tem sempre esse formato: um alvo e um ou mais pares de propriedade e valor, cada um terminado em ponto e vírgula. Esquecer o ponto e vírgula é o erro mais comum de iniciantes, e faz a declaração seguinte ser ignorada.
+
 O CSS é feito de **regras**. Cada uma tem um **seletor** (quais elementos) e um bloco de **declarações** (propriedade e valor):
 
-![Seletor, propriedade e valor formam uma regra.](../img/css-regra-2.svg)
+![Seletor, propriedade e valor formam uma regra.](../img/css-regra.svg)
 
 > 💡 **Analogia:** se o HTML é o esqueleto e os órgãos de uma pessoa, o CSS é a roupa, o corte de cabelo e a maquiagem. Trocar a roupa muda totalmente a aparência, mas a pessoa por baixo continua a mesma. Cada regra CSS é uma instrução do tipo "todos os `p` usam camisa azul".
 
@@ -37,6 +41,12 @@ Cada declaração termina com `;`, e comentários em CSS são escritos entre `/*
 Porque várias regras podem tentar estilizar o mesmo elemento, e o navegador tem um algoritmo para decidir quem vence: importância, especificidade e ordem. Isso é detalhado nas próximas aulas.
 
 ## Linha do tempo
+
+A história do CSS explica por que ele é do jeito que é. Nos primeiros anos da web, cada navegador exibia as páginas de um jeito, e a aparência era feita com tags como `<font>` misturadas ao conteúdo. Em 1994, a proposta de separar apresentação e conteúdo deu origem ao CSS, que então foi crescendo em versões e, depois, em módulos independentes. Isso explica por que ainda existem tantos jeitos antigos e novos de fazer a mesma coisa: a linguagem evoluiu sem quebrar o que já existia.
+
+![Os principais marcos do CSS, de 1994 até hoje.](../img/st-css-linha-tempo.svg)
+
+> 💡 **Analogia:** a história do CSS é como uma cidade que cresceu em bairros: ruas novas foram abertas sem derrubar as antigas, e por isso ainda convivem jeitos antigos e modernos de fazer a mesma coisa.
 
 | Ano | Marco |
 | --- | --- |

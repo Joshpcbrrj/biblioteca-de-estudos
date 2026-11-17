@@ -8,7 +8,13 @@ Os tipos de dados limitam o formato de cada coluna. As restrições vão além: 
 
 ## Para que servem as restrições
 
-![Restrições: o banco recusa dado errado](../img/st-restricoes-2.svg)
+Sem restrições, o banco aceita qualquer coisa, e a qualidade dos dados depende de cada programa que grava nele lembrar de validar. Basta um deles esquecer para surgirem clientes sem nome, dois cadastros com o mesmo e-mail ou pedidos de um cliente que não existe. Com restrições, a regra mora no banco e vale para todos: o `INSERT` errado é recusado, com uma mensagem de erro, antes de sujar os dados. É a rede de segurança final da integridade dos dados.
+
+![Cada restrição e o erro que ela impede.](../img/st-constraints-erros.svg)
+
+> 💡 **Analogia:** cada restrição é como um corretor ortográfico que se recusa a salvar o texto com erro: o problema é barrado antes de entrar, e não descoberto depois.
+
+![Restrições: o banco recusa dado errado](../img/st-restricoes.svg)
 
 > 💡 **Analogia:** as restrições são o segurança na porta de um evento. Sem nome, ninguém entra (`NOT NULL`). A mesma pulseira não passa duas vezes (`UNIQUE`). O nome tem que estar na lista de convidados (`FOREIGN KEY`). Menor de 18 fica de fora (`CHECK`). E quem chega sem dizer o setor vai para a pista comum (`DEFAULT`). Não importa por qual porta a pessoa tenta entrar: o segurança confere sempre.
 
@@ -24,6 +30,8 @@ Os tipos de dados limitam o formato de cada coluna. As restrições vão além: 
 | `DEFAULT` | valor automático quando nenhum é informado |
 
 ## De coluna × de tabela
+
+A forma de coluna é mais curta e serve quando a regra envolve só aquela coluna: `email VARCHAR(100) NOT NULL UNIQUE`. A de tabela é necessária quando a regra envolve duas ou mais colunas, como impedir que um mesmo quarto seja reservado para a mesma data. Ela também permite dar um nome à restrição (`CONSTRAINT ck_idade`), o que ajuda muito: quando o banco recusa um dado, o nome aparece na mensagem de erro e diz qual regra foi violada.
 
 Quase todas podem ser escritas **junto da coluna** ou **no fim da tabela**. A forma de tabela é obrigatória quando a regra envolve **mais de uma coluna** e permite **dar nome** à restrição, o que deixa as mensagens de erro muito mais claras.
 
@@ -76,6 +84,8 @@ CREATE TABLE matriculas (
 
 ## FOREIGN KEY
 
+A chave estrangeira é o que liga as tabelas entre si e impede referências soltas. No exemplo, todo pedido guarda o `id` do cliente. Com a chave estrangeira, o banco recusa um pedido para um cliente que não existe, e também impede apagar um cliente que ainda tem pedidos. O que acontece nesse segundo caso depende da ação escolhida na tabela abaixo: bloquear (o padrão e o mais seguro), apagar os pedidos junto (`CASCADE`) ou deixá-los sem cliente (`SET NULL`).
+
 ```sql
 CREATE TABLE pedidos (
   id         INT PRIMARY KEY,
@@ -100,6 +110,8 @@ CREATE TABLE pedidos (
 A tabela referenciada (`clientes`) precisa existir **antes**.
 
 ## CHECK
+
+O `CHECK` é a restrição mais flexível: você escreve uma condição e o banco só aceita linhas que a satisfaçam. É o lugar certo para regras de negócio simples, como idade mínima de 18 anos, salário positivo ou data de saída depois da de entrada. Como o `UNIQUE`, ele não recusa `NULL`: uma coluna sem valor passa pela condição, e para proibi-la você combina com `NOT NULL`.
 
 ```sql
 -- CHECK: o banco recusa valores fora da regra

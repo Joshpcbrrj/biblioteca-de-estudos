@@ -125,7 +125,7 @@ usuario.endereco?.rua;
 
 ## Precedência
 
-![?? × || e a ordem de avaliação](../img/st-operadores-2.svg)
+![?? × || e a ordem de avaliação](../img/st-operadores.svg)
 
 > 💡 **Analogia:** o `??` é como um garçom que só traz o prato padrão se a sua mesa estiver **sem pedido nenhum**; se você pediu "zero sobremesa", ele respeita. O OU lógico é um garçom apressado: qualquer pedido "vazio" (zero, texto em branco, false) ele troca pelo padrão.
 

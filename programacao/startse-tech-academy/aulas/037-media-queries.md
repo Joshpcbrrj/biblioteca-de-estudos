@@ -21,9 +21,11 @@ O módulo IV ensinou a estilizar elementos: cores, fundos, caixas e unidades. Ma
 
 ## Mobile first
 
+Pense em montar uma estante: é mais fácil começar com o móvel básico e ir **adicionando** prateleiras do que começar com a estante gigante e ter de desmontar partes para caber num cômodo pequeno. Com `min-width`, cada media query só adiciona regras para telas maiores, e o CSS base fica simples e leve, justamente o que o celular precisa. Com `max-width` (desktop first), você escreve o layout completo e depois precisa **desfazer** propriedades em telas menores, o que gera mais código e mais chance de conflito.
+
 A abordagem recomendada é escrever primeiro o CSS do **celular** (sem media query) e ir **acrescentando** regras para telas maiores com `min-width`:
 
-![Base de 1 coluna; a partir de 600px, 2 colunas; a partir de 1024px, 3 colunas.](../img/media-queries-2.svg)
+![Base de 1 coluna; a partir de 600px, 2 colunas; a partir de 1024px, 3 colunas.](../img/media-queries.svg)
 
 > 💡 **Analogia:** media queries funcionam como a mesa extensível de uma sala de jantar. Para duas pessoas (celular), ela fica fechada; quando chegam mais convidados (tela maior), você puxa as abas e acrescenta lugares. Mobile first é começar pela mesa fechada e só abrir quando houver espaço.
 
@@ -45,6 +47,8 @@ Por que começar pelo celular? Porque o layout de uma coluna é o mais simples; 
 Breakpoints comuns (não são regra, ajuste ao seu conteúdo): **600px**, **768px**, **1024px**, **1280px**.
 
 ## Tipos de condição
+
+A largura da tela é a condição mais usada, mas não é a única. O navegador sabe responder a perguntas sobre o aparelho e sobre a pessoa que o usa: a tela está em pé ou deitada? É uma tela de alta densidade? O conteúdo vai para a impressora? O sistema está em modo escuro? Cada pergunta vira uma condição que você coloca entre parênteses depois de `@media`. O ganho é prático: com poucas linhas você entrega uma versão de impressão limpa, respeita quem prefere menos animação (acessibilidade) e acompanha o tema escuro do sistema, tudo sem JavaScript.
 
 ### Largura da tela
 

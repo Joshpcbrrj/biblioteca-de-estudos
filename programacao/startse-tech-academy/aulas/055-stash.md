@@ -12,7 +12,7 @@ Imagine que você está no meio de uma funcionalidade, com sete arquivos alterad
 
 **O** `git stash` **guarda temporariamente as alterações que você ainda não commitou e deixa o diretório de trabalho limpo.** É útil quando você está no meio de algo e precisa trocar de branch às pressas (um bug urgente, por exemplo).
 
-![Os stashes ficam numa pilha: o mais recente é o stash@{0}.](../img/stash-2.svg)
+![Os stashes ficam numa pilha: o mais recente é o stash@{0}.](../img/stash.svg)
 
 > 💡 **Analogia:** o stash é como tirar a louça da pia e empilhar num canto para alguém usar a pia com urgência. A pia fica livre, nada se perde, e depois você pega a pilha de volta. Como numa pilha de pratos, o último guardado é o primeiro que sai (`stash@{0}`).
 

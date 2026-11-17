@@ -8,6 +8,8 @@ Com o ambiente instalado, você vai escrever código, e código dá erro. Isso �
 
 ## Antes de pesquisar
 
+A habilidade mais valiosa de quem programa não é saber tudo de cabeça, e sim **saber descobrir** o que não sabe. E a maior parte da qualidade da resposta depende do que você faz antes de buscar. Leia a mensagem de erro com calma, do começo ao fim: ela costuma dizer o tipo do problema, o arquivo e a linha. Tente isolar o problema, reduzindo o código ao menor trecho que ainda falha. E faça a pergunta certa: “o que eu esperava que acontecesse, e o que aconteceu de fato?” Essa descrição simples já resolve muitos bugs sozinha e, quando não resolve, vira a busca perfeita.
+
 ![Cinco passos, do erro à solução.](../img/st-erro-solucao.svg)
 
 > 💡 **Analogia:** resolver um erro é trabalho de detetive. Primeiro você examina a cena (a mensagem), depois decide que tipo de caso é, procura casos parecidos já resolvidos e só então chama reforço, levando as provas organizadas.
@@ -33,6 +35,8 @@ Uncaught TypeError: Cannot read properties
 - **Próximo passo:** abrir a linha 12 e descobrir por que a variável antes do `.nome` está vazia.
 
 ## Dicas de busca no Google
+
+Buscar bem é uma técnica. Copie a **mensagem de erro** principal (sem nomes de arquivos e caminhos pessoais) e cole entre aspas para buscar a frase exata. Acrescente a linguagem ou a ferramenta (“javascript”, “node”, “postgres”) para reduzir o ruído. Prefira resultados da **documentação oficial** e de perguntas com resposta aceita e versão atual: um tutorial de 2014 pode ensinar um jeito que hoje não se usa mais. E desconfie de código copiado sem entender: se você não sabe explicar por que a solução funciona, ela vai voltar a incomodar mais tarde.
 
 - **Comece pela tecnologia**: `javascript array remove duplicates`.
 - **Tire os nomes do seu projeto** (suas variáveis, arquivos, nome da empresa). Ninguém mais usa esses termos.

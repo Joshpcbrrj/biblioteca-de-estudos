@@ -19,7 +19,7 @@ git merge feature
 
 Quando as duas branches avançaram, o Git compara três versões (o ancestral comum e as duas pontas) e cria um **commit de merge** (M) com dois pais, unindo as duas linhas. Os commits originais ficam exatamente como aconteceram.
 
-![O commit M tem como pais o C4 (main) e o C5 (feature).](../img/merge-tres-vias-2.svg)
+![O commit M tem como pais o C4 (main) e o C5 (feature).](../img/merge-tres-vias.svg)
 
 > 💡 **Analogia:** imagine duas estradas que saíram da mesma cidade. O merge constrói um trevo onde elas se encontram: as duas estradas continuam no mapa, e o trevo (o commit de merge) mostra a junção. O rebase é como reconstruir a segunda estrada a partir do fim da primeira: no mapa fica uma linha reta, como se ela sempre tivesse saído dali.
 
@@ -36,13 +36,15 @@ git switch feature
 git rebase main
 ```
 
-![C3 e C4 viram C3' e C4': mesmo conteúdo, hashes novos.](../img/rebase-antes-depois-2.svg)
+![C3 e C4 viram C3' e C4': mesmo conteúdo, hashes novos.](../img/rebase-antes-depois.svg)
 
 > 💡 **Analogia:** o rebase é como copiar seus capítulos e recolá-los depois da versão mais nova do livro. O texto é o mesmo, mas cada página ganha um novo número (hash), porque agora está em outra ordem.
 
 Depois do rebase, um `git merge feature` na `main` vira fast-forward, e o histórico fica uma **linha reta**, sem commits de merge.
 
 ## Qual usar?
+
+Os dois comandos chegam ao mesmo destino (juntar o trabalho de dois ramos), mas contam histórias diferentes. O **merge** preserva o histórico como aconteceu, com o ramo paralelo e um commit de junção: é honesto e seguro, mas o gráfico pode ficar cheio de cruzamentos. O **rebase** reescreve seus commits como se tivessem sido feitos depois da última novidade da `main`: o histórico fica numa linha reta e limpa, mas os commits ganham novos identificadores. A regra de ouro: **nunca faça rebase em commits que já foram enviados e que outras pessoas usam**, porque reescrever histórico compartilhado bagunça o trabalho de todos. Em ramos só seus, o rebase é uma ótima forma de organizar antes de abrir o PR.
 
 |  | Merge | Rebase |
 | --- | --- | --- |
@@ -54,6 +56,8 @@ Depois do rebase, um `git merge feature` na `main` vira fast-forward, e o histó
 > ⚠️ **Regra de ouro do rebase:** nunca faça rebase de commits que já foram enviados e que outras pessoas usam. O rebase cria commits novos, e quem tinha os antigos fica com um histórico divergente. Na sua própria branch, antes do PR, ele é ótimo para deixar o histórico limpo.
 
 ## Rebase interativo
+
+O rebase interativo (`git rebase -i`) é uma ferramenta de **arrumação do histórico** antes de compartilhar. Ele abre uma lista dos seus últimos commits e permite, para cada um, escolher uma ação: `pick` mantém o commit, `reword` troca a mensagem, `squash` funde o commit com o anterior e `drop` o descarta. O uso mais comum é juntar vários commits de “rascunho” (“testando”, “mais um ajuste”) em um único commit bem descrito, antes de abrir o pull request. O revisor passa a ver uma história clara em vez do seu caminho de tentativas. Use somente em commits ainda não publicados.
 
 Com `git rebase -i` você reescreve os últimos commits antes de enviá-los: juntar vários num só, reordenar, mudar mensagens ou descartar.
 

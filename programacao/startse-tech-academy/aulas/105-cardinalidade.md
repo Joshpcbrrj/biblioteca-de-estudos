@@ -10,7 +10,7 @@ Na introdução, a coluna `cliente_id` ligava pedidos a clientes. Mas como saber
 
 **Cardinalidade diz quantos registros de uma entidade podem se relacionar com quantos registros da outra.** Ela define **onde fica a chave estrangeira** e se é preciso criar uma tabela extra.
 
-![Os três tipos de relacionamento e como cada um vira tabela.](../img/cardinalidade-2.svg)
+![Os três tipos de relacionamento e como cada um vira tabela.](../img/cardinalidade.svg)
 
 > 💡 **Analogia:** pense numa escola. Cada aluno tem **uma** carteirinha e cada carteirinha é de **um** aluno (1:1). Uma turma tem **muitos** alunos, mas cada aluno está em **uma** turma (1:N): basta anotar a turma na ficha do aluno. Já alunos e disciplinas são **muitos para muitos** (N:M): ninguém consegue anotar tudo numa ficha só, então a escola mantém uma **lista de matrículas**, que é exatamente a tabela associativa.
 
@@ -51,6 +51,8 @@ CREATE TABLE pedidos (
 
 ## Muitos para muitos (N:M)
 
+A relação N:M acontece quando um item de cada lado pode se ligar a **vários** do outro: um aluno cursa várias disciplinas, e uma disciplina tem vários alunos. O problema é que o banco relacional não sabe guardar essa ligação diretamente: onde colocar a chave estrangeira? Em qualquer das duas tabelas, ela precisaria guardar uma lista, o que o modelo não permite. A solução é criar uma **tabela intermediária** (`matriculas`) com duas chaves estrangeiras, uma para cada lado, de modo que a relação N:M vira duas relações 1:N. Essa tabela também pode guardar dados da própria ligação, como a data da matrícula e a nota.
+
 Vários A se ligam a vários B.
 
 - Exemplos: alunos ↔ disciplinas; pedidos ↔ produtos; filmes ↔ atores.
@@ -71,6 +73,8 @@ CREATE TABLE matriculas (
 ```
 
 ## Mínimo e máximo
+
+Além de “quantos” (1 ou muitos), a cardinalidade diz se a ligação é **obrigatória ou opcional**. O máximo responde quantas ocorrências no máximo podem se relacionar; o mínimo responde se pode haver zero. Por exemplo: um pedido tem **no mínimo 1** item (não existe pedido vazio), mas um cliente pode ter **zero** pedidos (acabou de se cadastrar). Essa diferença se reflete no banco: se a ligação é obrigatória, a chave estrangeira recebe `NOT NULL`; se é opcional, ela pode ficar vazia. Anotar o mínimo evita surpresas, como um relatório que some com clientes sem pedidos.
 
 A notação completa indica **mínimo e máximo** de cada lado: `(0,N)` = opcional, pode ter vários; `(1,1)` = obrigatório, exatamente um. Por exemplo, um cliente tem `(0,N)` pedidos (pode não ter nenhum), e um pedido tem `(1,1)` cliente.
 

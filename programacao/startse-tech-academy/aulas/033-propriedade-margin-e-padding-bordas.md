@@ -29,13 +29,17 @@ A margem é o espaço que você deixa em volta de uma caixa, como o afastamento 
 
 ### Atalhos (*shorthand*)
 
-![Com 1, 2, 3 ou 4 valores, sempre no sentido horário a partir do topo.](../img/atalho-margin-2.svg)
+![Com 1, 2, 3 ou 4 valores, sempre no sentido horário a partir do topo.](../img/atalho-margin.svg)
 
 > 💡 **Analogia:** leia os quatro valores como os ponteiros de um relógio, começando ao meio-dia: topo (12h), direita (3h), base (6h) e esquerda (9h). Quando faltam valores, o lado oposto copia o que foi dado: com dois valores, 12h vale para 6h e 3h vale para 9h.
 
 ### Margin collapse (colapso de margens)
 
 Este é o comportamento que mais surpreende. Quando o `margin-bottom` de um bloco encontra o `margin-top` do seguinte, o navegador não soma: fica com a maior. No exemplo, 20 px e 30 px dão 30 px de espaço, e não 50 px. A lógica é evitar espaços gigantes quando elementos comuns, como parágrafos e títulos, se encostam. Se você precisa que o espaço seja exatamente a soma, use `padding` ou Flexbox, em que o colapso não acontece.
+
+![Duas margens verticais vizinhas: vale a maior.](../img/st-margin-colapso.svg)
+
+> 💡 **Analogia:** é como duas pessoas respeitando a distância na fila do banco: o que vale é o maior afastamento pedido por um dos dois, e não a soma.
 
 As margens **verticais** de dois blocos vizinhos não se somam: prevalece a **maior**.
 
@@ -72,7 +76,7 @@ Para ver uma borda, você precisa dos três ingredientes: largura, estilo e cor.
 
 A borda tem três partes: **largura**, **estilo** e **cor**. O estilo é obrigatório; sem ele a borda não aparece.
 
-![Os oito estilos de borda.](../img/border-styles-2.svg)
+![Os oito estilos de borda.](../img/border-styles.svg)
 
 > 💡 **Analogia:** os estilos de borda são como molduras de quadro. A `solid` é a moldura lisa e firme, a `dashed` é um tracejado, como um recorte que se marca com régua, e a `dotted` são pontinhos, como uma linha de costura.
 

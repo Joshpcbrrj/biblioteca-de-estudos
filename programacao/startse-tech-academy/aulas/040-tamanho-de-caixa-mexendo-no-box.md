@@ -8,6 +8,8 @@ Para posicionar e alinhar elementos, é preciso saber o tamanho real de cada cai
 
 ## Como o navegador calcula o tamanho de uma caixa
 
+Toda caixa tem quatro camadas, de dentro para fora: o conteúdo, o `padding` (espaço interno), a borda e a `margin` (espaço externo). A pegadinha está no que a propriedade `width` mede. Por padrão, ela mede **só o conteúdo**, e o `padding` e a borda são somados por fora. Uma caixa com `width: 200px`, `padding: 20px` e borda de `5px` acaba ocupando 200 + 40 + 10 = **250px** na tela. Por isso layouts "estouram" a largura do contêiner sem ninguém ter pedido: a conta que o navegador faz não é a que o desenvolvedor imaginou.
+
 Por padrão, `width` e `height` valem **só para o conteúdo**. O padding e a borda são **somados** por fora:
 
 - Largura final = `width` + padding esquerdo + padding direito + borda esquerda + borda direita
@@ -28,7 +30,7 @@ A margem fica de fora: ela afasta a caixa dos vizinhos, mas não faz parte do ta
 
 ## A propriedade `box-sizing`
 
-![Mesmo CSS, resultados diferentes: 342px em content-box e 300px em border-box.](../img/box-sizing-2.svg)
+![Mesmo CSS, resultados diferentes: 342px em content-box e 300px em border-box.](../img/box-sizing.svg)
 
 > 💡 **Analogia:** pense numa mala de viagem. Em `content-box`, o tamanho informado é só o espaço interno, e as rodinhas e o estofamento (padding e borda) aumentam a mala por fora; ela pode não caber no bagageiro. Em `border-box`, o tamanho informado é a mala por fora, já com tudo: ela sempre cabe, e é o espaço interno que fica menor.
 
@@ -51,6 +53,8 @@ O `width` é a caixa **inteira**, incluindo padding e borda. O conteúdo encolhe
 > 💡 Exemplo clássico do problema: duas colunas com `width: 50%` e `padding: 20px` **não cabem lado a lado** em `content-box` (passam de 100%). Em `border-box`, cabem.
 
 ## Projeto de exemplo
+
+O projeto a seguir coloca lado a lado duas caixas com as mesmas medidas, uma em `content-box` e outra em `border-box`, para você **ver** a diferença em vez de só ler sobre ela. Repare que o código das duas é idêntico; o único ponto que muda é o valor de `box-sizing`. Ao abrir no navegador, use a ferramenta de inspeção (F12) e passe o mouse sobre cada caixa: o painel mostra as camadas coloridas e o tamanho total. Esse hábito de inspecionar a caixa é o jeito mais rápido de descobrir por que um elemento está maior ou menor do que o esperado.
 
 **Código revisado**
 

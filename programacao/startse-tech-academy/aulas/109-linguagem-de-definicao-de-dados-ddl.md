@@ -10,7 +10,7 @@ Com as tabelas normalizadas no papel, é hora de criá-las no banco e saber alte
 
 Um banco de dados só guarda informação depois que alguém decidiu o formato dela: que tabelas existem, que colunas cada uma tem e que tipo de valor cabe em cada coluna. Essa decisão é feita com a DDL, e costuma ser feita poucas vezes, no começo do projeto e a cada mudança importante. Já guardar e consultar registros acontece milhares de vezes por dia. Por isso a DDL é rara, mas pesada: errar um `DROP` custa muito mais que errar um `INSERT`.
 
-![DDL mexe na estrutura; DML, nos dados](../img/st-ddl-2.svg)
+![DDL mexe na estrutura; DML, nos dados](../img/st-ddl.svg)
 
 > 💡 **Analogia:** pense numa estante de livros. A DDL cuida da **estante**: montar (`CREATE`), pôr ou tirar prateleiras (`ALTER`) e jogar a estante fora (`DROP`). A DML cuida dos **livros**: guardar, trocar e tirar alguns escolhidos (`DELETE ... WHERE`). O `TRUNCATE` fica no meio: esvazia todas as prateleiras de uma vez, mas a estante continua lá.
 

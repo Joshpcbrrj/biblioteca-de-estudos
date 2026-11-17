@@ -57,6 +57,8 @@ O HTML5 trouxe tags com **significado** (*semânticas*). Elas se comportam como 
 
 ## Elementos de bloco × em linha
 
+Antes de pensar em layout, vale entender uma divisão básica do HTML: alguns elementos ocupam a linha inteira e empurram o próximo para baixo (blocos), e outros ficam dentro do texto, ao lado das palavras (em linha). Isso explica situações comuns: por que dois parágrafos nunca ficam lado a lado sem CSS, e por que um link no meio de uma frase não quebra a linha. Quase toda dúvida de "por que não consigo mudar a largura disso?" tem resposta aqui.
+
 Todo elemento tem um comportamento padrão de exibição (a propriedade `display` do CSS):
 
 ![Blocos empilham um embaixo do outro; elementos inline ficam lado a lado no texto.](../img/block-inline.svg)
@@ -64,6 +66,8 @@ Todo elemento tem um comportamento padrão de exibição (a propriedade `display
 > 💡 **Analogia:** elementos de bloco são como tijolos numa parede: cada um ocupa a fiada inteira e o próximo vai para baixo. Elementos em linha são como palavras numa frase: ficam lado a lado e só quebram quando a linha acaba.
 
 ### Bloco (`display: block`)
+
+Os blocos formam a estrutura da página, como os tijolos de uma parede. Cada `div`, parágrafo ou título ocupa uma fiada inteira, mesmo que o conteúdo seja curto. Por isso a borda de uma `div` com uma palavra só vai de uma ponta a outra da página, como o exemplo abaixo deixa visível. Como o bloco é uma caixa completa, você pode definir largura, altura e espaçamentos em todos os lados.
 
 - Começa em uma **nova linha** e ocupa **toda a largura** disponível.
 - Aceita `width`, `height`, `margin` e `padding` em todas as direções.
@@ -82,6 +86,8 @@ Todo elemento tem um comportamento padrão de exibição (a propriedade `display
 ```
 
 ### Em linha (`display: inline`)
+
+Os elementos em linha acompanham o texto, como as palavras destacadas numa frase. A borda do `span` do exemplo abraça só a palavra, e o parágrafo continua em uma linha contínua. A consequência prática é a limitação: `width` e `height` são ignorados. Se você escreve `span { width: 200px; }` e nada acontece, o motivo é esse, e a solução é mudar o `display` do elemento.
 
 - Fica **no fluxo do texto**, ao lado de outros elementos.
 - Ocupa só o espaço do conteúdo. `width` e `height` **não** funcionam, e `margin`/`padding` verticais não empurram as linhas vizinhas.

@@ -8,11 +8,13 @@ A especificidade decide entre regras que miram o mesmo elemento. A herança é o
 
 ## O que é herança?
 
+Imagine ter que repetir `font-family` e `color` em cada parágrafo, título e item de lista. O CSS evita isso: você declara a fonte uma vez, no `body`, e tudo o que está dentro dele a recebe. Mudar a fonte do site inteiro vira trocar uma linha. A herança é o motivo de o CSS ser curto na prática, e de você quase nunca declarar fonte e cor em cada elemento.
+
 **Herança é quando um elemento filho recebe automaticamente o valor de uma propriedade do pai, sem precisar declarar de novo.** Por exemplo: defina `font-family` no `body` e todo o texto da página passa a usar essa fonte.
 
 **Nem toda propriedade é herdada.** A regra geral é que as propriedades de **texto** herdam e as de **caixa** (tamanho, espaçamento, borda, fundo) não herdam.
 
-![A cor desce para os filhos; a borda não. O link mantém a cor que o navegador dá a ele.](../img/css-heranca-2.svg)
+![A cor desce para os filhos; a borda não. O link mantém a cor que o navegador dá a ele.](../img/css-heranca.svg)
 
 > 💡 **Analogia:** a herança do CSS é como a de uma família. Os filhos herdam o sotaque e o sobrenome (cor, fonte, alinhamento), mas não herdam a altura nem a casa dos pais (tamanho, margem, borda, fundo). E se a escola dá um uniforme ao filho (o estilo do navegador), ele usa o uniforme, e não a roupa que vem de casa.
 
@@ -32,6 +34,8 @@ ul { list-style: square; }
 
 ### Cuidado: o estilo padrão do navegador interrompe a herança
 
+A pergunta "por que meu link não ficou da cor do texto?" tem sempre a mesma resposta: o navegador já tem uma regra própria para ele, e uma regra direta no elemento vence o que ele poderia herdar. O mesmo explica o título `h1` ficar com 32 px num `body` de 16 px: o navegador manda `2em`, que significa duas vezes o tamanho herdado. Quando você quer que um elemento "obedeça" ao pai, a ferramenta é o `inherit`, da próxima seção.
+
 O navegador já aplica estilos em alguns elementos, e eles **vencem a herança**:
 
 - `<a>` tem cor azul própria, então não herda o `color` do pai;
@@ -48,6 +52,8 @@ body { font-size: 16px; }
 > ⚠️ O `<h1>` não herda os 16px direto: o navegador define `h1 { font-size: 2em }`, então ele fica com o **dobro** (32px). Só herda os 16px se você definir `h1 { font-size: inherit; }`.
 
 ## Controlando a herança: palavras-chave globais
+
+As quatro palavras servem para responder a quatro perguntas diferentes. **"Quero o valor do meu pai"**: `inherit`. **"Quero o valor de fábrica do CSS"**: `initial`. **"Quero o comportamento natural da propriedade"**: `unset`. **"Quero o estilo do navegador, como se eu não tivesse mexido"**: `revert`. No dia a dia, o `inherit` resolve quase tudo, como em `button { font: inherit; }`, que faz o botão usar a fonte da página.
 
 Elas funcionam em **qualquer** propriedade:
 

@@ -35,9 +35,11 @@ Use `const` por padrão, `let` quando precisar reatribuir e evite `var`.
 
 ## Closure: a função que lembra
 
+Uma função consegue enxergar as variáveis do lugar onde foi **criada**, e é isso o que se chama de closure. O ponto que surpreende: ela continua enxergando essas variáveis **mesmo depois** que a função externa já terminou de executar. Por isso uma função pode guardar um estado privado, como um contador cujo valor não pode ser alterado de fora, só pelas funções que o enxergam. As closures estão por trás de muita coisa do dia a dia: callbacks de eventos que usam dados do contexto em que foram criados, funções que “geram” outras funções e módulos que escondem detalhes internos.
+
 **Uma closure é uma função que continua tendo acesso às variáveis do lugar onde foi criada**, mesmo depois que esse lugar terminou de executar.
 
-![A variável total sobrevive dentro da closure e fica inacessível de fora.](../img/closure-2.svg)
+![A variável total sobrevive dentro da closure e fica inacessível de fora.](../img/closure.svg)
 
 > 💡 **Analogia:** uma closure é como uma mochila que a função leva ao sair de casa. Dentro dela vão as variáveis do lugar onde a função nasceu. Mesmo depois que a "casa" (a função de fora) fechou, a função ainda abre a mochila e usa o que está lá; e ninguém de fora consegue mexer no conteúdo.
 
@@ -86,6 +88,8 @@ for (let j = 0; j < 3; j++) {
 Com `var`, existe **um** `i` compartilhado, que já vale 3 quando os callbacks rodam; com `let`, cada volta do laço tem o seu.
 
 ## `this`: depende de como a função é chamada
+
+A palavra `this` é uma das mais confusas do JavaScript, porque o seu valor **não depende de onde a função foi escrita, e sim de como ela é chamada**. Quando você chama um método (`pessoa.falar()`), o `this` é o objeto à esquerda do ponto, no caso `pessoa`. Quando você pega a função e a chama solta (`const f = pessoa.falar; f()`), esse vínculo se perde, e o `this` deixa de ser a pessoa. O mesmo acontece quando o método é passado como callback. Duas formas de resolver: `bind`, que fixa o `this` de antemão, ou uma arrow function, que não tem `this` próprio e usa o do lugar onde foi criada.
 
 Em uma função comum, `this` **não é definido onde a função foi escrita, e sim no momento da chamada**:
 

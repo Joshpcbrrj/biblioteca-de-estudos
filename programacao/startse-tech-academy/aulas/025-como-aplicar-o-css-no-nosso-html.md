@@ -8,7 +8,7 @@ A aula anterior mostrou como uma regra CSS é escrita. Agora, onde ela mora: den
 
 ## Três formas de usar o CSS
 
-![Externo, interno e inline, e como o navegador desempata os conflitos.](../img/css-cascata-2.svg)
+![Externo, interno e inline, e como o navegador desempata os conflitos.](../img/css-cascata.svg)
 
 > 💡 **Analogia:** pense num uniforme escolar. O CSS externo é o regulamento da escola, que vale para todas as turmas; o interno é uma regra combinada só naquela sala; o inline é um bilhete preso na mochila de um único aluno. Quanto mais perto do aluno, mais força a regra tem, mas manter bilhetes em cada mochila dá muito trabalho.
 
@@ -63,6 +63,8 @@ Vantagens do CSS externo:
 
 ## Quem vence quando há conflito?
 
+Quando duas regras CSS tentam mandar na mesma propriedade, o navegador não escolhe ao acaso: ele segue uma ordem de prioridade. Primeiro vem a **origem**: o estilo escrito direto no elemento (`style=""`) vence o de um arquivo. Depois vem a **especificidade**: um seletor de id (`#menu`) vale mais que um de classe (`.menu`), que vale mais que um de tag (`nav`). Se ainda houver empate, vence a regra que aparece **por último** no código. Por isso a ordem dos `<link>` importa. Evite resolver conflitos com `!important`: ele funciona, mas cada uso obriga o próximo, e o CSS vira uma disputa difícil de manter.
+
 1. `!important` vence declarações normais. Use só em último caso.
 2. **Especificidade**: estilo inline > `#id` > `.classe` / `[atributo]` / `:pseudo-classe` > `elemento`.
 3. **Ordem**: com a mesma especificidade, vence a regra que aparece **por último**.
@@ -70,6 +72,8 @@ Vantagens do CSS externo:
 > ⚠️ Entre o CSS **interno** e o **externo** não existe prioridade fixa: vale a **ordem**. Se o `<link>` vier depois do `<style>`, o arquivo externo vence. E um comentário `<!-- ... -->` dentro de `<style>` **quebra o CSS**: lá dentro, comente com `/* ... */`.
 
 ## Reset e normalize
+
+Cada navegador vem com uma folha de estilo padrão, e os padrões não são idênticos: margens do `<body>`, tamanhos de títulos e espaçamento de listas variam um pouco entre Chrome, Firefox e Safari. Para partir de uma base igual, usa-se um **reset**, que zera essas diferenças (margens, preenchimentos e estilos de lista) para você construir tudo do zero, ou um **normalize**, que mantém os padrões úteis e só corrige as inconsistências. Hoje, a maioria dos projetos usa um reset pequeno, como o que aparece abaixo: `box-sizing: border-box` em tudo e margem zero. São poucas linhas que evitam horas de ajustes.
 
 Cada navegador aplica estilos padrão (*user agent stylesheet*): margens no `<body>`, tamanhos de `<h1>`, marcadores de lista... Isso causa pequenas diferenças entre navegadores. Há duas abordagens:
 

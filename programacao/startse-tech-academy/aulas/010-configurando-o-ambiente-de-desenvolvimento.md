@@ -8,7 +8,9 @@ Você já sabe que o código passa por um compilador ou interpretador. No desenv
 
 ## O kit básico
 
-![O kit básico e a organização de um projeto](../img/st-ambiente-2.svg)
+Antes de escrever a primeira linha, você precisa de três ferramentas, e cada uma tem um papel claro. O **editor de código** (VS Code) é onde você escreve, com realce de cores, sugestões e correção de erros. O **Node.js** permite executar JavaScript fora do navegador, no seu computador. O **Git** guarda o histórico do seu projeto e permite voltar atrás quando algo quebra. Instale as três uma vez e confira, no terminal, se cada uma responde ao comando de versão. Dedicar meia hora a isso agora evita horas de frustração depois, quando o erro não for do seu código, e sim do ambiente.
+
+![O kit básico e a organização de um projeto](../img/st-ambiente.svg)
 
 > 💡 **Analogia:** é a caixa de ferramentas de um marceneiro. O VS Code é a bancada onde se trabalha, o navegador é o espelho para ver o resultado, o Git é o caderno que anota cada mudança e o Node é a máquina que faz o JavaScript funcionar fora do navegador.
 
@@ -56,6 +58,8 @@ Se algum comando não for reconhecido, feche e abra o terminal de novo. No Windo
 | `!` e `Tab` | `!` e `Tab` | esqueleto HTML (Emmet) |
 
 ## DevTools do navegador
+
+Todo navegador moderno traz, escondido no atalho F12, um conjunto de ferramentas para quem desenvolve para a web. A aba **Elements** mostra o HTML e o CSS da página e permite editar na hora para testar ideias. A aba **Console** exibe os erros de JavaScript e os resultados de `console.log`. A aba **Network** lista cada arquivo que o navegador baixou, com tempo e status, ótima para descobrir por que algo não carrega. Quando uma página não se comporta como você esperava, a primeira atitude de quem programa é abrir o DevTools e olhar o Console.
 
 Abra com `F12` ou clique direito → **Inspecionar**.
 

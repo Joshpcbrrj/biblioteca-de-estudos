@@ -10,7 +10,7 @@ O `display` decide o tipo de caixa, mas a caixa continua no fluxo normal, uma de
 
 Controla **como** um elemento é posicionado e **em relação a quê** as propriedades `top`, `right`, `bottom` e `left` funcionam.
 
-![static, relative, absolute, fixed e sticky.](../img/position-tipos-2.svg)
+![static, relative, absolute, fixed e sticky.](../img/position-tipos.svg)
 
 > 💡 **Analogia:** imagine pessoas numa fila. `static` é ficar no seu lugar; `relative` é dar um passo para o lado sem perder o lugar na fila; `absolute` é sair da fila e ficar num ponto exato da sala onde está o "responsável" (o pai posicionado); `fixed` é um aviso colado no vidro da janela, que não se move quando a sala gira; `sticky` é andar com a fila até encostar na parede e parar ali.
 
@@ -80,6 +80,8 @@ Comporta-se como `relative` até a rolagem atingir o limite definido; a partir d
 
 ## Comparando
 
+Com cinco valores de `position`, a dúvida mais comum é saber **em relação a quê** cada um se posiciona e se o elemento continua ocupando espaço no fluxo. Resumindo: `static` não aceita deslocamento. `relative` se desloca a partir da própria posição original e **mantém** o espaço que ocupava. `absolute` sai do fluxo e se posiciona em relação ao ancestral mais próximo que tenha `position` diferente de `static`; sem ancestral assim, usa a página. `fixed` sai do fluxo e fica preso à janela. `sticky` se comporta como `relative` até chegar a um limite e, então, “gruda”. O truque mais usado: `relative` no pai e `absolute` no filho, para posicionar algo dentro de um cartão.
+
 | Valor | Sai do fluxo? | Referência de `top`/`left` |
 | --- | --- | --- |
 | `static` | não | (ignora) |
@@ -89,6 +91,8 @@ Comporta-se como `relative` até a rolagem atingir o limite definido; a partir d
 | `sticky` | não | a janela, ao atingir o limite |
 
 ## `overflow`: rolagem dentro de um elemento
+
+Quando o conteúdo é maior que a caixa, o `overflow` decide o que fazer com a sobra, e já vimos que a escolha mais usada para áreas roláveis é `auto`, que só mostra a barra quando precisa. Esse recurso se une ao posicionamento em um caso clássico: uma lista de mensagens com altura fixa (`height: 300px`) e `overflow-y: auto`, em que o cabeçalho usa `position: sticky` para ficar visível enquanto o conteúdo rola por baixo. Repare que o `overflow` só funciona quando o elemento tem altura ou largura limitada; sem limite, a caixa simplesmente cresce para acomodar o conteúdo.
 
 Quando o conteúdo é maior que a caixa, `overflow` decide o que fazer: `visible` (vaza, o padrão), `hidden` (corta), `scroll` (barras sempre) ou `auto` (barras só quando precisa). Use `overflow-x` e `overflow-y` para cada eixo. Mais detalhes na aula "Ordem de pilha de elementos".
 

@@ -51,6 +51,8 @@ print("Hello, World!")
 
 ## Alto nível × baixo nível
 
+O “nível” mede a **distância entre a linguagem e a máquina**. Linguagens de baixo nível (assembly) ficam perto do hardware: você controla cada detalhe da memória e do processador, ganha desempenho máximo, mas escreve muito código e depende do tipo de computador. As de alto nível (Python, JavaScript, Java) ficam perto da linguagem humana: um `print("Oi")` esconde dezenas de operações internas, o código é mais curto, mais legível e roda em vários sistemas. Para a maioria dos projetos de software, a produtividade do alto nível vale mais do que o desempenho extra do baixo nível.
+
 |  | Baixo nível (Assembly, C) | Alto nível (Python, JS, Java) |
 | --- | --- | --- |
 | Desempenho | máximo, com controle total do hardware | bom; perde um pouco para abstrações |
@@ -61,6 +63,8 @@ print("Hello, World!")
 | Usos típicos | sistemas operacionais, drivers, embarcados | web, APIs, automação, dados, apps |
 
 ## Compiladores × interpretadores
+
+O computador só executa código de máquina, então toda linguagem precisa ser traduzida de algum jeito, e existem duas estratégias. O **compilador** traduz o programa **inteiro** de uma vez, antes da execução, e gera um arquivo executável: a execução fica rápida, e os erros de sintaxe aparecem antes de rodar. O **interpretador** lê e executa o programa **linha por linha**, na hora: não há etapa de compilação, o que facilita testar e corrigir, mas costuma ser mais lento. Pense em um livro estrangeiro: o compilador é a tradução completa publicada de uma vez; o interpretador é o intérprete que traduz a fala em tempo real.
 
 ![Compilação antecipada, interpretação em tempo real e o modelo híbrido com bytecode e JIT.](../img/compila-interpreta.svg)
 

@@ -10,7 +10,7 @@ No construtor você validou os dados iniciais. Mas e se alguém alterar um atrib
 
 `get` **e** `set` **criam propriedades que, por fora, parecem atributos comuns, mas, por dentro, executam uma função.** Com eles você valida valores, calcula dados na hora e protege o estado interno.
 
-![Leitura passa pelo get; escrita passa pelo set, que pode recusar o valor.](../img/getter-setter-2.svg)
+![Leitura passa pelo get; escrita passa pelo set, que pode recusar o valor.](../img/getter-setter.svg)
 
 > 💡 **Analogia:** o campo privado é o cofre de um banco; o `get` é o caixa que consulta o saldo para você, e o `set` é o caixa que recebe um depósito e confere se a nota é verdadeira antes de guardar. Você nunca entra no cofre: tudo passa pelo balcão, que pode recusar o que não estiver certo.
 
@@ -70,6 +70,8 @@ O exemplo original usava `this._nome`. O sublinhado é só uma **convenção** (
 
 ## Propriedades calculadas
 
+Um getter também serve para **derivar** informação em vez de guardá-la. Se você armazenar `largura`, `altura` e `area` como três campos, precisa lembrar de atualizar a área toda vez que as outras duas mudarem, e um dia vai esquecer. Com `get area()`, o valor é calculado no momento da leitura e nunca fica desatualizado. Quem usa a classe escreve `ret.area`, sem parênteses, como se fosse um atributo, e não precisa saber que existe uma conta por trás. Boas candidatas a propriedade calculada: nome completo (nome + sobrenome), total do carrinho, idade a partir da data de nascimento.
+
 Um getter não precisa ter um campo correspondente: ele pode **calcular** o valor.
 
 ```jsx
@@ -108,6 +110,8 @@ c.saldo;  // 100
 ```
 
 ## Cuidados
+
+Getters e setters escondem uma função atrás de uma aparência simples, e por isso exigem disciplina. A regra de ouro é a **previsibilidade**: ler uma propriedade não deve ter surpresas como gravar em disco, chamar uma API ou demorar segundos. Se a operação é pesada ou tem efeito colateral, use um método com verbo no nome (`salvar()`, `carregar()`), que deixa claro que algo está acontecendo. E lembre-se de que o setter é o lugar certo para **recusar** valores inválidos: lançar um erro com mensagem clara é melhor do que aceitar o dado e quebrar lá na frente.
 
 - O getter e o campo **não podem ter o mesmo nome** sem `#` ou `_`: `get nome() { return this.nome; }` chama a si mesmo infinitamente (*stack overflow*).
 - Getters devem ser **rápidos e sem efeitos colaterais**. Quem lê `obj.total` não espera que isso grave algo no banco.

@@ -24,7 +24,7 @@ const produtos = [
 ];
 ```
 
-![map transforma, filter seleciona e reduce resume.](../img/map-filter-reduce-2.svg)
+![map transforma, filter seleciona e reduce resume.](../img/map-filter-reduce.svg)
 
 > 💡 **Analogia:** pense numa linha de produção de frutas. O `map` é a máquina que descasca cada fruta (todas saem, só que transformadas); o `filter` é a peneira que deixa passar só as maduras; o `reduce` é o liquidificador no fim da esteira, que junta tudo num único suco.
 

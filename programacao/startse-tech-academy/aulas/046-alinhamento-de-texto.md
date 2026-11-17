@@ -12,7 +12,7 @@ Todo texto precisa estar em algum lugar dentro da caixa. Em português, o normal
 
 Alinha o **conteúdo em linha** (texto, imagens, links) dentro de um elemento de bloco.
 
-![Os quatro valores principais.](../img/text-align-2.svg)
+![Os quatro valores principais.](../img/text-align.svg)
 
 > 💡 **Analogia:** é o mesmo botão de alinhamento de um editor de texto como o Word: esquerda, centro, direita e justificado. Ele mexe nas palavras dentro da folha, não na folha em cima da mesa; para mover a "folha" (a caixa), usa-se margem, Flexbox ou Grid.
 

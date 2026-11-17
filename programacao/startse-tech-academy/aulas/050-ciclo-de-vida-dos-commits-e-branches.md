@@ -15,7 +15,7 @@ Para o Git, todo arquivo do projeto está em um destes estados:
 3. **Unmodified (não modificado)**: arquivo rastreado e idêntico ao último commit.
 4. **Modified (modificado)**: arquivo rastreado que foi alterado desde o último commit, mas ainda não foi preparado.
 
-![Os comandos que movem um arquivo entre os estados.](../img/ciclo-estados-2.svg)
+![Os comandos que movem um arquivo entre os estados.](../img/ciclo-estados.svg)
 
 > 💡 **Analogia:** a staging area é como o balcão dos Correios. Você edita várias cartas na sua mesa (modified), escolhe quais vão no próximo envio e as coloca no balcão (`git add`, staged), e só então o atendente sela o pacote (`git commit`). O que ficou na mesa vai num envio futuro.
 
@@ -30,9 +30,11 @@ git status -s
 
 ## Branches
 
+Uma **branch** (ramo) é uma linha paralela de desenvolvimento: você cria uma cópia lógica do projeto, trabalha nela com liberdade e, quando estiver pronto, une de volta à linha principal (`main`). O motivo é a segurança: a `main` continua sempre estável e funcionando, enquanto você experimenta uma nova funcionalidade ou corrige um bug no seu ramo. Se o experimento der errado, basta descartar a branch. E várias pessoas podem trabalhar ao mesmo tempo, cada uma na sua, sem pisar no trabalho da outra. Criar uma branch no Git é quase instantâneo e não duplica arquivos, então o hábito recomendado é criar uma nova para cada tarefa.
+
 **Uma branch é uma linha de desenvolvimento independente.** Você cria uma branch para desenvolver uma funcionalidade ou corrigir um bug sem mexer na `main`, que deve ficar sempre estável. Quando o trabalho fica pronto, a branch é integrada de volta com `merge`.
 
-![A feature nasce de C2 e evolui separada da main.](../img/branch-conceito-2.svg)
+![A feature nasce de C2 e evolui separada da main.](../img/branch-conceito.svg)
 
 > 💡 **Analogia:** uma branch é como um marcador de página. Ele aponta para um ponto do livro, e mover o marcador não copia o texto. Você pode criar outro marcador no mesmo ponto e seguir por outro caminho sem mexer no original.
 
@@ -46,6 +48,8 @@ Por baixo dos panos, uma branch é só um **ponteiro leve para um commit**. Cria
 - **Branches remotas** (`origin/main`): a posição das branches no servidor, como GitHub ou GitLab.
 
 ## Principais comandos
+
+Os comandos a seguir formam o dia a dia com ramos. `git branch` lista os ramos e mostra em qual você está. `git switch -c nova-feature` cria um ramo e já troca para ele; `git switch main` volta para a principal. `git merge nome-do-ramo`, executado estando na `main`, traz as mudanças do outro ramo. Se as duas linhas alteraram o mesmo trecho do mesmo arquivo, acontece um **conflito de merge**: o Git marca os dois trechos no arquivo e pede que você escolha o que fica. Não é um erro, e sim uma pergunta que o Git não consegue responder sozinho. Resolva, salve, faça `git add` e conclua com um commit.
 
 ```bash
 # lista as branches (* marca a atual)

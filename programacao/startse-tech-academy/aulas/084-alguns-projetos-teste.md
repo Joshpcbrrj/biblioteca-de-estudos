@@ -12,7 +12,7 @@ Você estudou semântica, Flexbox, Grid e Bootstrap. Agora vamos aplicar. Tente 
 
 Uma página com cabeçalho, menu, dois artigos (cada um com autor, texto e figura), barra lateral de links e rodapé com contato.
 
-![Cada bloco da página com a tag que o representa.](../img/projeto-semantico-2.svg)
+![Cada bloco da página com a tag que o representa.](../img/projeto-semantico.svg)
 
 > 💡 **Analogia:** estes três projetos são como os treinos de uma autoescola: primeiro você aprende onde fica cada peça do carro (as tags semânticas), depois a fazer curvas numa direção (Flexbox) e por fim a estacionar numa vaga marcada no chão (Grid). Tente dirigir sozinho antes de olhar o código.
 

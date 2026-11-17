@@ -12,7 +12,9 @@ Um simulador de financiamento pelo **Sistema de Amortização Constante (SAC)**,
 
 ## Como funciona o SAC
 
-![A amortização é fixa; os juros incidem sobre o saldo, que diminui todo mês.](../img/sac-2.svg)
+O SAC (Sistema de Amortização Constante) é um jeito de pagar um financiamento em que a **parte que abate a dívida é igual todo mês**. Você divide o valor financiado pelo número de parcelas e obtém a amortização fixa. Os **juros**, porém, são calculados sobre o saldo devedor que ainda resta; como o saldo cai a cada mês, os juros também caem. A parcela é a soma dos dois, então ela **começa mais alta e diminui** ao longo do tempo. Na tabela Price, a alternativa mais comum, a parcela é constante, mas o total pago de juros costuma ser maior. Entender essa lógica antes de programar é essencial: o código do simulador só reproduz, linha por linha, a conta que você faria à mão.
+
+![A amortização é fixa; os juros incidem sobre o saldo, que diminui todo mês.](../img/sac.svg)
 
 > 💡 **Analogia:** imagine uma pizza de 12 fatias que você deve ao banco. No SAC, você devolve sempre **uma fatia por mês** (a amortização), mais um "aluguel" proporcional às fatias que ainda estão com você (os juros). Como a pilha de fatias diminui, o aluguel cai, e cada parcela fica menor que a anterior.
 
@@ -302,6 +304,8 @@ form.addEventListener("submit", (event) => {
 > - O CSS usava classes (`.container`, `.form-group`, `.table`) que **não existiam no HTML**, por isso o visual não era aplicado. O HTML foi reestruturado com essas classes e com `<label>` nos campos.
 
 ## Desafio extra
+
+Depois de ter o simulador funcionando, a melhor forma de fixar o aprendizado é estendê-lo por conta própria. Um bom caminho é acrescentar a **tabela Price** ao lado do SAC e mostrar o total de juros de cada sistema, para o usuário comparar. Outro é validar os campos do formulário (valor positivo, prazo inteiro, juros não negativos) e mostrar uma mensagem clara em vez de resultados estranhos. Você também pode formatar os valores como moeda com `toLocaleString("pt-BR", { style: "currency", currency: "BRL" })`. Escolha uma melhoria por vez, teste e só então parta para a próxima.
 
 Acrescente ao simulador uma opção para escolher o sistema **Price** (parcelas iguais). Na Price, a parcela fixa é `P = financiado × i / (1 − (1 + i)^−n)`; os juros de cada mês continuam sendo saldo × taxa, e a amortização é a diferença `P − juros`.
 

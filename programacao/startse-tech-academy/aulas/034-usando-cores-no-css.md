@@ -8,9 +8,11 @@ Bordas e fundos da aula anterior usavam cores como `black` e `#d1d5db`. Aqui voc
 
 ## Formas de escrever cor
 
+O CSS aceita a mesma cor escrita de várias maneiras, e a escolha depende do que você quer fazer. **Palavras-chave** (`tomato`) são fáceis de ler, mas limitadas. **Hexadecimal** (`#ff6347`) é o formato mais comum, copiado direto de ferramentas de design. **RGB** (`rgb(255, 99, 71)`) descreve a mistura de vermelho, verde e azul de 0 a 255. **HSL** (`hsl(9, 100%, 64%)`) descreve matiz, saturação e luminosidade, e é o mais intuitivo para ajustar: para escurecer, basta diminuir a luminosidade. Todos produzem exatamente a mesma cor na tela; o que muda é a facilidade de escrever, ler e variar.
+
 Todas as formas abaixo produzem **o mesmo vermelho**:
 
-![Palavra-chave, hexadecimal, RGB e HSL, com e sem transparência.](../img/cores-2.svg)
+![Palavra-chave, hexadecimal, RGB e HSL, com e sem transparência.](../img/cores.svg)
 
 > 💡 **Analogia:** o RGB é como misturar três lanternas coloridas (vermelha, verde e azul) numa parede escura: cada uma com brilho de 0 a 255, e as três no máximo dão branco. O HSL é como escolher tinta numa loja: primeiro a cor no mostruário circular (matiz), depois o quanto ela é viva (saturação) e por fim o quanto de branco ou preto entra (luminosidade).
 
@@ -63,6 +65,8 @@ Descreve a cor de um jeito mais humano:
 > 💡 **Por que o HSL é útil:** para criar variações de uma mesma cor, basta mexer na luminosidade. `hsl(220 90% 50%)` é o botão, `hsl(220 90% 40%)` o *hover* e `hsl(220 90% 95%)` o fundo suave. Com hexadecimal, você teria de calcular cada código.
 
 ## Transparência: `rgba` × `opacity`
+
+As duas deixam algo transparente, mas atuam em alvos diferentes, e confundi-las é um erro clássico. O alfa do `rgba` (o quarto número) afeta **somente aquela cor**: um fundo `rgba(0, 0, 0, 0.5)` fica meio transparente, e o texto dentro continua totalmente nítido. Já `opacity: 0.5` afeta o **elemento inteiro**, com fundo, borda, texto e filhos, deixando tudo apagado. Se você quer um cartão com fundo translúcido e texto legível, use `rgba` no `background`; use `opacity` só quando quiser mesmo que o elemento todo desbote, como em um botão desativado.
 
 ```css
 /* só o FUNDO fica translúcido */

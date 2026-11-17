@@ -12,7 +12,7 @@ Pense numa transferência de R$ 100 entre duas contas. Por baixo são dois coman
 
 **Uma transação agrupa vários comandos em uma unidade: ou todos são gravados, ou nenhum é.** O exemplo clássico é uma transferência bancária: tirar o dinheiro de uma conta e colocar na outra precisa acontecer **junto**. Se o sistema cair no meio, o dinheiro não pode sumir.
 
-![COMMIT confirma tudo; ROLLBACK desfaz tudo.](../img/transacao-2.svg)
+![COMMIT confirma tudo; ROLLBACK desfaz tudo.](../img/transacao.svg)
 
 > 💡 **Analogia:** é o caixa do supermercado. Ele passa todos os produtos (os comandos), mas a compra só vale quando o pagamento é aprovado e a nota sai (`COMMIT`). Se o cartão for recusado, o caixa cancela a compra **inteira** (`ROLLBACK`): você não sai com metade das sacolas. E, depois de a nota sair, a compra está registrada mesmo que falte luz no minuto seguinte (durabilidade).
 

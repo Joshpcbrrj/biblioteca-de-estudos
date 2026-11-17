@@ -10,7 +10,7 @@ Com o Node instalado, você já roda arquivos JavaScript. Para criar uma API, po
 
 **O npm (Node Package Manager) instala bibliotecas feitas por outras pessoas e gerencia as dependências do projeto.** Ele já vem junto com o Node.js.
 
-![O que fica na pasta de um projeto Node.](../img/npm-projeto-2.svg)
+![O que fica na pasta de um projeto Node.](../img/npm-projeto.svg)
 
 > 💡 **Analogia:** o `package.json` é a lista de compras do projeto ("Express, versão 4"); o npm é o supermercado que entrega tudo; a pasta `node_modules` é a despensa cheia; e o `package-lock.json` é a nota fiscal, com a marca e o lote exatos de cada item, para que qualquer pessoa consiga repetir a mesma compra.
 
@@ -24,6 +24,8 @@ npm init -y
 ```
 
 ## Instalando pacotes
+
+O comando `npm install nome-do-pacote` faz três coisas de uma vez: baixa o pacote (e os pacotes de que ele depende) para a pasta `node_modules`, registra o nome e a versão no `package.json` e anota as versões exatas no `package-lock.json`. Você precisa distinguir dois tipos de dependência. As **dependências** normais são necessárias para o programa funcionar em produção, como o Express. As **dependências de desenvolvimento** (`--save-dev` ou `-D`) só ajudam você a construir, como ferramentas de teste e formatação, e não precisam ir para o servidor final.
 
 ```bash
 # dependência do projeto ("dependencies")
@@ -91,6 +93,8 @@ npx create-vite@latest meu-app
 ```
 
 ## Segurança
+
+Cada pacote instalado é código escrito por outra pessoa que vai rodar na sua máquina ou no seu servidor, e os pacotes também trazem os próprios pacotes. Por isso vale cultivar alguns cuidados. Antes de instalar, confira se o pacote é conhecido, tem muitos downloads e manutenção recente, e desconfie de nomes quase iguais aos famosos (*typosquatting*: `expres` no lugar de `express`). Rode `npm audit` de tempos em tempos para ver vulnerabilidades conhecidas nas suas dependências e mantenha o `package-lock.json` no Git, para que todo o time e o servidor usem exatamente as mesmas versões testadas.
 
 - `npm audit` lista vulnerabilidades conhecidas nas dependências; `npm audit fix` tenta corrigir.
 - Antes de instalar um pacote, confira o nome (existem pacotes falsos com nomes parecidos), os downloads semanais e se ele ainda é mantido.

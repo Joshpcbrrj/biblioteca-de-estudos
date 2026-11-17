@@ -77,7 +77,7 @@ Por baixo dos panos, a classe faz **exatamente o que a função construtora com 
 
 Quando você escreve `pessoa1.saudacao()`, o JavaScript segue um roteiro. Primeiro procura `saudacao` no próprio `pessoa1`. Não achou? Sobe para o protótipo dele e procura de novo. Ainda não? Sobe para o protótipo do protótipo, até chegar ao topo. Se não encontrar em lugar nenhum, devolve `undefined`. Esse caminho é a **cadeia de protótipos**, e é ele que faz a herança funcionar: um objeto "herda" o que está acima na cadeia, sem ter uma cópia própria.
 
-![Se a propriedade não está no objeto, o JS sobe pela cadeia de protótipos.](../img/prototipo-2.svg)
+![Se a propriedade não está no objeto, o JS sobe pela cadeia de protótipos.](../img/prototipo.svg)
 
 > 💡 **Analogia:** a cadeia de protótipos é como perguntar algo em família. Você pergunta ao filho; se ele não sabe, ele pergunta ao pai; se o pai não sabe, pergunta ao avô, até alguém responder ou a árvore acabar (`null`). O filho não precisa decorar tudo: ele "herda" o que os antepassados sabem.
 

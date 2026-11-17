@@ -8,13 +8,17 @@ Os exemplos até aqui cabiam num arquivo só. Projetos reais têm dezenas de fun
 
 ## Por que dividir em módulos
 
+Um arquivo com 3 mil linhas é difícil de ler, de testar e de dividir entre pessoas. Além disso, tudo fica no mesmo espaço: duas funções com o mesmo nome se atropelam. Dividir em módulos resolve os dois problemas. Cada arquivo cuida de um assunto, como formatar valores, falar com a API ou desenhar o gráfico, e só mostra para fora o que for preciso. O que não tem `export` fica escondido, e dois módulos podem ter funções com o mesmo nome sem conflito.
+
 **Um módulo é um arquivo JavaScript com escopo próprio que escolhe o que mostrar aos outros arquivos.** O que não for exportado fica privado ao arquivo.
 
-![Só o que tem export pode ser importado por outro arquivo.](../img/modulos-2.svg)
+![Só o que tem export pode ser importado por outro arquivo.](../img/modulos.svg)
 
 > 💡 **Analogia:** cada módulo é como uma loja num shopping. O que fica na vitrine (o `export`) qualquer um pode levar; o estoque nos fundos é só da loja. O `import` é ir até a loja certa (o caminho do arquivo) e pedir exatamente o item que você quer.
 
 ## Export nomeado
+
+O export nomeado é o mais comum e o mais claro. Você escreve `export` antes do que quer compartilhar, e quem importa usa as chaves com o mesmo nome. O nome vira um contrato: se você errar uma letra no import, o navegador reclama na hora, em vez de falhar lá na frente. Dá para renomear na importação (`as`) quando o nome colidir com outro, e importar tudo de uma vez com `* as`, que agrupa as funções num objeto.
 
 ```jsx
 // utils/formatar.js
@@ -60,6 +64,8 @@ Muitos times preferem **só exports nomeados**: o nome fica igual em todo o proj
 
 ## No navegador
 
+O navegador só entende `import` quando o script é declarado como módulo. Sem `type="module"`, você recebe o erro "Cannot use import statement outside a module", o primeiro que quase todo mundo encontra. Outro tropeço comum é abrir o HTML com duplo clique: por segurança, o navegador não carrega módulos de arquivos locais. Use um servidor local, como a extensão Live Server do VS Code, e o erro desaparece.
+
 ```html
 <script type="module" src="js/main.js"></script>
 ```
@@ -71,6 +77,8 @@ Muitos times preferem **só exports nomeados**: o nome fica igual em todo o proj
 > ⚠️ Módulos **não funcionam abrindo o arquivo direto** (`file://`): o navegador bloqueia por CORS. Use a extensão Live Server do VS Code ou outro servidor local.
 
 ## No Node.js
+
+O Node tem uma história: ele nasceu antes dos módulos do JavaScript e criou o seu próprio, o CommonJS (`require` e `module.exports`). Depois adotou o padrão da linguagem, o ES Modules (`import` e `export`). Por isso você vai ver os dois estilos em projetos reais. Para um projeto novo, prefira ES Modules, ativando-os com `"type": "module"` no `package.json`; ao ler código antigo, reconheça o `require` como a forma equivalente.
 
 O Node tem dois sistemas:
 

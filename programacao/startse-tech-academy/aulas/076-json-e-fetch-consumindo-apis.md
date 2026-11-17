@@ -8,6 +8,12 @@ Você já manipula o DOM e trata erros. Falta trazer dados de verdade: produtos 
 
 ## JSON
 
+Quando dois programas precisam trocar informação, como o seu site e o servidor, eles precisam de uma língua comum. O JSON é essa língua: um texto simples que qualquer linguagem consegue ler e escrever. Ele se parece com um objeto do JavaScript, mas é só texto, e por isso pode viajar pela rede e ser guardado em arquivos. As duas funções que você vai usar o tempo todo são `stringify`, que transforma objeto em texto, e `parse`, que faz o caminho inverso.
+
+![O que o JSON aceita e o que ele recusa.](../img/st-json-regras.svg)
+
+> 💡 **Analogia:** o JSON é como um formulário padronizado dos Correios: se qualquer campo fugir do padrão, como uma aspa simples no lugar da dupla, a carta é devolvida.
+
 **JSON (JavaScript Object Notation) é o formato de texto mais usado para trocar dados entre sistemas.** Parece um objeto JavaScript, mas com regras mais rígidas:
 
 ```json
@@ -47,9 +53,11 @@ const salvo = JSON.parse(
 
 ## `fetch`: buscando dados (GET)
 
+O caminho completo de uma busca tem três esperas. Primeiro, o `fetch` envia o pedido e espera a resposta chegar. Depois, você confere se ela veio com sucesso (`resp.ok`). Por fim, `resp.json()` lê o corpo e o converte em objeto, o que também leva um tempo. Cada `await` marca uma dessas esperas. Se você esquecer um deles, vai receber uma Promise em vez dos dados, e a tela mostrará `[object Promise]`, o sinal clássico desse erro.
+
 `fetch` faz uma requisição HTTP e devolve uma **Promise** (um valor que chega depois). Com `await`, o código espera a resposta sem travar a página. Promises e `async/await` são detalhados no módulo de Node.js.
 
-![Cada etapa espera a anterior; resp.ok decide se houve sucesso.](../img/fetch-fluxo-2.svg)
+![Cada etapa espera a anterior; resp.ok decide se houve sucesso.](../img/fetch-fluxo.svg)
 
 > 💡 **Analogia:** o `fetch` é como pedir comida por aplicativo. Você faz o pedido e continua sua vida (a página não trava); quando o entregador chega, você confere se veio o pedido certo (`resp.ok`) antes de abrir a embalagem (`resp.json()`). O JSON é o cardápio padronizado que todo restaurante entende.
 
@@ -68,6 +76,8 @@ async function buscarUsuarios() {
 > ⚠️ `fetch` **só rejeita a Promise em falha de rede**. Uma resposta 404 ou 500 é considerada "sucesso", por isso sempre confira `resp.ok` (true para status 200–299).
 
 ## Enviando dados (POST, PUT, DELETE)
+
+Para enviar, o `fetch` precisa de três informações a mais: o método (`POST` para criar, `PUT` para substituir, `DELETE` para remover), um cabeçalho que avisa que o corpo é JSON, e o corpo em si, convertido com `JSON.stringify`. Sem o cabeçalho `Content-Type`, muitos servidores não entendem o que chegou. O resultado costuma ser o próprio recurso criado, com um `id` novo gerado pelo servidor.
 
 ```jsx
 const resp = await fetch(
@@ -117,6 +127,8 @@ try {
 ```
 
 ## Status HTTP que você vai ver
+
+O código de status é a primeira coisa a olhar quando algo dá errado. Um jeito fácil de memorizar é pelo primeiro dígito: 2 é "deu certo", 3 é "vá para outro lugar", 4 é "o erro foi seu" e 5 é "o erro foi do servidor". Um 404 significa que o endereço está errado, um 401 que falta fazer login e um 500 que o problema está no servidor, não no seu código.
 
 | Faixa | Significa | Exemplos |
 | --- | --- | --- |

@@ -10,11 +10,13 @@ No módulo de JavaScript, o `fetch` usava `await` e "esperava" a resposta sem tr
 
 **O JavaScript executa uma coisa de cada vez (single thread), mas não fica parado esperando operações lentas: ele as delega ao ambiente e continua trabalhando (non-blocking).** Quem coordena isso é o **event loop**.
 
-![Call stack, APIs do ambiente, filas e o event loop.](../img/event-loop-2.svg)
+![Call stack, APIs do ambiente, filas e o event loop.](../img/event-loop.svg)
 
 > 💡 **Analogia:** o JavaScript é um garçom sozinho num restaurante. Ele não fica parado na cozinha esperando o prato ficar pronto: anota o pedido, entrega à cozinha (as APIs do ambiente) e vai atender outra mesa. Quando a cozinha toca a campainha, o prato entra na fila do balcão, e o garçom o leva assim que fica com as mãos livres (o event loop).
 
 ## As peças
+
+Para entender como um único fio de execução dá conta de tantas tarefas, é preciso conhecer quatro peças que trabalham em conjunto. A **pilha de chamadas** (*call stack*) registra a função que está rodando agora e quais estão esperando por ela. As **APIs do ambiente** (temporizadores, rede, eventos do DOM) fazem o trabalho demorado **fora** da pilha. As **filas** guardam os callbacks prontos para rodar, esperando a vez. E o **event loop** é o vigia: quando a pilha está vazia, ele pega o próximo item da fila e o coloca para executar. É esse conjunto que permite pedir algo demorado, seguir em frente e ser avisado depois.
 
 ### 1. Call stack (pilha de chamadas)
 
@@ -66,6 +68,8 @@ Saída:
 Mesmo com `0 ms`, o `setTimeout` roda **por último**: primeiro termina todo o código síncrono, depois as microtasks e só então a próxima tarefa.
 
 ## Formas de fazer operações assíncronas
+
+O JavaScript ofereceu três gerações de ferramentas para lidar com o que demora, cada uma resolvendo um problema da anterior. Os **callbacks** são o modelo original: você passa uma função para ser chamada ao final, mas encadear várias gera a pirâmide de funções aninhadas conhecida como *callback hell*. As **Promises** representam um resultado futuro e permitem encadear etapas com `.then()` e tratar erros com `.catch()`. O **async/await** é a sintaxe mais recente, que deixa o código assíncrono com cara de código sequencial. Todas são a mesma ideia por baixo; hoje, a escolha mais comum em código novo é `async/await`.
 
 - **Callbacks**: passar uma função para ser chamada depois. Muitos aninhados viram o **callback hell**.
 - **Promises** (ES2015): objeto que representa um resultado futuro, com `.then()` e `.catch()`.

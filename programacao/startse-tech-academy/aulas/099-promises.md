@@ -8,9 +8,11 @@ Callbacks aninhados viram uma pirâmide difícil de ler. As Promises resolvem is
 
 ## O que é uma Promise
 
+A ideia é resolver um problema de comunicação. Quando você pede dados à rede, a resposta não chega agora, mas a sua próxima linha de código precisa de um valor para trabalhar. A Promise é esse valor "emprestado": você recebe um objeto que representa a resposta futura e diz o que fazer com ela quando chegar. Se der certo, o código segue; se der errado, outro trecho trata a falha. Tudo sem travar a página enquanto espera.
+
 **Uma Promise é um objeto que representa um valor que ainda não existe, mas vai existir (ou falhar) no futuro.**
 
-![Uma Promise sai de pending uma única vez, para fulfilled ou rejected.](../img/promise-estados-2.svg)
+![Uma Promise sai de pending uma única vez, para fulfilled ou rejected.](../img/promise-estados.svg)
 
 > 💡 **Analogia:** uma Promise é a senha que você recebe numa lanchonete. Na hora do pedido ela está "pendente"; quando o lanche fica pronto, a senha é chamada e cumprida (*fulfilled*); se acabou o pão, ela é rejeitada (*rejected*). Enquanto espera, você pode fazer outras coisas, e uma senha chamada nunca volta a ficar pendente.
 
@@ -23,6 +25,8 @@ Callbacks aninhados viram uma pirâmide difícil de ler. As Promises resolvem is
 Depois de **settled** (cumprida ou rejeitada), a Promise **nunca mais muda** de estado.
 
 ## Criando uma Promise
+
+O construtor recebe uma função com dois botões: `resolve`, que é apertado quando tudo deu certo e entrega o valor, e `reject`, apertado quando falhou e entrega o motivo. Você só aperta um deles, e só uma vez: depois disso a Promise está resolvida e não muda mais. No exemplo, o `setTimeout` simula uma operação lenta, e o sorteio decide o resultado. Em código real, o que fica dentro costuma ser uma consulta ao banco ou uma chamada de rede.
 
 ```jsx
 // resolve: deu certo; reject: deu errado
@@ -54,6 +58,8 @@ minhaPromise
 
 ### Encadeamento
 
+O encadeamento é o que resolve o "callback hell". Em vez de aninhar a próxima etapa dentro da anterior, você a coloca logo abaixo, no próximo `.then`, e o código se lê de cima para baixo. O valor retornado num `then` é entregue ao seguinte. E se qualquer etapa falhar, a execução pula direto para o `.catch` do fim, de modo que um único tratamento de erro cobre a cadeia toda.
+
 Cada `.then()` devolve **uma nova Promise**: o que você retorna nele vira o valor do próximo `then`.
 
 ```jsx
@@ -67,6 +73,8 @@ fetch("https://api.github.com/users/octocat")
 > ⚠️ Esqueceu o `return` dentro de um `then` com chaves? O próximo `then` recebe `undefined`. `then(r => { r.json() })` ❌ · `then(r => r.json())` ✅
 
 ## Várias Promises ao mesmo tempo
+
+Se uma tela precisa de usuários e de produtos, que não dependem um do outro, pedir um depois do outro desperdiça tempo: se cada pedido leva 1 segundo, são 2 segundos. Com `Promise.all`, os dois pedidos saem juntos e a espera total é de cerca de 1 segundo. A escolha entre `all` e `allSettled` é sobre o que fazer quando um pedido falha: `all` desiste de tudo, e `allSettled` espera todos e conta o que deu certo e o que não deu.
 
 ```jsx
 const p1 = fetch("/api/usuarios");

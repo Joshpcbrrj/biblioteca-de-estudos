@@ -29,7 +29,7 @@ A escolha do marcador comunica algo. Numeração (`decimal`, `lower-alpha`, `upp
 
 ## `list-style-position`: onde fica o marcador
 
-![outside deixa o marcador fora da caixa do item; inside coloca dentro do texto.](../img/list-position-2.svg)
+![outside deixa o marcador fora da caixa do item; inside coloca dentro do texto.](../img/list-position.svg)
 
 > 💡 **Analogia:** pense numa lista de compras escrita num caderno com margem vermelha. Com `outside`, os marcadores ficam na margem, e o texto de cada item começa sempre na mesma linha vertical. Com `inside`, o marcador entra no espaço do texto, como se fosse a primeira letra da frase.
 

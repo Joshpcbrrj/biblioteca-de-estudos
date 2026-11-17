@@ -12,7 +12,7 @@ Sem classes, criar dez usuários significaria escrever dez objetos à mão, cada
 
 **Uma classe é um molde para criar objetos com a mesma estrutura: os mesmos atributos e os mesmos métodos.** Cada objeto criado a partir dela é uma **instância**, com seus próprios valores.
 
-![Uma classe, várias instâncias.](../img/classe-instancias-2.svg)
+![Uma classe, várias instâncias.](../img/classe-instancias.svg)
 
 > 💡 **Analogia:** a classe é a forma de biscoito; as instâncias são os biscoitos. Todos saem com o mesmo formato (os mesmos atributos e métodos), mas cada um pode ter uma cobertura diferente (os valores). Ter a forma não enche o pote: só o `new` assa um biscoito de verdade.
 

@@ -8,6 +8,8 @@ A aula anterior organizou a página em regiões. Alguns conteúdos, porém, são
 
 ## Estrutura de uma tabela
 
+Uma tabela HTML é construída em camadas, de fora para dentro. O `<table>` é o recipiente; cada `<tr>` (*table row*) é uma linha; dentro da linha, `<th>` cria uma célula de **cabeçalho** e `<td>` cria uma célula de **dados**. Para organizar melhor, agrupe as linhas em `<thead>` (cabeçalho), `<tbody>` (corpo) e `<tfoot>` (rodapé, como o total). Essa divisão não muda a aparência, mas ajuda o navegador, o CSS e os leitores de tela a entender o papel de cada parte. Uma tabela serve para **dados que têm linhas e colunas**, como preços e horários, e nunca para posicionar elementos na página: isso é trabalho do CSS.
+
 Tabelas servem para **dados tabulares**: informações que fazem sentido em linhas e colunas, como planilhas, horários e comparativos. **Não use tabela para montar layout**; isso é trabalho do CSS (Flexbox e Grid).
 
 ![table → thead/tbody/tfoot → tr → th/td, com caption como legenda.](../img/tabela-anatomia.svg)
@@ -165,6 +167,8 @@ Por padrão a tabela não tem bordas. O atributo `border="1"` ainda funciona, ma
 > ⚠️ Armadilhas comuns: comentários HTML (`<!-- -->`) dentro de `<style>` quebram o CSS, porque o texto vira parte do seletor seguinte; use `/* ... */`. Um erro de digitação como `separete` faz o valor ser descartado em silêncio. E `<tfoot>` precisa de um `<tr>` em volta das células.
 
 ## Acessibilidade
+
+Quem usa leitor de tela não enxerga a grade, ouve as células em sequência. Por isso o HTML oferece pistas que fazem toda a diferença: use `<th>` nos cabeçalhos (e não um `<td>` em negrito), para que o leitor diga "Preço: R$ 10" em vez de apenas "R$ 10"; acrescente o atributo `scope="col"` ou `scope="row"` para dizer se o cabeçalho vale para a coluna ou para a linha; e coloque um `<caption>` logo após a abertura do `<table>` com o título da tabela. São três pequenos acréscimos que tornam a tabela compreensível para todos.
 
 - Use `<th>` para cabeçalhos, nunca um `<td>` em negrito.
 - Em tabelas complexas, `scope="col"` ou `scope="row"` no `<th>` ajudam os leitores de tela.

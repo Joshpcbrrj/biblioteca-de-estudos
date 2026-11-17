@@ -8,9 +8,11 @@ Com o layout montado, falta cuidar do que mais aparece numa página: o texto. A 
 
 ## Tipografia na web
 
+A tipografia é responsável por grande parte da sensação que um site passa: sério, amigável, técnico, elegante. E é também o que o visitante mais faz no site, que é ler. Na web, há uma limitação: o navegador só consegue usar fontes que estão instaladas no aparelho de quem acessa, e cada pessoa tem um conjunto diferente. Por isso existem três caminhos: confiar nas fontes que todo sistema tem (Arial, Georgia, Times), carregar fontes de um serviço como o Google Fonts ou hospedar os arquivos de fonte no seu próprio site. Nos três casos, você sempre indica uma lista de alternativas, para o texto continuar legível se a primeira falhar.
+
 O CSS tem um grupo de propriedades `font-*` para controlar a aparência do texto.
 
-![As três famílias genéricas mais usadas e a escala de pesos.](../img/fontes-2.svg)
+![As três famílias genéricas mais usadas e a escala de pesos.](../img/fontes.svg)
 
 > 💡 **Analogia:** a fonte é a "voz" do texto. Serifada soa como um livro impresso ou um jornal; sem serifa soa como uma placa de aeroporto, limpa e direta; monoespaçada soa como uma máquina de escrever. A lista do `font-family` é como pedir um prato com substitutos: "se não tiver Inter, serve Arial; se não tiver nenhuma, qualquer sem serifa".
 
@@ -98,6 +100,8 @@ h1 { font: italic 700 2rem/1.2 "Inter", sans-serif; }
 O tamanho e a família são **obrigatórios** no atalho, e as propriedades omitidas voltam ao valor padrão.
 
 ## Boas práticas
+
+Três hábitos tornam o texto bonito e leve. Primeiro, **use poucas fontes**: duas famílias (uma para títulos e outra para o texto) bastam, e cada fonte extra aumenta o tempo de carregamento. Segundo, **carregue só os pesos que você usa**: se o site usa apenas o normal (400) e o negrito (700), não baixe os outros sete. Terceiro, **cuide da leitura**: tamanho de pelo menos 16px no corpo do texto, `line-height` entre 1.4 e 1.6 e linhas de até uns 70 caracteres. E sempre termine o `font-family` com uma família genérica (`sans-serif`, `serif`), que é a rede de segurança se nada mais carregar.
 
 - Use no máximo **duas famílias**: uma para títulos e outra para texto.
 - Carregue **só os pesos que usa**: cada peso é um arquivo a mais para baixar.

@@ -8,10 +8,12 @@ A aula de herança mostrou um `h1` com `2em` virando 32px. Isso só faz sentido 
 
 ## Absolutas × relativas
 
+Uma unidade **absoluta** tem tamanho fixo, que não muda com nada ao redor: `10px` é sempre 10px. Uma unidade **relativa** depende de outra coisa: o tamanho da fonte, da janela ou do elemento pai. A escolha define como a página reage quando o usuário aumenta a fonte do navegador ou abre o site em uma tela pequena. Unidades relativas se adaptam; as absolutas ficam rígidas. Para sites responsivos e acessíveis, a regra geral é: use unidades relativas para textos e espaçamentos, e reserve as absolutas (`px`) para detalhes que realmente não devem mudar, como a espessura de uma borda.
+
 - **Absolutas**: têm tamanho fixo e não mudam com o contexto. Na tela, a única que importa é o `px`. As outras (`cm`, `mm`, `in`, `pt`) fazem sentido para impressão.
 - **Relativas**: dependem de outra coisa, como o tamanho da fonte, o elemento pai ou a janela. São a base de um layout **responsivo** e **acessível**.
 
-![Cada unidade e a referência que ela usa para calcular o tamanho.](../img/unidades-2.svg)
+![Cada unidade e a referência que ela usa para calcular o tamanho.](../img/unidades.svg)
 
 > 💡 **Analogia:** `px` é como dizer "uma mesa de 2 metros": não muda. As unidades relativas são como receitas: "uma xícara para cada pessoa" (`em`, que segue o pai), "metade da mesa" (`%`) ou "um décimo da sala" (`vw`). Se a sala ou o número de pessoas muda, a medida acompanha.
 
@@ -108,6 +110,8 @@ h1 { font-size: clamp(1.5rem, 4vw, 3rem); }
 ```
 
 ## Qual unidade usar?
+
+Se a dúvida for qual unidade escolher, estas combinações cobrem a maioria dos casos. Para **tamanho de texto**, use `rem`: ele respeita a preferência de fonte do usuário e não acumula como o `em`. Para **espaçamentos internos** que acompanham o texto, `em` ou `rem`. Para **larguras de layout**, `%` ou `fr`, que acompanham o espaço disponível. Para **seções que ocupam a tela**, `vh` e `vw`. Para **bordas finas e sombras**, `px`. E se precisar misturar tipos, a função `calc()` resolve, como em `width: calc(100% - 40px)`, que desconta uma lateral fixa de um espaço flexível.
 
 | Para | Use |
 | --- | --- |

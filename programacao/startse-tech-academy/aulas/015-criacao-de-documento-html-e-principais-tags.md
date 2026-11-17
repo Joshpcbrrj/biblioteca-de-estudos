@@ -8,6 +8,8 @@ Você já sabe o que é uma tag e onde consultar. Agora vamos montar uma página
 
 ## Estrutura básica de um documento HTML
 
+Todo documento HTML segue o mesmo esqueleto, e entender o papel de cada parte evita muita confusão. A primeira linha, `<!DOCTYPE html>`, avisa ao navegador que a página usa o HTML moderno. O `<html>` envolve tudo e deve levar o idioma (`lang="pt-BR"`), que ajuda leitores de tela e buscadores. Dentro dele há duas partes bem separadas: o `<head>`, com informações **sobre** a página que não aparecem nela (título da aba, codificação, links para CSS), e o `<body>`, com tudo o que o visitante **vê**. Uma boa regra de bolso: se é para aparecer na tela, vai no `body`; se é configuração, vai no `head`.
+
 ```html
 <!-- avisa que é HTML5: sem isso o navegador
      entra em "modo de compatibilidade" antigo -->
@@ -85,6 +87,8 @@ Você já sabe o que é uma tag e onde consultar. Agora vamos montar uma página
 `<strong>` marca importância (aparece em negrito) e `<em>` marca ênfase (itálico). `<hr>` separa assuntos com uma linha horizontal.
 
 ## O DOM (Document Object Model)
+
+Quando o navegador lê o seu HTML, ele não guarda o texto como está: transforma cada tag em um **objeto** e organiza esses objetos em uma árvore, em que o `<html>` é a raiz, e `<head>` e `<body>` são galhos que se ramificam até cada parágrafo e imagem. Essa árvore é o DOM. A importância está em que o JavaScript não mexe no arquivo HTML, e sim nessa árvore: ao alterar um objeto, a tela muda na hora. Por isso a página que você inspeciona no navegador pode ser diferente do arquivo que você escreveu, se algum script a modificou depois de carregada.
 
 Depois de ler o HTML, o navegador cria uma **representação em objetos** do documento: o **DOM**. Ele é uma **árvore**: cada elemento é um nó, com pai, filhos e irmãos.
 

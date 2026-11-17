@@ -8,9 +8,11 @@ Você já sabe medir (unidades) e sabe que há elementos de bloco e em linha. Ag
 
 ## O que é o box model?
 
+Para o navegador, todo elemento da página é uma **caixa retangular**, mesmo um texto ou um círculo (que é uma caixa com cantos arredondados). Entender essa caixa explica quase todo problema de espaçamento. Ela tem quatro camadas, de dentro para fora: o **conteúdo** (texto, imagem), o `padding` (espaço entre o conteúdo e a borda), a **borda** (`border`) e a `margin` (espaço entre esta caixa e as vizinhas). Uma imagem ajuda a lembrar: um quadro na parede, em que a foto é o conteúdo, a passe-partout é o padding, a moldura é a borda e a distância até o quadro vizinho é a margem.
+
 **No CSS, todo elemento é uma caixa retangular.** O *box model* (modelo de caixa) descreve as quatro camadas dessa caixa, de dentro para fora:
 
-![Content, padding, border e margin, com o cálculo do tamanho final.](../img/box-model-2.svg)
+![Content, padding, border e margin, com o cálculo do tamanho final.](../img/box-model.svg)
 
 > 💡 **Analogia:** pense num quadro pendurado na parede. A foto é o **content**; o passe-partout branco em volta dela é o **padding**; a moldura de madeira é a **border**; e o espaço vazio da parede até o próximo quadro é a **margin**.
 
@@ -67,6 +69,8 @@ Com `box-sizing: border-box`, o `width` passa a incluir padding e borda: a caixa
 `auto` em `width` não centraliza nada: quem centraliza um bloco é `margin-left` e `margin-right: auto`, e só funciona se ele tiver largura menor que a do pai.
 
 ## Caixas de bloco × em linha
+
+O tipo de caixa muda como o elemento se comporta no fluxo da página. Elementos de **bloco** (`<div>`, `<p>`, `<h1>`) começam em uma nova linha e ocupam toda a largura disponível; aceitam `width`, `height` e margens em todos os lados. Elementos **em linha** (`<span>`, `<a>`, `<strong>`) ficam lado a lado, ocupam só o espaço do conteúdo e **ignoram** `width` e `height`. É por isso que, ao tentar dar largura a um `<span>`, nada acontece. A solução é trocar o tipo com `display`: `inline-block` mantém o elemento na linha, mas aceita dimensões.
 
 |  | `block` | `inline` | `inline-block` |
 | --- | --- | --- | --- |

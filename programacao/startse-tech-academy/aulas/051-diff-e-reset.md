@@ -17,7 +17,7 @@ O `git diff` mostra, linha a linha, as diferenças entre duas versões: linhas c
 
 O ponto que mais confunde: **o** `git diff` **sem argumentos não compara com o último commit**. Ele compara o diretório de trabalho com a staging area, ou seja, mostra só o que você **ainda não** adicionou.
 
-![Cada variação compara um par de áreas diferente.](../img/diff-areas-2.svg)
+![Cada variação compara um par de áreas diferente.](../img/diff-areas.svg)
 
 > 💡 **Analogia:** o `git diff` é o "controle de alterações" de um editor de texto: mostra riscado o que saiu e em destaque o que entrou. As variações só mudam **quais duas versões** você coloca lado a lado: o rascunho na mesa, o que está no balcão (staging) ou o que já foi enviado (último commit).
 
@@ -43,9 +43,11 @@ Dica: no VS Code, a aba **Source Control** mostra o mesmo diff lado a lado, de f
 
 ## `git reset`: voltar a branch para um commit anterior
 
+Todo mundo comita algo cedo demais, ou com a mensagem errada, ou incluindo um arquivo que não devia. O `reset` é a ferramenta para voltar atrás: ele move a ponta da branch para um commit anterior, como se os commits seguintes não tivessem acontecido. A diferença entre os três modos é só o que acontece com o trabalho desses commits: `--soft` o mantém pronto para novo commit, `--mixed` o devolve para a pasta, sem preparar, e `--hard` o apaga. Na dúvida, o `--soft` é o mais seguro, porque não perde nada.
+
 O `git reset` move a branch atual (e o `HEAD`) para outro commit. Os commits "à frente" deixam de fazer parte da branch. O que acontece com as **alterações** deles depende da opção:
 
-![soft guarda tudo preparado, mixed guarda como modificado e hard descarta.](../img/reset-modos-2.svg)
+![soft guarda tudo preparado, mixed guarda como modificado e hard descarta.](../img/reset-modos.svg)
 
 > 💡 **Analogia:** pense em desfazer a montagem de um pacote. O `soft` tira o pacote do correio, mas deixa os itens já separados na mesa, prontos para reembalar. O `mixed` devolve os itens à bancada, sem separação. O `hard` joga tudo fora.
 
@@ -61,6 +63,8 @@ git reset --hard HEAD~1
 `HEAD~1` significa "um commit antes do atual"; `HEAD~3`, três commits antes. Você também pode usar o hash do commit (pegue com `git log --oneline`).
 
 ### Casos de uso comuns
+
+O caso mais frequente é o "commitei cedo demais": você fez o commit, percebeu que esqueceu um arquivo e quer refazer. O `git reset --soft HEAD~1` desfaz o commit mas mantém tudo preparado, então basta adicionar o arquivo que faltava e commitar de novo. Já o `--hard` é para quando o experimento deu errado e você quer voltar à estaca zero; use com muita atenção, porque as alterações descartadas não têm volta.
 
 | Situação | Comando |
 | --- | --- |

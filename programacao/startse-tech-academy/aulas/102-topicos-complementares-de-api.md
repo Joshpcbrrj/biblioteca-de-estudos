@@ -10,7 +10,7 @@ Você conhece as peças de uma requisição. Agora vamos ver as convenções que
 
 **REST é um estilo de arquitetura para APIs web: cada recurso tem uma URL, e a ação é dada pelo método HTTP.** Uma API que segue essas regras é chamada de **RESTful**.
 
-![Um CRUD completo de produtos em REST.](../img/rest-crud-2.svg)
+![Um CRUD completo de produtos em REST.](../img/rest-crud.svg)
 
 > 💡 **Analogia:** pense num arquivo de aço com gavetas etiquetadas. A etiqueta é a URL e diz **o quê** (`/produtos`, `/produtos/7`); o método HTTP diz **o que fazer** com aquilo: olhar (`GET`), pôr uma ficha nova (`POST`), trocar a ficha (`PUT`/`PATCH`) ou jogar fora (`DELETE`). Por isso a URL não precisa de verbos: a gaveta é sempre a mesma, só muda a ação.
 
@@ -42,6 +42,8 @@ Repetir uma requisição **idempotente** dá o mesmo resultado: `GET`, `PUT` e `
 | `500 Internal Server Error` | erro no servidor |
 
 ## Versionamento
+
+Uma API é um contrato, e muita gente depende dele: apps no celular das pessoas, sistemas de parceiros. Se você mudar o formato de uma resposta sem aviso, tudo o que dependia dele quebra. O **versionamento** resolve isso mantendo versões lado a lado: quem usa `/v1/produtos` continua recebendo o formato antigo, enquanto novos clientes usam `/v2/produtos`, com as mudanças. Assim você evolui a API sem derrubar ninguém, e anuncia com antecedência quando a versão antiga deixar de existir. A forma mais comum e fácil de enxergar é colocar a versão na URL.
 
 As APIs mudam, e quem já usa não pode quebrar. Formas comuns:
 
@@ -76,6 +78,8 @@ A resposta costuma trazer o total ou o link da próxima página.
 Guardar respostas por um tempo, no navegador, em um CDN ou no servidor (Redis), para responder mais rápido e aliviar o banco. Cabeçalhos HTTP controlam isso: `Cache-Control: max-age=60`, `ETag`.
 
 ## CORS
+
+Por segurança, o navegador bloqueia por padrão que uma página de um domínio leia respostas de outro domínio. Se o seu site em `meusite.com` tentar chamar `api.outro.com`, o navegador pode recusar e mostrar um erro de **CORS** (*Cross-Origin Resource Sharing*) no console. O erro **não** é um bug no seu código JavaScript: é o servidor da API quem precisa autorizar a origem, enviando o cabeçalho `Access-Control-Allow-Origin`. Por isso, quando você constrói a própria API, deve configurar quais origens terão permissão; e quando consome uma API de terceiros que não libera a sua origem, a solução é chamar a API a partir do seu back-end.
 
 Por segurança, o navegador **bloqueia** que uma página em `site-a.com` leia respostas de uma API em `api-b.com`, a menos que a API autorize com o cabeçalho `Access-Control-Allow-Origin`. É a causa do famoso erro "*blocked by CORS policy*". A correção é feita **no servidor** (no Express: o pacote `cors`), não no front-end.
 

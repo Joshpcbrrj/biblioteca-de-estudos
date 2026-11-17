@@ -8,9 +8,11 @@ No exercício anterior, cada tarefa nova virava um `<li>`. E se cada item precis
 
 ## Delegação de eventos
 
+Imagine uma lista com 500 itens, cada um com um botão "remover". Colocar um `addEventListener` em cada botão cria 500 ouvintes, e os itens adicionados depois nem terão o ouvinte. A **delegação de eventos** resolve isso com um truque: todo evento "sobe" (*bubbling*) do elemento clicado até seus ancestrais. Então você coloca **um único** ouvinte no elemento pai e, dentro dele, usa `evento.target` para descobrir qual filho foi clicado. O resultado é menos memória, menos código e suporte automático a itens criados dinamicamente. Use `evento.target.closest(".item")` quando o clique puder cair em um elemento interno, como um ícone dentro do botão.
+
 Quando um evento acontece em um elemento, ele **"sobe"** pela árvore (pai, avô… até o `document`): é o **bubbling**. A delegação aproveita isso: em vez de colocar um ouvinte em cada item, você coloca **um só no pai**.
 
-![O clique no li é percebido pelo ul.](../img/eventos-delegacao-2.svg)
+![O clique no li é percebido pelo ul.](../img/eventos-delegacao.svg)
 
 > 💡 **Analogia:** a delegação é como a recepcionista de um prédio. Em vez de colocar um porteiro em cada apartamento, uma única pessoa na portaria recebe todas as entregas e olha a etiqueta (`event.target`) para saber de qual apartamento é. Quando um morador novo chega, ela já atende sem precisar contratar ninguém.
 
@@ -135,6 +137,8 @@ div.textContent = "Novo texto";
 > ⚠️ **Cuidado com** `innerHTML` **e dados do usuário.** Se você fizer `div.innerHTML = textoDigitado`, alguém pode digitar uma tag com código malicioso e executá-lo na página (ataque **XSS**). Para texto, use `textContent`.
 
 ## Estilos computados
+
+Existe uma armadilha comum aqui: `elemento.style.color` só lê o que foi escrito **diretamente no atributo** `style` do elemento. Se a cor vem de uma folha de estilo CSS, o resultado será uma string vazia, o que confunde muita gente. Para saber o valor que realmente está sendo aplicado, depois de somar todas as regras, use `getComputedStyle(elemento)`, que devolve o estilo final e só de leitura. A regra prática: para **alterar**, use `style` (ou, melhor ainda, troque uma classe CSS); para **consultar** o valor real, use `getComputedStyle`.
 
 ```jsx
 const caixa = document.querySelector("#caixa");

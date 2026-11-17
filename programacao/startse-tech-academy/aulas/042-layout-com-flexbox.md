@@ -21,9 +21,11 @@ São dois papéis:
 
 ## Os dois eixos
 
+O segredo para dominar o Flexbox é entender que ele trabalha com **dois eixos perpendiculares**. O **eixo principal** é a direção em que os itens se enfileiram: horizontal por padrão (`row`) ou vertical (`column`). O **eixo transversal** é o perpendicular a ele. Cada propriedade de alinhamento atua em um eixo específico: `justify-content` distribui os itens ao longo do eixo principal, e `align-items` os alinha no transversal. Quando você troca a direção para `column`, os eixos **trocam de lugar**, e por isso o `justify-content` passa a agir na vertical. Se um alinhamento parece “trocado”, a causa quase sempre é esquecer qual é o eixo principal naquele momento.
+
 Tudo no Flexbox gira em torno de dois eixos:
 
-![O eixo principal segue o flex-direction; o transversal é perpendicular a ele.](../img/flex-eixos-2.svg)
+![O eixo principal segue o flex-direction; o transversal é perpendicular a ele.](../img/flex-eixos.svg)
 
 > 💡 **Analogia:** o contêiner flex é uma prateleira e os itens são potes de tempero. O eixo principal é o comprimento da prateleira, onde os potes ficam um ao lado do outro; `justify-content` decide se eles se juntam num canto, no meio ou se espalham. O eixo transversal é a altura da prateleira; `align-items` decide se os potes encostam embaixo, no meio ou em cima. Virar a prateleira na vertical (`column`) troca os papéis.
 
@@ -57,13 +59,13 @@ Tudo no Flexbox gira em torno de dois eixos:
 
 ### `justify-content`: distribuição no eixo principal
 
-![Os seis valores mais usados.](../img/flex-justify-2.svg)
+![Os seis valores mais usados.](../img/flex-justify.svg)
 
 > 💡 **Analogia:** o `justify-content` é como distribuir livros numa estante. O `flex-start` empurra tudo para o começo, o `center` junta no meio e o `space-between` põe o primeiro e o último nas pontas e espaça o resto.
 
 ### `align-items`: alinhamento no eixo transversal
 
-![stretch, flex-start, center e flex-end.](../img/flex-align-2.svg)
+![stretch, flex-start, center e flex-end.](../img/flex-align.svg)
 
 > 💡 **Analogia:** o `align-items` é como alinhar quadros numa parede. O `stretch` estica todos até a mesma altura, o `flex-start` cola no topo e o `flex-end` na base.
 
@@ -86,6 +88,8 @@ Prefira `gap` a margens nos itens: ele só aplica espaço **entre** os itens, nu
 Só tem efeito com `flex-wrap: wrap` e **várias linhas**: distribui as linhas no eixo transversal (aceita os mesmos valores do `justify-content`).
 
 ## Propriedades dos itens
+
+As propriedades do contêiner organizam o grupo; as dos itens ajustam o comportamento de **cada filho**. O `flex-grow` diz quanto o item cresce para ocupar o espaço que sobra (0 não cresce, 1 cresce na mesma proporção dos outros, 2 cresce o dobro). O `flex-shrink` diz o quanto ele encolhe quando falta espaço. O `flex-basis` é o tamanho inicial antes de crescer ou encolher. A propriedade `flex: 1` é o atalho mais comum e significa “divida o espaço livre igualmente”. E `align-self` permite que um único item fuja do alinhamento do grupo, como um botão que fica no rodapé do cartão enquanto o resto fica no topo.
 
 | Propriedade | Para que serve |
 | --- | --- |

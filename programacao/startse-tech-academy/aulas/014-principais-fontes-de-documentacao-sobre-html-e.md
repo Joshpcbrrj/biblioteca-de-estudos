@@ -32,6 +32,8 @@ Toda página de tag na MDN segue a mesma ordem: um **exemplo interativo** no top
 
 ## Editores de código
 
+Tecnicamente, dá para escrever HTML no bloco de notas, mas um editor de código torna o trabalho muito mais rápido e seguro. Ele pinta cada parte do código com uma cor (*syntax highlighting*), o que revela de longe uma aspa esquecida; sugere o fechamento de tags e completa o que você digita; e pode abrir uma pasta inteira de projeto de uma vez. O VS Code é a escolha mais usada hoje, é gratuito e tem extensões para tudo. A escolha do editor importa menos do que o hábito de conhecê-lo bem: aprenda os atalhos de copiar linha, mover linha e buscar em todo o projeto.
+
 **VS Code**: gratuito, o mais usado hoje, com extensões para tudo (Live Server, Prettier, ESLint).
 
 🔗 [https://code.visualstudio.com/](https://code.visualstudio.com/)
@@ -51,6 +53,8 @@ O CodePen permite escrever HTML, CSS e JS e ver o resultado na hora, sem instala
 🔗 [CodePen](https://codepen.io/)
 
 ## Boas práticas ao escrever HTML
+
+HTML mal escrito costuma funcionar no navegador, porque ele tenta adivinhar o que você quis dizer, e esse é exatamente o perigo: o que parece certo hoje quebra em outro navegador ou em um leitor de tela. Quatro hábitos evitam isso. **Indente** o código para enxergar quem está dentro de quem. **Feche todas as tags** que precisam de fechamento. Use **tags semânticas** (`<header>`, `<nav>`, `<main>`) que descrevem o papel do conteúdo, em vez de `<div>` para tudo. E **valide** o código no validador oficial do W3C quando algo se comportar de forma estranha: ele aponta as falhas de estrutura que o navegador escondeu.
 
 1. **Use tags semânticas**: escolha a tag pelo **significado**, não pela aparência. Título é `<h1>`–`<h6>`, lista é `<ul>`/`<ol>`, navegação é `<nav>`, botão é `<button>` (não uma `<div>` clicável).
 2. **Indentação consistente**: cada nível de aninhamento com 2 ou 4 espaços. Ferramentas como o **Prettier** formatam sozinhas.

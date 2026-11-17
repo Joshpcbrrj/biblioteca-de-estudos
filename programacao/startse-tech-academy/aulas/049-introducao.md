@@ -25,7 +25,9 @@ Cada pessoa tem uma **cópia completa** do repositório, com todo o histórico, 
 
 ## Como o Git guarda o histórico
 
-![Arquivos que não mudaram não são copiados de novo: o commit aponta para a versão anterior.](../img/git-snapshots-2.svg)
+O Git não guarda “o que mudou” em cada versão como uma lista de diferenças; ele guarda **fotografias completas do projeto** a cada commit. Para não desperdiçar espaço, arquivos que não mudaram apenas apontam para a cópia anterior. Cada foto recebe um identificador único (o *hash*, como `a3f9c1e`) e aponta para a foto que veio antes, formando uma corrente. Isso explica por que voltar a qualquer ponto do passado é rápido e por que, se um commit for alterado, todos os seguintes mudam de identificador: a corrente inteira é verificável. Todo o histórico mora na pasta oculta `.git`; apagá-la apaga o histórico.
+
+![Arquivos que não mudaram não são copiados de novo: o commit aponta para a versão anterior.](../img/git-snapshots.svg)
 
 > 💡 **Analogia:** o Git funciona como um álbum de fotos do projeto. Cada commit é uma foto tirada num momento, com data e legenda. Você pode folhear o álbum e voltar a qualquer foto. E o álbum é econômico: se um arquivo não mudou desde a foto anterior, a nova foto só aponta para a versão que já estava guardada.
 
@@ -78,6 +80,8 @@ git clone https://github.com/usuario/projeto.git
 ```
 
 ## O fluxo do dia a dia
+
+O uso cotidiano do Git se resume a um ciclo de três passos que você vai repetir centenas de vezes. Primeiro, você **edita** os arquivos normalmente. Depois, **seleciona** o que quer registrar com `git add` (o Git não grava nada sem você escolher). Por fim, **registra** a foto com `git commit -m "mensagem"`. No meio do caminho, `git status` mostra a situação atual (o que mudou e o que está selecionado) e `git log --oneline` mostra o histórico resumido. Faça commits pequenos e frequentes, cada um com um propósito claro: facilita encontrar quando um bug apareceu e desfazer só o que for preciso.
 
 ```bash
 # o que mudou?

@@ -68,6 +68,8 @@ hanoi(3, "A", "C", "B");
 
 ## Pseudocódigo e fluxograma
 
+Antes de programar, é útil descrever a solução em um formato que independe de linguagem. O **pseudocódigo** é o algoritmo escrito em português estruturado, com palavras como `se`, `enquanto` e `escreva`, fácil de ler e de converter para qualquer linguagem depois. O **fluxograma** conta a mesma história em desenho: formas conectadas por setas, em que o losango representa uma decisão e o retângulo, uma ação. Use o que ajudar mais naquele momento: o desenho mostra bem os caminhos possíveis, e o texto é mais rápido de escrever e de alterar. Em ambos, a vantagem é a mesma: você descobre erros de raciocínio antes de gastar tempo com sintaxe.
+
 O **pseudocódigo** descreve o algoritmo em português estruturado, sem se prender à sintaxe de nenhuma linguagem:
 
 ```
@@ -110,6 +112,8 @@ O **fluxograma** mostra o mesmo algoritmo de forma visual:
 > 💡 **Analogia:** os símbolos são como as placas de trânsito: cada forma tem um significado fixo que todos reconhecem. O oval é a placa de "início/fim da via", o losango é a bifurcação que exige uma escolha e as setas são as faixas pintadas no chão indicando o caminho.
 
 ## As três estruturas básicas
+
+Qualquer algoritmo, por mais complexo que seja, é feito da combinação de apenas três estruturas. A **sequência** executa os passos um depois do outro, na ordem em que foram escritos. A **decisão** (`se... então... senão`) escolhe entre caminhos conforme uma condição ser verdadeira ou falsa. A **repetição** (`enquanto`, `para`) executa um bloco várias vezes até uma condição mudar. Uma receita de macarrão tem as três: seguir os passos em ordem (sequência), verificar se a água ferveu (decisão) e provar até o ponto certo (repetição). Reconhecer qual estrutura um problema pede é metade do trabalho de resolvê-lo.
 
 Qualquer algoritmo, por maior que seja, é feito de três peças combinadas:
 

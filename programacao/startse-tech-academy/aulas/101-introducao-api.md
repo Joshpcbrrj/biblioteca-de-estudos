@@ -10,11 +10,13 @@ Você já usou `fetch` para buscar dados de servidores. Esses servidores oferece
 
 **API (Application Programming Interface) é um contrato que define como um programa pode pedir algo a outro e o que vai receber de volta.** Você não precisa saber como o outro sistema funciona por dentro: basta seguir o contrato.
 
-![Toda chamada a uma API web é uma requisição HTTP com uma resposta.](../img/api-requisicao-2.svg)
+![Toda chamada a uma API web é uma requisição HTTP com uma resposta.](../img/api-requisicao.svg)
 
 > 💡 **Analogia:** uma API é o garçom de um restaurante. O cardápio é a documentação: diz o que dá para pedir e como. Você (o cliente) faz o pedido ao garçom (a requisição), ele leva à cozinha (o servidor) e volta com o prato (a resposta). Você nunca entra na cozinha nem precisa saber a receita; se pedir algo fora do cardápio, o garçom avisa que não tem (um erro 404).
 
 ## Tipos de API
+
+O termo “API” aparece em contextos diferentes, e vale distinguir os principais. As **APIs de bibliotecas e linguagens** são o conjunto de funções que um pacote oferece (`Math.random()` é parte da API do JavaScript). As **APIs do sistema operacional** deixam os programas pedirem recursos como arquivos e janelas. E as **APIs web** são serviços disponíveis pela internet, acessados por HTTP: é delas que este curso trata daqui em diante. Dentro das APIs web, também há diferença entre as **públicas** (abertas, como a de CEP) e as **privadas** (de uso interno de uma empresa), que determinam quem pode acessá-las.
 
 | Tipo | Exemplo |
 | --- | --- |
@@ -73,6 +75,8 @@ console.log(endereco.logradouro);  // "Praça da Sé"
 Para testar sem código, use **Postman**, **Insomnia**, **Thunder Client** (extensão do VS Code) ou o próprio navegador, para requisições `GET`.
 
 ## Benefícios
+
+Usar APIs muda a forma de construir software, porque você deixa de refazer o que outros já fizeram bem. Em vez de montar um sistema de pagamentos, uma busca de endereços ou um mapa, você **conecta** serviços prontos e se concentra na sua ideia. A API também **separa responsabilidades**: o front-end e o back-end evoluem de forma independente, desde que o contrato (os endpoints e formatos) continue o mesmo, e o mesmo back-end pode atender um site, um aplicativo de celular e um parceiro externo. E, como as APIs padronizam o acesso, a integração entre sistemas fica mais fácil e previsível.
 
 - **Integração**: sistemas diferentes conversam (loja ↔ pagamento ↔ transportadora).
 - **Reuso**: em vez de criar um sistema de mapas, use a API de um.

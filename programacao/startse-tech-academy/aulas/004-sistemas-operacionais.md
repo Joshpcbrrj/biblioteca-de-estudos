@@ -16,6 +16,8 @@ A aula anterior mostrou as peças físicas do computador. Mas nenhum programa (n
 
 ## Responsabilidades
 
+O sistema operacional é o intermediário entre os programas e o hardware, e a razão de existir é simples: sem ele, cada programa precisaria saber operar diretamente o disco, a memória e a tela do seu computador específico. Em vez disso, o programa pede ao SO (“abra este arquivo”, “reserve esta memória”), e o SO cuida dos detalhes. Ele também **divide os recursos** entre os vários programas abertos, para que um não atrapalhe o outro, controla **quem pode acessar o quê** (permissões e contas de usuário) e oferece uma **interface** para você interagir, seja gráfica ou por linha de comando.
+
 1. **Gerenciar processos**: carregar, executar, pausar e encerrar programas. Também alterna entre eles tão rápido que parece que tudo roda ao mesmo tempo (multitarefa).
 2. **Gerenciar memória**: decidir quanto de RAM cada programa usa e isolar um do outro, para que um app não leia a memória de outro.
 3. **Gerenciar arquivos**: organizar pastas e arquivos no disco, usando um *sistema de arquivos* (NTFS no Windows, ext4 no Linux, APFS no macOS).
@@ -34,6 +36,8 @@ A aula anterior mostrou as peças físicas do computador. Mas nenhum programa (n
 - **Shell / interface**: por onde o usuário dá comandos. Pode ser em texto (Bash, Zsh, PowerShell, CMD) ou gráfica (área de trabalho do Windows, GNOME, macOS).
 
 ## Processo × programa
+
+São dois conceitos parecidos que confundem iniciantes. Um **programa** é um arquivo parado no disco, com instruções prontas para executar, como uma receita de bolo no caderno. Um **processo** é esse programa **em execução**: carregado na memória, com seus dados, recebendo tempo do processador, como a receita sendo preparada de fato na cozinha. Você pode abrir o mesmo programa três vezes e ter três processos independentes, cada um com seu estado. Quando um programa trava, o que você encerra no gerenciador de tarefas é o processo, e o programa continua intacto no disco.
 
 Um **programa** é um arquivo parado no disco (ex.: `code.exe`). Quando você o abre, o SO cria um **processo**: o programa em execução, com memória própria e um número de identificação (PID). Abrir o navegador duas vezes cria dois processos do mesmo programa. O Gerenciador de Tarefas (Windows) e o Monitor de Atividade (macOS) listam os processos.
 

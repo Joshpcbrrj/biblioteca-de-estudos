@@ -34,13 +34,17 @@ A ligação entre entidades, sempre com uma **cardinalidade** (1:1, 1:N ou N:M):
 
 ## Exemplo: uma loja
 
-![Cliente faz pedidos; pedido contém produtos por meio de itens_pedido.](../img/der-loja-2.svg)
+Para ver o modelo em ação, pense numa loja online e liste as coisas sobre as quais ela precisa guardar informações: **cliente**, **produto**, **pedido** e **item do pedido**. Depois, descreva as relações com frases: um cliente faz vários pedidos (1:N); um pedido tem vários produtos e um produto aparece em vários pedidos (N:M, resolvido com a tabela `itens_pedido`). Escrever as relações em frases simples é um bom teste: se a frase soa estranha, o modelo provavelmente tem um erro. Do desenho saíram quatro tabelas, e é exatamente com elas que você vai praticar nas próximas aulas de SQL.
+
+![Cliente faz pedidos; pedido contém produtos por meio de itens_pedido.](../img/der-loja.svg)
 
 > 💡 **Analogia:** o diagrama ER é a **planta baixa** de uma casa. Antes de levantar paredes (criar tabelas), o arquiteto desenha os cômodos (entidades), o que vai em cada um (atributos) e as portas que ligam um cômodo ao outro (relacionamentos). Mudar a planta no papel custa uma borracha; mudar a casa pronta custa uma reforma, e com o banco é igual.
 
 Repare que **cliente e produto não se ligam diretamente**. O cliente se liga ao pedido, e o pedido aos produtos, por meio de `itens_pedido`, que resolve o N:M e ainda guarda a quantidade e o preço no momento da compra.
 
 ## Do conceito às tabelas
+
+O diagrama ER é um desenho **conceitual**, feito antes de qualquer código, e depois é traduzido em tabelas por regras simples. Cada **entidade** vira uma tabela. Cada **atributo** vira uma coluna, e o atributo que identifica a entidade vira a chave primária. Um relacionamento **1:N** vira uma chave estrangeira na tabela do lado “muitos”. Um relacionamento **N:M** vira uma tabela intermediária. Seguir essa receita garante que o banco reflita o que foi desenhado, e fazer o desenho primeiro é barato: corrigir uma linha no papel custa minutos, enquanto corrigir uma tabela já cheia de dados custa dias.
 
 1. **Modelo conceitual (ER/DER)**: as entidades e relacionamentos, sem tipos de dados. É para conversar com quem vai usar o sistema.
 2. **Modelo lógico (relacional)**: as tabelas, colunas, chaves primárias e estrangeiras.

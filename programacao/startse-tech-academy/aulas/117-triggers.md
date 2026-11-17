@@ -8,13 +8,17 @@ As restrições bloqueiam dados inválidos. Às vezes, porém, queremos que o ba
 
 ## O que é uma trigger
 
+Pense em tudo o que precisa acontecer quando um pedido é feito: baixar o estoque, registrar a data, avisar o financeiro. Se cada tela do sistema tiver de lembrar de fazer isso, uma hora alguém esquece, e o estoque fica errado. A trigger resolve o problema colocando a regra no próprio banco: não importa qual programa grava o pedido, o banco dispara o gatilho sozinho. A regra passa a valer para todo mundo, o tempo todo.
+
 **Uma trigger (gatilho) é um bloco de SQL associado a uma tabela que o banco executa automaticamente quando acontece um** `INSERT`**,** `UPDATE` **ou** `DELETE` **nela**, antes ou depois da operação.
 
-![Com BEFORE dá para mexer nos dados antes de gravar; com AFTER, reagir ao que foi gravado.](../img/trigger-fluxo-2.svg)
+![Com BEFORE dá para mexer nos dados antes de gravar; com AFTER, reagir ao que foi gravado.](../img/trigger-fluxo.svg)
 
 > 💡 **Analogia:** pense numa carta indo para o correio. A trigger **BEFORE** é o revisor que lê a carta antes de ela ser enviada e pode corrigir um erro no endereço (alterar `NEW`). A trigger **AFTER** é o funcionário que, depois do envio, anota no livro de registros o que saiu e avisa o estoque de envelopes. Ninguém precisa pedir: os dois agem sozinhos toda vez que uma carta passa.
 
 ## BEFORE × AFTER
+
+A escolha é sobre o momento. Use `BEFORE` quando quiser mexer na linha antes de ela ser gravada: corrigir um valor, preencher uma coluna, recusar dados inválidos. Use `AFTER` quando quiser reagir a algo que já foi gravado, como registrar uma auditoria ou atualizar o estoque de outra tabela. As variáveis `NEW` e `OLD` dizem como a linha ficou e como era, o que permite, por exemplo, comparar o preço antigo com o novo.
 
 |  | BEFORE | AFTER |
 | --- | --- | --- |
@@ -63,6 +67,8 @@ No MySQL, o mesmo resultado sai sem trigger: `atualizado_em TIMESTAMP DEFAULT CU
 
 ## Exemplo 2: histórico de preços (auditoria)
 
+Auditoria é o caso em que a trigger mais se destaca. Sem ela, quando um preço muda de R$ 80 para R$ 60, ninguém sabe quando nem quem fez isso, e o preço antigo se perde. Com a trigger, cada `UPDATE` grava uma linha no histórico, com o preço antigo, o novo e a data. Como o registro nasce no banco, ele não depende de nenhuma tela lembrar de gravar, e serve de prova quando surgir uma dúvida.
+
 ```sql
 -- tabela que guarda cada mudança de preço
 CREATE TABLE historico_precos (
@@ -104,6 +110,8 @@ DELIMITER ;
 ```
 
 ## Cuidados
+
+O maior custo da trigger é a invisibilidade. Um desenvolvedor novo lê o código, vê um simples `INSERT` e não imagina que ele dispara três outras operações. Por isso, documente as triggers e use-as com moderação, só para regras que precisam valer para todos os programas, como auditoria e integridade. Regras de negócio mais complicadas costumam ser mais fáceis de testar e de achar na aplicação.
 
 - Triggers são **"invisíveis"**: quem lê o código da aplicação não vê que um `INSERT` dispara outras coisas. Documente bem.
 - Regras de negócio complexas costumam ficar melhor na **aplicação**; triggers brilham em auditoria e integridade.

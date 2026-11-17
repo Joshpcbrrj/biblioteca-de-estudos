@@ -10,6 +10,10 @@ A aula anterior apresentou o shell, a interface em texto do sistema operacional.
 
 Num primeiro momento, clicar parece mais fácil. Mas o terminal ganha de lavada em três situações: tarefas repetidas (criar vinte pastas com um comando), ferramentas que só existem em texto (Git, npm, Node) e servidores, que quase nunca têm tela gráfica. Além disso, um comando escrito pode ser copiado, guardado e repetido por qualquer pessoa, o que é impossível com uma sequência de cliques. Vale ver o terminal como um idioma curto, com poucas palavras que você usa todos os dias.
 
+![Os comandos do terminal que você mais vai usar.](../img/st-terminal-comandos.svg)
+
+> 💡 **Analogia:** o terminal é como o vocabulário de um motorista de táxi: poucas frases bem usadas ("vire à esquerda", "siga reto") levam a qualquer lugar.
+
 **O terminal é uma forma de controlar o computador digitando comandos em vez de clicar.** Cada comando tem o formato `programa opções argumentos`, por exemplo `ls -la projetos`.
 
 - **Windows:** use o **Git Bash** (instalado junto com o Git) ou o **PowerShell**. Os comandos abaixo são do Bash.
@@ -30,7 +34,7 @@ cd ~  # vai para a pasta do usuário
 cd -  # volta para a pasta anterior
 ```
 
-![O mesmo arquivo pode ser apontado por um caminho absoluto ou relativo.](../img/terminal-caminhos-2.svg)
+![O mesmo arquivo pode ser apontado por um caminho absoluto ou relativo.](../img/terminal-caminhos.svg)
 
 > 💡 **Analogia:** o caminho absoluto é o endereço completo com cidade e CEP; o relativo é "duas casas depois da padaria". O segundo só funciona se você souber onde está agora, e é isso que o `pwd` responde.
 

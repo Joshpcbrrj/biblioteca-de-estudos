@@ -10,7 +10,7 @@ A aula de seletores apresentou `:hover` e `::after` de passagem. Eles são tão 
 
 Os dois nomes parecem difíceis, mas a pergunta que os separa é simples: você quer escolher **um elemento em certa situação** ou **um pedaço dentro do elemento**? Um dois-pontos (`:`) é uma situação (`:hover`, `:first-child`). Dois dois-pontos (`::`) é um pedaço ou um enfeite (`::before`, `::first-letter`). Guardar esse símbolo evita confundir um com o outro.
 
-![Pseudo-classe × pseudo-elemento](../img/st-pseudo-2.svg)
+![Pseudo-classe × pseudo-elemento](../img/st-pseudo.svg)
 
 > 💡 **Analogia:** pense numa pessoa. A pseudo-classe descreve um **momento** dela: "quando estiver sorrindo", "quando for a primeira da fila". O pseudo-elemento aponta uma **parte** ou um acessório: "o chapéu", "a primeira letra do nome no crachá".
 

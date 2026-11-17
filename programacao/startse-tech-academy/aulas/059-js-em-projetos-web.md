@@ -26,6 +26,8 @@ Quem evolui o padrão é o **TC39** (Comitê Técnico 39 da Ecma), com represent
 
 ## Características principais
 
+O JavaScript tem três traços que explicam como ele se comporta. É **interpretado**: o navegador lê e executa o código diretamente, sem etapa de compilação manual, o que torna fácil testar. É **de tipagem dinâmica**: você não declara o tipo de uma variável, e ela pode guardar um número agora e um texto depois, o que dá liberdade, mas exige cuidado. E é **orientado a eventos**: boa parte do código reage a algo que acontece (um clique, o fim de um download) em vez de rodar de cima a baixo uma vez só. Esse último ponto é o que torna o JavaScript ideal para páginas interativas.
+
 - **Roda no navegador** (sem instalar nada) e, com o Node.js, também no servidor, em apps desktop (Electron) e mobile (React Native).
 - **Tipagem dinâmica**: a mesma variável pode guardar um número e depois um texto.
 - **Multiparadigma**: aceita estilos imperativo, orientado a objetos e funcional.
@@ -35,7 +37,9 @@ Quem evolui o padrão é o **TC39** (Comitê Técnico 39 da Ecma), com represent
 
 ## O papel de cada tecnologia
 
-![HTML é o conteúdo, CSS a aparência e JS o comportamento.](../img/js-camadas-2.svg)
+Uma página web é feita de três camadas com responsabilidades separadas, e manter essa separação deixa o projeto organizado. O **HTML** é a estrutura e o conteúdo: o que existe na página (títulos, parágrafos, botões). O **CSS** é a aparência: como cada coisa se parece (cores, tamanhos, posições). O **JavaScript** é o comportamento: o que acontece quando o usuário interage. Numa casa, o HTML são as paredes e os cômodos, o CSS é a pintura e a decoração, e o JavaScript é a parte elétrica que acende luzes e abre portões. Ao ter um problema, pergunte a qual das três camadas ele pertence.
+
+![HTML é o conteúdo, CSS a aparência e JS o comportamento.](../img/js-camadas.svg)
 
 > 💡 **Analogia:** pense num carro. O HTML é a carroceria e o chassi (o que existe); o CSS é a pintura e o acabamento interno (como parece); o JavaScript é o motor e a parte elétrica (o que acontece quando você gira a chave, aperta o pedal ou liga o pisca).
 

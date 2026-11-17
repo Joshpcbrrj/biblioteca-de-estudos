@@ -8,6 +8,8 @@ Até aqui o histórico só existia no seu computador. Para fazer backup, publica
 
 ## Repositórios remotos
 
+Até aqui, o histórico do Git morava só no seu computador. Um **repositório remoto** é uma cópia do projeto hospedada em um servidor, como o GitHub, que serve a três objetivos: guardar um backup fora da sua máquina, permitir que outras pessoas colaborem e deixar o código disponível de qualquer lugar. O remoto principal costuma se chamar `origin`, e o `git remote add origin <url>` o conecta ao seu repositório local. Pense no remoto como um armazém central: você trabalha na sua oficina (local) e, de tempos em tempos, envia para o armazém e busca o que os colegas colocaram lá.
+
 Um **remoto** é uma cópia do repositório hospedada em um servidor (GitHub, GitLab, Bitbucket). Por convenção, o remoto principal se chama `origin`.
 
 ```bash
@@ -32,7 +34,7 @@ git push -u origin main
 git push
 ```
 
-![Se o remoto tem commits que você não tem, o push é rejeitado.](../img/push-2.svg)
+![Se o remoto tem commits que você não tem, o push é rejeitado.](../img/push.svg)
 
 > 💡 **Analogia:** o remoto é como uma pasta compartilhada na nuvem. O `push` é subir as suas páginas novas; o `fetch` é olhar o que os colegas subiram, sem misturar com as suas; o `pull` é baixar e já juntar ao seu caderno. Se alguém subiu páginas que você ainda não tem, a pasta recusa o seu envio até você baixar e juntar primeiro.
 
@@ -45,7 +47,7 @@ O push só funciona se o remoto **não tiver nada que você não tenha**. Se alg
 - `git fetch` baixa os commits novos do remoto e atualiza `origin/main`, **sem mexer nos seus arquivos**. Serve para ver o que chegou antes de integrar.
 - `git pull` = `git fetch` + `git merge`: baixa e já integra na sua branch atual.
 
-![O pull é um fetch seguido de um merge.](../img/fetch-pull-2.svg)
+![O pull é um fetch seguido de um merge.](../img/fetch-pull.svg)
 
 > 💡 **Analogia:** o `fetch` é checar a caixa de correio e separar as cartas novas sem abrir nem misturar com as suas. O `pull` é o fetch seguido de um merge: você abre as cartas e já junta ao seu caderno.
 
@@ -61,6 +63,8 @@ git pull --rebase
 ```
 
 ## Autenticação
+
+O servidor precisa saber quem você é antes de aceitar um `push`, e o GitHub não aceita mais a senha da conta para isso. Existem dois caminhos comuns. O **token de acesso pessoal** substitui a senha quando você usa o endereço HTTPS: você o gera nas configurações do GitHub, com as permissões que quiser, e o usa quando o Git pedir a senha. A **chave SSH** é um par de arquivos (uma chave privada que fica só com você e uma pública cadastrada no GitHub) e, depois de configurada, elimina o pedido de senha. Em ambos os casos, o cuidado é o mesmo: nunca coloque o token ou a chave privada em um repositório.
 
 O GitHub **não aceita mais a senha da conta** em operações Git por HTTPS (desde 2021). Use uma destas opções:
 

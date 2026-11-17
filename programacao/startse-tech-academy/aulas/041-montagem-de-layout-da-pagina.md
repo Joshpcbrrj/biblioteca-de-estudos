@@ -8,9 +8,13 @@ Você já tem as peças: media queries, `display`, `position` e `box-sizing`. Ag
 
 ## O que é o layout?
 
+Um layout bom é aquele que o visitante nem percebe: ele acha o menu onde espera, lê o conteúdo sem esforço e encontra o rodapé no fim. Um layout ruim obriga a pensar. A tarefa do desenvolvedor é traduzir um desenho, com caixas e proporções, em HTML e CSS que funcione em telas de tamanhos diferentes. Esta aula usa tudo o que o módulo ensinou, num só projeto.
+
 **O layout é a forma como os elementos são organizados visualmente na página.** Um bom layout guia o olhar, deixa claro o que é mais importante e facilita a navegação, em qualquer tamanho de tela.
 
 ## Passo a passo para montar um layout
+
+A ordem dos passos importa, e ela evita o erro mais comum: começar a escrever CSS sem saber onde cada coisa vai ficar. Esboçar primeiro custa cinco minutos e economiza horas. Depois vem o HTML sem nenhum estilo, que já deve fazer sentido sozinho. Em seguida, o CSS dá a estrutura, e só por último o acabamento visual. E começar pelo celular ("mobile first") é mais fácil: é mais simples ampliar um layout de uma coluna do que espremer um de três.
 
 1. **Esboce antes de codar.** Papel, Figma ou Excalidraw: desenhe as caixas principais (cabeçalho, menu, conteúdo, barra lateral, rodapé).
 2. **Escreva o HTML semântico.** Cada caixa vira uma tag com significado: `<header>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<footer>`.
@@ -23,7 +27,9 @@ Você já tem as peças: media queries, `display`, `position` e `box-sizing`. Ag
 
 ## Projeto: um layout clássico
 
-![Cabeçalho com menu, conteúdo principal e barra lateral lado a lado, rodapé.](../img/layout-pagina-2.svg)
+O projeto é o desenho mais comum da web: cabeçalho com menu no topo, conteúdo principal ao lado de uma barra lateral e rodapé embaixo. Ao ler o código, acompanhe o desenho abaixo e identifique cada tag. Preste atenção na regra `* { box-sizing: border-box; }` no começo do CSS: ela faz com que a largura de cada caixa inclua o padding e a borda, e evita que somas de porcentagens estourem a linha.
+
+![Cabeçalho com menu, conteúdo principal e barra lateral lado a lado, rodapé.](../img/layout-pagina.svg)
 
 > 💡 **Analogia:** montar um layout é como diagramar a capa de um jornal. Primeiro se decide onde ficam o nome do jornal (cabeçalho), a manchete (conteúdo principal), a coluna de notas (barra lateral) e o expediente (rodapé); só depois se escolhem fontes e cores. Quem pula o rascunho acaba refazendo a página inteira.
 

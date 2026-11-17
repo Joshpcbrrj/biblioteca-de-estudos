@@ -33,6 +33,8 @@ Na aula anterior, uma requisição saiu do navegador e chegou a um servidor. Tan
 
 ## Software
 
+O hardware é a parte física, mas sem instruções ele é só um conjunto de peças paradas. O **software** é o conjunto de programas que diz ao hardware o que fazer. Ele se divide em camadas. O **software básico** (o sistema operacional e os drivers) faz a ponte direta com o hardware. O **software de aplicação** (navegador, editor de texto, jogos) é o que você usa para realizar tarefas. E as **linguagens de programação** são as ferramentas que programadores usam para criar os dois. Você, ao aprender a programar, passa de usuário de software a criador de software.
+
 **Software é a parte lógica**: os programas que dão vida ao hardware e o controlam.
 
 - **Software de sistema**: sistema operacional, drivers, firmware (BIOS/UEFI).
@@ -42,6 +44,8 @@ Na aula anterior, uma requisição saiu do navegador e chegou a um servidor. Tan
 > ⚠️ **Correções:** "linguagens de programação" não são software. Uma linguagem é um conjunto de regras; o software é o **compilador ou interpretador** que a executa. E o termo para a caixa de graves é **subwoofer**, não "subwolf".
 
 ## Bits e bytes
+
+Por dentro, o computador só entende dois estados elétricos: ligado e desligado. Chamamos cada um deles de **bit** (0 ou 1). Um bit sozinho diz muito pouco, então eles são agrupados: oito bits formam um **byte**, que pode representar 256 combinações diferentes (de 0 a 255) e guarda, por exemplo, uma letra. Textos, fotos, músicas e programas são, no fim, longas sequências de bytes. Isso explica as unidades que você vê no dia a dia: um KB tem cerca de mil bytes, um MB mil KB, e um GB mil MB. Uma foto de 3 MB tem mais ou menos três milhões de bytes.
 
 O computador só entende dois estados elétricos, representados por **0** e **1**. Cada um é um **bit**. Juntando bits, representa-se qualquer coisa:
 

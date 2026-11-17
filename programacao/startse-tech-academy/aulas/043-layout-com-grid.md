@@ -19,6 +19,8 @@ Eles se combinam: é comum usar Grid na página e Flexbox dentro de cada bloco.
 
 ## Criando a malha
 
+Tudo começa com `display: grid` no contêiner. A partir daí, `grid-template-columns` e `grid-template-rows` descrevem o tamanho de cada coluna e linha, e os filhos diretos do contêiner passam a ocupar as células em ordem, da esquerda para a direita e de cima para baixo. Você pode misturar unidades: `200px` para uma barra lateral fixa, `1fr` para o conteúdo que absorve o resto do espaço, `auto` para a linha que se ajusta ao conteúdo. O `gap` cria o espaçamento entre células sem precisar de margens, o que evita o clássico erro de somar margem na última coluna.
+
 ```css
 .container {
   display: grid;
@@ -51,7 +53,7 @@ grid-template-columns:
 
 As linhas da grade são numeradas a partir de 1. Uma grade de 4 colunas tem **5 linhas verticais**. Para posicionar um item, dizemos onde ele começa e onde termina:
 
-![grid-column e grid-row usam os números das linhas, não das células.](../img/grid-linhas-2.svg)
+![grid-column e grid-row usam os números das linhas, não das células.](../img/grid-linhas.svg)
 
 > 💡 **Analogia:** o Grid é como um tabuleiro de batalha naval. As linhas numeradas são as coordenadas da borda, e cada item é um navio: você diz "vai da coluna 1 até a 3 e da linha 2 até a 4", e ele ocupa todas as casas nesse intervalo. Um navio de 2 casas vai da linha 1 à linha 3, porque contamos as linhas, não as casas.
 
@@ -98,6 +100,8 @@ Em vez de números, você nomeia as áreas e "desenha" o layout em texto:
 
 ## Alinhamento
 
+O alinhamento no Grid segue uma lógica de **dois níveis**, e confundir os níveis é a dúvida mais comum. O primeiro nível é o **conteúdo dentro de cada célula**: `justify-items` (horizontal) e `align-items` (vertical). O segundo é a **grade inteira dentro do contêiner**, quando ela é menor que o espaço disponível: `justify-content` e `align-content`. Regra prática: se a propriedade termina em `-items`, ela mexe nos itens dentro das células; se termina em `-content`, ela mexe na malha como um todo. E `place-items: center` é o atalho para centralizar, que resolve o antigo problema de centralizar algo na vertical.
+
 | Propriedade | Atua em |
 | --- | --- |
 | `justify-items` / `align-items` | todos os itens dentro das células (horizontal / vertical) |
@@ -107,7 +111,7 @@ Em vez de números, você nomeia as áreas e "desenha" o layout em texto:
 
 ## Projeto: layout com grid de 12 colunas
 
-![Layout corrigido: menu, conteúdo e barra lateral sem sobreposição.](../img/grid-projeto-2.svg)
+![Layout corrigido: menu, conteúdo e barra lateral sem sobreposição.](../img/grid-projeto.svg)
 
 > 💡 **Analogia:** o layout corrigido é como a planta de um apartamento com paredes definidas. Menu, conteúdo e barra lateral têm cada um a sua sala, e nenhum invade a vizinha.
 

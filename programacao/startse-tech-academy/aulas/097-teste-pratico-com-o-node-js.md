@@ -8,13 +8,17 @@ Até aqui o Node foi só teoria. Neste projeto você vai vê-lo funcionar: um pr
 
 Você conhece o Node e o npm. Agora vamos juntar os dois num projeto mínimo, passo a passo.
 
-![Projeto Node em 4 passos](../img/st-node-2.svg)
+![Projeto Node em 4 passos](../img/st-node.svg)
 
 > 💡 **Analogia:** criar um projeto Node é como abrir uma pequena empresa. O `npm init` faz o registro (o `package.json` é o contrato social, com nome, versão e responsável); o `index.js` é a sede; e os `scripts` são os atalhos do dia a dia, como "abrir a loja" (`npm start`).
 
 ## 1. Iniciar o projeto
 
 O `package.json` é a ficha de identidade do projeto: nome, versão, ponto de entrada e as bibliotecas de que ele depende. Sem ele, o npm não sabe o que instalar nem como rodar o projeto. Quem pegar seu projeto no GitHub depois só precisa de `npm install` para ter tudo de volta. Se você não tem opinião sobre as perguntas, `npm init -y` aceita todas as sugestões e você ajusta o arquivo à mão quando precisar.
+
+![Os campos mais importantes do package.json.](../img/st-package-json.svg)
+
+> 💡 **Analogia:** o `package.json` é como a ficha técnica de um eletrodoméstico: nome, modelo, o que vem na caixa e como ligar.
 
 Crie uma pasta, abra o terminal nela e rode:
 

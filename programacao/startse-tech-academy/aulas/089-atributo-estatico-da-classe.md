@@ -12,7 +12,7 @@ Imagine contar quantos usuários o sistema já criou. Esse número não pertence
 
 **Um atributo ou método** `static` **pertence à própria classe, e não a cada objeto.** Existe uma cópia só, acessada pelo nome da classe: `Classe.membro`.
 
-![A instância não enxerga o membro estático.](../img/static-2.svg)
+![A instância não enxerga o membro estático.](../img/static.svg)
 
 > 💡 **Analogia:** numa escola, cada aluno tem sua própria mochila (atributos de instância), mas o mural de avisos do corredor é um só, da escola inteira (atributo estático). Para ler o mural você vai ao corredor (`Escola.mural`), e não abre a mochila de um aluno.
 

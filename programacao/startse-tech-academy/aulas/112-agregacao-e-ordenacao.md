@@ -30,9 +30,11 @@ FROM vendas;
 
 ## GROUP BY: agregar por grupo
 
+Sozinha, uma função de agregação resume a tabela **inteira** em um único número: `SUM(valor)` devolve o total de todas as vendas. Mas a pergunta de negócio costuma ser "quanto vendemos **por vendedor**?" ou "quantos pedidos **por mês**?". O `GROUP BY` responde a isso: ele separa as linhas em grupos que têm o mesmo valor na coluna indicada e aplica a função a cada grupo. A regra que mais dá erro: toda coluna no `SELECT` que **não** esteja dentro de uma função de agregação precisa aparecer no `GROUP BY`. Se você seleciona `vendedor` e `SUM(valor)`, agrupe por `vendedor`.
+
 Sem `GROUP BY`, a agregação resume a tabela inteira em **uma** linha. Com ele, o banco cria **uma linha por grupo**.
 
-![As três vendas da Ana viram uma linha só.](../img/group-by-2.svg)
+![As três vendas da Ana viram uma linha só.](../img/group-by.svg)
 
 > 💡 **Analogia:** é como esvaziar um cofrinho na mesa. Primeiro você tira as moedas estrangeiras (`WHERE`, antes de agrupar). Depois separa as moedas em pilhas por valor (`GROUP BY`) e conta ou soma cada pilha (`COUNT`, `SUM`). Por fim, ignora as pilhas com menos de 5 moedas (`HAVING`, depois de agrupar). Cada pilha vira uma linha do resultado.
 
@@ -45,6 +47,8 @@ GROUP BY vendedor;
 Regra: toda coluna do `SELECT` que **não** está dentro de uma função de agregação precisa estar no `GROUP BY`. Senão o banco não sabe qual valor mostrar (o PostgreSQL dá erro; o MySQL 5.7+ também dá erro por padrão, pelo modo ONLY_FULL_GROUP_BY).
 
 ## WHERE × HAVING
+
+Os dois filtram, mas em momentos diferentes da consulta, e a ordem explica tudo. O `WHERE` age **antes** do agrupamento, escolhendo quais linhas entram na conta. O `HAVING` age **depois**, escolhendo quais grupos aparecem no resultado, e por isso é o único que enxerga o valor de uma agregação como `SUM(valor)`. Exemplo: "vendas de 2024 (`WHERE`) por vendedor, mostrando só quem passou de R$ 10 mil (`HAVING`)". Se você tentar `WHERE SUM(valor) > 10000`, o banco devolve erro, porque a soma ainda não existe naquele momento. Regra prática: filtro sobre uma coluna comum vai no `WHERE`; filtro sobre um resultado agregado vai no `HAVING`.
 
 - `WHERE` filtra **linhas**, **antes** de agrupar. Não aceita funções de agregação.
 - `HAVING` filtra **grupos**, **depois** de agregar.

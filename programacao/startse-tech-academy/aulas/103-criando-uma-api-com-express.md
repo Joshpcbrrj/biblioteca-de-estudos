@@ -33,7 +33,7 @@ npm pkg set scripts.dev="node --watch server.js"
 
 ## O caminho de uma requisição
 
-![A requisição passa pelos middlewares, na ordem, até a rota que responde.](../img/express-fluxo-2.svg)
+![A requisição passa pelos middlewares, na ordem, até a rota que responde.](../img/express-fluxo.svg)
 
 > 💡 **Analogia:** a requisição é um visitante entrando num prédio. Na portaria, um funcionário confere de onde ele vem (`cors`), outro abre e organiza o pacote que ele trouxe (`express.json`), e só então ele é levado à sala certa (a rota), onde alguém resolve o pedido e entrega a resposta. Se a sala não existe, a recepção avisa (404); se algo dá errado lá dentro, o plantão de emergência atende (o middleware de erro).
 
@@ -126,6 +126,8 @@ Rode com `npm run dev` e abra `http://localhost:3000/tarefas` no navegador.
 
 ## Middleware
 
+Middleware é uma função que fica **no meio do caminho** entre a requisição que chega e a resposta que sai. Ela recebe a requisição, pode ler ou alterar, e decide se passa para o próximo passo (chamando `next()`) ou se encerra ali com uma resposta. Você pode encadear várias, na ordem em que as registra com `app.use`: uma que registra o acesso no log, outra que converte o corpo JSON, outra que confere se o usuário está autenticado. Pense em uma portaria de prédio: cada visitante passa por vários checkpoints antes de chegar ao apartamento, e qualquer um deles pode barrar. A ordem importa: um middleware de autenticação precisa vir antes das rotas que ele protege.
+
 Middleware é uma função que roda **antes** das rotas, por exemplo para registrar logs ou verificar login:
 
 ```jsx
@@ -157,6 +159,8 @@ app.use((err, req, res, next) => {
 O Express reconhece o middleware de erro pelos **quatro** parâmetros. Nunca devolva o `err.stack` ao cliente: ele expõe detalhes internos.
 
 ## Testando a API
+
+Depois de escrever as rotas, a pergunta natural é “será que funciona?”. Você pode testar de três formas. Para requisições `GET`, basta abrir o endereço no navegador. Para as demais (`POST`, `PUT`, `DELETE`), use uma ferramenta como o `curl` no terminal ou aplicativos gráficos como o Postman e a extensão Thunder Client do VS Code, em que você monta a requisição e vê a resposta. Em cada teste, confira três coisas: o **código de status** (201 ao criar, 404 quando não existe, 400 em dado inválido), o **corpo** da resposta e o **efeito** no servidor. Teste também os casos de erro, e não só o caminho feliz.
 
 - **GET** direto no navegador.
 - Para POST, PUT e DELETE use **Postman**, **Insomnia**, a extensão **Thunder Client** do VS Code ou o terminal:

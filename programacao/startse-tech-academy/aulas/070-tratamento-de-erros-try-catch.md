@@ -12,7 +12,7 @@ Na aula de objetos você viu `JSON.parse`. Se o texto não for um JSON válido, 
 
 ## `try`, `catch` e `finally`
 
-![Se o try falha, o catch assume; o finally roda nos dois casos.](../img/try-catch-2.svg)
+![Se o try falha, o catch assume; o finally roda nos dois casos.](../img/try-catch.svg)
 
 > 💡 **Analogia:** `try/catch` é como a rede de segurança de um trapezista. O `try` é o número no ar; se ele escorrega, o `catch` é a rede que o segura e evita que o espetáculo acabe. O `finally` é a equipe que guarda o equipamento no fim, tenha o número dado certo ou não.
 
@@ -33,6 +33,8 @@ try {
 Quando uma linha do `try` falha, as linhas seguintes do `try` são puladas e a execução vai direto para o `catch`. O objeto de erro tem `name` (ex.: `SyntaxError`), `message` e `stack` (onde aconteceu).
 
 ## Tipos de erro comuns
+
+Saber o nome do erro economiza tempo, porque o nome já aponta o que procurar. `ReferenceError` significa que você usou uma variável que não existe (geralmente um erro de digitação). `TypeError` indica que você usou um valor do jeito errado, como chamar `.toUpperCase()` em um número ou ler uma propriedade de `null`; é o erro mais frequente no dia a dia. `SyntaxError` aparece quando o código está mal escrito, e o programa nem chega a rodar. Use esses nomes como pista: ao ver `Cannot read properties of undefined`, você já sabe que algum objeto esperado não chegou.
 
 | Erro | Exemplo |
 | --- | --- |
@@ -101,6 +103,8 @@ fetch("/api")
 > ⚠️ Um `try` em volta de um `setTimeout` **não pega** um erro lançado dentro do callback: quando o callback roda, o `try` já terminou. Coloque o `try` **dentro** do callback.
 
 ## Boas práticas
+
+Tratar erro não é esconder erro. A prática mais danosa é o `catch` vazio, que engole o problema e deixa o programa seguir como se nada tivesse acontecido: o bug continua lá, só que agora ninguém o vê. Em vez disso, registre o erro (`console.error`), mostre uma mensagem útil ao usuário e, quando não souber resolver naquele ponto, **relance** o erro para quem sabe. Coloque no `try` só o trecho que pode falhar, para saber exatamente de onde veio o problema. E lance erros com mensagens que digam **o que** deu errado e **qual valor** causou: "idade inválida: -5" ajuda muito mais do que "erro".
 
 - Não "engula" erros com `catch {}` vazio: no mínimo, registre.
 - Trate o erro **onde dá para fazer algo útil**; nos outros lugares, deixe subir.

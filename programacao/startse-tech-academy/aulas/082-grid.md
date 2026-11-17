@@ -35,7 +35,7 @@ Imagine desenhar a página num papel quadriculado: você risca linhas e colunas,
 
 Veja o exemplo com números. Num contêiner de 800 px e `200px 1fr 2fr`, a primeira coluna pega 200 px. Sobram 600 px, que são divididos em três partes: 1fr fica com 200 px e 2fr com 400 px. Se a janela encolhe para 500 px, as frações encolhem junto (100 e 200), e a coluna fixa continua com 200. O `repeat(auto-fit, minmax(220px, 1fr))` vai além: cria quantas colunas de pelo menos 220 px couberem, e reorganiza sozinho conforme a tela, sem media query.
 
-![fr divide o espaço que sobra depois das medidas fixas.](../img/grid-template-2.svg)
+![fr divide o espaço que sobra depois das medidas fixas.](../img/grid-template.svg)
 
 > 💡 **Analogia:** o `fr` é como dividir uma pizza depois de separar os pedaços reservados. Em `200px 1fr 2fr`, primeiro sai a fatia fixa de 200px; o que sobra é dividido em 3 partes iguais, e uma pessoa leva 1 parte enquanto a outra leva 2.
 
@@ -64,7 +64,7 @@ grid-template-columns:
 
 Cada item pode ser posicionado pelas linhas da grade. O que confunde é que há uma linha a mais que colunas: uma grade com 3 colunas tem 4 linhas, numeradas de 1 a 4. `grid-column: 1 / 3` diz "comece na linha 1 e termine na linha 3", ocupando duas colunas. O valor `-1` é a última linha, o que torna `1 / -1` um atalho para "largura total", mesmo sem saber quantas colunas existem.
 
-![Itens são posicionados pelas linhas da grade, não pelas células.](../img/grid-linhas-2.svg)
+![Itens são posicionados pelas linhas da grade, não pelas células.](../img/grid-linhas.svg)
 
 > 💡 **Analogia:** as linhas da grade são como as ruas numeradas de um bairro planejado. Um terreno "da rua 1 à rua 3" ocupa dois quarteirões: você informa as ruas, não os quarteirões.
 

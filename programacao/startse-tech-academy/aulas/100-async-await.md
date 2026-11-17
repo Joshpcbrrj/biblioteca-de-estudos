@@ -66,7 +66,9 @@ const nome = await buscarUsuario("octocat");
 
 ## Sequencial × paralelo
 
-![await em sequência × Promise.all](../img/st-async-2.svg)
+O `await` é tão confortável que muita gente o coloca em tudo, e isso cria um problema de desempenho silencioso. Se você escreve `await a(); await b();`, a segunda operação só começa depois que a primeira termina, mesmo quando uma não depende da outra. Para duas requisições de 1 segundo cada, o total é de 2 segundos. Quando as tarefas são independentes, dispare todas de uma vez e espere o conjunto com `Promise.all`: o total cai para cerca de 1 segundo. A pergunta que resolve a dúvida é: "a segunda tarefa precisa do resultado da primeira?" Se sim, sequencial; se não, paralelo.
+
+![await em sequência × Promise.all](../img/st-async.svg)
 
 > 💡 **Analogia:** fazer café da manhã. Com `await` em sequência, você liga a cafeteira, espera o café ficar pronto e só então põe o pão na torradeira. Com `Promise.all`, liga as duas coisas ao mesmo tempo e espera as duas terminarem: o café da manhã sai bem mais rápido. Só faz sentido esperar em fila quando uma etapa depende da outra.
 
@@ -86,6 +88,8 @@ const [usuarios2, produtos2] = await Promise.all([
 Use `await` em sequência só quando uma operação **depende** do resultado da outra.
 
 ## Regras rápidas
+
+Estas regras evitam a maioria dos erros de quem está começando. Primeiro, `await` só funciona dentro de uma função `async` (ou no nível superior de um módulo). Segundo, uma função `async` **sempre** devolve uma Promise, mesmo quando você escreve `return 5`; por isso quem a chama também precisa de `await` ou de `.then()`. Terceiro, esquecer o `await` não gera erro: você recebe a Promise em vez do valor, e o resultado aparece como `Promise { <pending> }`. Quarto, sem `try/catch`, uma rejeição vira um erro não tratado, então envolva as chamadas que podem falhar.
 
 - `await` só funciona dentro de função `async` ou no topo de um **módulo** (top-level await).
 - Uma função `async` sempre retorna Promise: com `async function f() { return 1 }`, `f()` é uma Promise de 1. Para usar o valor, precisa de `await` ou `.then()`.

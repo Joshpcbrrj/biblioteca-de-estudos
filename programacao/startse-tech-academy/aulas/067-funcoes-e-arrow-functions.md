@@ -10,7 +10,7 @@ Os métodos de array recebiam funções como `p => p.nome`. Agora vamos entender
 
 **Uma função é um bloco de código com nome, que pode ser reutilizado: recebe dados de entrada (parâmetros), executa instruções e pode devolver um resultado (**`return`**).**
 
-![Parâmetros estão na definição; argumentos são os valores passados na chamada.](../img/funcao-anatomia-2.svg)
+![Parâmetros estão na definição; argumentos são os valores passados na chamada.](../img/funcao-anatomia.svg)
 
 > 💡 **Analogia:** uma função é como uma receita de bolo escrita num cartão. Os **parâmetros** são os ingredientes listados no cartão ("farinha, ovos"); os **argumentos** são os ingredientes de verdade que você coloca na tigela hoje; o `return` é o bolo que sai do forno. A mesma receita pode ser feita muitas vezes, com ingredientes diferentes.
 
@@ -36,6 +36,8 @@ saudar("Ana");  // "Olá, Ana!"
 ```
 
 ## Formas de criar funções
+
+O JavaScript oferece três jeitos de escrever a mesma ideia, e cada um tem seu lugar. A **declaração** (`function soma() {}`) é a forma clássica e tem uma particularidade: pode ser chamada antes de aparecer no código, porque o JavaScript a registra no início. A **expressão** (`const soma = function() {}`) guarda a função numa variável e só vale a partir da linha em que é criada. A **arrow function** (`const soma = () => {}`) é uma expressão mais curta, muito usada em callbacks. Nas três, o resultado é o mesmo: você chama pelo nome e recebe o valor de volta.
 
 ```jsx
 // 1. Declaração: pode ser chamada antes
@@ -74,6 +76,8 @@ const criarPonto = (x, y) => ({ x, y });
 Na prática: use arrow functions para callbacks curtos (`map`, `filter`, eventos simples) e `function` ou métodos de classe quando precisar de um `this` próprio. O `this` é detalhado na aula **Escopo, closures e this**.
 
 ## Funções como valores
+
+Em JavaScript, uma função é um valor como qualquer outro: pode ser guardada numa variável, colocada em um array e, principalmente, **passada como argumento** para outra função. É isso que permite escrever `lista.map(dobrar)`: você entrega a regra (dobrar) e o método cuida de aplicá-la a cada item. Repare na diferença entre `dobrar` e `dobrar()`: sem parênteses você passa a função em si; com parênteses você a executa na hora e passa o resultado. Esse detalhe de duas letras explica muitos bugs de iniciantes, em especial em `addEventListener`.
 
 Em JavaScript, funções são valores: podem ser guardadas em variáveis, passadas como argumento (**callback**) e retornadas por outras funções.
 

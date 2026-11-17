@@ -30,7 +30,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ## Os eixos
 
-![Tudo no Flexbox é relativo a estes dois eixos.](../img/flex-eixos-2.svg)
+![Tudo no Flexbox é relativo a estes dois eixos.](../img/flex-eixos.svg)
 
 > 💡 **Analogia:** o contêiner flex é um varal e os itens são as roupas penduradas. O eixo principal é a corda: `justify-content` decide se as roupas ficam juntas numa ponta, no meio ou espalhadas. O eixo transversal é a altura: `align-items` decide se as peças ficam presas pelo topo, centralizadas ou esticadas até o chão. Girar o varal na vertical (`column`) troca os papéis.
 
@@ -38,7 +38,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `flex-direction`
 
-![Define para onde aponta o eixo principal.](../img/flex-direction-2.svg)
+![Define para onde aponta o eixo principal.](../img/flex-direction.svg)
 
 > 💡 **Analogia:** o `flex-direction` decide como a corda do varal é esticada: de lado a lado (`row`) ou de cima para baixo (`column`). As roupas seguem a corda.
 
@@ -52,7 +52,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `flex-wrap`
 
-![Sem wrap, os itens encolhem para caber numa linha só.](../img/flex-wrap-2.svg)
+![Sem wrap, os itens encolhem para caber numa linha só.](../img/flex-wrap.svg)
 
 > 💡 **Analogia:** sem `wrap`, você aperta todas as roupas numa corda só. Com `wrap`, quando a corda enche, as roupas seguintes vão para uma segunda corda.
 
@@ -68,7 +68,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `justify-content`: eixo principal
 
-![Distribuição do espaço livre ao longo do eixo principal.](../img/flex-justify-2.svg)
+![Distribuição do espaço livre ao longo do eixo principal.](../img/flex-justify.svg)
 
 > 💡 **Analogia:** o `justify-content` é a forma de espalhar as roupas pela corda: todas numa ponta, todas no meio ou com folgas iguais entre elas.
 
@@ -82,7 +82,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `align-items`: eixo transversal
 
-![Alinhamento de cada item dentro da linha.](../img/flex-align-2.svg)
+![Alinhamento de cada item dentro da linha.](../img/flex-align.svg)
 
 > 💡 **Analogia:** o `align-items` é a altura em que cada roupa fica presa: rente à corda, centralizada ou esticada até o chão.
 
@@ -98,7 +98,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `align-content`: as linhas
 
-![Só tem efeito quando há mais de uma linha.](../img/align-content-2.svg)
+![Só tem efeito quando há mais de uma linha.](../img/align-content.svg)
 
 > 💡 **Analogia:** o `align-content` só importa quando há várias cordas: ele decide se elas ficam juntas no alto, no meio ou espalhadas pela parede.
 
@@ -114,7 +114,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `gap`
 
-![O espaço fica só entre os itens.](../img/flex-gap-2.svg)
+![O espaço fica só entre os itens.](../img/flex-gap.svg)
 
 > 💡 **Analogia:** o `gap` é a folga fixa entre um pregador e o seguinte. Ela existe só entre as roupas, nunca nas pontas da corda.
 
@@ -131,7 +131,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `order`
 
-![O item com menor order aparece primeiro.](../img/flex-order-2.svg)
+![O item com menor order aparece primeiro.](../img/flex-order.svg)
 
 > 💡 **Analogia:** o `order` é uma senha presa em cada roupa: elas são penduradas pela ordem da senha, não pela ordem em que saíram do cesto.
 
@@ -141,7 +141,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `flex-grow`, `flex-shrink` e `flex-basis`
 
-![O espaço LIVRE é dividido na proporção do flex-grow.](../img/flex-grow-2.svg)
+![O espaço LIVRE é dividido na proporção do flex-grow.](../img/flex-grow.svg)
 
 > 💡 **Analogia:** o `flex-grow` reparte a sobra de corda: uma roupa com `2` ganha o dobro da sobra de uma roupa com `1`.
 
@@ -164,7 +164,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `align-self`
 
-![Sobrescreve o align-items do contêiner para um item só.](../img/align-self-2.svg)
+![Sobrescreve o align-items do contêiner para um item só.](../img/align-self.svg)
 
 > 💡 **Analogia:** o `align-self` é a exceção: uma única roupa presa em altura diferente das outras, sem mudar a regra do varal.
 

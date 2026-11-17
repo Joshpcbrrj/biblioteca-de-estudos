@@ -10,7 +10,7 @@ Com `git add .`, tudo que está na pasta entra no próximo commit. Mas dependên
 
 **O** `.gitignore` **é um arquivo de texto, na raiz do projeto, que lista arquivos e pastas que o Git deve ignorar.** Eles continuam na sua máquina, mas não aparecem no `git status`, não entram no `git add .` e nunca vão para o repositório. O próprio `.gitignore` deve ser commitado, para valer para todo o time.
 
-![O Git só enxerga o que não casa com nenhuma regra.](../img/gitignore-filtro-2.svg)
+![O Git só enxerga o que não casa com nenhuma regra.](../img/gitignore-filtro.svg)
 
 > 💡 **Analogia:** o `.gitignore` é como a lista de "não levar" que você cola na porta antes de uma mudança de casa: lixo, caixas vazias, coisas que dá para comprar de novo. A transportadora (o Git) olha a lista e simplesmente não coloca esses itens no caminhão, mesmo que estejam no meio da sala.
 
@@ -23,6 +23,8 @@ Com `git add .`, tudo que está na pasta entra no próximo commit. Mas dependên
 - **Lixo do sistema e do editor**: `.DS_Store`, `Thumbs.db`, `.vscode/` (quando for configuração pessoal).
 
 ## Sintaxe
+
+O `.gitignore` é um arquivo de texto com **um padrão por linha**, e o Git ignora tudo o que casar com algum deles. Os padrões seguem poucas regras: um nome simples (`node_modules`) ignora qualquer item com esse nome; uma barra no final (`dist/`) indica que é uma pasta; o asterisco (`*.log`) representa qualquer sequência de caracteres; o `#` começa um comentário; e o `!` no início **abre uma exceção**, como `!importante.log`. Coloque o arquivo na raiz do projeto e faça o commit dele: assim, todo o time ignora os mesmos arquivos, e ninguém envia por engano senhas ou pastas gigantes.
 
 | Padrão | O que ignora |
 | --- | --- |

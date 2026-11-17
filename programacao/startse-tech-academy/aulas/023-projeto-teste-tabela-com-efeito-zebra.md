@@ -16,7 +16,7 @@ Criar uma tabela de contatos estilizada com:
 - **destaque ao passar o mouse** (`:hover`);
 - cabeçalho com células mescladas (`rowspan`/`colspan`) e legenda.
 
-![Linhas pares em cinza, linha sob o cursor em amarelo.](../img/tabela-zebra-2.svg)
+![Linhas pares em cinza, linha sob o cursor em amarelo.](../img/tabela-zebra.svg)
 
 > 💡 **Analogia:** o efeito zebra funciona como o papel de formulário contínuo antigo, com faixas alternadas: o olho não "pula" de linha ao atravessar a tabela da esquerda para a direita. O `:hover` é como passar uma régua por baixo da linha que você está lendo.
 
