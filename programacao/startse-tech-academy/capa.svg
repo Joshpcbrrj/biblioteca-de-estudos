@@ -1,1 +1,145 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2560" viewBox="0 0 1600 2560"><defs><filter id="ts"><feDropShadow dx="10" dy="12" stdDeviation="8" flood-color="#3B160E" flood-opacity=".55"/></filter><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#FFFFFF"/></marker><marker id="ad" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#4E2218"/></marker></defs><rect width="1600" height="2560" fill="#C9784E"/><polygon points="0,0 1600,0 1600,640 0,140" fill="#55241A"/><polygon points="0,140 1600,640 1600,700 0,190" fill="#7A3A24"/><polygon points="0,1840 1100,2560 0,2560" fill="#55241A"/><polygon points="1600,2200 1600,2560 1000,2560" fill="#7A3A24"/><text x="1470" y="170" font-family="Latin Modern Mono" font-size="56" font-weight="700" fill="#F3E3D6" text-anchor="end" letter-spacing="14" >STARTSE</text><g filter="url(#ts)"><text transform="translate(110,560) scale(0.84,1)" font-family="Inter Display" font-size="300" font-weight="900" fill="#FFFFFF" text-anchor="start" letter-spacing="-4" >TECH</text><text transform="translate(110,830) scale(0.8,1)" font-family="Inter Display" font-size="300" font-weight="900" fill="#FFFFFF" text-anchor="start" letter-spacing="-6" >ACADEMY</text></g><text x="120" y="935" font-family="Latin Modern Mono" font-size="66" font-weight="400" fill="#4E2218" text-anchor="start" letter-spacing="8" >DO ZERO AO</text><text x="120" y="1010" font-family="Latin Modern Mono" font-size="66" font-weight="400" fill="#4E2218" text-anchor="start" letter-spacing="8" >DESENVOLVIMENTO WEB</text><path d="M820 2290 L820 1180" stroke="#FFFFFF" stroke-width="30" fill="none" marker-end="url(#ar)"/><path d="M1110 2290 L1110 1340" stroke="#4E2218" stroke-width="30" fill="none" marker-end="url(#ad)"/><path d="M820 1720 Q820 1640 740 1640 L520 1640" stroke="#4E2218" stroke-width="24" fill="none" marker-end="url(#ad)"/><path d="M820 2120 Q820 2040 740 2040 L560 2040" stroke="#FFFFFF" stroke-width="24" fill="none" marker-end="url(#ar)"/><path d="M1110 1900 Q1110 1820 1190 1820 L1420 1820" stroke="#FFFFFF" stroke-width="24" fill="none"/><path d="M820 1460 L1010 1460" stroke="#FFFFFF" stroke-width="20" fill="none"/><path d="M1110 2260 L1330 2260" stroke="#4E2218" stroke-width="20" fill="none"/><circle cx="980" cy="1380" r="136" fill="#FFFFFF"/><circle cx="980" cy="1380" r="120" fill="#E8622C"/><text x="980" y="1401.6" font-family="Latin Modern Mono" font-size="60" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >HTML</text><circle cx="640" cy="1430" r="116" fill="#FFFFFF"/><circle cx="640" cy="1430" r="100" fill="#D99A2B"/><text x="640" y="1452.32" font-family="Latin Modern Mono" font-size="62" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >CSS</text><circle cx="1300" cy="1560" r="136" fill="#FFFFFF"/><circle cx="1300" cy="1560" r="120" fill="#E8622C"/><text x="1300" y="1586.64" font-family="Latin Modern Mono" font-size="74" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >JS</text><circle cx="430" cy="1640" r="112" fill="#FFFFFF"/><circle cx="430" cy="1640" r="96" fill="#D99A2B"/><text x="430" y="1661.24" font-family="Latin Modern Mono" font-size="59" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >GIT</text><circle cx="1050" cy="1700" r="108" fill="#FFFFFF"/><circle cx="1050" cy="1700" r="92" fill="#B8432B"/><text x="1050" y="1720.52" font-family="Latin Modern Mono" font-size="57" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >POO</text><circle cx="470" cy="2040" r="126" fill="#FFFFFF"/><circle cx="470" cy="2040" r="110" fill="#E8622C"/><text x="470" y="2064.48" font-family="Latin Modern Mono" font-size="68" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >SQL</text><circle cx="1420" cy="1820" r="120" fill="#FFFFFF"/><circle cx="1420" cy="1820" r="104" fill="#D99A2B"/><text x="1420" y="1838.72" font-family="Latin Modern Mono" font-size="52" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >NODE</text><circle cx="1340" cy="2260" r="102" fill="#FFFFFF"/><circle cx="1340" cy="2260" r="86" fill="#B8432B"/><text x="1340" y="2279.08" font-family="Latin Modern Mono" font-size="53" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >API</text><circle cx="980" cy="2050" r="92" fill="#FFFFFF"/><circle cx="980" cy="2050" r="76" fill="#D99A2B"/><text x="980" y="2066.92" font-family="Latin Modern Mono" font-size="47" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0" >&lt;/&gt;</text><circle cx="560" cy="1260" r="16" fill="#FFFFFF" opacity=".75"/><circle cx="1450" cy="1360" r="16" fill="#FFFFFF" opacity=".75"/><circle cx="360" cy="1880" r="16" fill="#FFFFFF" opacity=".75"/><circle cx="1500" cy="2080" r="16" fill="#FFFFFF" opacity=".75"/><circle cx="700" cy="1830" r="16" fill="#FFFFFF" opacity=".75"/><circle cx="1220" cy="1240" r="16" fill="#FFFFFF" opacity=".75"/><text x="110" y="2380" font-family="Latin Modern Mono" font-size="50" font-weight="400" fill="#F3E3D6" text-anchor="start" letter-spacing="2" >Curso da StartSe</text><text x="110" y="2455" font-family="Latin Modern Mono" font-size="50" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="1" >Criado por: Josué B. Almeida</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2560" viewBox="0 0 1600 2560">
+<defs><radialGradient id="fundo" cx="78%" cy="38%" r="85%"><stop offset="0%" stop-color="#4A4A4A"/><stop offset="38%" stop-color="#1C1C1C"/><stop offset="100%" stop-color="#000000"/></radialGradient><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2E2E2E" stop-opacity="0.9"/><stop offset="100%" stop-color="#000000" stop-opacity="0"/></linearGradient></defs>
+<rect width="1600" height="2560" fill="url(#fundo)"/>
+<rect width="1600" height="2560" fill="url(#grad)"/>
+<circle cx="904" cy="1608" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="1652" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="1696" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="1740" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="1784" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="1828" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="1872" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="1916" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="1960" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="2004" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="2048" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="2092" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="2136" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="2180" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="2224" r="4.7" fill="#0083ED"/>
+<circle cx="904" cy="2268" r="4.7" fill="#0083ED"/>
+<circle cx="948" cy="1608" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="1652" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="1696" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="1740" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="1784" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="1828" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="1872" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="1916" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="1960" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="2004" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="2048" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="2092" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="2136" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="2180" r="5.3" fill="#0083ED"/>
+<circle cx="948" cy="2224" r="5.3" fill="#0083ED"/>
+<circle cx="992" cy="1652" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="1696" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="1740" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="1784" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="1828" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="1872" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="1916" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="1960" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="2004" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="2048" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="2092" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="2136" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="2180" r="6.0" fill="#0083ED"/>
+<circle cx="992" cy="2224" r="6.0" fill="#0083ED"/>
+<circle cx="1036" cy="1696" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="1740" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="1784" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="1828" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="1872" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="1916" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="1960" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="2004" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="2048" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="2092" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="2136" r="6.7" fill="#0083ED"/>
+<circle cx="1036" cy="2180" r="6.7" fill="#0083ED"/>
+<circle cx="1080" cy="1696" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="1740" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="1784" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="1828" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="1872" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="1916" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="1960" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="2004" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="2048" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="2092" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="2136" r="7.3" fill="#0083ED"/>
+<circle cx="1080" cy="2180" r="7.3" fill="#0083ED"/>
+<circle cx="1124" cy="1740" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="1784" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="1828" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="1872" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="1916" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="1960" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="2004" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="2048" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="2092" r="8.0" fill="#0083ED"/>
+<circle cx="1124" cy="2136" r="8.0" fill="#0083ED"/>
+<circle cx="1168" cy="1740" r="8.7" fill="#0083ED"/>
+<circle cx="1168" cy="1784" r="8.7" fill="#0083ED"/>
+<circle cx="1168" cy="1828" r="8.7" fill="#0083ED"/>
+<circle cx="1168" cy="1872" r="8.7" fill="#0083ED"/>
+<circle cx="1168" cy="1916" r="8.7" fill="#0083ED"/>
+<circle cx="1168" cy="1960" r="8.7" fill="#0083ED"/>
+<circle cx="1168" cy="2004" r="8.7" fill="#0083ED"/>
+<circle cx="1168" cy="2048" r="8.7" fill="#0083ED"/>
+<circle cx="1168" cy="2092" r="8.7" fill="#0083ED"/>
+<circle cx="1212" cy="1784" r="9.3" fill="#0083ED"/>
+<circle cx="1212" cy="1828" r="9.3" fill="#0083ED"/>
+<circle cx="1212" cy="1872" r="9.3" fill="#0083ED"/>
+<circle cx="1212" cy="1916" r="9.3" fill="#0083ED"/>
+<circle cx="1212" cy="1960" r="9.3" fill="#0083ED"/>
+<circle cx="1212" cy="2004" r="9.3" fill="#0083ED"/>
+<circle cx="1212" cy="2048" r="9.3" fill="#0083ED"/>
+<circle cx="1212" cy="2092" r="9.3" fill="#0083ED"/>
+<circle cx="1256" cy="1828" r="10.0" fill="#0083ED"/>
+<circle cx="1256" cy="1872" r="10.0" fill="#0083ED"/>
+<circle cx="1256" cy="1916" r="10.0" fill="#0083ED"/>
+<circle cx="1256" cy="1960" r="10.0" fill="#0083ED"/>
+<circle cx="1256" cy="2004" r="10.0" fill="#0083ED"/>
+<circle cx="1256" cy="2048" r="10.0" fill="#0083ED"/>
+<circle cx="1300" cy="1828" r="10.7" fill="#0083ED"/>
+<circle cx="1300" cy="1872" r="10.7" fill="#0083ED"/>
+<circle cx="1300" cy="1916" r="10.7" fill="#0083ED"/>
+<circle cx="1300" cy="1960" r="10.7" fill="#0083ED"/>
+<circle cx="1300" cy="2004" r="10.7" fill="#0083ED"/>
+<circle cx="1300" cy="2048" r="10.7" fill="#0083ED"/>
+<circle cx="1344" cy="1872" r="11.3" fill="#0083ED"/>
+<circle cx="1344" cy="1916" r="11.3" fill="#0083ED"/>
+<circle cx="1344" cy="1960" r="11.3" fill="#0083ED"/>
+<circle cx="1344" cy="2004" r="11.3" fill="#0083ED"/>
+<circle cx="1388" cy="1872" r="12.0" fill="#0083ED"/>
+<circle cx="1388" cy="1916" r="12.0" fill="#0083ED"/>
+<circle cx="1388" cy="1960" r="12.0" fill="#0083ED"/>
+<circle cx="1432" cy="1916" r="12.7" fill="#0083ED"/>
+<circle cx="1432" cy="1960" r="12.7" fill="#0083ED"/>
+<circle cx="1476" cy="1916" r="13.3" fill="#0083ED"/>
+<rect x="170" y="1560" width="560" height="380" rx="28" fill="#0B0B0B" stroke="#0083ED" stroke-width="16"/>
+<rect x="200" y="1590" width="500" height="320" rx="10" fill="#000000"/>
+<rect x="230" y="1625" width="180" height="14" rx="7" fill="#0083ED"/>
+<rect x="230" y="1669" width="240" height="14" rx="7" fill="#FFFFFF"/>
+<rect x="260" y="1713" width="200" height="14" rx="7" fill="#FFFFFF"/>
+<rect x="260" y="1757" width="150" height="14" rx="7" fill="#0083ED"/>
+<rect x="230" y="1801" width="260" height="14" rx="7" fill="#FFFFFF"/>
+<rect x="230" y="1845" width="120" height="14" rx="7" fill="#0083ED"/>
+<circle cx="236" cy="1606" r="7" fill="#0083ED"/>
+<path d="M120 1940 L780 1940 L740 2000 Q735 2010 720 2010 L180 2010 Q165 2010 160 2000 Z" fill="#FFFFFF"/>
+<rect x="330" y="1940" width="260" height="14" rx="6" fill="#0083ED"/>
+<text x="120" y="190" font-family="Inter Display" font-size="92" font-weight="800" fill="#FFFFFF" letter-spacing="-2">.StartSe</text>
+<text x="1480" y="190" font-family="Latin Modern Mono" font-size="44" font-weight="700" fill="#0083ED" text-anchor="end" letter-spacing="10">CURSO</text>
+<rect x="120" y="260" width="1360" height="6" fill="#0083ED"/>
+<text x="112" y="820" font-family="Inter Display" font-size="330" font-weight="900" fill="#FFFFFF" letter-spacing="-10">TECH</text>
+<text x="112" y="1090" font-family="Inter Display" font-size="262" font-weight="900" fill="#FFFFFF" letter-spacing="-8">ACADEMY</text>
+<rect x="120" y="1150" width="260" height="34" fill="#0083ED"/>
+<text x="120" y="1360" font-family="Latin Modern Mono" font-size="64" font-weight="700" fill="#0083ED" letter-spacing="6">DO ZERO AO</text>
+<text x="120" y="1440" font-family="Latin Modern Mono" font-size="64" font-weight="700" fill="#FFFFFF" letter-spacing="6">DESENVOLVIMENTO WEB</text>
+<rect x="120" y="2330" width="1360" height="4" fill="#FFFFFF" opacity=".35"/>
+<text x="120" y="2410" font-family="Latin Modern Mono" font-size="50" font-weight="400" fill="#FFFFFF" letter-spacing="4">Criado por: Josué B. Almeida</text>
+<text x="120" y="2480" font-family="Latin Modern Mono" font-size="40" font-weight="400" fill="#0083ED" letter-spacing="4">HTML · CSS · GIT · JAVASCRIPT · NODE · SQL</text>
+</svg>
