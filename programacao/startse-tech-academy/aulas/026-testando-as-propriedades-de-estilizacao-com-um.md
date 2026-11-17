@@ -16,6 +16,10 @@ Três páginas que usam o **mesmo** arquivo CSS externo, cada uma testando uma f
 | `pagina2.html` | CSS externo e **inline** em alguns elementos |
 | `pagina3.html` | CSS externo e **interno** (`<style>`), que sobrescreve o externo |
 
+![As três páginas ligam o mesmo estilo.css.](../img/st-css-tres-paginas.svg)
+
+> 💡 **Analogia:** imagine três filiais de uma loja que seguem o mesmo manual de pintura. A primeira segue o manual à risca. Na segunda, alguém pintou só uma porta de outra cor (inline). Na terceira, um aviso local afixado depois do manual muda a regra da filial inteira (interno).
+
 ## CSS externo (`estilo.css`)
 
 ```css

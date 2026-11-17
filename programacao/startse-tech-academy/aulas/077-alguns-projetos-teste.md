@@ -6,6 +6,10 @@
 
 Você já conhece a linguagem e as ferramentas do DOM. Agora é hora de juntar tudo. Tente fazer cada projeto sozinho a partir da descrição antes de abrir o código revisado.
 
+![Os quatro projetos seguem o mesmo caminho.](../img/st-evento-dom.svg)
+
+> 💡 **Analogia:** funciona como um elevador. Apertar o botão é o evento, o painel que calcula para onde ir é a função, e a porta que abre no andar certo é a mudança no DOM.
+
 ## Projeto 1: formulário de login com boas-vindas
 
 Ao enviar o formulário, mostra uma saudação com o nome digitado e esconde o formulário.

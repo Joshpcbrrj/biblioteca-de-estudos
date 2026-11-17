@@ -8,6 +8,10 @@ Com o ambiente instalado, você vai escrever código, e código dá erro. Isso �
 
 ## Antes de pesquisar
 
+![Cinco passos, do erro à solução.](../img/st-erro-solucao.svg)
+
+> 💡 **Analogia:** resolver um erro é trabalho de detetive. Primeiro você examina a cena (a mensagem), depois decide que tipo de caso é, procura casos parecidos já resolvidos e só então chama reforço, levando as provas organizadas.
+
 1. **Leia a mensagem de erro inteira.** Ela costuma dizer *o quê* (tipo do erro), *onde* (arquivo e linha) e *por quê*. A primeira linha do *stack trace* que aponta para o **seu** código é a pista mais valiosa.
 2. **Classifique o erro:**
   - **sintático**: o código não segue a gramática da linguagem (parêntese faltando, vírgula sobrando). Geralmente o editor já sublinha;

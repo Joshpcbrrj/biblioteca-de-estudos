@@ -6,6 +6,10 @@
 
 Você acabou de ver seletores, pseudo-classes e pseudo-elementos. A melhor forma de fixar é praticar. Sugestão de ordem: seletores agora, Flexbox e Grid quando chegar ao módulo V, e os desafios livres no fim.
 
+![Ordem sugerida dos jogos.](../img/st-trilha-jogos.svg)
+
+> 💡 **Analogia:** é como aprender a nadar. Você começa na parte rasa (seletores), passa para as raias (Flexbox e Grid) e só no fim encara o mar aberto dos desafios livres.
+
 ## Exercícios gerais
 
 Exercícios curtos do W3Schools, organizados por tema:

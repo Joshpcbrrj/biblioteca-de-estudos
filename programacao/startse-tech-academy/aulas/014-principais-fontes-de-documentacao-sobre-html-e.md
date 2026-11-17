@@ -8,6 +8,10 @@ A aula anterior apresentou o HTML e suas tags. Ninguém decora todas: o profissi
 
 ## Documentação
 
+![Cada fonte responde a um tipo de dúvida.](../img/st-fontes-doc.svg)
+
+> 💡 **Analogia:** pense em planejar uma viagem. A MDN é o guia completo do destino, o W3Schools é o folheto com o roteiro rápido, o Can I use avisa quais estradas estão abertas e o validador é a conferência dos documentos antes do embarque.
+
 ### MDN Web Docs (HTML, CSS, JavaScript)
 
 A referência mais completa e confiável, mantida pela Mozilla com apoio de Google, Microsoft e outros. Tem versão em português para boa parte do conteúdo.

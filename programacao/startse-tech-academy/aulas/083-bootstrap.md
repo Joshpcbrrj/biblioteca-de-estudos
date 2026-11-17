@@ -33,12 +33,12 @@ O jeito mais rápido é pelo CDN, colando no HTML:
         content="width=device-width, initial-scale=1.0">
   <title>Bootstrap</title>
   <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
 <body>
   <!-- conteúdo -->
   <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
   </script>
 </body>
 ```
