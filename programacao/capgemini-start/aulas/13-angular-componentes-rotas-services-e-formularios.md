@@ -17,7 +17,7 @@ No fim do módulo de JavaScript, a lista de tarefas já exigia vários `querySel
 **Angular é um framework do Google para criar aplicações web completas**, escrito em **TypeScript**. Ele organiza a interface em **componentes** e já traz rotas, formulários, requisições HTTP, testes e build, tudo integrado.
 
 - Cria **SPAs** (*Single Page Applications*): o navegador carrega **uma única página HTML**, e o Angular troca o conteúdo da tela conforme a navegação, sem recarregar.
-- Muito usado em sistemas corporativos (bancos, seguradoras, consultorias como a Capgemini).
+- Muito usado em sistemas corporativos (bancos, seguradoras e empresas de consultoria).
 - Não confunda com o **AngularJS** (versão 1.x, de 2010), que é outro framework e foi descontinuado em 2021. O "Angular" atual nasceu na versão 2, em 2016, e lança uma versão nova a cada seis meses.
 
 | Framework | Empresa | Característica |
@@ -109,7 +109,7 @@ ng serve -o
 
 ### Estrutura de pastas
 
-![Os arquivos criados pelo ng new.](../img/angular-pastas.svg)
+![Os arquivos criados pelo ng new.](../img/angular-pastas-2.svg)
 
 > 💡 **Analogia:** pense numa casa recém-entregue. O `index.html` é a fachada, com uma única porta (`<app-root>`); o `main.ts` é o disjuntor que liga a energia; `src/app` são os cômodos onde você vive e reforma todo dia; o `angular.json` é a planta da casa; o `package.json` é a lista de compras; e o `node_modules` é a despensa cheia: na mudança você não carrega a despensa, leva só a lista e compra tudo de novo (`npm install`).
 
@@ -138,7 +138,7 @@ ng serve -o
 | `ng test` |  | roda os testes |
 | `ng update` |  | atualiza o Angular do projeto |
 
-> ⚠️ **Versões diferentes, arquivos diferentes.** Desde o Angular 17, o `ng new` cria projetos com **componentes standalone**: não existe `app.module.ts`, e a configuração fica em `app.config.ts` e `app.routes.ts`. Na versão 18, `src/assets` virou `public/`. Na 20, os nomes perderam o sufixo (`app.ts` em vez de `app.component.ts`). Projetos e tutoriais antigos usam módulos; o funcionamento é o mesmo.
+> ⚠️ **Versões diferentes, arquivos diferentes.** Desde o Angular 17, o `ng new` cria projetos com **componentes standalone**: não existe `app.module.ts`, e a configuração fica em `app.config.ts` e `app.routes.ts`. Na versão 19, `src/assets` virou `public/`. Na 20, os nomes perderam o sufixo (`app.ts` em vez de `app.component.ts`). Projetos e tutoriais antigos usam módulos; o funcionamento é o mesmo.
 
 ### O caminho até a tela
 
@@ -429,7 +429,7 @@ O `ng g c` nesses projetos já adiciona o componente em `declarations` automatic
 
 ### Comunicação entre componentes
 
-![Dados descem por @Input; eventos sobem por @Output.](../img/angular-input-output.svg)
+![Dados descem por @Input; eventos sobem por @Output.](../img/angular-input-output-2.svg)
 
 > 💡 **Analogia:** pense no `@Input` como os **parâmetros** de uma função: dados que entram, vindos de quem chama. E pense no `@Output` como um **evento** do Swing: o filho só avisa "o botão Comprar foi clicado", e o pai decide o que fazer com isso. O filho não sabe quem é o pai; só recebe e avisa, por isso pode ser reutilizado em qualquer lugar.
 
@@ -476,8 +476,7 @@ export class ProdutoCardComponent {
 - **Filho → pai**: `@Output()` + `EventEmitter` + event binding `(comprar)`; o valor emitido chega como `$event`.
 - **Componentes sem relação direta**: compartilham dados por um **service**.
 
-
-> 💡 Nas versões mais novas existem também as funções `input()` e `output()`, baseadas em **signals** (`produto = input.required&lt;Produto&gt;()`). Os decoradores `@Input`/`@Output` continuam funcionando e são os mais encontrados em projetos existentes.
+> 💡 Nas versões mais novas existem também as funções `input()` e `output()`, baseadas em **signals** (`produto = input.required<Produto>()`). Os decoradores `@Input`/`@Output` continuam funcionando e são os mais encontrados em projetos existentes.
 
 ### Projeção de conteúdo: `ng-content`
 
@@ -551,7 +550,7 @@ No JavaScript puro, para mostrar um valor era preciso `querySelector` + `textCon
 
 ### Os quatro tipos de *data binding*
 
-![Como os dados circulam entre classe e template.](../img/angular-binding.svg)
+![Como os dados circulam entre classe e template.](../img/angular-binding-2.svg)
 
 > 💡 **Analogia:** pense num restaurante: a **classe** é a cozinha e o **template** é o salão. A interpolação `{{ }}` é o quadro do prato do dia, que mostra o que a cozinha tem. O `[prop]` é a placa "esgotado", acesa ou apagada conforme o estoque da cozinha. O `(evento)` é a campainha que o cliente toca para chamar a cozinha. E o `[(ngModel)]` é uma comanda compartilhada: o garçom anota e a cozinha vê; a cozinha corrige e o garçom vê.
 
@@ -790,7 +789,7 @@ export class CarrinhoService {
 
 ### Injeção de dependência
 
-![Service: uma instância para todos](../img/cap-angular-di.svg)
+![Service: uma instância para todos](../img/cap-angular-di-2.svg)
 
 > 💡 **Analogia:** num escritório, ninguém compra a própria cafeteira. Cada pessoa pede café, e a empresa aponta para a **mesma** cafeteira da copa. O componente é o funcionário, o service é a cafeteira, e o Angular é a empresa que entrega. Se alguém faz um café novo, todo mundo que for à copa encontra o mesmo bule: é assim que componentes diferentes compartilham o carrinho.
 
@@ -805,7 +804,7 @@ import { Component, inject } from "@angular/core";
 })
 export class CarrinhoComponent {
   // forma moderna
-  private carrinho = inject(CarrinhoService);
+  carrinho = inject(CarrinhoService);
 
   // forma tradicional, pelo construtor:
   // constructor(private carrinho:
@@ -890,7 +889,7 @@ No currículo em HTML, cada página era um arquivo (`index.html`, `sobre.html`, 
 
 ### Como funciona
 
-![Rotas: a URL escolhe o componente](../img/cap-angular-rotas.svg)
+![Rotas: a URL escolhe o componente](../img/cap-angular-rotas-2.svg)
 
 > 💡 **Analogia:** pense numa TV. O aparelho (a única página, `index.html`) nunca muda; a **URL** é o número do canal; o **Router** é o controle remoto; e o `<router-outlet>` é a tela, onde aparece o programa do canal escolhido. Trocar de canal não troca de TV. Um canal que não existe mostra "sem sinal" (a rota `**`), e o controle parental que pede senha antes de abrir um canal é o **guard**.
 
@@ -1302,7 +1301,7 @@ export class ProdutoService {
 }
 ```
 
-Por enquanto, os produtos estão fixos no código. No módulo seguinte (APIs com Angular), essa lista é trocada por uma chamada HTTP, e o resto da aplicação nem percebe, porque os componentes só conversam com o service.
+Por enquanto, os produtos estão fixos no código. No módulo seguinte (APIs com Angular), essa lista passa a vir de uma chamada HTTP. A mudança fica dentro do service, e os componentes continuam conversando só com ele; mas `listar()` passa a devolver um Observable, e o componente precisa se inscrever nele (`subscribe`) ou usar o pipe `async`.
 
 ### Passo 3: as rotas
 
@@ -1463,7 +1462,7 @@ Porque os dois componentes usam a mesma instância do `CarrinhoService`, e o `it
 
 **Se a lista de produtos passar a vir de uma API, quais arquivos mudam?**
 
-Só o `ProdutoService`. Os componentes continuam chamando os mesmos métodos.
+Principalmente o `ProdutoService`. Os componentes continuam chamando os mesmos métodos, mas passam a tratar o retorno como Observable (`subscribe` ou `async`).
 
 > ➡️ **Próximo passo:** a loja funciona, mas com o visual padrão. Para estilizar rápido, com um framework CSS: **Angular com Bootstrap**.
 

@@ -1,6 +1,8 @@
 # Java 2 · Orientação a objetos, coleções e back-end
 
-> 🗺️ **Sobre o módulo:** continuação do Java 1 (Prof. Marcio). Aqui você aprofunda a orientação a objetos, conhece as coleções e os recursos do Java moderno (generics, lambdas, Streams, `java.time`), aprende a guardar dados em banco e a tratar erros, cria uma **API REST com Spring Boot** e termina com um **projeto full-stack**, ligando essa API ao Angular dos módulos anteriores.<br />**Pré-requisito:** módulo Java 1 · Fundamentos da linguagem.
+> 🗺️ **Sobre o módulo:** continuação do Java 1 (Prof. Marcio). Aqui você aprofunda a orientação a objetos, conhece as coleções e os recursos do Java moderno (generics, lambdas, Streams, `java.time`), aprende a guardar dados em banco e a tratar erros, cria uma **API REST com Spring Boot** e termina com um **projeto full-stack**, ligando essa API ao Angular dos módulos anteriores.
+>
+> **Pré-requisito:** módulo Java 1 · Fundamentos da linguagem.
 
 ## Conceitos importantes de orientação a objetos
 
@@ -41,10 +43,10 @@ Pessoa p2 = new Pessoa("Ana Souza", 30);
 
 | Modificador | Quem acessa |
 | --- | --- |
-| **`public`** | qualquer lugar |
-| **`protected`** | a própria classe, o mesmo pacote e as subclasses |
+| `public` | qualquer lugar |
+| `protected` | a própria classe, o mesmo pacote e as subclasses |
 | (padrão, sem palavra) | a própria classe e o mesmo pacote |
-| **`private`** | só a própria classe |
+| `private` | só a própria classe |
 
 - Regra prática do **encapsulamento**: atributos `private` e acesso controlado por métodos `public` (getters/setters ou métodos de negócio que validam os dados).
 
@@ -182,7 +184,7 @@ for (Pagavel p : folha)
   System.out.println(p.calcularPagamento());
 ```
 
-![Herança e polimorfismo](../img/cap-polimorfismo.svg)
+![Herança e polimorfismo](../img/cap-polimorfismo-2.svg)
 
 > 💡 **Analogia:** no fim do mês, o RH manda **o mesmo pedido** a todos os funcionários: "calcule o seu pagamento". O mensalista responde com o salário fixo; o horista multiplica as horas pelo valor da hora. O RH não precisa saber quem é quem: só confia que todos cumprem o contrato `Pagavel`. Isso é polimorfismo: uma chamada, comportamentos diferentes conforme o objeto real.
 
@@ -246,7 +248,7 @@ for (String p : paises) System.out.println(p);
 - Estruturas **dinâmicas** do pacote `java.util` para guardar e manipular grupos de objetos. Crescem e diminuem sozinhas.
 - Boa prática: **declare pela interface** (`List`, `Set`, `Map`) e escolha a implementação no `new`. Assim fica fácil trocar depois.
 
-![As interfaces do Collections e suas implementações mais usadas.](../img/colecoes.svg)
+![As interfaces do Collections e suas implementações mais usadas.](../img/colecoes-2.svg)
 
 > 💡 **Analogia:** a `List` é uma lista de compras: tem ordem e pode repetir item ("leite" duas vezes). O `Set` é a lista de convidados de uma festa: cada nome entra uma vez só. A `Queue` é a fila do banco: quem chega primeiro é atendido primeiro. E o `Map` é a agenda do celular: você procura pelo nome (a chave) e encontra o número (o valor).
 
@@ -682,7 +684,7 @@ imprimir.accept("Olá");
 - Três partes: **fonte** (`lista.stream()`) → **operações intermediárias** (`filter`, `map`, `sorted`…) → **uma operação terminal** (`toList`, `count`, `sum`, `forEach`…).
 - As intermediárias são **preguiçosas**: só executam quando chega uma terminal. A coleção original **não** é alterada.
 
-![](../img/streams.svg)
+![](../img/streams-2.svg)
 
 | Operação | Tipo | O que faz |
 | --- | --- | --- |
@@ -882,7 +884,7 @@ try (Connection con = DriverManager
 - Quem faz as operações é o `EntityManager`: `persist` (INSERT), `find` (SELECT por id), `merge` (UPDATE), `remove` (DELETE).
 - Toda escrita acontece dentro de uma **transação** (`begin` → operações → `commit`).
 
-![](../img/jpa-orm.svg)
+![](../img/jpa-orm-2.svg)
 
 **Código exemplo**
 
@@ -937,7 +939,7 @@ f.close();
 
 - **Exceção** = evento anormal durante a execução (divisão por zero, arquivo inexistente, índice inválido). Tratar a exceção evita que o programa quebre e permite reagir ao erro.
 
-![](../img/excecoes.svg)
+![](../img/excecoes-2.svg)
 
 | Tipo | Exemplos | O compilador obriga a tratar? | Significa |
 | --- | --- | --- | --- |
@@ -1111,7 +1113,7 @@ src/main/resources/application.properties
 
 ### 3. Arquitetura em camadas
 
-![](../img/spring-camadas.svg)
+![](../img/spring-camadas-2.svg)
 
 | Camada | Anotação | Responsabilidade |
 | --- | --- | --- |
@@ -1303,7 +1305,7 @@ No **service**. O controller só recebe e responde; o repository só acessa o ba
 
 Você tem as duas metades prontas: no módulo de APIs, um CRUD em Angular que falava com o json-server (`localhost:3000`); na aula anterior, uma API REST em Spring Boot (`localhost:8080`). Este projeto troca o json-server pela API Java. É exatamente o que um desenvolvedor full-stack faz no dia a dia: um front-end e um back-end independentes, conversando por HTTP e JSON.
 
-![O componente chama o service, que faz a requisição HTTP; a API passa pelas camadas e devolve JSON.](../img/fullstack-angular-spring.svg)
+![O componente chama o service, que faz a requisição HTTP; a API passa pelas camadas e devolve JSON.](../img/fullstack-angular-spring-2.svg)
 
 ### 1. Visão geral do projeto
 
@@ -1457,14 +1459,18 @@ export class ProdutoListaComponent
 ```
 
 ```html
-<p *ngIf="erro">{{ erro }}</p>
+@if (erro) {
+  <p>{{ erro }}</p>
+}
 <ul>
-  <li *ngFor="let p of produtos">
+  @for (p of produtos; track p.id) {
+  <li>
     {{ p.nome }}: {{ p.preco | currency:'BRL' }}
     <button (click)="excluir(p.id!)">
       Excluir
     </button>
-  </li>
+    </li>
+  }
 </ul>
 ```
 
@@ -1553,3 +1559,7 @@ Pela aba Network: compare o JSON enviado com os campos e tipos da entidade (ou D
 | Persistência e erros | JDBC com `PreparedStatement`, entidades JPA, `try/catch/finally`, `throws`, try-with-resources |
 | Spring Boot | montar um CRUD REST em camadas |
 | Projeto full-stack | ligar o Angular à API, configurar CORS e depurar a integração |
+
+## 🧭 Cheat sheet da etapa
+
+![Cheat sheet da etapa de Java: 12 cards para revisar da JVM à API full-stack.](../img/cap-mapa-java.svg)

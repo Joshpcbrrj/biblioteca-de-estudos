@@ -24,7 +24,7 @@ Uma **variável** é um espaço na memória com três coisas:
 
 Ela se chama "variável" porque o valor pode **mudar** durante o programa.
 
-![Cada variável é uma "caixa" com nome, tipo e valor.](../img/variavel-caixa.svg)
+![Cada variável é uma "caixa" com nome, tipo e valor.](../img/variavel-caixa-2.svg)
 
 > 💡 **Analogia:** pense nas caixas de uma mudança. A etiqueta escrita por fora é o **nome** ("livros"). O tipo de caixa diz o que pode entrar: na caixa de copos, só vão copos (o **tipo**). O que está dentro agora é o **valor**. Você pode tirar o conteúdo e pôr outro (uma nova atribuição), mas a etiqueta e o tipo da caixa continuam os mesmos.
 
@@ -178,7 +178,7 @@ senao
 fimse
 ```
 
-![Classificação por faixas de média (Projeto 1).](../img/fluxo-classifica.svg)
+![Classificação por faixas de média (Projeto 1).](../img/fluxo-classifica-2.svg)
 
 > 💡 **Analogia:** é como uma fila de porteiros. O primeiro pergunta "tirou 7 ou mais?": quem diz sim vai para a sala dos aprovados; quem diz não segue para o segundo porteiro, que pergunta "tirou 5 ou mais?". Cada porteiro só vê quem não passou pelo anterior, por isso não precisa perguntar de novo se a nota é menor que 7.
 
@@ -392,7 +392,7 @@ Imagine mostrar os números de 1 a 1000. Sem repetição, seriam mil linhas de `
 
 Um **laço** (ou *loop*) resolve isso: ele executa o mesmo bloco várias vezes, enquanto uma condição permitir. Cada execução do bloco se chama **volta** ou **iteração**.
 
-![enquanto testa antes de cada volta; repita testa no final.](../img/fluxo-enquanto-repita.svg)
+![enquanto testa antes de cada volta; repita testa no final.](../img/fluxo-enquanto-repita-2.svg)
 
 > 💡 **Analogia:** o `enquanto` é o porteiro que confere o ingresso **antes** de cada entrada: sem ingresso, você nem entra (pode rodar zero vezes). O `repita` é o rodízio de pizza: a primeira fatia chega sem você pedir, e só depois de comer você decide se quer mais (roda pelo menos uma vez).
 
@@ -419,12 +419,19 @@ Todo laço tem três partes, e vale a pena procurá-las sempre:
 
 Vamos acompanhar o programa acima no papel, como aprendemos no módulo 0:
 
-| Volta | cont antes | cont <= 3? | Mostra | cont depois |
-| --- | --- | --- | --- | --- |
-| 1 | 1 | sim | 1 | 2 |
-| 2 | 2 | sim | 2 | 3 |
-| 3 | 3 | sim | 3 | 4 |
-| — | 4 | **não** | sai do laço | — |
+| Volta | cont antes | cont <= 3? |
+| --- | --- | --- |
+| 1 | 1 | sim |
+| 2 | 2 | sim |
+| 3 | 3 | sim |
+| — | 4 | **não** |
+
+| Volta | Mostra | cont depois |
+| --- | --- | --- |
+| 1 | 1 | 2 |
+| 2 | 2 | 3 |
+| 3 | 3 | 4 |
+| — | sai do laço | — |
 
 Depois do laço, aparece "Fim". O teste de mesa é a melhor ferramenta para entender um laço que não está fazendo o que você esperava.
 
@@ -685,7 +692,7 @@ para i de 1 ate 5 faca
 fimpara
 ```
 
-![Somando de 1 a 5 com o laço para.](../img/fluxo-para.svg)
+![Somando de 1 a 5 com o laço para.](../img/fluxo-para-2.svg)
 
 > 💡 **Analogia:** é o treino de corrida em que o técnico manda dar 5 voltas na pista. Você sabe desde o início quantas voltas são, e o placar ao lado da linha de chegada soma 1 sozinho a cada passada. Quando marcar 5, acabou. No `enquanto`, você correria até "cansar", sem saber de antemão quando ia parar.
 

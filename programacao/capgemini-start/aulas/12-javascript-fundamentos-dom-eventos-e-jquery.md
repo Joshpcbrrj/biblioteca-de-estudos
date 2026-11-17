@@ -22,7 +22,7 @@ HTML deu a estrutura, CSS deu a aparência. Falta a terceira camada: o **comport
 
 ### Um pouco de história
 
-![Do JavaScript de 1995 às versões anuais do ECMAScript.](../img/js-linha-tempo.svg)
+![Do JavaScript de 1995 às versões anuais do ECMAScript.](../img/js-linha-tempo-2.svg)
 
 > 💡 **Analogia:** o ECMAScript é como a norma ortográfica de um idioma, e o JavaScript é o idioma falado. A norma é revisada de tempos em tempos (ES5, ES6, ES2017...) e cada navegador é uma escola que ensina a versão mais nova que já adotou. O ES6 foi a grande reforma ortográfica: mudou tanto que o código escrito antes e depois dele parece de épocas diferentes.
 
@@ -286,7 +286,7 @@ Não: o conteúdo do array pode mudar. O que `const` impede é `lista = outraCoi
 
 ### De onde paramos
 
-Esta aula é quase uma revisão: a sintaxe do JavaScript para decisões e laços é praticamente igual à do Java. Se você fez os 35 exercícios de Java estruturado, vai reconhecer tudo. As novidades são o `for...of` e o `for...in`.
+Esta aula é quase uma revisão: a sintaxe do JavaScript para decisões e laços é praticamente igual à do Java. Se você fez os exercícios de Java estruturado, vai reconhecer tudo. As novidades são o `for...of` e o `for...in`.
 
 | Portugol | Java | JavaScript |
 | --- | --- | --- |
@@ -529,6 +529,7 @@ function executarDuasVezes(acao) {
 executarDuasVezes(() => console.log("Oi"));
 
 setTimeout(() => console.log("1 segundo"), 1000);
+// botao: um elemento obtido do DOM (aula seguinte)
 botao.addEventListener("click", () => alert("Clicou"));
 [1, 2, 3].map((n) => n * 10);
 ```
@@ -661,7 +662,7 @@ let total = 0;
 for (const n of numeros) total += n;
 ```
 
-> ⚠️ `sort()` sem função compara como **texto**: `[10, 9, 1].sort()` dá `[1, 10, 9]`. Para números, use `sort((a, b) =&gt; a - b)`. E lembre: `sort`, `push` e `splice` alteram o array original; `map`, `filter` e `slice` criam um novo.
+> ⚠️ `sort()` sem função compara como **texto**: `[10, 9, 1].sort()` dá `[1, 10, 9]`. Para números, use `sort((a, b) => a - b)`. E lembre: `sort`, `push` e `splice` alteram o array original; `map`, `filter` e `slice` criam um novo.
 
 ### Objetos: dados com nome
 
@@ -1061,7 +1062,7 @@ Na aula de estrutura do HTML, você viu que o navegador transforma o HTML numa �
 
 **DOM (Document Object Model) é o HTML transformado em uma árvore de objetos** que o JavaScript pode ler e alterar. A raiz é o objeto `document`. Quando o JavaScript altera o DOM, a tela se atualiza na hora.
 
-![O DOM: o HTML vira uma árvore](../img/cap-dom-arvore.svg)
+![O DOM: o HTML vira uma árvore](../img/cap-dom-arvore-2.svg)
 
 > 💡 **Analogia:** o DOM é uma árvore genealógica da página. O `document` é o patriarca; `html` é o filho único; `head` e `body` são os netos, e assim por diante. Com `querySelector` você aponta para um parente ("o primeiro `h1` da família"); com `parentElement` e `children` você sobe e desce as gerações. Mudar alguém na árvore muda a foto da família na hora: a tela.
 
@@ -1104,7 +1105,7 @@ p.innerHTML = "Cadastro <strong>realizado</strong>!";
 const nome = document.querySelector("#nome").value;
 ```
 
-> 🔒 Nunca coloque no `innerHTML` um texto digitado pelo usuário: se ele escrever uma tag `&lt;img onerror=...&gt;`, o código será executado (ataque **XSS**). Para texto, use `textContent`.
+> 🔒 Nunca coloque no `innerHTML` um texto digitado pelo usuário: se ele escrever uma tag `<img onerror=...>`, o código será executado (ataque **XSS**). Para texto, use `textContent`.
 
 ### 3. Atributos
 
@@ -1249,7 +1250,7 @@ botao.addEventListener("click", (evento) => {
 
 `addEventListener(tipo, funcao)` é a forma recomendada: separa HTML e JavaScript e permite vários ouvintes no mesmo elemento. Para parar de ouvir, use `removeEventListener` com a mesma função.
 
-> 💡 A forma antiga, com atributo no HTML (`&lt;button onclick="salvar()"&gt;`), funciona, mas mistura as camadas, só aceita uma função por evento e é bloqueada por políticas de segurança (CSP). Você vai encontrá-la em código legado.
+> 💡 A forma antiga, com atributo no HTML (`<button onclick="salvar()">`), funciona, mas mistura as camadas, só aceita uma função por evento e é bloqueada por políticas de segurança (CSP). Você vai encontrá-la em código legado.
 
 ### Eventos mais usados
 
@@ -1331,7 +1332,7 @@ Se o script já está com `defer`, o `DOMContentLoaded` não é necessário.
 
 ### Propagação e delegação
 
-![O evento desce até o alvo e depois sobe pelos ancestrais.](../img/eventos-fluxo.svg)
+![O evento desce até o alvo e depois sobe pelos ancestrais.](../img/eventos-fluxo-2.svg)
 
 > 💡 **Analogia:** pense num prédio. Quando alguém grita dentro de um apartamento (o `li`), quem está no corredor do andar (o `ul`), na portaria (o `body`) e na rua (o `document`) também ouve, nessa ordem: é o evento **borbulhando**. A **delegação** é o porteiro: em vez de pôr um vigia em cada apartamento, um só na portaria atende todos, inclusive os moradores que chegarem depois.
 
@@ -1479,7 +1480,7 @@ O `sessionStorage` funciona igual, mas apaga ao fechar a aba. Nunca guarde senha
 
 ### Promises
 
-![Uma Promise começa pendente e termina cumprida ou rejeitada.](../img/promise.svg)
+![Uma Promise começa pendente e termina cumprida ou rejeitada.](../img/promise-2.svg)
 
 > 💡 **Analogia:** numa praça de alimentação, você faz o pedido e recebe um **pager** que vibra quando a comida fica pronta. O pager é a Promise: enquanto não vibra, está **pendente**, e você pode ir sentar e fazer outras coisas (o código segue). Quando vibra, ou o pedido está pronto (**cumprida**, e você recebe a comida) ou acabou o prato (**rejeitada**, e você recebe o motivo). O `await` é ficar olhando para o pager até ele vibrar, sem impedir que os outros clientes sejam atendidos.
 
@@ -1706,7 +1707,7 @@ $("#lista").on("click", "li", function () {
 });
 ```
 
-Os atalhos `.click(fn)`, `.change(fn)` e `.keyup(fn)` ainda funcionam, mas estão **obsoletos** desde a versão 3.3. Prefira `.on("evento", fn)`.
+Os atalhos `.click(fn)`, `.change(fn)` e `.keyup(fn)` ainda funcionam. Prefira `.on("evento", fn)`, que aceita delegação e vários eventos de uma vez.
 
 ### Efeitos
 
@@ -1801,7 +1802,7 @@ $("img").attr("title", "Logo");
 
 **`.click(fn)` ou `.on("click", fn)`?**
 
-`.on("click", fn)`: os atalhos estão obsoletos desde o jQuery 3.3.
+`.on("click", fn)`: ambos funcionam, mas `.on` é a forma geral, que aceita delegação.
 
 > ➡️ **Próximo passo:** fim da etapa de JavaScript! Montar uma aplicação inteira só com DOM e eventos fica difícil de organizar. Os frameworks resolvem isso com componentes. O curso segue com **Angular · Componentes, rotas, services e formulários**.
 
@@ -1834,3 +1835,7 @@ $("img").attr("title", "Logo");
 | JSON | `JSON.stringify` ↔ `JSON.parse` |
 | jQuery | `$(seletor).on(...)`; útil para código legado |
 | Classes e módulos | `class`, `#privado`, `extends`; `export`/`import` |
+
+## 🧭 Cheat sheet da etapa
+
+![Cheat sheet da etapa de JavaScript: 12 cards para revisar da sintaxe ao fetch.](../img/cap-mapa-js.svg)

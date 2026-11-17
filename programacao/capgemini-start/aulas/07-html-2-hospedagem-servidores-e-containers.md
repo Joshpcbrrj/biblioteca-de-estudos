@@ -32,7 +32,7 @@ No módulo anterior, o request saiu do navegador e chegou a "um servidor". Você
 
 ### Como o servidor web atende um pedido
 
-![O servidor web entrega arquivos prontos ou repassa o pedido para a aplicação.](../img/servidor-web.svg)
+![O servidor web entrega arquivos prontos ou repassa o pedido para a aplicação.](../img/servidor-web-2.svg)
 
 > 💡 **Analogia:** pense numa padaria. O balconista é o **servidor web**: se você pede um pão francês, ele pega da vitrine e entrega na hora (conteúdo **estático**). Se você encomenda um bolo com o seu nome, ele passa o pedido ao confeiteiro lá dentro (o **servidor de aplicação**), que busca os ingredientes na despensa (o **banco de dados**) e prepara um bolo só seu (conteúdo **dinâmico**). Quem entrega no balcão, nos dois casos, é o balconista.
 
@@ -76,15 +76,21 @@ A aula anterior mostrou que qualquer computador pode ser servidor, mas que mante
 
 ### Tipos de hospedagem
 
-![Quanto mais você paga, menos divide a máquina e mais controle tem.](../img/hospedagem-tipos.svg)
+![Quanto mais você paga, menos divide a máquina e mais controle tem.](../img/hospedagem-tipos-2.svg)
 
 > 💡 **Analogia:** pense em moradia. A hospedagem **compartilhada** é dividir um apartamento com outros moradores: barato, mas se o vizinho faz festa, você sente. A **VPS** é alugar um apartamento só seu no prédio: você decora como quiser, mas a manutenção é sua. O **dedicado** é alugar a casa inteira.
 
-| Tipo | Como é | Custo | Controle | Bom para |
-| --- | --- | --- | --- | --- |
-| **Compartilhada** | vários sites na mesma máquina, já configurada pelo provedor | $ | baixo: painel pronto (cPanel), sem acesso root | sites pequenos, blogs, WordPress |
-| **VPS** (servidor virtual privado) | uma máquina virtual só sua, dentro de um servidor físico | $$ | alto: você instala e configura tudo | aplicações próprias, APIs |
-| **Dedicado** (bare metal) | uma máquina física inteira para você | $$$ | total | grande tráfego, exigências de segurança e desempenho |
+| Tipo | Como é | Custo |
+| --- | --- | --- |
+| **Compartilhada** | vários sites na mesma máquina, já configurada pelo provedor | $ |
+| **VPS** (servidor virtual privado) | uma máquina virtual só sua, dentro de um servidor físico | $$ |
+| **Dedicado** (bare metal) | uma máquina física inteira para você | $$$ |
+
+| Tipo | Controle | Bom para |
+| --- | --- | --- |
+| **Compartilhada** | baixo: painel pronto (cPanel), sem acesso root | sites pequenos, blogs, WordPress |
+| **VPS** (servidor virtual privado) | alto: você instala e configura tudo | aplicações próprias, APIs |
+| **Dedicado** (bare metal) | total | grande tráfego, exigências de segurança e desempenho |
 
 Na compartilhada, um vizinho com muito acesso pode deixar o seu site lento. Na VPS e no dedicado, você ganha controle, mas também passa a ser responsável por atualizações e segurança.
 
@@ -92,7 +98,7 @@ Na compartilhada, um vizinho com muito acesso pode deixar o seu site lento. Na V
 
 Provedores como **AWS**, **Microsoft Azure** e **Google Cloud** alugam recursos sob demanda: você cria uma máquina em minutos, aumenta quando o tráfego cresce e paga por hora ou por uso. Os serviços são classificados pelo quanto o provedor faz por você:
 
-![Em azul, o que fica com você; em verde, o que o provedor gerencia.](../img/cloud-camadas.svg)
+![Em azul, o que fica com você; em verde, o que o provedor gerencia.](../img/cloud-camadas-2.svg)
 
 > 💡 **Analogia:** continuando com a moradia, **IaaS** é alugar o imóvel vazio: você leva móveis, eletrodomésticos e tudo mais. **PaaS** é o apartamento mobiliado: você só traz as suas roupas (o código). **Serverless** é pagar por diária só nos dias em que usa. E **SaaS** é o hotel: você só chega e usa, sem cuidar de nada.
 
@@ -164,7 +170,7 @@ Já sabemos que o servidor web recebe o HTTP e entrega arquivos ou repassa à ap
 
 #### Proxy reverso e balanceamento de carga
 
-![O Nginx recebe todos os pedidos e os distribui entre as instâncias da aplicação.](../img/proxy-reverso.svg)
+![O Nginx recebe todos os pedidos e os distribui entre as instâncias da aplicação.](../img/proxy-reverso-2.svg)
 
 > 💡 **Analogia:** o proxy reverso é a **recepcionista** de uma clínica com vários médicos. Todo paciente fala primeiro com ela, que confere os documentos (o HTTPS), entrega na hora o que é simples, como um formulário pronto (os arquivos estáticos), e encaminha cada consulta para o médico mais livre (o balanceamento). O paciente nem sabe em qual sala cada médico está: só conhece a recepção.
 
@@ -214,7 +220,7 @@ Lendo: pedidos para `/api/...` vão para a aplicação na porta 3000; todo o res
 🔗 [Node.js](https://nodejs.org/)
 
 - O Node não é um servidor web "puro": é um **ambiente de execução** de JavaScript fora do navegador, baseado no motor **V8** do Chrome.
-- Com o framework **Express**, você cria rotas e responde requisições HTTP em poucas linhas:
+- Com o framework **Express**, você cria rotas e responde requisições HTTP em poucas linhas. O exemplo usa `import`, então o `package.json` precisa ter `"type": "module"`:
 
 ```jsx
 import express from "express";
@@ -268,7 +274,7 @@ Uma aplicação depende de muita coisa além do código: versão do Java ou do N
 
 ### Máquinas virtuais × containers
 
-![A VM leva um sistema operacional inteiro; o container compartilha o kernel do host.](../img/vm-container.svg)
+![A VM leva um sistema operacional inteiro; o container compartilha o kernel do host.](../img/vm-container-2.svg)
 
 > 💡 **Analogia:** a VM é uma **casa** inteira: fundação, encanamento e telhado próprios. O container é um **apartamento**: tem a sua porta, os seus móveis e a sua chave, mas divide a estrutura do prédio (o kernel do sistema). Por isso o apartamento é mais barato e fica pronto muito mais rápido, mas um problema na estrutura do prédio afeta todos os moradores.
 

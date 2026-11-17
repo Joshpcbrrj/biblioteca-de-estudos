@@ -35,7 +35,7 @@ Entre 1989 e 1991, **Tim Berners-Lee**, físico do **CERN** (o laboratório euro
 
 ### Marcos históricos
 
-![Do HTML de 1991 ao padrão vivo de hoje.](../img/html-linha-tempo.svg)
+![Do HTML de 1991 ao padrão vivo de hoje.](../img/html-linha-tempo-2.svg)
 
 > 💡 **Analogia:** a história do HTML parece a de uma língua. Começou pequena, com 18 "palavras" (tags). Ganhou um dicionário oficial (o W3C), passou por uma reforma ortográfica rígida que pouca gente adotou (o XHTML 2) e, por fim, virou uma **língua viva**: não tem mais edições numeradas, só evolui com o uso, como o português de todo dia.
 
@@ -101,7 +101,7 @@ A aula anterior mostrou que o HTML marca o que é cada conteúdo. Assim como tod
 
 ### Elementos, tags e atributos
 
-![Um elemento é formado por abertura, atributos, conteúdo e fechamento.](../img/html-anatomia.svg)
+![Um elemento é formado por abertura, atributos, conteúdo e fechamento.](../img/html-anatomia-2.svg)
 
 > 💡 **Analogia:** um elemento é como um sanduíche embrulhado. A tag de abertura é o pão de cima, o conteúdo é o recheio e a tag de fechamento é o pão de baixo. Os atributos são os recados escritos no papel do embrulho ("sem cebola", "para viagem"): não fazem parte do recheio, mas dizem como aquele sanduíche deve ser tratado. E uma tag vazia, como `img`, é um biscoito: vem inteiro, sem recheio.
 
@@ -122,7 +122,7 @@ A aula anterior mostrou que o HTML marca o que é cada conteúdo. Assim como tod
 - Elementos podem ficar **um dentro do outro** (aninhados). Feche sempre na ordem inversa: `<p><strong>texto</strong></p>`, e não `<p><strong>texto</p></strong>`.
 - O HTML não diferencia maiúsculas de minúsculas, mas a convenção é escrever tudo **em minúsculas**.
 
-> 💡 No início, muitas tags eram só visuais (`&lt;font&gt;`, `&lt;center&gt;`). No HTML5, cada tag tem um **significado** (semântica) e a aparência fica a cargo do CSS. Isso ajuda buscadores, leitores de tela e a manutenção do código.
+> 💡 No início, muitas tags eram só visuais (`<font>`, `<center>`). No HTML5, cada tag tem um **significado** (semântica) e a aparência fica a cargo do CSS. Isso ajuda buscadores, leitores de tela e a manutenção do código.
 
 ### O esqueleto de uma página
 
@@ -155,7 +155,7 @@ A aula anterior mostrou que o HTML marca o que é cada conteúdo. Assim como tod
 
 ### O documento vira uma árvore: o DOM
 
-![Cada tag vira um nó da árvore; as tags de dentro são filhas.](../img/html-dom.svg)
+![Cada tag vira um nó da árvore; as tags de dentro são filhas.](../img/html-dom-2.svg)
 
 > 💡 **Analogia:** o DOM é a **árvore genealógica** da página. O `html` é o avô; `head` e `body` são os filhos; e cada tag dentro do `body` é neto, bisneto e assim por diante. O CSS e o JavaScript encontram cada elemento seguindo esse parentesco ("o parágrafo filho do `main`"). Uma tag fechada fora de ordem bagunça a família inteira.
 
@@ -348,7 +348,7 @@ Antes do HTML5, tudo era feito com `<div>`, distinguidas só por classes (`<div 
 - **buscadores**, que entendem melhor o que é conteúdo principal e o que é complementar;
 - **quem mantém o código**, que lê `<nav>` em vez de decifrar uma `div` genérica.
 
-![Um layout típico com as tags semânticas.](../img/html-semantico.svg)
+![Um layout típico com as tags semânticas.](../img/html-semantico-2.svg)
 
 > 💡 **Analogia:** é a planta de uma casa com o nome escrito em cada cômodo. A fachada é o `header`, o corredor com as portas é o `nav`, a sala principal é o `main`, a varanda ao lado é o `aside` e o quintal dos fundos é o `footer`. Uma `div` é um cômodo sem placa: serve, mas quem chega (um leitor de tela ou um buscador) não sabe para que ele existe.
 
@@ -919,7 +919,7 @@ Uma lista pode ficar **dentro de um** `li` de outra lista, formando submenus e t
 </nav>
 ```
 
-> 💡 Menus de navegação costumam ser um `&lt;ul&gt;` de links dentro de um `&lt;nav&gt;`. Assim o leitor de tela anuncia "lista de 3 itens", e o CSS transforma a lista vertical num menu horizontal.
+> 💡 Menus de navegação costumam ser um `<ul>` de links dentro de um `<nav>`. Assim o leitor de tela anuncia "lista de 3 itens", e o CSS transforma a lista vertical num menu horizontal.
 
 ### Projeto teste
 
@@ -1010,7 +1010,7 @@ Tabelas servem para **dados tabulares**: informações que se cruzam em linhas e
 
 ### Anatomia
 
-![Cabeçalho, corpo e rodapé, com células mescladas.](../img/html-tabela.svg)
+![Cabeçalho, corpo e rodapé, com células mescladas.](../img/html-tabela-2.svg)
 
 > 💡 **Analogia:** pense no quadro de horários pendurado na sala de aula. A primeira linha, com os dias da semana, é o `thead`; cada faixa de horário é uma linha (`tr`); o nome do horário na esquerda é um `th` de linha; e cada aula é um `td`. Uma aula dupla, que ocupa dois horários seguidos, é um `rowspan`; um evento que toma a tarde de vários dias é um `colspan`.
 
@@ -1405,7 +1405,7 @@ No módulo HTML 1, você viu os verbos HTTP: `GET` para buscar, `POST` para cria
 
 ### GET × POST
 
-![No GET os dados vão na URL; no POST, no corpo da requisição.](../img/form-get-post.svg)
+![No GET os dados vão na URL; no POST, no corpo da requisição.](../img/form-get-post-2.svg)
 
 > 💡 **Analogia:** o `GET` é um **cartão-postal**: a mensagem vai escrita do lado de fora, junto do endereço, e qualquer um que pegar o cartão lê. O `POST` é uma **carta no envelope**: o conteúdo vai dentro, fora da vista. Mas um envelope comum ainda pode ser aberto no caminho; quem tranca a carta num cofre é o **HTTPS**.
 
@@ -1817,7 +1817,7 @@ O formulário de contato tem todos os campos. Falta o botão, que, como o "Salva
 </form>
 ```
 
-> ⚠️ Um `&lt;button&gt;` **sem** `type` dentro de um `form` é tratado como `submit`. É uma causa clássica de bug: você cria um botão "Mostrar senha", clica, e o formulário é enviado. Para qualquer ação que não seja enviar, declare `type="button"`.
+> ⚠️ Um `<button>` **sem** `type` dentro de um `form` é tratado como `submit`. É uma causa clássica de bug: você cria um botão "Mostrar senha", clica, e o formulário é enviado. Para qualquer ação que não seja enviar, declare `type="button"`.
 
 ### `button` × `input type="submit"`
 
