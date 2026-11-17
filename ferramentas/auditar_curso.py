@@ -60,11 +60,12 @@ def auditar_aula(caminho, primeira=False):
         m = re.search(r'!\[.*?\]\(\.\./img/([^)]+)\)', l)
         if m:
             r['imagens'].append(m.group(1))
-            seguinte = '\n'.join(linhas[i:i + 3])
+            # imagens agrupadas dividem a analogia que vem depois da última
+            seguinte = '\n'.join(linhas[i:i + 6])
             if 'Analogia' not in seguinte and 'mapa' not in m.group(1) \
                     and 'cheatsheet' not in m.group(1):
                 r['sem_analogia'].append(m.group(1))
-        if l.startswith('|') and l.count('|') - 1 > 4 and not re.match(r'^\|[\s:|-]+\|$', l):
+        if l.startswith('|') and len(re.findall(r'(?<!\\)\|', l)) - 1 > 4 and not re.match(r'^\|[\s:|-]+\|$', l):
             r['tabela_larga'].append(i)
         l_sem_codigo = re.sub(r'`[^`]*`', '', l)  # nomes de tags em `código` não são sobra
         for s in SOBRAS:
