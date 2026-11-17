@@ -8,7 +8,7 @@ A aula de seletores apresentou `:hover` e `::after` de passagem. Eles são tão 
 
 ## A diferença em uma linha
 
-![Pseudo-classe × pseudo-elemento](../img/st-pseudo.svg)
+![Pseudo-classe × pseudo-elemento](../img/st-pseudo-2.svg)
 
 > 💡 **Analogia:** pense numa pessoa. A pseudo-classe descreve um **momento** dela: "quando estiver sorrindo", "quando for a primeira da fila". O pseudo-elemento aponta uma **parte** ou um acessório: "o chapéu", "a primeira letra do nome no crachá".
 
@@ -61,7 +61,7 @@ button:not(.primario) { background: transparent; }
 .card:has(img) { padding-top: 0; }
 ```
 
-`:has()`, o "seletor pai", funciona em todos os navegadores modernos desde 2023.
+`:has()`, o "seletor pai", é suportado pelos principais navegadores desde o fim de 2023, quando o Firefox passou a incluí-lo.
 
 ## Pseudo-elementos
 

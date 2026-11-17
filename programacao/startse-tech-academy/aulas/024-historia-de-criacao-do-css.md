@@ -18,7 +18,7 @@ O módulo III terminou com páginas bem estruturadas, mas com a aparência padr�
 
 O CSS é feito de **regras**. Cada uma tem um **seletor** (quais elementos) e um bloco de **declarações** (propriedade e valor):
 
-![Seletor, propriedade e valor formam uma regra.](../img/css-regra.svg)
+![Seletor, propriedade e valor formam uma regra.](../img/css-regra-2.svg)
 
 > 💡 **Analogia:** se o HTML é o esqueleto e os órgãos de uma pessoa, o CSS é a roupa, o corte de cabelo e a maquiagem. Trocar a roupa muda totalmente a aparência, mas a pessoa por baixo continua a mesma. Cada regra CSS é uma instrução do tipo "todos os `p` usam camisa azul".
 

@@ -14,6 +14,8 @@ A base técnica foi a **comutação de pacotes**, desenvolvida no início dos an
 
 ![Da ARPANET em 1969 aos smartphones.](../img/internet-linha.svg)
 
+> 💡 **Analogia:** a comutação de pacotes é como mandar um quebra-cabeça pelo correio em vários envelopes. Cada envelope pode ir por uma rota diferente e chegar fora de ordem; no destino, as peças numeradas são remontadas. Se uma agência fechar, os envelopes seguintes simplesmente vão por outra.
+
 ### Marcos principais
 
 - **1969**: primeira conexão da ARPANET, com 4 nós (UCLA, Stanford Research Institute, UC Santa Barbara e Universidade de Utah).
@@ -85,7 +87,7 @@ Um endpoint é definido por três coisas:
 
 > 💡 A divisão em *Address, Binding, Contract* ("ABC") vem do WCF, uma tecnologia da Microsoft. Em APIs REST, o contrato costuma ser documentado com **OpenAPI/Swagger**.
 
-O formato mais usado para trafegar dados é o **JSON** (*JavaScript Object Notation*):
+O formato mais usado para trafegar dados é o **JSON** (*JavaScript Object Notation*). Um produto de loja, como a API o devolveria:
 
 ```json
 {
@@ -97,6 +99,7 @@ O formato mais usado para trafegar dados é o **JSON** (*JavaScript Object Notat
 }
 ```
 
+- O JSON não aceita comentários; leia assim: `id` identifica o produto no banco, `preco` é número (sem aspas) para permitir contas, `emEstoque` é booleano para o front decidir se mostra o botão "comprar", e `tags` é uma lista para filtros.
 - É **texto** com sintaxe inspirada nos objetos do JavaScript, mas **independente de linguagem**: Java, Python e C# leem e escrevem JSON facilmente.
 - É mais rígido que um objeto JS: as chaves vão **sempre entre aspas duplas**, sem vírgula sobrando e sem funções.
 - No JavaScript, `JSON.parse(texto)` transforma texto em objeto, e `JSON.stringify(objeto)` faz o caminho inverso.

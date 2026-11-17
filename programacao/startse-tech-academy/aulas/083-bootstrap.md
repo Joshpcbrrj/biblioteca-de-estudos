@@ -19,7 +19,7 @@ Você já sabe montar layouts com Flexbox e Grid na mão. Em muitos projetos, po
 **Bootstrap é um framework de front-end: um pacote pronto de CSS e JavaScript com grid responsivo, componentes (botões, menus, cards, modais) e classes utilitárias.** Você monta a interface combinando classes no HTML, quase sem escrever CSS.
 
 - Criado por Mark Otto e Jacob Thornton no Twitter, lançado como código aberto em 2011.
-- A versão atual é a **5**, que **não depende mais do jQuery**.
+- A linha estável atual é a **5.3**, que **não depende mais do jQuery**.
 - É gratuito, com licença MIT.
 
 ## Como incluir no projeto
@@ -49,7 +49,7 @@ Em projetos com Node, instale com `npm install bootstrap`.
 
 ## O grid responsivo
 
-![A mesma marcação vira 1, 2 ou 3 colunas conforme a largura da tela.](../img/bootstrap-grid.svg)
+![A mesma marcação vira 1, 2 ou 3 colunas conforme a largura da tela.](../img/bootstrap-grid-2.svg)
 
 > 💡 **Analogia:** o Bootstrap é como montar móveis planejados com módulos de tamanho padrão. Cada parede (linha) comporta 12 módulos; você decide quantos módulos cada armário ocupa (`col-4`, `col-6`) e, conforme o tamanho do cômodo (a tela), os armários se reorganizam sozinhos.
 
@@ -150,7 +150,7 @@ Monte com Bootstrap uma seção com 4 cards que fiquem 1 por linha no celular, 2
 
 **Quantas colunas tem cada linha do grid do Bootstrap?**
 
-12.
+12 colunas.
 
 **O que `col-md-6` significa?**
 

@@ -31,7 +31,7 @@ FROM vendas;
 
 Sem `GROUP BY`, a agregação resume a tabela inteira em **uma** linha. Com ele, o banco cria **uma linha por grupo**.
 
-![As três vendas da Ana viram uma linha só.](../img/group-by.svg)
+![As três vendas da Ana viram uma linha só.](../img/group-by-2.svg)
 
 > 💡 **Analogia:** é como esvaziar um cofrinho na mesa. Primeiro você tira as moedas estrangeiras (`WHERE`, antes de agrupar). Depois separa as moedas em pilhas por valor (`GROUP BY`) e conta ou soma cada pilha (`COUNT`, `SUM`). Por fim, ignora as pilhas com menos de 5 moedas (`HAVING`, depois de agrupar). Cada pilha vira uma linha do resultado.
 
@@ -41,7 +41,7 @@ FROM vendas
 GROUP BY vendedor;
 ```
 
-Regra: toda coluna do `SELECT` que **não** está dentro de uma função de agregação precisa estar no `GROUP BY`. Senão o banco não sabe qual valor mostrar (o PostgreSQL dá erro; o MySQL pode devolver um valor qualquer).
+Regra: toda coluna do `SELECT` que **não** está dentro de uma função de agregação precisa estar no `GROUP BY`. Senão o banco não sabe qual valor mostrar (o PostgreSQL dá erro; o MySQL 5.7+ também dá erro por padrão, pelo modo ONLY_FULL_GROUP_BY).
 
 ## WHERE × HAVING
 

@@ -10,7 +10,7 @@ Você conhece as peças de uma requisição. Agora vamos ver as convenções que
 
 **REST é um estilo de arquitetura para APIs web: cada recurso tem uma URL, e a ação é dada pelo método HTTP.** Uma API que segue essas regras é chamada de **RESTful**.
 
-![Um CRUD completo de produtos em REST.](../img/rest-crud.svg)
+![Um CRUD completo de produtos em REST.](../img/rest-crud-2.svg)
 
 > 💡 **Analogia:** pense num arquivo de aço com gavetas etiquetadas. A etiqueta é a URL e diz **o quê** (`/produtos`, `/produtos/7`); o método HTTP diz **o que fazer** com aquilo: olhar (`GET`), pôr uma ficha nova (`POST`), trocar a ficha (`PUT`/`PATCH`) ou jogar fora (`DELETE`). Por isso a URL não precisa de verbos: a gaveta é sempre a mesma, só muda a ação.
 

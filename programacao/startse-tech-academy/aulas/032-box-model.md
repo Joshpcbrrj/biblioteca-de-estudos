@@ -10,7 +10,7 @@ Você já sabe medir (unidades) e sabe que há elementos de bloco e em linha. Ag
 
 **No CSS, todo elemento é uma caixa retangular.** O *box model* (modelo de caixa) descreve as quatro camadas dessa caixa, de dentro para fora:
 
-![Content, padding, border e margin, com o cálculo do tamanho final.](../img/box-model.svg)
+![Content, padding, border e margin, com o cálculo do tamanho final.](../img/box-model-2.svg)
 
 > 💡 **Analogia:** pense num quadro pendurado na parede. A foto é o **content**; o passe-partout branco em volta dela é o **padding**; a moldura de madeira é a **border**; e o espaço vazio da parede até o próximo quadro é a **margin**.
 
@@ -75,7 +75,7 @@ Com `box-sizing: border-box`, o `width` passa a incluir padding e borda: a caixa
 | Margem e padding verticais | empurram os vizinhos | aparecem, mas **não** empurram as linhas | empurram |
 | Exemplos | `div`, `p`, `h1` | `span`, `a`, `strong` | botões, badges |
 
-`<img>`, `<input>` e `<button>` são inline, mas são elementos **substituídos**: aceitam `width` e `height` normalmente.
+`<img>` e `<input>` são inline, mas são elementos **substituídos**: aceitam `width` e `height` normalmente. O `<button>` não é substituído, mas é **inline-block**, por isso também aceita tamanho.
 
 > 💡 **Veja o box model ao vivo:** no DevTools (F12), selecione um elemento. No fim do painel **Styles** (ou na aba **Computed**) aparece um diagrama com os valores reais de margin, border, padding e content.
 

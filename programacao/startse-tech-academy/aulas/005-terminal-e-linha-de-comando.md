@@ -26,7 +26,7 @@ cd ~  # vai para a pasta do usuário
 cd -  # volta para a pasta anterior
 ```
 
-![O mesmo arquivo pode ser apontado por um caminho absoluto ou relativo.](../img/terminal-caminhos.svg)
+![O mesmo arquivo pode ser apontado por um caminho absoluto ou relativo.](../img/terminal-caminhos-2.svg)
 
 **Caminho absoluto** parte da raiz (`/home/ana/projetos`); **caminho relativo** parte da pasta atual (`css/style.css`). `..` significa "a pasta acima" e `.` significa "a pasta atual".
 

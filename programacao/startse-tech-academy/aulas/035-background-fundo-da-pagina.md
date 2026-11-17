@@ -36,7 +36,7 @@ Por padrão a imagem **se repete** nos dois eixos até cobrir o elemento.
 
 ### `background-repeat`, `background-size` e `background-position`
 
-![Como a imagem preenche o elemento com cada valor.](../img/background-size.svg)
+![Como a imagem preenche o elemento com cada valor.](../img/background-size-2.svg)
 
 > 💡 **Analogia:** pense numa foto e num porta-retratos de outro formato. `cover` amplia a foto até não sobrar nenhum espaço vazio, mesmo que as bordas fiquem cortadas; `contain` encolhe a foto até ela caber inteira, mesmo que sobrem faixas vazias; `repeat` é um papel de parede, que repete o mesmo desenho lado a lado.
 
@@ -68,7 +68,7 @@ Por padrão a imagem **se repete** nos dois eixos até cobrir o elemento.
 }
 ```
 
-> 💡 Para testar posicionamento, aplique o fundo num elemento próprio (como uma `<div class="banner">`), e não no `body` com largura e altura fixas, o que encolheria a página inteira.
+> 💡 Para testar posicionamento, aplique o fundo num elemento próprio (como uma `<div class="banner">`), e não no `body`: o fundo do body cobre a janela inteira e atrapalha a leitura do teste.
 
 ## Gradientes
 

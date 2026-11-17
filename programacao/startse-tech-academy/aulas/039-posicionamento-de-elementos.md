@@ -10,7 +10,7 @@ O `display` decide o tipo de caixa, mas a caixa continua no fluxo normal, uma de
 
 Controla **como** um elemento é posicionado e **em relação a quê** as propriedades `top`, `right`, `bottom` e `left` funcionam.
 
-![static, relative, absolute, fixed e sticky.](../img/position-tipos.svg)
+![static, relative, absolute, fixed e sticky.](../img/position-tipos-2.svg)
 
 > 💡 **Analogia:** imagine pessoas numa fila. `static` é ficar no seu lugar; `relative` é dar um passo para o lado sem perder o lugar na fila; `absolute` é sair da fila e ficar num ponto exato da sala onde está o "responsável" (o pai posicionado); `fixed` é um aviso colado no vidro da janela, que não se move quando a sala gira; `sticky` é andar com a fila até encostar na parede e parar ali.
 

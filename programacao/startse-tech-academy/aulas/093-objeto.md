@@ -70,7 +70,7 @@ Por baixo dos panos, a classe faz **exatamente o que a função construtora com 
 
 ## Como o JavaScript encontra os métodos
 
-![Se a propriedade não está no objeto, o JS sobe pela cadeia de protótipos.](../img/prototipo.svg)
+![Se a propriedade não está no objeto, o JS sobe pela cadeia de protótipos.](../img/prototipo-2.svg)
 
 > 💡 **Analogia:** a cadeia de protótipos é como perguntar algo em família. Você pergunta ao filho; se ele não sabe, ele pergunta ao pai; se o pai não sabe, pergunta ao avô, até alguém responder ou a árvore acabar (`null`). O filho não precisa decorar tudo: ele "herda" o que os antepassados sabem.
 

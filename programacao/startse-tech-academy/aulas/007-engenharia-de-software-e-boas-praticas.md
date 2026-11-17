@@ -12,6 +12,8 @@ O módulo mostrou o computador, a rede e a divisão entre front-end e back-end. 
 
 ![Qualidade na base; processo, métodos e ferramentas por cima (modelo de Pressman).](../img/es-camadas.svg)
 
+> 💡 **Analogia:** pense num prédio. A **qualidade** é a fundação: sem ela, nada fica de pé. O **processo** é o cronograma da obra, os **métodos** são as técnicas de construção, e as **ferramentas** são as betoneiras e guindastes que aceleram o trabalho.
+
 - **Foco na qualidade**: a base de tudo. Sem compromisso com qualidade, o resto desmorona.
 - **Processo**: *como* o trabalho é organizado: quais etapas, em que ordem, quem faz o quê. Exemplos: Scrum, Kanban e cascata.
 - **Métodos**: o "como fazer" técnico: levantar requisitos, modelar, construir e testar.
@@ -21,13 +23,15 @@ O módulo mostrou o computador, a rede e a divisão entre front-end e back-end. 
 
 ![O hardware falha por desgaste físico; o software acumula defeitos a cada mudança.](../img/curva-falhas.svg)
 
-Uma peça de hardware segue a "curva da banheira": muitas falhas no início (defeitos de fabricação), uma vida útil estável e, depois, desgaste físico. O software não sofre desgaste físico, mas **muda o tempo todo**: correções, novas funções, outra equipe mexendo. Cada mudança mal feita introduz defeitos e aumenta a complexidade. É a **deterioração**, e as boas práticas existem para desacelerá-la.
-
 > 💡 **Analogia:** é como uma casa que recebe reformas sem planta: cada puxadinho resolve um problema hoje, mas depois de dez obras ninguém sabe por onde passa o encanamento. Boas práticas são a planta atualizada a cada reforma.
+
+Uma peça de hardware segue a "curva da banheira": muitas falhas no início (defeitos de fabricação), uma vida útil estável e, depois, desgaste físico. O software não sofre desgaste físico, mas **muda o tempo todo**: correções, novas funções, outra equipe mexendo. Cada mudança mal feita introduz defeitos e aumenta a complexidade. É a **deterioração**, e as boas práticas existem para desacelerá-la.
 
 ## Atividades do processo de software
 
 ![Comunicação, planejamento, modelagem, construção e entrega, em ciclos.](../img/es-atividades.svg)
+
+> 💡 **Analogia:** é o caminho de um bolo de encomenda: conversar com o cliente (comunicação), ver ingredientes e prazo (planejamento), escolher a receita e o formato (modelagem), assar e provar (construção) e entregar ouvindo o que o cliente achou (entrega), que vira ajuste para o próximo bolo.
 
 Todo processo de software, ágil ou tradicional, passa por cinco atividades genéricas:
 
@@ -53,6 +57,8 @@ Todo processo de software, ágil ou tradicional, passa por cinco atividades gen�
 
 ![Escreva o teste, faça passar, melhore o código, e repita.](../img/tdd-ciclo.svg)
 
+> 💡 **Analogia:** é como o professor que escreve o gabarito antes de aplicar a prova. Primeiro você define o que é a resposta certa (o teste falha, vermelho); depois resolve até bater com o gabarito (verde); por fim, passa a limpo com letra melhor, conferindo que a resposta continua certa (refatorar).
+
 No **TDD** (*Test-Driven Development*), o teste é escrito **antes** do código:
 
 1. 🔴 **Vermelho**: escreva um teste para a próxima funcionalidade. Ele falha, porque o código ainda não existe.
@@ -60,12 +66,15 @@ No **TDD** (*Test-Driven Development*), o teste é escrito **antes** do código:
 3. 🔵 **Refatorar**: melhore o código (nomes, duplicação, estrutura) com a segurança de que os testes continuam passando.
 
 ```jsx
-// 1. Vermelho: o teste vem primeiro
+// 1. Vermelho: o teste vem primeiro e descreve
+// o comportamento que o cliente espera
 test("soma dois números", () => {
+  // se soma(2, 3) não der 5, a regra está errada
   expect(soma(2, 3)).toBe(5);
 });
 
-// 2. Verde: o mínimo para passar
+// 2. Verde: o mínimo para o teste passar;
+// melhorias ficam para a etapa de refatorar
 function soma(a, b) {
   return a + b;
 }
@@ -87,10 +96,12 @@ function soma(a, b) {
 Um exemplo de "código limpo" na prática:
 
 ```jsx
-// difícil de ler
+// difícil de ler: o que é "c"? de onde vem 0.9?
 function c(a) { return a * 0.9; }
 
-// claro
+// claro: a regra de negócio (10% de desconto)
+// tem nome e fica num lugar só; mudar a
+// promoção é alterar uma única linha
 const DESCONTO = 0.1;
 function precoComDesconto(preco) {
   return preco * (1 - DESCONTO);
@@ -116,7 +127,7 @@ Publicados em 1996, continuam atuais:
 - *Código Limpo* (*Clean Code*) e *Arquitetura Limpa* (*Clean Architecture*), de Robert C. Martin ("Uncle Bob").
 - *Engenharia de Software: uma abordagem profissional*, de Roger Pressman, que é a base dos diagramas desta página.
 - [Artigo no LinkedIn sobre os 7 princípios](https://www.linkedin.com/pulse/7-princ%C3%ADpios-da-engenharia-de-software-vieira-da-silva/?originalSubdomain=pt)
-- [Texto original de David Hooker](http://wiki.c2.com/?SevenPrinciplesOfSoftwareDevelopment) (em inglês)
+- [Texto original de David Hooker](https://wiki.c2.com/?SevenPrinciplesOfSoftwareDevelopment) (em inglês)
 
 ## 🧠 Revisão rápida
 

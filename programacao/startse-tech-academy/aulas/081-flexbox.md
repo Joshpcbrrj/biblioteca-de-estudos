@@ -12,7 +12,7 @@ O módulo V apresentou o Flexbox com um layout de página. Agora, com a estrutur
 
 ```css
 .container {
-  /* inline-flex: o contêiner se comporta como inline */
+  /* flex: o contêiner ocupa a linha toda (bloco); inline-flex faria ele agir como inline */
   display: flex;
 }
 ```
@@ -29,7 +29,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ## Os eixos
 
-![Tudo no Flexbox é relativo a estes dois eixos.](../img/flex-eixos.svg)
+![Tudo no Flexbox é relativo a estes dois eixos.](../img/flex-eixos-2.svg)
 
 > 💡 **Analogia:** o contêiner flex é um varal e os itens são as roupas penduradas. O eixo principal é a corda: `justify-content` decide se as roupas ficam juntas numa ponta, no meio ou espalhadas. O eixo transversal é a altura: `align-items` decide se as peças ficam presas pelo topo, centralizadas ou esticadas até o chão. Girar o varal na vertical (`column`) troca os papéis.
 
@@ -37,7 +37,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `flex-direction`
 
-![Define para onde aponta o eixo principal.](../img/flex-direction.svg)
+![Define para onde aponta o eixo principal.](../img/flex-direction-2.svg)
 
 ```css
 .container {
@@ -49,7 +49,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `flex-wrap`
 
-![Sem wrap, os itens encolhem para caber numa linha só.](../img/flex-wrap.svg)
+![Sem wrap, os itens encolhem para caber numa linha só.](../img/flex-wrap-2.svg)
 
 ```css
 .container {
@@ -63,7 +63,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `justify-content`: eixo principal
 
-![Distribuição do espaço livre ao longo do eixo principal.](../img/flex-justify.svg)
+![Distribuição do espaço livre ao longo do eixo principal.](../img/flex-justify-2.svg)
 
 ```css
 .container {
@@ -75,7 +75,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `align-items`: eixo transversal
 
-![Alinhamento de cada item dentro da linha.](../img/flex-align.svg)
+![Alinhamento de cada item dentro da linha.](../img/flex-align-2.svg)
 
 ```css
 .container {
@@ -89,7 +89,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `align-content`: as linhas
 
-![Só tem efeito quando há mais de uma linha.](../img/align-content.svg)
+![Só tem efeito quando há mais de uma linha.](../img/align-content-2.svg)
 
 ```css
 .container {
@@ -103,7 +103,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `gap`
 
-![O espaço fica só entre os itens.](../img/flex-gap.svg)
+![O espaço fica só entre os itens.](../img/flex-gap-2.svg)
 
 ```css
 .container {
@@ -118,7 +118,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `order`
 
-![O item com menor order aparece primeiro.](../img/flex-order.svg)
+![O item com menor order aparece primeiro.](../img/flex-order-2.svg)
 
 ```css
 .container .item-3 { order: -1; }
@@ -126,7 +126,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `flex-grow`, `flex-shrink` e `flex-basis`
 
-![O espaço LIVRE é dividido na proporção do flex-grow.](../img/flex-grow.svg)
+![O espaço LIVRE é dividido na proporção do flex-grow.](../img/flex-grow-2.svg)
 
 ```css
 .item {
@@ -147,7 +147,7 @@ Flexbox é **unidimensional** (uma linha ou uma coluna por vez); Grid é **bidim
 
 ### `align-self`
 
-![Sobrescreve o align-items do contêiner para um item só.](../img/align-self.svg)
+![Sobrescreve o align-items do contêiner para um item só.](../img/align-self-2.svg)
 
 ```css
 .container .item-3 { align-self: flex-end; }

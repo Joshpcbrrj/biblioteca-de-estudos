@@ -14,7 +14,7 @@ Você sabe criar tabelas e ligá-las por chaves. Mas como decidir **quais** tabe
 - **de inserção**: não dá para cadastrar um produto que ainda não foi vendido;
 - **de exclusão**: apagar o único pedido de um cliente apaga também os dados do cliente.
 
-![Antes, a cidade da Ana se repete; depois, ela fica num lugar só.](../img/normalizacao.svg)
+![Antes, a cidade da Ana se repete; depois, ela fica num lugar só.](../img/normalizacao-2.svg)
 
 > 💡 **Analogia:** é a diferença entre um caderno de recados e uma agenda de contatos. No caderno, você escreve o endereço da Ana em todo recado sobre ela; quando ela se muda, precisa caçar e corrigir cada página, e sempre escapa uma. Na agenda, o endereço fica **uma vez** no contato da Ana, e os recados só dizem "Ana". Normalizar é passar do caderno para a agenda.
 

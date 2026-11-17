@@ -47,7 +47,7 @@ const salvo = JSON.parse(
 
 `fetch` faz uma requisição HTTP e devolve uma **Promise** (um valor que chega depois). Com `await`, o código espera a resposta sem travar a página. Promises e `async/await` são detalhados no módulo de Node.js.
 
-![Cada etapa espera a anterior; resp.ok decide se houve sucesso.](../img/fetch-fluxo.svg)
+![Cada etapa espera a anterior; resp.ok decide se houve sucesso.](../img/fetch-fluxo-2.svg)
 
 > 💡 **Analogia:** o `fetch` é como pedir comida por aplicativo. Você faz o pedido e continua sua vida (a página não trava); quando o entregador chega, você confere se veio o pedido certo (`resp.ok`) antes de abrir a embalagem (`resp.json()`). O JSON é o cardápio padronizado que todo restaurante entende.
 

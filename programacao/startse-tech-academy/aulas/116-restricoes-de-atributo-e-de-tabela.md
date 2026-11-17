@@ -8,7 +8,7 @@ Os tipos de dados limitam o formato de cada coluna. As restrições vão além: 
 
 ## Para que servem as restrições
 
-![Restrições: o banco recusa dado errado](../img/st-restricoes.svg)
+![Restrições: o banco recusa dado errado](../img/st-restricoes-2.svg)
 
 > 💡 **Analogia:** as restrições são o segurança na porta de um evento. Sem nome, ninguém entra (`NOT NULL`). A mesma pulseira não passa duas vezes (`UNIQUE`). O nome tem que estar na lista de convidados (`FOREIGN KEY`). Menor de 18 fica de fora (`CHECK`). E quem chega sem dizer o setor vai para a pista comum (`DEFAULT`). Não importa por qual porta a pessoa tenta entrar: o segurança confere sempre.
 

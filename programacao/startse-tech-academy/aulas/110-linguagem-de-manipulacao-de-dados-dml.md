@@ -76,7 +76,7 @@ Outros recursos: `SELECT DISTINCT cidade` (sem repetir), `AS` para apelidos (`pr
 
 ### A ordem real de execução
 
-![Você escreve SELECT primeiro, mas o banco o executa quase no fim.](../img/sql-ordem.svg)
+![Você escreve SELECT primeiro, mas o banco o executa quase no fim.](../img/sql-ordem-2.svg)
 
 > 💡 **Analogia:** é como um bibliotecário montando uma pilha de livros para você. Primeiro ele vai à estante certa (`FROM`), separa só os livros que atendem ao pedido (`WHERE`), junta em grupos e descarta os grupos que não servem (`GROUP BY`, `HAVING`), anota as informações que você quer de cada um (`SELECT`), arruma a pilha (`ORDER BY`) e entrega só os primeiros (`LIMIT`). Você **fala** o `SELECT` primeiro, mas ele é **feito** quase no fim.
 

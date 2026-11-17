@@ -10,7 +10,7 @@ Você estudou semântica, Flexbox, Grid e Bootstrap. Agora vamos aplicar. Tente 
 
 Uma página com cabeçalho, menu, dois artigos (cada um com autor, texto e figura), barra lateral de links e rodapé com contato.
 
-![Cada bloco da página com a tag que o representa.](../img/projeto-semantico.svg)
+![Cada bloco da página com a tag que o representa.](../img/projeto-semantico-2.svg)
 
 > 💡 **Analogia:** estes três projetos são como os treinos de uma autoescola: primeiro você aprende onde fica cada peça do carro (as tags semânticas), depois a fazer curvas numa direção (Flexbox) e por fim a estacionar numa vaga marcada no chão (Grid). Tente dirigir sozinho antes de olhar o código.
 
@@ -31,7 +31,7 @@ Uma página com cabeçalho, menu, dois artigos (cada um com autor, texto e figur
     <p>Subtítulo</p>
   </header>
 
-  <nav id="header-nav" aria-label="Menu principal">
+  <nav id="menu-principal" aria-label="Menu principal">
     <ul>
       <li><a href="#artigos">Artigos</a></li>
       <li><a href="#rodape">Rodapé</a></li>
@@ -44,7 +44,7 @@ Uma página com cabeçalho, menu, dois artigos (cada um com autor, texto e figur
     <article>
       <header>
         <h3>Artigo 1</h3>
-        <p>Escrito por: <mark>Carl Sagan</mark></p>
+        <p>Escrito por: <span>Carl Sagan</span></p>
       </header>
       <section>
         <p>Esta é uma seção do artigo...</p>
@@ -60,7 +60,7 @@ Uma página com cabeçalho, menu, dois artigos (cada um com autor, texto e figur
     <article>
       <header>
         <h3>Artigo 2</h3>
-        <p>Escrito por: <mark>Isaac Newton</mark></p>
+        <p>Escrito por: <span>Isaac Newton</span></p>
       </header>
       <section>
         <p>Esta é uma seção do artigo...</p>
@@ -251,7 +251,7 @@ footer {
 
 > ⚠️ **Correções:**
 >
-> - **Projeto 1:** havia vários `<h1>` (página, "Artigos", cada artigo); agora a hierarquia é `h1` → `h2` → `h3`. As imagens não tinham `alt` e foram trocadas por placeholders com `width` e `height`. "Isac" → "Isaac".
+> - **Projeto 1:** havia vários `<h1>` (página, "Artigos", cada artigo); agora a hierarquia é `h1` → `h2` → `h3`. As imagens não tinham `alt` e foram trocadas por placeholders com `width` e `height`. "Isac" → "Isaac". O `<mark>` do autor foi trocado por `<span>`, porque `mark` serve para destacar trechos, e o `id="header-nav"` do menu, que ficava fora do cabeçalho, virou `menu-principal`.
 > - **Projeto 2:** `margin` nos itens foi trocado por `gap`, e `width` por `flex: 0 0 110px` (no flex, o `width` pode ser encolhido).
 > - **Projeto 3:** `font-size: 3,5rem` é inválido (vírgula) e era descartado pelo navegador. `border-collapse` não faz nada em um grid e foi removido. As caixas do rodapé somavam 25% + 50% + 25% **mais** margens, estourando a largura; agora usam `flex` 1, 2 e 1 com `gap`.
 

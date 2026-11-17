@@ -14,7 +14,7 @@ Criar uma tabela de contatos estilizada com:
 - **destaque ao passar o mouse** (`:hover`);
 - cabeçalho com células mescladas (`rowspan`/`colspan`) e legenda.
 
-![Linhas pares em cinza, linha sob o cursor em amarelo.](../img/tabela-zebra.svg)
+![Linhas pares em cinza, linha sob o cursor em amarelo.](../img/tabela-zebra-2.svg)
 
 > 💡 **Analogia:** o efeito zebra funciona como o papel de formulário contínuo antigo, com faixas alternadas: o olho não "pula" de linha ao atravessar a tabela da esquerda para a direita. O `:hover` é como passar uma régua por baixo da linha que você está lendo.
 
@@ -31,14 +31,13 @@ tbody tr:nth-child(even) {
 }
 tbody tr:hover {
   background-color: lightgoldenrodyellow;
-  font-weight: bold;
 }
 ```
 
 - `:nth-child(even)` seleciona os filhos em posição **par**, e `:nth-child(odd)`, os **ímpares**. Também aceita fórmulas: `:nth-child(3n)` pega a cada 3.
 - `:hover` aplica o estilo enquanto o mouse está sobre o elemento.
 
-> ⚠️ Se as duas regras usarem `even`, a segunda sobrescreve a primeira e o efeito some. Também evite mudar `font-size` no `:hover`: a tabela "pula" de tamanho a cada passada do mouse.
+> ⚠️ Se as duas regras usarem `even`, a segunda sobrescreve a primeira e o efeito some. Também evite mudar `font-size` ou `font-weight` no `:hover`: a letra muda de largura e a tabela "pula" a cada passada do mouse.
 
 ## Projeto completo
 
@@ -95,7 +94,6 @@ tbody tr:hover {
     /* destaque ao passar o mouse */
     tbody tr:hover {
       background-color: lightgoldenrodyellow;
-      font-weight: bold;
     }
   </style>
 </head>

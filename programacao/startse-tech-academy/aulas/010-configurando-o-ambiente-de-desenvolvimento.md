@@ -8,7 +8,7 @@ Você já sabe que o código passa por um compilador ou interpretador. No desenv
 
 ## O kit básico
 
-![O kit básico e a organização de um projeto](../img/st-ambiente.svg)
+![O kit básico e a organização de um projeto](../img/st-ambiente-2.svg)
 
 | Ferramenta | Para quê |
 | --- | --- |

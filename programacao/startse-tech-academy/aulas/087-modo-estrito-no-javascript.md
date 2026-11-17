@@ -28,7 +28,7 @@ function teste() {
 
 ## O que muda
 
-!["use strict": falhas silenciosas viram erro](../img/st-strict.svg)
+!["use strict": falhas silenciosas viram erro](../img/st-strict-2.svg)
 
 > 💡 **Analogia:** o modo normal é um professor bonzinho que deixa passar erros de ortografia sem dizer nada; o aluno só descobre na prova final. O modo estrito é o professor exigente que marca de vermelho na hora: dá mais trabalho no começo, mas o erro aparece cedo, quando é fácil de corrigir.
 

@@ -6,7 +6,7 @@
 
 Você viu que a POO junta dados e comportamento em objetos. Quatro ideias, os **pilares**, orientam como desenhar essas classes.
 
-![Os quatro pilares, com um exemplo de cada.](../img/pilares-poo.svg)
+![Os quatro pilares, com um exemplo de cada.](../img/pilares-poo-2.svg)
 
 > 💡 **Analogia:** pense num carro. **Encapsulamento**: o motor fica fechado sob o capô, e você só usa pedais e volante. **Abstração**: você sabe que "acelerar" faz andar, sem precisar entender a injeção eletrônica. **Herança**: um carro elétrico é um carro, com tudo que um carro tem e algo a mais. **Polimorfismo**: "acelerar" funciona em qualquer carro, mas cada motor faz isso do seu jeito.
 

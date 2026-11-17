@@ -23,12 +23,16 @@ section .text
   global _start
 
 _start:
+  ; pedimos ao kernel para escrever:
+  ; não há "print", só chamadas de sistema
   mov eax, 4      ; syscall 4 = sys_write
   mov ebx, 1      ; 1 = stdout
   mov ecx, hello  ; endereço do texto
   mov edx, len    ; quantos bytes
   int 0x80        ; chama o kernel
 
+  ; o programa precisa avisar que acabou,
+  ; senão a CPU segue lendo lixo da memória
   mov eax, 1      ; syscall 1 = sys_exit
   xor ebx, ebx    ; código de saída 0
   int 0x80
@@ -37,6 +41,9 @@ _start:
 **Python: alto nível**
 
 ```python
+# uma linha faz tudo o que o Assembly
+# acima fez em onze: a linguagem esconde
+# as chamadas de sistema
 print("Hello, World!")
 ```
 
@@ -64,6 +71,8 @@ print("Hello, World!")
 Um **compilador** traduz **todo** o código-fonte para código de máquina **antes** da execução e gera um executável. Vantagens: execução rápida e erros pegos antes de rodar. Desvantagem: precisa recompilar a cada mudança, e o executável é específico do sistema e do processador.
 
 ![As sete etapas, da leitura do código ao executável final.](../img/compilador-etapas.svg)
+
+> 💡 **Analogia:** é uma linha de montagem de carros. Primeiro separam-se as peças (léxica), depois confere-se se encaixam (sintática) e se o conjunto faz sentido (semântica); monta-se um protótipo (código intermediário), ajusta-se para gastar menos (otimização), produz-se o modelo final para a fábrica de cada país (geração de código) e, por fim, instalam-se os acessórios comprados de fora (ligação).
 
 1. **Análise léxica** (*tokenização*): quebra o código em tokens.
 2. **Análise sintática** (*parsing*): confere a gramática e monta a **AST** (*Abstract Syntax Tree*, árvore sintática abstrata).

@@ -10,7 +10,7 @@ Os índices deixam as consultas rápidas. Falta garantir que operações que pre
 
 **Uma transação agrupa vários comandos em uma unidade: ou todos são gravados, ou nenhum é.** O exemplo clássico é uma transferência bancária: tirar o dinheiro de uma conta e colocar na outra precisa acontecer **junto**. Se o sistema cair no meio, o dinheiro não pode sumir.
 
-![COMMIT confirma tudo; ROLLBACK desfaz tudo.](../img/transacao.svg)
+![COMMIT confirma tudo; ROLLBACK desfaz tudo.](../img/transacao-2.svg)
 
 > 💡 **Analogia:** é o caixa do supermercado. Ele passa todos os produtos (os comandos), mas a compra só vale quando o pagamento é aprovado e a nota sai (`COMMIT`). Se o cartão for recusado, o caixa cancela a compra **inteira** (`ROLLBACK`): você não sai com metade das sacolas. E, depois de a nota sair, a compra está registrada mesmo que falte luz no minuto seguinte (durabilidade).
 
@@ -32,7 +32,7 @@ ROLLBACK;
 
 `SAVEPOINT nome` cria um ponto intermediário, e `ROLLBACK TO nome` volta só até ele.
 
-> 💡 Por padrão, MySQL e PostgreSQL estão em **autocommit**: cada comando solto é uma transação que se confirma sozinha. O `START TRANSACTION` desliga isso até o próximo `COMMIT` ou `ROLLBACK`. No MySQL, comandos DDL (`CREATE`, `DROP`, `ALTER`) fazem **commit implícito** e não podem ser desfeitos.
+> 💡 Por padrão, os clientes (como o psql e o MySQL Workbench) vêm com **autocommit** ligado: cada comando solto é uma transação que se confirma sozinha. O `START TRANSACTION` desliga isso até o próximo `COMMIT` ou `ROLLBACK`. No MySQL, comandos DDL (`CREATE`, `DROP`, `ALTER`) fazem **commit implícito** e não podem ser desfeitos.
 
 ## ACID: as quatro garantias
 

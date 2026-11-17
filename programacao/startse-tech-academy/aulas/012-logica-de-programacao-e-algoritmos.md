@@ -19,6 +19,8 @@ Um quebra-cabeça clássico, proposto em aula, para treinar o pensamento algorí
 
 ![Leve os discos da haste A para a C, seguindo três regras.](../img/hanoi-problema.svg)
 
+> 💡 **Analogia:** é como mudar uma pilha de pratos de um armário para outro usando uma bancada no meio, sem nunca pôr um prato grande sobre um pequeno (ele racharia). Você carrega um prato por vez e usa a bancada como apoio temporário.
+
 ### Resolvendo com 3 discos
 
 ![Os 7 movimentos da solução mínima.](../img/hanoi-passos.svg)
@@ -44,15 +46,22 @@ fim
 
 ```jsx
 function hanoi(n, origem, destino, auxiliar) {
+  // caso base: sem discos, não há o que mover;
+  // é isso que impede a recursão de ser infinita
   if (n === 0) return;
+  // tira do caminho os n-1 discos de cima,
+  // usando o destino como apoio
   hanoi(n - 1, origem, auxiliar, destino);
+  // agora o maior disco está livre para ir
   console.log(
     `mova o disco ${n} de ${origem} para ${destino}`
   );
+  // devolve os n-1 discos para cima do maior
   hanoi(n - 1, auxiliar, destino, origem);
 }
 
-hanoi(3, "A", "C", "B"); // imprime os 7 movimentos
+// saída: os 7 movimentos (2³ − 1)
+hanoi(3, "A", "C", "B");
 ```
 
 ## Pseudocódigo e fluxograma
@@ -62,6 +71,8 @@ O **pseudocódigo** descreve o algoritmo em português estruturado, sem se prend
 ```
 Início
   Ler (A, B)
+  // só uma comparação basta: quem não for
+  // maior que o outro é o menor (ou igual)
   Se (A > B) então
     Exibir (A)
   Senão
@@ -74,9 +85,9 @@ O **fluxograma** mostra o mesmo algoritmo de forma visual:
 
 ![A decisão "A > B?" divide o fluxo em dois caminhos, que voltam a se juntar no fim.](../img/fluxo-maior.svg)
 
-> 💡 Se A e B forem iguais, o algoritmo exibe B, o que está correto, porque qualquer um dos dois é o maior. Pensar nesses **casos-limite** (valores iguais, vazios, negativos) é parte essencial da lógica de programação.
-
 > 💡 **Analogia:** o pseudocódigo é como a receita escrita em linguagem de casa ("bata os ovos até espumar"), e o fluxograma é o passo a passo desenhado num cartaz da cozinha. Os dois descrevem o mesmo prato; o código é a receita traduzida para o idioma de uma máquina.
+
+> 💡 Se A e B forem iguais, o algoritmo exibe B, o que está correto, porque qualquer um dos dois é o maior. Pensar nesses **casos-limite** (valores iguais, vazios, negativos) é parte essencial da lógica de programação.
 
 ### Palavras-chave do pseudocódigo
 
@@ -94,11 +105,15 @@ O **fluxograma** mostra o mesmo algoritmo de forma visual:
 
 ![Terminal, processo, entrada/saída, decisão, seta e conector.](../img/fluxo-simbolos.svg)
 
+> 💡 **Analogia:** os símbolos são como as placas de trânsito: cada forma tem um significado fixo que todos reconhecem. O oval é a placa de "início/fim da via", o losango é a bifurcação que exige uma escolha e as setas são as faixas pintadas no chão indicando o caminho.
+
 ## As três estruturas básicas
 
 Qualquer algoritmo, por maior que seja, é feito de três peças combinadas:
 
 ![Sequência, decisão e repetição.](../img/estruturas-basicas.svg)
+
+> 💡 **Analogia:** pense numa caminhada até a padaria. Andar quarteirão após quarteirão é a **sequência**; escolher a rua da esquerda ou da direita conforme o trânsito é a **decisão**; e subir degrau por degrau até chegar ao topo de uma escada é a **repetição**.
 
 - **Sequência**: um passo depois do outro, de cima para baixo.
 - **Decisão** (ou seleção): um caminho ou outro, conforme uma condição (`se`).
@@ -108,10 +123,15 @@ Exemplo com as três: somar os números de 1 a 5.
 
 ```
 Início
+  // acumulador começa vazio: ainda não
+  // somamos nenhum número
   soma ← 0
+  // contador: qual número vamos somar agora
   i ← 1
   Enquanto (i <= 5) faça
     soma ← soma + i
+    // sem avançar o contador, o laço
+    // nunca terminaria
     i ← i + 1
   Fim Enquanto
   Exibir (soma)
@@ -204,6 +224,8 @@ Escreva em pseudocódigo um algoritmo que leia a nota de um aluno e exiba "Aprov
 ```
 Início
   Ler (nota)
+  // testamos da faixa mais alta para a mais
+  // baixa: cada Senão já descarta as de cima
   Se (nota >= 7) então
     Exibir ("Aprovado")
   Senão Se (nota >= 5) então
@@ -214,7 +236,7 @@ Início
 Fim
 ```
 
-Quando o algoritmo chega ao segundo `Se`, já sabe que a nota é menor que 7, então basta testar `nota >= 5`.
+Quando o algoritmo chega ao segundo `Se`, já sabe que a nota é menor que 7, então basta testar `nota >= 5`. Teste: nota 6 → "Recuperação".
 
 </details>
 

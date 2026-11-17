@@ -10,6 +10,8 @@ Este curso forma um desenvolvedor web do zero: primeiro os fundamentos (computad
 
 **Programar é escrever instruções precisas, em uma linguagem de programação, para que um computador execute uma tarefa.** O computador não entende intenção, só instruções: ele faz exatamente o que foi escrito, nem mais nem menos.
 
+> 💡 **Analogia:** programar é como dar instruções a um GPS para alguém que nunca saiu de casa. "Vá até a padaria" não serve; é preciso dizer "saia pela porta, vire à direita, ande 200 metros, atravesse na faixa".
+
 - Uma **linguagem de programação** é um conjunto de regras de **sintaxe** (como escrever) e **semântica** (o que cada coisa significa). Exemplos: C, C++, Java, Python e JavaScript, cada uma com características e usos próprios.
 - Programar vai além de digitar código. O trabalho passa por várias etapas:
   1. **entender o problema**;
@@ -31,32 +33,38 @@ Exemplo de algoritmo, em português, para descobrir o maior de três números:
 
 ```
 1. Leia A, B e C
-2. maior ← A
+2. maior ← A        (alguém precisa ser o
+                     candidato inicial)
 3. Se B > maior, então maior ← B
 4. Se C > maior, então maior ← C
-5. Mostre maior
+5. Mostre maior     (quem sobreviveu às
+                     comparações é o maior)
 ```
 
 Os mesmos passos em JavaScript:
 
 ```jsx
 function maiorDeTres(a, b, c) {
+  // começamos supondo que o primeiro é o maior
   let maior = a;
+  // cada if só troca o candidato se achar
+  // alguém realmente maior
   if (b > maior) maior = b;
   if (c > maior) maior = c;
   return maior;
 }
 
-console.log(maiorDeTres(7, 42, 13)); // 42
+// saída: 42
+console.log(maiorDeTres(7, 42, 13));
 ```
 
 > 💡 Algoritmos não são exclusivos da computação: estão na matemática, na logística e no dia a dia. A diferença é que, para o computador, cada passo precisa ser **totalmente explícito**.
 
-> 💡 **Analogia:** programar é como dar instruções a um GPS para alguém que nunca saiu de casa. "Vá até a padaria" não serve; é preciso dizer "saia pela porta, vire à direita, ande 200 metros, atravesse na faixa".
-
 ## Níveis das linguagens de programação
 
 ![Do binário que a CPU executa até as linguagens de alto nível.](../img/ling-niveis.svg)
+
+> 💡 **Analogia:** é como pedir comida em outro país. A linguagem de máquina é o idioma local que só o cozinheiro (a CPU) entende; o Assembly é um dicionário palavra por palavra; as linguagens de alto nível são você falando português com um intérprete (o compilador) que traduz tudo para a cozinha.
 
 - **Linguagem de máquina**: zeros e uns, as instruções que o processador executa diretamente. Cada família de processador (x86, ARM) tem a sua.
 - **Assembly**: apelidos legíveis (*mnemônicos*) para as instruções de máquina. Um programa chamado *assembler* faz a tradução.

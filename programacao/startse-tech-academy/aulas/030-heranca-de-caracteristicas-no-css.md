@@ -12,7 +12,7 @@ A especificidade decide entre regras que miram o mesmo elemento. A herança é o
 
 **Nem toda propriedade é herdada.** A regra geral é que as propriedades de **texto** herdam e as de **caixa** (tamanho, espaçamento, borda, fundo) não herdam.
 
-![A cor desce para os filhos; a borda não. O link mantém a cor que o navegador dá a ele.](../img/css-heranca.svg)
+![A cor desce para os filhos; a borda não. O link mantém a cor que o navegador dá a ele.](../img/css-heranca-2.svg)
 
 > 💡 **Analogia:** a herança do CSS é como a de uma família. Os filhos herdam o sotaque e o sobrenome (cor, fonte, alinhamento), mas não herdam a altura nem a casa dos pais (tamanho, margem, borda, fundo). E se a escola dá um uniforme ao filho (o estilo do navegador), ele usa o uniforme, e não a roupa que vem de casa.
 

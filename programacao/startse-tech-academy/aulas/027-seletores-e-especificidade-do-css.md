@@ -61,7 +61,7 @@ li:nth-child(odd) { background: #f5f5f5; }
 
 Quando duas regras estilizam a mesma propriedade do mesmo elemento, vence a **mais específica**. Pense num placar de três colunas:
 
-![IDs, classes e elementos contados separadamente; compare da esquerda para a direita.](../img/especificidade.svg)
+![IDs, classes e elementos contados separadamente; compare da esquerda para a direita.](../img/especificidade-2.svg)
 
 > 💡 **Analogia:** a especificidade funciona como o quadro de medalhas das Olimpíadas. Primeiro se comparam os ouros (IDs); só se empatar, as pratas (classes); só se empatar de novo, os bronzes (elementos). Um único ouro vence qualquer quantidade de pratas.
 

@@ -31,7 +31,7 @@ npm pkg set scripts.dev="node --watch server.js"
 
 ## O caminho de uma requisição
 
-![A requisição passa pelos middlewares, na ordem, até a rota que responde.](../img/express-fluxo.svg)
+![A requisição passa pelos middlewares, na ordem, até a rota que responde.](../img/express-fluxo-2.svg)
 
 > 💡 **Analogia:** a requisição é um visitante entrando num prédio. Na portaria, um funcionário confere de onde ele vem (`cors`), outro abre e organiza o pacote que ele trouxe (`express.json`), e só então ele é levado à sala certa (a rota), onde alguém resolve o pedido e entrega a resposta. Se a sala não existe, a recepção avisa (404); se algo dá errado lá dentro, o plantão de emergência atende (o middleware de erro).
 
@@ -88,7 +88,8 @@ app.put("/tarefas/:id", (req, res) => {
     tarefa.titulo = String(titulo).trim();
   }
   if (feita !== undefined) {
-    tarefa.feita = Boolean(feita);
+    // aceita só true/false: Boolean("false") seria true
+    tarefa.feita = feita === true;
   }
   res.json(tarefa);
 });

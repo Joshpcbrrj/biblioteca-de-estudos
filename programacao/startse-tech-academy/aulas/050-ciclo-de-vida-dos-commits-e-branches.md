@@ -15,7 +15,7 @@ Para o Git, todo arquivo do projeto está em um destes estados:
 3. **Unmodified (não modificado)**: arquivo rastreado e idêntico ao último commit.
 4. **Modified (modificado)**: arquivo rastreado que foi alterado desde o último commit, mas ainda não foi preparado.
 
-![Os comandos que movem um arquivo entre os estados.](../img/ciclo-estados.svg)
+![Os comandos que movem um arquivo entre os estados.](../img/ciclo-estados-2.svg)
 
 > 💡 **Analogia:** a staging area é como o balcão dos Correios. Você edita várias cartas na sua mesa (modified), escolhe quais vão no próximo envio e as coloca no balcão (`git add`, staged), e só então o atendente sela o pacote (`git commit`). O que ficou na mesa vai num envio futuro.
 
@@ -32,7 +32,7 @@ git status -s
 
 **Uma branch é uma linha de desenvolvimento independente.** Você cria uma branch para desenvolver uma funcionalidade ou corrigir um bug sem mexer na `main`, que deve ficar sempre estável. Quando o trabalho fica pronto, a branch é integrada de volta com `merge`.
 
-![A feature nasce de C2 e evolui separada da main.](../img/branch-conceito.svg)
+![A feature nasce de C2 e evolui separada da main.](../img/branch-conceito-2.svg)
 
 Por baixo dos panos, uma branch é só um **ponteiro leve para um commit**. Criar uma branch não copia arquivos, por isso é instantâneo. O `HEAD` indica em qual branch você está agora.
 

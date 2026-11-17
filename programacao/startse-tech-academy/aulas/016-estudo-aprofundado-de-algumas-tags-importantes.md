@@ -12,11 +12,14 @@ Tudo dentro do `<head>` são **metadados**: informações *sobre* a página, que
 
 ![O título e o favicon aparecem na aba; o título e a descrição aparecem no resultado de busca.](../img/head-pratica.svg)
 
+> 💡 **Analogia:** o `<head>` é a vitrine e a placa de uma loja. Ninguém compra a placa, mas é por ela que o cliente decide entrar: o título é o nome na fachada, a descrição é o cartaz de ofertas e o favicon é o logotipo pequeno na porta.
+
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <!-- 1. codificação: a PRIMEIRA tag do head -->
+    <!-- 1. codificação: a PRIMEIRA tag do head,
+         antes de qualquer texto com acento -->
     <meta charset="utf-8">
 
     <!-- 2. viewport: sem ela, o site fica
@@ -24,7 +27,8 @@ Tudo dentro do `<head>` são **metadados**: informações *sobre* a página, que
     <meta name="viewport"
       content="width=device-width, initial-scale=1">
 
-    <!-- 3. título: aba e Google (até ~60 caracteres) -->
+    <!-- 3. título: aba e Google (até ~60
+         caracteres, senão é cortado) -->
     <title>Loja do Zé | Cafés especiais</title>
 
     <!-- 4. descrição: texto abaixo do título
@@ -38,7 +42,8 @@ Tudo dentro do `<head>` são **metadados**: informações *sobre* a página, que
     <!-- 6. favicon: o ícone da aba -->
     <link rel="icon" href="/favicon.ico">
 
-    <!-- 7. folha de estilo externa -->
+    <!-- 7. folha de estilo externa: separada
+         para o navegador guardar em cache -->
     <link rel="stylesheet" href="estilo.css">
   </head>
 </html>
@@ -49,7 +54,8 @@ Tudo dentro do `<head>` são **metadados**: informações *sobre* a página, que
 Por padrão, os buscadores **já indexam** as páginas públicas. A tag `robots` serve para **restringir**:
 
 ```html
-<!-- não mostrar no Google nem seguir os links -->
+<!-- página de área restrita: não deve
+     aparecer no Google nem repassar links -->
 <meta name="robots" content="noindex, nofollow">
 ```
 
@@ -66,10 +72,14 @@ Por padrão, os buscadores **já indexam** as páginas públicas. A tag `robots`
 Controlam o "card" que aparece quando o link é compartilhado no WhatsApp, LinkedIn etc.:
 
 ```html
+<!-- sem estas tags, o WhatsApp tenta adivinhar
+     título e imagem, e costuma errar -->
 <meta property="og:title"
   content="Loja do Zé | Cafés especiais">
 <meta property="og:description"
   content="Cafés torrados na semana.">
+<!-- precisa ser URL absoluta: o app que lê
+     o link não conhece o seu site -->
 <meta property="og:image"
   content="https://lojadoze.com.br/capa.jpg">
 ```
@@ -80,11 +90,13 @@ Controlam o "card" que aparece quando o link é compartilhado no WhatsApp, Linke
 - `target="_blank"` abre em nova aba. O padrão (`_self`) abre na mesma aba.
 
 ```html
-<!-- link externo em nova aba -->
+<!-- link externo em nova aba; rel="noopener"
+     impede a página nova de controlar esta -->
 <a href="https://developer.mozilla.org"
    target="_blank" rel="noopener">MDN</a>
 
-<!-- imagem clicável -->
+<!-- imagem clicável: o alt diz para onde
+     o link leva, já que não há texto -->
 <a href="https://google.com">
   <img src="logo-google.png" alt="Ir para o Google">
 </a>
@@ -93,8 +105,11 @@ Controlam o "card" que aparece quando o link é compartilhado no WhatsApp, Linke
 ### Links especiais: e-mail, telefone e WhatsApp
 
 ```html
+<!-- mailto: abre o programa de e-mail já
+     com o assunto preenchido -->
 <a href="mailto:contato@exemplo.com?subject=Dúvida">
   Enviar e-mail</a>
+<!-- tel: no celular, já abre o discador -->
 <a href="tel:+5521999990000">Ligar</a>
 <a href="https://wa.me/5521999990000">
   Chamar no WhatsApp</a>
@@ -107,11 +122,13 @@ Sem o prefixo `mailto:`, o navegador tentaria abrir um *endereço de site*, e n�
 Dê um `id` ao destino e use `#id` no `href`:
 
 ```html
+<!-- menu de atalhos para páginas longas -->
 <nav>
   <a href="#intro">Introdução</a>
   <a href="#final">Final</a>
 </nav>
 
+<!-- o id é o "endereço" que o # procura -->
 <h2 id="intro">Introdução</h2>
 <p>...</p>
 <h2 id="final">Final</h2>
@@ -131,7 +148,8 @@ Define a URL base para **todos os links relativos** da página. É pouco usada e
   <base href="https://www.exemplo.com.br/">
 </head>
 <body>
-  <!-- vai para https://www.exemplo.com.br/carros -->
+  <!-- relativo: vai para
+       https://www.exemplo.com.br/carros -->
   <a href="carros">Carros</a>
   <!-- URL absoluta: ignora o base -->
   <a href="https://google.com">Google</a>
@@ -144,6 +162,8 @@ Permite escrever CSS dentro do próprio HTML. É útil para testes, mas em proje
 
 ```html
 <head>
+  <!-- bom para testar rápido; num site real,
+       estas regras iriam para estilo.css -->
   <style>
     body { background-color: aquamarine; }
     h1   { color: blueviolet; }
@@ -160,6 +180,8 @@ Insere JavaScript, que pode alterar a página ou fazer requisições em segundo 
 <p id="teste"></p>
 
 <script>
+  // procura o parágrafo vazio pelo id e
+  // escreve nele: a página muda sem recarregar
   document.getElementById("teste")
     .textContent = "Hello JavaScript!";
 </script>
@@ -174,6 +196,9 @@ Insere JavaScript, que pode alterar a página ou fazer requisições em segundo 
 ## Imagens: `<img>`
 
 ```html
+<!-- width/height reservam o espaço antes da
+     imagem chegar; lazy adia o download
+     até ela estar perto da tela -->
 <img src="img/logo.png" alt="Logo da loja"
      width="400" height="400" loading="lazy">
 ```
@@ -186,6 +211,8 @@ Insere JavaScript, que pode alterar a página ou fazer requisições em segundo 
 ### Imagem com legenda: `<figure>`
 
 ```html
+<!-- figure liga a imagem à sua legenda:
+     leitores de tela leem as duas juntas -->
 <figure>
   <img src="grafico.png"
        alt="Vendas subiram 30% no trimestre">
@@ -196,9 +223,13 @@ Insere JavaScript, que pode alterar a página ou fazer requisições em segundo 
 ## Vídeo e áudio
 
 ```html
+<!-- poster: imagem de capa antes do play -->
 <video width="640" controls poster="capa.jpg">
+  <!-- vários formatos: o navegador usa o
+       primeiro que souber tocar -->
   <source src="video.webm" type="video/webm">
   <source src="video.mp4" type="video/mp4">
+  <!-- aparece só em navegador muito antigo -->
   Seu navegador não suporta vídeo.
 </video>
 
@@ -213,6 +244,8 @@ Insere JavaScript, que pode alterar a página ou fazer requisições em segundo 
 Força uma quebra de linha **dentro** de um texto, por exemplo em endereços ou poemas.
 
 ```html
+<!-- endereço: a quebra faz parte do conteúdo,
+     por isso o br é adequado aqui -->
 <p>Rua das Flores, 42<br>Rio de Janeiro – RJ</p>
 ```
 
@@ -225,8 +258,11 @@ Força uma quebra de linha **dentro** de um texto, por exemplo em endereços ou 
 - `<li>`: cada item. Listas podem ser aninhadas dentro de um `<li>`.
 
 ```html
+<!-- ol: as categorias têm ordem -->
 <ol>
   <li>Animais
+    <!-- a sublista fica DENTRO do li, porque
+         pertence àquele item -->
     <ul>
       <li>Leão</li>
       <li>Tigre</li>
@@ -255,16 +291,19 @@ Crie um cardápio com: uma imagem com legenda, uma lista ordenada de 3 pratos e,
 
 ```html
 <h1>Cardápio do dia</h1>
+<!-- foto + legenda agrupadas -->
 <figure>
   <img src="img/prato.jpg"
        alt="Prato de feijoada com arroz">
   <figcaption>Feijoada da casa</figcaption>
 </figure>
+<!-- ol: os pratos aparecem numerados -->
 <ol>
   <li>Feijoada</li>
   <li>Moqueca</li>
   <li>Escondidinho</li>
 </ol>
+<!-- nova aba: o cliente não perde o cardápio -->
 <a href="https://wa.me/5521999990000"
    target="_blank" rel="noopener">
   Pedir pelo WhatsApp</a>

@@ -12,7 +12,7 @@ Usar o site do **W3Schools** como referência e reproduzir **só a estrutura** d
 
 ## Layout planejado
 
-![Cabeçalho, duas navegações, conteúdo principal com seções, barra lateral e rodapé.](../img/w3s-wireframe.svg)
+![Cabeçalho com menu, duas barras de navegação, conteúdo principal com seções, barra lateral e rodapé.](../img/w3s-wireframe-2.svg)
 
 > 💡 **Analogia:** montar a estrutura antes do visual é como levantar as paredes de uma casa antes de pintar. Primeiro se decide onde fica a sala, a cozinha e o corredor (as tags); a cor das paredes (o CSS) vem depois e pode mudar sem derrubar nada.
 

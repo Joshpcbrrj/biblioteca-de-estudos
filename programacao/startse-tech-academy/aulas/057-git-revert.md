@@ -10,7 +10,7 @@ Na aula de reset você viu como voltar a branch para trás, mas só em commits q
 
 **O** `git revert` **desfaz um commit criando um commit novo com as alterações inversas.** Se o commit original adicionou uma linha, o revert a remove; se apagou, o revert a devolve. O commit original continua no histórico, apenas anulado por outro. Por isso é a forma segura de desfazer algo já compartilhado.
 
-![O revert acrescenta um commit; o reset remove commits da branch.](../img/revert-vs-reset.svg)
+![O revert acrescenta um commit; o reset remove commits da branch.](../img/revert-vs-reset-2.svg)
 
 > 💡 **Analogia:** o revert é como uma errata num jornal. A notícia errada já foi impressa e distribuída, então não dá para arrancar a página da casa de cada leitor (isso seria o reset). Em vez disso, a edição seguinte publica uma correção que anula o erro, e as duas ficam registradas.
 

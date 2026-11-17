@@ -26,14 +26,18 @@ Assim como o português tem vocabulário, gramática e significado, toda linguag
 
 ![A mesma linha de código analisada nas camadas léxica, sintática e semântica.](../img/ling-3-camadas.svg)
 
+> 💡 **Analogia:** "Gato o mesa em subiu" tem palavras válidas (léxica ok), mas gramática errada. "A mesa comeu o gato" tem gramática perfeita, mas não faz sentido (erro semântico). O compilador confere seu código nessas mesmas três camadas, na mesma ordem.
+
 ### 1. Léxica: as "palavras" válidas
 
 Define quais sequências de caracteres formam **tokens** válidos: identificadores, números, operadores e palavras-chave.
 
 ```jsx
-// em JS, ç é permitido em identificadores
+// em JS, ç é permitido em identificadores,
+// então este token é válido
 let preço = 10;
-// ✖ identificador não pode começar com número
+// ✖ identificador não pode começar com número:
+// o leitor de tokens acharia que "2" é um número
 let 2total = 5;
 ```
 
@@ -42,7 +46,8 @@ let 2total = 5;
 Define como os tokens podem ser combinados, ou seja, a **estrutura** das frases. O resultado é uma árvore sintática (AST).
 
 ```jsx
-// ✖ erro de sintaxe: falta fechar o parêntese
+// ✖ erro de sintaxe: falta fechar o parêntese,
+// e o compilador não sabe onde a condição acaba
 if (idade >= 18 {
   console.log("maior");
 }
@@ -53,13 +58,13 @@ if (idade >= 18 {
 Mesmo com a gramática correta, a frase precisa **fazer sentido**: a variável existe? os tipos combinam? a função recebe esses argumentos?
 
 ```jsx
-// ✖ ReferenceError se 'preco' não foi declarada
+// ✖ ReferenceError se 'preco' não foi declarada:
+// a frase é válida, mas fala de algo inexistente
 const total = preco * 2;
-// NaN: sintaxe ok, mas sem significado útil
+// NaN: sintaxe ok, mas multiplicar texto
+// por número não tem significado útil
 const x = "abc" * 2;
 ```
-
-> 💡 **Analogia:** "Gato o mesa em subiu" tem palavras válidas (léxica ok), mas gramática errada. "A mesa comeu o gato" tem gramática perfeita, mas não faz sentido (erro semântico). O compilador funciona igual.
 
 ## Erro em tempo de compilação × em tempo de execução
 

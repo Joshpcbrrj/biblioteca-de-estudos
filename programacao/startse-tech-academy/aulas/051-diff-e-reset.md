@@ -17,7 +17,7 @@ O `git diff` mostra, linha a linha, as diferenças entre duas versões: linhas c
 
 O ponto que mais confunde: **o** `git diff` **sem argumentos não compara com o último commit**. Ele compara o diretório de trabalho com a staging area, ou seja, mostra só o que você **ainda não** adicionou.
 
-![Cada variação compara um par de áreas diferente.](../img/diff-areas.svg)
+![Cada variação compara um par de áreas diferente.](../img/diff-areas-2.svg)
 
 > 💡 **Analogia:** o `git diff` é o "controle de alterações" de um editor de texto: mostra riscado o que saiu e em destaque o que entrou. As variações só mudam **quais duas versões** você coloca lado a lado: o rascunho na mesa, o que está no balcão (staging) ou o que já foi enviado (último commit).
 
@@ -45,7 +45,7 @@ Dica: no VS Code, a aba **Source Control** mostra o mesmo diff lado a lado, de f
 
 O `git reset` move a branch atual (e o `HEAD`) para outro commit. Os commits "à frente" deixam de fazer parte da branch. O que acontece com as **alterações** deles depende da opção:
 
-![soft guarda tudo preparado, mixed guarda como modificado e hard descarta.](../img/reset-modos.svg)
+![soft guarda tudo preparado, mixed guarda como modificado e hard descarta.](../img/reset-modos-2.svg)
 
 ```bash
 # desfaz o último commit; alterações ficam staged

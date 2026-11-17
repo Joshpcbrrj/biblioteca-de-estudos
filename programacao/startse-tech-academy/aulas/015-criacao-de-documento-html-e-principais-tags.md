@@ -9,10 +9,17 @@ Você já sabe o que é uma tag e onde consultar. Agora vamos montar uma página
 ## Estrutura básica de um documento HTML
 
 ```html
+<!-- avisa que é HTML5: sem isso o navegador
+     entra em "modo de compatibilidade" antigo -->
 <!DOCTYPE html>
+<!-- lang ajuda leitores de tela a pronunciar
+     e buscadores a saber o idioma -->
 <html lang="pt-BR">
   <head>
+    <!-- utf-8 garante acentos e emojis -->
     <meta charset="utf-8">
+    <!-- sem viewport, o celular mostra a
+         página "de longe", minúscula -->
     <meta name="viewport"
       content="width=device-width, initial-scale=1">
     <title>Minha página</title>
@@ -21,6 +28,8 @@ Você já sabe o que é uma tag e onde consultar. Agora vamos montar uma página
   <body>
     <h1>Olá, mundo!</h1>
     <p>Meu primeiro parágrafo.</p>
+    <!-- defer: o script espera o HTML
+         terminar de carregar para rodar -->
     <script src="app.js" defer></script>
   </body>
 </html>
@@ -61,10 +70,13 @@ Você já sabe o que é uma tag e onde consultar. Agora vamos montar uma página
 ### Títulos e texto na prática
 
 ```html
+<!-- um único h1: o assunto da página toda -->
 <h1>Receitas da vovó</h1>
+<!-- h2 abre cada receita, como capítulos -->
 <h2>Bolo de cenoura</h2>
 <p>Um bolo <strong>fofinho</strong> e
   <em>fácil</em> de fazer.</p>
+<!-- hr separa um assunto do outro -->
 <hr>
 <h2>Pão de queijo</h2>
 <p>Rende 30 unidades.</p>
@@ -78,6 +90,8 @@ Depois de ler o HTML, o navegador cria uma **representação em objetos** do doc
 
 ![Cada tag vira um nó da árvore; os textos são nós-folha.](../img/dom-arvore.svg)
 
+> 💡 **Analogia:** o DOM é a árvore genealógica da página. O `html` é o avô; `head` e `body` são os filhos; títulos e parágrafos são os netos. Remover um galho leva junto toda a descendência dele, e o JavaScript pode "registrar um parente novo" a qualquer momento.
+
 - O JavaScript pode **ler e modificar** o DOM, e a tela se atualiza **sem recarregar a página**. Isso é o tema do módulo VII.
 - Ao remover um nó, todos os seus descendentes vão junto.
 - Para ver o DOM, aperte **F12** (ou clique com o botão direito → **Inspecionar**). A aba **Elements** mostra a árvore, e você pode editar ao vivo para testar.
@@ -89,12 +103,14 @@ Depois de ler o HTML, o navegador cria uma **representação em objetos** do doc
 Abra o DevTools (F12) → aba **Console** numa página que tenha `<h1 id="titulo">` e experimente:
 
 ```jsx
-// por id: devolve UM elemento (ou null)
+// por id: devolve UM elemento (ou null),
+// porque um id é único na página
 const titulo = document.getElementById("titulo");
-// muda o texto na hora
+// muda o texto na tela sem recarregar
 titulo.innerText = "Novo título!";
 
-// forma moderna: aceita qualquer seletor CSS
+// forma moderna: aceita qualquer seletor CSS,
+// o mesmo que você usa para estilizar
 const primeiro = document.querySelector(".card");
 const todos = document.querySelectorAll("ul > li");
 ```
@@ -116,9 +132,11 @@ Monte uma página "Sobre mim" com: um título principal, dois subtítulos ("Quem
   <title>Sobre mim</title>
 </head>
 <body>
+  <!-- o nome é o assunto principal -->
   <h1>Ana Souza</h1>
   <h2>Quem sou</h2>
   <p>Estudante de desenvolvimento web.</p>
+  <!-- linha separando os dois blocos -->
   <hr>
   <h2>O que estudo</h2>
   <p>HTML, CSS e <strong>JavaScript</strong>.</p>

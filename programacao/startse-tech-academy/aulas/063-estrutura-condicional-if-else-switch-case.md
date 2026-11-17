@@ -10,7 +10,7 @@ Você já sabe comparar valores (`===`, `>`, `&&`). Agora vamos usar o resultado
 
 Executa blocos diferentes de acordo com uma condição. As condições são testadas **de cima para baixo** e só o **primeiro** bloco verdadeiro é executado.
 
-![Assim que uma condição é verdadeira, as de baixo são ignoradas.](../img/if-else-cadeia.svg)
+![Assim que uma condição é verdadeira, as de baixo são ignoradas.](../img/if-else-cadeia-2.svg)
 
 > 💡 **Analogia:** uma cadeia de `if/else if` é como a triagem de um pronto-socorro: o atendente percorre a lista de perguntas de cima para baixo e encaminha o paciente para a **primeira** fila que se aplica, sem continuar perguntando. O `else` é o "atendimento geral" de quem não se encaixou em nada.
 
@@ -161,7 +161,7 @@ Quando você compara a mesma variável com vários valores exatos.
 | Estrutura | Em uma frase |
 | --- | --- |
 | `if / else if / else` | executa o primeiro bloco verdadeiro |
-| Retorno antecipado | trata exceções primeiro e evita aninhamento |
+| Retorno antecipado | trata os casos inválidos primeiro e evita aninhamento |
 | `switch` | compara um valor com vários casos (com `===`) |
 | `break` | encerra o case; sem ele há fall-through |
 | `default` | roda se nenhum case casar |

@@ -1,4 +1,4 @@
-# Js em projetos web
+# JS em projetos web
 
 > 🗺️ **Nesta aula:** de onde veio o JavaScript, o que é ECMAScript, as características da linguagem, o papel do JS ao lado de HTML e CSS e as formas de colocar um script na página.
 
@@ -35,7 +35,7 @@ Quem evolui o padrão é o **TC39** (Comitê Técnico 39 da Ecma), com represent
 
 ## O papel de cada tecnologia
 
-![HTML é o conteúdo, CSS a aparência e JS o comportamento.](../img/js-camadas.svg)
+![HTML é o conteúdo, CSS a aparência e JS o comportamento.](../img/js-camadas-2.svg)
 
 > 💡 **Analogia:** pense num carro. O HTML é a carroceria e o chassi (o que existe); o CSS é a pintura e o acabamento interno (como parece); o JavaScript é o motor e a parte elétrica (o que acontece quando você gira a chave, aperta o pedal ou liga o pisca).
 

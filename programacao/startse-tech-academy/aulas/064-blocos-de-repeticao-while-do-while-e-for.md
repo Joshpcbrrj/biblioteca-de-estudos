@@ -39,7 +39,7 @@ do {
 } while (contador <= 5);
 ```
 
-![A diferença está em quando a condição é testada.](../img/loops.svg)
+![A diferença está em quando a condição é testada.](../img/loops-2.svg)
 
 > 💡 **Analogia:** o `while` é o porteiro que confere o convite **antes** de você entrar na festa: sem convite, você nem entra. O `do...while` é a degustação no supermercado: você prova primeiro e só depois decide se quer mais. O `for` é a série de abdominais do treino: você já sabe que são 20 e vai contando.
 

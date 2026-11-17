@@ -10,7 +10,7 @@ Bordas e fundos da aula anterior usavam cores como `black` e `#d1d5db`. Aqui voc
 
 Todas as formas abaixo produzem **o mesmo vermelho**:
 
-![Palavra-chave, hexadecimal, RGB e HSL, com e sem transparência.](../img/cores.svg)
+![Palavra-chave, hexadecimal, RGB e HSL, com e sem transparência.](../img/cores-2.svg)
 
 > 💡 **Analogia:** o RGB é como misturar três lanternas coloridas (vermelha, verde e azul) numa parede escura: cada uma com brilho de 0 a 255, e as três no máximo dão branco. O HSL é como escolher tinta numa loja: primeiro a cor no mostruário circular (matiz), depois o quanto ela é viva (saturação) e por fim o quanto de branco ou preto entra (luminosidade).
 

@@ -12,29 +12,29 @@ Você já sabe enviar e receber commits com `push` e `pull`. Agora vamos ver com
 
 ## O fluxo de pull request
 
-![O fluxo de pull request](../img/st-pull-request.svg)
+![O fluxo de pull request](../img/st-pull-request-2.svg)
 
 > 💡 **Analogia:** um pull request é como entregar um texto ao editor de um jornal antes de ele ir para a gráfica. Você escreve no seu rascunho (a branch), entrega com um bilhete explicando o que mudou, o editor sugere ajustes, você corrige, e só depois de aprovado o texto entra na edição oficial (a `main`).
 
 Em equipe, ninguém envia direto para a `main`. Cada mudança nasce numa branch e passa por revisão antes de entrar:
 
 ```bash
-# 1. parte da main atualizada
+# parte da main atualizada
 git switch main
 git pull
-# 2. cria a branch da tarefa
+# cria a branch da tarefa
 git switch -c feat/formulario-contato
 # ... edita e testa ...
 git add .
 git commit -m "feat: adiciona formulário de contato"
-# 3. envia a branch
+# envia a branch
 git push -u origin feat/formulario-contato
 ```
 
-4. No GitHub, clique em **Compare & pull request**. Descreva **o que** mudou e **por quê**, e peça revisão.
-5. Os colegas comentam. Você ajusta com novos commits na mesma branch, e o PR se atualiza sozinho.
-6. Aprovado, clique em **Merge** e apague a branch remota.
-7. Localmente, volte para a `main` e atualize: `git switch main` e depois `git pull`.
+1. No GitHub, clique em **Compare & pull request**. Descreva **o que** mudou e **por quê**, e peça revisão.
+2. Os colegas comentam. Você ajusta com novos commits na mesma branch, e o PR se atualiza sozinho.
+3. Aprovado, clique em **Merge** e apague a branch remota.
+4. Localmente, volte para a `main` e atualize: `git switch main` e depois `git pull`.
 
 > 💡 **Fork:** para contribuir com um projeto em que você não tem permissão de escrita, faça um *fork* (uma cópia do repositório na sua conta), trabalhe nele e abra o PR para o original.
 

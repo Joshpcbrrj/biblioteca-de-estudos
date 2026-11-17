@@ -51,7 +51,7 @@ grid-template-columns:
 
 As linhas da grade são numeradas a partir de 1. Uma grade de 4 colunas tem **5 linhas verticais**. Para posicionar um item, dizemos onde ele começa e onde termina:
 
-![grid-column e grid-row usam os números das linhas, não das células.](../img/grid-linhas.svg)
+![grid-column e grid-row usam os números das linhas, não das células.](../img/grid-linhas-2.svg)
 
 > 💡 **Analogia:** o Grid é como um tabuleiro de batalha naval. As linhas numeradas são as coordenadas da borda, e cada item é um navio: você diz "vai da coluna 1 até a 3 e da linha 2 até a 4", e ele ocupa todas as casas nesse intervalo. Um navio de 2 casas vai da linha 1 à linha 3, porque contamos as linhas, não as casas.
 
@@ -107,7 +107,7 @@ Em vez de números, você nomeia as áreas e "desenha" o layout em texto:
 
 ## Projeto: layout com grid de 12 colunas
 
-![Layout corrigido: menu, conteúdo e barra lateral sem sobreposição.](../img/grid-projeto.svg)
+![Layout corrigido: menu, conteúdo e barra lateral sem sobreposição.](../img/grid-projeto-2.svg)
 
 **Código revisado**
 

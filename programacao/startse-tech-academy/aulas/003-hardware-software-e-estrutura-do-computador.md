@@ -64,6 +64,8 @@ Quase todos os computadores atuais seguem o modelo descrito pelo matemático **J
 
 ![CPU (unidade de controle, ULA e registradores), memória e dispositivos de entrada e saída ligados por barramentos.](../img/von-neumann.svg)
 
+> 💡 **Analogia:** pense num maestro com uma orquestra. A unidade de controle é o maestro, que lê a partitura (o programa na memória) e indica quem toca; a ULA são os músicos, que de fato produzem o som (as contas); os registradores são as notas que cada músico tem na cabeça agora; e os barramentos são os corredores por onde as partituras chegam ao palco.
+
 - **Unidade de controle (UC)**: busca a próxima instrução na memória, decodifica e coordena a execução.
 - **Unidade lógica e aritmética (ULA)**: faz contas (soma, subtração, multiplicação, divisão) e comparações (maior, menor, igual).
 - **Registradores**: pequenas memórias dentro da CPU, as mais rápidas de todas.

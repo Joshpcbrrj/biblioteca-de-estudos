@@ -28,7 +28,7 @@ A margem fica de fora: ela afasta a caixa dos vizinhos, mas não faz parte do ta
 
 ## A propriedade `box-sizing`
 
-![Mesmo CSS, resultados diferentes: 350px em content-box e 300px em border-box.](../img/box-sizing.svg)
+![Mesmo CSS, resultados diferentes: 342px em content-box e 300px em border-box.](../img/box-sizing-2.svg)
 
 > 💡 **Analogia:** pense numa mala de viagem. Em `content-box`, o tamanho informado é só o espaço interno, e as rodinhas e o estofamento (padding e borda) aumentam a mala por fora; ela pode não caber no bagageiro. Em `border-box`, o tamanho informado é a mala por fora, já com tudo: ela sempre cabe, e é o espaço interno que fica menor.
 

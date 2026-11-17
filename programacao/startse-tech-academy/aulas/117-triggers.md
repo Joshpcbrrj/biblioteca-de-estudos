@@ -10,7 +10,7 @@ As restrições bloqueiam dados inválidos. Às vezes, porém, queremos que o ba
 
 **Uma trigger (gatilho) é um bloco de SQL associado a uma tabela que o banco executa automaticamente quando acontece um** `INSERT`**,** `UPDATE` **ou** `DELETE` **nela**, antes ou depois da operação.
 
-![Com BEFORE dá para mexer nos dados antes de gravar; com AFTER, reagir ao que foi gravado.](../img/trigger-fluxo.svg)
+![Com BEFORE dá para mexer nos dados antes de gravar; com AFTER, reagir ao que foi gravado.](../img/trigger-fluxo-2.svg)
 
 > 💡 **Analogia:** pense numa carta indo para o correio. A trigger **BEFORE** é o revisor que lê a carta antes de ela ser enviada e pode corrigir um erro no endereço (alterar `NEW`). A trigger **AFTER** é o funcionário que, depois do envio, anota no livro de registros o que saiu e avisa o estoque de envelopes. Ninguém precisa pedir: os dois agem sozinhos toda vez que uma carta passa.
 
@@ -30,8 +30,8 @@ Dentro da trigger:
 ## Sintaxe (MySQL)
 
 ```sql
--- troca o ";" final para o bloco não ser
--- cortado no primeiro ponto e vírgula
+-- muda o terminador do cliente para $$, assim o
+-- bloco não é cortado no primeiro ponto e vírgula
 DELIMITER $$
 
 CREATE TRIGGER nome_trigger

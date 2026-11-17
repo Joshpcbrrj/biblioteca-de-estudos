@@ -23,7 +23,7 @@ São dois papéis:
 
 Tudo no Flexbox gira em torno de dois eixos:
 
-![O eixo principal segue o flex-direction; o transversal é perpendicular a ele.](../img/flex-eixos.svg)
+![O eixo principal segue o flex-direction; o transversal é perpendicular a ele.](../img/flex-eixos-2.svg)
 
 > 💡 **Analogia:** o contêiner flex é uma prateleira e os itens são potes de tempero. O eixo principal é o comprimento da prateleira, onde os potes ficam um ao lado do outro; `justify-content` decide se eles se juntam num canto, no meio ou se espalham. O eixo transversal é a altura da prateleira; `align-items` decide se os potes encostam embaixo, no meio ou em cima. Virar a prateleira na vertical (`column`) troca os papéis.
 
@@ -57,11 +57,11 @@ Tudo no Flexbox gira em torno de dois eixos:
 
 ### `justify-content`: distribuição no eixo principal
 
-![Os seis valores mais usados.](../img/flex-justify.svg)
+![Os seis valores mais usados.](../img/flex-justify-2.svg)
 
 ### `align-items`: alinhamento no eixo transversal
 
-![stretch, flex-start, center e flex-end.](../img/flex-align.svg)
+![stretch, flex-start, center e flex-end.](../img/flex-align-2.svg)
 
 Há também `baseline`, que alinha os itens pela linha de base do texto (útil quando os itens têm fontes de tamanhos diferentes).
 

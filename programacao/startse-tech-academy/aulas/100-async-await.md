@@ -66,7 +66,7 @@ const nome = await buscarUsuario("octocat");
 
 ## Sequencial × paralelo
 
-![await em sequência × Promise.all](../img/st-async.svg)
+![await em sequência × Promise.all](../img/st-async-2.svg)
 
 > 💡 **Analogia:** fazer café da manhã. Com `await` em sequência, você liga a cafeteira, espera o café ficar pronto e só então põe o pão na torradeira. Com `Promise.all`, liga as duas coisas ao mesmo tempo e espera as duas terminarem: o café da manhã sai bem mais rápido. Só faz sentido esperar em fila quando uma etapa depende da outra.
 

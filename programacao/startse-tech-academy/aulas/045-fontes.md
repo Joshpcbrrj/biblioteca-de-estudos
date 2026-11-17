@@ -10,7 +10,7 @@ Com o layout montado, falta cuidar do que mais aparece numa página: o texto. A 
 
 O CSS tem um grupo de propriedades `font-*` para controlar a aparência do texto.
 
-![As três famílias genéricas mais usadas e a escala de pesos.](../img/fontes.svg)
+![As três famílias genéricas mais usadas e a escala de pesos.](../img/fontes-2.svg)
 
 > 💡 **Analogia:** a fonte é a "voz" do texto. Serifada soa como um livro impresso ou um jornal; sem serifa soa como uma placa de aeroporto, limpa e direta; monoespaçada soa como uma máquina de escrever. A lista do `font-family` é como pedir um prato com substitutos: "se não tiver Inter, serve Arial; se não tiver nenhuma, qualquer sem serifa".
 

@@ -10,7 +10,7 @@ A aula de media queries mostrou como mudar estilos conforme a tela. Muitas dessa
 
 **A propriedade** `display` **define como uma caixa participa do layout**: se ocupa a linha inteira, se fica no fluxo do texto, se some, ou se vira um contêiner flex ou grid para os filhos.
 
-![Como cada valor afeta o elemento e os vizinhos.](../img/display-valores.svg)
+![Como cada valor afeta o elemento e os vizinhos.](../img/display-valores-2.svg)
 
 > 💡 **Analogia:** pense numa estante. Um elemento `block` é uma prateleira inteira: o próximo item vai para a prateleira de baixo. Um `inline` é um livro em pé, ao lado dos outros, com a altura que o próprio livro tem. Um `inline-block` é uma caixa que você coloca ao lado dos livros, mas com o tamanho que escolher. E `none` é tirar o item da estante.
 
@@ -53,7 +53,7 @@ Nos três casos o elemento não aparece; a diferença está no espaço, no cliqu
 .c { visibility: visible; }
 ```
 
-> 💡 Para esconder algo **só visualmente**, mantendo para leitores de tela (ex.: um texto "Pular para o conteúdo"), use a classe utilitária `.sr-only`, presente no Bootstrap e no Tailwind, em vez de `display: none`.
+> 💡 Para esconder algo **só visualmente**, mantendo para leitores de tela (ex.: um texto "Pular para o conteúdo"), use uma classe utilitária de leitura de tela: `.sr-only` no Tailwind e `.visually-hidden` no Bootstrap 5, em vez de `display: none`.
 
 ## Projeto de exemplo
 

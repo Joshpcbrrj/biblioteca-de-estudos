@@ -8,7 +8,7 @@ Até aqui as páginas só mostravam conteúdo: textos, imagens, tabelas. Um form
 
 ## A tag `<form>`
 
-![Cada campo tem um label ligado pelo id e um name que vira a chave do dado enviado.](../img/form-anatomia.svg)
+![Cada campo tem um label ligado pelo id e um name que vira a chave do dado enviado.](../img/form-anatomia-2.svg)
 
 > 💡 **Analogia:** um formulário HTML é como uma ficha de papel num balcão. O `label` é o texto impresso ao lado de cada espaço, o `name` é o nome da coluna onde o atendente vai lançar a resposta, e o `action` é o guichê para onde a ficha é entregue.
 
@@ -70,7 +70,7 @@ O `placeholder` (texto de exemplo dentro do campo) **não substitui** o label: e
 | `date` | data | abre um calendário |
 | `checkbox` | caixa de marcar | várias opções independentes |
 | `radio` | botão de opção | uma escolha por grupo (mesmo `name`) |
-| `file` | arquivo | upload; exige `method="post"` |
+| `file` | arquivo | upload; exige `method="post"` e `enctype="multipart/form-data"` |
 
 ```html
 <fieldset>

@@ -32,7 +32,7 @@ git push -u origin main
 git push
 ```
 
-![Se o remoto tem commits que você não tem, o push é rejeitado.](../img/push.svg)
+![Se o remoto tem commits que você não tem, o push é rejeitado.](../img/push-2.svg)
 
 > 💡 **Analogia:** o remoto é como uma pasta compartilhada na nuvem. O `push` é subir as suas páginas novas; o `fetch` é olhar o que os colegas subiram, sem misturar com as suas; o `pull` é baixar e já juntar ao seu caderno. Se alguém subiu páginas que você ainda não tem, a pasta recusa o seu envio até você baixar e juntar primeiro.
 
@@ -45,7 +45,7 @@ O push só funciona se o remoto **não tiver nada que você não tenha**. Se alg
 - `git fetch` baixa os commits novos do remoto e atualiza `origin/main`, **sem mexer nos seus arquivos**. Serve para ver o que chegou antes de integrar.
 - `git pull` = `git fetch` + `git merge`: baixa e já integra na sua branch atual.
 
-![O pull é um fetch seguido de um merge.](../img/fetch-pull.svg)
+![O pull é um fetch seguido de um merge.](../img/fetch-pull-2.svg)
 
 ```bash
 git fetch origin

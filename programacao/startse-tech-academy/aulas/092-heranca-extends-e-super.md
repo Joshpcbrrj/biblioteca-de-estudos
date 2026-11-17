@@ -10,7 +10,7 @@ Os pilares da POO apresentaram a herança em poucas linhas. Agora vamos ver os d
 
 **Herança é quando uma classe (filha) é criada a partir de outra (pai), recebendo automaticamente os atributos e métodos dela.** A filha pode **acrescentar** coisas novas e **sobrescrever** comportamentos. A relação é sempre "é um": um `Cachorro` **é um** `Animal`.
 
-![Cachorro e Gato herdam de Animal e sobrescrevem falar().](../img/heranca.svg)
+![Cachorro e Gato herdam de Animal e sobrescrevem falar().](../img/heranca-2.svg)
 
 > 💡 **Analogia:** herança é como uma receita de família adaptada. A filha recebe a receita do bolo da avó inteira (o que herda), pode acrescentar cobertura (métodos novos) ou trocar o açúcar por mel (sobrescrever). O `super` é ligar para a avó e perguntar "como você fazia essa parte?" antes de dar o seu toque.
 

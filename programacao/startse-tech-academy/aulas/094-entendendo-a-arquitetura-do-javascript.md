@@ -1,4 +1,4 @@
-# Entendendo a arquitetura do javascript
+# 🔄 Entendendo a arquitetura do JavaScript
 
 > 🗺️ **Nesta aula:** como o JavaScript faz várias coisas com uma thread só: call stack, APIs do ambiente, filas de microtasks e de tarefas, o event loop e as formas de escrever código assíncrono.
 
@@ -10,7 +10,7 @@ No módulo de JavaScript, o `fetch` usava `await` e "esperava" a resposta sem tr
 
 **O JavaScript executa uma coisa de cada vez (single thread), mas não fica parado esperando operações lentas: ele as delega ao ambiente e continua trabalhando (non-blocking).** Quem coordena isso é o **event loop**.
 
-![Call stack, APIs do ambiente, filas e o event loop.](../img/event-loop.svg)
+![Call stack, APIs do ambiente, filas e o event loop.](../img/event-loop-2.svg)
 
 > 💡 **Analogia:** o JavaScript é um garçom sozinho num restaurante. Ele não fica parado na cozinha esperando o prato ficar pronto: anota o pedido, entrega à cozinha (as APIs do ambiente) e vai atender outra mesa. Quando a cozinha toca a campainha, o prato entra na fila do balcão, e o garçom o leva assim que fica com as mãos livres (o event loop).
 

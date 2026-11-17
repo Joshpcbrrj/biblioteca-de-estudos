@@ -28,19 +28,26 @@ O HTML5 trouxe tags com **significado** (*semânticas*). Elas se comportam como 
 
 ```html
 <body>
+  <!-- topo: identidade do site e menu -->
   <header>
     <h1>Blog da Ana</h1>
+    <!-- nav avisa ao leitor de tela que aqui
+         estão os links principais -->
     <nav>
       <a href="/">Início</a>
       <a href="/sobre">Sobre</a>
     </nav>
   </header>
+  <!-- o que a pessoa veio ler -->
   <main>
+    <!-- o post faz sentido sozinho:
+         poderia ser compartilhado à parte -->
     <article>
       <h2>Meu primeiro post</h2>
       <p>...</p>
     </article>
   </main>
+  <!-- complemento: pode sumir sem prejuízo -->
   <aside>Posts populares</aside>
   <footer>© 2026 Blog da Ana</footer>
 </body>
@@ -54,6 +61,8 @@ Todo elemento tem um comportamento padrão de exibição (a propriedade `display
 
 ![Blocos empilham um embaixo do outro; elementos inline ficam lado a lado no texto.](../img/block-inline.svg)
 
+> 💡 **Analogia:** elementos de bloco são como tijolos numa parede: cada um ocupa a fiada inteira e o próximo vai para baixo. Elementos em linha são como palavras numa frase: ficam lado a lado e só quebram quando a linha acaba.
+
 ### Bloco (`display: block`)
 
 - Começa em uma **nova linha** e ocupa **toda a largura** disponível.
@@ -61,13 +70,15 @@ Todo elemento tem um comportamento padrão de exibição (a propriedade `display
 - Exemplos: `<div>`, `<p>`, `<h1>`–`<h6>`, `<ul>`, `<ol>`, `<li>`, `<table>`, `<form>`, `<header>`, `<section>`, `<article>`, `<footer>`.
 
 ```html
+<!-- a borda deixa visível que cada div
+     ocupa a largura inteira da página -->
 <div style="border: 1px solid black">
   Primeira div
 </div>
 <div style="border: 2px solid blue">
   Segunda div
 </div>
-<!-- cada uma ocupa a linha toda -->
+<!-- resultado: uma embaixo da outra -->
 ```
 
 ### Em linha (`display: inline`)
@@ -79,12 +90,14 @@ Todo elemento tem um comportamento padrão de exibição (a propriedade `display
 ```html
 <p>
   Esta linha testa o
+  <!-- a borda abraça só a palavra: o span
+       não quebra a linha do parágrafo -->
   <span style="border: 1px solid black">inline</span>
   dentro de um parágrafo.
 </p>
 ```
 
-> ⚠️ O padrão de um elemento sem estilo do navegador é `inline`; as tags estruturais e de texto (div, p, h1, ul...) é que recebem `block` da folha de estilo padrão do navegador. Já `<img>`, `<button>` e `<input>` são inline **substituídos**: ficam em linha, mas aceitam largura e altura.
+> ⚠️ O padrão de um elemento sem estilo do navegador é `inline`; as tags estruturais e de texto (div, p, h1, ul...) é que recebem `block` da folha de estilo padrão do navegador. Já `<img>` e `<input>` são inline **substituídos**: ficam em linha, mas aceitam largura e altura. O `<button>` não é substituído, mas se comporta como **inline-block**.
 
 ### `inline-block`: o meio-termo
 

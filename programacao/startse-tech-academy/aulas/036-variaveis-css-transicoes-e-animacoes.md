@@ -104,7 +104,7 @@ Propriedades de `animation`:
 | `animation-direction` | `alternate` | ida e volta |
 | `animation-fill-mode` | `both` | mantém o primeiro/último quadro |
 
-![Transição × animação](../img/st-transicao.svg)
+![Transição × animação](../img/st-transicao-2.svg)
 
 > 💡 **Analogia:** uma transição é como um dimmer de luz: você gira o botão e a lâmpada passa suavemente de apagada para acesa, só quando alguém mexe. Uma animação com `@keyframes` é como o pisca-pisca de Natal: segue uma sequência programada sozinha, quantas vezes você mandar.
 

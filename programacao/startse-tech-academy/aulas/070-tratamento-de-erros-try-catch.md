@@ -12,7 +12,7 @@ Na aula de objetos você viu `JSON.parse`. Se o texto não for um JSON válido, 
 
 ## `try`, `catch` e `finally`
 
-![Se o try falha, o catch assume; o finally roda nos dois casos.](../img/try-catch.svg)
+![Se o try falha, o catch assume; o finally roda nos dois casos.](../img/try-catch-2.svg)
 
 > 💡 **Analogia:** `try/catch` é como a rede de segurança de um trapezista. O `try` é o número no ar; se ele escorrega, o `catch` é a rede que o segura e evita que o espetáculo acabe. O `finally` é a equipe que guarda o equipamento no fim, tenha o número dado certo ou não.
 

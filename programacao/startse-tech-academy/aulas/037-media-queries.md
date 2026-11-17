@@ -23,7 +23,7 @@ O módulo IV ensinou a estilizar elementos: cores, fundos, caixas e unidades. Ma
 
 A abordagem recomendada é escrever primeiro o CSS do **celular** (sem media query) e ir **acrescentando** regras para telas maiores com `min-width`:
 
-![Base de 1 coluna; a partir de 600px, 2 colunas; a partir de 1024px, 3 colunas.](../img/media-queries.svg)
+![Base de 1 coluna; a partir de 600px, 2 colunas; a partir de 1024px, 3 colunas.](../img/media-queries-2.svg)
 
 > 💡 **Analogia:** media queries funcionam como a mesa extensível de uma sala de jantar. Para duas pessoas (celular), ela fica fechada; quando chegam mais convidados (tela maior), você puxa as abas e acrescenta lugares. Mobile first é começar pela mesa fechada e só abrir quando houver espaço.
 

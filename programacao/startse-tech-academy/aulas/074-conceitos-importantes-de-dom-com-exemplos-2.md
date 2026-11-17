@@ -10,7 +10,7 @@ No exercício anterior, cada tarefa nova virava um `<li>`. E se cada item precis
 
 Quando um evento acontece em um elemento, ele **"sobe"** pela árvore (pai, avô… até o `document`): é o **bubbling**. A delegação aproveita isso: em vez de colocar um ouvinte em cada item, você coloca **um só no pai**.
 
-![O clique no li é percebido pelo ul.](../img/eventos-delegacao.svg)
+![O clique no li é percebido pelo ul.](../img/eventos-delegacao-2.svg)
 
 > 💡 **Analogia:** a delegação é como a recepcionista de um prédio. Em vez de colocar um porteiro em cada apartamento, uma única pessoa na portaria recebe todas as entregas e olha a etiqueta (`event.target`) para saber de qual apartamento é. Quando um morador novo chega, ela já atende sem precisar contratar ninguém.
 
@@ -119,9 +119,9 @@ Outros métodos: `el.after(x)`, `el.append(x)` (dentro, no fim), `el.prepend(x)`
 const div = document.querySelector("#minhaDiv");
 
 // HTML como texto
-div.innerHTML;  // "<p>Texto original</p>"
+div.innerHTML;  // o HTML interno, com as quebras e os espaços da indentação
 // todo o texto, inclusive o escondido
-div.textContent;  // "Texto original"
+div.textContent;  // todo o texto, com os espaços da indentação
 // só o texto VISÍVEL (respeita o CSS)
 div.innerText;  // "Texto original"
 

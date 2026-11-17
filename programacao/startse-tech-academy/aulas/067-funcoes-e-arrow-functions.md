@@ -10,7 +10,7 @@ Os métodos de array recebiam funções como `p => p.nome`. Agora vamos entender
 
 **Uma função é um bloco de código com nome, que pode ser reutilizado: recebe dados de entrada (parâmetros), executa instruções e pode devolver um resultado (**`return`**).**
 
-![Parâmetros estão na definição; argumentos são os valores passados na chamada.](../img/funcao-anatomia.svg)
+![Parâmetros estão na definição; argumentos são os valores passados na chamada.](../img/funcao-anatomia-2.svg)
 
 > 💡 **Analogia:** uma função é como uma receita de bolo escrita num cartão. Os **parâmetros** são os ingredientes listados no cartão ("farinha, ovos"); os **argumentos** são os ingredientes de verdade que você coloca na tigela hoje; o `return` é o bolo que sai do forno. A mesma receita pode ser feita muitas vezes, com ingredientes diferentes.
 

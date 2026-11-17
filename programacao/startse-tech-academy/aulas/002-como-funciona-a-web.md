@@ -12,13 +12,13 @@ Quando você digita um endereço no navegador, acontece mais ou menos isto:
 
 ![Primeiro o DNS descobre o IP; depois a requisição HTTP vai até o servidor e a resposta volta.](../img/web-caminho.svg)
 
+> 💡 **Analogia:** abrir um site é como pedir comida por telefone. Primeiro você procura o número na agenda (DNS), liga e espera atender (conexão TCP), faz o pedido (requisição HTTP), recebe a comida (resposta) e monta o prato na mesa (renderização).
+
 1. **DNS**: o navegador pergunta qual é o endereço IP de `exemplo.com`. A resposta fica em cache por um tempo.
 2. **Conexão**: o navegador abre uma conexão **TCP** com o servidor. No HTTPS, também negocia a criptografia (**TLS**).
 3. **Requisição HTTP**: o navegador envia algo como `GET /` com cabeçalhos.
 4. **Resposta**: o servidor devolve um **código de status** (ex.: `200 OK`) e o conteúdo, normalmente HTML.
 5. **Renderização**: o navegador lê o HTML, descobre que precisa de CSS, JS e imagens, faz novas requisições para cada um e monta a página.
-
-> 💡 **Analogia:** abrir um site é como pedir comida por telefone. Primeiro você procura o número na agenda (DNS), liga e espera atender (conexão TCP), faz o pedido (requisição HTTP), recebe a comida (resposta) e monta o prato na mesa (renderização).
 
 ## Termos importantes
 
@@ -51,10 +51,14 @@ Quando você digita um endereço no navegador, acontece mais ou menos isto:
 Uma requisição e sua resposta, em texto, têm esta cara:
 
 ```
+# requisição: o navegador diz O QUE quer
+# (método + caminho) e DE QUEM (Host)
 GET /produtos HTTP/1.1
 Host: loja.exemplo.com
 Accept: text/html
 
+# resposta: o servidor diz se deu certo
+# (status) e que tipo de conteúdo vem
 HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
 
@@ -71,6 +75,8 @@ Content-Type: text/html; charset=utf-8
 A **URL** (*Uniform Resource Locator*) é o endereço completo de um recurso na web.
 
 ![Protocolo, subdomínio, domínio, porta, caminho, query string e fragmento.](../img/url-partes.svg)
+
+> 💡 **Analogia:** a URL é um endereço postal completo. O protocolo é o tipo de entrega (carta comum ou registrada); o domínio é a cidade e a rua; a porta é o número do prédio; o caminho é o apartamento; a query string são as observações na etiqueta ("deixar com o porteiro"); e o fragmento é o cômodo da casa para onde você vai depois de entrar.
 
 | Parte | Exemplo | Para que serve |
 | --- | --- | --- |

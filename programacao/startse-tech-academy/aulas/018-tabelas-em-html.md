@@ -27,6 +27,8 @@ Tabelas servem para **dados tabulares**: informações que fazem sentido em linh
 
 ```html
 <table>
+  <!-- uma linha com três células: as três
+       "colunas" nascem desse alinhamento -->
   <tr>
     <td>Col 1</td>
     <td>Col 2</td>
@@ -43,11 +45,14 @@ Por padrão a tabela não tem bordas. O atributo `border="1"` ainda funciona, ma
 
 ```html
 <style>
+  /* borda em todas as partes, para a
+     grade ficar visível */
   table, th, td {
     border: 1px solid rgb(121, 121, 185);
   }
   table {
-    /* junta as bordas duplas em uma só */
+    /* junta as bordas duplas em uma só:
+       o visual de planilha */
     border-collapse: collapse;
   }
 </style>
@@ -91,6 +96,8 @@ Por padrão a tabela não tem bordas. O atributo `border="1"` ainda funciona, ma
     }
     th, td {
       border: 2px solid red;
+      /* respiro para o texto não colar
+         na borda */
       padding: 6px 10px;
     }
     thead {
@@ -114,8 +121,11 @@ Por padrão a tabela não tem bordas. O atributo `border="1"` ainda funciona, ma
     <caption>Clientes cadastrados</caption>
     <thead>
       <tr>
+        <!-- rowspan: Nome e Telefone descem
+             pelas duas linhas do cabeçalho -->
         <th rowspan="2">Nome</th>
         <th rowspan="2">Telefone</th>
+        <!-- colspan: Endereço cobre Rua e CEP -->
         <th colspan="2">Endereço</th>
       </tr>
       <tr>
@@ -133,12 +143,15 @@ Por padrão a tabela não tem bordas. O atributo `border="1"` ainda funciona, ma
       <tr>
         <td>Bruno</td>
         <td>11 9888-1111</td>
+        <!-- células vazias: o cliente ainda
+             não informou o endereço -->
         <td></td>
         <td></td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
+        <!-- o rodapé ocupa as 4 colunas -->
         <td colspan="4">
           Para mais informações, fale conosco.
         </td>
@@ -169,16 +182,20 @@ Monte uma tabela de horários com as colunas Dia, Manhã e Tarde, três linhas d
   <caption>Horário de estudos</caption>
   <thead>
     <tr>
+      <!-- scope="col": o leitor de tela sabe
+           que é título da coluna -->
       <th scope="col">Dia</th>
       <th scope="col">Manhã</th>
       <th scope="col">Tarde</th>
     </tr>
   </thead>
   <tbody>
+    <!-- o dia é o título da linha -->
     <tr><th scope="row">Seg</th>
       <td>HTML</td><td>CSS</td></tr>
     <tr><th scope="row">Qua</th>
       <td>JS</td><td>Git</td></tr>
+    <!-- Folga cobre Manhã e Tarde -->
     <tr><th scope="row">Sáb</th>
       <td colspan="2">Folga</td></tr>
   </tbody>

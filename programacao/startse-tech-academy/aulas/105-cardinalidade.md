@@ -10,7 +10,7 @@ Na introdução, a coluna `cliente_id` ligava pedidos a clientes. Mas como saber
 
 **Cardinalidade diz quantos registros de uma entidade podem se relacionar com quantos registros da outra.** Ela define **onde fica a chave estrangeira** e se é preciso criar uma tabela extra.
 
-![Os três tipos de relacionamento e como cada um vira tabela.](../img/cardinalidade.svg)
+![Os três tipos de relacionamento e como cada um vira tabela.](../img/cardinalidade-2.svg)
 
 > 💡 **Analogia:** pense numa escola. Cada aluno tem **uma** carteirinha e cada carteirinha é de **um** aluno (1:1). Uma turma tem **muitos** alunos, mas cada aluno está em **uma** turma (1:N): basta anotar a turma na ficha do aluno. Já alunos e disciplinas são **muitos para muitos** (N:M): ninguém consegue anotar tudo numa ficha só, então a escola mantém uma **lista de matrículas**, que é exatamente a tabela associativa.
 

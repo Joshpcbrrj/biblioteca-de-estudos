@@ -25,7 +25,7 @@ console.log(pessoa1.idade);  // 25
 
 ## O que acontece no `new`
 
-![O que acontece no new](../img/st-construtor.svg)
+![O que acontece no new](../img/st-construtor-2.svg)
 
 > 💡 **Analogia:** o construtor é a montagem de um móvel que acabou de sair da fábrica. O `new` entrega a caixa (o objeto vazio); o construtor encaixa as peças com as medidas e cores que você pediu (os parâmetros) e confere se nada está faltando (a validação) antes de entregar o móvel pronto.
 
@@ -60,9 +60,11 @@ class Produto {
   }
 }
 
-new Produto("Caneta");  // preco 0, quantidade 1
+// preco 0, quantidade 1
+new Produto("Caneta");
 new Produto("Livro", 59.9, 2);
-new Produto("", 10);  // Error: Nome é obrigatório
+// Error: Nome é obrigatório
+new Produto("", 10);
 ```
 
 Validar no construtor garante que nunca exista um objeto em estado inválido.

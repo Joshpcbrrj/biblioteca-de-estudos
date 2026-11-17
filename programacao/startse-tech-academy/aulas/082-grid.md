@@ -31,7 +31,7 @@ O Flexbox organiza itens em uma direção. Para o esqueleto de uma página, com 
 
 ## Colunas e linhas
 
-![fr divide o espaço que sobra depois das medidas fixas.](../img/grid-template.svg)
+![fr divide o espaço que sobra depois das medidas fixas.](../img/grid-template-2.svg)
 
 > 💡 **Analogia:** o `fr` é como dividir uma pizza depois de separar os pedaços reservados. Em `200px 1fr 2fr`, primeiro sai a fatia fixa de 200px; o que sobra é dividido em 3 partes iguais, e uma pessoa leva 1 parte enquanto a outra leva 2.
 
@@ -57,7 +57,7 @@ grid-template-columns:
 
 ## Posicionando itens
 
-![Itens são posicionados pelas linhas da grade, não pelas células.](../img/grid-linhas.svg)
+![Itens são posicionados pelas linhas da grade, não pelas células.](../img/grid-linhas-2.svg)
 
 ```css
 /* da linha 1 à 3 = 2 colunas */

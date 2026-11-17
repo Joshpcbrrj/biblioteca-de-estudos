@@ -10,7 +10,7 @@ No módulo de JavaScript você escreveu funções e objetos literais, e viu uma 
 
 Um **paradigma** é um estilo de organizar o código. Os dois mais comuns no início da carreira são o **estruturado** (ou procedural) e o **orientado a objetos** (POO). O JavaScript permite os dois e ainda o funcional.
 
-![No estruturado, dados e funções andam separados; na POO, eles vivem juntos no objeto.](../img/pe-vs-poo.svg)
+![No estruturado, dados e funções andam separados; na POO, eles vivem juntos no objeto.](../img/pe-vs-poo-2.svg)
 
 > 💡 **Analogia:** o estilo estruturado é como uma cozinha comunitária: os ingredientes ficam na despensa geral e qualquer cozinheiro pega e mexe neles seguindo uma receita. A POO é como uma praça de alimentação: cada quiosque (objeto) guarda seus próprios ingredientes e só os funcionários dele (os métodos) podem usá-los; os outros apenas fazem pedidos no balcão.
 

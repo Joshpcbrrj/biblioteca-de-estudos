@@ -8,7 +8,7 @@ Nos `CREATE TABLE` apareceram `VARCHAR`, `INT`, `DECIMAL` e `DATE`. Escolher bem
 
 > 💡 Os tipos abaixo são os do **MySQL/MariaDB**. Os nomes e limites mudam um pouco em outros bancos: no PostgreSQL, por exemplo, existem `TEXT` sem limite, `SERIAL` e `BOOLEAN` de verdade.
 
-![Escolhendo o tipo da coluna](../img/st-tipos.svg)
+![Escolhendo o tipo da coluna](../img/st-tipos-2.svg)
 
 > 💡 **Analogia:** escolher o tipo é escolher o pote certo na cozinha. Açúcar vai no açucareiro, não num balde (`VARCHAR(100)` em vez de `LONGTEXT`). E, para pesar ouro, usa-se balança de joalheria, não a de banheiro: dinheiro vai em `DECIMAL`, que é exato, e não em `FLOAT`, que arredonda. O pote certo ocupa menos espaço e não deixa entrar o que não deve (texto onde era para ser data, por exemplo).
 

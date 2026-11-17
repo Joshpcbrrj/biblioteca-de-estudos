@@ -37,7 +37,7 @@ Use `const` por padrão, `let` quando precisar reatribuir e evite `var`.
 
 **Uma closure é uma função que continua tendo acesso às variáveis do lugar onde foi criada**, mesmo depois que esse lugar terminou de executar.
 
-![A variável total sobrevive dentro da closure e fica inacessível de fora.](../img/closure.svg)
+![A variável total sobrevive dentro da closure e fica inacessível de fora.](../img/closure-2.svg)
 
 > 💡 **Analogia:** uma closure é como uma mochila que a função leva ao sair de casa. Dentro dela vão as variáveis do lugar onde a função nasceu. Mesmo depois que a "casa" (a função de fora) fechou, a função ainda abre a mochila e usa o que está lá; e ninguém de fora consegue mexer no conteúdo.
 

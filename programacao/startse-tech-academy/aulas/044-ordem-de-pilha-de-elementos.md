@@ -10,7 +10,7 @@ Com `position: absolute` e com Grid, dois elementos podem ocupar o mesmo lugar. 
 
 A página tem três dimensões: largura (x), altura (y) e **profundidade (z)**. Quando dois elementos ocupam o mesmo lugar, o `z-index` decide **quem fica na frente**: o valor maior fica por cima.
 
-![Quanto maior o z-index, mais perto do usuário.](../img/z-index.svg)
+![Quanto maior o z-index, mais perto do usuário.](../img/z-index-2.svg)
 
 > 💡 **Analogia:** pense em folhas de papel sobre uma mesa. Sem combinar nada, a última folha colocada fica por cima (a ordem do HTML). O `z-index` é um número escrito em cada folha: a de número maior vai para o topo da pilha. E um contexto de empilhamento é uma pasta: as folhas dentro dela só trocam de lugar entre si; a pasta inteira é que fica acima ou abaixo das outras.
 
@@ -40,7 +40,7 @@ A solução é subir o z-index do **ancestral** ou mover o elemento (por exemplo
 
 Quando o conteúdo é maior que a caixa (que tem altura ou largura fixa), o `overflow` define o que acontece com o excesso:
 
-![Os quatro valores mais usados.](../img/overflow.svg)
+![Os quatro valores mais usados.](../img/overflow-2.svg)
 
 | Valor | Comportamento |
 | --- | --- |

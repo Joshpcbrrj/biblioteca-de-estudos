@@ -24,6 +24,8 @@ O HTML viaja pela internet sobre a pilha de protocolos **TCP/IP**.
 
 ![Aplicação, transporte, internet e acesso à rede.](../img/tcpip-camadas.svg)
 
+> 💡 **Analogia:** é o caminho de uma carta. Na **aplicação** você escreve o texto; no **transporte** põe no envelope e numera as folhas, para nada se perder; na **internet** escreve o endereço da cidade de destino; e no **acesso à rede** o carteiro do bairro leva o envelope de casa em casa.
+
 | Camada | Faz | Exemplos |
 | --- | --- | --- |
 | Aplicação | o que o programa quer dizer | HTTP, HTTPS, DNS, SMTP |
@@ -61,6 +63,8 @@ O HTML viaja pela internet sobre a pilha de protocolos **TCP/IP**.
 
 ![Tag de abertura (com atributo e valor), conteúdo e tag de fechamento formam o elemento.](../img/html-anatomia.svg)
 
+> 💡 **Analogia:** um elemento é como um pacote etiquetado. A tag de abertura é a etiqueta da frente ("frágil"), os atributos são os detalhes escritos nela ("destino: sobre.html"), o conteúdo é o que vai dentro da caixa, e a tag de fechamento é a fita que fecha o pacote.
+
 - **Tag**: o nome entre `<` e `>`, como `<p>` ou `<a>`.
 - **Atributo**: informação extra na tag de abertura, como `href`, `src`, `alt`, `id` ou `class`.
 - **Valor**: o que o atributo recebe, sempre entre aspas.
@@ -68,13 +72,16 @@ O HTML viaja pela internet sobre a pilha de protocolos **TCP/IP**.
 - **Elementos vazios**: não têm conteúdo nem fechamento, como `<img>`, `<br>`, `<hr>`, `<meta>`, `<link>` e `<input>`.
 
 ```html
-<!-- elemento com atributo e conteúdo -->
+<!-- link: o href diz para onde ir,
+     o conteúdo é o texto clicável -->
 <a href="sobre.html">Sobre nós</a>
 
-<!-- elemento vazio -->
+<!-- elemento vazio: a imagem não tem texto
+     dentro; o alt descreve para quem não vê -->
 <img src="logo.png" alt="Logo da loja">
 
-<!-- aninhamento: feche na ordem inversa -->
+<!-- aninhamento: feche na ordem inversa,
+     como caixas dentro de caixas -->
 <p>Texto com <strong>destaque</strong>.</p>
 ```
 

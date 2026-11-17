@@ -8,7 +8,7 @@ Nos módulos III a V você escreveu muitos arquivos HTML e CSS. Imagine perder u
 
 ## O que é Git
 
-**Git é um sistema de controle de versão distribuído: ele registra cada alteração dos arquivos de um projeto, para que você possa ver o histórico, voltar no tempo e trabalhar em equipe sem um sobrescrever o trabalho do outro.** Foi criado em 2005 por Linus Torvalds para o desenvolvimento do kernel Linux e hoje é o padrão da indústria.
+**Git é um sistema de controle de versão distribuído: ele registra cada alteração dos arquivos de um projeto, para que você possa ver o histórico, voltar no tempo e trabalhar em equipe sem que um sobrescreva o trabalho do outro.** Foi criado em 2005 por Linus Torvalds para o desenvolvimento do kernel Linux e hoje é o padrão da indústria.
 
 Os conceitos centrais:
 
@@ -25,7 +25,7 @@ Cada pessoa tem uma **cópia completa** do repositório, com todo o histórico, 
 
 ## Como o Git guarda o histórico
 
-![Arquivos que não mudaram não são copiados de novo: o commit aponta para a versão anterior.](../img/git-snapshots.svg)
+![Arquivos que não mudaram não são copiados de novo: o commit aponta para a versão anterior.](../img/git-snapshots-2.svg)
 
 > 💡 **Analogia:** o Git funciona como um álbum de fotos do projeto. Cada commit é uma foto tirada num momento, com data e legenda. Você pode folhear o álbum e voltar a qualquer foto. E o álbum é econômico: se um arquivo não mudou desde a foto anterior, a nova foto só aponta para a versão que já estava guardada.
 

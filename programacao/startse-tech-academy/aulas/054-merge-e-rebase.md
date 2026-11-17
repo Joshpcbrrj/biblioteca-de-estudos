@@ -19,7 +19,7 @@ git merge feature
 
 Quando as duas branches avançaram, o Git compara três versões (o ancestral comum e as duas pontas) e cria um **commit de merge** (M) com dois pais, unindo as duas linhas. Os commits originais ficam exatamente como aconteceram.
 
-![O commit M tem como pais o C4 (main) e o C5 (feature).](../img/merge-tres-vias.svg)
+![O commit M tem como pais o C4 (main) e o C5 (feature).](../img/merge-tres-vias-2.svg)
 
 > 💡 **Analogia:** imagine duas estradas que saíram da mesma cidade. O merge constrói um trevo onde elas se encontram: as duas estradas continuam no mapa, e o trevo (o commit de merge) mostra a junção. O rebase é como reconstruir a segunda estrada a partir do fim da primeira: no mapa fica uma linha reta, como se ela sempre tivesse saído dali.
 
@@ -36,7 +36,7 @@ git switch feature
 git rebase main
 ```
 
-![C3 e C4 viram C3' e C4': mesmo conteúdo, hashes novos.](../img/rebase-antes-depois.svg)
+![C3 e C4 viram C3' e C4': mesmo conteúdo, hashes novos.](../img/rebase-antes-depois-2.svg)
 
 Depois do rebase, um `git merge feature` na `main` vira fast-forward, e o histórico fica uma **linha reta**, sem commits de merge.
 

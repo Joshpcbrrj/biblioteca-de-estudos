@@ -10,7 +10,7 @@ Os exemplos até aqui cabiam num arquivo só. Projetos reais têm dezenas de fun
 
 **Um módulo é um arquivo JavaScript com escopo próprio que escolhe o que mostrar aos outros arquivos.** O que não for exportado fica privado ao arquivo.
 
-![Só o que tem export pode ser importado por outro arquivo.](../img/modulos.svg)
+![Só o que tem export pode ser importado por outro arquivo.](../img/modulos-2.svg)
 
 > 💡 **Analogia:** cada módulo é como uma loja num shopping. O que fica na vitrine (o `export`) qualquer um pode levar; o estoque nos fundos é só da loja. O `import` é ir até a loja certa (o caminho do arquivo) e pedir exatamente o item que você quer.
 

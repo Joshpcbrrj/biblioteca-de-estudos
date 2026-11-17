@@ -1,4 +1,4 @@
-# Teste prático com o Node JS
+# 🧪 Teste prático com o Node.js
 
 > 🗺️ **Nesta aula:** o primeiro projeto Node do zero: criar o `package.json` com `npm init`, escrever o arquivo principal, executar, criar scripts e ler e gravar um arquivo com o módulo `fs`.
 
@@ -6,7 +6,7 @@
 
 Você conhece o Node e o npm. Agora vamos juntar os dois num projeto mínimo, passo a passo.
 
-![Projeto Node em 4 passos](../img/st-node.svg)
+![Projeto Node em 4 passos](../img/st-node-2.svg)
 
 > 💡 **Analogia:** criar um projeto Node é como abrir uma pequena empresa. O `npm init` faz o registro (o `package.json` é o contrato social, com nome, versão e responsável); o `index.js` é a sede; e os `scripts` são os atalhos do dia a dia, como "abrir a loja" (`npm start`).
 

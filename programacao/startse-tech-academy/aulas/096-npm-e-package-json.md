@@ -10,7 +10,7 @@ Com o Node instalado, você já roda arquivos JavaScript. Para criar uma API, po
 
 **O npm (Node Package Manager) instala bibliotecas feitas por outras pessoas e gerencia as dependências do projeto.** Ele já vem junto com o Node.js.
 
-![O que fica na pasta de um projeto Node.](../img/npm-projeto.svg)
+![O que fica na pasta de um projeto Node.](../img/npm-projeto-2.svg)
 
 > 💡 **Analogia:** o `package.json` é a lista de compras do projeto ("Express, versão 4"); o npm é o supermercado que entrega tudo; a pasta `node_modules` é a despensa cheia; e o `package-lock.json` é a nota fiscal, com a marca e o lote exatos de cada item, para que qualquer pessoa consiga repetir a mesma compra.
 

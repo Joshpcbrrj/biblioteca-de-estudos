@@ -42,6 +42,8 @@ Dentro do seu site, você raramente escreve a URL completa. Estando em `https://
 URLs só aceitam um conjunto limitado de caracteres. Espaços, acentos e símbolos são **codificados** com `%` seguido do código hexadecimal:
 
 ```
+# o "é" vira dois bytes em UTF-8 (C3 A9)
+# e o espaço vira %20
 café com leite  →  caf%C3%A9%20com%20leite
 ```
 
@@ -49,8 +51,11 @@ No JavaScript, `encodeURIComponent("café com leite")` codifica e `decodeURIComp
 
 ```jsx
 // em https://site.com/busca?q=cafe
+// location.search é o trecho "?q=cafe";
+// URLSearchParams separa as chaves para nós
 const params = new URLSearchParams(location.search);
-params.get("q"); // "cafe"
+// saída: "cafe" (já decodificado)
+params.get("q");
 ```
 
 ## Exercício

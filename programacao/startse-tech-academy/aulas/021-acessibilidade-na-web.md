@@ -8,7 +8,7 @@ Você já escreve páginas com tags semânticas, imagens, tabelas e formulários
 
 ## Por que importa
 
-![Quem lê a página nem sempre vê a tela](../img/st-acessibilidade.svg)
+![Quem lê a página nem sempre vê a tela](../img/st-acessibilidade-2.svg)
 
 > 💡 **Analogia:** acessibilidade na web é como rampa e elevador num prédio. Quem sobe de escada nem percebe que eles existem, mas para quem usa cadeira de rodas são a diferença entre entrar ou ficar na calçada. No site, as "rampas" são o `alt`, o `label`, o foco visível e as tags certas.
 

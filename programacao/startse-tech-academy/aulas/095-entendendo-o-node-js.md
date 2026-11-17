@@ -1,4 +1,4 @@
-# Entendendo o Node Js
+# 🟢 Entendendo o Node.js
 
 > 🗺️ **Nesta aula:** o que é o Node.js, sua arquitetura (V8 e libuv), por que é eficiente, vantagens, diferenças em relação ao navegador, módulos, instalação e comandos básicos.
 
@@ -10,7 +10,7 @@ Você entendeu o event loop. O Node.js usa esse mesmo modelo para rodar JavaScri
 
 **Node.js é um ambiente de execução (runtime) que roda JavaScript fora do navegador, no servidor ou no seu computador.** Ele foi criado em 2009 por Ryan Dahl e usa o motor **V8**, o mesmo do Chrome.
 
-![V8 executa o JavaScript; a libuv cuida do event loop e do I/O assíncrono.](../img/node-arquitetura.svg)
+![V8 executa o JavaScript; a libuv cuida do event loop e do I/O assíncrono.](../img/node-arquitetura-2.svg)
 
 > 💡 **Analogia:** se o JavaScript é um motor de carro, o navegador é o carro de passeio onde ele veio montado. O Node.js tira esse mesmo motor (o V8) e o instala num caminhão de entregas: ele perde o painel e o rádio (o DOM), mas ganha carroceria e ferramentas para carregar arquivos, falar com bancos de dados e atender clientes pela rede.
 
@@ -24,7 +24,7 @@ Em vez de criar uma thread por requisição, o Node usa **uma thread principal c
 
 1. **JavaScript no front e no back**: uma linguagem só em todo o projeto.
 2. **npm**: o maior repositório de pacotes do mundo.
-3. **Ótimo para APIs e tempo real**: REST, WebSockets, Socket.IO.
+3. **Ótimo para APIs e tempo real**: REST, WebSockets, [Socket.IO](https://socket.io).
 4. **Comunidade enorme** e muitos frameworks: Express, Fastify, NestJS, Next.js.
 
 ## O que muda em relação ao navegador

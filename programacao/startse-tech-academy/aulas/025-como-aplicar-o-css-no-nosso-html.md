@@ -8,7 +8,7 @@ A aula anterior mostrou como uma regra CSS é escrita. Agora, onde ela mora: den
 
 ## Três formas de usar o CSS
 
-![Externo, interno e inline, e como o navegador desempata os conflitos.](../img/css-cascata.svg)
+![Externo, interno e inline, e como o navegador desempata os conflitos.](../img/css-cascata-2.svg)
 
 > 💡 **Analogia:** pense num uniforme escolar. O CSS externo é o regulamento da escola, que vale para todas as turmas; o interno é uma regra combinada só naquela sala; o inline é um bilhete preso na mochila de um único aluno. Quanto mais perto do aluno, mais força a regra tem, mas manter bilhetes em cada mochila dá muito trabalho.
 

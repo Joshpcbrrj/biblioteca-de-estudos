@@ -70,7 +70,7 @@ fs.readFile("dados.txt", "utf8", (erro, conteudo) => {
 
 Quando uma operação depende do resultado da anterior, os callbacks vão se aninhando e o código vira uma "pirâmide", difícil de ler e de tratar erros:
 
-![A mesma sequência com callbacks, Promises e async/await.](../img/callback-hell.svg)
+![A mesma sequência com callbacks, Promises e async/await.](../img/callback-hell-2.svg)
 
 É por isso que existem as **Promises** e o **async/await**, os próximos tópicos. Callbacks continuam muito usados em eventos e em métodos de array, mas, para operações assíncronas em sequência, prefira Promises.
 

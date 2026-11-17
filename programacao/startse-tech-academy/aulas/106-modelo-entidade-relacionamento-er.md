@@ -34,7 +34,7 @@ A ligação entre entidades, sempre com uma **cardinalidade** (1:1, 1:N ou N:M):
 
 ## Exemplo: uma loja
 
-![Cliente faz pedidos; pedido contém produtos por meio de itens_pedido.](../img/der-loja.svg)
+![Cliente faz pedidos; pedido contém produtos por meio de itens_pedido.](../img/der-loja-2.svg)
 
 > 💡 **Analogia:** o diagrama ER é a **planta baixa** de uma casa. Antes de levantar paredes (criar tabelas), o arquiteto desenha os cômodos (entidades), o que vai em cada um (atributos) e as portas que ligam um cômodo ao outro (relacionamentos). Mudar a planta no papel custa uma borracha; mudar a casa pronta custa uma reforma, e com o banco é igual.
 
@@ -50,7 +50,7 @@ Repare que **cliente e produto não se ligam diretamente**. O cliente se liga ao
 
 - **Chen** (clássica): retângulos para entidades, losangos para relacionamentos e elipses para atributos.
 - **Pé de galinha** (crow's foot), a mais usada no mercado: o "tridente" indica "muitos".
-- Ferramentas: **dbdiagram.io** (desenha a partir de texto), **draw.io**, **MySQL Workbench**, **brModelo** (muito usado em faculdades no Brasil), **Lucidchart** e Visual Paradigm.
+- Ferramentas: **[dbdiagram.io](https://dbdiagram.io)** (desenha a partir de texto), **[draw.io](https://draw.io)**, **MySQL Workbench**, **brModelo** (muito usado em faculdades no Brasil), **Lucidchart** e Visual Paradigm.
 
 > ⚠️ **Correção:** o diagrama original ligava **Cliente diretamente a Produto**, como se houvesse uma chave entre eles. O correto é Cliente → Pedido → Itens do pedido ← Produto.
 

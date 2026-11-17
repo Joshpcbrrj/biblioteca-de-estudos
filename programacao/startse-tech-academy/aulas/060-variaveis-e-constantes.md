@@ -31,7 +31,7 @@ console.log(x);  // "Hello world!"
 | Usar antes de declarar | erro | erro | `undefined` |
 | Quando usar | **padrão** | valor muda | evite |
 
-![let e const ficam presas ao bloco; var vaza para a função inteira.](../img/escopo.svg)
+![let e const ficam presas ao bloco; var vaza para a função inteira.](../img/escopo-2.svg)
 
 > 💡 **Analogia:** uma variável é uma caixa com etiqueta. Com `let`, você pode trocar o que está dentro da caixa; com `const`, a caixa é lacrada depois de cheia. O escopo de bloco é como deixar a caixa dentro de um quarto: quem está fora do quarto (fora das chaves) não a enxerga. Já a `var` é uma caixa que "vaza" do quarto para a casa inteira (a função).
 
