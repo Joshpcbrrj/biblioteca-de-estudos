@@ -29,6 +29,8 @@ Skill `criar-livro-tecnologia`. A ementa aprovada de cada livro fica em `livros/
 | --- | --- | --- | --- | --- |
 | `livros/wsl-do-zero` | wsl (1º) | 419345e2044381a2b27edff0235f85f2 | ✅ publicado 2026-11-15 | 11 capítulos, capa e EPUB. Avisos aceitos: saida_longa (saídas reais de terminal e linhas com URL; o EPUB quebra a linha). Revisar versões em nov/2027. |
 | `livros/docker-do-zero` | docker (1º) | 419345e2044381a8a4aac8e2a8ddd1d1 | ✅ publicado 2026-11-16 | 13 capítulos, capa e EPUB. Labs no Docker Engine 29.9.2 com imagem ubuntu:24.04 local (Hub bloqueado). Avisos aceitos: saida_longa. Revisar versões em nov/2027. |
+| `livros/docker-compose-na-pratica` | devops (1º) | 41b345e2044381c19feecbab08c8b211 | 🟡 ementa aprovada 2026-11-17, 0 de 14 capítulos escritos | Escrita não começou; é o próximo livro a escrever, antes do Swarm. |
+| `livros/docker-swarm-do-zero` | devops (2º) | 41b345e2044381458a26d98bb8aef5c2 | 🟡 ementa aprovada 2026-11-17, 14 capítulos no Notion vazios | Escrita não começou. Próximo: cap. 1 ("Por que orquestrar"). Laboratório multi-nó com contêineres `docker:dind` a validar antes do cap. 3. |
 
 Página do Notion onde os livros são criados: `notion_livros` do `biblioteca.yaml` (página "📗 Cursos criados a partir de ementa", dentro de Estudos).
 

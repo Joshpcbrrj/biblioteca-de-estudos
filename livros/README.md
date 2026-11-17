@@ -7,8 +7,9 @@ Gerado por `ferramentas/mapa_livros.py --md` a partir das ementas aprovadas. Nã
 | Ordem | Livro | Nível | Pré-requisitos |
 | --- | --- | --- | --- |
 | 1 | [Docker Compose na prática](docker-compose-na-pratica/) | iniciante | docker-do-zero |
+| 2 | [Docker Swarm do zero](docker-swarm-do-zero/) | iniciante | docker-do-zero, docker-compose-na-pratica |
 
-**Próximos temas sugeridos:** build-multiplataforma, kubernetes, seguranca-de-imagens, swarm.
+**Próximos temas sugeridos:** build-multiplataforma, kubernetes, seguranca-de-imagens, swarm, volumes-distribuidos.
 
 ## Trilha: docker
 
