@@ -57,7 +57,7 @@ def auditar_aula(caminho, primeira=False):
             if COMENT.match(l) or re.search(r'\s(//|#|--)\s', l):
                 tem_coment = True
             continue
-        m = re.search(r'!\[[^\]]*\]\(\.\./img/([^)]+)\)', l)
+        m = re.search(r'!\[.*?\]\(\.\./img/([^)]+)\)', l)
         if m:
             r['imagens'].append(m.group(1))
             seguinte = '\n'.join(linhas[i:i + 3])

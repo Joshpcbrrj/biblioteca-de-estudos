@@ -10,6 +10,8 @@ Já sabemos declarar variáveis e decidir caminhos. Quase todo programa, porém,
 
 ![Cada caractere tem um índice, começando em 0](../img/java-string-indices.svg)
 
+> 💡 **Analogia:** é uma rua com casas numeradas. Cada letra ocupa uma casa, e a numeração começa na primeira casa, que é a de número 0.
+
 Uma `String` é uma sequência de caracteres. Ela é **imutável**: os métodos não alteram o texto original, sempre devolvem uma String nova.
 
 | Método | O que faz | Exemplo → resultado |
@@ -107,12 +109,16 @@ public class Main {
 ### LocalDateTime
 
 ```java
+// importa a classe de data e hora
 import java.time.LocalDateTime;
 
+// now() pega o momento atual do computador
 LocalDateTime agora = LocalDateTime.now();
+// of() cria uma data fixa, útil para prazos
 LocalDateTime prazo =
   LocalDateTime.of(2026, 12, 31, 23, 59, 59);
 
+// getHour e getMinute leem as partes da hora
 System.out.println(agora.getHour());
 System.out.println(agora.getMinute());
 ```
@@ -149,13 +155,16 @@ Os três são métodos de `System.out` (um `PrintStream`):
 - `printf`: escreve um texto **formatado**, com marcadores que são trocados pelos valores.
 
 ```java
+// print não pula linha: as duas frases ficam juntas
 System.out.print("Olá, ");
 System.out.print("mundo!");
+// println sem texto só pula a linha
 System.out.println();
 
 int idade = 30;
 double altura = 1.75;
 String nome = "Ana";
+// %s, %d e %.2f são trocados pelos valores, em ordem
 System.out.printf(
   "Nome: %s, Idade: %d, Altura: %.2f%n",
   nome, idade, altura);
@@ -173,6 +182,7 @@ System.out.printf(
 O programa mostra o nome, o dia da semana em português e uma saudação conforme a hora.
 
 ```java
+// classes de data, hora e formatação por idioma
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.TextStyle;
@@ -181,14 +191,18 @@ import java.util.Locale;
 public class Saudacao {
   public static void main(String[] args) {
     String nome = "Ana";
+    // deixa o nome do dia em português
     Locale brasil = Locale.forLanguageTag("pt-BR");
 
+    // pega o dia de hoje e o nome dele em português
     String diaDaSemana = LocalDate.now()
         .getDayOfWeek()
         .getDisplayName(TextStyle.FULL, brasil);
 
+    // hora atual, de 0 a 23
     int hora = LocalTime.now().getHour();
     String saudacao;
+    // cada faixa de hora escolhe uma saudação
     if (hora < 5) {
       saudacao = "Boa madrugada!";
     } else if (hora < 12) {
@@ -199,6 +213,7 @@ public class Saudacao {
       saudacao = "Boa noite!";
     }
 
+    // toUpperCase deixa a saudação em maiúsculas
     System.out.printf("Olá, %s! Hoje é %s. %s%n",
         nome, diaDaSemana, saudacao.toUpperCase());
   }
@@ -224,10 +239,13 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
+    // lê a linha inteira e tira espaços das pontas
     Scanner in = new Scanner(System.in);
     String nome = in.nextLine().trim();
 
+    // split quebra pelos espaços; [0] pega a primeira parte
     String primeiro = nome.split(" ")[0];
+    // conta as letras sem contar os espaços
     int letras = nome.replace(" ", "").length();
 
     System.out.println(primeiro);

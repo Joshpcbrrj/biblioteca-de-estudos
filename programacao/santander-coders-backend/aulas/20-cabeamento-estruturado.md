@@ -22,6 +22,8 @@ Os equipamentos da aula anterior precisam ser ligados entre si. Numa empresa sã
 
 ![Corte de cada tipo de cabo](../img/cabos.svg)
 
+> 💡 **Analogia:** o par trançado é uma trança, em que os fios se protegem uns aos outros. O coaxial é um cabo dentro de um tubo de proteção, e a fibra é um canudo por onde viaja luz.
+
 ### Par trançado
 
 O cabo de rede mais comum. Tem **4 pares** de fios de cobre; os fios de cada par são torcidos um no outro, o que reduz a interferência eletromagnética entre eles.

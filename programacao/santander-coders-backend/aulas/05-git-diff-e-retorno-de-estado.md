@@ -12,6 +12,8 @@ O `git diff` mostra, linha a linha, as diferenças entre duas versões: linhas c
 
 ![Cada variação do diff compara um par de áreas diferente.](../img/diff-areas.svg)
 
+> 💡 **Analogia:** é como conferir a revisão de um texto com a versão impressa: o diff mostra o que foi riscado (`-`) e o que foi escrito por cima (`+`).
+
 ```bash
 # trabalho × staging (o que falta dar git add)
 git diff
@@ -51,6 +53,8 @@ git restore --staged arquivo.txt
 O `git reset` faz a branch atual voltar para outro commit. O que acontece com as alterações dos commits desfeitos depende do modo:
 
 ![soft guarda tudo preparado, mixed guarda como modificado e hard descarta.](../img/reset-modos.svg)
+
+> 💡 **Analogia:** são três formas de desfazer uma arrumação de viagem. No `soft`, a mala continua pronta para embarcar; no `mixed`, as roupas voltam para a gaveta, à espera de nova arrumação; no `hard`, tudo vai para o lixo.
 
 ```bash
 # desfaz o último commit; alterações ficam staged

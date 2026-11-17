@@ -11,8 +11,10 @@ As estruturas de decisão do pseudocódigo (`se`, `senão`, `escolha`) existem e
 Executa o bloco só se a condição for verdadeira.
 
 ```java
+// idade usada na comparação
 int idade = 20;
 
+// o bloco só roda se a condição for verdadeira
 if (idade >= 18) {
   System.out.println("Você é maior de idade.");
 }
@@ -25,8 +27,10 @@ Um bloco para verdadeiro e outro para falso.
 ```java
 int idade = 15;
 
+// if escolhe um dos dois caminhos
 if (idade >= 18) {
   System.out.println("Maior de idade.");
+// else roda quando a condição do if é falsa
 } else {
   System.out.println("Menor de idade.");
 }
@@ -36,11 +40,15 @@ if (idade >= 18) {
 
 ![Os testes descem em ordem até o primeiro verdadeiro](../img/java-else-if.svg)
 
+> 💡 **Analogia:** é a triagem de um pronto-socorro. A enfermeira confere os critérios de cima para baixo, encaixa o paciente na primeira categoria que se aplica e não olha as seguintes.
+
 Testa as condições em ordem e executa só a primeira verdadeira.
 
 ```java
 int nota = 80;
 
+// as faixas são testadas de cima para baixo;
+// a primeira verdadeira decide o resultado
 if (nota >= 90) {
   System.out.println("Aprovado com A");
 } else if (nota >= 80) {
@@ -48,6 +56,7 @@ if (nota >= 90) {
 } else if (nota >= 70) {
   System.out.println("Aprovado com C");
 } else {
+  // nenhuma faixa acima foi atingida
   System.out.println("Reprovado");
 }
 ```
@@ -59,12 +68,15 @@ if (nota >= 90) {
 Compara **uma** expressão com valores exatos. Aceita `int`, `char`, `String` e enums.
 
 ```java
+// número lido do dia da semana (1 = domingo)
 int diaDaSemana = 3;
 String nomeDia;
 
+// o switch escolhe o case que bate com o valor
 switch (diaDaSemana) {
   case 1:
     nomeDia = "Domingo";
+    // o break impede a execução de cair no próximo case
     break;
   case 2:
     nomeDia = "Segunda-feira";
@@ -85,6 +97,7 @@ switch (diaDaSemana) {
     nomeDia = "Sábado";
     break;
   default:
+    // nenhum case bateu: valor fora de 1 a 7
     nomeDia = "Dia inválido";
 }
 
@@ -95,9 +108,12 @@ System.out.println("Dia: " + nomeDia);
 
 ![Sem break, a execução cai nos cases seguintes](../img/java-switch.svg)
 
+> 💡 **Analogia:** Como um trem expresso que não para: sem break, ele passa pela estação seguinte e segue até encontrar uma parada marcada, que é o break.
+
 Sem `break`, a execução "cai" (fall-through) para o próximo case e continua até achar um `break` ou o fim do switch. Às vezes isso é usado de propósito, para vários casos com o mesmo resultado:
 
 ```java
+// cases 1 e 7 não têm break: a execução cai no mesmo bloco
 switch (diaDaSemana) {
   case 1:
   case 7:
@@ -137,14 +153,17 @@ Leia o valor de uma compra e aplique: até R$ 100, sem desconto; de R$ 100,01 a 
 <summary>Ver resposta</summary>
 
 ```java
+// importa a classe que lê o teclado
 import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
+    // lê o valor da compra
     Scanner in = new Scanner(System.in);
     double valor = in.nextDouble();
     double desconto;
 
+    // a faixa mais alta é testada primeiro
     if (valor > 500) {
       desconto = 0.10;
     } else if (valor > 100) {
@@ -153,7 +172,9 @@ public class Main {
       desconto = 0;
     }
 
+    // 1 - desconto: 10% de desconto vira fator 0,90
     double total = valor * (1 - desconto);
+    // %.2f mostra o total com duas casas decimais
     System.out.printf("Total: R$ %.2f%n", total);
   }
 }

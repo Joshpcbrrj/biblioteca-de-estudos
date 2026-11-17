@@ -69,18 +69,25 @@ Todo objeto Java tem o método `toString()`, chamado automaticamente pelo `print
 
 ![notas[linha][coluna]](../img/java-matriz.svg)
 
+> 💡 **Analogia:** é uma planilha de notas. A linha identifica o aluno e a coluna identifica a prova, como as coordenadas de uma cadeira num cinema.
+
 ```java
+// matriz 3x3: 3 alunos com 3 notas cada
 double[][] notas = {
   {7.5, 8.0, 9.0},
   {6.0, 5.5, 7.0},
   {9.5, 9.0, 10.0}
 };
 
+// i percorre as linhas (um aluno por linha)
 for (int i = 0; i < notas.length; i++) {
+    // zera a soma antes de cada aluno
   double soma = 0;
+    // j percorre as colunas (provas) do aluno i
   for (int j = 0; j < notas[i].length; j++) {
     soma += notas[i][j];
   }
+    // divide pela quantidade de provas
   double media = soma / notas[i].length;
   System.out.printf("Aluno %d: média %.2f%n", i, media);
 }

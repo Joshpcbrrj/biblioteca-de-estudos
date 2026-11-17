@@ -12,6 +12,8 @@ O HTTP segue o modelo cliente-servidor: o cliente envia uma **requisição** e o
 
 ![Estrutura de uma requisição e de uma resposta](../img/http-ciclo.svg)
 
+> 💡 **Analogia:** Como preencher um formulário de pedido: a primeira linha diz o que você quer, os cabeçalhos trazem os detalhes e o corpo leva o conteúdo. A resposta segue o mesmo molde, com o status na primeira linha.
+
 As duas mensagens têm a mesma estrutura: linha inicial, cabeçalhos, uma linha em branco e o corpo (opcional).
 
 > 💡 **Analogia:** uma requisição HTTP é como um pedido por carta: o envelope (cabeçalhos) diz para quem é, de quem vem e em que formato; dentro vai o conteúdo (corpo). Como o servidor não guarda memória, cada carta precisa trazer tudo o que ele precisa saber, inclusive quem você é.

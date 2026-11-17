@@ -84,3 +84,7 @@ Quantos hosts úteis cabem em 10.0.0.0/22? Qual o último host?
 | 4 | SSO |
 | 5 | Segmentação e segurança |
 | Bônus | Cálculo de sub-rede |
+
+## 🧭 Mapa da seção
+
+![Cheat sheet para revisar redes e sistemas](../img/sa-mapa-redes.svg)

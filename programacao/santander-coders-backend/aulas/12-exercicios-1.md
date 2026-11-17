@@ -156,7 +156,7 @@ Qual a última linha impressa se o usuário digitar, nessa ordem, `5, 3, 4, 5, 4
 <details>
 <summary>Ver resposta</summary>
 
-**5 4.2**<br />O primeiro número (5) vai para x e define quantas vezes o laço roda. Os outros cinco são somados em t: 3 + 4 + 5 + 4 + 5 = 21. No fim, i = 5 e a = 21 / 5 = 4.2 (a média).
+**5 4.2**<br />O primeiro número (5) vai para x e define quantas vezes o laço roda. Os outros cinco são somados em t: 3 + 4 + 5 + 4 + 5 = 21. No fim, i = 5 e a = 21 / 5 = 4.2 (a média). Aqui a divisão dá resultado real, como na questão 3; em Java, com inteiros, daria 4.
 
 </details>
 

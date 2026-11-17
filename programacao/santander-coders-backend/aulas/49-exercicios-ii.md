@@ -30,7 +30,7 @@ Qual a definição de polimorfismo?
 
 ## Questão 3
 
-Qual destas frases é verdadeira sobre o valor padrão de uma String?
+Qual é o valor padrão de um atributo do tipo String que não foi inicializado?
 
 <details>
 <summary>Ver resposta</summary>
@@ -87,11 +87,14 @@ O que este código mostra?
 
 ```java
 try {
+    // array de 3 posições: índices 0, 1 e 2
   int[] v = new int[3];
+    // o índice 3 não existe: lança exceção
   v[3] = 10;
   System.out.println("A");
 } catch (ArrayIndexOutOfBoundsException e) {
   System.out.println("B");
+// finally roda sempre, com ou sem erro
 } finally {
   System.out.println("C");
 }
@@ -115,3 +118,7 @@ try {
 | 3 | Valores padrão |
 | 4 | Comentários |
 | Desafios | Set e try/catch/finally |
+
+## 🧭 Mapa da seção
+
+![Cheat sheet para revisar POO em Java](../img/sa-mapa-poo.svg)

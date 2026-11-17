@@ -12,6 +12,8 @@ São palavras que definem **quem pode ver e usar** uma classe, atributo, método
 
 ![Visibilidade de cada modificador](../img/poo-modificadores.svg)
 
+> 💡 **Analogia:** pense em círculos de convidados. `public` é a rua, que qualquer um atravessa. O acesso padrão é o bairro: só quem é do mesmo pacote entra. `protected` é a família, que inclui quem herdou a casa. `private` é o cofre: só o próprio dono mexe.
+
 1. `public`: visível de qualquer lugar, em qualquer pacote.
 2. `protected`: visível na própria classe, no mesmo pacote e nas subclasses, mesmo em outros pacotes.
 3. **padrão** (sem palavra nenhuma, também chamado de "package-private"): visível só dentro do mesmo pacote; subclasses de outros pacotes não enxergam.
@@ -127,12 +129,15 @@ Encapsule a classe `Produto` com nome e preço privados. O preço não pode ser 
 <summary>Ver resposta</summary>
 
 ```java
+// private: só a própria classe acessa os campos
 public class Produto {
   private String nome;
   private double preco;
 
+    // o construtor passa pelo setter, que valida o preço
   public Produto(String nome, double preco) {
     this.nome = nome;
+        // usa o setter para não pular a validação
     setPreco(preco);
   }
 
@@ -145,6 +150,7 @@ public class Produto {
   }
 
   public void setPreco(double preco) {
+        // impede preço negativo em qualquer ponto do código
     if (preco < 0) {
       throw new IllegalArgumentException(
           "Preço não pode ser negativo");

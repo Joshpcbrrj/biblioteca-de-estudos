@@ -92,6 +92,8 @@ No fluxograma, a decisão é um losango com duas saídas (sim e não).
 
 ![A decisão usa idade >= 16](../img/titulo-eleitor.svg)
 
+> 💡 **Analogia:** é um pedágio com cancelas por faixa de idade. O funcionário confere uma pergunta por vez e manda cada motorista para a cancela certa; quem passa por uma cancela não precisa passar pelas outras.
+
 > ⚠️ **Correção:** o fluxograma original mandava quem tem menos de 16 "esperar até ter 18 anos". O título pode ser tirado a partir dos 16; o voto é facultativo aos 16 e 17 e obrigatório a partir dos 18. Então a pessoa espera completar 16, não 18.
 
 O mesmo algoritmo em pseudocódigo, já com as três faixas:
@@ -143,7 +145,7 @@ No máximo um: o da primeira condição verdadeira (ou o senão, se nenhuma for)
 
 Quando uma única variável é comparada com vários valores exatos, como as opções de um menu.
 
-**Quanto vale verdadeiro e falso? E verdadeiro ou falso?**
+**Qual o resultado de verdadeiro e falso? E de verdadeiro ou falso?**
 
 Falso e verdadeiro, respectivamente.
 

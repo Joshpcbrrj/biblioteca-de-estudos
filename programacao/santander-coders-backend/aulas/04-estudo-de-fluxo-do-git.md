@@ -18,6 +18,8 @@ A staging area existe para você fazer commits **pequenos e com um assunto só**
 
 ![O ciclo de vida de um arquivo e os comandos que o fazem mudar de estado.](../img/ciclo-estados.svg)
 
+> 💡 **Analogia:** pense numa encomenda. Você a monta na bancada (diretório de trabalho), separa na caixa de envio (staging) e só então ela é lacrada e arquivada (commit).
+
 | Estado | Significa |
 | --- | --- |
 | `untracked` | arquivo novo, que o Git ainda não acompanha |
@@ -81,9 +83,11 @@ Você criou `app.js` e alterou `index.html` (que já estava no repositório). Qu
 <summary>Ver resposta</summary>
 
 ```bash
+# Passo 1: guarda a correção do título no histórico
 git add index.html
 git commit -m "fix: corrige título da página"
 
+# Passo 2: guarda o script em um commit separado
 git add app.js
 git commit -m "feat: adiciona script principal"
 ```

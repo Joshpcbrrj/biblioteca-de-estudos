@@ -14,7 +14,9 @@ O **Cisco Packet Tracer** é um simulador gratuito de redes, usado em cursos de 
 
 ![Duas redes /24 ligadas por um roteador](../img/packet-tracer.svg)
 
-O arquivo do projeto (`.pkt`) feito no curso fica nas anotações pessoais; abaixo está o passo a passo para montá-lo do zero.
+> 💡 **Analogia:** é uma maquete de cidade. Você posiciona os prédios (equipamentos), liga as ruas (cabos) e testa se um carro (pacote) chega de um bairro ao outro.
+
+O arquivo do projeto feito no curso está abaixo; abra no Packet Tracer:
 
 > 💡 Os endereços abaixo são um exemplo de plano de endereçamento para montar o projeto do zero. O arquivo do curso pode usar outros números; a lógica é a mesma.
 

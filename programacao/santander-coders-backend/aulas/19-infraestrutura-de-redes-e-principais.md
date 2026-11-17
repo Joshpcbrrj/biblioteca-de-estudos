@@ -8,6 +8,8 @@ Já sabemos o que é uma rede. Agora vamos abrir a caixa e ver as peças que a f
 
 ![Do aparelho até a internet](../img/rede-domestica.svg)
 
+> 💡 **Analogia:** é o caminho de uma encomenda: sai da sua mesa, passa pela expedição de casa (switch), pela portaria que decide a rota (roteador) e chega ao caminhão da operadora (modem).
+
 ## Placa de rede (NIC)
 
 **NIC** (Network Interface Card) é o hardware que liga o computador à rede. Ela converte os dados do computador em sinais que viajam pelo meio (elétricos no cabo, ondas de rádio no Wi-Fi) e faz o caminho inverso na recepção.
@@ -26,9 +28,9 @@ O **switch** substituiu o hub. Ele aprende o endereço MAC de quem está ligado 
 
 ![O hub espalha; o switch entrega só ao destino](../img/hub-switch.svg)
 
-Vantagens: várias conversas ao mesmo tempo, sem colisões, e mais privacidade. O switch atua na **camada 2** (enlace) do modelo OSI, que veremos adiante.
-
 > 💡 **Analogia:** o hub é um alto-falante que grita cada recado para o escritório inteiro; o switch é o carteiro que lê o nome no envelope e entrega só na mesa certa.
+
+Vantagens: várias conversas ao mesmo tempo, sem colisões, e mais privacidade. O switch atua na **camada 2** (enlace) do modelo OSI, que veremos adiante.
 
 > 💡 Hub e switch ligam aparelhos **dentro** de uma rede. Para ligar redes **diferentes** (sua casa e a internet), é preciso um roteador.
 

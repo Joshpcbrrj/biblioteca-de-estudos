@@ -4,9 +4,9 @@
 
 Cada aula segue o mesmo roteiro: **Nesta aula** → **De onde paramos** → conteúdo com exemplos e diagramas → **Exercício** (resposta recolhida em *Ver resposta*) → **Revisão rápida** → **Próximo passo** → **Resumo**.
 
-**Legenda dos quadros:** 🗺️ o que a aula cobre · 💡 dica · ⚠️ correção ou ajuste em relação às anotações originais · 📝 exercício · ➡️ próximo passo · 📌 resumo
+**Legenda dos quadros:** 🗺️ o que a aula cobre · 💡 dica · ⚠️ correção ou ajuste em relação às anotações originais · 📝 exercício · ➡️ próximo passo · 📌 resumo · 🧭 cheat sheet de revisão no fim de cada seção
 
-Os códigos em Java, Python, C e SQL foram testados; os diagramas foram redesenhados para leitura em e-readers.
+Os códigos em Java e SQL foram testados; os diagramas foram redesenhados para leitura em e-readers.
 
 ## 📌 Resumo do curso
 

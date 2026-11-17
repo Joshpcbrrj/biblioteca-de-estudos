@@ -49,6 +49,7 @@ Saída: `Erro: / by zero` e depois `fim`.
 `throw` lança uma exceção; `throws`, na assinatura, avisa que o método pode lançar uma checada e passa a responsabilidade para quem chama.
 
 ```java
+// valor inválido vira exceção e não segue em frente
 public void depositar(double valor) {
   if (valor <= 0) {
     throw new IllegalArgumentException("Valor inválido");
@@ -62,6 +63,7 @@ public void depositar(double valor) {
 Para erros de negócio, crie uma classe que estende `Exception` (checada) ou `RuntimeException` (não checada):
 
 ```java
+// exceção própria: herda de Exception
 public class SaldoInsuficienteException extends Exception {
   public SaldoInsuficienteException(String mensagem) {
     super(mensagem);
@@ -70,6 +72,7 @@ public class SaldoInsuficienteException extends Exception {
 ```
 
 ```java
+// throws avisa quem chama que pode haver exceção
 public void sacar(double valor)
     throws SaldoInsuficienteException {
   if (valor > saldo) {
@@ -98,6 +101,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+// try com recursos: o leitor é fechado sozinho
 try (BufferedReader leitor =
          new BufferedReader(new FileReader("dados.txt"))) {
   System.out.println(leitor.readLine());
@@ -121,12 +125,14 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
+        // null indica que ainda não há número válido
     Integer numero = null;
 
     while (numero == null) {
       System.out.print("Número: ");
       String texto = in.nextLine();
       try {
+        // converte; se não for número, dá erro
         numero = Integer.parseInt(texto);
       } catch (NumberFormatException e) {
         System.out.println("Digite apenas números");

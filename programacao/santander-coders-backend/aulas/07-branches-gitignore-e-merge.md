@@ -12,6 +12,8 @@ Com o remoto configurado, você já compartilha commits. Em equipe, porém, ning
 
 ![main e feature apontam para commits diferentes; HEAD marca a branch atual.](../img/branch-conceito.svg)
 
+> 💡 **Analogia:** uma branch é como um marcador de página. Ele não copia o livro, só indica onde você parou. Cada branch é um marcador diferente, e você pode ler outro trecho sem perder o seu lugar.
+
 Isso permite desenvolver funcionalidades, correções e experimentos sem mexer na branch principal (`main`, antigamente `master`).
 
 ## Comandos
@@ -50,6 +52,8 @@ git log --oneline --decorate --graph --all
 **O** `.gitignore` **lista arquivos e pastas que o Git deve ignorar**: eles não aparecem no `git status` nem entram no `git add .`.
 
 ![O Git só enxerga o que não casa com nenhuma regra.](../img/gitignore-filtro.svg)
+
+> 💡 **Analogia:** é um filtro de café. O pó (os arquivos ignorados) fica retido e nunca passa para a caneca (o histórico do repositório).
 
 ```bash
 # comentários começam com #
@@ -90,6 +94,8 @@ Se as duas branches avançaram, o Git compara três versões (o ancestral comum 
 
 ![O commit de merge une as duas linhas de desenvolvimento.](../img/merge-tres-vias.svg)
 
+> 💡 **Analogia:** é como revisar um documento que duas pessoas editaram a partir da mesma versão. Cada alteração é comparada com a versão original comum, e as duas são juntadas.
+
 > ⚠️ **Correção:** as anotações apresentavam "merge recursivo" e "merge de três vias" como tipos diferentes, e diziam que o fast-forward acontece quando "não há conflitos". O fast-forward acontece quando a branch de destino **não divergiu**. Nos demais casos, o Git faz sempre um merge de três vias; "recursive" (e, desde o Git 2.34, "ort") é o nome do algoritmo que o executa.
 
 ## Resolvendo conflitos
@@ -97,6 +103,8 @@ Se as duas branches avançaram, o Git compara três versões (o ancestral comum 
 Um conflito acontece quando as duas branches alteram **as mesmas linhas**. O Git pausa o merge e marca o trecho no arquivo:
 
 ![Os marcadores separam a versão atual da que está chegando.](../img/conflito-editor.svg)
+
+> 💡 **Analogia:** é como duas pessoas escreverem na mesma frase de um papel. O Git não escolhe por você: cabe a você decidir o texto final e apagar as marcações.
 
 1. Abra o arquivo, escreva a versão final e apague os marcadores `<<<<<<<`, `=======` e `>>>>>>>`.
 2. Marque como resolvido com `git add arquivo`.
@@ -152,3 +160,7 @@ Porque já tinha sido commitado. Use `git rm --cached .env`.
 | Fast-forward | só avança o ponteiro |
 | Três vias | cria um commit de merge |
 | Conflito | editar, `git add` e `git commit` |
+
+## 🧭 Mapa da seção
+
+![Cheat sheet para revisar Git e versionamento](../img/sa-mapa-git.svg)

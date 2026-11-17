@@ -14,6 +14,8 @@ Um **algoritmo** é uma sequência finita de passos, em ordem, que resolve um pr
 
 ![As cinco partes de um algoritmo sequencial](../img/algoritmo-etapas.svg)
 
+> 💡 **Analogia:** é uma linha de montagem. As peças entram (entrada), são trabalhadas (processamento), o produto sai (saída) e a fábrica fecha as portas (fim).
+
 | Parte | O que acontece |
 | --- | --- |
 | Início | Prepara o terreno: declara variáveis e constantes, importa bibliotecas. |

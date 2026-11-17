@@ -32,6 +32,8 @@ Além desses tipos **primitivos**, existem tipos que **agrupam** valores, estuda
 
 ![Nome, tipo e valor de cada caixa](../img/alg-variavel.svg)
 
+> 💡 **Analogia:** uma variável é uma caixa com etiqueta. A etiqueta é o nome, o tipo diz que espécie de coisa cabe nela e o conteúdo é o valor. Uma constante é uma caixa lacrada: depois de fechada, não se troca o que está dentro.
+
 Uma **variável** é um espaço de memória com nome, que guarda um valor que pode mudar durante a execução. Você a declara, dá um valor inicial e pode alterá-lo quantas vezes quiser.<br />Uma **constante** também tem nome e valor, mas o valor é fixo: definido uma vez, não muda mais. Use para valores que não devem ser alterados por engano, como π, a taxa de um imposto ou o limite de tentativas de senha.
 
 ```

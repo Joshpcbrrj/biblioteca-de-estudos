@@ -27,6 +27,7 @@ Você vai cadastrar 5 jogos no catálogo de uma loja de games usando uma única 
 Um `INSERT INTO` com vários grupos de valores separados por vírgula:
 
 ```sql
+-- insere cinco jogos com nome e preço
 INSERT INTO jogos (nome, preco)
 VALUES ('Jogo A', 199.90),
        ('Jogo B', 149.90),
@@ -128,7 +129,8 @@ Mostre o nome e o total gasto de cada cliente, do que mais gastou para o que men
 SELECT c.nome, SUM(p.total) AS gasto
 FROM clientes c
 JOIN pedidos p ON p.cliente_id = c.id
-GROUP BY c.nome
+-- agrupa pelo id: dois clientes podem ter o mesmo nome
+GROUP BY c.id, c.nome
 ORDER BY gasto DESC;
 ```
 
@@ -145,3 +147,7 @@ ORDER BY gasto DESC;
 | 6 | LGPD e armazenamento de senhas |
 | 7 | Índices |
 | Bônus | JOIN com agregação |
+
+## 🧭 Mapa da seção
+
+![Cheat sheet para revisar banco de dados](../img/sa-mapa-banco.svg)

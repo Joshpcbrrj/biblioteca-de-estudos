@@ -4,7 +4,17 @@
 
 ## De onde paramos
 
-As tabelas estão normalizadas: cada informação num lugar só. Agora é preciso **buscar** os dados, filtrando o que interessa e juntando de novo o que a normalização separou.<br />Os exemplos usam a tabela `produtos` da aula de tipos de dados, com cinco produtos: Caneca (39,90, cozinha), Prato (25,00, cozinha), Caderno (18,50, papelaria), Caneta (3,20, papelaria) e Mochila (150,00, acessórios).
+As tabelas estão normalizadas: cada informação num lugar só. Agora é preciso **buscar** os dados, filtrando o que interessa e juntando de novo o que a normalização separou.<br />Os exemplos usam a tabela `produtos` da aula de tipos de dados, com cinco produtos: Caneca (39,90, cozinha), Prato (25,00, cozinha), Caderno (18,50, papelaria), Caneta (3,20, papelaria) e Mochila (150,00, acessórios). Para reproduzir os exemplos, insira esses cinco produtos (se a tabela ainda tiver os da aula anterior, apague-os antes com `DELETE FROM produtos;`):
+
+```sql
+-- cadastra cinco produtos de uma vez, separados por vírgula
+INSERT INTO produtos (nome, preco, categoria)
+VALUES ('Caneca', 39.90, 'cozinha'),
+       ('Prato', 25.00, 'cozinha'),
+       ('Caderno', 18.50, 'papelaria'),
+       ('Caneta', 3.20, 'papelaria'),
+       ('Mochila', 150.00, 'acessórios');
+```
 
 ## SELECT e WHERE
 
@@ -48,6 +58,7 @@ Funções de agregação resumem várias linhas num valor: `COUNT`, `SUM`, `AVG`
 > 💡 **Analogia:** o GROUP BY é separar as compras do mercado em sacolas por setor (cozinha, papelaria...) e depois contar ou somar o conteúdo de cada sacola. O HAVING é descartar as sacolas que não interessam depois de prontas.
 
 ```sql
+-- agrupa os produtos por categoria e calcula os totais
 SELECT categoria,
        COUNT(*) AS qtd,
        ROUND(AVG(preco), 2) AS media,
@@ -75,6 +86,8 @@ HAVING AVG(preco) > 20;
 
 ![Ordem em que o banco executa as cláusulas](../img/sql-ordem.svg)
 
+> 💡 **Analogia:** Como montar um relatório: primeiro você reúne as fichas (FROM), separa as que interessam (WHERE), agrupa (GROUP BY), filtra os grupos (HAVING), escolhe as colunas (SELECT) e, por último, ordena.
+
 > 💡 Essa ordem explica dois erros comuns: não dá para usar `AVG(...)` no WHERE (os grupos ainda não existem) nem o apelido do SELECT no WHERE (o SELECT roda depois).
 
 ## JOIN: juntando tabelas
@@ -82,6 +95,7 @@ HAVING AVG(preco) > 20;
 O JOIN combina linhas de duas tabelas usando a chave estrangeira. Com as tabelas do projeto escola (disciplinas e professores):
 
 ```sql
+-- p e d são apelidos das tabelas, para escrever menos
 SELECT p.nome AS professor,
        d.nome AS disciplina
 FROM professores p
@@ -93,6 +107,8 @@ ORDER BY d.nome, p.nome;
 `p` e `d` são **apelidos** das tabelas, para escrever menos.
 
 ![O que cada JOIN devolve](../img/joins.svg)
+
+> 💡 **Analogia:** o INNER JOIN é uma festa com lista de convidados nos dois lados: só entra quem está nas duas listas. O LEFT JOIN é a lista da casa: todos da lista da esquerda aparecem, mesmo sem par na outra.
 
 | JOIN | Devolve |
 | --- | --- |

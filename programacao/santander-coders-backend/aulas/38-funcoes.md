@@ -10,6 +10,8 @@ No pseudocódigo, `funcao` e `procedimento` organizavam o algoritmo em partes re
 
 ![Cada parte da assinatura de um método](../img/java-metodo.svg)
 
+> 💡 **Analogia:** Como uma receita com nome: o nome é o que você chama, os parâmetros são os ingredientes que você entrega, e o tipo de retorno é o prato pronto que sai da cozinha.
+
 ```java
 public class Main {
   public static void main(String[] args) {
@@ -36,6 +38,7 @@ public class Main {
 Quando o método só executa uma ação (o "procedimento" do pseudocódigo), o tipo de retorno é `void`:
 
 ```java
+// método sem retorno: só exibe o menu na tela
 public static void mostrarMenu() {
   System.out.println("[1] Saldo");
   System.out.println("[2] Depositar");
@@ -178,3 +181,7 @@ Não: recebe uma cópia do valor. Ele só consegue alterar o conteúdo de objeto
 | Sobrecarga | Mesmo nome, parâmetros diferentes. |
 | Por valor | O método recebe cópias; em objetos, cópia da referência. |
 | Recursão | Método que chama a si mesmo até o caso base. |
+
+## 🧭 Mapa da seção
+
+![Cheat sheet para revisar a introdução ao Java](../img/sa-mapa-java.svg)

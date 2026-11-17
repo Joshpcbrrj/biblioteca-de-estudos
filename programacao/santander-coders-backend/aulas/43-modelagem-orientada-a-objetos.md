@@ -10,9 +10,9 @@ Já sabemos criar classes encapsuladas. Agora, três ferramentas para modelá-la
 
 ![Objetos sem referência são coletados](../img/poo-memoria.svg)
 
-Os objetos criados com `new` ficam numa área chamada **heap**. Quando nenhuma variável aponta mais para um objeto, ele vira "lixo", e o **garbage collector** (coletor de lixo) da JVM libera essa memória automaticamente. Em C, por exemplo, o programador precisa liberar a memória à mão.
-
 > 💡 **Analogia:** as variáveis são cordões presos a balões (os objetos). Enquanto alguém segura um cordão, o balão fica. Quando ninguém segura mais, o balão sai voando e o garbage collector o recolhe.
+
+Os objetos criados com `new` ficam numa área chamada **heap**. Quando nenhuma variável aponta mais para um objeto, ele vira "lixo", e o **garbage collector** (coletor de lixo) da JVM libera essa memória automaticamente. Em C, por exemplo, o programador precisa liberar a memória à mão.
 
 ```java
 Carro c1 = new Carro("Fiat", "Uno", 2010);
@@ -34,6 +34,7 @@ Todo objeto herda de `Object` o método `toString()`, chamado automaticamente qu
 **Exemplo:**
 
 ```java
+// classe com dados privados e construtor
 public class Pessoa {
   private String nome;
   private int idade;
@@ -43,6 +44,7 @@ public class Pessoa {
     this.idade = idade;
   }
 
+    // toString: mostra o objeto de forma legível
   @Override
   public String toString() {
     return "Pessoa{nome='" + nome
@@ -140,6 +142,7 @@ Sobrescreva o `toString` da classe `Livro` (título, autor e páginas) para devo
 ```java
 @Override
 public String toString() {
+    // monta uma linha com título, autor e páginas
   return titulo + " (" + autor + ", " + paginas + " p.)";
 }
 ```

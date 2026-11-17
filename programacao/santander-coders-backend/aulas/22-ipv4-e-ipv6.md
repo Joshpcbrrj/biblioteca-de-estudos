@@ -8,6 +8,8 @@ Na camada de rede, cada dispositivo precisa de um endereço para receber pacotes
 
 ![Estrutura dos endereços IPv4 e IPv6](../img/ipv4-ipv6.svg)
 
+> 💡 **Analogia:** o IPv4 é um sistema de telefonia com poucos números, que já se esgotou. O IPv6 é um sistema com espaço para todos os telefones do planeta, sem risco de faltar número.
+
 ## IPv4
 
 O **IPv4** (Internet Protocol versão 4) usa endereços de **32 bits**, escritos como quatro números decimais de 0 a 255 separados por ponto. Cada número é um **octeto** (8 bits). Exemplo: `192.168.0.10`.<br />São cerca de **4,3 bilhões** de endereços (2³²). Parece muito, mas há mais aparelhos conectados que isso, e os blocos livres se esgotaram na década de 2010.
@@ -22,7 +24,7 @@ O **IPv4** (Internet Protocol versão 4) usa endereços de **32 bits**, escritos
 | 127.0.0.0/8 | loopback: a própria máquina (`localhost` = 127.0.0.1) |
 | 169.254.0.0/16 | autoatribuído quando o DHCP falha |
 
-Endereços **privados** podem ser repetidos em redes diferentes e não circulam na internet. Endereços **públicos** são únicos no mundo e distribuídos pelos registros regionais (no Brasil, via NIC.br).
+Endereços **privados** podem ser repetidos em redes diferentes e não circulam na internet. Endereços **públicos** são únicos no mundo e distribuídos por registros regionais. No Brasil, o NIC.br atua como registro nacional, em coordenação com o LACNIC, o registro da América Latina e do Caribe.
 
 ### NAT: dividindo um IP público
 
@@ -63,7 +65,7 @@ São cerca de 3,4 × 10³⁸ endereços: dá para dar um IP para cada aparelho d
 4. **IPsec** (autenticação e criptografia) previsto desde o projeto. No IPv4 ele também existe, mas como acréscimo.
 5. **Multicast** melhorado e fim do broadcast (substituído por multicast).
 
-> 💡 A transição é gradual: hoje a maioria das redes roda as duas versões juntas (**pilha dupla**). No Brasil, boa parte do acesso à internet já usa IPv6.
+> 💡 A transição é gradual: hoje a maioria das redes roda as duas versões juntas (**pilha dupla**). Em 2020, o tráfego IPv6 já representava mais de um terço do volume total da região, segundo o Registro.br.
 
 ## 🧠 Revisão rápida
 

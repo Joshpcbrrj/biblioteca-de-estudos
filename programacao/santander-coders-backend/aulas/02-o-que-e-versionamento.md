@@ -2,13 +2,13 @@
 
 > 🗺️ **Nesta aula:** o que é versionamento de código, sistemas centralizados e distribuídos, o que é o Git, suas características e como ele guarda cada versão (commits, árvores e blobs).
 
-## Onde começamos
+## De onde paramos
 
-Este bootcamp de back-end começa por uma ferramenta que você vai usar em todos os outros módulos: o controle de versão. Antes de escrever algoritmos, Java ou SQL, é preciso saber guardar, comparar e compartilhar o código com segurança.
+Esta é a primeira aula de conteúdo, então não há nada a retomar. Este bootcamp de back-end começa por uma ferramenta que você vai usar em todos os outros módulos: o controle de versão. Antes de escrever algoritmos, Java ou SQL, é preciso saber guardar, comparar e compartilhar o código com segurança.
 
 ## O que é versionamento
 
-**Versionamento de código é registrar, de forma organizada, cada alteração feita em um projeto ao longo do tempo**, para poder ver o histórico, comparar versões, voltar atrás e trabalhar em equipe sem um sobrescrever o trabalho do outro.
+**Versionamento de código é registrar, de forma organizada, cada alteração feita em um projeto ao longo do tempo**, para poder ver o histórico, comparar versões, voltar atrás e trabalhar em equipe sem que um sobrescreva o trabalho do outro.
 
 Sem uma ferramenta, isso costuma virar pastas como `projeto_final`, `projeto_final_v2` e `projeto_final_agora_vai`. Um **sistema de controle de versão** (VCS) resolve isso registrando:
 
@@ -47,6 +47,8 @@ Ele também permite criar **branches** (ramificações), que são linhas de dese
 **Um commit é uma foto (snapshot) do projeto inteiro em um momento**, e não uma lista de diferenças. Para não desperdiçar espaço, arquivos que não mudaram não são copiados de novo: o commit novo apenas aponta para o mesmo conteúdo já guardado.
 
 ![Cada commit aponta para o anterior; arquivos iguais são reaproveitados.](../img/git-snapshots.svg)
+
+> 💡 **Analogia:** é um álbum de fotos da obra de uma casa. Cada foto mostra a casa inteira naquele dia, e as fotos antigas continuam guardadas. Se uma parede não mudou, ela aparece nas duas fotos sem ser fotografada de novo.
 
 Por baixo, o Git guarda três tipos de objeto, todos identificados pelo hash do seu conteúdo:
 

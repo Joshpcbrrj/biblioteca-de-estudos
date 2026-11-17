@@ -12,6 +12,8 @@ Uma função é um bloco de código com nome que faz uma tarefa específica. Ela
 
 ![Parâmetros entram, o retorno sai](../img/funcao-caixa.svg)
 
+> 💡 **Analogia:** uma função é como uma máquina de café. Você coloca água e pó (parâmetros), a máquina faz o trabalho lá dentro e o café sai (retorno), sem que você precise saber como ela funciona.
+
 Por que usar funções:
 
 - **Modularidade**: o programa vira partes pequenas, cada uma com uma responsabilidade.

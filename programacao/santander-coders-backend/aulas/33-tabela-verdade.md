@@ -25,6 +25,8 @@ a ^ b  // OU EXCLUSIVO (XOR)
 
 ![Cada operador como uma área pintada](../img/java-logicos.svg)
 
+> 💡 **Analogia:** Pense em duas chaves numa porta. E (&&) só abre se as duas estiverem giradas; OU (||) abre com uma só; NÃO (!) inverte a posição da chave.
+
 **E (**`&&`**)**: verdadeiro só quando os dois são verdadeiros.
 
 | A | B | A && B |
@@ -98,8 +100,10 @@ System.out.println("Acesso permitido? " + acesso);
 ### NÃO: conta bloqueada
 
 ```java
+// conta começa desbloqueada
 boolean bloqueada = false;
 
+// o ! inverte: entra aqui quando NÃO está bloqueada
 if (!bloqueada) {
   System.out.println("Pode operar");
 }
@@ -112,11 +116,14 @@ if (!bloqueada) {
 Uma loja dá desconto para quem tem cupom **ou** cartão fidelidade, mas os dois descontos não se somam: com os dois ao mesmo tempo, o sistema pede para escolher.
 
 ```java
+// os dois benefícios estão disponíveis ao mesmo tempo
 boolean temCupom = true;
 boolean temFidelidade = true;
 
+// ^ só é verdadeiro se exatamente um for verdadeiro
 if (temCupom ^ temFidelidade) {
   System.out.println("Desconto aplicado");
+// os dois juntos caem aqui: o sistema pede para escolher
 } else if (temCupom && temFidelidade) {
   System.out.println("Escolha um dos descontos");
 } else {
@@ -124,11 +131,13 @@ if (temCupom ^ temFidelidade) {
 }
 ```
 
-> ⚠️ **Correção:** o exemplo original de votação usava `maiorDe18 ^ idoso`. Uma pessoa de 70 anos tem as duas condições verdadeiras, e o XOR dá **false**: o programa a impediria de votar. O XOR só serve quando os dois ao mesmo tempo devem ser rejeitados. Para "maior de 18 ou idoso" o operador certo seria o OU.
+> ⚠️ **Correção:** o exemplo original de votação usava `maiorDe18 ^ idoso`. Uma pessoa de 70 anos tem as duas condições verdadeiras, e o XOR dá **false**: o programa a impediria de votar. O XOR só serve quando ter os dois ao mesmo tempo deve ser recusado. Para "maior de 18 ou idoso" o operador certo seria o OU.
 
 ## Curto-circuito
 
 ![Com o primeiro lado falso, o segundo nem roda](../img/java-curto-circuito.svg)
+
+> 💡 **Analogia:** é um porteiro com duas barreiras. Se a primeira já barra a entrada, a segunda nem chega a ser consultada.
 
 O `&&` para de avaliar assim que encontra um false, e o OU para no primeiro true: o resultado já está decidido. Isso evita erros:
 
@@ -163,7 +172,9 @@ Um ano é bissexto se for divisível por 4 e não por 100, ou se for divisível 
 <summary>Ver resposta</summary>
 
 ```java
+// 1900 é divisível por 100, mas não por 400
 int ano = 1900;
+// bissexto: divisível por 4 e não por 100, ou por 400
 boolean bissexto =
   (ano % 4 == 0 && ano % 100 != 0)
   || ano % 400 == 0;

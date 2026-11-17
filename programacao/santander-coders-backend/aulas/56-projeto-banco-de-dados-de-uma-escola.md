@@ -12,6 +12,8 @@ Criar o modelo de entidade e relacionamento e implementá-lo em tabelas do Postg
 
 ![Disciplinas, professores e livros](../img/der-escola.svg)
 
+> 💡 **Analogia:** é a planta de uma escola: cada tabela é uma sala com seus móveis (colunas), e as chaves estrangeiras são as portas que ligam uma sala à outra.
+
 Modelo feito no Visual Paradigm (arquivo do curso):
 
 ## Criando as tabelas
@@ -19,6 +21,7 @@ Modelo feito no Visual Paradigm (arquivo do curso):
 A tabela referenciada (`disciplinas`) precisa existir antes das que apontam para ela.
 
 ```sql
+-- tabela pai: cada disciplina existe uma só vez
 CREATE TABLE disciplinas (
   id_disciplina integer NOT NULL,
   nome varchar(40) NOT NULL,
@@ -30,6 +33,7 @@ CREATE TABLE disciplinas (
 > ⚠️ **Correção:** o original abria e fechava a tabela `disciplinas` com chaves `{ }`, o que é erro de sintaxe. SQL usa parênteses. Também faltava o `;` no fim dos comandos, necessário quando se roda mais de um de uma vez.
 
 ```sql
+-- FOREIGN KEY liga o professor a uma disciplina
 CREATE TABLE professores (
   id_professor integer,
   nome varchar(60),
@@ -42,6 +46,7 @@ CREATE TABLE professores (
 ```
 
 ```sql
+-- livros também se ligam a uma disciplina
 CREATE TABLE livros (
   id_livro integer,
   nome varchar(100),
@@ -65,6 +70,7 @@ CREATE TABLE livros (
 ### Inserir
 
 ```sql
+-- as tabelas pai são preenchidas antes das filhas
 INSERT INTO disciplinas (id_disciplina, nome, ementa)
 VALUES (1, 'português', 'literatura e gramática'),
        (2, 'matemática', 'álgebra e geometria');
@@ -100,6 +106,7 @@ JOIN disciplinas d
 ### Importar de um CSV
 
 ```sql
+-- importa um arquivo CSV com cabeçalho para a tabela
 COPY disciplinas (id_disciplina, nome, ementa)
 FROM 'C:\dados\disciplinas.csv'
 DELIMITER ','
@@ -133,7 +140,8 @@ WHERE id_disciplina = 8;
 
 Acrescente a tabela `alunos (id_aluno, nome, email)` e a matrícula de alunos em disciplinas, sabendo que cada aluno cursa várias disciplinas.
 
-**Ver resposta**
+<details>
+<summary>Ver resposta</summary>
 
 ```sql
 CREATE TABLE alunos (
@@ -151,6 +159,8 @@ CREATE TABLE matriculas (
   PRIMARY KEY (id_aluno, id_disciplina)
 );
 ```
+
+</details>
 
 ## 🧠 Revisão rápida
 

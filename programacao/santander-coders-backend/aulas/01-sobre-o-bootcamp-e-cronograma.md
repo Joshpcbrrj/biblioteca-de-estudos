@@ -1,6 +1,6 @@
 # Sobre o bootcamp e cronograma
 
-> 🗺️ **Nesta página:** como funcionou o programa Santander Coders 2023, as fases da seleção com as datas, os critérios e o conteúdo do curso online que este material resume.
+> 🗺️ **Nesta aula:** como funcionou o programa Santander Coders 2023, as fases da seleção com as datas, os critérios e o conteúdo do curso online que este material resume.
 
 ## Onde começamos
 

@@ -24,6 +24,8 @@ Criar um caixa eletrônico que mostra um menu repetidamente até o usuário esco
 
 ![O menu volta ao início até a opção Sair](../img/alg-caixa-fluxo.svg)
 
+> 💡 **Analogia:** é como um caixa de banco de verdade. O menu fica na tela, o cliente escolhe uma opção, e a máquina só libera o dinheiro depois de conferir o saldo.
+
 ## Pseudocódigo
 
 ```
@@ -174,6 +176,7 @@ public class Banco {
 **Código**
 
 ```python
+# Mostra o menu e devolve a opção escolhida, sem espaços
 def mostrar_menu():
   print("[1] Mostrar saldo")
   print("[2] Efetuar depósito")
@@ -181,9 +184,11 @@ def mostrar_menu():
   print("[4] Sair")
   return input("Opção: ").strip()
 
+# Lê um valor do teclado e o converte para número inteiro
 def ler_valor(mensagem):
   return int(input(mensagem))
 
+# O saldo começa em zero; o laço roda até o usuário sair
 saldo = 0
 encerrar = False
 
@@ -194,6 +199,7 @@ while not encerrar:
     print("Saldo:", saldo)
   elif opcao == "2":
     deposito = ler_valor("Valor a depositar: ")
+    # não aceita depósito zero ou negativo
     if deposito <= 0:
       print("Valor inválido")
     else:
@@ -201,12 +207,14 @@ while not encerrar:
       print("Depósito efetuado")
   elif opcao == "3":
     saque = ler_valor("Valor a retirar: ")
+    # o saque não pode passar do saldo disponível
     if saque <= 0 or saque > saldo:
       print("Saque não permitido")
     else:
       saldo -= saque
       print("Saque efetuado")
   elif opcao == "4":
+    # a flag encerra o laço na próxima verificação
     encerrar = True
   else:
     print("Opção inválida!")

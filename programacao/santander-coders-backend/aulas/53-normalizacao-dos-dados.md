@@ -30,9 +30,11 @@ CREATE TABLE clientes (
   nome varchar(100)
 );
 
+-- um cliente pode ter vários telefones: tabela separada
 CREATE TABLE telefones (
   cliente_id integer REFERENCES clientes (id),
   numero varchar(15),
+    -- chave composta: o par nunca se repete
   PRIMARY KEY (cliente_id, numero)
 );
 ```

@@ -32,7 +32,7 @@ Na mesma tabela, qual o tipo mais adequado para o campo "id", que será a chave 
 
 ## Questão 3
 
-O estado de aprovação de um pedido de reembolso é guardado num campo booleano. Sobre esse tipo, qual a alternativa correta?
+O estado de aprovação de um pedido de reembolso é guardado num campo booleano. Quanto espaço esse tipo ocupa por registro no PostgreSQL, e quais valores ele aceita?
 
 <details>
 <summary>Ver resposta</summary>
@@ -54,7 +54,7 @@ Num supermercado, a tabela de marcas tem registros como Nestlé e Lacta, e a de 
 
 ## Questão 5
 
-Num pronto-socorro, cada paciente tem um médico responsável e cada médico atende pelo menos dez pacientes por dia. Qual alternativa está correta?
+Num pronto-socorro, cada paciente tem um médico responsável e cada médico atende pelo menos dez pacientes por dia. Que tipo de relacionamento existe entre médicos e pacientes, e em qual tabela fica a chave estrangeira?
 
 <details>
 <summary>Ver resposta</summary>

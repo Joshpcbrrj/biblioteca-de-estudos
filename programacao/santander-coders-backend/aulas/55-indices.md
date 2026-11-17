@@ -12,6 +12,8 @@ As consultas da aula anterior funcionam, mas numa tabela com milhões de linhas 
 
 ![Sem índice, lê tudo; com índice, desce pela árvore](../img/indice.svg)
 
+> 💡 **Analogia:** é como manter o índice remissivo de um livro que ainda está sendo escrito. Cada página nova obriga a atualizar o índice no fim; quanto mais índices (por autor, por tema, por data), mais trabalho a cada página escrita.
+
 - Sem índice, o banco faz uma **leitura sequencial** (seq scan): olha linha por linha, O(n).
 - Com índice, ele desce pela árvore até o valor, em O(log n), como na busca binária do módulo de algoritmos.<br />O tipo padrão no PostgreSQL é a **árvore B** (B-tree), que serve para `=`, `<`, `>`, `BETWEEN` e `ORDER BY`. Há outros tipos para casos específicos: hash (só igualdade), GIN (arrays, jsonb, busca em texto) e GiST (dados geográficos).
 
@@ -57,8 +59,6 @@ WHERE email = 'ana@exemplo.com';
 ## O custo do índice
 
 Índices aceleram a **leitura**, mas cobram nas **escritas**: a cada INSERT, UPDATE ou DELETE, todos os índices da tabela precisam ser atualizados. Eles também ocupam espaço em disco.
-
-> 💡 **Analogia:** é como manter o índice remissivo de um livro que ainda está sendo escrito. Cada página nova obriga a atualizar o índice no fim; quanto mais índices (por autor, por tema, por data), mais trabalho a cada página escrita.
 
 > ⚠️ **Correção:** o original dizia que, com índice, "a velocidade de inserção do próximo dado aumenta". O que aumenta é o **tempo** de cada inserção: a inserção fica mais lenta. E o banco não "refaz o cálculo do índice" inteiro; ele só encaixa o novo valor na árvore.
 

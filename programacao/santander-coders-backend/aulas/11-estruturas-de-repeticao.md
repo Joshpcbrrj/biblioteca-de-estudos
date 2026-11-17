@@ -53,6 +53,8 @@ Dois padrões aparecem em quase todo laço:
 
 ![i conta as voltas e soma acumula os valores](../img/loop-soma.svg)
 
+> 💡 **Analogia:** é como contar as moedas de um cofrinho. O contador anota quantas moedas você pegou, e o acumulador guarda o total que já foi somado.
+
 ```
 inicio principal
   var i, num, soma: inteiro

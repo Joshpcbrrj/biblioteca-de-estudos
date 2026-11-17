@@ -14,6 +14,8 @@ O PostgreSQL está instalado. Antes de criar tabelas, é preciso escolher o **ti
 
 ![Cada grupo de comandos tem um papel](../img/sql-categorias.svg)
 
+> 💡 **Analogia:** é como uma obra. Primeiro se ergue a estrutura (criar tabelas), depois se mexe nos cômodos (inserir, alterar e apagar dados) e, por fim, se consulta a planta (ler dados).
+
 ## Tipos de dados e custo de armazenamento
 
 ### Numéricos
@@ -39,7 +41,7 @@ O PostgreSQL está instalado. Antes de criar tabelas, é preciso escolher o **ti
 | `char(n)` | texto de exatamente n caracteres (completa com espaços) |
 | `text` | texto sem limite |
 
-No PostgreSQL os três têm o mesmo desempenho; o espaço é o tamanho do texto mais 1 byte de cabeçalho (para textos curtos). Use `varchar(n)` quando o limite for uma regra de negócio, e `text` nos demais casos.
+No PostgreSQL, `varchar` e `text` têm o mesmo desempenho. O `char(n)` tem desempenho praticamente igual, mas ocupa sempre n caracteres, completados com espaços. Em varchar e text, o espaço é o tamanho do texto mais 1 byte de cabeçalho (para textos curtos). Use `varchar(n)` quando o limite for uma regra de negócio, e `text` nos demais casos.
 
 ### Data e hora
 
@@ -107,6 +109,7 @@ O `id`, o `ativo` e o `criado_em` se preenchem sozinhos.
 ### Datas e horas
 
 ```sql
+-- timestamptz guarda data, hora e fuso horário
 CREATE TABLE eventos (
   id serial PRIMARY KEY,
   nome_evento varchar(100),
@@ -115,6 +118,7 @@ CREATE TABLE eventos (
   data_hora_evento timestamptz
 );
 
+-- as colunas vêm antes dos valores, na mesma ordem
 INSERT INTO eventos
   (nome_evento, data_evento,
    horario_evento, data_hora_evento)

@@ -37,6 +37,8 @@ Se o vetor estiver **ordenado**, dá para fazer muito melhor: olhar o elemento d
 
 ![Cada comparação descarta metade do que sobrou](../img/busca-binaria.svg)
 
+> 💡 **Analogia:** é como adivinhar um número entre 1 e 100 com as dicas "maior" ou "menor". Cada dica corta o intervalo ao meio, e em poucas tentativas o número aparece.
+
 ```
 funcao busca_binaria(arr: vetor, valor: inteiro): inteiro
   var esquerda, direita, meio: inteiro
@@ -75,6 +77,8 @@ indice = busca_binaria(vetor, 12)
 A **notação Big O** (O grande) descreve como o custo de um algoritmo cresce conforme o tamanho da entrada, n. Ela ignora constantes e detalhes e olha só a **ordem de crescimento**, normalmente no **pior caso**.
 
 ![O(n²) dispara; O(log n) quase não cresce](../img/big-o.svg)
+
+> 💡 **Analogia:** pense em organizar uma festa. O(1) é receber um convidado no portão; O(n) é cumprimentar cada convidado uma vez; O(n²) é cada convidado cumprimentar todos os outros.
 
 | Notação | Nome | Exemplo |
 | --- | --- | --- |

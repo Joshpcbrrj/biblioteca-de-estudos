@@ -59,6 +59,7 @@ Um conjunto ignora elementos repetidos. Ótimo para "quais valores diferentes ap
 ```java
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
 import java.util.TreeSet;
 
 Set<String> unicos = new HashSet<>();
@@ -71,7 +72,7 @@ System.out.println(unicos.size());
 
 // TreeSet mantém em ordem: [Ana, Beto, Caio]
 Set<String> ordenado =
-    new TreeSet<>(List.of("Caio", "Ana", "Beto"));
+  new TreeSet<>(List.of("Caio", "Ana", "Beto"));
 ```
 
 ## Map: chave → valor

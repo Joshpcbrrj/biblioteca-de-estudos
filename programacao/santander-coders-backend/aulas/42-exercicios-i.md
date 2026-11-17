@@ -52,12 +52,12 @@ Para **sair do switch** depois de executar o case escolhido. Sem ele, a execuç�
 
 ## Questão 5
 
-É verdade que as variáveis estáticas são...
+O que caracteriza uma variável `static`?
 
 <details>
 <summary>Ver resposta</summary>
 
-...variáveis que pertencem à **classe** e são **compartilhadas por todos os objetos** dela: só existe uma cópia, acessada por `NomeDaClasse.variavel`.
+Variável que pertence à **classe** e é **compartilhada por todos os objetos** dela: só existe uma cópia, acessada por `NomeDaClasse.variavel`.
 
 </details>
 
@@ -69,10 +69,13 @@ Crie a classe `Contador` com um atributo `static int total` que aumenta a cada o
 <summary>Ver resposta</summary>
 
 ```java
+// conta quantos objetos foram criados
 public class Contador {
+    // static: uma só variável para a classe inteira
   private static int total = 0;
 
   public Contador() {
+        // cada new Contador() soma 1
     total++;
   }
 
