@@ -39,7 +39,7 @@
 <circle cx="454.6666666666667" cy="330" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,330 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="474.6666666666667" y="337" style="font-size:20px;fill:#3A3A44">relacionamentos</text>
 <circle cx="454.6666666666667" cy="367" r="10" fill="#FFF4CC" stroke="#EBCF6E" stroke-width="1.6"/><path d="M450.1666666666667,367 l3,3.2 l6,-6.4" fill="none" stroke="#8A6A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="474.6666666666667" y="374" style="font-size:20px;fill:#3A3A44">1:N e N:N</text>
+<text x="474.6666666666667" y="374" style="font-size:20px;fill:#3A3A44">1:N e N:M</text>
 </g>
 <!-- Card 9: Agregações -->
 <g>

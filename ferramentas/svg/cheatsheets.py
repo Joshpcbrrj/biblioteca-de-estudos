@@ -173,7 +173,7 @@ S['sa-mapa-banco'] = ('santander-coders-backend', 'Banco de dados', 'Seção 6 �
  C('Tipos', 'T', ['INTEGER, NUMERIC', 'VARCHAR, TEXT', 'DATE, BOOLEAN']),
  C('Custo', 'B', ['tipo menor, menos espaço', 'CHAR vs VARCHAR', 'NUMERIC para dinheiro']),
  C('Tabela', 'tbl', ['linhas e colunas', 'CREATE TABLE', 'chave primária'], code=['CREATE TABLE aluno (', '  id SERIAL PRIMARY KEY']),
- C('Modelagem', 'er', ['entidades', 'relacionamentos', '1:N e N:N']),
+ C('Modelagem', 'er', ['entidades', 'relacionamentos', '1:N e N:M']),
  C('Chaves', 'key', ['PK identifica', 'FK liga tabelas', 'integridade']),
  C('Normalização', 'NF', ['1FN: valores atômicos', '2FN e 3FN', 'sem repetição']),
  C('SELECT', 'sel', ['colunas e tabela', 'WHERE filtra', 'ORDER BY'], code=['SELECT nome FROM aluno', 'WHERE idade > 18;']),
