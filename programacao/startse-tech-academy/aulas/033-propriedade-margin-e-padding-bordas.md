@@ -8,6 +8,8 @@ O box model apresentou as quatro camadas da caixa. Agora, as propriedades de cad
 
 ## Margin: espaço externo
 
+A margem é o espaço que você deixa em volta de uma caixa, como o afastamento entre duas pessoas numa fila. Ela não tem cor nem borda: é só distância. É por meio dela que você separa um card do outro e um título do parágrafo seguinte. Com `margin: 0 auto` e uma largura definida, o bloco é centralizado na página, o truque mais usado em layouts simples.
+
 - Cria uma área **transparente** em volta do elemento, afastando-o dos vizinhos.
 - Aceita valores **negativos**, que aproximam ou sobrepõem elementos, e `auto`, que centraliza blocos com largura definida.
 - Unidades: `px`, `%` (sobre a **largura** do pai), `em`, `rem`...
@@ -33,6 +35,8 @@ O box model apresentou as quatro camadas da caixa. Agora, as propriedades de cad
 
 ### Margin collapse (colapso de margens)
 
+Este é o comportamento que mais surpreende. Quando o `margin-bottom` de um bloco encontra o `margin-top` do seguinte, o navegador não soma: fica com a maior. No exemplo, 20 px e 30 px dão 30 px de espaço, e não 50 px. A lógica é evitar espaços gigantes quando elementos comuns, como parágrafos e títulos, se encostam. Se você precisa que o espaço seja exatamente a soma, use `padding` ou Flexbox, em que o colapso não acontece.
+
 As margens **verticais** de dois blocos vizinhos não se somam: prevalece a **maior**.
 
 ```css
@@ -44,6 +48,8 @@ p  { margin-top: 30px; }
 Isso não acontece em itens de Flexbox ou Grid, nem com margens horizontais.
 
 ## Padding: espaço interno
+
+O padding é o respiro entre o conteúdo e a borda, como a margem de uma página de caderno. Ele dá conforto à leitura: um botão com `padding: 12px 24px` parece clicável, e o mesmo texto sem padding parece apertado. Como ele fica dentro da caixa, recebe a cor de fundo. É a diferença prática em relação à margem: o padding pinta, a margem não.
 
 - Fica **entre o conteúdo e a borda** e recebe a cor de fundo do elemento.
 - Não aceita valores negativos.
@@ -61,6 +67,8 @@ Isso não acontece em itens de Flexbox ou Grid, nem com margens horizontais.
 > ⚠️ No padrão (`box-sizing: content-box`), o padding **aumenta** o tamanho visível da caixa e empurra os vizinhos. Só com `box-sizing: border-box` ele fica "por dentro" do `width`.
 
 ## Bordas
+
+Para ver uma borda, você precisa dos três ingredientes: largura, estilo e cor. O mais esquecido é o estilo: `border: 2px red` não mostra nada, porque o estilo padrão é `none`. Na forma curta, a ordem é largura, estilo, cor, e funciona com qualquer um deles faltando, exceto o estilo. Dá para aplicar uma borda só em um lado, como `border-bottom`, para criar linhas separadoras.
 
 A borda tem três partes: **largura**, **estilo** e **cor**. O estilo é obrigatório; sem ele a borda não aparece.
 

@@ -8,6 +8,8 @@ A aula anterior apresentou o shell, a interface em texto do sistema operacional.
 
 ## Por que aprender o terminal
 
+Num primeiro momento, clicar parece mais fácil. Mas o terminal ganha de lavada em três situações: tarefas repetidas (criar vinte pastas com um comando), ferramentas que só existem em texto (Git, npm, Node) e servidores, que quase nunca têm tela gráfica. Além disso, um comando escrito pode ser copiado, guardado e repetido por qualquer pessoa, o que é impossível com uma sequência de cliques. Vale ver o terminal como um idioma curto, com poucas palavras que você usa todos os dias.
+
 **O terminal é uma forma de controlar o computador digitando comandos em vez de clicar.** Cada comando tem o formato `programa opções argumentos`, por exemplo `ls -la projetos`.
 
 - **Windows:** use o **Git Bash** (instalado junto com o Git) ou o **PowerShell**. Os comandos abaixo são do Bash.
@@ -15,6 +17,8 @@ A aula anterior apresentou o shell, a interface em texto do sistema operacional.
 - **VS Code:** `Ctrl + '` abre um terminal integrado já na pasta do projeto.
 
 ## Navegando entre pastas
+
+Quase tudo no terminal acontece "em uma pasta": você sempre está em algum lugar, e os comandos agem a partir dali. Por isso os três primeiros comandos são os de orientação: `pwd` diz onde você está, `ls` mostra o que há ali e `cd` leva você para outro lugar. Um bom hábito é rodar `pwd` e `ls` antes de qualquer comando que mude arquivos, para ter certeza de onde está.
 
 ```bash
 pwd  # mostra em que pasta você está
@@ -33,6 +37,8 @@ cd -  # volta para a pasta anterior
 **Caminho absoluto** parte da raiz (`/home/ana/projetos`); **caminho relativo** parte da pasta atual (`css/style.css`). `..` significa "a pasta acima" e `.` significa "a pasta atual".
 
 ## Criando, copiando, movendo e apagando
+
+Os nomes são curtos porque vêm de uma época em que cada tecla contava: `mkdir` (make directory), `cp` (copy), `mv` (move), `rm` (remove). O `mv` serve também para renomear, porque renomear é só mover para um nome novo. E o `rm` merece cuidado redobrado: não existe lixeira. Antes de apagar algo importante, rode o `ls` com o mesmo caminho e veja se aparece o que você espera.
 
 ```bash
 mkdir meu-site  # cria pasta
@@ -66,6 +72,8 @@ grep "erro" log.txt  # procura um texto
 | `Ctrl + R` | busca no histórico de comandos |
 
 ## Encadeando comandos
+
+A força do terminal está em combinar comandos simples. O `&&` encadeia passos que dependem uns dos outros: criar a pasta **e, se deu certo**, entrar nela. O pipe `|` entrega a saída de um comando como entrada do outro: `ls | grep .js` lista os arquivos e mostra só os que têm `.js` no nome. Os sinais `>` e `>>` guardam o resultado em um arquivo, em vez de mostrar na tela. Com poucos blocos você monta tarefas que seriam longas no mouse.
 
 ```bash
 # && só roda o segundo se o primeiro der certo

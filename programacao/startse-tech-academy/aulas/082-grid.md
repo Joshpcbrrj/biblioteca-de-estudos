@@ -8,6 +8,8 @@ O Flexbox organiza itens em uma direção. Para o esqueleto de uma página, com 
 
 ## O que é CSS Grid
 
+Imagine desenhar a página num papel quadriculado: você risca linhas e colunas, e depois diz em que quadradinhos cada bloco fica. É isso o Grid. O Flexbox pensa numa direção por vez, e o Grid pensa nas duas ao mesmo tempo, o que o torna a escolha natural para o esqueleto de uma página, galerias de fotos e painéis.
+
 **CSS Grid é um sistema de layout bidimensional: você divide o contêiner em linhas e colunas e posiciona os itens nessa grade.**
 
 ```css
@@ -30,6 +32,8 @@ O Flexbox organiza itens em uma direção. Para o esqueleto de uma página, com 
 | `grid-area` | item | área nomeada onde o item fica |
 
 ## Colunas e linhas
+
+Veja o exemplo com números. Num contêiner de 800 px e `200px 1fr 2fr`, a primeira coluna pega 200 px. Sobram 600 px, que são divididos em três partes: 1fr fica com 200 px e 2fr com 400 px. Se a janela encolhe para 500 px, as frações encolhem junto (100 e 200), e a coluna fixa continua com 200. O `repeat(auto-fit, minmax(220px, 1fr))` vai além: cria quantas colunas de pelo menos 220 px couberem, e reorganiza sozinho conforme a tela, sem media query.
 
 ![fr divide o espaço que sobra depois das medidas fixas.](../img/grid-template-2.svg)
 
@@ -58,6 +62,8 @@ grid-template-columns:
 
 ## Posicionando itens
 
+Cada item pode ser posicionado pelas linhas da grade. O que confunde é que há uma linha a mais que colunas: uma grade com 3 colunas tem 4 linhas, numeradas de 1 a 4. `grid-column: 1 / 3` diz "comece na linha 1 e termine na linha 3", ocupando duas colunas. O valor `-1` é a última linha, o que torna `1 / -1` um atalho para "largura total", mesmo sem saber quantas colunas existem.
+
 ![Itens são posicionados pelas linhas da grade, não pelas células.](../img/grid-linhas-2.svg)
 
 > 💡 **Analogia:** as linhas da grade são como as ruas numeradas de um bairro planejado. Um terreno "da rua 1 à rua 3" ocupa dois quarteirões: você informa as ruas, não os quarteirões.
@@ -74,6 +80,8 @@ grid-template-columns:
 ```
 
 ## Áreas nomeadas
+
+As áreas nomeadas são a parte mais legível do Grid: o próprio CSS parece um desenho. Cada linha de texto entre aspas é uma linha da grade, e cada palavra é um quadradinho; repetir o nome (`header header`) faz o item ocupar os dois. Cada elemento escolhe seu lugar com `grid-area`. Para mudar o layout no celular, você só reescreve o desenho.
 
 ```css
 /* areas: desenha o layout com nomes */

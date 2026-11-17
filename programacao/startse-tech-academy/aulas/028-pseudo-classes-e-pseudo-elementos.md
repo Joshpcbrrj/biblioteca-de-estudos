@@ -8,6 +8,8 @@ A aula de seletores apresentou `:hover` e `::after` de passagem. Eles são tão 
 
 ## A diferença em uma linha
 
+Os dois nomes parecem difíceis, mas a pergunta que os separa é simples: você quer escolher **um elemento em certa situação** ou **um pedaço dentro do elemento**? Um dois-pontos (`:`) é uma situação (`:hover`, `:first-child`). Dois dois-pontos (`::`) é um pedaço ou um enfeite (`::before`, `::first-letter`). Guardar esse símbolo evita confundir um com o outro.
+
 ![Pseudo-classe × pseudo-elemento](../img/st-pseudo-2.svg)
 
 > 💡 **Analogia:** pense numa pessoa. A pseudo-classe descreve um **momento** dela: "quando estiver sorrindo", "quando for a primeira da fila". O pseudo-elemento aponta uma **parte** ou um acessório: "o chapéu", "a primeira letra do nome no crachá".
@@ -16,6 +18,8 @@ A aula de seletores apresentou `:hover` e `::after` de passagem. Eles são tão 
 - **Pseudo-elemento** (`::`) estiliza **uma parte** do elemento ou cria um conteúdo extra: a primeira letra, um enfeite antes ou depois.
 
 ## Pseudo-classes de estado
+
+Estas regras respondem ao que o usuário faz: passar o mouse, clicar, focar um campo. Sem elas, a página parece morta, porque nada reage ao toque. O `:focus-visible` merece atenção: ele só liga o destaque quando o foco vem do teclado, o que mantém o visual limpo para quem usa o mouse e ajuda quem navega por tab. Quanto à ordem LVHA, ela existe porque as quatro regras têm a mesma especificidade, e a última escrita vence.
 
 ```css
 /* mouse em cima */
@@ -36,6 +40,8 @@ input:invalid { border-color: crimson; }
 Para links, a ordem recomendada é **LVHA**: `:link`, `:visited`, `:hover`, `:active`. Com especificidade igual, a última regra vence.
 
 ## Pseudo-classes de posição
+
+Elas escolhem um elemento pela sua posição entre os irmãos, e dispensam colocar uma classe em cada item. Em vez de marcar o último item do menu com `class="ultimo"` para tirar a borda, `li:last-child` resolve sozinho, e continua certo quando você acrescentar itens. O `:nth-child(n)` é o mais flexível, com valores como `2`, `odd`, `even` ou fórmulas como `3n+1`.
 
 ```css
 li:first-child { font-weight: bold; }
@@ -64,6 +70,8 @@ button:not(.primario) { background: transparent; }
 `:has()`, o "seletor pai", é suportado pelos principais navegadores desde o fim de 2023, quando o Firefox passou a incluí-lo.
 
 ## Pseudo-elementos
+
+Um pseudo-elemento cria algo que não existe no HTML. Com `::after`, o asterisco vermelho do campo obrigatório é adicionado só pelo CSS, e o HTML continua limpo. A regra de ouro é a propriedade `content`: sem ela, o `::before` e o `::after` simplesmente não aparecem, mesmo que você deixe o valor vazio (`content: ""`). Eles viram o ponto de partida para enfeites, ícones e linhas decorativas.
 
 ```css
 .obrigatorio::after {

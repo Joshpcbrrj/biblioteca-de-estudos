@@ -8,6 +8,8 @@ Na aula de arrays você percorreu listas com `for`. Funciona, mas o laço manual
 
 ## Por que usar métodos em vez de `for`
 
+Compare duas formas de dizer a mesma coisa. Com `for`, você diz **como** fazer: crie uma lista vazia, percorra cada item, teste a condição, empurre para a lista. Com `filter`, você diz **o que** quer: "os produtos com estoque". O código fica mais curto e mais fácil de ler, porque o nome do método já conta a intenção. Além disso, você erra menos, porque não precisa controlar índices nem listas auxiliares.
+
 **Os métodos de array recebem uma função (callback) que é chamada para cada item**, e cada método tem um propósito: transformar, filtrar, somar, buscar. O código fica mais curto e mais fácil de ler.
 
 ```jsx
@@ -28,6 +30,8 @@ const produtos = [
 
 ## `map`: transformar cada item
 
+O `map` é o método de "converter". Entra uma lista com N itens, sai outra com N itens, cada um transformado. Serve para extrair um campo (todos os nomes), calcular um valor novo (preço com desconto) ou preparar dados para mostrar na tela. Ele nunca altera o array original: devolve um novo, e o original continua como estava.
+
 Devolve um **novo array do mesmo tamanho**.
 
 ```jsx
@@ -42,6 +46,8 @@ const comDesconto = produtos.map(p => ({
 
 ## `filter`: ficar só com alguns
 
+O `filter` é o método de "selecionar". A função que você passa responde sim ou não para cada item, e só os "sim" entram no resultado. O resultado pode ter menos itens, ou até nenhum (`[]`), mas nunca mais que o original. É a base de qualquer busca ou filtro de uma lista de produtos, usuários ou tarefas.
+
 Devolve um novo array com os itens em que a função retornou `true`.
 
 ```jsx
@@ -50,6 +56,8 @@ const disponiveis = produtos.filter(p => p.estoque > 0);
 ```
 
 ## `reduce`: juntar tudo em um valor
+
+O `reduce` é o mais poderoso e o mais estranho no começo. Pense numa pessoa somando as compras de um carrinho com uma calculadora: a calculadora guarda o total até agora (o acumulador) e, a cada item, a pessoa soma mais um valor. Ao final, resta um só número. No exemplo, o acumulador começa em 0 e vai somando preço vezes estoque de cada produto, chegando a 499. O segundo argumento, o valor inicial, define o que o acumulador é no começo, e pode ser um número, um objeto ou um array.
 
 A função recebe o **acumulador** (o resultado até agora) e o item atual, e devolve o novo acumulador.
 
@@ -108,6 +116,8 @@ produtos.sort((a, b) => a.nome.localeCompare(b.nome));
 > ⚠️ `sort`, `reverse` e `splice` **alteram o array original**. Para não mexer nele, use as versões `toSorted`, `toReversed` e `toSpliced` (ES2023) ou copie antes: `[...lista].sort(...)`. Já `map`, `filter`, `slice` e `concat` sempre devolvem um array novo.
 
 ## Encadeando
+
+Como `map` e `filter` devolvem arrays, dá para ligar um no outro em fila. O exemplo lê de cima para baixo como uma receita: pegue os produtos, fique só com os que têm estoque, transforme cada um em texto e junte tudo separado por vírgulas. Cada linha faz uma coisa só, e o conjunto expressa o que você quer sem uma variável intermediária.
 
 ```jsx
 const relatorio = produtos
