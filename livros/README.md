@@ -2,6 +2,14 @@
 
 Gerado por `ferramentas/mapa_livros.py --md` a partir das ementas aprovadas. Não edite à mão.
 
+## Trilha: devops
+
+| Ordem | Livro | Nível | Pré-requisitos |
+| --- | --- | --- | --- |
+| 1 | [Docker Compose na prática](docker-compose-na-pratica/) | iniciante | docker-do-zero |
+
+**Próximos temas sugeridos:** build-multiplataforma, kubernetes, seguranca-de-imagens, swarm.
+
 ## Trilha: docker
 
 | Ordem | Livro | Nível | Pré-requisitos |
