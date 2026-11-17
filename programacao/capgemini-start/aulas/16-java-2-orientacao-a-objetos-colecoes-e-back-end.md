@@ -224,20 +224,26 @@ System.out.println(matriz[1][2]);
 **Preenchendo um array pelo teclado (Scanner)**
 
 ```java
+// lê 5 inteiros do teclado e guarda num vetor
 Scanner sc = new Scanner(System.in);
 int[] valores = new int[5];
+// preenche o vetor, posição por posição
 for (int i = 0; i < valores.length; i++)
   valores[i] = sc.nextInt();
+// for-each: percorre cada valor do vetor
 for (int v : valores) System.out.println(v);
 ```
 
 **Preenchendo um array com caixas de diálogo (JOptionPane)**
 
 ```java
+// vetor de 4 textos, preenchido por caixas de diálogo
 String[] paises = new String[4];
+// cada posição recebe o que o usuário digitar
 for (int i = 0; i < paises.length; i++)
   paises[i] =
     JOptionPane.showInputDialog("Informe um país");
+// mostra cada país digitado
 for (String p : paises) System.out.println(p);
 ```
 
@@ -686,6 +692,8 @@ imprimir.accept("Olá");
 
 ![](../img/streams-2.svg)
 
+> 💡 **Analogia:** uma esteira de fábrica. Cada item passa pelas etapas (`filter`, `map`), e só quando alguém pede o resultado final (a terminal) a esteira anda.
+
 | Operação | Tipo | O que faz |
 | --- | --- | --- |
 | `filter(pred)` | intermediária | mantém só os elementos que passam no teste |
@@ -886,6 +894,8 @@ try (Connection con = DriverManager
 
 ![](../img/jpa-orm-2.svg)
 
+> 💡 **Analogia:** o ORM é um tradutor entre objetos Java e tabelas SQL. A transação funciona como um contrato: ou tudo é gravado no `commit`, ou nada é gravado.
+
 **Código exemplo**
 
 ```java
@@ -940,6 +950,8 @@ f.close();
 - **Exceção** = evento anormal durante a execução (divisão por zero, arquivo inexistente, índice inválido). Tratar a exceção evita que o programa quebre e permite reagir ao erro.
 
 ![](../img/excecoes-2.svg)
+
+> 💡 **Analogia:** a exceção é um alarme de incêndio. Ela interrompe a rotina e leva o fluxo até quem sabe reagir (o `catch`). Se ninguém trata o alarme, o programa para.
 
 | Tipo | Exemplos | O compilador obriga a tratar? | Significa |
 | --- | --- | --- | --- |
@@ -1020,19 +1032,24 @@ try (BufferedReader br = new BufferedReader(
 **Código exemplo**
 
 ```java
+// exceção própria; RuntimeException não obriga try/catch
 public class SaldoInsuficienteException
     extends RuntimeException {
   public SaldoInsuficienteException(
       double saldo, double valor) {
+    // mensagem exibida se a exceção não for tratada
     super("Saldo de " + saldo
         + " insuficiente para sacar " + valor);
   }
 }
 
+// método de saque da conta
 public void sacar(double valor) {
+  // lança a exceção antes de mexer no saldo
   if (valor > saldo)
     throw new SaldoInsuficienteException(
         saldo, valor);
+  // só chega aqui se houver saldo
   saldo -= valor;
 }
 ```
@@ -1080,8 +1097,6 @@ Unchecked. Normalmente indica um bug: alguém usou uma variável que estava `nul
 
 No módulo de APIs você consumiu dados de um json-server com o `HttpClient` do Angular, e na aula anterior viu como a JPA transforma classes em tabelas. Falta a peça do meio: o **back-end em Java** que recebe as requisições HTTP e conversa com o banco. É isso que o Spring Boot entrega.
 
-> 💡 **Analogia:** um restaurante. O **controller** é o garçom (recebe o pedido e entrega o prato), o **service** é o cozinheiro (aplica as regras), o **repository** é a despensa (guarda e busca os ingredientes). O cliente (o Angular) só fala com o garçom.
-
 ### 1. O que é o Spring Boot
 
 - O **Spring** é o framework Java mais usado no mercado para back-end. Ele cuida da **injeção de dependências** (cria e entrega os objetos que cada classe precisa) e oferece módulos para web, banco de dados, segurança e mais.
@@ -1114,6 +1129,8 @@ src/main/resources/application.properties
 ### 3. Arquitetura em camadas
 
 ![](../img/spring-camadas-2.svg)
+
+> 💡 **Analogia:** um restaurante. O **controller** é o garçom (recebe o pedido e entrega o prato), o **service** é o cozinheiro (aplica as regras), o **repository** é a despensa (guarda e busca os ingredientes). O cliente (o Angular) só fala com o garçom.
 
 | Camada | Anotação | Responsabilidade |
 | --- | --- | --- |
@@ -1307,6 +1324,8 @@ Você tem as duas metades prontas: no módulo de APIs, um CRUD em Angular que fa
 
 ![O componente chama o service, que faz a requisição HTTP; a API passa pelas camadas e devolve JSON.](../img/fullstack-angular-spring-2.svg)
 
+> 💡 **Analogia:** um correio. O Angular escreve a carta (a requisição HTTP) com o endereço (a URL) e o tipo de pedido (o verbo). A API lê a carta e responde com outra carta (o JSON).
+
 ### 1. Visão geral do projeto
 
 | Parte | Tecnologia | Porta | Responsabilidade |
@@ -1326,12 +1345,15 @@ Use a API de produtos da aula anterior. Dois ajustes deixam a integração mais 
 Em vez de `@CrossOrigin` em cada controller, libere o Angular num só lugar:
 
 ```java
+// configura o CORS: libera o front-end na porta 4200
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
   @Override
   public void addCorsMappings(CorsRegistry reg) {
+    // só as rotas /api/... são liberadas
     reg.addMapping("/api/**")
        .allowedOrigins("http://localhost:4200")
+       // verbos HTTP que o front-end pode usar
        .allowedMethods("GET", "POST", "PUT",
                        "DELETE");
   }
@@ -1343,6 +1365,7 @@ public class CorsConfig implements WebMvcConfigurer {
 Com o H2 em memória, o banco começa vazio a cada execução. Um `CommandLineRunner` cadastra alguns produtos ao subir:
 
 ```java
+// roda ao iniciar a aplicação: insere dados de exemplo
 @Bean
 CommandLineRunner carga(ProdutoRepository repo) {
   return args -> {
@@ -1363,7 +1386,9 @@ Antes de abrir o Angular, confira no navegador ou no Postman: `http://localhost:
 O mesmo formato do JSON da API:
 
 ```tsx
+// formato dos dados que vêm da API
 export interface Produto {
+  // opcional: só existe depois de salvo no banco
   id?: number;
   nome: string;
   preco: number;
@@ -1384,27 +1409,36 @@ export const environment = {
 ##### Service
 
 ```tsx
+// service: centraliza as chamadas HTTP ao back-end
 @Injectable({ providedIn: 'root' })
 export class ProdutoService {
+  // endereço base da rota de produtos
   private url =
     `${environment.apiUrl}/produtos`;
 
+  // HttpClient é injetado pelo construtor
   constructor(private http: HttpClient) {}
 
+  // GET /produtos: a lista inteira
+  // nada é enviado até alguém se inscrever (subscribe)
   listar(): Observable<Produto[]> {
     return this.http.get<Produto[]>(this.url);
   }
+  // GET /produtos/{id}: um produto
   buscar(id: number): Observable<Produto> {
     return this.http.get<Produto>(
       `${this.url}/${id}`);
   }
+  // POST /produtos: cria um novo
   criar(p: Produto): Observable<Produto> {
     return this.http.post<Produto>(this.url, p);
   }
+  // PUT /produtos/{id}: substitui o produto
   atualizar(p: Produto): Observable<Produto> {
     return this.http.put<Produto>(
       `${this.url}/${p.id}`, p);
   }
+  // DELETE /produtos/{id}: remove
   excluir(id: number): Observable<void> {
     return this.http.delete<void>(
       `${this.url}/${id}`);
@@ -1419,9 +1453,12 @@ export class ProdutoService {
 Nas versões atuais do Angular (componentes standalone), registre o cliente HTTP em `app.config.ts`:
 
 ```tsx
+// configuração global do app (Angular 17+)
 export const appConfig: ApplicationConfig = {
   providers: [
+    // registra as rotas do app
     provideRouter(routes),
+    // disponibiliza o HttpClient em todo o app
     provideHttpClient()
   ]
 };
@@ -1432,11 +1469,13 @@ Em projetos com `NgModule`, o equivalente é importar `HttpClientModule` no `App
 ##### Componente de listagem
 
 ```tsx
+// componente que usa o service para listar e excluir
 export class ProdutoListaComponent
     implements OnInit {
   produtos: Produto[] = [];
   erro = '';
 
+  // service injetado pelo construtor
   constructor(private service: ProdutoService) {}
 
   ngOnInit(): void {
@@ -1444,14 +1483,18 @@ export class ProdutoListaComponent
   }
 
   carregar(): void {
+    // o subscribe dispara a requisição
     this.service.listar().subscribe({
+      // sucesso: guarda a lista
       next: lista => this.produtos = lista,
+      // falha: mostra a mensagem de erro
       error: () =>
         this.erro = 'Não foi possível carregar.'
     });
   }
 
   excluir(id: number): void {
+    // depois de excluir, recarrega a lista do servidor
     this.service.excluir(id)
       .subscribe(() => this.carregar());
   }
@@ -1459,13 +1502,16 @@ export class ProdutoListaComponent
 ```
 
 ```html
+<!-- mostra a mensagem de erro, se existir -->
 @if (erro) {
   <p>{{ erro }}</p>
 }
 <ul>
+  <!-- uma linha por produto -->
   @for (p of produtos; track p.id) {
   <li>
     {{ p.nome }}: {{ p.preco | currency:'BRL' }}
+    <!-- o ! afirma ao TypeScript que o id existe -->
     <button (click)="excluir(p.id!)">
       Excluir
     </button>

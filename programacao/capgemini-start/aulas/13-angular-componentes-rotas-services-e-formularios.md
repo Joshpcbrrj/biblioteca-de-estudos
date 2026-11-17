@@ -506,6 +506,8 @@ Cria um "buraco" no template do componente, onde o pai coloca o HTML que quiser:
 | `ngOnDestroy` | antes de o componente sair da tela | **limpar**: cancelar inscrições, timers |
 
 ```tsx
+// ngOnInit carrega os dados ao abrir o componente
+// ngOnDestroy limpa o timer ao sair da tela
 export class ListaComponent implements OnInit, OnDestroy {
   ngOnInit() { this.carregarProdutos(); }
   ngOnDestroy() { clearInterval(this.timer); }
@@ -555,10 +557,12 @@ No JavaScript puro, para mostrar um valor era preciso `querySelector` + `textCon
 > 💡 **Analogia:** pense num restaurante: a **classe** é a cozinha e o **template** é o salão. A interpolação `{{ }}` é o quadro do prato do dia, que mostra o que a cozinha tem. O `[prop]` é a placa "esgotado", acesa ou apagada conforme o estoque da cozinha. O `(evento)` é a campainha que o cliente toca para chamar a cozinha. E o `[(ngModel)]` é uma comanda compartilhada: o garçom anota e a cozinha vê; a cozinha corrige e o garçom vê.
 
 ```tsx
+// dados do perfil, usados pelo template
 export class PerfilComponent {
   nome = "João";
   foto = "img/joao.webp";
   carregando = false;
+  // chamado pelo botão, ligado no template
   salvar() {
     console.log("salvando", this.nome);
   }
@@ -597,20 +601,24 @@ Para usar `[(ngModel)]` num componente standalone, adicione `FormsModule` ao `im
 ### Controle de fluxo: `@if`, `@for`, `@switch` (Angular 17+)
 
 ```html
+<!-- um bloco por condição; só um aparece por vez -->
 @if (carregando) {
   <p>Carregando...</p>
 } @else if (produtos.length === 0) {
   <p>Nenhum produto encontrado.</p>
 } @else {
   <ul>
+    <!-- $index: posição, a partir de 0 -->
     @for (p of produtos; track p.id; let i = $index) {
       <li>{{ i + 1 }}. {{ p.nome }}</li>
+    <!-- @empty aparece quando a lista está vazia -->
     } @empty {
       <li>Lista vazia</li>
     }
   </ul>
 }
 
+<!-- @switch escolhe o bloco pelo valor de status -->
 @switch (status) {
   @case ("pago") { <span class="ok">Pago</span> }
   @case ("pendente") { <span class="alerta">Pendente</span> }
@@ -623,8 +631,11 @@ O `track` é obrigatório no `@for`: diz ao Angular como identificar cada item (
 **Sintaxe antiga: *ngIf e *ngFor (projetos até o Angular 16)**
 
 ```html
+<!-- sintaxe antiga: *ngIf e *ngFor -->
+<!-- mostra o texto ou a lista (#lista) -->
 <p *ngIf="carregando; else lista">Carregando...</p>
 <ng-template #lista>
+  <!-- trackBy ajuda o Angular a não recriar itens -->
   <li *ngFor="let p of produtos; trackBy: porId">
     {{ p.nome }}
   </li>
@@ -824,24 +835,29 @@ Como o service é `providedIn: "root"`, o `ProdutoCardComponent` que adiciona it
 Para a tela atualizar sozinha quando os dados do service mudam, use **signals** (Angular 16+):
 
 ```tsx
+// service de carrinho com signals (estado reativo)
 import { Injectable, computed, signal }
   from "@angular/core";
 
 @Injectable({ providedIn: "root" })
 export class CarrinhoService {
+  // signal: a lista de itens que a tela acompanha
   readonly itens = signal<Produto[]>([]);
 
+  // computed recalcula sozinho quando itens muda
   readonly total = computed(() =>
     this.itens().reduce((s, i) => s + i.preco, 0)
   );
 
   adicionar(p: Produto) {
+    // update cria uma nova lista (sem mudar a antiga)
     this.itens.update((lista) => [...lista, p]);
   }
 }
 ```
 
 ```html
+<!-- signals são lidos com () no template -->
 <span>
   {{ carrinho.itens().length }} itens ·
   {{ carrinho.total() | currency: 'BRL' }}
@@ -969,6 +985,7 @@ finalizarCompra() {
 ### 5. Lazy loading: carregar só quando precisar
 
 ```tsx
+// lazy loading: baixa o admin só ao acessar a rota
 {
   path: "admin",
   loadComponent: () =>
@@ -1088,12 +1105,14 @@ O HTML já tem formulário com validação (`required`, `type="email"`), e o Jav
 ### Template-driven
 
 ```tsx
+// FormsModule liga o template ao objeto (ngModel)
 @Component({
   selector: "app-contato",
   imports: [FormsModule],
   templateUrl: "./contato.component.html",
 })
 export class ContatoComponent {
+  // objeto que o [(ngModel)] lê e escreve
   contato = { nome: "", email: "" };
 
   enviar() {
@@ -1103,7 +1122,9 @@ export class ContatoComponent {
 ```
 
 ```html
+<!-- ngForm: o formulário #f reúne as validações -->
 <form #f="ngForm" (ngSubmit)="enviar()">
+  <!-- #nome guarda o estado do campo para validar -->
   <input name="nome" [(ngModel)]="contato.nome"
          required minlength="3" #nome="ngModel">
   @if (nome.invalid && nome.touched) {
@@ -1114,6 +1135,7 @@ export class ContatoComponent {
          [(ngModel)]="contato.email"
          required email>
 
+  <!-- botão desabilitado enquanto houver erro -->
   <button [disabled]="f.invalid">Enviar</button>
 </form>
 ```
@@ -1158,9 +1180,11 @@ export class CadastroComponent {
 ```
 
 ```html
+<!-- formGroup liga o form ao FormGroup da classe -->
 <form [formGroup]="form" (ngSubmit)="enviar()">
   <label for="nome">Nome</label>
   <input id="nome" formControlName="nome">
+  <!-- só mostra o erro depois que o campo foi tocado -->
   @if (form.controls.nome.touched
        && form.controls.nome.hasError('required')) {
     <small>Informe o nome.</small>
@@ -1252,9 +1276,11 @@ Dados compartilhados: `ProdutoService` (lista de produtos) e `CarrinhoService` (
 ### Passo 1: criar o projeto e os arquivos
 
 ```bash
+# cria o projeto da loja
 ng new computers-store
 cd computers-store
 
+# gera componentes (g c) e services (g s)
 ng g c header
 ng g c produto-card
 ng g c pages/home
@@ -1263,6 +1289,7 @@ ng g c pages/carrinho
 ng g s services/produto
 ng g s services/carrinho
 
+# compila, sobe o servidor e abre o navegador
 ng serve -o
 ```
 
@@ -1516,6 +1543,7 @@ Depois de mexer no `angular.json`, **pare e rode de novo** o `ng serve`: ele nã
 ### Usando
 
 ```html
+<!-- navbar do Bootstrap; o tema escuro vem do atributo -->
 <nav class="navbar bg-dark" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand" routerLink="/">
@@ -1523,9 +1551,11 @@ Depois de mexer no `angular.json`, **pare e rode de novo** o `ng serve`: ele nã
   </div>
 </nav>
 
+<!-- container centraliza; row e col montam o grid -->
 <div class="container my-4">
   <div class="row g-3">
     @for (p of produtos; track p.id) {
+      <!-- 1 coluna no celular, 2 em média, 3 em grande -->
       <div class="col-12 col-sm-6 col-lg-4">
         <div class="card h-100">
           <img [src]="p.imagem" [alt]="p.nome"

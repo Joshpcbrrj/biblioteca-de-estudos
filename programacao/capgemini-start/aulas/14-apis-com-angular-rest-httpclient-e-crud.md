@@ -217,19 +217,26 @@ O HttpClient devolve um **Observable** (da biblioteca **RxJS**), e não uma Prom
 ### 4. Usando no componente
 
 ```tsx
+// componente que lista, exclui produtos e mostra erro
 export class ListaProdutosComponent
     implements OnInit {
+  // injeta o service que fala com a API
   private service = inject(ProdutoService);
   produtos: Produto[] = [];
+  // controla a mensagem de carregando
   carregando = true;
+  // guarda a mensagem de erro, se houver
   erro = "";
 
   ngOnInit() {
+    // busca a lista quando o componente abre
     this.service.listar().subscribe({
+      // sucesso: guarda a lista e para de carregar
       next: (lista) => {
         this.produtos = lista;
         this.carregando = false;
       },
+      // falha: mostra a mensagem de erro
       error: () => {
         this.erro = "Não foi possível carregar.";
         this.carregando = false;
@@ -238,6 +245,7 @@ export class ListaProdutosComponent
   }
 
   excluir(id: number) {
+    // remove no servidor e, depois, na tela
     this.service.excluir(id).subscribe(() => {
       this.produtos = this.produtos
         .filter((p) => p.id !== id);
@@ -247,8 +255,11 @@ export class ListaProdutosComponent
 ```
 
 ```html
+<!-- mostra o texto enquanto a lista carrega -->
 @if (carregando) { <p>Carregando...</p> }
+<!-- mostra a mensagem de erro, se existir -->
 @if (erro) { <p class="erro">{{ erro }}</p> }
+<!-- uma linha para cada produto da lista -->
 @for (p of produtos; track p.id) {
   <li>
     {{ p.nome }}
@@ -265,7 +276,9 @@ produtos$ = inject(ProdutoService).listar();
 ```
 
 ```html
+<!-- produtos$ é um Observable; async assina sozinho -->
 @if (produtos$ | async; as produtos) {
+  <!-- só renderiza depois que os dados chegam -->
   @for (p of produtos; track p.id) {
     <li>{{ p.nome }}</li>
   }
@@ -406,10 +419,14 @@ As alterações são gravadas no próprio `db.json`, que faz o papel do banco de
 ### Estrutura do projeto
 
 ```bash
+# cria o projeto Angular
 ng new crud-produtos
 cd crud-produtos
+# cria a interface Produto (o formato dos dados)
 ng g interface models/produto
+# service que fala com a API REST
 ng g s services/produto
+# páginas da lista e do formulário
 ng g c pages/lista
 ng g c pages/formulario
 ```

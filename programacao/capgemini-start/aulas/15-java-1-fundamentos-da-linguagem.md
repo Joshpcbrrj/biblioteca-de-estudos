@@ -261,9 +261,13 @@ Convenções de nome: variáveis e métodos em **camelCase** (`precoTotal`), cla
 Guardam um **endereço para um objeto** e podem valer `null`:
 
 ```java
+// texto (String) guardando um nome
 String nome = "João";
+// vetor de inteiros com 3 notas
 int[] notas = {8, 7, 10};
+// lista de textos; <> indica o tipo dos itens
 List<String> nomes = new ArrayList<>();
+// cria um objeto da classe Pessoa
 Pessoa p = new Pessoa();
 ```
 
@@ -469,8 +473,10 @@ O `se...senao` do Portugol, o `if` do módulo 3 e o do JavaScript são a mesma i
 As condicionais controlam o **fluxo** do programa: executam blocos diferentes de acordo com uma expressão **booleana** (`true` ou `false`).
 
 ```java
+// nota do aluno
 int nota = 7;
 
+// testa de cima para baixo; para no primeiro "sim"
 if (nota >= 9) {
   System.out.println("Excelente");
 } else if (nota >= 7) {
@@ -489,10 +495,13 @@ if (nota >= 9) {
 ### Combinando condições
 
 ```java
+// && (E): as duas condições precisam ser verdadeiras
 if (idade >= 18 && temCnh) {
   System.out.println("Pode dirigir");
 }
 
+// texto se compara com equals, não com ==
+// || (OU): basta uma das condições
 if (dia.equals("sábado")
     || dia.equals("domingo")) {
   System.out.println("Fim de semana");
@@ -510,13 +519,17 @@ String situacao = nota >= 7 ? "Aprovado" : "Reprovado";
 Compara **um valor** (`int`, `char`, `String` ou `enum`) com vários casos:
 
 ```java
+// escolhe o caminho pelo valor de dia
 switch (dia) {
+  // case: o valor que dispara este trecho
   case 1:
     System.out.println("Domingo");
+    // break: sem ele, o código cairia no próximo case
     break;
   case 7:
     System.out.println("Sábado");
     break;
+  // default: nenhum case acima bateu
   default:
     System.out.println("Dia útil");
 }
@@ -527,6 +540,8 @@ Sem `break`, a execução "cai" no caso seguinte (*fall-through*), o que é uma 
 ### `switch` moderno (Java 14+)
 
 ```java
+// switch que devolve um valor (Java 14 ou mais novo)
+// a seta -> dispensa o break; cada caso produz o valor
 String nome = switch (dia) {
   case 1 -> "Domingo";
   case 2, 3, 4, 5, 6 -> "Dia útil";
@@ -622,10 +637,13 @@ for (int n = 1; n <= 10; n++) {
 ### Laços aninhados
 
 ```java
+// tabuada de 1 a 3: cada volta do laço externo é uma linha
 for (int linha = 1; linha <= 3; linha++) {
+  // o laço interno percorre as colunas dessa linha
   for (int coluna = 1; coluna <= 3; coluna++) {
     System.out.print(linha * coluna + "\t");
   }
+  // quebra a linha ao terminar cada linha da tabela
   System.out.println();
 }
 ```
@@ -720,10 +738,14 @@ public class Calculadora {
 Vários métodos com o mesmo nome e **parâmetros diferentes**:
 
 ```java
+// sobrecarga: mesmo nome, parâmetros diferentes
+// versão com inteiros
 static int somar(int a, int b) { return a + b; }
+// versão com decimais: o Java escolhe pelo tipo
 static double somar(double a, double b) {
   return a + b;
 }
+// versão com três números
 static int somar(int a, int b, int c) {
   return a + b + c;
 }
@@ -919,25 +941,34 @@ String msg = String.format("%05d", 42);
 Um programa que lê notas até o usuário digitar `-1` e mostra a média, usando laço, método e entrada:
 
 ```java
+// lê notas até o usuário digitar -1 e calcula a média
 import java.util.Scanner;
 
 public class Notas {
+  // média segura: evita divisão por zero
   static double media(double soma, int qtd) {
     return qtd == 0 ? 0 : soma / qtd;
   }
 
   public static void main(String[] args) {
+    // lê o teclado
     Scanner sc = new Scanner(System.in);
+    // acumulador: soma de todas as notas
     double soma = 0;
+    // contador: quantas notas foram digitadas
     int qtd = 0;
+    // laço sem fim: só sai com o break
     while (true) {
       System.out.print("Nota (-1 sai): ");
+      // troca vírgula por ponto para ler decimais
       double n = Double.parseDouble(
         sc.nextLine().replace(",", "."));
+      // -1 é o sinal de saída; não entra na média
       if (n == -1) break;
       soma += n;
       qtd++;
     }
+    // %.1f: uma casa decimal; %n: quebra de linha
     System.out.printf("Média: %.1f%n",
       media(soma, qtd));
   }

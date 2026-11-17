@@ -127,15 +127,21 @@ A aula anterior mostrou que o HTML marca o que é cada conteúdo. Assim como tod
 ### O esqueleto de uma página
 
 ```html
+<!-- declara que o arquivo é HTML5 -->
 <!DOCTYPE html>
+<!-- lang: idioma da página, usado por leitores de tela -->
 <html lang="pt-BR">
   <head>
+    <!-- codificação dos acentos: UTF-8 -->
     <meta charset="UTF-8">
+    <!-- faz a página se adaptar ao tamanho da tela -->
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
+    <!-- texto que aparece na aba do navegador -->
     <title>Título que aparece na aba</title>
   </head>
   <body>
+    <!-- o conteúdo visível fica dentro do body -->
     <h1>Olá, mundo!</h1>
   </body>
 </html>
@@ -385,7 +391,9 @@ O CSS pode mudar esse comportamento com a propriedade `display`.
 
 ```html
 <body>
+  <!-- main: o conteúdo principal da página -->
   <main>
+    <!-- <br> quebra a linha; prefira parágrafos e listas -->
     Curso de HTML - Proway EAD <br>
     Faculdade - DEF <br>
   </main>
@@ -414,10 +422,12 @@ O `<header>` pode ser o cabeçalho da página e também de seções internas.
 **Código**
 
 ```html
+<!-- footer dentro de main: rodapé da seção -->
 <main>
   ...
   <footer>Atualizado em 2022</footer>
 </main>
+<!-- footer do site; &copy; escreve o símbolo © -->
 <footer>
   Criado no curso de HTML<br>
   &copy; 2022 - Seu Nome
@@ -438,6 +448,7 @@ O `<header>` pode ser o cabeçalho da página e também de seções internas.
 **Código**
 
 ```html
+<!-- section agrupa um tema; pode ter subseções -->
 <section>
   Dados pessoais
   <section>Documentos ...</section>
@@ -452,6 +463,7 @@ Seções podem ser **aninhadas** para organizar subtemas.
 **Código**
 
 ```html
+<!-- article: cada formação faz sentido sozinha -->
 <section>
   Ensino formal:
   <article>Ensino médio - Escola ABC ...</article>
@@ -466,10 +478,12 @@ Cada formação é um item independente, então cada uma vira um `article`.
 **Código**
 
 ```html
+<!-- header com o nome e o menu principal -->
 <header>
   Currículo de estudos - Seu Nome
   <nav>Início · Sobre mim · Contatos</nav>
 </header>
+<!-- footer com links secundários -->
 <footer>
   <nav>LinkedIn · Proway · Escola · Faculdade</nav>
 </footer>
@@ -480,10 +494,13 @@ Cada formação é um item independente, então cada uma vira um `article`.
 **Código**
 
 ```html
+<!-- aside: conteúdo complementar, fora do fluxo -->
 <aside>
   Experiência profissional
+  <!-- article: cada experiência é independente -->
   <article>
     Aux. Adm - Empresa XXX
+    <!-- header e footer dentro do article: as datas -->
     <header>Início: jan/20XX</header>
     <section>Responsável por...</section>
     <footer>Término: dez/20XX</footer>
@@ -498,6 +515,7 @@ A experiência profissional complementa a formação, que é o conteúdo princip
 **Código**
 
 ```html
+<!-- span: trecho em linha, sem significado próprio -->
 <nav>
   <span>Início</span>
   <span>Sobre mim</span>
@@ -592,12 +610,15 @@ Os títulos formam o **sumário** da página para buscadores e leitores de tela,
 | `<time datetime="2024-03-10">` | data ou hora legível por máquinas | normal |
 
 ```html
+<!-- strong: importância; em: ênfase -->
 <p><strong>Atenção:</strong> a inscrição
   termina <em>hoje</em>.</p>
 
+<!-- abbr: explica a sigla ao passar o mouse -->
 <p>A <abbr title="World Wide Web Consortium">
   W3C</abbr> padroniza a web.</p>
 
+<!-- time: datetime deixa a data legível à máquina -->
 <p>Evento em
   <time datetime="2024-03-10">10 de março</time>.</p>
 ```
@@ -631,6 +652,7 @@ Durante o desenvolvimento, use texto fictício para ver o layout preenchido. No 
 **Parte 9: títulos**
 
 ```html
+<!-- header da página: título e menu -->
 <header>
   <h1>Currículo de estudos - <span>Seu Nome</span></h1>
   <nav>
@@ -638,7 +660,9 @@ Durante o desenvolvimento, use texto fictício para ver o layout preenchido. No 
     ...
   </nav>
 </header>
+<!-- main: o conteúdo principal, um só por página -->
 <main>
+  <!-- header de seção: título da parte de cursos -->
   <header><h2>Cursos realizados</h2></header>
   <section>
     <h3>Ensino formal</h3>
@@ -646,6 +670,7 @@ Durante o desenvolvimento, use texto fictício para ver o layout preenchido. No 
     <article><h4>Ensino superior</h4> ...</article>
   </section>
 </main>
+<!-- aside: experiência, complementa a formação -->
 <aside>
   <h2>Experiência profissional</h2>
   <article><h3>Aux. Adm</h3> ...</article>
@@ -655,6 +680,7 @@ Durante o desenvolvimento, use texto fictício para ver o layout preenchido. No 
 **Parte 10: parágrafos com Lorem Ipsum**
 
 ```html
+<!-- article: um item independente, com parágrafos -->
 <article>
   <h4>Ensino superior</h4>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
@@ -665,6 +691,7 @@ Durante o desenvolvimento, use texto fictício para ver o layout preenchido. No 
 **Parte 11: quebras de linha**
 
 ```html
+<!-- o <br> separa as linhas, mas não cria uma lista -->
 <nav>
   Início<br>
   Proway<br>
@@ -734,11 +761,13 @@ O texto do link deve dizer **para onde ele leva**. "Clique aqui" não ajuda quem
 | Outra página + âncora | `sobre.html#formacao` | abrir a página já na seção |
 
 ```html
+<!-- âncoras: levam a seções desta mesma página -->
 <nav>
   <a href="#inicio">Início</a>
   <a href="#contato">Contato</a>
 </nav>
 ...
+<!-- o id da seção é o destino do link (#contato) -->
 <section id="contato">...</section>
 ```
 
@@ -764,10 +793,14 @@ Abra em nova aba só quando fizer sentido (um documento externo, por exemplo); f
 ### Links especiais
 
 ```html
+<!-- mailto: abre o programa de e-mail -->
 <a href="mailto:contato@exemplo.com">
   Enviar e-mail</a>
+<!-- tel: abre o discador do celular -->
 <a href="tel:+5521999999999">Ligar</a>
+<!-- link externo para o WhatsApp -->
 <a href="https://wa.me/5521999999999">WhatsApp</a>
+<!-- download: baixa o arquivo em vez de abrir -->
 <a href="curriculo.pdf" download>Baixar currículo (PDF)</a>
 ```
 
@@ -800,12 +833,14 @@ Em `tel:` e `wa.me`, use o número no formato internacional: `+55` (Brasil), DDD
 **Parte 13: e-mail, telefone e redes**
 
 ```html
+<!-- contatos dentro de article, com mailto e tel -->
 <article>
   <h3>Dados de contato</h3>
   <a href="mailto:seu-email@exemplo.com">Meu e-mail</a><br>
   <a href="tel:+5521999999999">Meu telefone</a>
 </article>
 ...
+<!-- redes sociais dentro do footer -->
 <footer>
   <nav>
     <a href="https://www.linkedin.com/in/seu-usuario/">LinkedIn</a>
@@ -862,6 +897,7 @@ Em `ol` e `ul`, cada item é um `<li>` (*list item*). Dentro de `ol`/`ul` só po
 ### Lista ordenada
 
 ```html
+<!-- ol: a ordem dos passos importa -->
 <ol>
   <li>Instale o VS Code</li>
   <li>Crie o arquivo index.html</li>
@@ -878,6 +914,7 @@ Em `ol` e `ul`, cada item é um `<li>` (*list item*). Dentro de `ol`/`ul` só po
 ### Lista não ordenada
 
 ```html
+<!-- ul: a ordem dos itens não importa -->
 <ul>
   <li>HTML</li>
   <li>CSS</li>
@@ -890,6 +927,7 @@ O formato do marcador (bolinha, quadrado, nenhum, imagem) é escolhido no CSS co
 ### Lista de definição
 
 ```html
+<!-- dl: dt é o termo; dd é a descrição -->
 <dl>
   <dt>HTML</dt>
   <dd>Linguagem de marcação que estrutura a página.</dd>
@@ -905,11 +943,13 @@ O formato do marcador (bolinha, quadrado, nenhum, imagem) é escolhido no CSS co
 Uma lista pode ficar **dentro de um** `li` de outra lista, formando submenus e tópicos:
 
 ```html
+<!-- nav com ul aninhado: submenu de Cursos -->
 <nav>
   <ul>
     <li><a href="index.html">Início</a></li>
     <li>
       <a href="cursos.html">Cursos</a>
+      <!-- uma lista dentro do li forma a sublista -->
       <ul>
         <li><a href="html.html">HTML</a></li>
         <li><a href="css.html">CSS</a></li>
@@ -926,6 +966,7 @@ Uma lista pode ficar **dentro de um** `li` de outra lista, formando submenus e t
 **Parte 14: menu e experiências em lista ordenada**
 
 ```html
+<!-- no projeto o menu usa ol; ul seria mais semântico -->
 <nav>
   <h2>Navegação principal</h2>
   <ol>
@@ -937,6 +978,7 @@ Uma lista pode ficar **dentro de um** `li` de outra lista, formando submenus e t
 ...
 <aside>
   <h2>Experiência profissional</h2>
+  <!-- article dentro de li: um item por experiência -->
   <ol>
     <li><article>...</article></li>
   </ol>
@@ -946,12 +988,14 @@ Uma lista pode ficar **dentro de um** `li` de outra lista, formando submenus e t
 **Parte 15: sublistas e documentos**
 
 ```html
+<!-- li com sublista: contatos e telefones -->
 <li>
   <a href="contato.html">Contatos</a>
   <ul>
     <li><a href="https://github.com/seu-usuario">
       Meu GitHub</a></li>
     <li>Telefones:
+      <!-- ol: aqui a ordem dos telefones faz sentido -->
       <ol>
         <li>Fixo</li>
         <li>Celular</li>
@@ -961,6 +1005,7 @@ Uma lista pode ficar **dentro de um** `li` de outra lista, formando submenus e t
   </ul>
 </li>
 ...
+<!-- ul de documentos: a ordem não importa -->
 <article>
   <h4>Documentos</h4>
   <ul>
@@ -1024,15 +1069,19 @@ Tabelas servem para **dados tabulares**: informações que se cruzam em linhas e
 | `<td>` | célula de **dado** (*table data*) |
 
 ```html
+<!-- table: dados organizados em linhas e colunas -->
 <table>
+  <!-- caption: título da tabela para leitores de tela -->
   <caption>Notas do bimestre</caption>
   <thead>
+    <!-- th scope="col": cabeçalho de coluna -->
     <tr>
       <th scope="col">Aluno</th>
       <th scope="col">Nota</th>
     </tr>
   </thead>
   <tbody>
+    <!-- th scope="row": cabeçalho de linha -->
     <tr><th scope="row">Ana</th><td>9,5</td></tr>
     <tr><th scope="row">Beto</th><td>8,0</td></tr>
   </tbody>
@@ -1183,7 +1232,9 @@ Uma imagem pode ser escrita dentro do próprio HTML como texto (`src="data:image
 ### `<figure>` e `<figcaption>`: mídia com legenda
 
 ```html
+<!-- figure agrupa a imagem e a legenda -->
 <figure>
+  <!-- alt descreve o gráfico para quem não o vê -->
   <img src="grafico-vendas.png"
     alt="Vendas mensais de 2022, pico em dezembro">
   <figcaption>Figura 1: vendas em 2022.</figcaption>
@@ -1197,11 +1248,15 @@ Use quando a imagem (ou gráfico, tabela, trecho de código) tem uma **legenda v
 O navegador lê os `<source>` de cima para baixo e usa o **primeiro** que suportar (formato) ou que combinar com a tela (`media`). O `<img>` no final é obrigatório: é o padrão e quem leva o `alt`.
 
 ```html
+<!-- picture escolhe a melhor imagem para cada caso -->
 <picture>
+  <!-- o navegador usa o primeiro formato que entende -->
   <source srcset="foto.avif" type="image/avif">
   <source srcset="foto.webp" type="image/webp">
+  <!-- media: esta versão vale até 600px de largura -->
   <source media="(max-width: 600px)"
           srcset="foto-celular.jpg">
+  <!-- img é o fallback e leva o alt -->
   <img src="foto.jpg" alt="Minha foto"
        width="400" height="400">
 </picture>
@@ -1212,6 +1267,8 @@ O navegador lê os `<source>` de cima para baixo e usa o **primeiro** que suport
 Para a mesma imagem em vários tamanhos, deixe o navegador escolher a mais adequada à tela:
 
 ```html
+<!-- srcset: versões de tamanhos diferentes da imagem -->
+<!-- sizes: quanto a imagem ocupa em cada largura -->
 <img src="foto-800.jpg"
      srcset="foto-400.jpg 400w,
              foto-800.jpg 800w,
@@ -1226,6 +1283,7 @@ Para a mesma imagem em vários tamanhos, deixe o navegador escolher a mais adequ
 
 ```html
 <header>
+  <!-- foto de perfil; width e height reservam o espaço -->
   <picture>
     <source srcset="img/foto.webp" type="image/webp">
     <img src="https://placehold.co/200x200"
@@ -1276,12 +1334,16 @@ A aula de imagens usou `picture` com vários `source`, e o navegador escolhia o 
 ### `<video>`
 
 ```html
+<!-- controls: mostra os botões de reprodução -->
 <video controls width="640"
        poster="img/capa.jpg" preload="metadata">
+  <!-- dois formatos: o navegador usa o que entende -->
   <source src="video/aula.webm" type="video/webm">
   <source src="video/aula.mp4" type="video/mp4">
+  <!-- track: legendas em português -->
   <track src="legendas/pt.vtt" kind="subtitles"
          srclang="pt" label="Português" default>
+  <!-- texto de apoio para navegadores antigos -->
   Seu navegador não suporta vídeo.
   <a href="video/aula.mp4">Baixe o arquivo</a>.
 </video>
@@ -1310,6 +1372,7 @@ A aula de imagens usou `picture` com vários `source`, e o navegador escolhia o 
 ### `<audio>`
 
 ```html
+<!-- áudio com dois formatos, como no vídeo -->
 <audio controls>
   <source src="podcast.mp3" type="audio/mpeg">
   <source src="podcast.ogg" type="audio/ogg">
@@ -1347,9 +1410,11 @@ Mesmos atributos do vídeo (`controls`, `autoplay`, `loop`, `muted`, `preload`).
 ### Vídeo responsivo
 
 ```css
+/* vídeos e iframes ocupam a largura da coluna */
 iframe, video {
   width: 100%;
   height: auto;
+  /* proporção 16:9, o formato widescreen */
   aspect-ratio: 16 / 9;
 }
 ```
@@ -1390,7 +1455,10 @@ No módulo HTML 1, você viu os verbos HTTP: `GET` para buscar, `POST` para cria
 **O** `<form>` **agrupa campos para o usuário enviar dados**: login, cadastro, busca, contato. Quando ele é enviado, o navegador junta os campos e faz uma requisição HTTP para o endereço indicado.
 
 ```html
+<!-- action: para onde os dados são enviados -->
+<!-- method="post": os dados vão no corpo da requisição -->
 <form action="/cadastro" method="post">
+  <!-- for e id ligam o label ao campo -->
   <label for="nome">Nome</label>
   <input id="nome" name="nome" type="text">
   <button type="submit">Enviar</button>
@@ -1434,8 +1502,10 @@ No módulo HTML 1, você viu os verbos HTTP: `GET` para buscar, `POST` para cria
 Para formulários longos, agrupe campos relacionados. O `legend` vira o título do grupo e é anunciado pelos leitores de tela:
 
 ```html
+<!-- fieldset agrupa campos relacionados -->
 <form>
   <fieldset>
+    <!-- legend: título do grupo -->
     <legend>Dados pessoais</legend>
     <label for="nome">Nome</label>
     <input id="nome" name="nome">
@@ -1443,6 +1513,7 @@ Para formulários longos, agrupe campos relacionados. O `legend` vira o título 
   <fieldset>
     <legend>Endereço</legend>
     <label for="cep">CEP</label>
+    <!-- inputmode abre o teclado numérico no celular -->
     <input id="cep" name="cep" inputmode="numeric">
   </fieldset>
 </form>
@@ -1553,6 +1624,7 @@ O `type` muda o controle exibido, o teclado do celular e a validação automáti
 #### Checkbox e radio
 
 ```html
+<!-- checkbox: pode marcar vários; checked deixa marcado -->
 <fieldset>
   <legend>Quais cursos você fez?</legend>
   <label>
@@ -1565,6 +1637,7 @@ O `type` muda o controle exibido, o teclado do celular e a validação automáti
   </label>
 </fieldset>
 
+<!-- radio: só um do mesmo name pode ser escolhido -->
 <fieldset>
   <legend>Horário preferido</legend>
   <label>
@@ -1665,10 +1738,14 @@ Na aula anterior, `radio` resolvia "escolha uma opção". Mas imagine 27 estados
 
 ```html
 <label for="estado">Estado</label>
+<!-- required: não deixa enviar sem escolher -->
 <select id="estado" name="estado" required>
+  <!-- value vazio: a opção de "não escolhido" -->
   <option value="">Selecione...</option>
+  <!-- optgroup agrupa as opções por região -->
   <optgroup label="Sudeste">
     <option value="RJ">Rio de Janeiro</option>
+    <!-- selected: já vem marcado -->
     <option value="SP" selected>São Paulo</option>
   </optgroup>
   <optgroup label="Sul">
@@ -1688,7 +1765,9 @@ Na aula anterior, `radio` resolvia "escolha uma opção". Mas imagine 27 estados
 
 ```html
 <label for="cidade">Cidade</label>
+<!-- list liga o campo à lista de sugestões -->
 <input id="cidade" name="cidade" list="cidades">
+<!-- sugestões: o usuário pode digitar outra coisa -->
 <datalist id="cidades">
   <option value="Rio de Janeiro">
   <option value="São Paulo">
@@ -1810,8 +1889,11 @@ O formulário de contato tem todos os campos. Falta o botão, que, como o "Salva
 ```html
 <form>
   <input type="text" name="nome">
+  <!-- submit: envia o formulário -->
   <button type="submit">Enviar</button>
+  <!-- reset: limpa os campos; use com cuidado -->
   <button type="reset">Limpar</button>
+  <!-- button: não envia; o onclick chama uma função -->
   <button type="button" onclick="ajuda()">
     Ajuda</button>
 </form>

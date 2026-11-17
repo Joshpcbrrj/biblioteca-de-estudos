@@ -79,11 +79,13 @@ raiz.style.setProperty("--cor-primaria", "tomato");
 ### Transições: suavizar uma mudança de estado
 
 ```css
+/* transição suave: cor e leve subida ao passar o mouse */
 .botao {
   background: var(--cor-primaria);
   transition: background-color 0.2s ease,
               transform 0.2s ease;
 }
+/* estado :hover: escurece e sobe 2px */
 .botao:hover {
   background: #1558b0;
   transform: translateY(-2px);
@@ -116,6 +118,7 @@ transform: translateX(-50%) rotate(10deg);
 Para movimentos que acontecem sozinhos ou têm várias etapas:
 
 ```css
+/* aparece deslizando de baixo para cima */
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -127,14 +130,18 @@ Para movimentos que acontecem sozinhos ou têm várias etapas:
   }
 }
 
+/* pulsa: cresce e volta, em repetição */
 @keyframes pulsar {
   0%, 100% { transform: scale(1); }
   50%      { transform: scale(1.08); }
 }
 
+/* gira uma volta completa */
 @keyframes girar { to { transform: rotate(360deg); } }
 
+/* "both" mantém o estado inicial e o final */
 .card    { animation: aparecer 0.4s ease-out both; }
+/* infinite: repete para sempre */
 .alerta  { animation: pulsar 1.5s ease-in-out infinite; }
 .loading { animation: girar 1s linear infinite; }
 ```
@@ -302,11 +309,13 @@ npx sass scss/main.scss css/main.css --watch
 ### Variáveis: `$`
 
 ```scss
+// variáveis: mudar aqui muda o site inteiro
 $cor-primaria: #1a73e8;
 $espaco: 16px;
 
 .botao {
   background: $cor-primaria;
+  // 16px em cima e embaixo, 32px nas laterais
   padding: $espaco ($espaco * 2);
 }
 ```
@@ -485,6 +494,7 @@ O Less também pode ser compilado **no navegador** com um script, mas isso deixa
 ### Variáveis: `@`
 
 ```less
+// no Less, variáveis começam com @
 @cor-primaria: #1a73e8;
 @raio: 8px;
 
@@ -736,6 +746,7 @@ Com o tempo, o CSS de um projeto tende a virar uma bagunça: classes com nomes a
 | **Modificador** | uma variação: `bloco--modificador` | `.card--destaque`, `.card__botao--desativado` |
 
 ```html
+<!-- bloco (card) com modificador --destaque -->
 <article class="card card--destaque">
   <img class="card__imagem" src="produto.webp" alt="...">
   <h2 class="card__titulo">Camisa polo</h2>
@@ -746,8 +757,10 @@ Com o tempo, o CSS de um projeto tende a virar uma bagunça: classes com nomes a
 ```scss
 .card {
   padding: 1rem;
+  // gera .card__titulo (elemento do bloco)
   &__titulo { font-size: 1.25rem; }
   &__botao  { background: var(--cor-primaria); }
+  // gera .card--destaque (modificador)
   &--destaque { border: 2px solid gold; }
 }
 ```
@@ -785,6 +798,7 @@ Vantagens: todas as classes têm a **mesma especificidade baixa** (uma classe s�
 **Tailwind oferece uma classe pequena para cada propriedade**, aplicadas direto no HTML:
 
 ```html
+<!-- classes utilitárias: uma por propriedade -->
 <button class="px-4 py-2 rounded-lg
                bg-blue-600 text-white
                font-semibold hover:bg-blue-700">
@@ -859,8 +873,10 @@ Num projeto grande, uma regra `.titulo` escrita para um componente pode afetar o
 **Styled Components é uma biblioteca** ***CSS-in-JS*** **para React**: o CSS é escrito dentro do JavaScript, numa *template string*, e o resultado é um componente já estilizado.
 
 ```jsx
+// cria um componente de botão com estilos próprios
 import styled from "styled-components";
 
+// $primario é prop transitória: não vai para o DOM
 const Botao = styled.button`
   background: ${(p) =>
     p.$primario ? "#1a73e8" : "#e5e7eb"};
@@ -870,9 +886,11 @@ const Botao = styled.button`
   border: 0;
   border-radius: 6px;
 
+  /* estilo aplicado só ao passar o mouse */
   &:hover { opacity: 0.9; }
 `;
 
+// usa os dois botões: um primário e um neutro
 export default function App() {
   return (
     <>

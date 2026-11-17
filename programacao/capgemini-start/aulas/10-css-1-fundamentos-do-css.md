@@ -111,9 +111,12 @@ Comparando da esquerda para a direita: só `#menu a` tem um id (1), então ele v
 Algumas propriedades são **herdadas** pelos filhos: principalmente as de texto (`color`, `font-family`, `font-size`, `line-height`). Por isso basta definir a fonte no `body`. Propriedades de caixa (`margin`, `padding`, `border`, `background`) **não** são herdadas.
 
 ```css
+/* fonte do sistema, com reserva sans-serif */
 body {
   font-family: system-ui, sans-serif;
+  /* cinza escuro, mais suave que preto puro */
   color: #222;
+  /* espaço entre as linhas do texto */
   line-height: 1.5;
 }
 ```
@@ -261,16 +264,20 @@ tbody tr:nth-child(even) {
 | `::marker` | o marcador da lista |
 
 ```css
+/* adiciona um asterisco depois do texto */
 .obrigatorio::after {
   content: " *";
   color: #dc2626;
 }
+/* letra capitular: a primeira letra do parágrafo */
 p::first-letter {
   font-size: 2.5em;
   float: left;
   line-height: 1;
 }
+/* cor do trecho selecionado com o mouse */
 ::selection { background: #ffd166; }
+/* cor dos marcadores de uma lista */
 li::marker { color: #1a73e8; }
 ```
 
@@ -445,6 +452,7 @@ A aula anterior usou `background-color` para pintar o fundo. Mas o fundo de uma 
 ### O atalho `background`
 
 ```css
+/* imagem de fundo: cobre a caixa, centralizada */
 .banner {
   background: #1e293b url("../img/banner.webp")
               no-repeat center / cover;
@@ -900,10 +908,12 @@ header {
 Quando caixas posicionadas se sobrepõem, o `z-index` decide a ordem: **maior fica na frente**.
 
 ```css
+/* o modal fica acima de tudo, fixo na tela */
 .modal {
   position: fixed;
   z-index: 100;
 }
+/* camada escura atrás do modal, cobrindo a tela */
 .overlay {
   position: fixed;
   inset: 0;
@@ -1142,10 +1152,12 @@ footer { grid-area: footer; }
 ### Galeria responsiva sem media query
 
 ```css
+/* grid com colunas automáticas de no mínimo 240px */
 .cards {
   display: grid;
   grid-template-columns:
     repeat(auto-fit, minmax(240px, 1fr));
+  /* espaço entre os cards */
   gap: 20px;
 }
 ```

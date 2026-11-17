@@ -65,12 +65,16 @@ HTML deu a estrutura, CSS deu a aparência. Falta a terceira camada: o **comport
 #### `console.log`: a ferramenta do programador
 
 ```jsx
+// texto simples, aparece na aba Console
 console.log("Olá, mundo!");
+// vírgula separa os valores; aqui imprime 15
 console.log("Total:", 10 + 5);
+// tabela legível para listas de objetos
 console.table([
   { nome: "Ana", nota: 9 },
   { nome: "Beto", nota: 7 },
 ]);
+// mensagem de erro, destacada em vermelho
 console.error("Algo deu errado");
 ```
 
@@ -299,8 +303,10 @@ Esta aula é quase uma revisão: a sintaxe do JavaScript para decisões e laços
 ### `if`, `else if`, `else`
 
 ```jsx
+// idade usada para testar as condições
 const idade = 17;
 
+// testa de cima para baixo; para na primeira verdadeira
 if (idade >= 18) {
   console.log("Você pode votar e dirigir.");
 } else if (idade >= 16) {
@@ -313,6 +319,7 @@ if (idade >= 18) {
 O JavaScript testa de cima para baixo e executa **só o primeiro** bloco verdadeiro.
 
 ```jsx
+// sem chaves, cada if vale só para a linha seguinte
 const media = 7.5;
 if (media >= 9)      console.log("Aprovado com honras");
 else if (media >= 7) console.log("Aprovado");
@@ -333,14 +340,18 @@ const situacao = media >= 7 ? "Aprovado" : "Reprovado";
 Compara **um valor** com vários casos, usando igualdade estrita (`===`):
 
 ```jsx
+// switch compara com === e segue os cases em ordem
 switch (diaDaSemana) {
+  // dois cases sem break: usam o mesmo trecho
   case "sábado":
   case "domingo":
     console.log("Fim de semana!");
+    // break impede que o código caia no próximo case
     break;
   case "segunda":
     console.log("Começo da semana");
     break;
+  // default: nenhum case acima bateu
   default:
     console.log("Dia útil");
 }
@@ -359,23 +370,28 @@ Sem `break`, a execução "cai" no caso seguinte. Isso pode ser usado de propós
 | `for...in` | — | percorrer as **chaves** de um objeto |
 
 ```jsx
+// for: contagem de 1 a 5
 for (let i = 1; i <= 5; i++) {
   console.log(`Volta ${i}`);
 }
 
+// while: repete enquanto a condição for verdadeira
 let tentativas = 0;
 while (tentativas < 3) {
   tentativas++;
 }
 
+// do...while: roda pelo menos uma vez, depois testa
 let senha;
 do {
   senha = prompt("Senha (mínimo 6):");
 } while (senha !== null && senha.length < 6);
 
+// for...of: percorre os valores de um array
 const frutas = ["maçã", "banana", "uva"];
 for (const fruta of frutas) console.log(fruta);
 
+// for...in: percorre as chaves de um objeto
 const pessoa = { nome: "Ana", idade: 30 };
 for (const chave in pessoa) console.log(chave, pessoa[chave]);
 ```
@@ -1077,11 +1093,16 @@ Na aula de estrutura do HTML, você viu que o navegador transforma o HTML numa �
 | `document.getElementsByTagName("p")` | coleção pela tag |
 
 ```jsx
+// seleciona o primeiro h1 da página
 const titulo = document.querySelector("h1");
+// seleciona por id (#) ou por classe (.)
 const botao = document.querySelector("#enviar");
+// querySelectorAll devolve todos os cards
 const cards = document.querySelectorAll(".card");
+// seletor CSS: o primeiro link dentro de nav
 const primeiroLink = document.querySelector("nav a");
 
+// adiciona a classe "visivel" a cada card
 cards.forEach((card) => card.classList.add("visivel"));
 ```
 
@@ -1098,10 +1119,13 @@ cards.forEach((card) => card.classList.add("visivel"));
 | `value` | valor de campos (`input`, `select`, `textarea`) |
 
 ```jsx
+// textContent troca só o texto; é a forma segura
 const p = document.querySelector("#mensagem");
 p.textContent = "Cadastro realizado!";
+// innerHTML interpreta tags; evite com texto do usuário
 p.innerHTML = "Cadastro <strong>realizado</strong>!";
 
+// .value lê o que foi digitado no campo
 const nome = document.querySelector("#nome").value;
 ```
 
@@ -1110,15 +1134,20 @@ const nome = document.querySelector("#nome").value;
 ### 3. Atributos
 
 ```jsx
+// altera o atributo href do link
 const link = document.querySelector("a");
 link.href = "https://developer.mozilla.org";
+// abre o link em nova aba
 link.setAttribute("target", "_blank");
+// lê o valor atual do atributo
 link.getAttribute("href");
 
+// troca a imagem e o texto alternativo
 const img = document.querySelector("img");
 img.src = "img/foto2.webp";
 img.alt = "Nova foto";
 
+// desabilita o botão: ele não responde a cliques
 document.querySelector("#enviar").disabled = true;
 ```
 
@@ -1188,11 +1217,13 @@ item.closest(".card");
 <p id="saida">Conteúdo original</p>
 
 <script>
+  // guarda os elementos que o script usa
   const entrada = document.querySelector("#entrada");
   const saida = document.querySelector("#saida");
 
   const botao = document.querySelector("#copiar");
 
+  // ao clicar, mostra o texto digitado no parágrafo
   botao.addEventListener("click", () => {
     saida.textContent =
       entrada.value || "(vazio)";
@@ -1339,11 +1370,15 @@ Se o script já está com `defer`, o `DOMContentLoaded` não é necessário.
 Quando você clica num `<li>`, o evento "sobe" (*borbulha*) e também dispara nos elementos de fora: `<ul>`, `<body>`, `document`. Isso permite a **delegação de eventos**: um único ouvinte no pai trata todos os filhos, inclusive os criados depois.
 
 ```jsx
+// um único listener no pai (delegação de eventos)
 const lista = document.querySelector("#lista");
 
 lista.addEventListener("click", (e) => {
+  // closest acha o li, mesmo se o clique foi no texto
   const item = e.target.closest("li");
+  // clicou fora de um item: não faz nada
   if (!item) return;
+  // liga e desliga a classe a cada clique
   item.classList.toggle("concluido");
 });
 ```
@@ -1355,11 +1390,13 @@ lista.addEventListener("click", (e) => {
 Um mini TodoApp na web, com o que foi visto até aqui:
 
 ```html
+<!-- formulário que adiciona tarefas à lista -->
 <form id="form-tarefa">
   <label for="tarefa">Nova tarefa</label>
   <input id="tarefa" name="tarefa" required>
   <button>Adicionar</button>
 </form>
+<!-- lista preenchida pelo JavaScript -->
 <ul id="lista"></ul>
 ```
 
@@ -1385,6 +1422,7 @@ lista.addEventListener("click", (e) => {
 ```
 
 ```css
+/* estilo aplicado pela classe "concluido" */
 .concluido {
   text-decoration: line-through;
   opacity: 0.6;
@@ -1468,11 +1506,14 @@ const objeto = JSON.parse('{"nome":"Ana"}');
 O `localStorage` guarda pares chave/valor **em texto**, e eles continuam lá depois de fechar o navegador. Para guardar objetos e arrays, converta com JSON:
 
 ```jsx
+// localStorage guarda só texto; por isso o JSON.stringify
 const tarefas = [{ titulo: "Estudar", feita: false }];
 localStorage.setItem("tarefas", JSON.stringify(tarefas));
 
+// JSON.parse volta ao objeto; ?? usa "[]" como padrão
 const salvas = JSON.parse(
   localStorage.getItem("tarefas") ?? "[]");
+// remove a chave do navegador
 localStorage.removeItem("tarefas");
 ```
 
@@ -1505,15 +1546,20 @@ fetch(URL_API)
 #### Com `async`/`await` (mais legível) ✅
 
 ```jsx
+// função assíncrona: pode usar await dentro dela
 async function buscarUsuarios() {
   try {
+    // espera a resposta da rede
     const resposta = await fetch(URL_API);
+    // ok é false em erros como 404 e 500
     if (!resposta.ok) {
       throw new Error(`HTTP ${resposta.status}`);
     }
+    // converte o corpo JSON em objeto
     const usuarios = await resposta.json();
     return usuarios;
   } catch (erro) {
+    // qualquer falha cai aqui: registra e devolve []
     console.error("Falhou:", erro);
     return [];
   }
@@ -1559,6 +1605,7 @@ Para `PUT`, `PATCH` e `DELETE`, mude o `method`.
 <ul id="lista"></ul>
 
 <script type="module">
+  // elementos da página usados pelo script
   const lista = document.querySelector("#lista");
   const status = document.querySelector("#status");
 
@@ -1566,12 +1613,15 @@ Para `PUT`, `PATCH` e `DELETE`, mude o `method`.
   const URL_API =
     "https://jsonplaceholder.typicode.com/users";
 
+  // ao clicar, busca os usuários na API
   botao.addEventListener("click", async () => {
     status.textContent = "Carregando...";
     try {
       const resp = await fetch(URL_API);
+      // erro HTTP não gera exceção sozinho: checa aqui
       if (!resp.ok) throw new Error(resp.status);
       const usuarios = await resp.json();
+      // monta um <li> para cada usuário
       lista.replaceChildren(
         ...usuarios.map((u) => {
           const li = document.createElement("li");
@@ -1581,6 +1631,7 @@ Para `PUT`, `PATCH` e `DELETE`, mude o `method`.
       );
       status.textContent = `${usuarios.length} usuários`;
     } catch (e) {
+      // falha de rede ou de HTTP: avisa o usuário
       status.textContent = "Não foi possível carregar.";
     }
   });
@@ -1590,6 +1641,7 @@ Para `PUT`, `PATCH` e `DELETE`, mude o `method`.
 ### Várias requisições ao mesmo tempo
 
 ```jsx
+// em função async: espera as duas em paralelo
 const [usuarios, posts] = await Promise.all([
   fetch("/api/usuarios").then((r) => r.json()),
   fetch("/api/posts").then((r) => r.json()),
@@ -1659,7 +1711,7 @@ A grande facilidade é que o jQuery aplica a ação em **todos** os elementos en
 ### Instalando
 
 ```html
-<!-- CDN oficial: confira a versão mais recente em jquery.com -->
+<!-- CDN oficial: veja a versão nova em jquery.com -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!-- seu código DEPOIS do jQuery -->
 <script src="js/main.js" defer></script>
@@ -1751,8 +1803,10 @@ $("#ocultar").on("click",
 **Código**
 
 ```jsx
+// jQuery: oculta com animação de 1 segundo
 $(".ocultar").on("click",
   () => $(".mensagem").slideUp(1000));
+// exibe com animação de 2 segundos
 $(".exibir").on("click",
   () => $(".mensagem").slideDown(2000));
 ```
@@ -1776,6 +1830,7 @@ O `.animate()` não anima cores sem o plugin jQuery UI; para isso, use transiç�
 **Código**
 
 ```jsx
+// css() aplica vários estilos de uma vez
 $("h1").css({
   color: "red",
   borderStyle: "solid",
