@@ -8,6 +8,8 @@ Você já sabe trabalhar com branches. Mas o Git não deixa trocar de branch se 
 
 ## O que é o stash?
 
+Imagine que você está no meio de uma funcionalidade, com sete arquivos alterados e nada pronto para commit, quando chega um pedido urgente de correção na `main`. Você não quer commitar um trabalho quebrado, e também não pode jogar o trabalho fora. O stash resolve: guarda tudo numa gaveta, devolve a pasta ao estado do último commit, e depois você retoma exatamente de onde parou. Pense nele como um commit temporário e privado, que não entra no histórico.
+
 **O** `git stash` **guarda temporariamente as alterações que você ainda não commitou e deixa o diretório de trabalho limpo.** É útil quando você está no meio de algo e precisa trocar de branch às pressas (um bug urgente, por exemplo).
 
 ![Os stashes ficam numa pilha: o mais recente é o stash@{0}.](../img/stash-2.svg)
@@ -17,6 +19,8 @@ Você já sabe trabalhar com branches. Mas o Git não deixa trocar de branch se 
 > 💡 Por padrão, o stash guarda só os arquivos **rastreados** (modificados e staged). Arquivos novos (untracked) ficam para trás, a não ser que você use `-u`.
 
 ## Comandos
+
+O dia a dia usa quatro comandos: `git stash push -m "descrição"` para guardar (a descrição ajuda quando há vários), `git stash list` para ver o que está guardado, `git stash pop` para voltar o mais recente e `git stash drop` para descartar um. A diferença entre `pop` e `apply` é a limpeza: o `pop` tira o stash da lista depois de aplicar, enquanto o `apply` o mantém, o que serve para aplicar o mesmo conjunto em mais de uma branch.
 
 ```bash
 # guarda as alterações rastreadas
@@ -53,6 +57,8 @@ git stash branch nova-branch
 ```
 
 ## Exemplo de uso
+
+Acompanhe o exemplo na ordem. Primeiro você guarda o trabalho pela metade, com um nome que lembre o que era. Depois troca para a `main`, corrige o bug, faz commit e push. Em seguida volta para a branch da funcionalidade, e o `git stash pop` devolve os arquivos exatamente como estavam. O ponto principal é a ordem: guardar antes de trocar de branch, para as alterações não irem junto nem causarem conflito.
 
 ```bash
 # mexendo na feature, chega um bug urgente

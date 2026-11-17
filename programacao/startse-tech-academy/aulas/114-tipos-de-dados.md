@@ -4,6 +4,8 @@
 
 ## De onde paramos
 
+Escolher o tipo da coluna parece um detalhe, mas mexe em três coisas ao mesmo tempo: a **exatidão** (um preço guardado como `FLOAT` pode perder centavos), o **espaço** (um `BIGINT` onde cabia um `TINYINT` gasta oito vezes mais disco, multiplicado por milhões de linhas) e a **validação** (uma coluna `DATE` recusa `31/02`, mas uma coluna de texto aceita). A pergunta de sempre é: qual é o menor tipo que comporta todos os valores possíveis desse dado?
+
 Nos `CREATE TABLE` apareceram `VARCHAR`, `INT`, `DECIMAL` e `DATE`. Escolher bem o tipo de cada coluna evita erros de arredondamento, desperdício de espaço e dados inválidos.
 
 > 💡 Os tipos abaixo são os do **MySQL/MariaDB**. Os nomes e limites mudam um pouco em outros bancos: no PostgreSQL, por exemplo, existem `TEXT` sem limite, `SERIAL` e `BOOLEAN` de verdade.
@@ -13,6 +15,8 @@ Nos `CREATE TABLE` apareceram `VARCHAR`, `INT`, `DECIMAL` e `DATE`. Escolher bem
 > 💡 **Analogia:** escolher o tipo é escolher o pote certo na cozinha. Açúcar vai no açucareiro, não num balde (`VARCHAR(100)` em vez de `LONGTEXT`). E, para pesar ouro, usa-se balança de joalheria, não a de banheiro: dinheiro vai em `DECIMAL`, que é exato, e não em `FLOAT`, que arredonda. O pote certo ocupa menos espaço e não deixa entrar o que não deve (texto onde era para ser data, por exemplo).
 
 ## Texto
+
+O raciocínio é simples. Para um código de tamanho sempre igual, como a sigla do estado (`SP`, `RJ`), use `CHAR(2)`. Para valores de tamanho variável, como nome e e-mail, use `VARCHAR`, e escolha um limite generoso, mas realista, como 100 ou 150. Para um texto longo, como a descrição de um produto, use `TEXT`. Evite o `LONGTEXT` por precaução: ele ocupa mais e raramente é necessário.
 
 | Tipo | Descrição |
 | --- | --- |
@@ -26,6 +30,8 @@ Nos `CREATE TABLE` apareceram `VARCHAR`, `INT`, `DECIMAL` e `DATE`. Escolher bem
 Use `VARCHAR` para quase tudo (nome, e-mail) e `TEXT` para conteúdos longos (descrição, artigo). Com `utf8mb4`, cada caractere pode ocupar até 4 bytes, então o limite em **caracteres** fica menor que o em bytes.
 
 ## Números inteiros
+
+O que decide é o maior valor que a coluna pode ter. Idade cabe num `TINYINT UNSIGNED` (0 a 255). A quantidade em estoque de uma loja pequena cabe num `SMALLINT`. Já o `id` de uma tabela que cresce sempre costuma ser `INT UNSIGNED`, que vai até 4,2 bilhões, e vira `BIGINT` só em sistemas gigantes. `UNSIGNED` dobra o limite positivo ao proibir negativos, o que serve para ids, idades e quantidades.
 
 | Tipo | Com sinal | Sem sinal (`UNSIGNED`) |
 | --- | --- | --- |
@@ -46,6 +52,8 @@ Use `VARCHAR` para quase tudo (nome, e-mail) e `TEXT` para conteúdos longos (de
 > ⚠️ **Dinheiro é sempre** `DECIMAL`, nunca `FLOAT`/`DOUBLE`. Pontos flutuantes são aproximados: `0.1 + 0.2` pode virar `0.30000000000000004`, e centavos somem em relatórios.
 
 ## Data e hora
+
+Use sempre o tipo de data para datas, e nunca texto. Com `DATE`, o banco valida o dia, ordena do mais antigo ao mais novo e faz contas, como "clientes que fizeram aniversário este mês". A escolha entre `DATETIME` e `TIMESTAMP` é uma questão de fuso: o `TIMESTAMP` guarda em UTC e converte para o fuso de quem lê, o que é ótimo para registrar quando algo aconteceu. Lembre do limite do `TIMESTAMP`, que acaba em 2038: ele não serve para datas muito distantes, como a validade de um contrato longo.
 
 | Tipo | Formato | Observação |
 | --- | --- | --- |

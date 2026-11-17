@@ -8,6 +8,8 @@ A aula de media queries mostrou como mudar estilos conforme a tela. Muitas dessa
 
 ## O que é `display`?
 
+Todo elemento da página é uma caixa, e antes de qualquer outra coisa o navegador precisa decidir como essa caixa se comporta: ela pega a linha toda e empurra o vizinho para baixo, ou fica ao lado dele como uma palavra numa frase? Quem responde é o `display`. Quando um layout "não obedece" você, em geral o problema é um `display` diferente do que você imaginava. É a propriedade que mais explica o comportamento das caixas.
+
 **A propriedade** `display` **define como uma caixa participa do layout**: se ocupa a linha inteira, se fica no fluxo do texto, se some, ou se vira um contêiner flex ou grid para os filhos.
 
 ![Como cada valor afeta o elemento e os vizinhos.](../img/display-valores-2.svg)
@@ -37,6 +39,8 @@ button { display: inline-block;
 
 ## Esconder elementos: `display` × `visibility` × `opacity`
 
+Os três escondem, mas por caminhos diferentes, e a escolha muda o resultado. Num menu que abre e fecha, `display: none` faz o menu sumir e libera o espaço, e o leitor de tela o ignora: é o certo. Já `visibility: hidden` mantém o buraco do tamanho do elemento, útil quando você não quer que o layout se mexa. E `opacity: 0` deixa o elemento invisível mas ainda clicável, o que costuma ser um bug, a não ser que você esteja fazendo uma animação de aparecer. Uma regra prática: se o conteúdo não deve existir para ninguém naquele momento, `display: none`.
+
 | Propriedade | Ocupa espaço? | Clicável? | Leitor de tela lê? |
 | --- | --- | --- | --- |
 | `display: none` | não | não | não |
@@ -57,6 +61,8 @@ Nos três casos o elemento não aparece; a diferença está no espaço, no cliqu
 > 💡 Para esconder algo **só visualmente**, mantendo para leitores de tela (ex.: um texto "Pular para o conteúdo"), use uma classe utilitária de leitura de tela: `.sr-only` no Tailwind e `.visually-hidden` no Bootstrap 5, em vez de `display: none`.
 
 ## Projeto de exemplo
+
+O projeto coloca parágrafos com borda e fundo colorido para você enxergar a caixa de cada um. Repare como cada `p` ocupa a largura inteira, mesmo com pouco texto: é o `display: block` padrão. Depois mude os parágrafos para `inline-block` ou `inline` e observe: as caixas encolhem ao tamanho do conteúdo e passam a dividir a linha. Uma experiência de dois minutos vale mais que decorar a tabela.
 
 **Código revisado**
 

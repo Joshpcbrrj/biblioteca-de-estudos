@@ -8,9 +8,13 @@ As aulas de fonte e alinhamento trataram do texto corrido. As listas têm um ele
 
 ## Estilizando listas
 
+Menus de navegação, índices, passos de receita e listas de recursos de um produto são listas por baixo. Por isso saber estilizá-las é útil: a lista de links de um menu é uma `<ul>` sem marcadores e sem recuo, disposta na horizontal. As regras desta aula servem tanto para o caso simples (trocar a bolinha por um quadrado) quanto para essa transformação completa.
+
 As listas `<ul>` (não ordenada) e `<ol>` (ordenada) vêm com marcadores, recuo e margens padrão. O CSS permite mudar o tipo de marcador, a posição dele ou trocar por uma imagem.
 
 ## `list-style-type`: o tipo de marcador
+
+A escolha do marcador comunica algo. Numeração (`decimal`, `lower-alpha`, `upper-roman`) diz que a ordem importa, como nos passos de uma instalação. Bolinhas e quadrados dizem que os itens são equivalentes. `none` remove o marcador e é o primeiro passo para transformar uma lista em menu. Lembre que o tipo é só visual: se a ordem importa, a tag certa continua sendo `<ol>`, mesmo que você esconda os números.
 
 | Valor | Marcador | Normalmente em |
 | --- | --- | --- |
@@ -49,6 +53,8 @@ nav ul {
 
 ## `::marker`: estilizando só o marcador
 
+Antes do `::marker`, mudar a cor do marcador sem mudar a cor do texto exigia truques com imagens e pseudoelementos. Agora basta uma regra. O exemplo com `content: "✅ "` cria uma lista de tarefas sem uma única linha de HTML extra. A limitação é que só algumas propriedades funcionam no `::marker`: cor, fonte e `content`. Para algo mais elaborado, como um ícone com tamanho próprio, ainda se usa `list-style: none` junto com um `::before`.
+
 ```css
 li::marker {
   color: #2563eb;
@@ -62,6 +68,8 @@ li::marker {
 `::marker` aceita poucas propriedades (cor, fonte, `content`), mas resolve a maior parte dos casos sem gambiarras.
 
 ## Projeto
+
+No projeto, a lista usa `list-style: square inside` e um fundo azul claro nos itens. Perceba o efeito de `inside`: com o marcador dentro da caixa, o fundo azul o envolve, e o item parece uma etiqueta. Troque para `outside` e o marcador sai da área colorida. Essa diferença só aparece quando o item tem fundo ou borda, e é por isso que o projeto usa os dois.
 
 **Código revisado**
 

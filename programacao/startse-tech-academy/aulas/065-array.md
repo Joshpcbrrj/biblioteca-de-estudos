@@ -16,6 +16,8 @@ Os laços repetem tarefas, e quase sempre essas tarefas são sobre uma **lista**
 
 ## Criando e acessando
 
+Um array abre com colchetes e separa os itens por vírgula. Para ler um item, você escreve o nome do array e o índice entre colchetes. O primeiro item é o de índice 0, o segundo é o 1, e assim por diante. Isso confunde no começo, mas segue uma lógica: o índice conta quantas posições você anda a partir do início. Para o último item, use `numeros[numeros.length - 1]`. Se você pedir um índice que não existe, o resultado é `undefined`, sem erro.
+
 ```jsx
 const numeros = [1, 2, 3, 4, 5];
 const nomes = ["João", "Maria", "José"];
@@ -41,6 +43,8 @@ console.log(numeros);  // [1, 2, 10, 4, 5]
 Mesmo declarado com `const`, o conteúdo do array pode mudar. O que não pode é atribuir **outro array** à variável.
 
 ## Métodos básicos
+
+Os métodos se dividem em dois grupos, e a coluna "Altera o original?" da tabela é a pista. Os que **alteram** (`push`, `pop`, `splice`, `sort`, `reverse`) mudam o array de verdade, e quem usava a versão antiga vê a mudança. Os que **devolvem algo novo** (`slice`, `join`, `concat`) deixam o original intacto. Num código maior, essa diferença decide se um bug aparece ou não, porque um `sort` feito num lugar muda o array em todos os outros.
 
 | Método | O que faz | Altera o original? |
 | --- | --- | --- |
@@ -71,6 +75,8 @@ numeros.splice(0, 1); // numeros = [2, 3, 4, 5]
 
 ## Percorrendo
 
+Percorrer é visitar cada item e fazer algo com ele: somar, imprimir, filtrar. O `for` clássico dá o índice, o que serve quando você precisa da posição. O `for...of` entrega direto o valor, e é mais curto e menos sujeito a erro. Escolha o `for` com índice só quando a posição importar, e o `for...of` no resto. Evite `for...in` em arrays: ele percorre os índices como texto, e pode incluir propriedades inesperadas.
+
 ```jsx
 const numeros = [1, 2, 3];
 
@@ -87,6 +93,8 @@ numeros.forEach((n, i) => console.log(i, n));
 Métodos como `map`, `filter`, `find` e `reduce`, que transformam arrays sem laços manuais, estão na próxima aula.
 
 ## Arrays multidimensionais
+
+Uma tabela com linhas e colunas, como uma planilha ou um tabuleiro de jogo da velha, cabe num array de arrays. O primeiro índice escolhe a linha e o segundo escolhe a coluna: `matriz[1][2]` é a linha 1, coluna 2, que no exemplo vale 6. Para percorrer tudo, use um laço dentro de outro, o externo para as linhas e o interno para as colunas.
 
 Arrays podem conter outros arrays, formando uma matriz:
 
