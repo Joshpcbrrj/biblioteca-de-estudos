@@ -4,6 +4,8 @@
 
 ## De onde paramos
 
+Formulário é a principal porta de entrada de dados de um site: cadastro, login, busca, pedido. Um formulário mal feito afasta o usuário (campos confusos, erros sem explicação) e abre brechas (dados inválidos chegando ao servidor). Este projeto junta o que há de melhor dos módulos anteriores para construir um que seja agradável de usar e correto por baixo.
+
 No módulo III você viu as tags de formulário (`form`, `label`, `input`, `select`, `textarea`). Agora, com o CSS do módulo IV e o layout do módulo V, dá para transformar esses campos num formulário bonito e fácil de usar.
 
 ## Revisão rápida das peças
@@ -20,6 +22,8 @@ No módulo III você viu as tags de formulário (`form`, `label`, `input`, `sele
 > ⚠️ A validação do navegador melhora a experiência, mas **não é segurança**: qualquer pessoa consegue desativá-la. O servidor sempre precisa validar os dados de novo.
 
 ## Estilizando formulários
+
+Os formulários têm três problemas típicos de estilo, e o CSS acima resolve cada um. Primeiro, os campos nascem com tamanhos diferentes: `width: 100%` com `box-sizing: border-box` os alinha e impede que o `padding` estoure a largura. Segundo, eles ignoram a fonte da página: `font: inherit` corrige. Terceiro, o foco some se você apagar o contorno, e quem navega com o teclado se perde: por isso o `:focus` define um contorno novo. As pseudoclasses `:valid` e `:invalid` dão retorno visual imediato, e o `:not(:placeholder-shown)` evita pintar de vermelho um campo que o usuário ainda nem tocou.
 
 ```css
 /* campos ocupam a largura toda e herdam a fonte */
@@ -46,6 +50,8 @@ input:valid { border-color: green; }
 - Nunca remova o `outline` do foco sem colocar outro destaque no lugar.
 
 ## Projeto: formulário de contato
+
+Leia o diagrama e o código juntos, pensando em quem vai usar. O `fieldset` com `legend` agrupa os dados pessoais e é anunciado por leitores de tela. Cada `label` tem `for` igual ao `id` do campo, o que faz o clique no rótulo focar o campo e aumenta a área de toque no celular. O `required` impede o envio vazio sem uma linha de JavaScript. A primeira `option` do `select` é desabilitada e funciona como placeholder, obrigando uma escolha consciente. Por fim, todo campo tem `name`, que é a chave com que o valor chega ao servidor: sem `name`, o campo simplesmente não é enviado.
 
 ![O resultado do projeto e a tag responsável por cada parte.](../img/form-contato-2.svg)
 

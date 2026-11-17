@@ -4,6 +4,8 @@
 
 ## De onde paramos
 
+Os quatro projetos desta aula têm o mesmo esqueleto, e reconhecê-lo é mais importante que decorar o código de cada um. Todo programa de página segue o caminho **evento → função → DOM**: algo acontece (um clique, um envio, uma escolha), uma função lê o que o usuário digitou e a página muda para mostrar o resultado. O diagrama abaixo mostra isso. Ao ler cada projeto, procure quais são os três elementos dele.
+
 Você já conhece a linguagem e as ferramentas do DOM. Agora é hora de juntar tudo. Tente fazer cada projeto sozinho a partir da descrição antes de abrir o código revisado.
 
 ![Os quatro projetos seguem o mesmo caminho.](../img/st-evento-dom.svg)
@@ -11,6 +13,8 @@ Você já conhece a linguagem e as ferramentas do DOM. Agora é hora de juntar t
 > 💡 **Analogia:** funciona como um elevador. Apertar o botão é o evento, o painel que calcula para onde ir é a função, e a porta que abre no andar certo é a mudança no DOM.
 
 ## Projeto 1: formulário de login com boas-vindas
+
+O evento aqui é o `submit` do formulário. A função começa com `event.preventDefault()`, que impede o navegador de recarregar a página e jogar fora o que você digitou. Depois ela lê o campo, limpa os espaços com `trim()` e mostra a saudação. Por último, `form.hidden = true` esconde o formulário, que é a mudança no DOM. Note que o projeto não guarda nem verifica a senha: login de verdade só existe com um servidor, e isso você verá no módulo de back-end.
 
 Ao enviar o formulário, mostra uma saudação com o nome digitado e esconde o formulário.
 
@@ -60,6 +64,8 @@ form.addEventListener("submit", (event) => {
 ```
 
 ## Projeto 2: trocar a cor de fundo
+
+Troque o evento e você troca o comportamento: aqui o evento é `change`, que dispara quando o usuário escolhe outra opção da lista. Cada `<option>` já traz o nome de uma cor CSS no atributo `value`, então o código nem precisa de um `if` por cor: ele só copia `menu.value` para o `backgroundColor`. Boa regra para guardar: quando os dados já estão no HTML, o JavaScript fica mais curto. O botão Imprimir só chama `window.print()`, que abre a janela de impressão do navegador.
 
 **Código revisado**
 

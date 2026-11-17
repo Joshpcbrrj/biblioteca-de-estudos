@@ -8,9 +8,13 @@ A DDL criou as tabelas vazias. Agora vamos preenchê-las e consultá-las: é aqu
 
 ## O que é a DML
 
+Se a DDL é montar a estante, a DML é o uso diário dela. Quatro verbos cobrem quase tudo o que um sistema faz com um banco: criar um registro (`INSERT`), mudar um registro (`UPDATE`), remover um registro (`DELETE`) e ler registros (`SELECT`). Os desenvolvedores chamam isso de CRUD (create, read, update, delete), e quase toda tela de sistema, do cadastro de clientes ao carrinho de compras, é uma combinação dessas quatro operações.
+
 **DML (Data Manipulation Language) são os comandos que mexem nos dados: inserir, atualizar, apagar e consultar.** A DDL define as tabelas; a DML preenche e usa.
 
 ## INSERT: inserir
+
+Escrever as colunas no `INSERT` é um hábito que evita surpresas. Sem a lista, o banco assume a ordem das colunas na tabela, e se alguém adicionar uma coluna no meio, o seu comando passa a gravar valores no lugar errado. Com a lista, o comando continua certo. Note também que `id` não aparece: ele é `AUTO_INCREMENT`, e o banco escolhe o próximo número livre. Inserir várias linhas num único comando é mais rápido que vários comandos, porque o banco faz a viagem de ida e volta uma vez só.
 
 ```sql
 -- uma linha (sempre liste as colunas:
@@ -31,6 +35,8 @@ SELECT id, nome FROM clientes WHERE ativo = FALSE;
 Colunas omitidas recebem o `DEFAULT` (ou `NULL`); o `id AUTO_INCREMENT` é gerado sozinho.
 
 ## UPDATE: atualizar
+
+O `SET` diz o que muda e o `WHERE` diz em quem. No primeiro exemplo, só o cliente de `id = 1` muda de cidade. No segundo, `preco = preco * 1.10` lê o preço atual, multiplica e grava de volta, mas apenas para os livros. O valor à direita do igual é calculado linha por linha, com o preço de cada produto. Por exemplo, um livro de R$ 50,00 passa a R$ 55,00 e um de R$ 80,00 passa a R$ 88,00.
 
 ```sql
 UPDATE clientes
@@ -63,6 +69,8 @@ LIMIT 10;
 ```
 
 ### Filtros do WHERE
+
+O `WHERE` funciona como uma peneira: cada linha da tabela passa pela condição e só fica quem responde verdadeiro. Dá para combinar condições com `AND` (as duas precisam valer) e `OR` (basta uma). Quando misturar os dois, use parênteses: `A OR B AND C` não significa o que parece, porque o `AND` é resolvido primeiro. A pegadinha mais comum é o `NULL`. `NULL` significa "sem valor", e comparar qualquer coisa com ele usando `=` nunca dá verdadeiro. Por isso se escreve `IS NULL`.
 
 | Operador | Exemplo |
 | --- | --- |

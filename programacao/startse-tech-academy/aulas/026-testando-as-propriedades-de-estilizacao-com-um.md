@@ -8,6 +8,8 @@ A aula anterior explicou as três formas de aplicar CSS e a regra de desempate. 
 
 ## Objetivo
 
+Ler a regra de desempate na teoria é fácil de esquecer. Vê-la mudar a página diante dos seus olhos é o que fixa. Por isso o projeto usa um único arquivo de estilo e três páginas quase idênticas, cada uma com uma pequena diferença. Se a cor ou o tamanho mudar de uma página para outra, você sabe exatamente qual forma de CSS causou isso.
+
 Três páginas que usam o **mesmo** arquivo CSS externo, cada uma testando uma forma diferente de aplicar estilo:
 
 | Página | O que testa |
@@ -21,6 +23,8 @@ Três páginas que usam o **mesmo** arquivo CSS externo, cada uma testando uma f
 > 💡 **Analogia:** imagine três filiais de uma loja que seguem o mesmo manual de pintura. A primeira segue o manual à risca. Na segunda, alguém pintou só uma porta de outra cor (inline). Na terceira, um aviso local afixado depois do manual muda a regra da filial inteira (interno).
 
 ## CSS externo (`estilo.css`)
+
+Este arquivo é a base compartilhada. Ele define o fundo da página, um título enorme (120 px, de propósito, para a diferença aparecer) e os parágrafos em fonte grande com fundo branco. Guarde estes valores: nas outras páginas, você vai conferir o que foi sobrescrito comparando com eles. O exagero de tamanhos é intencional; num projeto real, ninguém usa um título de 120 px.
 
 ```css
 /* o body vale para toda a página */
@@ -67,6 +71,8 @@ p {
 
 ## `pagina2.html`: inline vence o externo
 
+Nesta página o `h1` recebe `style="font-size: 100px;"`. Só o tamanho muda: de 120 px para 100 px. A cor e o fundo continuam vindo do externo, porque o inline só sobrescreve as propriedades que declara. O mesmo vale para o segundo parágrafo, que muda só a cor. Esta é a regra: o inline não substitui a regra inteira, ele ganha propriedade por propriedade.
+
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -93,6 +99,8 @@ p {
 ```
 
 ## `pagina3.html`: interno depois do externo
+
+Aqui o `<style>` vem depois do `<link>`. Como o `body` e o `p` têm a mesma especificidade nos dois lugares, vence o que aparece por último: o fundo vira verde. Troque a ordem, colocando o `<style>` antes do `<link>`, e o fundo volta a ser aquamarine. Teste isso. É o jeito mais rápido de entender por que a ordem dos arquivos importa no CSS.
 
 ```html
 <!DOCTYPE html>
