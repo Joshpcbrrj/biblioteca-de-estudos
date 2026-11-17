@@ -734,7 +734,3 @@ R$ 90,00. A condição é `>=`, então 100 já recebe o desconto.
 | 7. Senha | `t.numero_caracteres()` e faixa com `e` |
 | 8. Situação do aluno | Testar primeiro a regra que vale independentemente das outras (faltas) |
 | 9. Sorteio | `u.sorteia()` e decisão dentro de decisão |
-
-## 🧭 Cheat sheet da seção
-
-![Cheat sheet da seção: 12 cards para revisar se, senao, senao se, escolha, bibliotecas e sorteios](../img/bo-mapa-decisao.svg)

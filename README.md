@@ -137,6 +137,7 @@ Com o link em mãos, trabalhe com autonomia. Só pergunte o que for ambíguo **e
 | `ferramentas/svg/v3.py` e `cheatsheets.py` | diagramas no tema e cheat sheets 3×4 (também gera as partes do EPUB) |
 | `ferramentas/raw_urls.py <area>/<slug> [svgs]` | links raw fixados no commit, para subir SVGs ao Notion |
 | `ferramentas/notion2md.py <exportação> <pasta-do-curso>` | exportação HTML → `aulas/*.md` e `img/` |
+| `ferramentas/mover_cheatsheet.py <pasta-do-curso>` | move o cheat sheet de cada seção para o início da primeira aula da seção |
 | `ferramentas/gerar_epub_local.py <area>/<slug>` | gera o EPUB local e checa a tela estreita |
 
 ## Fluxo (crie uma lista de tarefas com estes passos)

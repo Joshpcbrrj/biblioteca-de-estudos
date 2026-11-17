@@ -19,7 +19,7 @@ Prof. Fábio dos Reis, Bóson Treinamentos.
 > - 💡 **Analogia**: comparação com o dia a dia, logo abaixo de cada diagrama
 > - 🧠 **Revisão rápida**: três perguntas com a resposta recolhida, no fim da aula
 > - ➡️ **Próximo passo**: o que vem na aula seguinte e por quê
-> - 🧭 **Cheat sheet da seção**: folha de revisão com 12 cards no fim de cada seção
+> - 🧭 **Cheat sheet da seção**: folha de revisão com 12 cards no início de cada seção, antes das aulas que ela resume
 
 ## Seções
 

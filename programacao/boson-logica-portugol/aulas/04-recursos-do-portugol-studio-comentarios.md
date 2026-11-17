@@ -102,7 +102,3 @@ Para a execução parar numa linha escolhida, sem precisar avançar passo a pass
 | `limpa()` | Apaga o console |
 | Depurar | Executa uma instrução por vez e mostra as variáveis |
 | Ponto de parada | Faz a execução parar numa linha escolhida |
-
-## 🧭 Cheat sheet da seção
-
-![Cheat sheet da seção de fundamentos: 12 cards para revisar lógica, algoritmo e o Portugol Studio.](../img/bo-mapa-fundamentos.svg)

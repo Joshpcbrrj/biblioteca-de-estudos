@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que são sub-rotinas, a diferença entre procedimento e função, como declarar, passar parâmetros, chamar e usar o `retorne`, com cinco projetos.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa da seção: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Cheat sheet da seção: 12 cards para revisar procedimentos, funções, parâmetros e recursão](../img/bo-mapa-subrotinas.svg)
+
 ## De onde paramos
 
 Na seção de vetores, o mesmo selection sort foi copiado em vários programas, e alguns códigos passaram de 60 linhas dentro do `inicio()`. Sub-rotinas resolvem as duas coisas: escrever uma tarefa uma vez e dividir o programa em partes com nome.

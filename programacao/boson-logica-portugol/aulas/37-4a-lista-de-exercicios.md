@@ -400,7 +400,3 @@ Não: a soma só existe entre matrizes do mesmo tamanho.
 | 5. Matrículas | Validar faixa e repetição, depois ordenar |
 | 6. Matriz com temporizador | `u.aguarde(1000)` dentro dos laços aninhados |
 | 7. Soma de matrizes | Cada posição recebe a soma das posições correspondentes |
-
-## 🧭 Cheat sheet da seção
-
-![Cheat sheet da seção: 12 cards para revisar vetores, ordenação, pesquisa e matrizes](../img/bo-mapa-vetores.svg)

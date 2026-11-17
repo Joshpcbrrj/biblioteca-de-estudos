@@ -412,7 +412,3 @@ programa
 | 5. Volume | Produto de três medidas; 1000 cm³ = 1 litro |
 | 6. Área do triângulo | `base * altura / 2` |
 | 7. Velocidade | km/h ÷ 3,6 = m/s; distância ÷ velocidade = tempo (unidades compatíveis) |
-
-## 🧭 Cheat sheet da seção
-
-![Cheat sheet da seção: 12 cards para revisar variáveis, tipos, entrada e saída e operadores](../img/bo-mapa-variaveis.svg)

@@ -6,6 +6,12 @@
 
 > 🗺️ **Nesta aula:** o que é lógica e lógica de programação, hardware e software, programa, linguagem (compilada e interpretada), algoritmo, o ciclo entrada → processamento → saída e os níveis de linguagem.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa da seção: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Cheat sheet da seção de fundamentos: 12 cards para revisar lógica, algoritmo e o Portugol Studio.](../img/bo-mapa-fundamentos.svg)
+
 ## Onde começamos
 
 Este curso ensina a **pensar como programador** antes de escolher uma linguagem. Tudo será escrito em Portugol, um pseudocódigo em português, para que a atenção fique na lógica e não em detalhes de sintaxe. Esta primeira aula apresenta o vocabulário básico que aparece no curso inteiro.

@@ -548,7 +548,3 @@ Com inteiros, `1 / 2` daria 0 (divisão inteira) e a soma ficaria só 1.
 | 6. Urna eletrônica | Vários contadores e valor de parada (0) |
 | 7. Tabuada | `para` dentro de `enquanto` com menu |
 | 8. Conjuntos | `para` dentro de `para` |
-
-## 🧭 Cheat sheet da seção
-
-![Cheat sheet da seção: 12 cards para revisar enquanto, para, faca-enquanto, laços aninhados e teste de mesa](../img/bo-mapa-repeticao.svg)

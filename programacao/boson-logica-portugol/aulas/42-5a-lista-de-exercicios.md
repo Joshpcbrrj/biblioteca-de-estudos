@@ -312,7 +312,3 @@ Até 48 (97 / 2 na divisão inteira). Como nenhum resto dá 0, 97 é primo.
 | 3. Binário | Divisões sucessivas por 2 e `%` para coletar os restos |
 | 4. Primo | Função `logico` usada direto no `se` |
 | 5. Maior do vetor | Passar um vetor como parâmetro e percorrê-lo |
-
-## 🧭 Cheat sheet da seção
-
-![Cheat sheet da seção: 12 cards para revisar procedimentos, funções, parâmetros e recursão](../img/bo-mapa-subrotinas.svg)

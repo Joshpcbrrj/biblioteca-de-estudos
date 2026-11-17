@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que é uma estrutura de decisão, como funciona o `se` simples e dois projetos de média: um com um `se` e outro com três `se` independentes.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa da seção: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Cheat sheet da seção: 12 cards para revisar se, senao, senao se, escolha, bibliotecas e sorteios](../img/bo-mapa-decisao.svg)
+
 ## De onde paramos
 
 Na seção anterior, os operadores relacionais e lógicos produziam respostas `verdadeiro` ou `falso`, mas o programa só mostrava essas respostas. Agora ele vai usá-las para decidir o que fazer.

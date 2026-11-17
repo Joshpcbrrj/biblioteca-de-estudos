@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que são dados, por que cada dado tem um tipo, os tipos primitivos (numéricos, caracteres e texto, lógicos) e os compostos, e as palavras de cada tipo no Portugol.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa da seção: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Cheat sheet da seção: 12 cards para revisar variáveis, tipos, entrada e saída e operadores](../img/bo-mapa-variaveis.svg)
+
 ## De onde paramos
 
 A primeira seção mostrou o ciclo entrada → processamento → saída. Esta seção trata do que circula nesse ciclo: os **dados**. Antes de guardá-los em variáveis, é preciso saber de que tipo cada um é.

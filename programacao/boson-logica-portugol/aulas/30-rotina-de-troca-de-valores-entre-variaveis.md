@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** por que não dá para trocar duas variáveis atribuindo uma à outra e a rotina de troca com variável auxiliar, base dos algoritmos de ordenação.
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa da seção: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Cheat sheet da seção: 12 cards para revisar vetores, ordenação, pesquisa e matrizes](../img/bo-mapa-vetores.svg)
+
 ## De onde paramos
 
 Desde a aula de variáveis, sabemos que atribuir um valor apaga o anterior. Essa regra, que parecia inofensiva, cria um problema quando queremos trocar os valores de duas variáveis entre si.

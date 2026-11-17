@@ -2,6 +2,12 @@
 
 > 🗺️ **Nesta aula:** o que é um laço de repetição, como funciona o `enquanto`, o risco do laço infinito e duas formas de repetir até o usuário pedir para sair (com e sem `pare`).
 
+## 🧭 Cheat sheet da seção
+
+Antes de começar, veja o mapa da seção: é o que as próximas aulas vão explicar. Volte a ele no fim para revisar.
+
+![Cheat sheet da seção: 12 cards para revisar enquanto, para, faca-enquanto, laços aninhados e teste de mesa](../img/bo-mapa-repeticao.svg)
+
 ## De onde paramos
 
 As estruturas de decisão escolhem **qual** caminho seguir. Falta poder **voltar** e repetir um caminho várias vezes. É o que fazem os laços de repetição.
