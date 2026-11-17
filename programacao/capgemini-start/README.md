@@ -4,6 +4,8 @@
 
 📥 **[Baixar o EPUB](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/capgemini-start.epub)**
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 Formação full stack do zero: lógica de programação, HTML, CSS e JavaScript, front-end com Angular e back-end com Java e Spring Boot. Cada aula segue o mesmo roteiro (Nesta aula → De onde paramos → conteúdo → Revisão rápida → Próximo passo → Resumo), e as respostas dos exercícios ficam recolhidas em **Ver resposta**. O curso termina com um projeto full-stack ligando Angular a uma API Spring Boot.
 
 - [Sobre o curso](aulas/00-sobre-o-curso.md)

@@ -4,6 +4,8 @@
 
 📥 **[Baixar o EPUB](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/dio-banco-pan-java.epub)**
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 Bootcamp de desenvolvimento back-end Java: Git e métodos ágeis, a linguagem Java, orientação a objetos, testes, bancos SQL e NoSQL e APIs REST com Spring Boot, segurança e JPA, com desafios de código entre as seções. Nos desafios, as respostas ficam recolhidas em **Ver resposta**.
 
 - [Sobre o curso](aulas/00-sobre-o-curso.md)

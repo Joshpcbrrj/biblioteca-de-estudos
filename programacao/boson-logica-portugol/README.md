@@ -4,6 +4,8 @@
 
 📥 **[Baixar o EPUB](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/boson-logica-portugol.epub)**
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 Lógica de programação do zero com o Portugol Studio: fundamentos, variáveis e operadores, decisões, laços de repetição, vetores e matrizes, funções e recursividade. Nas listas de exercícios, as respostas ficam recolhidas em **Ver resposta**.
 
 - [Sobre o curso](aulas/00-sobre-o-curso.md)

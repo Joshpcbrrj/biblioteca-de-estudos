@@ -1,5 +1,7 @@
 # Sobre o curso
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 > **🗺️ Sobre o curso:** lógica de programação do zero, usando JavaScript como linguagem. Você aprende a pensar em algoritmos, guardar e transformar dados, tomar decisões, repetir tarefas, organizar o código em funções e trabalhar com listas (arrays) e objetos. Cada tema tem uma aula e uma página de desafios resolvidos.
 
 > **Como estudar:** siga as seções na ordem. Em cada aula, leia o quadro "Nesta aula", digite os exemplos e só então abra os desafios: tente resolver antes de abrir a resposta (**Ver resposta**). Para revisar, leia apenas os quadros **📌 Resumo** do fim de cada página.

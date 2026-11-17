@@ -1,5 +1,7 @@
 # Sobre o curso
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 > **🗺️ Sobre o curso:** bootcamp da DIO, financiado pelo Banco Pan, para formar desenvolvedores back-end Java. O caminho vai das práticas de equipe (Git e métodos ágeis) à linguagem Java, orientação a objetos, testes, bancos de dados SQL e NoSQL e, por fim, APIs REST com Spring Boot, segurança e acesso a dados com JPA. Os desafios de código entre as seções treinam a lógica com problemas curtos.
 
 > **Como estudar:** siga as seções na ordem. Cada aula começa com o quadro "Nesta aula" e termina com um **📌 Resumo**; para revisar, leia só os resumos. Nos desafios, tente resolver antes de abrir a resolução (**Ver resposta**).

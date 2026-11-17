@@ -80,7 +80,7 @@ def readme_novo():
         a, resto = r.split(INI, 1)
         _, b = resto.split(FIM, 1)
         return a + secao() + b
-    marca = '\n> Estes são resumos pessoais'
+    marca = '\n> Dos cursos são usados apenas'
     i = r.find(marca)
     return (r[:i] + '\n' + secao() + '\n' + r[i:]) if i >= 0 else r.rstrip('\n') + '\n\n' + secao() + '\n'
 

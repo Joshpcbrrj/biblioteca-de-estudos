@@ -1,5 +1,7 @@
 # Sobre o curso
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 > 🎯 Programa de formação **full stack** da Capgemini: lógica de programação → web (HTML, CSS, JavaScript) → front-end com Angular → back-end com Java e Spring Boot. Comece pela página de boas-vindas, que traz a trilha sugerida e a legenda dos quadros.
 
 ## Seções

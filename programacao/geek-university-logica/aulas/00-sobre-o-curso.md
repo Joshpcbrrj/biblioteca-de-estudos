@@ -1,5 +1,7 @@
 # Sobre o curso
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 > **🗺️ Sobre o curso:** a base de toda programação, antes de qualquer linguagem: raciocínio lógico, algoritmos, pseudocódigo, fluxogramas, variáveis, tipos, operadores e entrada e saída. Os exemplos aparecem em pseudocódigo e nas três linguagens do curso: **Python**, **Java** e **C**.
 
 > **Como estudar:** siga as seções na ordem. Cada aula começa com o quadro "Nesta aula" e termina com um **📌 Resumo**; para revisar, leia só os resumos. Teste os exemplos no computador e faça os exercícios antes de abrir as respostas (**Ver resposta**).

@@ -4,6 +4,8 @@
 
 📥 **[Baixar o EPUB](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/cod3r-logica-javascript.epub)**
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 Lógica de programação do zero usando JavaScript: algoritmos e teste de mesa, dados e operadores, decisões e laços, funções, arrays e objetos, terminando com algoritmos clássicos. Cada tema tem uma aula e uma página de desafios; as respostas ficam recolhidas em **Ver resposta**.
 
 - [Sobre o curso](aulas/00-sobre-o-curso.md)

@@ -4,6 +4,8 @@
 
 📥 **[Baixar o EPUB](https://github.com/Joshpcbrrj/biblioteca-de-estudos/releases/download/epubs/santander-coders-backend.epub)**
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado pela Ada Tech: Git, lógica e algoritmos, redes e HTTP, Java, orientação a objetos e banco de dados com PostgreSQL. Cada aula segue o mesmo roteiro (Nesta aula → De onde paramos → conteúdo → Exercício → Revisão rápida → Próximo passo → Resumo), e as respostas dos exercícios ficam recolhidas em **Ver resposta**. As páginas com "(Adicionado pelo aluno para melhorar o estudo)" no título foram criadas para completar a proposta do curso.
 
 - [Sobre o curso](aulas/00-sobre-o-curso.md)

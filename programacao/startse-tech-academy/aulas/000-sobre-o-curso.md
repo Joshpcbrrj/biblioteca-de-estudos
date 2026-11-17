@@ -1,5 +1,7 @@
 # Sobre o curso
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 > 🎯 Formação de programação da **StartSe**, do zero ao desenvolvimento web completo: como o computador e a web funcionam → lógica → HTML e CSS → Git → JavaScript no navegador → orientação a objetos → Node.js no servidor → bancos de dados com SQL.
 
 Cada aula segue o mesmo roteiro: **Nesta aula** → **De onde paramos** → conteúdo com exemplos e diagramas → **Exercício** (resposta recolhida em *Ver resposta*) → **Revisão rápida** → **Próximo passo** → **Resumo**.

@@ -1,5 +1,7 @@
 # Sobre o curso
 
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+
 > Resumo do curso online da trilha Web Back-End do Santander Coders 2023, aplicado pela Ada Tech. O caminho segue a ordem de um back-end: versionar o código (Git), pensar a solução (algoritmos), entender como os computadores conversam (redes e HTTP), programar em Java com orientação a objetos e guardar os dados num banco relacional (PostgreSQL). Cada aula tem explicação, exemplos testados, diagramas, exercícios com resolução e um resumo.
 
 > **Legenda das páginas:** 🗺️ o que a aula cobre · 📌 resumo final · ⚠️ correção ou ajuste em relação às anotações originais · 💡 dica · 📝 exercício com resolução · 🧭 cheat sheet de revisão no fim de cada seção.

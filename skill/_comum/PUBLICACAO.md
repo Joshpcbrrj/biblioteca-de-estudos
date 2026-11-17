@@ -178,9 +178,16 @@ Mesma estrutura dos cursos, com três diferenças:
 title: "Udemy/ YouTube: Lógica de programação com Portugol Studio - Bóson Treinamentos"
 author: "<autor do biblioteca.yaml>"
 lang: pt-BR
-rights: "Resumo pessoal de estudo. O conteúdo original pertence aos autores do curso."
+rights: "Anotações e explicações de autoria de Josué B. Almeida, complementadas e melhoradas com IA (Claude). Do curso original foram usados apenas os tópicos e objetivos; o conteúdo original pertence aos seus autores."
 ```
 
+- **Autoria (todo curso reformulado):** os livros usam do curso apenas os tópicos e os objetivos; as anotações e explicações são do usuário, e a IA complementa e melhora. Logo abaixo de `# Sobre o curso` e logo abaixo do link do EPUB no `README.md` do curso, coloque o aviso:
+
+```markdown
+> ✍️ **Sobre a autoria:** deste curso foram usados apenas os tópicos e os objetivos. As anotações e as explicações são de autoria de Josué B. Almeida; onde a explicação foi complementada ou melhorada, o trabalho foi feito com IA (Claude). Os vídeos, os materiais e o conteúdo original do curso pertencem aos seus autores e não são reproduzidos aqui.
+```
+
+Nunca escreva que o conteúdo é "resumo" ou "cópia" do curso. No Notion, o mesmo aviso vai num callout `✍️` logo abaixo do callout `Sobre o curso` do índice, para a exportação trazê-lo.
 - `aulas/00-sobre-o-curso.md`: `# Sobre o curso` + proposta, caminho das seções, legenda, tabela Resumo do curso.
 - `README.md` do curso: capa, título (nome no formato padrão), link para baixar o EPUB, descrição curta, links para as aulas agrupados por seção.
 
