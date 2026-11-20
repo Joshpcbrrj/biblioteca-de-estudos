@@ -41,7 +41,7 @@ Do not use: "learning styles" (no evidence), mind maps as the review tool, or an
 ## Where we left off        2–3 sentences linking to the previous chapter (not in chapter 1)
 ## <Topic>                  one section per topic, in this order:
                             why it exists → definition (one bold sentence) → concrete example
-                            → code or procedure with its real output → diagram, if it helps
+                            → code or procedure with its real output → diagram (§2, "Diagrams")
                             → analogy, if the idea is abstract → the common mistake
 ## 🏋️ Practice              the ladder in §3
 ## 🧠 Quick review          3–5 questions, at least one from an earlier chapter; answers hidden
@@ -51,6 +51,10 @@ Do not use: "learning styles" (no evidence), mind maps as the review tool, or an
 ## 📚 Sources               links with the date they were checked
 > 🔁 Review today: chapters <x> and <y> (from the brief)
 ```
+
+**Diagrams:** when a topic shows a structure (parts of a system, services, layers), a flow or sequence, or a comparison, draw at least one diagram for it with `diagram.py` (`VISUALS.md`), next to the text it illustrates. A chapter without any diagram must be one where no topic has such an idea. Skip diagrams only when the user chose no images.
+
+**Prerequisite books:** when `prerequisites` in `book.yaml` names another book (or a book in the same track), do not teach its content again: point to it by title ("seen in *Docker do zero*, chapter 3"), and when the chapter needs it, recap it in two or three lines under that pointer. Chapter 0 says which book to read first.
 
 The area profile may change the order of a topic's steps. Optional material goes under a heading that starts with `🔎` and the word for "Going deeper" in the book language; everything else is essential, so a reader in a hurry can skip only the `🔎` parts.
 
@@ -114,6 +118,8 @@ Use an analogy only for a concept that is both **abstract and new**. Map each pa
 
 - The chapter goal is practiced in the ladder and checked in the review.
 - Every topic has why, definition, example and common mistake.
+- Each structure, flow or comparison has a diagram (unless the user chose no images).
+- Content from a prerequisite book is pointed to, not taught again.
 - Every piece of code and every command was run (or is marked "not run").
 - Facts were checked (`facts.py`).
 - No concept is used before it is taught (the brief lists which you may use).

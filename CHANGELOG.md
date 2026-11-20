@@ -16,6 +16,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - This repository is no longer a GitHub template: it holds the skill and its development files. The README, the GitHub guide and the Publish mode point to the library template instead.
 - The skill follows its step checklists without showing them in the conversation.
 - After a syllabus change, the reply starts with one line saying what changed, in the conversation language, followed by the whole syllabus.
+- Chapters point to prerequisite books instead of teaching their content again, and each structure, flow or comparison gets a diagram.
+- The images and reading choices are always asked, even when the user says to go straight to writing.
+- Checkpoint and final zips are written outside the library repository, so they are never committed with the book.
 
 ### Fixed
 

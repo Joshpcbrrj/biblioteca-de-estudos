@@ -33,7 +33,7 @@ Never ask for tokens or passwords in the chat: connections go through Claude's c
 ## 2. Checkpoints during the book
 
 - **GitHub connected:** work on the `draft/<slug>` branch of the user's library repository. `book.py done` saves each chapter; commit it right away with the message `<slug>: chapter <n>`. Use `commit_name` and `commit_email` from `library.yaml`.
-- **No GitHub:** at the end of each part of the book (or every 4 chapters), offer a partial zip from `build.py --partial`.
+- **No GitHub:** at the end of each part of the book (or every 4 chapters), offer a partial zip from `build.py --partial`, written outside the library repository (see `--out` in SKILL.md), so it is never committed with the book.
 - If the user has no library repository yet, suggest creating one from the template (https://github.com/Joshpcbrrj/syllabook-library, **Use this template**, public): each user keeps their books in a repository of their own.
 - If the library repository has no `library.yaml` or book folders yet, copy `assets/library/` into it before the first commit (everything except `SKELETON.md`, which explains each file), and fill in `library.yaml` and the site address in the README.
 - "GitHub connected" means write access to the repository: repository access with push permission in the Claude app, or `git` in Claude Code. GitHub's own MCP server as a custom connector needs an OAuth app set up by hand; do not suggest it to beginners.

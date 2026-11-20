@@ -5,7 +5,7 @@
 ## Pedido (colar num chat novo com a skill)
 
 ```text
-Quero criar um livro com o Criador de Estudos.
+Quero criar um livro com o Syllabook.
 Tema: violão, do básico ao intermediário. Quero uma boa ementa de aprendizado com treino de escalas,
 exercícios usando o que há de mais atual sobre prática, e os tópicos essenciais de música.
 ```

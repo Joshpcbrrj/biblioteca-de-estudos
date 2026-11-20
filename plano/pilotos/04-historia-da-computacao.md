@@ -5,7 +5,7 @@
 ## Pedido (colar num chat novo com a skill)
 
 ```text
-Quero criar um livro com o Criador de Estudos.
+Quero criar um livro com o Syllabook.
 Tema: história da computação. Quero uma ementa com os principais fatos, nomes importantes,
 descobertas e curiosidades.
 ```

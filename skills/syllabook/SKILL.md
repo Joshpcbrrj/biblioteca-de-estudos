@@ -83,7 +83,7 @@ They live in `scripts/`, install what they need and print short JSON with only w
 | `python scripts/projects.py [--chapter <n>]` | assembles the projects from the code blocks and runs them |
 | `python scripts/audit.py [<n>]` | ready criteria: errors block, warnings go to the final summary |
 | `python scripts/diagram.py <spec.yaml>` | draws an SVG from a short spec (`--help` lists the types, `--icons` the icon names); `--sheet <n>` = one image with all of a chapter's diagrams |
-| `python scripts/build.py --out <dir> [--partial]` | navigation, map, concept index, EPUB (answers in an appendix) and zip; `--partial` = checkpoint zip, no EPUB |
+| `python scripts/build.py --out <dir> [--partial]` | navigation, map, concept index, EPUB (answers in an appendix) and zip; `--partial` = checkpoint zip, no EPUB. `<dir>` is always outside the library repository (claude.ai: `/mnt/user-data/outputs`; Claude Code: a folder the user picks, never inside `created-books/` or `improved-materials/`) |
 | `python scripts/build.py lists --library <repo>` | updates the book lists in `created-books/` and `improved-materials/` |
 | `python scripts/notion.py <n>` | converts a chapter to Notion's format |
 
@@ -91,7 +91,7 @@ They live in `scripts/`, install what they need and print short JSON with only w
 
 ```text
 - [ ] 1. book.yaml saved and validated
-- [ ] 2. Choices: images (SVG only | SVG + illustrations | + paid image API) and reading (large screens | small e-reader)
+- [ ] 2. Choices: images (SVG only | SVG + illustrations | + paid image API) and reading (large screens | small e-reader). Ask always, even when the user says to go straight to writing: one short question with the defaults, then wait
 - [ ] 3. Chapters 1..n (loop below)
 - [ ] 4. Fixed parts: chapter 0, placement test, cheat sheets, mock exam, glossary, next steps
 - [ ] 5. Projects run (if any) and the whole book audited with no errors

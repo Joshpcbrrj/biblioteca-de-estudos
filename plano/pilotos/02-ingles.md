@@ -5,7 +5,7 @@
 ## Pedido (colar num chat novo com a skill)
 
 ```text
-Quero criar um livro com o Criador de Estudos.
+Quero criar um livro com o Syllabook.
 Tema: inglês. Quero aprender sozinho, de forma autodidata e fácil, do básico ao intermediário.
 O livro deve usar o que há de mais atual sobre aprendizado de idiomas.
 ```

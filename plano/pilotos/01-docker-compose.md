@@ -5,7 +5,7 @@
 ## Pedido (colar num chat novo com a skill)
 
 ```text
-Quero criar um livro com o Criador de Estudos.
+Quero criar um livro com o Syllabook.
 Tema: Docker Compose. A ementa já está aprovada (abaixo); pode seguir para a escrita.
 <colar a ementa>
 ```
@@ -76,12 +76,12 @@ fica_para_depois: [swarm, kubernetes, seguranca-de-imagens, build-multiplataform
 
 ## Comportamentos esperados
 
-- Reconhece a ementa como aprovada e não reabre a discussão; monta o grafo de conceitos, grava o `livro.yaml` e pergunta só as escolhas (imagens e leitura).
+- Reconhece a ementa como aprovada e não reabre a discussão; monta o grafo de conceitos, grava o `book.yaml` e pergunta só as escolhas (imagens e leitura).
 - Confere de novo a versão de referência na documentação oficial antes de escrever (a data da ementa pode estar velha).
 - Todo comando e `compose.yaml` executados de verdade (sessão ou computador do aluno); saída real; o que não rodar fica marcado.
 - Código sempre em bloco copiável, nunca como imagem; os arquivos do projeto final podem ser recriados só copiando os blocos.
 - Diagramas SVG para estrutura (serviços, rede, volumes); ilustração só para processo (ex.: ordem de início com healthcheck), se o usuário escolheu ilustrações.
 - Cada capítulo com a escada de prática, revisão cumulativa e fontes datadas.
 - Referência cruzada a *Docker do zero* em vez de repetir o básico de contêineres.
-- Fecha com Próximos caminhos (Swarm, Kubernetes...), pacote zip com Markdown + EPUB e, se houver GitHub, commit em `livros-criados/docker-compose-na-pratica/`.
-- `auditar.py` sem erros antes da entrega.
+- Fecha com Próximos caminhos (Swarm, Kubernetes...), pacote zip com Markdown + EPUB e, se houver GitHub, commit em `created-books/docker-compose-na-pratica/`.
+- `audit.py` sem erros antes da entrega.
