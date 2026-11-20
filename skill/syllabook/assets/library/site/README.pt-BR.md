@@ -1,3 +1,4 @@
+<!-- translation-of: README.md sha256:10e266507530 -->
 # 🌐 Site da biblioteca
 
 [English](README.md) | **Português**
