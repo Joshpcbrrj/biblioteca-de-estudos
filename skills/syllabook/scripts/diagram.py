@@ -4,6 +4,7 @@
 Usage:
   python scripts/diagram.py <spec.yaml> [--reading large|small] [--out FILE]
   python scripts/diagram.py --sheet <chapter> [--book B]    one contact sheet with the chapter's images
+  python scripts/diagram.py --icons    lists the icon names for the "icon" fields
   python scripts/diagram.py --help
 
 Every spec has: type, title (the idea in one sentence), and optionally caption (a closing
@@ -38,6 +39,7 @@ import sys
 from xml.sax.saxutils import escape
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import icons
 from common import chapter_path, fail, find_book, load_yaml, out
 
 BG = '#FAF9F6'
@@ -506,7 +508,10 @@ def main():
     p.add_argument('--out')
     p.add_argument('--sheet', type=int, metavar='CHAPTER')
     p.add_argument('--book')
+    p.add_argument('--icons', action='store_true')
     args = p.parse_args()
+    if args.icons:
+        out({'icons': icons.names()})
     if args.sheet:
         book_dir, _ = find_book(args.book)
         contact_sheet(book_dir, args.sheet)
