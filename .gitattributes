@@ -1,0 +1,12 @@
+# Text files are stored and checked out with LF line endings on every system,
+# so hashes and diffs are the same on Windows, macOS and Linux.
+* text=auto eol=lf
+
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.pdf  binary
+*.epub binary
+*.zip  binary

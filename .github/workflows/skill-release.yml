@@ -1,0 +1,33 @@
+name: Skill release
+
+# Publishes syllabook.zip when a version tag is pushed (e.g. v1.0.0).
+# The tag must match a version in CHANGELOG.md.
+on:
+  push:
+    tags: ['v*.*.*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    # kit-only: libraries created from the template do not run it
+    if: github.repository == 'Joshpcbrrj/syllabook'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pyyaml
+      - name: Run the kit tests
+        run: python tests/run.py
+      - name: Package the skill
+        run: python tools/package_skill.py --out dist
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/syllabook.zip \
+            --title "Syllabook $GITHUB_REF_NAME" \
+            --notes "Download syllabook.zip and upload it on Claude's Skills screen. Changes: see CHANGELOG.md."

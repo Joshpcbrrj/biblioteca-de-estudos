@@ -1,4 +1,4 @@
-<!-- translation-of: CONTRIBUTING.md sha256:84390fb642f1 -->
+<!-- translation-of: CONTRIBUTING.md sha256:e8d97fff5053 -->
 # Como contribuir
 
 [English](CONTRIBUTING.md) | **Português**
@@ -25,14 +25,14 @@ Abra uma issue com o formulário **Suggest a topic (Sugerir tema)**. Conte o que
 1. Abra uma issue antes, explicando a mudança, para combinarmos o caminho.
 2. Faça um fork e uma branch com nome curto (ex.: `fix-audit-tables`).
 3. Siga o padrão do projeto: a skill e o código em inglês, frases curtas, um termo por conceito.
-4. Rode os testes do kit antes de enviar (o comando estará aqui quando a nova skill for publicada).
+4. Rode os testes do kit antes de enviar: `pip install pyyaml` e depois `python tests/run.py`. A Action "Kit tests" roda o mesmo em todo pull request.
 5. Abra o pull request preenchendo o roteiro que aparece.
 
 As decisões de projeto ficam registradas em `docs/decisions/`. Se a sua mudança contraria uma delas, explique por quê no pull request.
 
 ## Traduções
 
-A documentação é escrita em inglês, com a versão em português ao lado de cada página (`pagina.md` e `pagina.pt-BR.md`). Quando mudar uma página em inglês, atualize também a em português, ou diga no pull request que ela precisa de tradução.
+A documentação é escrita em inglês, com a versão em português ao lado de cada página (`pagina.md` e `pagina.pt-BR.md`). Quando mudar uma página em inglês, atualize também a em português e rode `python tools/translation.py stamp <pagina>.pt-BR.md` para registrar de qual versão em inglês ela é a tradução. Se não puder traduzir, diga no pull request: os testes vão apontar a página como desatualizada até alguém traduzir.
 
 ## Regras gerais
 
