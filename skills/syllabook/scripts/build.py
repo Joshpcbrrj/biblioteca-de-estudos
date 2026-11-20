@@ -26,7 +26,7 @@ import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (SKILL, chapter_numbers, chapter_path, fail, find_book, labels, load_yaml, need_yaml,
-                    out, slugify)
+                    out, pandoc_path, slugify)
 
 COLLECTIONS = {'created': 'created-books', 'improved': 'improved-materials'}
 GITHUB_UPLOAD_LIMIT = 100  # files per upload on GitHub's website
@@ -186,18 +186,6 @@ def epub_markdown(files, lab):
             lines += [f'[]{{#ans-{k}}}**{k}.**', '', body, '', f'[↩ {lab["Back to the exercise"]}](#q-{k})', '']
         parts.append('\n'.join(lines))
     return '\n\n'.join(parts), len(answers)
-
-
-def pandoc_path():
-    found = shutil.which('pandoc')
-    if found:
-        return found
-    try:
-        import pypandoc
-    except ImportError:
-        subprocess.run([sys.executable, '-m', 'pip', 'install', '--quiet', 'pypandoc_binary'], check=True)
-        import pypandoc
-    return pypandoc.get_pandoc_path()
 
 
 def build_epub(book_dir, data, files, lab, out_dir, library):

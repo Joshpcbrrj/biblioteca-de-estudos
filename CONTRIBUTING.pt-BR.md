@@ -1,4 +1,4 @@
-<!-- translation-of: CONTRIBUTING.md sha256:414b320138e1 -->
+<!-- translation-of: CONTRIBUTING.md sha256:804c0e19398b -->
 # Como contribuir
 
 [English](CONTRIBUTING.md) | **Português**
@@ -51,6 +51,9 @@ Há um arquivo de teste para cada parte do kit:
 | `test_audit.py` | cada checagem da auditoria, por capítulo e no livro inteiro, nos dois perfis de leitura |
 | `test_facts.py` | quais frases precisam de checagem de fatos |
 | `test_build.py` | o EPUB, a navegação, o mapa, os zips, as listas da biblioteca e o site (gerado com o Zensical) |
+| `test_diagram.py` | cada tipo de diagrama nos dois perfis de leitura, cada problema de encaixe, a folha de contato |
+| `test_projects.py` | projetos montados a partir dos blocos de código, evoluídos entre capítulos, executados e conferidos; caminhos inseguros recusados |
+| `test_ingest.py` | cada tipo de entrada (Markdown, pasta, HTML, endereço web, EPUB, DOCX, PDF), o Docling e as alternativas a ele |
 | `test_tools.py` | o verificador de traduções e o empacotador da skill |
 | `test_repo.py` | a estrutura da skill, a documentação e o esqueleto da biblioteca |
 | `test_workflows.py` | os workflows da biblioteca (`epub.yml`, `site.yml`) rodando passo a passo, com `gh` e `pip` falsos (só Linux) |

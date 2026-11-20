@@ -36,7 +36,7 @@ Asked once, right after approval, and stored in `book.yaml` (`choices`):
 | Diagram width | ~960 px | 480 px |
 | Code line length | ~80 characters | 60 characters |
 | Table columns | up to 6 | up to 4 |
-| Cheat sheet in the EPUB | whole sheet | split in 2 parts |
+| Cheat sheet | 3 columns | 2 columns (taller, same cards) |
 | Color | may carry meaning, always with a label too | never the only signal |
 
 ## 4. Diagrams (SVG)
@@ -47,15 +47,16 @@ Pick the type by the idea:
 
 | The idea is... | Type |
 | --- | --- |
-| steps or decisions | flowchart (top to bottom) |
-| something that changes over time | timeline, or a trace table (one row per step) |
-| parts of a whole | blocks, layers, tree |
-| how concepts connect | concept map (arrows labeled with verbs) |
-| two options | side by side, same rows on both sides |
-| a common mistake | wrong × right |
-| memory, data, positions | boxes with names and real values |
-| parts talking to each other | sequence diagram |
-| quantities | simple bar or line chart |
+| steps or decisions | `flow` (top to bottom, diamonds for decisions) |
+| something that changes over time | `timeline`; a trace of a loop is a Markdown table, one row per step |
+| parts of a whole | `layers` or `tree` |
+| how concepts connect | `tree` with verbs in the labels (a free-form concept map is not supported yet) |
+| two options | `compare` (same rows on both sides) |
+| a common mistake | `compare` with `style: wrong-right` |
+| memory, data, positions | `boxes` with names and real values |
+| parts talking to each other | `sequence` |
+| quantities | `bars` |
+| a summary of a part of the book | `cards` (the cheat sheet) |
 
 Rules:
 
@@ -68,7 +69,7 @@ Rules:
 - Alt text for every image: what it shows, in one or two sentences.
 - File names start with the chapter number: `c06-project-network.svg`.
 
-**Cheat sheets:** a 3 × 4 grid of cards (icon in ASCII, numbered short title, 3–5 items of up to ~28 characters, optionally a 1–3 line code snippet), read column by column; in the `small` profile, `build.py` also makes the 2-part version for the EPUB.
+**Cheat sheets** (`cards`): up to 12 cards (icon in ASCII, numbered short title, 3–5 items of up to ~28 characters, optionally a 1–3 line code snippet), in 3 columns on large screens and 2 in the `small` profile.
 
 ## 5. Illustrations (PNG)
 
@@ -85,5 +86,5 @@ See `SOURCES.md` §7: free licenses only, credits in `img/CREDITS.md` and in the
 ## 7. Checking images
 
 - `diagram.py` and `illustrate.py` report text overflowing boxes, overlaps and size limits: fix the spec until they report nothing.
-- When you need to look, run `python scripts/diagram.py --sheet <chapter>`: one contact sheet with all the chapter's images, instead of opening each one.
+- When you need to look, run `python scripts/diagram.py --sheet <chapter>`: one contact sheet with all the chapter's images (a PNG when a converter is available), instead of opening each one.
 - Check that every value shown is right (run the code, redo the calculation).

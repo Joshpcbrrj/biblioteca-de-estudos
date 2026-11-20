@@ -34,6 +34,20 @@ def need_yaml():
     return yaml
 
 
+def pandoc_path():
+    """pandoc on the PATH, or the copy that comes with the pypandoc_binary package."""
+    import shutil
+    found = shutil.which('pandoc')
+    if found:
+        return found
+    try:
+        import pypandoc
+    except ImportError:
+        subprocess.run([sys.executable, '-m', 'pip', 'install', '--quiet', 'pypandoc_binary'], check=True)
+        import pypandoc
+    return pypandoc.get_pandoc_path()
+
+
 def load_yaml(path):
     with open(path, encoding='utf-8') as f:
         return need_yaml().safe_load(f) or {}

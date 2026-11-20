@@ -80,9 +80,9 @@ They live in `scripts/`, install what they need and print short JSON with only w
 | `python scripts/book.py done <n> --summary "..."` | records progress and the summary; saves the checkpoint |
 | `python scripts/book.py status` | where the book stopped and the next step |
 | `python scripts/facts.py <n>` | lists the chapter's sentences with dates, numbers, names and quotations |
-| `python scripts/projects.py` | assembles the projects from the code blocks and runs them |
+| `python scripts/projects.py [--chapter <n>]` | assembles the projects from the code blocks and runs them |
 | `python scripts/audit.py [<n>]` | ready criteria: errors block, warnings go to the final summary |
-| `python scripts/diagram.py <spec.yaml>` | draws an SVG from a short spec |
+| `python scripts/diagram.py <spec.yaml>` | draws an SVG from a short spec (`--help` lists the types); `--sheet <n>` = one image with all of a chapter's diagrams |
 | `python scripts/build.py --out <dir> [--partial]` | navigation, map, concept index, EPUB (answers in an appendix) and zip; `--partial` = checkpoint zip, no EPUB |
 | `python scripts/build.py lists --library <repo>` | updates the book lists in `created-books/` and `improved-materials/` |
 | `python scripts/notion.py <n>` | converts a chapter to Notion's format |

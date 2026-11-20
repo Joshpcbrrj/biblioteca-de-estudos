@@ -7,3 +7,5 @@ shellcheck-py     # used by actionlint to check the shell steps (GitHub runners 
 pyyaml
 pypandoc_binary   # pandoc, to build the EPUB in the tests
 zensical          # to build the website in the tests
+pypdf             # PDF text extraction fallback, used by ingest.py
+resvg-py          # SVG to PNG for the contact sheet, used by diagram.py

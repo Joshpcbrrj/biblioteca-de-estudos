@@ -50,6 +50,9 @@ There is one test file per part of the kit:
 | `test_audit.py` | each audit check, per chapter and for the whole book, in both reading profiles |
 | `test_facts.py` | which sentences need a fact check |
 | `test_build.py` | the EPUB, navigation, map, zips, library lists and the website (built with Zensical) |
+| `test_diagram.py` | each diagram type in both reading profiles, each fit problem, the contact sheet |
+| `test_projects.py` | projects assembled from code blocks, evolved across chapters, run and checked; unsafe paths refused |
+| `test_ingest.py` | each input type (Markdown, folder, HTML, web address, EPUB, DOCX, PDF), Docling and its fallbacks |
 | `test_tools.py` | the translation checker and the skill packager |
 | `test_repo.py` | the skill's structure, the documentation and the library skeleton |
 | `test_workflows.py` | the library workflows (`epub.yml`, `site.yml`) run step by step, with fake `gh` and `pip` (Linux only) |
