@@ -8,6 +8,8 @@ Syllabook is a Claude skill for self-learners. It writes course-books on any top
 
 > 🚧 **Being rebuilt.** The skill is being rewritten from scratch. The roadmap and decisions are in [`plano/PLANO.md`](plano/PLANO.md) (in Portuguese). There is no version to install yet.
 
+👀 **See it working:** the [demo library](https://github.com/Joshpcbrrj/syllabook-demo) and its [searchable website](https://joshpcbrrj.github.io/syllabook-demo/), built by the same workflows every library gets.
+
 ## What it does
 
 - **Creates a book from a topic.** Tell it what you want to learn. It researches, shows a short assessment and a syllabus, and you adjust until you approve. Then it writes the whole book, from beginner to intermediate.
