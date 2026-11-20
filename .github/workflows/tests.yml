@@ -27,6 +27,8 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: pip install -r requirements-dev.txt
       - name: Lint (code and workflows)
+        # bash on every runner: PowerShell, the Windows default, does not expand *.yml
+        shell: bash
         run: |
           ruff check .
           actionlint .github/workflows/*.yml skills/syllabook/assets/library/.github/workflows/*.yml
