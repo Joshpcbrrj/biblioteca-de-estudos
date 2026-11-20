@@ -44,16 +44,18 @@ from common import chapter_path, fail, find_book, load_yaml, out
 
 BG = '#FAF9F6'
 INK, SOFT = '#2B2B33', '#55555F'
-# fill, border, strong (text and arrows on that color)
+# fill (inner boxes), border, strong (text, icons and arrows on that color), tint (the box itself, stronger)
 PALETTE = {
-    'blue': ('#E3EEFF', '#9DBEF5', '#2F5DA8'),
-    'green': ('#DDF5EA', '#94D8B8', '#1F7A52'),
-    'orange': ('#FFF4CC', '#EBCF6E', '#8A6A00'),
-    'red': ('#FFE7E0', '#F5AE9B', '#A8402A'),
-    'purple': ('#EEE6FB', '#C3ADEE', '#5B3E9E'),
-    'teal': ('#DDF3F3', '#93D2D2', '#1F6E6E'),
-    'gray': ('#F1EFEA', '#C9C4BA', '#55555F'),
+    'blue': ('#EAF1FF', '#7FA8F0', '#1F4E9C', '#D3E2FF'),
+    'green': ('#E4F6EC', '#6FC39C', '#17694A', '#C9ECD9'),
+    'orange': ('#FFF5D9', '#E2B84A', '#6E4D00', '#FFE7A6'),
+    'red': ('#FFEBE4', '#EE9478', '#963019', '#FFD3C5'),
+    'purple': ('#F2EBFC', '#A989E6', '#4F2F8C', '#E0D1F8'),
+    'teal': ('#E2F5F5', '#74C2C2', '#125B5B', '#C6E9E9'),
+    'gray': ('#F4F2ED', '#B9B2A5', '#45454F', '#E4E0D6'),
 }
+# the title underline: the theme colors left to right
+GRADIENT = ('blue', 'purple', 'red', 'orange')
 KIND_COLOR = {'start': 'gray', 'step': 'blue', 'decision': 'orange', 'end': 'green'}
 # sizes per reading profile: width, body, title, small text; a 6" screen needs bigger letters
 PROFILES = {'large': {'width': 960, 'body': 20, 'title': 26, 'small': 16},
@@ -89,8 +91,9 @@ class Canvas:
                 line = word
         return lines + [line] if line or not lines else lines
 
-    def rect(self, x, y, w, h, color='gray', rx=12, dashed=False, shadow=True):
-        fill, border, _ = PALETTE[color]
+    def rect(self, x, y, w, h, color='gray', rx=12, dashed=False, shadow=True, tint=False):
+        fill, border, _, strong_fill = PALETTE[color]
+        fill = strong_fill if tint else fill
         if shadow:
             self.parts.append(f'<rect x="{x}" y="{y + 4}" width="{w}" height="{h}" rx="{rx}" '
                               f'fill="#3A3226" opacity="0.07"/>')
@@ -99,7 +102,7 @@ class Canvas:
                           f'stroke="{border}" stroke-width="2"{dash}/>')
 
     def diamond(self, cx, y, w, h, color='orange'):
-        fill, border, _ = PALETTE[color]
+        _, border, _, fill = PALETTE[color]
         pts = f'{cx},{y} {cx + w / 2},{y + h / 2} {cx},{y + h} {cx - w / 2},{y + h / 2}'
         self.parts.append(f'<polygon points="{pts}" fill="{fill}" stroke="{border}" stroke-width="2"/>')
 
@@ -117,6 +120,15 @@ class Canvas:
             self.text(x, y + size + i * size * 1.3, line, size=size, **kw)
         return len(lines) * size * 1.3
 
+    def icon(self, name, x, y, size, color):
+        """Draws a named icon in the color's strong tone; an unknown name is reported, with suggestions."""
+        if not icons.known(name):
+            near = icons.suggest(name)
+            self.problems.append(f'unknown icon "{name}"' + (f' (did you mean {", ".join(near)}?)' if near else ''))
+            return False
+        self.parts.append(icons.draw(name, x, y, size, PALETTE[color][2]))
+        return True
+
     def arrow(self, x1, y1, x2, y2, label='', color='gray', dashed=False):
         strong = PALETTE[color][2]
         dash = ' stroke-dasharray="9 6"' if dashed else ''
@@ -133,10 +145,13 @@ class Canvas:
         markers = ''.join(f'<marker id="arrow-{c}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" '
                           f'markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" '
                           f'fill="{v[2]}"/></marker>' for c, v in PALETTE.items())
+        stops = ''.join(f'<stop offset="{i / (len(GRADIENT) - 1):g}" stop-color="{PALETTE[c][1]}"/>'
+                        for i, c in enumerate(GRADIENT))
+        gradient = f'<linearGradient id="underline" x1="0" y1="0" x2="1" y2="0">{stops}</linearGradient>'
         return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{self.w}" height="{height}" '
                 f'viewBox="0 0 {self.w} {height}" role="img">'
                 f'<title>{escape(title)}</title><desc>{escape(alt or caption or title)}</desc>'
-                f'<defs>{markers}</defs><rect width="100%" height="100%" fill="{BG}"/>'
+                f'<defs>{markers}{gradient}</defs><rect width="100%" height="100%" fill="{BG}"/>'
                 + ''.join(self.parts) + '</svg>\n'), height
 
 
@@ -146,9 +161,12 @@ def header(c, spec):
     lines = c.wrap(spec['title'], c.p['title'], c.w - 2 * c.pad)
     c.y = c.pad
     c.y += c.lines(c.w / 2, c.y, lines, size=c.p['title'], weight=800)
+    if spec.get('subtitle'):
+        sub = c.wrap(spec['subtitle'], c.p['small'], c.w - 2 * c.pad)
+        c.y += c.p['small'] * 0.3 + c.lines(c.w / 2, c.y, sub, size=c.p['small'], fill=SOFT)
     # the underline in the theme's gradient colors marks the title
-    c.parts.append(f'<rect x="{c.w / 2 - c.w * 0.12}" y="{c.y + 8}" width="{c.w * 0.24}" height="4" rx="2" '
-                   f'fill="{PALETTE["purple"][1]}"/>')
+    c.parts.append(f'<rect x="{c.w / 2 - c.w * 0.12}" y="{c.y + 8}" width="{c.w * 0.24}" height="5" rx="2.5" '
+                   f'fill="url(#underline)"/>')
     c.y += c.pad
 
 
@@ -158,13 +176,28 @@ def footer(c, spec):
         c.y += c.lines(c.w / 2, c.y, lines, size=c.p['small'], fill=SOFT, italic=True)
 
 
-def box_with_text(c, x, y, w, text, color, size=None, weight=500, dashed=False):
+def box_with_text(c, x, y, w, text, color, size=None, weight=500, dashed=False, note=None, icon=None):
+    """A box with its text in bold tone, an optional smaller note below and an optional icon on the left.
+    Returns the height. With an icon the text is left-aligned after it; otherwise it is centered."""
     size = size or c.p['body']
-    lines = c.wrap(text, size, w - 2 * 14)
-    h = len(lines) * size * 1.3 + 2 * 14
-    c.rect(x, y, w, h, color, dashed=dashed)
-    c.lines(x + w / 2, y + 14 - size * 0.2, lines, size=size, weight=weight, fill=PALETTE[color][2]
-            if color != 'gray' else INK)
+    small = c.p['small']
+    icon_w = size * 1.3 + 10 if icon else 0
+    inner = w - 2 * 14 - icon_w
+    lines = c.wrap(text, size, inner)
+    notes = c.wrap(note, small, inner) if note else []
+    text_h = len(lines) * size * 1.3 + (len(notes) * small * 1.3 + small * 0.2 if notes else 0)
+    h = max(text_h, size * 1.3 if icon else 0) + 2 * 14
+    c.rect(x, y, w, h, color, dashed=dashed, tint=True)
+    ink = PALETTE[color][2] if color != 'gray' else INK
+    if icon:
+        c.icon(icon, x + 14, y + h / 2 - size * 0.65, size * 1.3, color)
+        tx, anchor = x + 14 + icon_w, 'start'
+    else:
+        tx, anchor = x + w / 2, 'middle'
+    top = y + h / 2 - text_h / 2 - size * 0.2
+    used = c.lines(tx, top, lines, size=size, weight=weight, fill=ink, anchor=anchor)
+    if notes:
+        c.lines(tx, top + used + small * 0.2, notes, size=small, fill=SOFT, anchor=anchor)
     return h
 
 
@@ -274,8 +307,8 @@ def boxes(c, spec):
 def layers(c, spec):
     for i, layer in enumerate(spec['layers']):
         color = layer.get('color') or ('purple', 'blue', 'teal', 'green', 'orange', 'gray')[i % 6]
-        text = layer['text'] + (f'  ·  {layer["note"]}' if layer.get('note') else '')
-        c.y += box_with_text(c, c.pad, c.y, c.w - 2 * c.pad, text, color, weight=600) + c.p['body'] * 0.5
+        c.y += box_with_text(c, c.pad, c.y, c.w - 2 * c.pad, layer['text'], color, weight=700,
+                             note=layer.get('note'), icon=layer.get('icon')) + c.p['body'] * 0.5
     c.y += c.pad / 2
     return len(spec['layers'])
 

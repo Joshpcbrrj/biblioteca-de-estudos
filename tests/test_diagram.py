@@ -1,4 +1,5 @@
 """diagram.py: every diagram type, every fit problem, the reading profiles and the contact sheet."""
+import copy
 import xml.etree.ElementTree as ET
 
 import diagram
@@ -33,7 +34,8 @@ TEXTS = {'flow': 'Mostra a média', 'timeline': '1947', 'compare': '✅ Certo', 
 
 
 def spec(kind, **extra):
-    return {'type': kind, 'title': f'Um {kind} de teste', 'caption': 'Legenda.', **SPECS[kind], **extra}
+    # a deep copy: tests change the lists inside, and SPECS is shared by every test
+    return {'type': kind, 'title': f'Um {kind} de teste', 'caption': 'Legenda.', **copy.deepcopy(SPECS[kind]), **extra}
 
 
 @pytest.mark.parametrize('kind', sorted(SPECS))
@@ -148,3 +150,44 @@ def test_contact_sheet_of_a_chapter_without_images(cli, book):
 def test_contact_sheet_of_a_missing_chapter(cli, book):
     code, r = cli('diagram', '--sheet', 9, '--book', book)
     assert code == 1 and 'no file yet' in r['error']
+
+
+def contrast(a, b):
+    """WCAG contrast ratio between two #RRGGBB colors."""
+    def lum(c):
+        rgb = [int(c[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+        r, g, b_ = (v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4 for v in rgb)
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b_
+    hi, lo = sorted((lum(a), lum(b)), reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+@pytest.mark.parametrize('color', sorted(diagram.PALETTE))
+def test_strong_text_is_readable_on_fill_and_tint(color):
+    fill, _, strong, tint = diagram.PALETTE[color]
+    assert contrast(strong, fill) >= 4.5 and contrast(strong, tint) >= 4.5
+
+
+def test_subtitle_and_gradient_underline():
+    text, *_ = diagram.render(spec('bars', subtitle='Seção 4 · classes'))
+    assert 'Seção 4 · classes' in text and 'url(#underline)' in text and '<linearGradient id="underline"' in text
+
+
+def test_box_with_note_and_icon_draws_both():
+    s = spec('layers')
+    s['layers'][0].update(icon='layers', note='COPY . .')
+    text, _, problems, _ = diagram.render(s)
+    assert 'COPY . .' in text and 'scale(' in text and not problems
+
+
+def test_icon_takes_width_from_the_text_in_the_small_profile():
+    word = 'x' * 51
+    assert not diagram.render(dict(spec('layers'), layers=[{'text': word}]), 'small')[2]
+    problems = diagram.render(dict(spec('layers'), layers=[{'text': word, 'icon': 'layers'}]), 'small')[2]
+    assert any('does not fit' in p for p in problems)
+
+
+def test_unknown_icon_is_a_problem_with_suggestions():
+    s = spec('layers')
+    s['layers'][0]['icon'] = 'foldr'
+    assert any('unknown icon "foldr"' in p and 'folder' in p for p in diagram.render(s)[2])
