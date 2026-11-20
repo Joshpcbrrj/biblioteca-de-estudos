@@ -30,8 +30,9 @@ Types and their fields:
   cards     cards: [{icon, title, items: [text or {text, icon}], code: [...], scene}]   (the cheat sheet,
             up to 12; icon = a name from --icons, or up to 4 characters such as "for")
   scene     steps: [[icon, ...], ...] (up to 4 steps of 1-3 icons), ops: [→ + = ↔], label
-            a scene shows a relation with icons (folder → files, A + B = C); in a card it goes under the
-            items. It demonstrates the idea, never decorates.
+            a scene shows a relation with icons (folder → files, A + B = C); in a card, `scene` is
+            {steps, ops, label} or just the list of steps, and goes under the items. It demonstrates the
+            idea, never decorates.
 
 Colors: blue (input, structure), green (right, output, end), orange (decision, attention),
 red (error), purple (central idea), teal, gray (neutral). Prints JSON with the file written,
@@ -135,11 +136,14 @@ class Canvas:
         if dy:
             self.parts[start:] = [f'<g transform="translate(0,{dy:g})">' + ''.join(self.parts[start:]) + '</g>']
 
+    def unknown_icon(self, name):
+        near = icons.suggest(name)
+        self.problems.append(f'unknown icon "{name}"' + (f' (did you mean {", ".join(near)}?)' if near else ''))
+
     def icon(self, name, x, y, size, color):
         """Draws a named icon in the color's strong tone; an unknown name is reported, with suggestions."""
         if not icons.known(name):
-            near = icons.suggest(name)
-            self.problems.append(f'unknown icon "{name}"' + (f' (did you mean {", ".join(near)}?)' if near else ''))
+            self.unknown_icon(name)
             return False
         self.parts.append(icons.draw(name, x, y, size, PALETTE[color][2]))
         return True
@@ -488,6 +492,14 @@ def card_layout(c, card, number, w, size, small):
     """Measures one cheat-sheet card once (wrapping reports problems, so it must run only once).
     A scene goes below the items, across the card: beside them it squeezes the text in a 3-column sheet."""
     icon = str(card.get('icon', '') or '')
+    if len(icon) > 4 and not icons.known(icon):
+        # up to 4 characters is a text mark ("for", "[ ]"); longer is meant as an icon name, so a typo is reported
+        c.unknown_icon(icon)
+    scene = card.get('scene')
+    if isinstance(scene, list):
+        scene = {'steps': scene}
+    elif scene is not None and not isinstance(scene, dict):
+        raise ValueError(f'card {number} scene must be {{steps, ops, label}} or a list of steps')
     badge = size * 2.1 if icon else 0
     inner = w - 2 * 14
     title = c.wrap(f'{number}. {card["title"]}', size, inner - (badge + 10 if badge else 0))
@@ -501,10 +513,10 @@ def card_layout(c, card, number, w, size, small):
             c.problems.append(f'code "{line}" does not fit in a card')
     head = max(badge, len(title) * size * 1.3)
     body = sum(len(lines) for _, lines in items) * small * 1.45 + (len(code) * small * 1.3 + 14 if code else 0)
-    scene_h = scene_size(c, inner, card['scene'])[2] + small if card.get('scene') else 0
+    scene_h = scene_size(c, inner, scene)[2] + small if scene else 0
     h = 14 + head + small * 0.6 + body + scene_h + 14
     return {'icon': icon, 'badge': badge, 'inner': inner, 'title': title, 'items': items,
-            'code': code, 'head': head, 'h': h}
+            'code': code, 'head': head, 'h': h, 'scene': scene}
 
 
 def draw_card(c, card, lay, x, y, w, h, color, size, small):
@@ -536,8 +548,8 @@ def draw_card(c, card, lay, x, y, w, h, color, size, small):
                        f'fill="#FFFFFF" opacity="0.75"/>')
         c.lines(x + 20, cy + 4, lay['code'], size=small, anchor='start', mono=True)
         cy += code_h + 10
-    if card.get('scene'):
-        scene_block(c, x + 14, cy + small * 0.6, lay['inner'], card['scene'], color)
+    if lay['scene']:
+        scene_block(c, x + 14, cy + small * 0.6, lay['inner'], lay['scene'], color)
 
 
 def cards(c, spec, profile):

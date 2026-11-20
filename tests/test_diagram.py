@@ -268,3 +268,24 @@ def test_a_long_scene_label_wraps_inside_the_card():
     s['cards'][0]['scene'] = {'steps': [['folder'], ['file']], 'label': 'Memória compartilhada entre as conversas'}
     text, _, problems, _ = diagram.render(s, 'small')
     assert 'Memória compartilhada entre as conversas' not in text and 'compartilhada' in text and not problems
+
+
+def test_a_misspelled_card_icon_is_a_problem_not_a_text_badge():
+    s = spec('cards')
+    s['cards'][0]['icon'] = 'databse'
+    problems = diagram.render(s)[2]
+    assert any('unknown icon "databse"' in p and 'database' in p for p in problems)
+
+
+def test_a_card_scene_may_be_a_list_of_steps():
+    s = spec('cards')
+    s['cards'][0]['scene'] = [['folder'], ['file']]
+    _, _, problems, _ = diagram.render(s)
+    assert not problems
+
+
+def test_a_card_scene_in_another_shape_is_an_invalid_spec():
+    s = spec('cards')
+    s['cards'][0]['scene'] = 'folder'
+    with pytest.raises(ValueError, match='scene must be'):
+        diagram.render(s)
