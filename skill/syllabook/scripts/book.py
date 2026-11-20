@@ -149,11 +149,14 @@ def skeleton(data, ch, lab, review):
     if n > 1:
         lines += [f'> 🔥 **{lab["Warm-up"]}:** <!-- TODO: 1–2 questions on earlier chapters, answers hidden -->', '',
                   f'## {lab["Where we left off"]}', '', '<!-- TODO: 2–3 sentences -->', '']
+    topic_todo = ('<!-- TODO: why → definition → example → code/procedure with real output '
+                  '→ diagram → common mistake -->')
     for topic in ch.get('topics') or ['<!-- TODO: topic -->']:
-        lines += [f'## {topic}', '',
-                  '<!-- TODO: why → definition → example → code/procedure with real output → diagram → common mistake -->', '']
-    lines += [f'## 🏋️ {lab["Practice"]}', '', '<!-- TODO: worked example → complete it → on your own → challenge -->', '',
-              f'## 🧠 {lab["Quick review"]}', '', '<!-- TODO: 3–5 questions, at least one from an earlier chapter -->', '',
+        lines += [f'## {topic}', '', topic_todo, '']
+    lines += [f'## 🏋️ {lab["Practice"]}', '',
+              '<!-- TODO: worked example → complete it → on your own → challenge -->', '',
+              f'## 🧠 {lab["Quick review"]}', '',
+              '<!-- TODO: 3–5 questions, at least one from an earlier chapter -->', '',
               f'## 🤖 {lab["Study with an AI tutor"]}', '', '<!-- TODO: 2 ready-to-copy prompts -->', '',
               f'> ➡️ **{lab["Next"]}:** <!-- TODO -->', '',
               f'## 📌 {lab["Summary"]}', '', '<!-- TODO: table: item | one sentence -->', '',
@@ -198,7 +201,8 @@ def cmd_brief(args):
         brief['original_sections'] = ch['sources_original']
     if data.get('translation_of'):
         original = os.path.join(os.path.dirname(book_dir), data['translation_of'])
-        brief['original_chapter'] = os.path.relpath(chapter_path(original, n) or original, book_dir).replace(os.sep, '/')
+        source = chapter_path(original, n) or original
+        brief['original_chapter'] = os.path.relpath(source, book_dir).replace(os.sep, '/')
         brief['glossary'] = data.get('glossary')
     out(brief)
 

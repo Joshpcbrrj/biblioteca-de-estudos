@@ -86,7 +86,8 @@ def book_files(book_dir, data, lab):
     order = [os.path.join(folder, n) for n in names if n.startswith('00-')]
     order += [p for p in (chapter_path(book_dir, n) for n in chapter_numbers(data)) if p]
     for label in ('Final mock exam', 'Glossary'):
-        order += [os.path.join(folder, n) for n in names if slugify(lab[label]) in n and os.path.join(folder, n) not in order]
+        order += [os.path.join(folder, n) for n in names
+                  if slugify(lab[label]) in n and os.path.join(folder, n) not in order]
     return order
 
 
@@ -166,7 +167,8 @@ def epub_markdown(files, lab):
     for path in files:
         text = drop_block(read(path), 'nav')
         # explicit ids on the chapter titles, so links between chapters survive the merge
-        text = re.sub(r'^# (.+)$', lambda m: f'# {m.group(1)} {{#{file_id(path)}}}', text, count=1, flags=re.M)
+        anchor = file_id(path)
+        text = re.sub(r'^# (.+)$', lambda m, a=anchor: f'# {m.group(1)} {{#{a}}}', text, count=1, flags=re.M)
         text = LINK_MD.sub(lambda m: f']({m.group(2) or "#" + file_id(m.group(1))})', text)
         text, found = split_answers(text, len(answers) + 1)
         answers += [(k, h1(path), s, b) for k, s, b in found]
@@ -174,7 +176,7 @@ def epub_markdown(files, lab):
     if answers:
         lines = [f'# {lab["Answers"]} {{#answers}}', '']
         current = None
-        for k, chapter, summary, body in answers:
+        for k, chapter, _summary, body in answers:
             if chapter != current:
                 lines += [f'## {chapter}', '']
                 current = chapter
@@ -278,7 +280,7 @@ def cmd_book(args):
 
 def library_books(root):
     books = []
-    for origin, folder in COLLECTIONS.items():
+    for folder in COLLECTIONS.values():
         for path in sorted(glob.glob(os.path.join(root, folder, '*', 'book.yaml'))):
             data = load_yaml(path)
             books.append({'folder': folder, 'dir': os.path.dirname(path), 'data': data})
@@ -363,8 +365,11 @@ def cmd_site(args):
         group = [b for b in books if b['folder'] == folder]
         title = lab['Created books' if origin == 'created' else 'Improved materials']
         home += [f'## {title}', '']
-        home += [book_rows(group, settings, lab, lambda b: f'{folder}/{os.path.basename(b["dir"])}/README.md'), '']\
-            if group else ['—', '']
+        if group:
+            home += [book_rows(group, settings, lab,
+                               lambda b, f=folder: f'{f}/{os.path.basename(b["dir"])}/README.md'), '']
+        else:
+            home += ['—', '']
         section = []
         for b in group:
             d, src = b['data'], b['dir']

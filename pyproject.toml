@@ -1,0 +1,24 @@
+# Settings for the kit's development tools (tests, coverage, lint).
+# The skill itself has no package to install: Claude runs its scripts directly.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["slow: builds a real EPUB or website (needs pandoc or zensical)"]
+
+[tool.coverage.run]
+source = ["skill/syllabook/scripts", "tools"]
+branch = true
+
+[tool.coverage.report]
+# the CI fails below this; raise it as coverage grows, never lower it
+fail_under = 95
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["tests/fixtures"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B"]

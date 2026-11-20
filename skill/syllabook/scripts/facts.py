@@ -18,7 +18,9 @@ from common import chapter_path, fail, find_book, out
 
 PATTERNS = {
     'date': re.compile(r'\b(1[0-9]{3}|20[0-9]{2})\b|\b\d{1,2}/\d{1,2}/\d{2,4}\b'),
-    'number': re.compile(r'\b\d+([.,]\d+)?\s?(%|por cento|percent|km|kg|mb|gb|tb|mhz|ghz|hz|v|w|ms|s|min|h|bpm|x)\b', re.I),
+    # (?!\w) instead of \b: "%" is not a word character, so \b would never match after it
+    'number': re.compile(r'\b\d+([.,]\d+)?\s?'
+                         r'(%|por cento|percent|km|kg|mb|gb|tb|mhz|ghz|hz|v|w|ms|s|min|h|bpm|x)(?!\w)', re.I),
     'quote': re.compile(r'[“"«][^”"»]{12,}[”"»]'),
     # a capitalized word that does not start the sentence: likely a person, place or product
     'name': re.compile(r'(?<=[a-zà-ÿ,;:)] )[A-ZÀ-Ý][\w-]+'),

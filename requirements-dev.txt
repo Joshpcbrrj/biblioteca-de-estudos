@@ -1,0 +1,7 @@
+# Tools to develop and test the kit: pip install -r requirements-dev.txt
+pytest
+pytest-cov
+ruff
+pyyaml
+pypandoc_binary   # pandoc, to build the EPUB in the tests
+zensical          # to build the website in the tests

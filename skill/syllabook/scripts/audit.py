@@ -33,7 +33,9 @@ def audit_chapter(path, n, lab, limits, language, errors, warnings):
     name = os.path.basename(path)
     text = open(path, encoding='utf-8').read()
     lines = text.splitlines()
-    where = lambda i: f'{name}:{i}'
+
+    def where(i):
+        return f'{name}:{i}'
 
     if '<!-- TODO' in text:
         errors.append(f'{name}: {text.count("<!-- TODO")} TODO placeholder(s) left')
@@ -137,7 +139,8 @@ def main():
             errors.append('README.md missing (the book front page)')
         img = os.path.join(book_dir, 'img')
         if os.path.isdir(img):
-            existing = {os.path.relpath(f, img).replace(os.sep, '/') for f in glob.glob(os.path.join(img, '**', '*'), recursive=True)
+            existing = {os.path.relpath(f, img).replace(os.sep, '/')
+                        for f in glob.glob(os.path.join(img, '**', '*'), recursive=True)
                         if os.path.isfile(f) and '_source' not in f and not f.endswith('CREDITS.md')}
             for orphan in sorted(existing - used):
                 warnings.append(f'image not used in any chapter: img/{orphan}')

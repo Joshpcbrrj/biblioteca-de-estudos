@@ -9,6 +9,8 @@ Thank you for helping. This project is made for people who study on their own, a
 - [I found an error in a book](#i-found-an-error-in-a-book)
 - [I want to suggest a topic](#i-want-to-suggest-a-topic)
 - [I want to change the skill or the scripts](#i-want-to-change-the-skill-or-the-scripts)
+- [Tests](#tests)
+- [Translations](#translations)
 - [General rules](#general-rules)
 
 ## I found an error in a book
@@ -24,10 +26,34 @@ Open an issue with the **Suggest a topic** form. Tell us what you want to learn 
 1. Open an issue first, describing the change, so we can agree on the approach.
 2. Fork the repository and create a branch with a short name (e.g. `fix-audit-tables`).
 3. Follow the project style: the skill and code in English, short sentences, one term per concept.
-4. Run the kit tests before sending: `pip install pyyaml`, then `python tests/run.py`. The "Kit tests" Action runs the same on every pull request.
+4. Run the checks before sending (see [Tests](#tests)). The "Kit tests" Action runs the same on every pull request, on Windows and Linux.
 5. Open the pull request and fill in the checklist that appears.
 
 Design decisions are recorded in `docs/decisions/`. If your change goes against one of them, explain why in the pull request.
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+ruff check .              # lint
+pytest --cov              # all tests, with coverage (must stay at 95% or more)
+pytest tests/test_build.py   # only one part
+pytest -m "not slow"      # skip the tests that build a real EPUB or website
+```
+
+There is one test file per part of the kit:
+
+| File | Tests |
+| --- | --- |
+| `test_common.py` | shared helpers, and the contract that every style file has every label the scripts use |
+| `test_book.py` | each `book.yaml` validation rule, the chapter brief and skeleton, progress and status |
+| `test_audit.py` | each audit check, per chapter and for the whole book, in both reading profiles |
+| `test_facts.py` | which sentences need a fact check |
+| `test_build.py` | the EPUB, navigation, map, zips, library lists and the website (built with Zensical) |
+| `test_tools.py` | the translation checker and the skill packager |
+| `test_repo.py` | the skill's structure, the documentation and the library skeleton |
+
+**Adding a rule to a script?** Add one test case for it: most files have a table of cases (`ERRORS`, `WARNINGS`) where a new rule is one more line. The sample book in `tests/fixtures/sample-book/` passes every check; tests copy it and break one thing at a time.
 
 ## Translations
 

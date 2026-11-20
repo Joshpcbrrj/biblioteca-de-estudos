@@ -34,11 +34,11 @@ def digest(path):
     return hashlib.sha256(data).hexdigest()[:12]
 
 
-def english_pages():
-    for base, dirs, files in os.walk(ROOT):
+def english_pages(root=ROOT):
+    for base, dirs, files in os.walk(root):
         dirs[:] = [d for d in dirs if not d.startswith('.') or d == '.github']
         for name in files:
-            rel = os.path.relpath(os.path.join(base, name), ROOT).replace(os.sep, '/')
+            rel = os.path.relpath(os.path.join(base, name), root).replace(os.sep, '/')
             if not name.endswith('.md') or name.endswith('.pt-BR.md') or rel in EXEMPT_FILES:
                 continue
             if rel.startswith(EXEMPT_DIRS):
@@ -52,11 +52,11 @@ def translation_of(rel):
     return rel[:-3] + '.pt-BR.md'
 
 
-def check():
+def check(root=ROOT):
     problems = []
-    for rel in sorted(english_pages()):
+    for rel in sorted(english_pages(root)):
         pt = translation_of(rel)
-        pt_path = os.path.join(ROOT, pt)
+        pt_path = os.path.join(root, pt)
         if not os.path.exists(pt_path):
             problems.append(f'missing: {pt}')
             continue
@@ -65,14 +65,14 @@ def check():
             problems.append(f'no translation-of line: {pt}')
         elif m.group(1) != os.path.basename(rel):
             problems.append(f'points to {m.group(1)} instead of {os.path.basename(rel)}: {pt}')
-        elif m.group(2) != digest(os.path.join(ROOT, rel)):
+        elif m.group(2) != digest(os.path.join(root, rel)):
             problems.append(f'outdated (English page changed): {pt}')
-    for base, dirs, files in os.walk(ROOT):
+    for base, dirs, files in os.walk(root):
         dirs[:] = [d for d in dirs if not d.startswith('.')]
         for name in files:
             if name.endswith('.pt-BR.md'):
-                rel = os.path.relpath(os.path.join(base, name), ROOT).replace(os.sep, '/')
-                if not os.path.exists(os.path.join(ROOT, rel.replace('.pt-BR.md', '.md'))):
+                rel = os.path.relpath(os.path.join(base, name), root).replace(os.sep, '/')
+                if not os.path.exists(os.path.join(root, rel.replace('.pt-BR.md', '.md'))):
                     problems.append(f'orphan (no English page): {rel}')
     return problems
 
