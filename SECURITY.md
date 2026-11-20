@@ -1,19 +1,21 @@
-# Segurança
+# Security
 
-## Como relatar um problema
+**English** | [Português](SECURITY.pt-BR.md)
 
-Se você encontrar um problema de segurança na skill ou nos scripts (por exemplo, algo que exponha tokens, senhas ou arquivos do usuário), **não abra uma issue pública**.
+## Reporting a problem
 
-Use o relato privado do GitHub: aba **Security** do repositório → **Report a vulnerability**. Descreva o problema, como reproduzi-lo e o impacto.
+If you find a security problem in the skill or the scripts (for example, something that exposes the user's tokens, passwords or files), **do not open a public issue**.
 
-A resposta inicial vem em até 7 dias. Quando houver correção, ela entra no [CHANGELOG](CHANGELOG.md) e no aviso de segurança do repositório.
+Use GitHub's private reporting: the repository's **Security** tab → **Report a vulnerability**. Describe the problem, how to reproduce it and its impact.
 
-## Boas práticas que a skill segue
+You will get a first answer within 7 days. When there is a fix, it goes into the [CHANGELOG](CHANGELOG.md) and the repository's security advisory.
 
-- Nunca pede que você cole tokens, senhas ou chaves no chat. As conexões (GitHub, Notion, Google Drive) são feitas pelos conectores do Claude.
-- Não baixa instruções da internet durante o uso: tudo o que a skill segue vem no pacote instalado.
-- Materiais que você envia servem só de fonte e não são publicados.
+## Practices the skill follows
 
-## Versões com suporte
+- It never asks you to paste tokens, passwords or keys into the chat. Connections (GitHub, Notion, Google Drive) go through Claude's connectors.
+- It does not download instructions from the internet while running: everything it follows comes in the installed package.
+- Materials you send are used only as sources and are never published.
 
-Só a versão mais recente da skill recebe correções.
+## Supported versions
+
+Only the latest version of the skill receives fixes.

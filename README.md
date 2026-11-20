@@ -1,34 +1,40 @@
-# 📚 Criador de Estudos e Aprimorador de Materiais
+# 📚 Syllabook
 
-Uma skill do Claude para **aprender sozinho**: ela cria livros-curso sobre qualquer tema e aprimora os materiais de estudo que você já tem. O resultado é seu: Markdown no seu GitHub, EPUB para ler em qualquer leitor, um site com busca e, se você quiser, uma cópia no Notion.
+**English** | [Português](README.pt-BR.md)
 
-> 🚧 **Em reformulação.** A skill está sendo refeita do zero. O roteiro e as decisões estão em [`plano/PLANO.md`](plano/PLANO.md). Ainda não há versão para instalar.
+**Turn any topic or study material into a book you can actually learn from.**
 
-## O que ela faz
+Syllabook is a Claude skill for self-learners. It writes course-books on any topic and improves the study materials you already have. Everything it produces is yours: Markdown in your GitHub repository, an EPUB for any e-reader, a searchable website and, if you want, a copy in Notion.
 
-- **Cria um livro a partir de um tema.** Você diz o que quer aprender; a skill pesquisa, apresenta um parecer e uma ementa, e você ajusta até aprovar. Depois ela escreve o livro inteiro, do básico ao intermediário.
-- **Aprimora um material seu.** Notion, PDF, EPUB, DOCX, Google Drive, texto ou link. A skill mantém a proposta do original, corrige, completa o que falta e reescreve para facilitar o estudo, a revisão e a pesquisa.
-- **Funciona para áreas diferentes:** programação e matemática, idiomas, habilidades práticas (música, eletrônica...) e temas de conhecimento geral (como a história da computação).
+> 🚧 **Being rebuilt.** The skill is being rewritten from scratch. The roadmap and decisions are in [`plano/PLANO.md`](plano/PLANO.md) (in Portuguese). There is no version to install yet.
 
-Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito comentado, revisões, simulado final e glossário.
+## What it does
 
-## Como o repositório está organizado
+- **Creates a book from a topic.** Tell it what you want to learn. It researches, shows a short assessment and a syllabus, and you adjust until you approve. Then it writes the whole book, from beginner to intermediate.
+- **Improves your study material.** Notion, PDF, EPUB, DOCX, Google Drive, plain text or a link. It keeps the purpose of the original, fixes errors, fills gaps and rewrites it for study, review and research.
+- **Translates a book** into another language, adapting examples and terms to the new readers.
+- **Works across fields:** programming and math, languages, practical skills (music, electronics...) and general knowledge (such as the history of computing).
+- **Speaks your language:** it detects or asks the language of the conversation and of the book.
 
-| Pasta | O que tem |
+Every book includes a map with links, a placement test, exercises with commented answers, spaced reviews, a final mock exam and a glossary.
+
+## Repository layout
+
+| Folder | Contents |
 | --- | --- |
-| [`livros-criados/`](livros-criados/) | Livros feitos a partir de uma ementa |
-| [`materiais-aprimorados/`](materiais-aprimorados/) | Materiais de estudo aprimorados |
-| [`site/`](site/) | Fonte do site com busca (GitHub Pages) que mostra todos os livros |
-| [`docs/`](docs/) | Documentação: como usar, complementos (GitHub, Notion, Google Drive, Docling), referência |
-| [`plano/`](plano/) | Plano da reformulação (temporário) |
+| [`created-books/`](created-books/) | Books written from a syllabus |
+| [`improved-materials/`](improved-materials/) | Improved study materials |
+| [`site/`](site/) | Source of the searchable website (GitHub Pages) that shows every book |
+| [`docs/`](docs/) | Documentation: how to use, integrations (GitHub, Notion, Google Drive, Docling), reference |
+| [`plano/`](plano/) | Rebuild plan (temporary, in Portuguese) |
 
-Este repositório é um **template**: quem usar "Use this template" recebe a skill e as pastas vazias, e guarda os próprios livros no próprio GitHub.
+This repository is a **template**: click **Use this template** to get the skill and the empty folders, and keep your own books in your own GitHub account.
 
-## Contribuir
+## Contributing
 
-Achou um erro ou quer sugerir um tema? Abra uma [issue](../../issues/new/choose). Para contribuir com a skill, veja o [CONTRIBUTING.md](CONTRIBUTING.md). Este projeto segue um [Código de Conduta](CODE_OF_CONDUCT.md).
+Found an error or want to suggest a topic? Open an [issue](../../issues/new/choose). To contribute to the skill, see [CONTRIBUTING.md](CONTRIBUTING.md). This project follows a [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Licença
+## License
 
-- Conteúdo (livros e documentação): [CC BY-SA 4.0](LICENSE).
-- Código (skill e scripts): [MIT](LICENSE-CODIGO).
+- Content (books and documentation): [CC BY-SA 4.0](LICENSE).
+- Code (skill and scripts): [MIT](LICENSE-CODIGO).

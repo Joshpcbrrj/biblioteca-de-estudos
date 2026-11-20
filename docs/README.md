@@ -1,14 +1,16 @@
-# Documentação
+# Documentation
 
-A documentação segue o modelo [Diátaxis](https://diataxis.fr/): cada parte responde a uma necessidade diferente de quem lê.
+**English** | [Português](README.pt-BR.md)
 
-| Parte | Para quando você quer... | Situação |
+The documentation follows the [Diátaxis](https://diataxis.fr/) model: each part answers a different need of the reader.
+
+| Part | When you want to... | Status |
 | --- | --- | --- |
-| **Tutorial** | aprender fazendo: seu primeiro livro, do zero ao site | a escrever |
-| [**Complementos**](complementos/) | conectar ou instalar algo à parte: GitHub, Notion, Google Drive, Docling, GitHub Pages | em andamento |
-| **Guias** | fazer uma tarefa: criar a sua biblioteca, publicar um livro pronto, continuar um livro | a escrever |
-| **Referência** | consultar um detalhe: estrutura de pastas, `livro.yaml`, `biblioteca.yaml`, scripts | a escrever |
-| **Explicação** | entender o porquê: como a skill funciona, a didática, a economia de tokens | a escrever |
-| **Decisões** | saber por que o projeto é como é (registros de decisão) | a escrever |
+| **Tutorial** | learn by doing: your first book, from zero to the website | to be written |
+| [**Integrations**](integrations/) | connect or install something separately: GitHub, Notion, Google Drive, Docling, GitHub Pages | in progress |
+| **Guides** | do a task: create your library, publish a finished book, continue a book | to be written |
+| **Reference** | look up a detail: folder layout, `book.yaml`, `library.yaml`, scripts | to be written |
+| **Explanation** | understand the why: how the skill works, the teaching approach, token savings | to be written |
+| **Decisions** | know why the project is the way it is (decision records) | to be written |
 
-Enquanto a reformulação não termina, o roteiro completo e as decisões estão em [`plano/PLANO.md`](../plano/PLANO.md).
+Until the rebuild is done, the full roadmap and decisions are in [`plano/PLANO.md`](../plano/PLANO.md) (in Portuguese).

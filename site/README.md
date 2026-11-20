@@ -1,15 +1,17 @@
-# 🌐 Site da biblioteca
+# 🌐 Library website
 
-Esta pasta guarda a **fonte** do site que mostra todos os livros (criados e aprimorados), com busca instantânea em todos eles, código com botão de copiar, respostas que abrem ao clicar, modo escuro e link para baixar cada EPUB.
+**English** | [Português](README.pt-BR.md)
 
-O site pronto **não fica no repositório**: a cada envio para o GitHub, uma Action monta o site a partir dos livros e publica no GitHub Pages, em `https://<seu-usuario>.github.io/<nome-do-repositorio>/`.
+This folder holds the **source** of the website that shows every book (created and improved), with instant search across all of them, code with a copy button, answers that open on click, dark mode and a link to download each EPUB.
 
-> 🚧 A configuração do site entra na fase 3 da reformulação (veja [`plano/PLANO.md`](../plano/PLANO.md), seção 8).
+The built website **is not stored in the repository**: on every push to GitHub, an Action builds the site from the books and publishes it on GitHub Pages, at `https://<your-username>.github.io/<repository-name>/`.
 
-O que vai ficar aqui:
+> 🚧 The website settings arrive in phase 3 of the rebuild (see [`plano/PLANO.md`](../plano/PLANO.md), section 8, in Portuguese).
 
-- a configuração do gerador do site;
-- a página inicial (a estante com as duas coleções);
-- ajustes visuais, se houver.
+What will live here:
 
-Para ativar o site no seu repositório, siga o guia do GitHub Pages em [`docs/complementos/`](../docs/complementos/) (quando publicado).
+- the settings of the site generator;
+- the home page (the shelf with both collections);
+- visual tweaks, if any.
+
+To turn the website on in your repository, follow the GitHub Pages guide in [`docs/integrations/`](../docs/integrations/) (once published).

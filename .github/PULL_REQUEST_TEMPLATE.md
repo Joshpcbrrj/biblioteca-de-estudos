@@ -1,19 +1,20 @@
-## O que muda
+## What changes
 
-<!-- Uma ou duas frases. Ligue à issue: "Resolve #123". -->
+<!-- One or two sentences. Link the issue: "Closes #123". -->
 
-## Por quê
+## Why
 
-<!-- O problema que a mudança resolve. -->
+<!-- The problem the change solves. -->
 
-## Como conferi
+## How I checked it
 
-<!-- Testes do kit, um livro de exemplo gerado, prévia de imagens... -->
+<!-- Kit tests, a sample book built, image previews... -->
 
-## Antes de enviar
+## Before sending
 
-- [ ] Textos em português do Brasil, frases curtas, um termo por conceito.
-- [ ] Nada copiado de terceiros além de citações curtas com fonte.
-- [ ] Sem dados pessoais, senhas ou tokens.
-- [ ] `CHANGELOG.md` atualizado em "Não lançado", se a mudança afeta quem usa a skill.
-- [ ] Se contraria uma decisão de `docs/decisoes/`, expliquei por quê acima.
+- [ ] Skill and code in English; short sentences; one term per concept.
+- [ ] If I changed an English documentation page, I updated the `.pt-BR.md` version (or said here that it needs translating).
+- [ ] Nothing copied from third parties beyond short quotations with their source.
+- [ ] No personal data, passwords or tokens.
+- [ ] `CHANGELOG.md` updated under "Unreleased", if the change affects people using the skill.
+- [ ] If it goes against a decision in `docs/decisions/`, I explained why above.

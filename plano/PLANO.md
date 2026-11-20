@@ -25,6 +25,7 @@ Documento de trabalho. Reúne as decisões tomadas com o dono do projeto (nov/20
 19. Fora do escopo
 20. Economia de tokens
 21. Robustez
+22. Idiomas e nomes em inglês (decisão de 2026-11-20; vale sobre o resto do plano)
 
 ## 1. Objetivo e casos de uso
 
@@ -41,7 +42,7 @@ O que faz o autodidata desistir é falta de **rumo** (por onde começar, quanto 
 
 | Tema | Decisão |
 | --- | --- |
-| Nome | "Criador de Estudos e Aprimorador de Materiais"; `name` técnico `criador-de-estudos`; repositório renomeado para `criador-de-estudos` |
+| Nome | **Syllabook** (syllabus + book), decidido em 2026-11-20; `name` técnico `syllabook`; repositório renomeado para `syllabook`. Onde o plano diz "Criador de Estudos" ou `criador-de-estudos`, leia Syllabook / `syllabook` |
 | Onde roda | Claude (claude.ai / app), pago e gratuito; também deve funcionar no Claude Code |
 | Fonte da verdade | Markdown. Notion deixa de ser a fonte; vira cópia feita no fim |
 | Final padrão | **Publicar no GitHub + criar a cópia no Notion** (o fundamental); se não houver conexão e o usuário não quiser conectar, entrega o zip e explica onde enviar |
@@ -457,3 +458,73 @@ Os pilotos medem o gasto (tokens por capítulo, quando a interface mostrar; no C
 | Material de terceiros (Aprimorar) | Contrato de fidelidade e regras de direitos autorais (seção 13) |
 | Script com erro | Testes automáticos do kit a cada push; scripts que podem ser rodados de novo sem estragar nada |
 | Skill que piora com o tempo | Pilotos como avaliação fixa; rodar de novo a cada mudança grande |
+
+## 22. Idiomas e nomes em inglês
+
+Decisão do dono (2026-11-20): o projeto passa a ser **em inglês por padrão**, para alcançar mais gente. Esta seção vale sobre os nomes usados no resto do plano, que continua em português por ser documento interno e temporário.
+
+| Camada | Idioma |
+| --- | --- |
+| Skill inteira (`SKILL.md`, modos, referências, mensagens fixas) | inglês |
+| Identificadores (pastas, arquivos, chaves de yaml, scripts) | inglês |
+| Descrição da skill (frontmatter) | inglês, com palavras-chave em português e espanhol para acionar a skill nesses idiomas ("livro, curso, apostila / libro, curso") |
+| README e toda a documentação | inglês por padrão, com seletor no topo de cada página (`English \| Português`) e a versão em português ao lado (`arquivo.md` + `arquivo.pt-BR.md`) |
+| Conversa e livros | o idioma que o usuário escolher |
+
+**Só inglês e português na documentação.** Para a tradução não ficar velha, cada `*.pt-BR.md` guarda no topo um comentário com o hash da versão em inglês que traduziu; o teste do kit avisa quando o inglês mudou e a tradução não.
+
+**Estilo nos livros:** como as instruções são em inglês, o risco é o texto sair "com cara de tradução". Por isso os exemplos que a skill imita ficam no idioma do livro (começa com pt-BR), e cada idioma tem um arquivo curto de estilo (`references/style/<idioma>.md`: tom, termos técnicos, aspas, números).
+
+### Idioma na conversa
+
+- Duas configurações separadas: **idioma da conversa** e **idioma do livro**.
+- **Deduzir antes de perguntar:** se a primeira mensagem do usuário está num idioma, a skill confirma em uma linha ("Vou conversar e escrever o livro em português (pt-BR). Quer mudar algum dos dois?").
+- Sem como deduzir (skill aberta sem mensagem), a primeira pergunta aparece em português, inglês e espanhol: "🌐 Em que idioma seguimos? · Which language should we use? · ¿En qué idioma seguimos?".
+- Padrão: `default_language` do `library.yaml` (no repositório do autor, `pt-BR`; no template, `auto` = idioma da primeira mensagem, ou pt-BR se não der para saber).
+- A escolha fica gravada no `book.yaml`; ao continuar, não pergunta de novo.
+
+### Menu com a opção de traduzir
+
+```text
+1. Create a book from a topic            (Criar)
+2. Improve a study material              (Aprimorar)
+3. Translate a book into another language (Traduzir)  ← novo
+4. Publish a finished book               (Publicar livro pronto)
+5. Continue a book                       (Continuar)
+```
+
+Traduzir é **adaptar**, segmentado como a criação:
+
+- glossário de termos antes do 1º capítulo (original → tradução), seguido sempre;
+- exemplos, nomes, unidades, moedas e referências culturais adaptados;
+- código igual (só os comentários traduzidos), conferido de novo pelo script de projetos;
+- diagramas SVG redesenhados a partir das especificações, só com o texto traduzido; ilustrações refeitas da fonte HTML;
+- pasta irmã com sufixo do idioma (`docker-compose-na-pratica-en`), as duas versões com link uma para a outra; o site mostra o idioma e permite filtrar;
+- **livros de idiomas:** um livro de inglês para quem fala português não é só traduzido para espanhol (falsos cognatos e pronúncia mudam); a skill avisa que vai adaptar para o novo público.
+
+### Equivalência de nomes (plano → projeto)
+
+| No plano | No projeto |
+| --- | --- |
+| `livros-criados/` | `created-books/` |
+| `materiais-aprimorados/` | `improved-materials/` |
+| `site/` | `site/` |
+| `biblioteca.yaml` | `library.yaml` |
+| `livro.yaml` | `book.yaml` |
+| `capitulos/` | `chapters/` |
+| `projetos/` | `projects/` |
+| `img/CREDITOS.md` | `img/CREDITS.md` |
+| `modos/CRIAR.md`, `APRIMORAR.md`, `PUBLICAR.md` | `modes/CREATE.md`, `IMPROVE.md`, `TRANSLATE.md`, `PUBLISH.md` |
+| `referencias/` (DIDATICA, LIVRO, FONTES, VISUAL, EMENTA, EXEMPLOS, CAPA, `areas/`) | `references/` (TEACHING, BOOK, SOURCES, VISUALS, SYLLABUS, EXAMPLES, COVER, `areas/`, `style/`) |
+| perfis `exatas`, `idiomas`, `habilidades`, `conhecimento` | `stem`, `languages`, `skills`, `knowledge` |
+| scripts `ingerir`, `livro`, `fatos`, `projetos`, `auditar`, `diagrama`, `gerar`, `notion`, `ilustrar` | `ingest`, `book`, `facts`, `projects`, `audit`, `diagram`, `build`, `notion`, `illustrate` |
+| `docs/complementos/` | `docs/integrations/` |
+| `instalar/` | `install/` |
+| `avaliacoes/` | `evals/` |
+
+Os nomes dentro do livro que o leitor vê (títulos como "Como estudar este livro", "Simulado", "Glossário") saem no idioma do livro.
+
+### O que muda nas fases
+
+- **Fase 2** passa a incluir: reescrever em inglês o esboço e o que a fase 1 criou em português (README, CONTRIBUTING, SECURITY, CHANGELOG, READMEs das pastas, `docs/`), criar as versões `.pt-BR.md` com o seletor de idioma, renomear as pastas e o `biblioteca.yaml`, e o teste de tradução desatualizada.
+- O `CODE_OF_CONDUCT.md` ganha a versão oficial em inglês do Contributor Covenant 2.1, e a atual vira `CODE_OF_CONDUCT.pt-BR.md`.

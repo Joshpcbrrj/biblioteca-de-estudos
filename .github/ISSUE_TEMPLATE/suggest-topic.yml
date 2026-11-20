@@ -1,0 +1,32 @@
+name: Suggest a topic (Sugerir tema)
+description: A topic for a new book or an improvement to an existing one · Um tema para um livro novo ou uma melhoria
+title: "[Topic] "
+labels: ["suggestion"]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Topic (Tema)
+      placeholder: "E.g.: Git from scratch, English for travel, basic electronics"
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Why do you want to learn it? (Para que você quer aprender?)
+      description: Work, an exam, a hobby, a project... This helps shape the syllabus. You can write in English or Portuguese.
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Your current level (Seu nível hoje)
+      options:
+        - Never studied it (Nunca estudei)
+        - I know the basics (Sei o básico)
+        - I already use it and want to go deeper (Já uso, quero aprofundar)
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else? (Algo mais?) — optional
+      description: Topics that must be included, reference materials, related books.

@@ -1,35 +1,41 @@
-# Como contribuir
+# Contributing
 
-Obrigado por querer ajudar. Este projeto é feito para quem estuda sozinho, e toda correção deixa os livros melhores para a próxima pessoa.
+**English** | [Português](CONTRIBUTING.pt-BR.md)
 
-## Conteúdo
+Thank you for helping. This project is made for people who study on their own, and every fix makes the books better for the next reader.
 
-- [Achei um erro num livro](#achei-um-erro-num-livro)
-- [Quero sugerir um tema](#quero-sugerir-um-tema)
-- [Quero mudar a skill ou os scripts](#quero-mudar-a-skill-ou-os-scripts)
-- [Regras gerais](#regras-gerais)
+## Contents
 
-## Achei um erro num livro
+- [I found an error in a book](#i-found-an-error-in-a-book)
+- [I want to suggest a topic](#i-want-to-suggest-a-topic)
+- [I want to change the skill or the scripts](#i-want-to-change-the-skill-or-the-scripts)
+- [General rules](#general-rules)
 
-Abra uma issue com o formulário **Reportar erro**. Diga o livro, o capítulo, o trecho e o que está errado. Se souber a correção, mande junto, com a fonte quando for um fato.
+## I found an error in a book
 
-## Quero sugerir um tema
+Open an issue with the **Report an error** form. Give the book, the chapter, the passage and what is wrong. If you know the fix, include it, with a source when it is a fact.
 
-Abra uma issue com o formulário **Sugerir tema**. Conte o que você quer aprender e para quê.
+## I want to suggest a topic
 
-## Quero mudar a skill ou os scripts
+Open an issue with the **Suggest a topic** form. Tell us what you want to learn and why.
 
-1. Abra uma issue antes, explicando a mudança, para combinarmos o caminho.
-2. Faça um fork e uma branch com nome curto (ex.: `corrige-auditor-tabelas`).
-3. Mantenha o padrão do projeto: textos em português do Brasil, frases curtas, um termo por conceito.
-4. Rode os testes do kit antes de enviar (o comando estará aqui quando a nova skill for publicada).
-5. Abra o pull request preenchendo o roteiro que aparece.
+## I want to change the skill or the scripts
 
-As decisões de projeto ficam registradas em `docs/decisoes/`. Se a sua mudança contraria uma delas, explique por quê no pull request.
+1. Open an issue first, describing the change, so we can agree on the approach.
+2. Fork the repository and create a branch with a short name (e.g. `fix-audit-tables`).
+3. Follow the project style: the skill and code in English, short sentences, one term per concept.
+4. Run the kit tests before sending (the command will be here once the new skill is published).
+5. Open the pull request and fill in the checklist that appears.
 
-## Regras gerais
+Design decisions are recorded in `docs/decisions/`. If your change goes against one of them, explain why in the pull request.
 
-- Respeite o [Código de Conduta](CODE_OF_CONDUCT.md).
-- Não envie trechos copiados de livros, cursos ou documentação de terceiros, além de citações curtas com a fonte.
-- Não envie dados pessoais (seus ou de outras pessoas) em issues, commits ou arquivos.
-- Ao contribuir, você concorda que o conteúdo é licenciado sob [CC BY-SA 4.0](LICENSE) e o código sob [MIT](LICENSE-CODIGO).
+## Translations
+
+The documentation is written in English, with a Portuguese version next to each page (`page.md` and `page.pt-BR.md`). When you change an English page, update the Portuguese one too, or say in the pull request that it needs translating.
+
+## General rules
+
+- Follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+- Do not submit passages copied from books, courses or third-party documentation, beyond short quotations with their source.
+- Do not submit personal data (yours or anyone else's) in issues, commits or files.
+- By contributing, you agree that content is licensed under [CC BY-SA 4.0](LICENSE) and code under [MIT](LICENSE-CODIGO).

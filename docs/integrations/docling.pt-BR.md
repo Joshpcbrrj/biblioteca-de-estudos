@@ -1,4 +1,7 @@
+<!-- translation-of: docling.md sha256:abf1150912d8 -->
 # Docling: converter documentos no seu computador
+
+[English](docling.md) | **Português**
 
 ## Para que serve
 

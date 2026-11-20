@@ -1,0 +1,12 @@
+# Library settings. If you use this repository as a template,
+# change these values; the skill and the scripts read them from here.
+author: "Josué B. Almeida"                          # goes on the cover and in the book metadata
+repository: "Joshpcbrrj/syllabook"                  # <owner>/<name> of the repository
+branch: "main"
+commit_name: "Josue"
+commit_email: "joshpcbrrj@users.noreply.github.com" # GitHub noreply address, never a personal one
+default_language: "pt-BR"                           # conversation and book language; "auto" = language of the first message
+content_license: "CC BY-SA 4.0"
+code_license: "MIT"
+epub_release: "epubs"                               # release tag that holds the EPUBs
+notion_page: ""                                     # Notion page where books are copied (the skill asks and fills it in)

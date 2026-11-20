@@ -1,20 +1,23 @@
-# Complementos
+<!-- translation-of: README.md sha256:bb87a693ab2a -->
+# Integrações
 
-Tudo o que se conecta ou se instala à parte da skill. Nenhum é obrigatório: sem eles, a skill cria o livro do mesmo jeito e entrega um zip para você baixar. Com eles, ela publica e busca materiais sozinha.
+[English](README.md) | **Português**
 
-## Para que serve cada um
+Tudo o que se conecta ou se instala à parte da skill. Nenhuma é obrigatória: sem elas, a skill cria o livro do mesmo jeito e entrega um zip para você baixar. Com elas, ela publica e busca materiais sozinha.
 
-| Complemento | Para que serve | Quando a skill usa | Guia |
+## Para que serve cada uma
+
+| Integração | Para que serve | Quando a skill usa | Guia |
 | --- | --- | --- | --- |
 | **GitHub** | Guardar os livros no seu repositório, salvar o progresso e publicar | início (ponto de controle) e fim (publicação) | a escrever |
 | **Notion** | Ler um material seu para aprimorar; criar a cópia do livro para você anotar | modo Aprimorar e fim | a escrever |
 | **Google Drive** | Buscar livros, PDFs e documentos seus como fonte | quando você tiver materiais para usar | a escrever |
-| **Docling** | Converter PDF, DOCX, PPTX e outros documentos para texto, com tabelas e estrutura | quando você mandar documentos | [docling.md](docling.md) |
+| **Docling** | Converter PDF, DOCX, PPTX e outros documentos para texto, com tabelas e estrutura | quando você mandar documentos | [docling.pt-BR.md](docling.pt-BR.md) |
 | **GitHub Pages** | Publicar o site com busca de todos os livros | depois da primeira publicação | a escrever |
 
-## Onde cada um funciona
+## Onde cada uma funciona
 
-| Complemento | App do Claude no computador | Claude no navegador | Claude Code | Plano gratuito |
+| Integração | App do Claude no computador | Claude no navegador | Claude Code | Plano gratuito |
 | --- | --- | --- | --- | --- |
 | GitHub (conector) | sim | sim | sim (git direto) | sim, mas só cabe 1 conector personalizado |
 | Notion (conector) | sim | sim | sim (MCP) | a conferir |
