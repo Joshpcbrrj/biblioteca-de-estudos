@@ -1,10 +1,11 @@
 # Configuração da biblioteca. Quem usar este repositório como template
-# troca só estes valores; a skill e os scripts leem daqui.
-autor: "Josué B. Almeida"          # vai na capa ("Criado por: ...") e no metadata.yaml
-repositorio: "Joshpcbrrj/biblioteca-de-estudos"
+# troca estes valores; a skill e os scripts leem daqui.
+autor: "Josué B. Almeida"                              # vai na capa e nos metadados dos livros
+repositorio: "Joshpcbrrj/biblioteca-de-estudos"        # <dono>/<nome> do repositório
 branch: "main"
 commit_nome: "Josue"
 commit_email: "joshpcbrrj@users.noreply.github.com"   # e-mail noreply do GitHub, nunca o pessoal
-release_epubs: "epubs"             # tag da release onde ficam os EPUBs
-release_skill: "skill"             # tag da release onde fica o zip da skill
-notion_livros: "419345e204438174b9c7fbbfd07ad21d"              # id da página do Notion onde os livros novos são criados (a skill pergunta e preenche)
+licenca_conteudo: "CC BY-SA 4.0"
+licenca_codigo: "MIT"
+release_epubs: "epubs"                                 # tag da release onde ficam os EPUBs
+notion_pagina: ""                                      # página do Notion onde os livros são copiados (a skill pergunta e preenche)
