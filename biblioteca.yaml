@@ -1,7 +1,7 @@
 # Configuração da biblioteca. Quem usar este repositório como template
 # troca estes valores; a skill e os scripts leem daqui.
 autor: "Josué B. Almeida"                              # vai na capa e nos metadados dos livros
-repositorio: "Joshpcbrrj/biblioteca-de-estudos"        # <dono>/<nome> do repositório
+repositorio: "Joshpcbrrj/syllabook"                    # <dono>/<nome> do repositório
 branch: "main"
 commit_nome: "Josue"
 commit_email: "joshpcbrrj@users.noreply.github.com"   # e-mail noreply do GitHub, nunca o pessoal
