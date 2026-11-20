@@ -1,0 +1,7 @@
+<svg role="img" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><title>Syllabook</title><rect x="8" y="12" width="14" height="42" rx="3" fill="#5B8DEF"/>
+<rect x="25" y="6" width="16" height="48" rx="3" fill="#9B6FE0"/>
+<rect x="44" y="16" width="13" height="38" rx="3" fill="#EE7E5F" transform="rotate(8 50 35)"/>
+<path d="M37 17.5 c-1.5-3-9-3-9 1.5 s9 3 9 8-8 5-9.5 1.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+<rect x="11" y="18" width="8" height="2.6" rx="1.3" fill="#fff" opacity=".85"/>
+<rect x="11" y="45" width="8" height="2.6" rx="1.3" fill="#fff" opacity=".85"/>
+<rect x="4" y="54" width="56" height="5" rx="2.5" fill="#F2B93B"/></svg>

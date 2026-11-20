@@ -1,6 +1,8 @@
-# 📚 Syllabook
+# <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 **English** | [Português](README.pt-BR.md)
+
+![Syllabook: an open book whose pages show a course structure, with modules, chapters and charts](docs/img/syllabook-banner.png)
 
 **Turn any topic or study material into a book you can actually learn from.**
 

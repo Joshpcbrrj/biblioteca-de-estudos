@@ -1,7 +1,9 @@
-<!-- translation-of: README.md sha256:3dc759d26ec8 -->
-# 📚 Syllabook
+<!-- translation-of: README.md sha256:f3afb2d613e5 -->
+# <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
+
+![Syllabook: um livro aberto cujas páginas mostram a estrutura de um curso, com módulos, capítulos e gráficos](docs/img/syllabook-banner.png)
 
 **Transforme qualquer tema ou material de estudo num livro com que dá para aprender de verdade.**
 
