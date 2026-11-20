@@ -23,8 +23,8 @@ jobs:
       - name: Find the books
         id: books
         run: |
-          find created-books improved-materials -mindepth 2 -maxdepth 2 -name book.yaml 2>/dev/null \
-            | xargs -r -n1 dirname > books.txt
+          find created-books improved-materials -mindepth 2 -maxdepth 2 -name book.yaml \
+            -exec dirname {} \; > books.txt 2>/dev/null || true
           echo "count=$(wc -l < books.txt)" >> "$GITHUB_OUTPUT"
           cat books.txt
 

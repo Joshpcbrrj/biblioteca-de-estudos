@@ -3,6 +3,7 @@ pytest
 pytest-cov
 ruff
 actionlint-py     # checks the GitHub workflow files
+shellcheck-py     # used by actionlint to check the shell steps (GitHub runners already have it)
 pyyaml
 pypandoc_binary   # pandoc, to build the EPUB in the tests
 zensical          # to build the website in the tests
