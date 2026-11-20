@@ -34,13 +34,14 @@ Never ask for tokens or passwords in the chat: connections go through Claude's c
 
 - **GitHub connected:** work on the `draft/<slug>` branch of the user's library repository. `book.py done` saves each chapter; commit it right away with the message `<slug>: chapter <n>`. Use `commit_name` and `commit_email` from `library.yaml`.
 - **No GitHub:** at the end of each part of the book (or every 4 chapters), offer a partial zip from `build.py --partial`.
-- If the library repository has no `library.yaml` or book folders yet, create them from `assets/library/` before the first commit.
+- If the library repository has no `library.yaml` or book folders yet, copy `assets/library/` into it before the first commit (everything except `SKELETON.md`, which explains each file), and fill in `library.yaml` and the site address in the README.
+- "GitHub connected" means write access to the repository: repository access with push permission in the Claude app, or `git` in Claude Code. GitHub's own MCP server as a custom connector needs an OAuth app set up by hand; do not suggest it to beginners.
 
 ## 3. Publishing to GitHub
 
 At the end, ask once: "Publish the book to GitHub and create the copy in Notion?" (the default answer is yes for both). Then, for GitHub, use the first option that works:
 
-1. **Connector or git available:** run `build.py lists --library <repo>` so the folder lists include the book, then merge `draft/<slug>` into `branch` (from `library.yaml`), or commit straight to it if there was no draft branch. The Actions build the EPUB and the site (they come with the library skeleton in `assets/library/`).
+1. **Write access available:** run `build.py lists --library <repo>` so the folder lists include the book, then merge `draft/<slug>` into `branch` (from `library.yaml`), or commit straight to it if there was no draft branch. The Actions build the EPUB and the site (they come with the library skeleton in `assets/library/`).
 2. **Not connected, and the user wants to connect now:** send the GitHub guide link, wait, check again, then do option 1.
 3. **The user declines or cannot connect:** run `build.py --out <outputs>` with the downloadable outputs folder (on claude.ai, `/mnt/user-data/outputs`) and deliver the EPUB and the zip. Tell them: extract it at the root of their library repository (the zip already holds `created-books/<slug>/` or `improved-materials/<slug>/`), then upload with GitHub's website (**Add file → Upload files**, dragging the folder) or GitHub Desktop. GitHub's website takes up to 100 files per upload: if the book has more, `build.py` splits the zip into parts and you say which part goes first.
 
@@ -49,10 +50,12 @@ At the end, ask once: "Publish the book to GitHub and create the copy in Notion?
 ## 4. Copying to Notion
 
 1. If `notion_page` in `library.yaml` is empty, ask for the link of the Notion page where books should go, and save it (commit with the book when GitHub is connected).
-2. Create the book's index page under it, then one subpage per chapter, in order.
-3. For each chapter: `python scripts/notion.py <n>` prints the Notion-format content and the list of SVGs. Upload each SVG with the Notion file tools, insert it where the script marks it, and create the page. PNG illustrations are left out (Notion gets only the SVG diagrams).
-4. On the index page, add a callout with the links to the site, the GitHub folder and the EPUB.
-5. If a Notion call fails, retry once with a smaller piece; if it fails again, report which chapter and continue with the next.
+2. **Index page:** `python scripts/notion.py index` prints its title and content (the subtitle, a 📚 callout with the links to the site, the GitHub folder and the EPUB, and the chapter list). Create it under that page.
+3. **Pages, in reading order, under the index:** chapter 0 (`notion.py 0`), each chapter (`notion.py <n>`), the mock exam (`notion.py <its number>`) and the glossary (`notion.py <its file name>`). Each command prints `title`, `content` and `uploads`:
+   - upload each file in `uploads` with the Notion file tools, then replace its `placeholder` in `content` with what the upload returns (an upload is valid for about an hour, so upload right before creating the page);
+   - create the page with that `title` and `content`, sending the content as printed: it is already in Notion's format (toggles, callouts, images);
+   - `left_out` lists the illustrations that stay out of Notion on purpose.
+4. If a Notion call fails, retry once with a smaller piece (half of the content, then append the rest); if it fails again, report which chapter and continue with the next.
 
 ## 5. Mode 4: publish a finished book
 

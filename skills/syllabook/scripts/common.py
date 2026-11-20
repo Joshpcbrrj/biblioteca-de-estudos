@@ -110,6 +110,18 @@ def find_book(arg=None):
     fail('book not found: pass --book <folder>, or run "book.py validate <book.yaml>" first')
 
 
+def first_h1(text):
+    """The first '# ' heading outside code blocks (a '# comment' in Python code is not a title), or ''."""
+    fence = None
+    for line in text.splitlines():
+        m = re.match(r'^\s*(`{3,}|~{3,})', line)
+        if m and (fence is None or m.group(1).startswith(fence)):
+            fence = None if fence else m.group(1)
+        elif fence is None and line.startswith('# '):
+            return line[2:].strip()
+    return ''
+
+
 def chapter_path(book_dir, n):
     found = sorted(glob.glob(os.path.join(book_dir, 'chapters', f'{n:02d}-*.md')))
     return found[0] if found else None

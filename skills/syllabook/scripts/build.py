@@ -25,8 +25,8 @@ import tempfile
 import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import (SKILL, chapter_numbers, chapter_path, fail, find_book, labels, load_yaml, need_yaml,
-                    out, pandoc_path, slugify)
+from common import (SKILL, chapter_numbers, chapter_path, fail, find_book, first_h1, labels, load_yaml,
+                    need_yaml, out, pandoc_path, slugify)
 
 COLLECTIONS = {'created': 'created-books', 'improved': 'improved-materials'}
 GITHUB_UPLOAD_LIMIT = 100  # files per upload on GitHub's website
@@ -61,10 +61,7 @@ def drop_block(text, name):
 
 
 def h1(path):
-    for line in read(path).splitlines():
-        if line.startswith('# '):
-            return line[2:].strip()
-    return os.path.basename(path)
+    return first_h1(read(path)) or os.path.basename(path)
 
 
 def library_settings(start):

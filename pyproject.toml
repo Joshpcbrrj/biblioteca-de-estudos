@@ -7,7 +7,7 @@ addopts = "-q"
 markers = ["slow: builds a real EPUB or website (needs pandoc or zensical)"]
 
 [tool.coverage.run]
-source = ["skills/syllabook/scripts", "tools"]
+source = ["skills/syllabook/scripts", "tools", "install"]
 branch = true
 
 [tool.coverage.report]

@@ -67,6 +67,16 @@ def test_find_book_stops_with_a_clear_error_when_there_is_no_book(capsys):
     assert e.value.code == 1 and 'book not found' in capsys.readouterr().out
 
 
+@pytest.mark.parametrize('text, title', [
+    ('# 1. Listas\n\ntexto', '1. Listas'),
+    ('```python\n# um comentário\n```\n\n# O título', 'O título'),
+    ('````md\n```\n# dentro\n```\n````\n# Fora', 'Fora'),
+    ('Sem título\n\n## Seção', ''),
+])
+def test_first_h1_ignores_comments_inside_code(text, title):
+    assert common.first_h1(text) == title
+
+
 def test_chapter_path(book):
     assert common.chapter_path(str(book), 1).endswith('01-listas.md')
     assert common.chapter_path(str(book), 9) is None

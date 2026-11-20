@@ -53,6 +53,8 @@ There is one test file per part of the kit:
 | `test_diagram.py` | each diagram type in both reading profiles, each fit problem, the contact sheet |
 | `test_projects.py` | projects assembled from code blocks, evolved across chapters, run and checked; unsafe paths refused |
 | `test_ingest.py` | each input type (Markdown, folder, HTML, web address, EPUB, DOCX, PDF), Docling and its fallbacks |
+| `test_notion.py` | the conversion to Notion's format (toggles, callouts, uploads), the index page |
+| `test_install.py` | the Docling installers (shellcheck, PowerShell syntax) and the helper that edits the Claude app's settings |
 | `test_tools.py` | the translation checker and the skill packager |
 | `test_repo.py` | the skill's structure, the documentation and the library skeleton |
 | `test_workflows.py` | the library workflows (`epub.yml`, `site.yml`) run step by step, with fake `gh` and `pip` (Linux only) |

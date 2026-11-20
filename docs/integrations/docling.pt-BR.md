@@ -1,4 +1,4 @@
-<!-- translation-of: docling.md sha256:abf1150912d8 -->
+<!-- translation-of: docling.md sha256:47dd35294a37 -->
 # Docling: converter documentos no seu computador
 
 [English](docling.md) | **Português**
@@ -17,6 +17,8 @@ Sem o Docling, a skill continua funcionando: lê o PDF anexado direto ou usa uma
 - Para usar **dentro do chat**: o app do Claude no computador. O Docling instalado no seu computador **não aparece** no Claude pelo navegador.
 
 ## Passo a passo
+
+**Atalho:** os instaladores em [`install/`](../../install/) fazem os passos 1 e 3 por você. No Windows: `powershell -ExecutionPolicy Bypass -File install-docling.ps1 -WithClaudeApp`; no macOS ou no Linux: `bash install-docling.sh --with-claude-app`. Deixe a última opção de fora se quiser só a linha de comando. Eles guardam uma cópia das configurações do app do Claude (`.bak`) antes de mudá-las.
 
 ### 1. Instalar o `uv`
 

@@ -10,7 +10,7 @@ from conftest import ROOT, SKILL, read
 
 # scripts cited by the skill but still being written (phase 3 of the rebuild);
 # remove each name as soon as its script lands
-PENDING_SCRIPTS = {'notion.py', 'illustrate.py'}
+PENDING_SCRIPTS = {'illustrate.py'}
 
 
 def skill_docs():

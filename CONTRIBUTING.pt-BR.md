@@ -1,4 +1,4 @@
-<!-- translation-of: CONTRIBUTING.md sha256:804c0e19398b -->
+<!-- translation-of: CONTRIBUTING.md sha256:3bd830a690c9 -->
 # Como contribuir
 
 [English](CONTRIBUTING.md) | **Português**
@@ -54,6 +54,8 @@ Há um arquivo de teste para cada parte do kit:
 | `test_diagram.py` | cada tipo de diagrama nos dois perfis de leitura, cada problema de encaixe, a folha de contato |
 | `test_projects.py` | projetos montados a partir dos blocos de código, evoluídos entre capítulos, executados e conferidos; caminhos inseguros recusados |
 | `test_ingest.py` | cada tipo de entrada (Markdown, pasta, HTML, endereço web, EPUB, DOCX, PDF), o Docling e as alternativas a ele |
+| `test_notion.py` | a conversão para o formato do Notion (toggles, callouts, envios), a página de índice |
+| `test_install.py` | os instaladores do Docling (shellcheck, sintaxe do PowerShell) e o script que edita as configurações do app do Claude |
 | `test_tools.py` | o verificador de traduções e o empacotador da skill |
 | `test_repo.py` | a estrutura da skill, a documentação e o esqueleto da biblioteca |
 | `test_workflows.py` | os workflows da biblioteca (`epub.yml`, `site.yml`) rodando passo a passo, com `gh` e `pip` falsos (só Linux) |

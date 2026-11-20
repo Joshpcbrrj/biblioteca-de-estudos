@@ -23,6 +23,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `diagram.py`: SVG diagrams from short YAML specs in the books' theme (flow, timeline, compare, boxes, layers, tree, sequence, bars, cards), sized by the reading profile, with fit checks and a contact sheet rendered to PNG.
 - `projects.py`: projects assembled from the book's code blocks, evolved across chapters, run and checked against an expected output; paths that leave the project folder are refused.
 - `ingest.py`: study materials (Markdown, folders of pages, HTML, web addresses, EPUB, DOCX, PDF, slides) converted to Markdown sections plus an outline, through Docling when available.
+- `notion.py`: chapters, chapter 0, the mock exam, the glossary and the index page converted to Notion's format (answers as toggles, notes as callouts, SVG diagrams and real photos as uploads, illustrations left out).
+- Integration guides for GitHub, Notion, Google Drive and GitHub Pages, in English and Portuguese, with the compatibility table checked against current documentation.
+- Docling installers for Windows (`install/install-docling.ps1`) and macOS/Linux (`install/install-docling.sh`), with a tested helper that adds Docling to the Claude app's settings and keeps a backup.
 - Plugin layout: the skill moved to `skills/syllabook/`, and `.claude-plugin/plugin.json` and `marketplace.json` make this repository a Claude Code plugin and marketplace (needed for `claude plugin eval`).
 - Workflow checks: actionlint in CI, and `tests/test_workflows.py`, which runs the real steps of `epub.yml` and `site.yml` in a test library with fake `gh` and `pip`.
 - Library workflows `epub.yml` and `site.yml` (in `assets/library/` and at the root of this template); they do nothing while there are no books.

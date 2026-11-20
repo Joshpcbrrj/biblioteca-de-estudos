@@ -17,6 +17,8 @@ Without Docling the skill still works: it reads an attached PDF directly or uses
 
 ## Step by step
 
+**Shortcut:** the installers in [`install/`](../../install/) do steps 1 and 3 for you. On Windows: `powershell -ExecutionPolicy Bypass -File install-docling.ps1 -WithClaudeApp`; on macOS or Linux: `bash install-docling.sh --with-claude-app`. Leave the last option out if you only want the command line. They keep a backup of the Claude app's settings (`.bak`) before changing them.
+
 ### 1. Install `uv`
 
 Check whether you already have it: `uv --version`. If it shows a version, skip to step 2.
