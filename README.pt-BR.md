@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:f3afb2d613e5 -->
+<!-- translation-of: README.md sha256:a52ef3eb5f52 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**

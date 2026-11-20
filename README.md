@@ -2,8 +2,6 @@
 
 **English** | [Português](README.pt-BR.md)
 
-![Syllabook: an open book whose pages show a course structure, with modules, chapters and charts](docs/img/syllabook-banner.png)
-
 **Turn any topic or study material into a book you can actually learn from.**
 
 ![Syllabook's first message in Claude Code: it confirms the language and offers to create a book, improve a study material, translate a book, publish one or continue one in progress](docs/img/syllabook-start.svg)
