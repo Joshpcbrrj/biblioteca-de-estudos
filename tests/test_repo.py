@@ -107,7 +107,7 @@ def test_internal_links_point_to_existing_files():
 @pytest.mark.parametrize('relpath', [
     'created-books/README.md', 'created-books/README.pt-BR.md',
     'improved-materials/README.md', 'improved-materials/README.pt-BR.md',
-    '.github/workflows/epub.yml', '.github/workflows/site.yml',
+    '.github/workflows/epub.yml', '.github/workflows/site.yml', 'LICENSE', 'LICENSE-CODIGO',
 ])
 def test_root_matches_the_library_skeleton(relpath):
     copy = os.path.join(SKILL, 'assets', 'library', relpath)

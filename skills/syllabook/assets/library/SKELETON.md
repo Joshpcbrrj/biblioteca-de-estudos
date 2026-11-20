@@ -5,6 +5,7 @@ The skill copies these files into the user's library repository when it does not
 | File | Where it goes |
 | --- | --- |
 | `README.md`, `README.pt-BR.md` | repository root: the library's front page; replace `<user>` and `<repository>` in the site address |
+| `LICENSE`, `LICENSE-CODIGO` | repository root: CC BY-SA 4.0 for the content, MIT for code; the user may choose others |
 | `library.yaml` | repository root; the skill fills `author`, `repository`, `commit_name` and `commit_email` |
 | `created-books/`, `improved-materials/`, `site/` | repository root, with their READMEs in English and Portuguese |
 | `.github/workflows/epub.yml` | builds one EPUB per book on every push and publishes it on the `epub_release` release |
