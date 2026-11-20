@@ -4,6 +4,8 @@
 
 **Turn any topic or study material into a book you can actually learn from.**
 
+![Syllabook's first message in Claude Code: it confirms the language and offers to create a book, improve a study material, translate a book, publish one or continue one in progress](docs/img/syllabook-start.svg)
+
 Syllabook is a Claude skill for self-learners. It writes course-books on any topic and improves the study materials you already have. Everything it produces is yours: Markdown in your GitHub repository, an EPUB for any e-reader, a searchable website and, if you want, a copy in Notion.
 
 > 🧪 **Early version (0.x).** It works end to end, and it keeps improving in small releases until 1.0. The roadmap and decisions are in [`plano/PLANO.md`](plano/PLANO.md) (in Portuguese); changes are in the [CHANGELOG](CHANGELOG.md).

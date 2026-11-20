@@ -1,9 +1,11 @@
-<!-- translation-of: README.md sha256:7b24c8ddb37e -->
+<!-- translation-of: README.md sha256:3dc759d26ec8 -->
 # 📚 Syllabook
 
 [English](README.md) | **Português**
 
 **Transforme qualquer tema ou material de estudo num livro com que dá para aprender de verdade.**
+
+![Primeira mensagem do Syllabook no Claude Code: ele confirma o idioma e oferece criar um livro, aprimorar um material de estudo, traduzir um livro, publicar um ou continuar um em andamento](docs/img/syllabook-start.pt-BR.svg)
 
 Syllabook é uma skill do Claude para quem estuda sozinho. Ela cria livros-curso sobre qualquer tema e aprimora os materiais de estudo que você já tem. Tudo o que ela produz é seu: Markdown no seu repositório do GitHub, EPUB para qualquer leitor digital, um site com busca e, se você quiser, uma cópia no Notion.
 

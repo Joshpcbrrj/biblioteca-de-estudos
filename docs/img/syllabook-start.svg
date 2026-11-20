@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="514" viewBox="0 0 980 514" role="img">
+<title>claude — ~/study</title>
+<rect width="980" height="514" rx="12" fill="#1E1F29"/>
+<path d="M0 12 a12 12 0 0 1 12 -12 h956 a12 12 0 0 1 12 12 v32 h-980 z" fill="#2A2B38"/>
+<circle cx="22" cy="22" r="6" fill="#FF5F57"/>
+<circle cx="42" cy="22" r="6" fill="#FEBC2E"/>
+<circle cx="62" cy="22" r="6" fill="#28C840"/>
+<text x="490.0" y="27" text-anchor="middle" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="13" fill="#9A9AAF">claude — ~/study</text>
+<rect x="20" y="68" width="940" height="29" rx="6" fill="#30313F"/>
+<text x="28" y="87" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#9A9AAF">&gt; <tspan fill="#E6E6EA">Hi! I want to use Syllabook to study.</tspan></text>
+<text x="28" y="133" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#D97757">●</text>
+<text x="51.8" y="133" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#E6E6EA" font-weight="400">I'll talk and write the book in English. Want to change either?</text>
+<text x="51.8" y="179" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#FFFFFF" font-weight="700">What shall we do?</text>
+<text x="51.8" y="202" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#E6E6EA"><tspan fill="#7FB4FF" font-weight="700">1.</tspan> Create a book from a topic (with a syllabus we agree on)</text>
+<text x="51.8" y="225" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#E6E6EA"><tspan fill="#7FB4FF" font-weight="700">2.</tspan> Improve a study material of yours (Notion, PDF, EPUB, Google Drive, text or link)</text>
+<text x="51.8" y="248" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#E6E6EA"><tspan fill="#7FB4FF" font-weight="700">3.</tspan> Translate a book into another language</text>
+<text x="51.8" y="271" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#E6E6EA"><tspan fill="#7FB4FF" font-weight="700">4.</tspan> Publish a finished book (GitHub and Notion)</text>
+<text x="51.8" y="294" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#E6E6EA"><tspan fill="#7FB4FF" font-weight="700">5.</tspan> Continue a book in progress</text>
+<text x="51.8" y="340" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#9A9AAF" font-weight="400">Tip: use the strongest model (Opus) until the syllabus is approved, and Sonnet to write the</text>
+<text x="51.8" y="363" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#9A9AAF" font-weight="400">chapters.</text>
+<text x="51.8" y="409" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#E6E6EA" font-weight="400">Notion and Google Drive are connected. If you pick option 1, tell me the topic and your current</text>
+<text x="51.8" y="432" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#E6E6EA" font-weight="400">level. If you pick option 2, send me the material.</text>
+<rect x="20" y="459" width="940" height="29" rx="6" fill="none" stroke="#4A4B5C"/>
+<text x="28" y="478" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace" font-size="15" fill="#9A9AAF">&gt; <tspan fill="#E6E6EA">▍</tspan></text>
+</svg>
