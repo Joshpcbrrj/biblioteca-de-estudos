@@ -101,3 +101,11 @@ def test_load_yaml_reports_an_error_without_a_line(tmp_path, capsys):
     with pytest.raises(SystemExit):
         common.load_yaml(str(p))
     assert '"error": "spec.yaml: ' in capsys.readouterr().out
+
+
+def test_remember_does_not_fail_when_the_state_folder_cannot_be_written(tmp_path, monkeypatch):
+    # a read-only home (a sandbox, a locked-down account): remembering the book is a convenience, never an error
+    blocker = tmp_path / 'not-a-folder'
+    blocker.write_text('x', encoding='utf-8')
+    monkeypatch.setattr(common, 'STATE', str(blocker / 'current'))
+    common.remember(str(tmp_path / 'book.yaml'))

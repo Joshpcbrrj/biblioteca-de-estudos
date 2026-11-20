@@ -23,7 +23,7 @@ MARK = re.compile(r'^<!-- translation-of: (\S+) sha256:([0-9a-f]{12}) -->\n')
 EXEMPT_FILES = {'CHANGELOG.md', '.github/PULL_REQUEST_TEMPLATE.md',
                 'skills/syllabook/assets/library/SKELETON.md'}  # a note for Claude, not a page
 # folders whose pages are internal or English-only (the skill is written for Claude)
-EXEMPT_DIRS = ('plano/', 'skills/syllabook/modes/', 'skills/syllabook/references/', '.github/', 'tests/')
+EXEMPT_DIRS = ('plano/', 'skills/syllabook/modes/', 'skills/syllabook/references/', '.github/', 'tests/', 'evals/')
 # inside the skill, only the library skeleton is user-facing
 SKILL_USER_FACING = 'skills/syllabook/assets/library/'
 

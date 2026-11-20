@@ -99,9 +99,13 @@ def labels(language):
 
 
 def remember(book_yaml):
-    os.makedirs(os.path.dirname(STATE), exist_ok=True)
-    with open(STATE, 'w', encoding='utf-8') as f:
-        f.write(os.path.abspath(book_yaml))
+    """Saves the current book for the next commands; a read-only home (a sandbox) only loses the shortcut."""
+    try:
+        os.makedirs(os.path.dirname(STATE), exist_ok=True)
+        with open(STATE, 'w', encoding='utf-8') as f:
+            f.write(os.path.abspath(book_yaml))
+    except OSError:
+        pass
 
 
 def find_book(arg=None):

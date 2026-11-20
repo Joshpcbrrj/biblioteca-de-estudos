@@ -6,6 +6,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Added
+
+- Behavior evals in `evals/` for `claude plugin eval`: eight cases (triggering, language, assessment + syllabus, adjustment, nothing before "approved", writing a chapter, improve mode, publishing without connections), run on the user's machine.
+
+### Fixed
+
+- `book.py validate` no longer stops with a traceback when the home folder is read-only (a sandbox): remembering the current book is skipped.
+- `plugin.json` now says version 0.2.0 (it still said 0.1.0).
+
 ## [0.2.0] - 2026-11-20
 
 Colorful, explicit diagrams.

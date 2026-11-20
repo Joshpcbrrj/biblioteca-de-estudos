@@ -1,0 +1,48 @@
+schema_version: "1.1"
+name: 06-escrever-capitulo
+description: Writes chapter 2 of an approved book whose chapters 0 and 1 are done (needs a shell; run on Linux or macOS)
+tags: [capitulo]
+runs: 1
+context:
+  scaffold_script: scaffold.sh
+execution:
+  max_turns: 60
+  timeout_seconds: 1500
+  allowed_tools: [Read, Glob, Grep, Skill, Bash, Write, Edit]
+  prompt: >-
+    Estou escrevendo o livro "Python do zero (exemplo de teste)" com o Syllabook. A ementa já foi aprovada
+    e os capítulos 0 e 1 estão prontos na pasta created-books/python-do-zero-teste. Sem GitHub e sem Notion
+    por enquanto. Escreva o capítulo 2.
+graders:
+  - name: arquivo-criado
+    type: file_exists
+    path: created-books/python-do-zero-teste/chapters/02-o-laco-for.md
+  - name: secoes
+    type: regex
+    target: {source: file, path: created-books/python-do-zero-teste/chapters/02-o-laco-for.md}
+    pattern: "Pratique.*<details>.*Resumo"
+    flags: s
+  - name: brief-antes
+    type: tool_used
+    tool: Bash
+    input_match: "brief 2"
+  - name: progresso-registrado
+    type: regex
+    target: {source: file, path: created-books/python-do-zero-teste/book.yaml}
+    pattern: "n: 2\\s+done:"
+  - name: auditoria
+    type: tool_used
+    tool: Bash
+    input_match: "audit.py"
+  - name: qualidade
+    type: llm
+    focus: {source: file, path: created-books/python-do-zero-teste/chapters/02-o-laco-for.md}
+    criteria: >-
+      This is chapter 2, "O laço for", of a Portuguese beginner Python book; the chapter goal is "Calcular a
+      média de uma lista com um laço for", and chapter 1 taught lists and len. Pass if the chapter, in
+      Portuguese, teaches the for loop step by step from what chapter 1 taught; has at least one complete,
+      runnable Python code block that computes an average with a for loop, followed by its real output; has
+      practice exercises whose answers are hidden in <details> blocks; has a quick review question about
+      chapter 1; and ends with a summary table and sources. The code and the stated outputs must be correct.
+      Fail if it relies on concepts not yet taught (functions, dictionaries) as if known, if any code or
+      output is wrong, or if it is a short stub rather than a full chapter.

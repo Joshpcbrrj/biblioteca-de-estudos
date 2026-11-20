@@ -10,3 +10,6 @@ dist/
 _site/
 
 .superpowers/
+
+# behavior eval results (claude plugin eval)
+evals/results/
