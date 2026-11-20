@@ -41,3 +41,15 @@ Write as a patient mentor talking to one reader, in plain international English.
 | Final mock exam | Final mock exam |
 | Glossary | Glossary |
 | Next steps | Next steps |
+| Previous chapter | Previous chapter |
+| Next chapter | Next chapter |
+| Book map | Book map |
+| Answers | Answers |
+| Back to the exercise | Back to the exercise |
+| Created books | Created books |
+| Improved materials | Improved materials |
+| Download EPUB | Download EPUB |
+| Chapters | Chapters |
+| Index | Index |
+| Book | Book |
+| Level | Level |

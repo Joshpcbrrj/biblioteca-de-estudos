@@ -66,7 +66,7 @@ def _():
 
 # scripts cited by the skill but still being written (phase 3 of the rebuild);
 # remove each name as soon as its script lands
-PENDING_SCRIPTS = {'build.py', 'diagram.py', 'projects.py', 'ingest.py', 'notion.py', 'illustrate.py'}
+PENDING_SCRIPTS = {'diagram.py', 'projects.py', 'ingest.py', 'notion.py', 'illustrate.py'}
 
 
 @test('every path cited in the skill exists')
@@ -167,12 +167,14 @@ def _():
 def _():
     lib = os.path.join(SKILL, 'assets', 'library')
     different = []
-    for folder in ('created-books', 'improved-materials'):
-        for name in ('README.md', 'README.pt-BR.md'):
-            a, b = os.path.join(ROOT, folder, name), os.path.join(lib, folder, name)
-            if not os.path.exists(b) or not filecmp.cmp(a, b, shallow=False):
-                different.append(f'{folder}/{name}')
-    assert not different, f'copy the root version into assets/library: {different}'
+    pairs = [f'{folder}/{name}' for folder in ('created-books', 'improved-materials')
+             for name in ('README.md', 'README.pt-BR.md')]
+    pairs += ['.github/workflows/epub.yml', '.github/workflows/site.yml']
+    for rel in pairs:
+        a, b = os.path.join(ROOT, rel), os.path.join(lib, rel)
+        if not os.path.exists(a) or not os.path.exists(b) or not filecmp.cmp(a, b, shallow=False):
+            different.append(rel)
+    assert not different, f'root and assets/library differ: {different}'
 
 
 @test('YAML files are valid and library.yaml has every key')
@@ -282,6 +284,75 @@ def _():
     assert any('1991' in s['sentence'] for s in r['sentences']), r
     assert not any('Item' in s['sentence'] or 'Tutorial' in s['sentence'] for s in r['sentences']), r
     return f'{r["to_check"]} sentences'
+
+
+def sample_library():
+    """A library with the skeleton and the sample book, as a user's repository would be."""
+    import yaml
+    lib = os.path.join(tempfile.mkdtemp(), 'lib')
+    shutil.copytree(os.path.join(SKILL, 'assets', 'library'), lib)
+    shutil.copytree(SAMPLE, os.path.join(lib, 'created-books', 'python-do-zero-teste'))
+    settings = yaml.safe_load(read(os.path.join(lib, 'library.yaml')))
+    settings.update(author='Teste', repository='exemplo/minha-biblioteca', default_language='pt-BR')
+    yaml.safe_dump(settings, open(os.path.join(lib, 'library.yaml'), 'w', encoding='utf-8'), allow_unicode=True)
+    return lib
+
+
+@test('build.py: EPUB with an answers appendix, navigation, map and zip in the repository layout')
+def _():
+    import zipfile
+    lib = sample_library()
+    book = os.path.join(lib, 'created-books', 'python-do-zero-teste')
+    dist = os.path.join(lib, 'dist')
+    code, r = script('build.py', '--book', book, '--out', dist)
+    assert code == 0, r
+    epub = zipfile.ZipFile(r['epub'])
+    pages = '\n'.join(epub.read(n).decode('utf-8') for n in epub.namelist() if n.endswith('.xhtml'))
+    assert '<details' not in pages, 'answers still inline in the EPUB'
+    assert r['answers_in_appendix'] == 6 and len(re.findall(r'#q-\d+"', pages)) == 6, 'answer links missing'
+    assert 'Voltar ao exercício' in pages and 'Respostas' in pages, 'appendix labels not in the book language'
+    assert re.search(r'href="[^"]*#f-02-o-laco-for"', pages), 'link between chapters not resolved'
+    chapter = read(os.path.join(book, 'chapters', '01-listas.md'))
+    assert '<!-- nav:start -->' in chapter and 'Próximo capítulo' in chapter, 'navigation missing'
+    assert '<!-- map:start -->' in read(os.path.join(book, 'README.md')), 'book map missing'
+    names = zipfile.ZipFile(r['zips'][0]['zip']).namelist()
+    assert all(n.startswith('created-books/python-do-zero-teste/') for n in names), names[:3]
+    return f'{len(epub.namelist())} files in the EPUB'
+
+
+@test('build.py: partial checkpoint, and zips split above 100 files')
+def _():
+    lib = sample_library()
+    book = os.path.join(lib, 'created-books', 'python-do-zero-teste')
+    code, r = script('build.py', '--book', book, '--out', os.path.join(lib, 'p'), '--partial')
+    assert code == 0 and 'epub' not in r and r['zips'][0]['zip'].endswith('-partial.zip'), r
+    for i in range(120):
+        shutil.copy(os.path.join(book, 'img', 'c01-lista.svg'), os.path.join(book, 'img', f'extra-{i}.svg'))
+    code, r = script('build.py', '--book', book, '--out', os.path.join(lib, 's'), '--no-epub')
+    sizes = [z['files'] for z in r['zips']]
+    assert code == 0 and len(sizes) == 2 and max(sizes) <= 100, sizes
+
+
+@test('build.py lists and site: library lists and a website source that Zensical builds')
+def _():
+    lib = sample_library()
+    code, r = script('build.py', 'lists', '--library', lib)
+    assert code == 0 and 'created-books/README.pt-BR.md' in r['updated'], r
+    listing = read(os.path.join(lib, 'created-books', 'README.pt-BR.md'))
+    assert 'Baixar EPUB' in listing and 'releases/download/epubs/python-do-zero-teste.epub' in listing
+    site = os.path.join(lib, '_site')
+    code, r = script('build.py', 'site', '--library', lib, '--out', site)
+    page = read(os.path.join(site, 'docs', 'created-books', 'python-do-zero-teste', 'chapters', '01-listas.md'))
+    assert code == 0 and '??? success "Ver resposta"' in page and '<details>' not in page
+    assert os.path.exists(os.path.join(site, 'mkdocs.yml'))
+    zensical = shutil.which('zensical')
+    if not zensical:
+        return 'zensical not installed: site not built'
+    built = subprocess.run([zensical, 'build', '--clean'], cwd=site, capture_output=True, text=True)
+    assert built.returncode == 0, built.stderr[-500:]
+    html = read(os.path.join(site, 'site', 'created-books', 'python-do-zero-teste', 'chapters', '01-listas', 'index.html'))
+    assert '<details class="success"' in html, 'answers did not become collapsible blocks'
+    return 'site built with Zensical'
 
 
 @test('tools compile')

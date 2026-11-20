@@ -43,3 +43,15 @@ Write as a patient Brazilian mentor talking to one reader. The text must read as
 | Final mock exam | Simulado final |
 | Glossary | Glossário |
 | Next steps | Próximos caminhos |
+| Previous chapter | Capítulo anterior |
+| Next chapter | Próximo capítulo |
+| Book map | Mapa do livro |
+| Answers | Respostas |
+| Back to the exercise | Voltar ao exercício |
+| Created books | Livros criados |
+| Improved materials | Materiais aprimorados |
+| Download EPUB | Baixar EPUB |
+| Chapters | Capítulos |
+| Index | Índice remissivo |
+| Book | Livro |
+| Level | Nível |

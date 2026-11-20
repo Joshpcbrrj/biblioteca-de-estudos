@@ -40,9 +40,9 @@ Never ask for tokens or passwords in the chat: connections go through Claude's c
 
 At the end, ask once: "Publish the book to GitHub and create the copy in Notion?" (the default answer is yes for both). Then, for GitHub, use the first option that works:
 
-1. **Connector or git available:** merge `draft/<slug>` into `branch` (from `library.yaml`), or commit straight to it if there was no draft branch. The Actions build the EPUB and the site.
+1. **Connector or git available:** run `build.py lists --library <repo>` so the folder lists include the book, then merge `draft/<slug>` into `branch` (from `library.yaml`), or commit straight to it if there was no draft branch. The Actions build the EPUB and the site (they come with the library skeleton in `assets/library/`).
 2. **Not connected, and the user wants to connect now:** send the GitHub guide link, wait, check again, then do option 1.
-3. **The user declines or cannot connect:** deliver the zip from `build.py` in the downloadable outputs folder (on claude.ai, `/mnt/user-data/outputs`). Tell them: extract it at the root of their library repository (the zip already holds `created-books/<slug>/` or `improved-materials/<slug>/`), then upload with GitHub's website (**Add file → Upload files**, dragging the folder) or GitHub Desktop. GitHub's website takes up to 100 files per upload: if the book has more, `build.py` splits the zip into parts and you say which part goes first.
+3. **The user declines or cannot connect:** run `build.py --out <outputs>` with the downloadable outputs folder (on claude.ai, `/mnt/user-data/outputs`) and deliver the EPUB and the zip. Tell them: extract it at the root of their library repository (the zip already holds `created-books/<slug>/` or `improved-materials/<slug>/`), then upload with GitHub's website (**Add file → Upload files**, dragging the folder) or GitHub Desktop. GitHub's website takes up to 100 files per upload: if the book has more, `build.py` splits the zip into parts and you say which part goes first.
 
 **First publication in a repository:** remind the user to turn on the site once: **Settings → Pages → Source: GitHub Actions** (link to the GitHub Pages guide). The site address is `https://<user>.github.io/<repository>/`.
 

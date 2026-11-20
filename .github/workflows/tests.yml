@@ -19,5 +19,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install pyyaml
+      # pandoc (EPUB) and zensical (website) let the tests build a real book and site
+      - run: pip install pyyaml pypandoc_binary zensical
       - run: python tests/run.py
