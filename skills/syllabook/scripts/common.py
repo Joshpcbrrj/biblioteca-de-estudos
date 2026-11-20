@@ -49,8 +49,16 @@ def pandoc_path():
 
 
 def load_yaml(path):
+    yaml = need_yaml()
     with open(path, encoding='utf-8') as f:
-        return need_yaml().safe_load(f) or {}
+        try:
+            return yaml.safe_load(f) or {}
+        except yaml.YAMLError as e:
+            # a short message with the line instead of a traceback (e.g. an unquoted "?" in a value)
+            mark, name = getattr(e, 'problem_mark', None), os.path.basename(path)
+            if mark is None:
+                fail(f'{name}: {e}')
+            fail(f'{name} line {mark.line + 1}: {getattr(e, "problem", None) or e}')
 
 
 def save_yaml(path, data):

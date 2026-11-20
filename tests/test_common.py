@@ -84,3 +84,20 @@ def test_chapter_path(book):
 
 def test_need_yaml_returns_the_module():
     assert hasattr(common.need_yaml(), 'safe_load')
+
+
+def test_load_yaml_reports_the_line_of_a_syntax_error(tmp_path, capsys):
+    p = tmp_path / 'spec.yaml'
+    p.write_text('steps:\n  - {text: Precisa isolar?, kind: decision}\n', encoding='utf-8')
+    with pytest.raises(SystemExit) as e:
+        common.load_yaml(str(p))
+    assert e.value.code == 1
+    assert 'spec.yaml line 2' in capsys.readouterr().out
+
+
+def test_load_yaml_reports_an_error_without_a_line(tmp_path, capsys):
+    p = tmp_path / 'spec.yaml'
+    p.write_text('title: a\x07b\n', encoding='utf-8')
+    with pytest.raises(SystemExit):
+        common.load_yaml(str(p))
+    assert '"error": "spec.yaml: ' in capsys.readouterr().out
