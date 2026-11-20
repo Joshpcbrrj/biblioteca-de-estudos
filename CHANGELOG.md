@@ -6,6 +6,26 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-20
+
+Colorful, explicit diagrams.
+
+### Added
+
+- 104 Lucide icons (ISC license) embedded in the skill (`assets/icons.json`), drawn by name with `icon:`; `diagram.py --icons` lists them, and a misspelled name is reported with suggestions.
+- `icon` and `note` (a smaller line under the bold text) in flow, layers, tree, timeline, sequence and compare boxes; `side_note`, `side_icon` and `side_color` for a flow decision's other way out.
+- `scene`: a short row of icons joined by arrows, `+` or `=` (folder → files, A + B = C), as its own diagram type or inside a cheat-sheet card.
+- `subtitle` for every diagram.
+- README: the Syllabook icon, a banner in each language and a picture of the skill's first message in Claude Code.
+
+### Changed
+
+- Stronger theme: colored box backgrounds, a gradient underline under the title, contrast of at least 4.5:1 checked by the tests.
+- Cheat sheets: an icon badge per card, drawn check marks (or an icon per item) and an optional scene under the items.
+- `compare` with `style: wrong-right` draws its marks as icons instead of emoji, which depended on the reader's fonts; no diagram contains emoji now.
+- A YAML syntax error in a spec shows the file and line instead of a Python traceback.
+- The sample book's chapter 1 diagram is drawn from a spec (`img/_source/c01-lista.yaml`).
+
 ## [0.1.0] - 2026-11-20
 
 First release of the rebuilt skill.
