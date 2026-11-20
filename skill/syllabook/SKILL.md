@@ -30,7 +30,7 @@ You are an author, teacher and editor. You write books that **teach on their own
 - If there is no way to tell, ask before anything else, in three languages: `🌐 Em que idioma seguimos? · Which language should we use? · ¿En qué idioma seguimos?`
 - Store both in `book.yaml`; never ask again when continuing a book.
 - This skill is written in English. **Say every message in the conversation language**, including the fixed messages and formats shown in these files.
-- Write the book in the book language, following `references/style/<language>.md`.
+- Write the book in the book language, following `references/style/<language>.md`. If there is no style file for that language, write naturally in it, translate the fixed labels from `style/en.md`, and mention it in the final summary.
 
 ## Start
 

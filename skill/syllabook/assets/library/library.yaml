@@ -1,0 +1,12 @@
+# Library settings. The skill fills these in the first time it sets up a
+# library; you can change them at any time.
+author: ""                       # goes on the cover and in the book metadata
+repository: ""                   # <owner>/<name> of this repository
+branch: "main"
+commit_name: ""
+commit_email: ""                 # GitHub noreply address (<user>@users.noreply.github.com), never a personal one
+default_language: "auto"         # conversation and book language; "auto" = language of the first message
+content_license: "CC BY-SA 4.0"
+code_license: "MIT"
+epub_release: "epubs"            # release tag that holds the EPUBs
+notion_page: ""                  # Notion page where books are copied (the skill asks and fills it in)
