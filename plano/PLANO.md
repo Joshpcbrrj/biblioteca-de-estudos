@@ -398,7 +398,7 @@ Contrato apresentado no plano e aprovado pelo usuário:
 
 | Fase | Entregas |
 | --- | --- |
-| 0. Esboço | `plano/esboco/`: SKILL.md e modo Criar para o dono revisar antes de apagar qualquer coisa |
+| 0. Esboço | `plano/esboco/`: SKILL.md e modo Criar para o dono revisar antes de apagar qualquer coisa (aprovado; substituído pela skill real em `skill/syllabook/` na fase 2b e removido) |
 | 1. Repositório | Apagar conteúdo antigo e releases; renomear para `criador-de-estudos` e marcar como template; `livros-criados/`, `materiais-aprimorados/` e `site/` vazios com README; arquivos de comunidade (CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, CHANGELOG, licenças, modelos de issue e PR); README curto; esqueleto de `docs/` (Diátaxis, com `complementos/` e o README central) |
 | 2. Skill | `criador-de-estudos` com menu e modos; DIDATICA, LIVRO, areas/, VISUAL, FONTES novos; scripts dentro da skill; checklist da seção 4; zip na release |
 | 3. Entradas e saídas | `ingerir.py` + instaladores do Docling; materiais do usuário (anexos e Google Drive); guias de `docs/complementos/` conferidos de verdade (matriz de compatibilidade); `gerar.py` (pacote zip, EPUB com apêndice de respostas e links internos, navegação, mapa, glossário, catálogo); site com busca; `projetos.py`; `notion.py`; `modos/APRIMORAR.md` e `modos/PUBLICAR.md` |
