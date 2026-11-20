@@ -95,7 +95,7 @@ def test_whole_book_errors(cli, book, setup, message):
 
 def test_whole_book_warns_about_unused_images_but_ignores_sources_and_credits(cli, book):
     shutil.copy(book / 'img' / 'c01-lista.svg', book / 'img' / 'sobrando.svg')
-    os.makedirs(book / 'img' / '_source')
+    os.makedirs(book / 'img' / '_source', exist_ok=True)
     (book / 'img' / '_source' / 'c01-lista.yaml').write_text('type: blocks\n')
     (book / 'img' / 'CREDITS.md').write_text('# Credits\n')
     code, r = audit(cli, book)

@@ -7,28 +7,35 @@ Usage:
   python scripts/diagram.py --icons    lists the icon names for the "icon" fields
   python scripts/diagram.py --help
 
-Every spec has: type, title (the idea in one sentence), and optionally caption (a closing
-line in italics). The width follows the book's reading profile (large 960, small 480).
-A spec in img/_source/<name>.yaml is drawn to img/<name>.svg.
+Every spec has: type, title (the idea in one sentence), and optionally subtitle (a short line under the
+title) and caption (a closing line in italics). The width follows the book's reading profile (large 960,
+small 480). A spec in img/_source/<name>.yaml is drawn to img/<name>.svg.
+
+Boxes take `text` (bold) and an optional `note` (a smaller line below) and `icon` (a name from --icons):
+the icon anchors each idea at a glance and still reads on a grayscale screen.
 
 Types and their fields:
-  flow      steps: [{text, kind: start|step|decision|end, color, label, side, side_label}]
-            a decision's `side` is drawn as a box to the right (the other way out, e.g. "não");
-            `label` names the arrow to the next step (e.g. "sim")
-  timeline  events: [{when, text, highlight}]
-  compare   left: {title, color}, right: {title, color}, rows: [[left, right], ...]
-            style: wrong-right marks the left column ❌ (red) and the right one ✅ (green)
+  flow      steps: [{text, note, icon, kind: start|step|decision|end, color, label,
+                     side, side_note, side_icon, side_color, side_label}]
+            a decision's `side` is drawn as a box to the right (the other way out; red unless side_color);
+            `label` names the arrow to the next step (e.g. "não")
+  timeline  events: [{when, text, icon, highlight}]
+  compare   left: {title, icon, color}, right: {title, icon, color}, rows: [[left, right], ...]
+            style: wrong-right marks the left column with a red x icon and the right one with a green check
   boxes     cells: [{value, label, highlight}], name (above the boxes, e.g. a variable)
-  layers    layers: [{text, note, color}]   (top to bottom)
-  tree      root: {text, color, children: [...]}
-  sequence  participants: [names, at most 4], messages: [{from, to, text, dashed}]
+  layers    layers: [{text, note, icon, color}]   (top to bottom)
+  tree      root: {text, note, icon, color, children: [...]}
+  sequence  participants: [name or {name, icon}, at most 4], messages: [{from, to, text, dashed}]
   bars      bars: [{label, value, highlight}], unit
-  cards     cards: [{icon, title, items: [...], code: [...]}]   (the cheat sheet, up to 12)
+  cards     cards: [{icon, title, items: [text or {text, icon}], code: [...], scene}]   (the cheat sheet,
+            up to 12; icon = a name from --icons, or up to 4 characters such as "for")
   scene     steps: [[icon, ...], ...] (up to 4 steps of 1-3 icons), ops: [→ + = ↔], label
+            a scene shows a relation with icons (folder → files, A + B = C); in a card it goes under the
+            items. It demonstrates the idea, never decorates.
 
 Colors: blue (input, structure), green (right, output, end), orange (decision, attention),
 red (error), purple (central idea), teal, gray (neutral). Prints JSON with the file written,
-its size and any text that does not fit; exit code 1 when something does not fit.
+its size and any text that does not fit or icon name that does not exist; exit code 1 then.
 """
 import argparse
 import base64

@@ -1,0 +1,9 @@
+type: boxes
+title: Uma lista guarda valores em ordem
+name: notas
+cells:
+  - {value: "7.5", label: "0", highlight: true}
+  - {value: "8.0", label: "1"}
+  - {value: "6.5", label: "2"}
+caption: O primeiro item tem índice 0.
+alt: A lista notas com os índices 0, 1 e 2 e os valores 7,5, 8,0 e 6,5.

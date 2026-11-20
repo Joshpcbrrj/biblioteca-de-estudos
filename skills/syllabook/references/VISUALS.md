@@ -57,6 +57,9 @@ Pick the type by the idea:
 | parts talking to each other | `sequence` |
 | quantities | `bars` |
 | a summary of a part of the book | `cards` (the cheat sheet) |
+| a relation between a few things (A → B, A + B = C, wrong → right) | `scene` (icons joined by arrows or signs) |
+
+A diagram **adds to** the text: the chapter explains, the image shows the same idea at a glance. SVG is for diagrams only; illustrations of scenes, objects or processes are §5 (a separate, later step).
 
 Rules:
 
@@ -64,12 +67,15 @@ Rules:
 - **At most ~7 main elements**; if more, split into two images or numbered steps.
 - **Real values** (`i = 0, 1, 2`), not just abstract labels.
 - **Labels next to** what they describe; short (2–5 words).
-- **Fixed colors:** blue = input/structure, green = right/output/end, orange = decision/attention, red = error, purple = central concept, gray = neutral. Color is never the only signal: add ✅/❌, a label or a dashed line.
+- **Fixed colors:** blue = input/structure, green = right/output/end, orange = decision/attention, red = error, purple = central concept, gray = neutral. Color is never the only signal: add an icon, a label or a dashed line.
+- **Text and note:** each box has a short bold `text` and, when it helps, a `note` with the detail (`Ubuntu` / `bash, apt, git`).
+- **Icons** (`icon:`, names from `diagram.py --icons`): one per item when it tells the items apart at a glance (a terminal for the shell, a CPU for the kernel). Pick the icon by meaning; skip it rather than force one. No emoji inside a diagram: they depend on the reader's fonts.
+- **Scenes** (`scene:`): only for a relation the reader should see (a folder that holds files, a formula, a wrong window that becomes a right one); a scene that only decorates is left out.
 - **Fixed shapes:** rectangle = action/state, diamond = decision, rounded = start/end, cylinder = database, solid arrow = flow, dashed arrow = dependency or return.
 - Alt text for every image: what it shows, in one or two sentences.
 - File names start with the chapter number: `c06-project-network.svg`.
 
-**Cheat sheets** (`cards`): up to 12 cards (icon in ASCII, numbered short title, 3–5 items of up to ~28 characters, optionally a 1–3 line code snippet), in 3 columns on large screens and 2 in the `small` profile.
+**Cheat sheets** (`cards`): up to 12 cards (an icon, a numbered short title, 3–5 items of up to ~28 characters, each with its own icon when that helps, optionally a 1–3 line code snippet and a scene), in 3 columns on large screens and 2 in the `small` profile.
 
 ## 5. Illustrations (PNG)
 
@@ -77,7 +83,7 @@ Only with `choices.images` = `illustrations` or `paid-api`.
 
 - **HTML templates:** `python scripts/illustrate.py <spec.yaml>` fills an HTML template from `assets/` and renders a PNG at 2×. Text in the image is always correct because it is real text. The spec goes to `img/_source/`.
 - **Paid API:** only for imagery without text (a scene, an object); any labels are added by the template on top. Never send the user's materials to the API.
-- Color and icons always carry meaning; no decorative scenes.
+- Color and icons always carry meaning; no decorative scenes (a diagram's `scene` in §4 is a relation drawn with icons, not an illustration).
 
 ## 6. Real images
 

@@ -46,7 +46,7 @@ def test_each_note_becomes_a_callout_with_its_emoji(book, quote, icon, color):
 
 
 def test_illustrations_are_left_out_and_real_photos_uploaded(book):
-    (book / 'img' / '_source').mkdir()
+    (book / 'img' / '_source').mkdir(exist_ok=True)
     (book / 'img' / '_source' / 'c01-cena.yaml').write_text('type: x\n')
     text = '![Uma cena](../img/c01-cena.png)\n\n![O Mark II](../img/c01-mark2.jpg)\n'
     content, uploads, left_out = convert(text, book)

@@ -100,7 +100,7 @@ def test_command_writes_the_svg_next_to_the_source_folder_with_the_book_profile(
     data = load(book / 'book.yaml')
     data['choices']['reading'] = 'small'
     save(book / 'book.yaml', data)
-    (book / 'img' / '_source').mkdir()
+    (book / 'img' / '_source').mkdir(exist_ok=True)
     save(book / 'img' / '_source' / 'c02-for.yaml', spec('flow'))
     code, r = cli('diagram', book / 'img' / '_source' / 'c02-for.yaml')
     assert code == 0 and r['fits'] and r['profile'] == 'small' and r['width'] == 480
