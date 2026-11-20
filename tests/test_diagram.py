@@ -1,5 +1,6 @@
 """diagram.py: every diagram type, every fit problem, the reading profiles and the contact sheet."""
 import copy
+import re
 import xml.etree.ElementTree as ET
 
 import diagram
@@ -29,7 +30,7 @@ SPECS = {
     'cards': {'cards': [{'icon': '[]', 'title': 'Lista', 'items': ['índice começa em 0'], 'code': ['n = [1]']},
                         {'icon': 'for', 'title': 'Laço', 'items': ['um item por volta']}]},
 }
-TEXTS = {'flow': 'Mostra a média', 'timeline': '1947', 'compare': '✅ Certo', 'boxes': 'notas', 'layers': 'COPY',
+TEXTS = {'flow': 'Mostra a média', 'timeline': '1947', 'compare': 'Certo', 'boxes': 'notas', 'layers': 'COPY',
          'tree': 'build', 'sequence': '2. ok', 'bars': '130 MB', 'cards': '2. Laço'}
 
 
@@ -191,3 +192,34 @@ def test_unknown_icon_is_a_problem_with_suggestions():
     s = spec('layers')
     s['layers'][0]['icon'] = 'foldr'
     assert any('unknown icon "foldr"' in p and 'folder' in p for p in diagram.render(s)[2])
+
+
+@pytest.mark.parametrize('kind, change, expect', [
+    ('flow', lambda s: s['steps'][0].update(icon='play', note='lê as notas'), 'lê as notas'),
+    ('flow', lambda s: s['steps'][1].update(side_note='nada a fazer', side_color='teal', side_icon='info'),
+     'nada a fazer'),
+    ('flow', lambda s: s['steps'][1].update(note='a lista pode estar vazia'), 'a lista pode estar vazia'),
+    ('tree', lambda s: s['root'].update(icon='file-code'), 'scale('),
+    ('timeline', lambda s: s['events'][0].update(icon='bug'), 'scale('),
+    ('sequence', lambda s: s.update(participants=[{'name': 'api', 'icon': 'server'}, 'db']), 'scale('),
+    ('compare', lambda s: s['right'].update(icon='rocket'), 'scale('),
+    ('boxes', lambda s: None, 'stroke-width="3"'),
+])
+def test_new_optional_fields(kind, change, expect):
+    s = spec(kind)
+    change(s)
+    text, _, problems, _ = diagram.render(s)
+    assert expect in text and not problems
+
+
+def test_compare_wrong_right_uses_drawn_icons_not_emoji():
+    text, *_ = diagram.render(spec('compare'))
+    assert '✅' not in text and '❌' not in text and 'scale(' in text
+
+
+@pytest.mark.parametrize('kind', sorted(SPECS))
+def test_no_emoji_left_in_any_type(kind):
+    if kind == 'cards':
+        pytest.xfail('the cards still use a text check mark until task 5')
+    text, *_ = diagram.render(spec(kind))
+    assert not re.search('[✀-➿\U0001F300-\U0001FAFF]', text), kind

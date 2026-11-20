@@ -120,6 +120,11 @@ class Canvas:
             self.text(x, y + size + i * size * 1.3, line, size=size, **kw)
         return len(lines) * size * 1.3
 
+    def shift(self, start, dy):
+        """Moves everything drawn since parts[start] down by dy (up when negative)."""
+        if dy:
+            self.parts[start:] = [f'<g transform="translate(0,{dy:g})">' + ''.join(self.parts[start:]) + '</g>']
+
     def icon(self, name, x, y, size, color):
         """Draws a named icon in the color's strong tone; an unknown name is reported, with suggestions."""
         if not icons.known(name):
@@ -216,18 +221,33 @@ def flow(c, spec):
         if kind == 'decision':
             # a diamond narrower than the boxes, so the decision stands out without dominating
             dw = col * 0.78
-            lines = c.wrap(s['text'], c.p['body'], dw * 0.6)
-            h = len(lines) * c.p['body'] * 1.3 + c.p['body'] * 2.6
+            size = c.p['body']
+            # the question on one line when it fits, at the body size or a little smaller, before wrapping
+            if c.width_of(s['text'], size) > dw * 0.75 and c.width_of(s['text'], c.p['small']) <= dw * 0.75:
+                size = c.p['small']
+            one_line = c.width_of(s['text'], size) <= dw * 0.75
+            lines = c.wrap(s['text'], size, dw * 0.75 if one_line else dw * 0.6)
+            notes = c.wrap(s['note'], c.p['small'], dw * 0.72) if s.get('note') else []
+            text_h = len(lines) * size * 1.3 + len(notes) * c.p['small'] * 1.3
+            h = text_h + c.p['body'] * 2.6
             c.diamond(x + col / 2, top, dw, h, color)
-            c.lines(x + col / 2, top + h / 2 - len(lines) * c.p['body'] * 0.65 - c.p['body'] * 0.2, lines,
-                    weight=600, fill=PALETTE[color][2])
+            y0 = top + h / 2 - text_h / 2 - size * 0.2
+            used = c.lines(x + col / 2, y0, lines, size=size, weight=700, fill=PALETTE[color][2])
+            if notes:
+                c.lines(x + col / 2, y0 + used, notes, size=c.p['small'], fill=SOFT)
             right_edge = x + col / 2 + dw / 2
         else:
-            h = box_with_text(c, x, top, col, s['text'], color, weight=600 if kind != 'step' else 500)
+            h = box_with_text(c, x, top, col, s['text'], color, weight=700 if kind != 'step' else 600,
+                              note=s.get('note'), icon=s.get('icon'))
             right_edge = x + col
         if s.get('side'):
-            side_h = box_with_text(c, side_x, top + h / 2 - c.p['body'] * 1.15, side_w, s['side'], 'red')
-            c.arrow(right_edge, top + h / 2, side_x, top + h / 2, s.get('side_label', ''), 'red')
+            side_color = s.get('side_color', 'red')
+            start = len(c.parts)
+            side_h = box_with_text(c, side_x, top, side_w, s['side'], side_color, weight=700,
+                                   note=s.get('side_note'), icon=s.get('side_icon'))
+            # drawn at the top, then moved so it is centered on the decision
+            c.shift(start, h / 2 - side_h / 2)
+            c.arrow(right_edge, top + h / 2, side_x, top + h / 2, s.get('side_label', ''), side_color)
             h = max(h, side_h)
         c.y = top + h
         if i + 1 < len(steps):
@@ -244,8 +264,12 @@ def timeline(c, spec):
     start = c.y
     for e in events:
         color = 'purple' if e.get('highlight') else 'blue'
-        c.parts.append(f'<circle cx="{line_x}" cy="{c.y + c.p["body"] * 0.7}" r="{c.p["body"] * 0.45}" '
-                       f'fill="{PALETTE[color][0]}" stroke="{PALETTE[color][2]}" stroke-width="2.5"/>')
+        r = c.p['body'] * (0.75 if e.get('icon') else 0.45)
+        cy = c.y + c.p['body'] * 0.7
+        c.parts.append(f'<circle cx="{line_x}" cy="{cy}" r="{r}" '
+                       f'fill="{PALETTE[color][3]}" stroke="{PALETTE[color][2]}" stroke-width="2.5"/>')
+        if e.get('icon'):
+            c.icon(e['icon'], line_x - r * 0.65, cy - r * 0.65, r * 1.3, color)
         # the date on its own line, the event below it
         c.text(text_x, c.y + c.p['body'], e['when'], weight=800, anchor='start', fill=PALETTE[color][2])
         lines = c.wrap(e['text'], c.p['body'], c.w - text_x - c.pad)
@@ -260,22 +284,23 @@ def timeline(c, spec):
 def compare(c, spec):
     wrong_right = spec.get('style') == 'wrong-right'
     sides = []
-    for key, mark, default in (('left', '❌ ', 'red'), ('right', '✅ ', 'green')):
+    for key, mark, default in (('left', 'circle-x', 'red'), ('right', 'circle-check', 'green')):
         side = spec.get(key) or {}
         color = side.get('color') or (default if wrong_right else ('blue' if key == 'left' else 'purple'))
-        sides.append(((mark if wrong_right else '') + str(side.get('title', '')), color))
+        # wrong-right marks each side with a drawn icon (an emoji depends on the reader's fonts)
+        sides.append((str(side.get('title', '')), color, side.get('icon') or (mark if wrong_right else None)))
     col = (c.w - 3 * c.pad) / 2
     xs = (c.pad, 2 * c.pad + col)
     for i, row in enumerate(spec['rows'], 1):
         if not isinstance(row, list) or len(row) != 2:
             raise ValueError(f'compare row {i} must have exactly 2 values, left and right')
     heights = []
-    for (title, color), x in zip(sides, xs, strict=True):
-        heights.append(box_with_text(c, x, c.y, col, title, color, weight=800))
+    for (title, color, icon), x in zip(sides, xs, strict=True):
+        heights.append(box_with_text(c, x, c.y, col, title, color, weight=800, icon=icon))
     c.y += max(heights) + c.p['body'] * 0.6
     for row in spec['rows']:
         h = max(len(c.wrap(value, c.p['body'], col - 28)) * c.p['body'] * 1.3 + 22 for value in row)
-        for (_, color), x, value in zip(sides, xs, row, strict=True):
+        for (_, color, _), x, value in zip(sides, xs, row, strict=True):
             c.rect(x, c.y, col, h, color, rx=10, shadow=False)
             c.lines(x + col / 2, c.y + 11 - c.p['body'] * 0.2, c.wrap(value, c.p['body'], col - 28))
         c.y += h + c.p['body'] * 0.5
@@ -292,14 +317,23 @@ def boxes(c, spec):
         c.y += c.p['body'] * 1.8
     for i, cell in enumerate(cells):
         color = 'purple' if cell.get('highlight') else 'blue'
-        c.rect(x0 + i * size, c.y, size, size, color, rx=6, shadow=False)
+        c.rect(x0 + i * size, c.y, size, size, color, rx=6, shadow=False, tint=True)
+        if cell.get('highlight'):
+            # the focus: a thicker border in the strong tone
+            c.parts.append(f'<rect x="{x0 + i * size + 1.5}" y="{c.y + 1.5}" width="{size - 3}" height="{size - 3}" '
+                           f'rx="5" fill="none" stroke="{PALETTE[color][2]}" stroke-width="3"/>')
         value = str(cell['value'])
         if c.width_of(value, c.p['body'], mono=True) > size - 8:
             c.problems.append(f'value "{value}" does not fit in its box ({round(size)} px)')
         c.text(x0 + i * size + size / 2, c.y + size / 2 + c.p['body'] * 0.35, value, mono=True, weight=700)
         if 'label' in cell:
-            c.text(x0 + i * size + size / 2, c.y + size + c.p['small'] * 1.4, cell['label'], size=c.p['small'],
-                   fill=SOFT)
+            # the index in a small gray badge under its box
+            label = str(cell['label'])
+            bw = max(c.width_of(label, c.p['small']) + 14, c.p['small'] * 1.8)
+            cx = x0 + i * size + size / 2
+            c.parts.append(f'<rect x="{cx - bw / 2}" y="{c.y + size + 6}" width="{bw}" height="{c.p["small"] * 1.5}" '
+                           f'rx="{c.p["small"] * 0.75}" fill="{PALETTE["gray"][3]}"/>')
+            c.text(cx, c.y + size + 6 + c.p['small'] * 1.1, label, size=c.p['small'], fill=INK, weight=600)
     c.y += size + c.p['small'] * 2.4 + c.pad / 2
     return 1
 
@@ -323,7 +357,8 @@ def tree(c, spec):
         w = c.w - x - c.pad
         top = c.y
         color = n.get('color') or ('purple' if depth == 0 else ('blue', 'teal', 'green', 'orange')[(depth - 1) % 4])
-        h = box_with_text(c, x, top, w, n['text'], color, weight=700 if depth == 0 else 500)
+        h = box_with_text(c, x, top, w, n['text'], color, weight=700 if depth == 0 else 600, note=n.get('note'),
+                          icon=n.get('icon'))
         if parent_mid is not None:
             px = x - indent / 2
             c.parts.append(f'<path d="M{px},{parent_mid} V{top + h / 2} H{x}" fill="none" '
@@ -337,13 +372,15 @@ def tree(c, spec):
 
 
 def sequence(c, spec):
-    names = spec['participants']
+    # a participant is a name, or {name, icon}
+    people = [p if isinstance(p, dict) else {'name': p} for p in spec['participants']]
+    names = [p['name'] for p in people]
     if len(names) > 4:
         c.problems.append(f'{len(names)} participants: at most 4 fit side by side')
     col = (c.w - 2 * c.pad) / len(names)
     centers = {name: c.pad + col * i + col / 2 for i, name in enumerate(names)}
-    head_h = max(box_with_text(c, c.pad + col * i + 6, c.y, col - 12, name, 'purple', weight=700)
-                 for i, name in enumerate(names))
+    head_h = max(box_with_text(c, c.pad + col * i + 6, c.y, col - 12, p['name'], 'purple', weight=700,
+                               icon=p.get('icon')) for i, p in enumerate(people))
     c.y += head_h
     top = c.y
     c.y += c.p['body'] * 1.6
