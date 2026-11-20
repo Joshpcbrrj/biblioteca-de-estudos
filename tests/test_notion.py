@@ -87,7 +87,10 @@ def test_index_page_with_links_from_the_library(cli, library):
     assert 'https://exemplo.github.io/minha-biblioteca/created-books/python-do-zero-teste/' in content
     assert 'https://github.com/exemplo/minha-biblioteca/tree/main/created-books/python-do-zero-teste' in content
     assert 'releases/download/epubs/python-do-zero-teste.epub' in content
-    assert '- 0. Como estudar este livro' in content and '- 2. O laço for' in content and '- Glossário' in content
+    # "- 0. x" would be a numbered list inside the bullet, renumbered from 1 by Notion
+    assert '- 0\\. Como estudar este livro' in content and '- 2\\. O laço for' in content and '- Glossário' in content
+    # Notion's Markdown wants a blank line between blocks
+    assert '</callout>\n\n## ' in content
 
 
 def test_index_page_without_a_library_has_no_links(cli, book):

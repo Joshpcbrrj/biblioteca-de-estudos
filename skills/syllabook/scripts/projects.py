@@ -48,7 +48,8 @@ def parse_marker(text):
 def safe_path(path):
     """A file path must stay inside the project folder."""
     normal = os.path.normpath(path)
-    return not (os.path.isabs(path) or normal.startswith('..') or ':' in normal)
+    # since Python 3.13, isabs('/x') is False on Windows: a rooted path without a drive
+    return not (os.path.isabs(path) or path.startswith(('/', '\\')) or normal.startswith('..') or ':' in normal)
 
 
 def collect(text, default_name, projects, errors, chapter):

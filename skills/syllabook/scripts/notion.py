@@ -168,11 +168,13 @@ def index_page(book_dir, data):
     if data.get('subtitle'):
         parts.append(data['subtitle'])
     if links:
-        parts += ['<callout icon="📚" color="blue_bg">', '\n'.join(links), '</callout>']
-    parts += [f'## {lab["Chapters"]}', '']
-    chapters = [f'0. {lab["How to study this book"]}'] + [f'{c["n"]}. {c["title"]}' for c in data['chapters']]
-    parts += [f'- {c}' for c in chapters + [lab['Final mock exam'], lab['Glossary']]]
-    return {'title': data['title'], 'content': '\n'.join(parts) + '\n', 'uploads': [], 'left_out': []}
+        parts.append('\n'.join(['<callout icon="📚" color="blue_bg">', '\n'.join(links), '</callout>']))
+    # "- 0. x" would be a numbered list inside the bullet, and Notion renumbers it from 1
+    chapters = [f'0\\. {lab["How to study this book"]}'] + [f'{c["n"]}\\. {c["title"]}' for c in data['chapters']]
+    items = [f'- {c}' for c in chapters + [lab['Final mock exam'], lab['Glossary']]]
+    parts += [f'## {lab["Chapters"]}', '\n'.join(items)]
+    # Notion's Markdown wants a blank line between blocks
+    return {'title': data['title'], 'content': '\n\n'.join(parts) + '\n', 'uploads': [], 'left_out': []}
 
 
 def main():

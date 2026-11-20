@@ -35,6 +35,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - The project is now called **Syllabook** (repository `syllabook`), and it is a GitHub template.
 - `biblioteca.yaml` became `library.yaml`, with keys in English.
 
+### Fixed
+
+- `notion.py`: the chapter list on the index page was read by Notion as a numbered list inside each bullet and renumbered from 1 (chapter 0 showed as "1."); the numbers are now escaped and blocks are separated by blank lines. Found by publishing the sample book to a real Notion page.
+- `projects.py`: on Windows with Python 3.13 or later, a path such as `/etc/passwd.py` was no longer refused, because `os.path.isabs` returns `False` for a rooted path without a drive.
+
 ### Removed
 
 - The old skills `revisar-curso-biblioteca` and `criar-livro-tecnologia`, the scripts in `ferramentas/` and the tests, to be replaced by the new skill.
