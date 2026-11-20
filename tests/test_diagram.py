@@ -29,9 +29,10 @@ SPECS = {
                                      {'label': 'alpine', 'value': 55}]},
     'cards': {'cards': [{'icon': '[]', 'title': 'Lista', 'items': ['índice começa em 0'], 'code': ['n = [1]']},
                         {'icon': 'for', 'title': 'Laço', 'items': ['um item por volta']}]},
+    'scene': {'steps': [['user'], ['list'], ['sparkles']], 'ops': ['+', '='], 'label': 'Melhor saída'},
 }
 TEXTS = {'flow': 'Mostra a média', 'timeline': '1947', 'compare': 'Certo', 'boxes': 'notas', 'layers': 'COPY',
-         'tree': 'build', 'sequence': '2. ok', 'bars': '130 MB', 'cards': '2. Laço'}
+         'tree': 'build', 'sequence': '2. ok', 'bars': '130 MB', 'cards': '2. Laço', 'scene': 'Melhor saída'}
 
 
 def spec(kind, **extra):
@@ -219,7 +220,51 @@ def test_compare_wrong_right_uses_drawn_icons_not_emoji():
 
 @pytest.mark.parametrize('kind', sorted(SPECS))
 def test_no_emoji_left_in_any_type(kind):
-    if kind == 'cards':
-        pytest.xfail('the cards still use a text check mark until task 5')
     text, *_ = diagram.render(spec(kind))
     assert not re.search('[✀-➿\U0001F300-\U0001FAFF]', text), kind
+
+
+def test_scene_type_draws_steps_ops_and_label():
+    s = {'type': 'scene', 'title': 'Prompt', 'steps': [['user'], ['list'], ['sparkles']],
+         'ops': ['+', '='], 'label': 'Melhor saída'}
+    text, _, problems, _ = diagram.render(s)
+    assert 'Melhor saída' in text and '>+<' in text and '>=<' in text and not problems
+
+
+@pytest.mark.parametrize('scene, problem', [
+    ({'steps': [['file']] * 5}, 'at most 4 steps'),
+    ({'steps': [[]]}, '1 to 3 icons'),
+    ({'steps': [['file'] * 4]}, '1 to 3 icons'),
+    ({'steps': [['file'], ['file']], 'ops': ['*']}, 'must be one of'),
+    ({'steps': [['file'], ['foldr']]}, 'unknown icon "foldr"'),
+])
+def test_scene_limits(scene, problem):
+    assert any(problem in p for p in diagram.render({'type': 'scene', 'title': 'x', **scene})[2])
+
+
+def test_card_with_icon_name_items_with_icons_and_a_scene():
+    s = spec('cards')
+    s['cards'][0].update(icon='folder', items=[{'text': 'juntos', 'icon': 'files'}, 'instruções'],
+                         scene={'steps': [['folder'], ['file', 'file']], 'label': 'Memória'})
+    for profile in ('large', 'small'):
+        text, _, problems, _ = diagram.render(s, profile)
+        assert 'Memória' in text and 'instruções' in text and not problems
+
+
+def test_card_ascii_icon_still_works():
+    text, _, problems, _ = diagram.render(spec('cards'))
+    assert '>for<' in text and not problems
+
+
+def test_card_icon_named_like_a_lucide_icon_draws_it():
+    s = spec('cards')
+    s['cards'][1]['icon'] = 'code'
+    text, _, problems, _ = diagram.render(s)
+    assert '>code<' not in text and not problems
+
+
+def test_a_long_scene_label_wraps_inside_the_card():
+    s = spec('cards')
+    s['cards'][0]['scene'] = {'steps': [['folder'], ['file']], 'label': 'Memória compartilhada entre as conversas'}
+    text, _, problems, _ = diagram.render(s, 'small')
+    assert 'Memória compartilhada entre as conversas' not in text and 'compartilhada' in text and not problems

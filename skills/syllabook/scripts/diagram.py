@@ -24,6 +24,7 @@ Types and their fields:
   sequence  participants: [names, at most 4], messages: [{from, to, text, dashed}]
   bars      bars: [{label, value, highlight}], unit
   cards     cards: [{icon, title, items: [...], code: [...]}]   (the cheat sheet, up to 12)
+  scene     steps: [[icon, ...], ...] (up to 4 steps of 1-3 icons), ops: [→ + = ↔], label
 
 Colors: blue (input, structure), green (right, output, end), orange (decision, attention),
 red (error), purple (central idea), teal, gray (neutral). Prints JSON with the file written,
@@ -61,7 +62,8 @@ KIND_COLOR = {'start': 'gray', 'step': 'blue', 'decision': 'orange', 'end': 'gre
 PROFILES = {'large': {'width': 960, 'body': 20, 'title': 26, 'small': 16},
             'small': {'width': 480, 'body': 14, 'title': 17, 'small': 12.5}}
 MAX_ELEMENTS = 7  # references/VISUALS.md: more than ~7 main elements overloads the reader
-TYPES = ('flow', 'timeline', 'compare', 'boxes', 'layers', 'tree', 'sequence', 'bars', 'cards')
+TYPES = ('flow', 'timeline', 'compare', 'boxes', 'layers', 'tree', 'sequence', 'bars', 'cards', 'scene')
+SCENE_OPS = ('→', '+', '=', '↔')
 
 
 class Canvas:
@@ -75,13 +77,14 @@ class Canvas:
     def width_of(self, text, size, mono=False):
         return len(text) * size * (0.6 if mono else 0.56)
 
-    def wrap(self, text, size, width, mono=False):
-        """Splits text into lines that fit the width; reports a word that cannot fit at all."""
+    def wrap(self, text, size, width, mono=False, report=True):
+        """Splits text into lines that fit the width; reports a word that cannot fit at all (unless report=False,
+        for measuring before drawing)."""
         text = str(text)
         limit = max(1, int(width / (size * (0.6 if mono else 0.56))))
         lines, line = [], ''
         for word in text.split():
-            if len(word) > limit:
+            if len(word) > limit and report:
                 self.problems.append(f'"{word}" does not fit in {round(width)} px: shorten it or widen the box')
             candidate = f'{line} {word}'.strip()
             if len(candidate) <= limit or not line:
@@ -134,11 +137,12 @@ class Canvas:
         self.parts.append(icons.draw(name, x, y, size, PALETTE[color][2]))
         return True
 
-    def arrow(self, x1, y1, x2, y2, label='', color='gray', dashed=False):
+    def arrow(self, x1, y1, x2, y2, label='', color='gray', dashed=False, both=False):
         strong = PALETTE[color][2]
         dash = ' stroke-dasharray="9 6"' if dashed else ''
+        start = f' marker-start="url(#arrow-{color})"' if both else ''
         self.parts.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{strong}" stroke-width="2.5"'
-                          f'{dash} marker-end="url(#arrow-{color})"/>')
+                          f'{dash}{start} marker-end="url(#arrow-{color})"/>')
         if label:
             mx, my = (x1 + x2) / 2, (y1 + y2) / 2
             side = 10 if x1 == x2 else 0
@@ -419,6 +423,116 @@ def bars(c, spec):
     return len(items)
 
 
+def scene_size(c, w, scene):
+    """(tile size, gap between tiles, total height) of a scene drawn in width w."""
+    n = max(len(scene.get('steps') or []), 1)
+    tile = min(w / (n + (n - 1) * 0.7), c.p['body'] * 4)
+    label = 0
+    if scene.get('label'):
+        label = len(c.wrap(scene['label'], c.p['small'], w, report=False)) * c.p['small'] * 1.3 + c.p['small'] * 0.7
+    return tile, tile * 0.7, tile + label
+
+
+def scene_block(c, x, y, w, scene, color=None):
+    """A short row of icons joined by arrows or by + and =, which shows an idea (folder -> files, A + B = C).
+    Each step is a list of 1 to 3 icons stacked in one tile. Returns the height."""
+    steps = scene.get('steps') or []
+    ops = scene.get('ops') or ['→'] * (len(steps) - 1)
+    if len(steps) > 4:
+        c.problems.append(f'{len(steps)} steps: a scene holds at most 4 steps')
+    for op in ops:
+        if op not in SCENE_OPS:
+            c.problems.append(f'scene op "{op}" must be one of {" ".join(SCENE_OPS)}')
+    tile, gap, height = scene_size(c, w, scene)
+    x0 = x + (w - (len(steps) * tile + (len(steps) - 1) * gap)) / 2
+    cycle = ('blue', 'purple', 'teal', 'green')
+    for i, step in enumerate(steps):
+        names = step if isinstance(step, list) else [step]
+        if not 1 <= len(names) <= 3:
+            c.problems.append(f'step {i + 1} has {len(names)} icons: a scene step holds 1 to 3 icons')
+        tone = color or cycle[i % len(cycle)]
+        tx = x0 + i * (tile + gap)
+        c.rect(tx, y, tile, tile, tone, rx=tile * 0.18, shadow=False, tint=color is None)
+        shown = names[:3]
+        size = min(tile * 0.58, tile * 0.84 / max(len(shown), 1))
+        top = y + tile / 2 - size * len(shown) / 2
+        for k, name in enumerate(shown):
+            c.icon(name, tx + tile / 2 - size * 0.46, top + k * size + size * 0.04, size * 0.92, tone)
+        if i + 1 < len(steps):
+            op = ops[i] if i < len(ops) else '→'
+            mid, left, right = y + tile / 2, tx + tile + gap * 0.18, tx + tile + gap * 0.82
+            if op in ('+', '='):
+                c.text((left + right) / 2, mid + c.p['title'] * 0.36, op, size=c.p['title'] * 1.1, weight=800,
+                       fill=PALETTE[color or 'gray'][2])
+            else:
+                c.arrow(left, mid, right, mid, color=color or 'gray', both=op == '↔')
+    if scene.get('label'):
+        c.lines(x + w / 2, y + tile + c.p['small'] * 0.4, c.wrap(scene['label'], c.p['small'], w), size=c.p['small'],
+                fill=SOFT, weight=600)
+    return height
+
+
+def scene(c, spec):
+    c.y += scene_block(c, c.pad, c.y, c.w - 2 * c.pad, spec) + c.pad / 2
+    return len(spec['steps'])
+
+
+def card_layout(c, card, number, w, size, small):
+    """Measures one cheat-sheet card once (wrapping reports problems, so it must run only once).
+    A scene goes below the items, across the card: beside them it squeezes the text in a 3-column sheet."""
+    icon = str(card.get('icon', '') or '')
+    badge = size * 2.1 if icon else 0
+    inner = w - 2 * 14
+    title = c.wrap(f'{number}. {card["title"]}', size, inner - (badge + 10 if badge else 0))
+    items = []
+    for item in card.get('items', []):
+        text, mark = (item.get('text', ''), item.get('icon')) if isinstance(item, dict) else (item, None)
+        items.append((mark or 'circle-check', c.wrap(text, small, inner - small * 1.7)))
+    code = list(card.get('code', []))
+    for line in code:
+        if c.width_of(line, small, mono=True) > inner - 12:
+            c.problems.append(f'code "{line}" does not fit in a card')
+    head = max(badge, len(title) * size * 1.3)
+    body = sum(len(lines) for _, lines in items) * small * 1.45 + (len(code) * small * 1.3 + 14 if code else 0)
+    scene_h = scene_size(c, inner, card['scene'])[2] + small if card.get('scene') else 0
+    h = 14 + head + small * 0.6 + body + scene_h + 14
+    return {'icon': icon, 'badge': badge, 'inner': inner, 'title': title, 'items': items,
+            'code': code, 'head': head, 'h': h}
+
+
+def draw_card(c, card, lay, x, y, w, h, color, size, small):
+    c.rect(x, y, w, h, color, rx=14, tint=True)
+    strong = PALETTE[color][2]
+    if lay['badge']:
+        b = lay['badge']
+        c.parts.append(f'<rect x="{x + 14}" y="{y + 14}" width="{b}" height="{b}" rx="{b * 0.22}" '
+                       f'fill="{PALETTE[color][0]}" stroke="{PALETTE[color][1]}" stroke-width="1.5"/>')
+        if icons.known(lay['icon']):
+            c.icon(lay['icon'], x + 14 + b * 0.2, y + 14 + b * 0.2, b * 0.6, color)
+        else:
+            # a short text mark (e.g. "for", "[ ]"), as in specs written before the icon library
+            c.text(x + 14 + b / 2, y + 14 + b / 2 + small * 0.36, lay['icon'][:4], size=small, mono=True,
+                   weight=700, fill=strong)
+    tx = x + 14 + (lay['badge'] + 10 if lay['badge'] else 0)
+    title_h = len(lay['title']) * size * 1.3
+    c.lines(tx, y + 14 + lay['head'] / 2 - title_h / 2 - size * 0.2, lay['title'], size=size, anchor='start',
+            weight=800, fill=strong)
+    cy = y + 14 + lay['head'] + small * 0.6
+    for mark, lines in lay['items']:
+        c.icon(mark, x + 14, cy + small * 0.12, small * 1.15, color)
+        for k, line in enumerate(lines):
+            c.text(x + 14 + small * 1.7, cy + small * (1.0 + k * 1.45), line, size=small, anchor='start')
+        cy += len(lines) * small * 1.45
+    if lay['code']:
+        code_h = len(lay['code']) * small * 1.3 + 8
+        c.parts.append(f'<rect x="{x + 12}" y="{cy + 4}" width="{lay["inner"] + 4}" height="{code_h}" rx="6" '
+                       f'fill="#FFFFFF" opacity="0.75"/>')
+        c.lines(x + 20, cy + 4, lay['code'], size=small, anchor='start', mono=True)
+        cy += code_h + 10
+    if card.get('scene'):
+        scene_block(c, x + 14, cy + small * 0.6, lay['inner'], card['scene'], color)
+
+
 def cards(c, spec, profile):
     items = spec['cards']
     columns = 3 if profile == 'large' else 2
@@ -428,33 +542,12 @@ def cards(c, spec, profile):
     colors = ('blue', 'purple', 'teal', 'green', 'orange', 'red')
     rows = [items[i:i + columns] for i in range(0, len(items), columns)]
     for r, row in enumerate(rows):
-        heights = []
-        for k, card in enumerate(row):
-            title = c.wrap(f'{r * columns + k + 1}. {card["title"]}', size, w - 2 * 14)
-            body = [line for item in card.get('items', []) for line in c.wrap(f'✓ {item}', small, w - 2 * 14)]
-            code = [line for line in card.get('code', [])]
-            for line in code:
-                if c.width_of(line, small, mono=True) > w - 2 * 20:
-                    c.problems.append(f'code "{line}" does not fit in a card')
-            heights.append((len(title) * size + len(body) * small + len(code) * small) * 1.3 + 3.2 * size)
-        h = max(heights)
-        for k, card in enumerate(row):
-            x = c.pad + k * (w + gap)
+        layouts = [card_layout(c, card, r * columns + k + 1, w, size, small)
+                   for k, card in enumerate(row)]
+        h = max(lay['h'] for lay in layouts)
+        for k, (card, lay) in enumerate(zip(row, layouts, strict=True)):
             color = colors[(r * columns + k) % len(colors)]
-            c.rect(x, c.y, w, h, color, rx=14)
-            icon = str(card.get('icon', ''))[:4]
-            c.text(x + w - 14, c.y + size * 1.4, icon, size=small, mono=True, anchor='end', weight=700,
-                   fill=PALETTE[color][2])
-            y = c.y + 10
-            y += c.lines(x + 14, y, c.wrap(f'{r * columns + k + 1}. {card["title"]}', size, w - 2 * 14),
-                         size=size, anchor='start', weight=800, fill=PALETTE[color][2])
-            for item in card.get('items', []):
-                y += c.lines(x + 14, y, c.wrap(f'✓ {item}', small, w - 2 * 14), size=small, anchor='start')
-            if card.get('code'):
-                code_h = len(card['code']) * small * 1.3 + 8
-                c.parts.append(f'<rect x="{x + 12}" y="{y + 6}" width="{w - 24}" height="{code_h}" rx="6" '
-                               f'fill="#F0F0F0"/>')
-                c.lines(x + 20, y + 6, card['code'], size=small, anchor='start', mono=True)
+            draw_card(c, card, lay, c.pad + k * (w + gap), c.y, w, h, color, size, small)
         c.y += h + gap
     c.y += c.pad / 2
     if len(items) > 12:
@@ -463,9 +556,9 @@ def cards(c, spec, profile):
 
 
 LAYOUTS = {'flow': flow, 'timeline': timeline, 'compare': compare, 'boxes': boxes, 'layers': layers,
-           'tree': tree, 'sequence': sequence, 'bars': bars}
+           'tree': tree, 'sequence': sequence, 'bars': bars, 'scene': scene}
 REQUIRED = {'flow': 'steps', 'timeline': 'events', 'compare': 'rows', 'boxes': 'cells', 'layers': 'layers',
-            'tree': 'root', 'sequence': 'messages', 'bars': 'bars', 'cards': 'cards'}
+            'tree': 'root', 'sequence': 'messages', 'bars': 'bars', 'cards': 'cards', 'scene': 'steps'}
 
 
 def boolean_keys(value, path='spec'):
