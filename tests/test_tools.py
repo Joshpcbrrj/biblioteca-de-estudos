@@ -42,7 +42,7 @@ def test_each_translation_problem(repo, setup, problem):
 
 
 def test_exempt_folders_need_no_translation(repo):
-    for folder in ('plano', 'tests', 'skill/syllabook/references'):
+    for folder in ('plano', 'tests', 'skills/syllabook/references'):
         os.makedirs(repo / folder, exist_ok=True)
         (repo / folder / 'internal.md').write_text('x', encoding='utf-8')
     (repo / 'CHANGELOG.md').write_text('x', encoding='utf-8')

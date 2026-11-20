@@ -94,7 +94,7 @@ def test_internal_links_point_to_existing_files():
     broken = []
     for path in glob.glob(os.path.join(ROOT, '**', '*.md'), recursive=True):
         r = rel(path, ROOT)
-        if r.startswith(('plano/', 'skill/syllabook/references/')):
+        if r.startswith(('plano/', 'skills/syllabook/references/')):
             continue
         for target in re.findall(r'\]\(([^)#\s]+)(?:#[^)]*)?\)', read(path)):
             if target.startswith(('http://', 'https://', 'mailto:', '../../')):

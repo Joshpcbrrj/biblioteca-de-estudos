@@ -34,8 +34,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           # use the copy in this repository if there is one; otherwise the latest release
-          if [ -d skill/syllabook/scripts ]; then
-            echo "SCRIPTS=$PWD/skill/syllabook/scripts" >> "$GITHUB_ENV"
+          if [ -d skills/syllabook/scripts ]; then
+            echo "SCRIPTS=$PWD/skills/syllabook/scripts" >> "$GITHUB_ENV"
           else
             gh release download --repo Joshpcbrrj/syllabook --pattern syllabook.zip --dir "$RUNNER_TEMP"
             unzip -q "$RUNNER_TEMP/syllabook.zip" -d "$RUNNER_TEMP"

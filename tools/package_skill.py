@@ -12,7 +12,7 @@ import sys
 import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKILL = os.path.join(ROOT, 'skill', 'syllabook')
+SKILL = os.path.join(ROOT, 'skills', 'syllabook')
 SKIP_DIRS = {'__pycache__', '.pytest_cache'}
 
 

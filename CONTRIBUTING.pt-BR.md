@@ -1,4 +1,4 @@
-<!-- translation-of: CONTRIBUTING.md sha256:1012d0137cdc -->
+<!-- translation-of: CONTRIBUTING.md sha256:414b320138e1 -->
 # Como contribuir
 
 [English](CONTRIBUTING.md) | **Português**
@@ -53,6 +53,9 @@ Há um arquivo de teste para cada parte do kit:
 | `test_build.py` | o EPUB, a navegação, o mapa, os zips, as listas da biblioteca e o site (gerado com o Zensical) |
 | `test_tools.py` | o verificador de traduções e o empacotador da skill |
 | `test_repo.py` | a estrutura da skill, a documentação e o esqueleto da biblioteca |
+| `test_workflows.py` | os workflows da biblioteca (`epub.yml`, `site.yml`) rodando passo a passo, com `gh` e `pip` falsos (só Linux) |
+
+O `ruff check .` tem um parceiro para os workflows do GitHub: `actionlint .github/workflows/*.yml skills/syllabook/assets/library/.github/workflows/*.yml`. A release e a publicação no GitHub Pages de verdade rodam na biblioteca pública de demonstração, [syllabook-demo](https://github.com/Joshpcbrrj/syllabook-demo).
 
 **Vai acrescentar uma regra a um script?** Acrescente um caso de teste para ela: a maioria dos arquivos tem uma tabela de casos (`ERRORS`, `WARNINGS`) em que uma regra nova é uma linha a mais. O livro de exemplo em `tests/fixtures/sample-book/` passa em todas as checagens; os testes o copiam e quebram uma coisa de cada vez.
 

@@ -26,7 +26,11 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: pip install -r requirements-dev.txt
-      - name: Lint
-        run: ruff check .
+      - name: Lint (code and workflows)
+        run: |
+          ruff check .
+          actionlint .github/workflows/*.yml skills/syllabook/assets/library/.github/workflows/*.yml
+      - name: Plugin and marketplace manifests are valid JSON
+        run: python -c "import json; [json.load(open(p)) for p in ('.claude-plugin/plugin.json', '.claude-plugin/marketplace.json')]"
       - name: Tests with coverage
         run: pytest --cov

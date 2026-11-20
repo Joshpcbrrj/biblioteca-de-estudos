@@ -52,6 +52,9 @@ There is one test file per part of the kit:
 | `test_build.py` | the EPUB, navigation, map, zips, library lists and the website (built with Zensical) |
 | `test_tools.py` | the translation checker and the skill packager |
 | `test_repo.py` | the skill's structure, the documentation and the library skeleton |
+| `test_workflows.py` | the library workflows (`epub.yml`, `site.yml`) run step by step, with fake `gh` and `pip` (Linux only) |
+
+`ruff check .` also has a partner for the GitHub workflows: `actionlint .github/workflows/*.yml skills/syllabook/assets/library/.github/workflows/*.yml`. The real release and GitHub Pages deploy run in the public demo library, [syllabook-demo](https://github.com/Joshpcbrrj/syllabook-demo).
 
 **Adding a rule to a script?** Add one test case for it: most files have a table of cases (`ERRORS`, `WARNINGS`) where a new rule is one more line. The sample book in `tests/fixtures/sample-book/` passes every check; tests copy it and break one thing at a time.
 

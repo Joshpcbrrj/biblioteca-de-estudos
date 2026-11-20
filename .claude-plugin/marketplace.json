@@ -1,0 +1,15 @@
+{
+  "name": "syllabook",
+  "description": "Syllabook: create and improve self-study books with Claude",
+  "owner": {
+    "name": "Josué B. Almeida",
+    "url": "https://github.com/Joshpcbrrj"
+  },
+  "plugins": [
+    {
+      "name": "syllabook",
+      "source": "./",
+      "description": "Writes self-study course-books on any topic, improves study materials and translates books."
+    }
+  ]
+}

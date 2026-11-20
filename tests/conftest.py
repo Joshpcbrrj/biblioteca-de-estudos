@@ -13,7 +13,7 @@ import pytest
 import yaml
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKILL = os.path.join(ROOT, 'skill', 'syllabook')
+SKILL = os.path.join(ROOT, 'skills', 'syllabook')
 SCRIPTS = os.path.join(SKILL, 'scripts')
 SAMPLE = os.path.join(ROOT, 'tests', 'fixtures', 'sample-book')
 sys.path[:0] = [SCRIPTS, os.path.join(ROOT, 'tools')]

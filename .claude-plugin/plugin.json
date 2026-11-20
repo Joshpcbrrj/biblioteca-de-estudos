@@ -1,0 +1,13 @@
+{
+  "name": "syllabook",
+  "version": "0.1.0",
+  "description": "Writes self-study course-books on any topic from a syllabus you approve, improves your study materials and translates books. Markdown, EPUB and a searchable website, published to GitHub and copied to Notion.",
+  "author": {
+    "name": "Josué B. Almeida",
+    "url": "https://github.com/Joshpcbrrj"
+  },
+  "homepage": "https://github.com/Joshpcbrrj/syllabook",
+  "repository": "https://github.com/Joshpcbrrj/syllabook",
+  "license": "MIT",
+  "keywords": ["education", "self-study", "books", "syllabus", "epub", "notion", "github-pages"]
+}
