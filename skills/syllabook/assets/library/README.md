@@ -1,12 +1,12 @@
-# Library skeleton
+# 📚 Study library
 
-The skill copies these files into the user's library repository when it does not have them yet (`modes/PUBLISH.md` §2). Never overwrite a file that already exists there.
+**English** | [Português](README.pt-BR.md)
 
-| File | Where it goes |
-| --- | --- |
-| `library.yaml` | repository root; the skill fills `author`, `repository`, `commit_name` and `commit_email` |
-| `created-books/`, `improved-materials/`, `site/` | repository root, with their READMEs in English and Portuguese |
-| `.github/workflows/epub.yml` | builds one EPUB per book on every push and publishes it on the `epub_release` release |
-| `.github/workflows/site.yml` | builds the website with Zensical and publishes it on GitHub Pages (the user turns Pages on once: Settings → Pages → Source: GitHub Actions) |
+Books for studying on my own, written and improved with [Syllabook](https://github.com/Joshpcbrrj/syllabook).
 
-Both workflows do nothing while the library has no books. They use the scripts in the repository when it has a copy of the skill, and otherwise download the latest Syllabook release.
+- 🌐 **Read online, with search across every book:** `https://<user>.github.io/<repository>/`
+- 📗 [Created books](created-books/): written from a syllabus, from beginner to intermediate.
+- 🔁 [Improved materials](improved-materials/): study materials made clearer and more complete.
+- 📥 **EPUB** for any e-reader: in the **Releases** of this repository, or next to each book in the lists.
+
+Found an error? Open an issue: every correction helps the next reader.
