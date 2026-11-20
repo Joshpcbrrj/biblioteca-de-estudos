@@ -1,6 +1,6 @@
 # Mode 2: Improve, from material to approved plan
 
-Copy this checklist into your reply and tick it off:
+Follow this checklist. Track it yourself and never show it to the user: they see the results of each step, not the list.
 
 ```text
 - [ ] 1. Receive the material (and related sources, if any)

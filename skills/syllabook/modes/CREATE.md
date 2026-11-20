@@ -1,6 +1,6 @@
 # Mode 1: Create, from topic to approved syllabus
 
-The sections below follow this checklist, step by step. Copy it into your reply and tick it off:
+The sections below follow this checklist, step by step. Track it yourself and never show it to the user: they see the results of each step, not the list.
 
 ```text
 - [ ] 1. Understand the request (up to 3 questions)
@@ -95,13 +95,21 @@ Syllabus rules:
 
 ## 5. Adjust until "approved"
 
-Read requests in plain language. Always reply with **the whole updated syllabus** and, above it, one line `Changed: ...`. Run `book.py validate` after every change.
+Read requests in plain language. Always reply with **one line** saying what changed, in the conversation language (e.g. "Mudou: ..."), **before** the syllabus, then **the whole updated syllabus**. Anything else you want to suggest goes after the syllabus, briefly. The reply always has this shape:
+
+```text
+<Changed, in the conversation language>: <what changed, in one line>
+
+<the whole syllabus, in the §4 format>
+
+<at most 2 short suggestions, only if needed>
+``` Run `book.py validate` after every change.
 
 | Request | What to do |
 | --- | --- |
 | "longer" / "more complete" | add or deepen chapters without breaking the progression; state the new total |
 | "shorter" | merge nearby chapters; the rest goes to Next steps |
-| "drop X" | remove it; if a later chapter depends on it, move the minimum it needs there and say so in `Changed:` |
+| "drop X" | remove it; if a later chapter depends on it, move the minimum it needs there and say so in the "changed" line |
 | "add Y" | fit it where the progression allows; if Y is too advanced for the level, suggest leaving it for another book |
 | "more hands-on" | turn explanation goals into tasks; make the final project measurable |
 | "merge", "split", "swap the order" | do it and check that no chapter now uses a concept not yet taught |

@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:7d511d051625 -->
+<!-- translation-of: README.md sha256:0405e21264c0 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -40,7 +40,7 @@ Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito c
 | [`docs/`](docs/README.pt-BR.md) | Documentação: como usar, integrações (GitHub, Notion, Google Drive, Docling), referência |
 | [`plano/`](plano/) | Plano da reformulação (temporário) |
 
-Este repositório é um **template**: clique em **Use this template** para receber a skill e as pastas vazias, e guarde os seus livros na sua própria conta do GitHub.
+**A sua própria biblioteca:** cada pessoa guarda os livros num repositório só seu. Crie o seu a partir do [modelo de biblioteca](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, público) ou comece com um repositório vazio e deixe o Syllabook prepará-lo no primeiro livro. Este repositório guarda a skill e os arquivos de desenvolvimento dela, não livros.
 
 ## Contribuir
 

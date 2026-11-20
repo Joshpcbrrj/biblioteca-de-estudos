@@ -11,6 +11,7 @@ Thank you for helping. This project is made for people who study on their own, a
 - [I want to change the skill or the scripts](#i-want-to-change-the-skill-or-the-scripts)
 - [Tests](#tests)
 - [Translations](#translations)
+- [Releases](#releases)
 - [General rules](#general-rules)
 
 ## I found an error in a book
@@ -66,6 +67,12 @@ There is one test file per part of the kit:
 ## Translations
 
 The documentation is written in English, with a Portuguese version next to each page (`page.md` and `page.pt-BR.md`). When you change an English page, update the Portuguese one too, then run `python tools/translation.py stamp <page>.pt-BR.md` to record which English version it translates. If you cannot translate it, say so in the pull request: the tests will flag the page as outdated until someone does.
+
+## Releases
+
+1. Move the `[Unreleased]` notes in `CHANGELOG.md` to a new version, and set the same version in `.claude-plugin/plugin.json`.
+2. Push to `main` and wait for the tests; then tag it (`git tag vX.Y.Z && git push origin vX.Y.Z`). The "Skill release" Action publishes `syllabook.zip`.
+3. If `skills/syllabook/assets/library/` changed, update the [library template](https://github.com/Joshpcbrrj/syllabook-library): clone it, run `python tools/sync_template.py <clone>`, then commit and push the clone.
 
 ## General rules
 

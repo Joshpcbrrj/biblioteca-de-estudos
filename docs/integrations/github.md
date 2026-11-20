@@ -9,7 +9,7 @@ Your library lives in a GitHub repository of yours: the books in Markdown, the E
 ## What you need
 
 - A GitHub account.
-- A **public** repository for your library (GitHub Pages is free for public repositories). The easiest way: open the [demo library](https://github.com/Joshpcbrrj/syllabook-demo) to see what one looks like, then create an empty repository and let Syllabook set it up on the first book.
+- A **public** repository for your library (GitHub Pages is free for public repositories). The easiest way: open the [library template](https://github.com/Joshpcbrrj/syllabook-library) and click **Use this template → Create a new repository** (public). It comes ready: folders, license and the workflows that build the EPUBs and the website. To see a library with a book in it, open the [demo library](https://github.com/Joshpcbrrj/syllabook-demo). An empty repository also works: Syllabook sets it up on the first book.
 
 ## Step by step
 

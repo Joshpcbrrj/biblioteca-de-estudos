@@ -1,4 +1,4 @@
-<!-- translation-of: github.md sha256:446a8ca16c4d -->
+<!-- translation-of: github.md sha256:ce7cfb5e52fe -->
 # GitHub: guardar os livros no seu próprio repositório
 
 [English](github.md) | **Português**
@@ -10,7 +10,7 @@ A sua biblioteca fica num repositório seu no GitHub: os livros em Markdown, os 
 ## O que você precisa
 
 - Uma conta no GitHub.
-- Um repositório **público** para a sua biblioteca (o GitHub Pages é grátis para repositórios públicos). O jeito mais fácil: abra a [biblioteca de demonstração](https://github.com/Joshpcbrrj/syllabook-demo) para ver como uma biblioteca fica, depois crie um repositório vazio e deixe o Syllabook prepará-lo no primeiro livro.
+- Um repositório **público** para a sua biblioteca (o GitHub Pages é grátis para repositórios públicos). O jeito mais fácil: abra o [modelo de biblioteca](https://github.com/Joshpcbrrj/syllabook-library) e clique em **Use this template → Create a new repository** (público). Ele já vem pronto: pastas, licença e os workflows que geram os EPUBs e o site. Para ver uma biblioteca com um livro, abra a [biblioteca de demonstração](https://github.com/Joshpcbrrj/syllabook-demo). Um repositório vazio também serve: o Syllabook o prepara no primeiro livro.
 
 ## Passo a passo
 

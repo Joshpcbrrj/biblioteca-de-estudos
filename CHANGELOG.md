@@ -9,6 +9,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 ### Added
 
 - Behavior evals in `evals/` for `claude plugin eval`: eight cases (triggering, language, assessment + syllabus, adjustment, nothing before "approved", writing a chapter, improve mode, publishing without connections), run on the user's machine.
+- A library template of its own, [syllabook-library](https://github.com/Joshpcbrrj/syllabook-library): each user creates their library from it with **Use this template**. `tools/sync_template.py` keeps it equal to the skill's library skeleton.
+
+### Changed
+
+- This repository is no longer a GitHub template: it holds the skill and its development files. The README, the GitHub guide and the Publish mode point to the library template instead.
+- The skill follows its step checklists without showing them in the conversation.
+- After a syllabus change, the reply starts with one line saying what changed, in the conversation language, followed by the whole syllabus.
 
 ### Fixed
 

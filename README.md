@@ -39,7 +39,7 @@ Every book includes a map with links, a placement test, exercises with commented
 | [`docs/`](docs/) | Documentation: how to use, integrations (GitHub, Notion, Google Drive, Docling), reference |
 | [`plano/`](plano/) | Rebuild plan (temporary, in Portuguese) |
 
-This repository is a **template**: click **Use this template** to get the skill and the empty folders, and keep your own books in your own GitHub account.
+**Your own library:** every user keeps their books in a repository of their own. Create yours from the [library template](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, public), or start with an empty repository and let Syllabook set it up on the first book. This repository holds the skill and its development files, not books.
 
 ## Contributing
 

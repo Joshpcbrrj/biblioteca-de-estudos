@@ -1,6 +1,6 @@
 # Mode 3: Translate a book into another language
 
-Copy this checklist into your reply and tick it off:
+Follow this checklist. Track it yourself and never show it to the user: they see the results of each step, not the list.
 
 ```text
 - [ ] 1. Identify the book and the target language

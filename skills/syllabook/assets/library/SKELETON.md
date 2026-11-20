@@ -1,6 +1,6 @@
 # Library skeleton
 
-The skill copies these files into the user's library repository when it does not have them yet (`modes/PUBLISH.md` §2). Never overwrite a file that already exists there, and never copy this note (`SKELETON.md`).
+The skill copies these files into the user's library repository when it does not have them yet (`modes/PUBLISH.md` §2). The same files, without this note, make up the library template (https://github.com/Joshpcbrrj/syllabook-library), kept in sync by `tools/sync_template.py`. Never overwrite a file that already exists there, and never copy this note (`SKELETON.md`).
 
 | File | Where it goes |
 | --- | --- |

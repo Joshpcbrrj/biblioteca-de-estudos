@@ -1,4 +1,4 @@
-<!-- translation-of: CONTRIBUTING.md sha256:3bd830a690c9 -->
+<!-- translation-of: CONTRIBUTING.md sha256:3e6ecce6e188 -->
 # Como contribuir
 
 [English](CONTRIBUTING.md) | **Português**
@@ -12,6 +12,7 @@ Obrigado por querer ajudar. Este projeto é feito para quem estuda sozinho, e to
 - [Quero mudar a skill ou os scripts](#quero-mudar-a-skill-ou-os-scripts)
 - [Testes](#testes)
 - [Traduções](#traduções)
+- [Versões](#versões)
 - [Regras gerais](#regras-gerais)
 
 ## Achei um erro num livro
@@ -67,6 +68,12 @@ O `ruff check .` tem um parceiro para os workflows do GitHub: `actionlint .githu
 ## Traduções
 
 A documentação é escrita em inglês, com a versão em português ao lado de cada página (`pagina.md` e `pagina.pt-BR.md`). Quando mudar uma página em inglês, atualize também a em português e rode `python tools/translation.py stamp <pagina>.pt-BR.md` para registrar de qual versão em inglês ela é a tradução. Se não puder traduzir, diga no pull request: os testes vão apontar a página como desatualizada até alguém traduzir.
+
+## Versões
+
+1. Passe as notas de `[Unreleased]` do `CHANGELOG.md` para uma versão nova e ponha a mesma versão no `.claude-plugin/plugin.json`.
+2. Envie para a `main` e espere os testes; depois crie a tag (`git tag vX.Y.Z && git push origin vX.Y.Z`). A Action "Skill release" publica o `syllabook.zip`.
+3. Se `skills/syllabook/assets/library/` mudou, atualize o [modelo de biblioteca](https://github.com/Joshpcbrrj/syllabook-library): clone-o, rode `python tools/sync_template.py <clone>` e depois faça o commit e envie o clone.
 
 ## Regras gerais
 

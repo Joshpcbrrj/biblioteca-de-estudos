@@ -87,7 +87,7 @@ They live in `scripts/`, install what they need and print short JSON with only w
 | `python scripts/build.py lists --library <repo>` | updates the book lists in `created-books/` and `improved-materials/` |
 | `python scripts/notion.py <n>` | converts a chapter to Notion's format |
 
-## Flow after approval (copy this checklist into your reply and tick it off)
+## Flow after approval (track this checklist yourself; never show it to the user)
 
 ```text
 - [ ] 1. book.yaml saved and validated
