@@ -6,7 +6,12 @@
 
 Syllabook is a Claude skill for self-learners. It writes course-books on any topic and improves the study materials you already have. Everything it produces is yours: Markdown in your GitHub repository, an EPUB for any e-reader, a searchable website and, if you want, a copy in Notion.
 
-> 🚧 **Being rebuilt.** The skill is being rewritten from scratch. The roadmap and decisions are in [`plano/PLANO.md`](plano/PLANO.md) (in Portuguese). There is no version to install yet.
+> 🧪 **Early version (0.x).** It works end to end, and it keeps improving in small releases until 1.0. The roadmap and decisions are in [`plano/PLANO.md`](plano/PLANO.md) (in Portuguese); changes are in the [CHANGELOG](CHANGELOG.md).
+
+## Install
+
+- **Claude app (claude.ai, desktop):** download `syllabook.zip` from the [latest release](https://github.com/Joshpcbrrj/syllabook/releases/latest) and upload it in the Skills section of Claude's settings.
+- **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook`, then `claude plugin install syllabook@syllabook`.
 
 👀 **See it working:** the [demo library](https://github.com/Joshpcbrrj/syllabook-demo) and its [searchable website](https://joshpcbrrj.github.io/syllabook-demo/), built by the same workflows every library gets.
 
