@@ -2,6 +2,8 @@
 
 **English** | [Português](README.pt-BR.md)
 
+![Syllabook: create your course on any topic. An open book whose pages show the course structure and the dynamic content structure](docs/img/syllabook-banner.jpg)
+
 **Turn any topic or study material into a book you can actually learn from.**
 
 ![Syllabook's first message in Claude Code: it confirms the language and offers to create a book, improve a study material, translate a book, publish one or continue one in progress](docs/img/syllabook-start.svg)
