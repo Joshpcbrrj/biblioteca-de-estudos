@@ -1,0 +1,27 @@
+title: "Python do zero (exemplo de teste)"
+subtitle: "Livro mínimo usado pelos testes do kit"
+slug: python-do-zero-teste
+origin: created
+language: pt-BR
+conversation_language: pt-BR
+profiles: [stem]
+level: {start: iniciante, end: iniciante}
+audience: "Quem nunca programou"
+goal: "Calcular uma média com um laço for"
+prerequisites: []
+sources:
+  - {title: "The Python Tutorial", url: "https://docs.python.org/3/tutorial/", checked: "2026-11-20"}
+approved_on: "2026-11-20"
+edition: "1.0"
+human_review: false
+choices: {images: svg, reading: large}
+concepts:
+  - {id: lista, name: "lista", chapter: 1, depends: []}
+  - {id: laco-for, name: "laço for", chapter: 2, depends: [lista]}
+chapters:
+  - {n: 1, title: "Listas", goal: "Guardar várias notas numa lista e contar os itens", topics: ["Listas"], minutes: 20}
+  - {n: 2, title: "O laço for", goal: "Calcular a média de uma lista com um laço for", topics: ["O laço for"], minutes: 30}
+next_steps: ["Funções em Python"]
+covers: [lista, laco-for]
+progress: []
+changes: []
