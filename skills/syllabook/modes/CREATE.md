@@ -15,7 +15,7 @@ The sections below follow this checklist, step by step. Track it yourself and ne
 
 ## 1. Understand the request
 
-One message, at most 3 questions, and only what the request did not say:
+One message, **at most 3 questions in total**, and only what the request did not say. Every question counts, including one about the approach (chronological or by theme, which style, which instrument): if a fourth seems useful, pick a sensible default for it, say it in one line and let the user change it later.
 
 | Question | Default if the user does not answer |
 | --- | --- |

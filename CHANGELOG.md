@@ -26,6 +26,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Research dossiers are written for every chapter of the book before the first one, even when the user asks for only some chapters now.
 - The assessment lists what the research still debates and, for physical skills, a safety line.
 - Topic guide: the assessment shows "How this book teaches <topic>" (practice, checking yourself, pictures, what to avoid) for approval, and after approval it becomes `research/guide.md`, which adapts the area profile to the topic and goes to every chapter through `book.py brief`. Topics without a profile of their own get a method made for them.
+- At most 3 questions before the syllabus, counting any question about the approach; anything else becomes a stated default.
 - Music diagrams in `diagram.py`: `chord` (chord boxes with fingers, open and muted strings, barre and the first fret), `fretboard` (notes on the neck, the root highlighted) and `tab` (tablature with bar lines), for any tuning; each one also prints the same content as copyable text.
 
 ### Fixed
