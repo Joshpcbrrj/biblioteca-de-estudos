@@ -45,7 +45,7 @@ Every book includes a map with links, a placement test, exercises with commented
 
 Syllabook is free and open. If it helps you learn, you can support its development:
 
-| Pix | Bitcoin | Other cryptocurrencies |
+| Pix (random key) | Bitcoin (BlueWallet) | Other cryptocurrencies (HiddenSwap) |
 | :---: | :---: | :---: |
 | <a href="https://nubank.com.br/cobrar/1i7whc/6b00f69e-18fc-4ede-8251-9aa5ab30882a"><img src="docs/img/donate-pix.png" alt="Pix QR code" width="180"></a> | <img src="docs/img/donate-bitcoin.png" alt="Bitcoin QR code" width="180"> | <a href="https://hiddenswap.com/pay/U5SUjiUR"><img src="docs/img/donate-hiddenswap.png" alt="HiddenSwap QR code" width="180"></a> |
 | [Pay with Pix (Brazil)](https://nubank.com.br/cobrar/1i7whc/6b00f69e-18fc-4ede-8251-9aa5ab30882a) | `bc1qpavyz63u90f5y8mawj0lydn55hr3f9l9kum7mq` | [Pay with HiddenSwap](https://hiddenswap.com/pay/U5SUjiUR) |

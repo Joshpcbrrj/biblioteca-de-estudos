@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:81e6f393e1e0 -->
+<!-- translation-of: README.md sha256:7ae7b93dd16f -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -46,7 +46,7 @@ Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito c
 
 O Syllabook é gratuito e aberto. Se ele ajuda você a aprender, você pode apoiar o desenvolvimento:
 
-| Pix | Bitcoin | Outras criptomoedas |
+| Pix (chave aleatória) | Bitcoin (BlueWallet) | Outras criptomoedas (HiddenSwap) |
 | :---: | :---: | :---: |
 | <a href="https://nubank.com.br/cobrar/1i7whc/6b00f69e-18fc-4ede-8251-9aa5ab30882a"><img src="docs/img/donate-pix.png" alt="QR code do Pix" width="180"></a> | <img src="docs/img/donate-bitcoin.png" alt="QR code de Bitcoin" width="180"> | <a href="https://hiddenswap.com/pay/U5SUjiUR"><img src="docs/img/donate-hiddenswap.png" alt="QR code do HiddenSwap" width="180"></a> |
 | [Pagar com Pix](https://nubank.com.br/cobrar/1i7whc/6b00f69e-18fc-4ede-8251-9aa5ab30882a) | `bc1qpavyz63u90f5y8mawj0lydn55hr3f9l9kum7mq` | [Pagar pelo HiddenSwap](https://hiddenswap.com/pay/U5SUjiUR) |
