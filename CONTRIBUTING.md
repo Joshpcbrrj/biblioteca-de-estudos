@@ -30,7 +30,7 @@ Open an issue with the **Suggest a topic** form. Tell us what you want to learn 
 4. Run the checks before sending (see [Tests](#tests)). The "Kit tests" Action runs the same on every pull request, on Windows and Linux.
 5. Open the pull request and fill in the checklist that appears.
 
-Design decisions are recorded in `docs/decisions/`. If your change goes against one of them, explain why in the pull request.
+Design decisions are recorded in [`plano/PLANO.md`](plano/PLANO.md) (in Portuguese) until they move to `docs/`. If your change goes against one of them, explain why in the pull request.
 
 ## Tests
 
@@ -56,11 +56,16 @@ There is one test file per part of the kit:
 | `test_ingest.py` | each input type (Markdown, folder, HTML, web address, EPUB, DOCX, PDF), Docling and its fallbacks |
 | `test_notion.py` | the conversion to Notion's format (toggles, callouts, uploads), the index page |
 | `test_install.py` | the Docling installers (shellcheck, PowerShell syntax) and the helper that edits the Claude app's settings |
+| `test_images.py` | free-license photos from Wikimedia Commons, the credits file and the application screenshots |
+| `test_icons.py`, `test_build_icons.py` | the embedded Lucide icons and the tool that picks them |
 | `test_tools.py` | the translation checker and the skill packager |
+| `test_sync_template.py` | the library template mirrors the skill's library skeleton |
 | `test_repo.py` | the skill's structure, the documentation and the library skeleton |
 | `test_workflows.py` | the library workflows (`epub.yml`, `site.yml`) run step by step, with fake `gh` and `pip` (Linux only) |
 
 `ruff check .` also has a partner for the GitHub workflows: `actionlint .github/workflows/*.yml skills/syllabook/assets/library/.github/workflows/*.yml`. The real release and GitHub Pages deploy run in the public demo library, [syllabook-demo](https://github.com/Joshpcbrrj/syllabook-demo).
+
+**Behavior evals:** besides these tests, [`evals/`](evals/README.md) has cases for `claude plugin eval`, which check what the skill does in a real conversation. They run on your own Claude account, never in CI.
 
 **Adding a rule to a script?** Add one test case for it: most files have a table of cases (`ERRORS`, `WARNINGS`) where a new rule is one more line. The sample book in `tests/fixtures/sample-book/` passes every check; tests copy it and break one thing at a time.
 

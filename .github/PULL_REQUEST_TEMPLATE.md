@@ -17,4 +17,4 @@
 - [ ] Nothing copied from third parties beyond short quotations with their source.
 - [ ] No personal data, passwords or tokens.
 - [ ] `CHANGELOG.md` updated under "Unreleased", if the change affects people using the skill.
-- [ ] If it goes against a decision in `docs/decisions/`, I explained why above.
+- [ ] If it goes against a decision in `plano/PLANO.md`, I explained why above.

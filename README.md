@@ -46,10 +46,11 @@ Every book includes a map with links, a placement test, exercises with commented
 
 | Folder | Contents |
 | --- | --- |
-| [`created-books/`](created-books/) | Books written from a syllabus |
-| [`improved-materials/`](improved-materials/) | Improved study materials |
-| [`site/`](site/) | Source of the searchable website (GitHub Pages) that shows every book |
+| [`skills/syllabook/`](skills/syllabook/) | The skill: instructions, modes, references, scripts and the library skeleton |
 | [`docs/`](docs/) | Documentation: how to use, integrations (GitHub, Notion, Google Drive, Docling, WSL 2), reference |
+| [`install/`](install/) | Docling installers for Windows, macOS and Linux |
+| [`evals/`](evals/README.md) | Behavior evals (`claude plugin eval`) |
+| [`tests/`](tests/), [`tools/`](tools/) | Tests of the scripts and the maintenance tools (translations, packaging, template sync) |
 | [`plano/`](plano/) | Rebuild plan (temporary, in Portuguese) |
 
 **Your own library:** every user keeps their books in a repository of their own. Create yours from the [library template](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, public), or start with an empty repository and let Syllabook set it up on the first book. This repository holds the skill and its development files, not books.

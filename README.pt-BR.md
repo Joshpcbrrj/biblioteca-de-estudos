@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:65acd2bcb919 -->
+<!-- translation-of: README.md sha256:4ca629f7ac13 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -47,10 +47,11 @@ Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito c
 
 | Pasta | O que tem |
 | --- | --- |
-| [`created-books/`](created-books/README.pt-BR.md) | Livros feitos a partir de uma ementa |
-| [`improved-materials/`](improved-materials/README.pt-BR.md) | Materiais de estudo aprimorados |
-| [`site/`](site/README.pt-BR.md) | Fonte do site com busca (GitHub Pages) que mostra todos os livros |
+| [`skills/syllabook/`](skills/syllabook/) | A skill: instruções, modos, referências, scripts e o esqueleto da biblioteca |
 | [`docs/`](docs/README.pt-BR.md) | Documentação: como usar, integrações (GitHub, Notion, Google Drive, Docling, WSL 2), referência |
+| [`install/`](install/) | Instaladores do Docling para Windows, macOS e Linux |
+| [`evals/`](evals/README.md) | Avaliações de comportamento (`claude plugin eval`, em inglês) |
+| [`tests/`](tests/), [`tools/`](tools/) | Testes dos scripts e ferramentas de manutenção (traduções, pacote, sincronização do modelo) |
 | [`plano/`](plano/) | Plano da reformulação (temporário) |
 
 **A sua própria biblioteca:** cada pessoa guarda os livros num repositório só seu. Crie o seu a partir do [modelo de biblioteca](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, público) ou comece com um repositório vazio e deixe o Syllabook prepará-lo no primeiro livro. Este repositório guarda a skill e os arquivos de desenvolvimento dela, não livros.

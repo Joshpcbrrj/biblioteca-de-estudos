@@ -1,4 +1,4 @@
-<!-- translation-of: CONTRIBUTING.md sha256:3e6ecce6e188 -->
+<!-- translation-of: CONTRIBUTING.md sha256:458fce855327 -->
 # Como contribuir
 
 [English](CONTRIBUTING.md) | **Português**
@@ -31,7 +31,7 @@ Abra uma issue com o formulário **Suggest a topic (Sugerir tema)**. Conte o que
 4. Rode as verificações antes de enviar (veja [Testes](#testes)). A Action "Kit tests" roda o mesmo em todo pull request, no Windows e no Linux.
 5. Abra o pull request preenchendo o roteiro que aparece.
 
-As decisões de projeto ficam registradas em `docs/decisions/`. Se a sua mudança contraria uma delas, explique por quê no pull request.
+As decisões de projeto ficam registradas em [`plano/PLANO.md`](plano/PLANO.md) até irem para `docs/`. Se a sua mudança contraria uma delas, explique por quê no pull request.
 
 ## Testes
 
@@ -57,11 +57,16 @@ Há um arquivo de teste para cada parte do kit:
 | `test_ingest.py` | cada tipo de entrada (Markdown, pasta, HTML, endereço web, EPUB, DOCX, PDF), o Docling e as alternativas a ele |
 | `test_notion.py` | a conversão para o formato do Notion (toggles, callouts, envios), a página de índice |
 | `test_install.py` | os instaladores do Docling (shellcheck, sintaxe do PowerShell) e o script que edita as configurações do app do Claude |
+| `test_images.py` | as fotos com licença livre do Wikimedia Commons, o arquivo de créditos e as capturas da aplicação |
+| `test_icons.py`, `test_build_icons.py` | os ícones do Lucide embutidos e a ferramenta que os escolhe |
 | `test_tools.py` | o verificador de traduções e o empacotador da skill |
+| `test_sync_template.py` | o modelo de biblioteca espelha o esqueleto da biblioteca da skill |
 | `test_repo.py` | a estrutura da skill, a documentação e o esqueleto da biblioteca |
 | `test_workflows.py` | os workflows da biblioteca (`epub.yml`, `site.yml`) rodando passo a passo, com `gh` e `pip` falsos (só Linux) |
 
 O `ruff check .` tem um parceiro para os workflows do GitHub: `actionlint .github/workflows/*.yml skills/syllabook/assets/library/.github/workflows/*.yml`. A release e a publicação no GitHub Pages de verdade rodam na biblioteca pública de demonstração, [syllabook-demo](https://github.com/Joshpcbrrj/syllabook-demo).
+
+**Avaliações de comportamento:** além desses testes, a pasta [`evals/`](evals/README.md) tem casos para o `claude plugin eval`, que conferem o que a skill faz numa conversa de verdade. Eles rodam na sua própria conta do Claude, nunca no CI.
 
 **Vai acrescentar uma regra a um script?** Acrescente um caso de teste para ela: a maioria dos arquivos tem uma tabela de casos (`ERRORS`, `WARNINGS`) em que uma regra nova é uma linha a mais. O livro de exemplo em `tests/fixtures/sample-book/` passa em todas as checagens; os testes o copiam e quebram uma coisa de cada vez.
 

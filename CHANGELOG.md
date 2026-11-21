@@ -108,3 +108,8 @@ First release of the rebuilt skill.
 
 - The old skills `revisar-curso-biblioteca` and `criar-livro-tecnologia`, the scripts in `ferramentas/` and the tests, to be replaced by the new skill.
 - The courses and books published with the old skills (they will be rebuilt with the new one), and the `epubs` and `skill` releases.
+
+[Unreleased]: https://github.com/Joshpcbrrj/syllabook/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/Joshpcbrrj/syllabook/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/Joshpcbrrj/syllabook/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/Joshpcbrrj/syllabook/releases/tag/v0.1.0
