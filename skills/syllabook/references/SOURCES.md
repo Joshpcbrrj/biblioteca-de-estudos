@@ -72,11 +72,13 @@ Separate **fact**, **interpretation** and **legend** in the text whenever a topi
 
 ## 7. Real images
 
-Photos of people, machines, instruments, components or historical documents:
+Photos of people, events, machines, instruments, components or historical documents, and screenshots of the application the book builds:
 
-- only public domain or free licenses (e.g. from Wikimedia Commons or museum open-access collections);
-- record author, source, license and link in `img/CREDITS.md`, and give the credit in the caption;
-- prefer an SVG diagram when the point is a structure, not what the thing looks like.
+- **Photos:** `images.py search "<query>"` lists only public domain, CC0, CC BY and CC BY-SA images from Wikimedia Commons (search in English); `images.py fetch "File:<title>" --name c03-eniac` downloads one and records author, license and link in `img/CREDITS.md`. Never take a photo from a stock site or any other page.
+- **Screenshots:** after running the chapter's application, `images.py screenshot <url> --name c05-app`. Without a browser (claude.ai), ask the user for the screenshot of the running application and record it in `img/CREDITS.md` yourself. Never draw or fake a screenshot.
+- Put the credit in the caption (`images.py` prints it) and write the alt text.
+- Prefer an SVG diagram when the point is a structure, not what the thing looks like.
+- `audit.py` reports a photo or screenshot without its line in `img/CREDITS.md` as an error.
 
 ## 8. Sensitive topics
 

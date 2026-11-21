@@ -99,6 +99,19 @@ def audit_chapter(path, n, lab, limits, language, errors, warnings):
     return re.findall(r'\]\(\.\./img/([^)\s]+)\)', text)
 
 
+def uncredited(book_dir, names):
+    """Photos and screenshots (raster images without a spec in img/_source/) with no credit line."""
+    path = os.path.join(book_dir, 'img', 'CREDITS.md')
+    credits = open(path, encoding='utf-8').read() if os.path.exists(path) else ''
+    for name in names:
+        stem, ext = os.path.splitext(name)
+        if ext.lower() not in ('.png', '.jpg', '.jpeg', '.gif', '.webp'):
+            continue
+        if glob.glob(os.path.join(book_dir, 'img', '_source', stem + '.*')) or name in credits:
+            continue
+        yield name
+
+
 def main():
     p = argparse.ArgumentParser(description='Ready criteria for a chapter or the whole book.')
     p.add_argument('n', type=int, nargs='?')
@@ -117,7 +130,10 @@ def main():
         if not file:
             errors.append(f'chapter {n}: file missing')
             continue
-        used.update(audit_chapter(file, n, lab, limits, language, errors, warnings))
+        names = audit_chapter(file, n, lab, limits, language, errors, warnings)
+        used.update(names)
+        for name in uncredited(book_dir, names):
+            errors.append(f'chapter {n}: img/{name} is a photo or screenshot without a line in img/CREDITS.md')
         ch = next((c for c in data['chapters'] if c['n'] == n), {})
         if not data.get('translation_of') and not os.path.exists(research_path(book_dir, n)):
             # a translation reuses the original's research; every other chapter is written from its dossier

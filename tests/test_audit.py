@@ -123,3 +123,14 @@ def test_a_translation_needs_no_research_dossier(cli, book):
     save(book / 'book.yaml', data)
     code, r = audit(cli, book, 1)
     assert not any('research/' in w for w in r['warnings']), r
+
+
+def test_a_photo_without_credit_is_an_error(cli, book):
+    (book / 'img' / 'c01-foto.jpg').write_bytes(b'fake')
+    edit(book / CHAPTER, 'Guardar 40 notas', '![Uma foto](../img/c01-foto.jpg)\n\nGuardar 40 notas')
+    code, r = audit(cli, book, 1)
+    assert code == 1 and any('c01-foto.jpg' in e and 'CREDITS.md' in e for e in r['errors']), r
+    (book / 'img' / 'CREDITS.md').write_text('# Créditos\n\n- c01-foto.jpg: foto, domínio público\n',
+                                             encoding='utf-8')
+    code, r = audit(cli, book, 1)
+    assert code == 0, r

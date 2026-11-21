@@ -79,6 +79,7 @@ They live in `scripts/`, install what they need and print short JSON with only w
 | `python scripts/book.py brief <n>` | creates the chapter skeleton and prints the compact brief |
 | `python scripts/book.py done <n> --summary "..."` | records progress and the summary; saves the checkpoint |
 | `python scripts/book.py status` | where the book stopped and the next step |
+| `python scripts/images.py search "<query>"` · `fetch "File:<title>" --name <cNN-name>` · `screenshot <url> --name <cNN-name>` | real images: free-license photos from Wikimedia Commons, and screenshots of the book's running application; each one recorded in `img/CREDITS.md` |
 | `python scripts/facts.py <n>` | lists the chapter's sentences with dates, numbers, names and quotations |
 | `python scripts/projects.py [--chapter <n>]` | assembles the projects from the code blocks and runs them |
 | `python scripts/audit.py [<n>]` | ready criteria: errors block, warnings go to the final summary |

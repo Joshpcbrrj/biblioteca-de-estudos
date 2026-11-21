@@ -16,7 +16,7 @@
 | --- | --- | --- |
 | **SVG diagram** | structure, flow, comparison, sequence, timeline, memory and values, chord or circuit diagrams, cheat sheets | yes |
 | **Illustration (PNG)** | a process or an overview that an image explains better than text | no |
-| **Real image** | what something looks like: historical photos, instruments, components (see `SOURCES.md` §7) | yes |
+| **Real image** | what something looks like: people, events, historical documents, instruments, components, and the book's application running (see `SOURCES.md` §7) | yes |
 
 Before any image, write in one sentence what the reader must understand from it; that sentence is its title. If there is no such sentence, do not make the image. Whatever the reader must reproduce stays as text (`TEACHING.md` §5).
 
@@ -92,7 +92,7 @@ Only with `choices.images` = `illustrations` or `paid-api`.
 
 ## 6. Real images
 
-See `SOURCES.md` §7: free licenses only, credits in `img/CREDITS.md` and in the caption.
+See `SOURCES.md` §7: `images.py` finds free-license photos on Wikimedia Commons and takes screenshots of the running application; credits go in `img/CREDITS.md` and in the caption.
 
 ## 7. Checking images
 

@@ -6,6 +6,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Added
+
+- `images.py`: real images for the books. `search` and `fetch` find and download free-license photos (public domain, CC0, CC BY, CC BY-SA) from Wikimedia Commons; `screenshot` captures the book's application running (Playwright). Each image gets its line in `img/CREDITS.md` and a caption credit; `audit.py` reports a photo or screenshot without credit as an error.
+- Donations: Pix (random key), Bitcoin and HiddenSwap QR codes in the README, and the GitHub Sponsor button.
+
 ## [0.3.0] - 2026-11-20
 
 Research-first books, tested by behavior evals and four pilots (Docker Compose, English, guitar, history of computing).
