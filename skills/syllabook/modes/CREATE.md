@@ -50,6 +50,7 @@ Follow `references/SOURCES.md` (search in English by default, §2). The goal of 
 - the **prerequisites** and the **common mistakes and myths** of beginners;
 - **how this topic is learned and practiced** by people who learn it well: the kind of practice with evidence behind it, how a self-learner can check their own answer without a teacher, the pictures that explain it best, and the safety risks;
 - the **current version**, when the topic changes over time (tools, laws);
+- **2 or 3 reference syllabi** to compare against: the table of contents of the official documentation, a popular course and a well-reviewed book (or the ones the user sends). For each topic they teach that the draft syllabus lacks, decide: add it, leave it for "Next steps", or leave it out on purpose (outdated, bad practice, belongs to another book). Compare coverage and order only: never copy their structure or text, and never use a copy of unclear origin as a source;
 - 4 to 8 reliable **sources**, each with the date it was checked.
 
 Start with the user's materials, if any (only the useful sections, by the outline). Search with specific questions and stop when you have the above. The sources go into `book.yaml`; chapters reuse them and do not research the topic again.
@@ -58,7 +59,7 @@ Start with the user's materials, if any (only the useful sections, by the outlin
 
 Before showing it, save the draft **outside the repository** (`/tmp/book-<slug>.yaml`, with `approved_on: ""`, the `sources` and the concept graph; the model is in `references/SYLLABUS.md`) and run `python scripts/book.py validate /tmp/book-<slug>.yaml`. Fix it until it passes.
 
-Show it in one message, in this format. Labels go in the conversation language; titles in the book language.
+Show it in one message, in this format. Labels go in the conversation language; titles in the book language. Any note (a tool missing in this session, how the labs will run, the research links) goes **before** the 🔎 block: the message always ends with the invitation to adjust and to say "approved".
 
 ```text
 🔎 Assessment: <topic>
@@ -68,6 +69,7 @@ How people usually learn it: <the usual path, in 1–2 sentences>
 Common mistakes and myths: <2–3 items, including what the research still debates>
 Safety: <only for physical skills: injury, tools, electricity>
 Main sources: <2–4 names>
+Compared with: <the 2–3 reference syllabi> · Gaps: <topics they teach that this book adds, leaves for later or leaves out, and why; or "none">
 
 🧭 How this book teaches <topic>
 Practice: <the kind of practice, in one line>

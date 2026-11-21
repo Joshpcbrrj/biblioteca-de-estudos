@@ -18,6 +18,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Changed
 
+- Create mode: the syllabus research compares the draft with 2 or 3 reference syllabi (official documentation, a popular course, a well-reviewed book) and the assessment shows the gaps and what was done with each. Eval case 3 checks it. Notes (missing tools, research links) now go before the assessment, so the message always ends with the invitation to say "approved".
 - Google Drive guide: the connector is available on every plan (on Team and Enterprise an owner turns it on). Notion guide: the copy includes photos. README: code execution must be on in the Claude app, and a line on tested code and real images.
 - `SECURITY.md`: GitHub in Claude Code connects through `gh auth login`, not a connector; in Improve mode the original files stay private, and the improved book is published like any other.
 
