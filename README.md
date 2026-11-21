@@ -49,6 +49,10 @@ Every book includes a map with links, a placement test, exercises with commented
 
 ❓ **Questions** about plans, cost, privacy or languages? See the [FAQ](docs/faq.md).
 
+## What's new
+
+Every version and what changed in it, newest first, is in the **[CHANGELOG](CHANGELOG.md)**. The files of each version are in the [releases](https://github.com/Joshpcbrrj/syllabook/releases).
+
 ## Repository layout
 
 | Folder | Contents |

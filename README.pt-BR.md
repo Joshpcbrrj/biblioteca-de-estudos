@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:67c84afbc128 -->
+<!-- translation-of: README.md sha256:0285a8fcaaee -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -49,6 +49,10 @@ Todas, mais o GitHub Pages (site com busca), estão na [página de integrações
 Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito comentado, revisões espaçadas, simulado final e glossário.
 
 ❓ **Dúvidas** sobre planos, custo, privacidade ou idiomas? Veja as [perguntas frequentes](docs/faq.pt-BR.md).
+
+## Novidades
+
+Todas as versões e o que mudou em cada uma, da mais nova para a mais antiga, estão no **[CHANGELOG](CHANGELOG.md)** (em inglês). Os arquivos de cada versão ficam nas [releases](https://github.com/Joshpcbrrj/syllabook/releases).
 
 ## Como o repositório está organizado
 

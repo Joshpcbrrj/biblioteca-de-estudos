@@ -9,7 +9,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 ### Added
 
 - `docs/testing.md`: how the tests work (layers, fixtures, each file, how to add a test), linked from the README and CONTRIBUTING.
-- README badges: tests, latest release and licenses.
+- README badges: tests, latest release and licenses; a "What's new" section links this file.
 - `docs/faq.md`: plans, cost, continuing a book, privacy, editing by hand, topics and languages, tested code, images.
 - `images.py`: real images for the books. `search` and `fetch` find and download free-license photos (public domain, CC0, CC BY, CC BY-SA) from Wikimedia Commons; `screenshot` captures the book's application running (Playwright). Each image gets its line in `img/CREDITS.md` and a caption credit; `audit.py` reports a photo or screenshot without credit as an error.
 - Donations: Pix (random key), Bitcoin and HiddenSwap QR codes in the README, and the GitHub Sponsor button.
