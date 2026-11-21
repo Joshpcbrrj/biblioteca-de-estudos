@@ -33,6 +33,8 @@ Anything that can change over time (commands, options, defaults, limits, version
 - the official examples worth adapting, the common mistakes and any open question;
 - short notes **in the book language**, not prose to translate; commands, options, error messages and short quotations stay in their original form.
 
+Write `research/guide.md` too: the topic guide, starting from the approved "How this book teaches" block of the assessment and detailed with what the research showed (the kind of practice with its sources, how the reader checks themself, the diagram types to use, safety, what to avoid). It adapts the area profile to this topic; `book.py brief` gives it to every chapter.
+
 Look across the whole book while you do it: if chapter 8 needs something chapter 3 should prepare, note it in both dossiers. The dossiers stay in the library (they show where each fact came from and help update the book) but are not part of the EPUB, the website or Notion. Chapters are written from their dossier and search again only for a fact it does not have.
 
 ## 3. The user's materials

@@ -40,12 +40,15 @@ Pick the profile from the topic and read only that one (at most 2 when the topic
 | `skills.md` | music, electronics, drawing, cooking, hands-on work |
 | `knowledge.md` | history, sciences, concepts, reading topics |
 
+The profile is the starting point, not the whole method: the research (§3) finds how **this** topic is learned and practiced, and that becomes the book's topic guide (§4), which adapts the profile. A topic that fits no profile well (chess, cooking, photography, law) still gets its own method this way.
+
 ## 3. Research
 
 Follow `references/SOURCES.md` (search in English by default, §2). The goal of the research, and nothing beyond it:
 
 - the **usual curriculum** for the topic (university syllabi, textbooks, official documentation);
 - the **prerequisites** and the **common mistakes and myths** of beginners;
+- **how this topic is learned and practiced** by people who learn it well: the kind of practice with evidence behind it, how a self-learner can check their own answer without a teacher, the pictures that explain it best, and the safety risks;
 - the **current version**, when the topic changes over time (tools, laws);
 - 4 to 8 reliable **sources**, each with the date it was checked.
 
@@ -65,6 +68,12 @@ How people usually learn it: <the usual path, in 1–2 sentences>
 Common mistakes and myths: <2–3 items, including what the research still debates>
 Safety: <only for physical skills: injury, tools, electricity>
 Main sources: <2–4 names>
+
+🧭 How this book teaches <topic>
+Practice: <the kind of practice, in one line>
+Checking yourself: <how the reader knows they got it right>
+Pictures: <the diagrams that help most>
+Avoid: <what does not work for this topic>
 
 📘 <Title> · <start level> → <end level> · <n> chapters · ~<h> h
 For whom: <one sentence>

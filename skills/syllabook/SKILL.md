@@ -92,7 +92,7 @@ They live in `scripts/`, install what they need and print short JSON with only w
 ```text
 - [ ] 1. book.yaml saved and validated
 - [ ] 2. Choices: images (SVG only | SVG + illustrations | + paid image API) and reading (large screens | small e-reader). Ask always, even when the user says to go straight to writing: one short question with the defaults, then wait
-- [ ] 3. Research dossiers: open every source once, then write research/c<nn>.md for every chapter of the book, even if the user wants only some chapters now (references/SOURCES.md §2)
+- [ ] 3. Research: open every source once, then write research/guide.md (the topic guide) and research/c<nn>.md for every chapter of the book, even if the user wants only some chapters now (references/SOURCES.md §2)
 - [ ] 4. Chapters 1..n (loop below)
 - [ ] 5. Fixed parts: chapter 0, placement test, cheat sheets, mock exam, glossary, next steps
 - [ ] 6. Projects run (if any) and the whole book audited with no errors
@@ -103,8 +103,8 @@ They live in `scripts/`, install what they need and print short JSON with only w
 
 **Chapter loop** (one chapter at a time, never in parallel):
 
-1. `book.py brief <n>`: use only the brief (goal, topics, concepts already taught and new ones, previous chapter's summary, sources, profile, choices, and the chapter's research dossier). If the brief says the dossier is missing, write it first.
-2. Write the chapter in the file it created, following `TEACHING.md`, the profile and the style file.
+1. `book.py brief <n>`: use only the brief (goal, topics, concepts already taught and new ones, previous chapter's summary, sources, profile, choices, the topic guide and the chapter's research dossier). If the brief says the guide or the dossier is missing, write it first.
+2. Write the chapter in the file it created, following `TEACHING.md`, the profile adapted by the topic guide, and the style file.
 3. Run every piece of code and every command, in this order: in the session; on the user's computer, if it is linked to the app; **guided run** (give the commands, the user runs them and pastes only the lines you ask for, and you use the real output); if the user declines, mark it "not run" with a warning. Redo every calculation.
 4. `facts.py <n>`: check each listed sentence against the dossier and the sources (`SOURCES.md` §5), and check that every explanation of a command or piece of code matches its real output.
 5. Reread the chapter once as a native reader of the book language, following its style file: fix any sentence that sounds translated. Never skip this step, not even to save tokens.

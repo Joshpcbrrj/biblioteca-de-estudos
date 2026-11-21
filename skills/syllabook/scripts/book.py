@@ -166,6 +166,15 @@ def skeleton(data, ch, lab, review):
     return '\n'.join(lines)
 
 
+def notes(book_dir, path):
+    """A research file for the brief: its text, or a flag saying it still has to be written."""
+    rel = os.path.relpath(path, book_dir).replace(os.sep, '/')
+    if not os.path.exists(path):
+        return {'file': rel, 'missing': True}
+    with open(path, encoding='utf-8') as f:
+        return {'file': rel, 'notes': f.read()}
+
+
 def cmd_brief(args):
     book_dir, path = find_book(args.book)
     data = load_yaml(path)
@@ -197,13 +206,8 @@ def cmd_brief(args):
         'review_today': review,
         'sources': [{'title': s['title'], 'url': s['url']} for s in data.get('sources') or []],
     }
-    dossier = research_path(book_dir, n)
-    rel = os.path.relpath(dossier, book_dir).replace(os.sep, '/')
-    if os.path.exists(dossier):
-        with open(dossier, encoding='utf-8') as f:
-            brief['research'] = {'file': rel, 'notes': f.read()}
-    else:
-        brief['research'] = {'file': rel, 'missing': True}
+    brief['guide'] = notes(book_dir, os.path.join(book_dir, 'research', 'guide.md'))
+    brief['research'] = notes(book_dir, research_path(book_dir, n))
     if ch.get('sources_original'):
         brief['original_sections'] = ch['sources_original']
     if data.get('translation_of'):

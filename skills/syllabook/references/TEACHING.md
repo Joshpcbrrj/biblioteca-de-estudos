@@ -56,6 +56,8 @@ Do not use: "learning styles" (no evidence), mind maps as the review tool, or an
 
 **Prerequisite books:** when `prerequisites` in `book.yaml` names another book (or a book in the same track), do not teach its content again: point to it by title ("seen in *Docker do zero*, chapter 3"), and when the chapter needs it, recap it in two or three lines under that pointer. Chapter 0 says which book to read first.
 
+**Topic guide:** `research/guide.md` adapts the area profile to this book's topic (its kind of practice, how the reader checks themself, its diagrams). Where they differ, the guide decides practice and pictures; the rules in this file always apply.
+
 The area profile may change the order of a topic's steps. Optional material goes under a heading that starts with `🔎` and the word for "Going deeper" in the book language; everything else is essential, so a reader in a hurry can skip only the `🔎` parts.
 
 ## 3. Practice ladder

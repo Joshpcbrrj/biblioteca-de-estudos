@@ -191,3 +191,14 @@ def test_brief_says_when_the_research_dossier_is_missing(cli, book):
     os.remove(book / 'research' / 'c02.md')
     code, r = cli('book', 'brief', 2, '--book', book)
     assert code == 0 and r['research'] == {'file': 'research/c02.md', 'missing': True}
+
+
+def test_brief_includes_the_topic_guide(cli, book):
+    code, r = cli('book', 'brief', 2, '--book', book)
+    assert r['guide']['file'] == 'research/guide.md' and 'saída esperada' in r['guide']['notes']
+
+
+def test_brief_says_when_the_topic_guide_is_missing(cli, book):
+    os.remove(book / 'research' / 'guide.md')
+    code, r = cli('book', 'brief', 2, '--book', book)
+    assert r['guide'] == {'file': 'research/guide.md', 'missing': True}
