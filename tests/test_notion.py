@@ -45,13 +45,15 @@ def test_each_note_becomes_a_callout_with_its_emoji(book, quote, icon, color):
     assert content.startswith(f'<callout icon="{icon}" color="{color}">')
 
 
-def test_illustrations_are_left_out_and_real_photos_uploaded(book):
+def test_notion_gets_only_svg_diagrams(book):
+    # photos, screenshots and illustrations stay in the EPUB and the site; Notion keeps the SVG standard
     (book / 'img' / '_source').mkdir(exist_ok=True)
     (book / 'img' / '_source' / 'c01-cena.yaml').write_text('type: x\n')
-    text = '![Uma cena](../img/c01-cena.png)\n\n![O Mark II](../img/c01-mark2.jpg)\n'
+    text = ('![Uma cena](../img/c01-cena.png)\n\n![O Mark II](../img/c01-mark2.jpg)\n\n'
+            '![A lista](../img/c01-lista.svg)\n')
     content, uploads, left_out = convert(text, book)
-    assert left_out == ['c01-cena.png'] and 'c01-cena' not in content
-    assert uploads[0]['kind'] == 'photo' and '<image source="UPLOAD:c01-mark2.jpg">O Mark II</image>' in content
+    assert left_out == ['c01-cena.png', 'c01-mark2.jpg'] and 'c01-mark2' not in content
+    assert [u['kind'] for u in uploads] == ['svg'] and '<image source="UPLOAD:c01-lista.svg">A lista</image>' in content
 
 
 def test_links_comments_and_generated_blocks_are_removed(book):

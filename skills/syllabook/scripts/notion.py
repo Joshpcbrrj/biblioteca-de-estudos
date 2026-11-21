@@ -14,8 +14,8 @@ What changes on the way:
   <details> answers      -> <toggle> (Notion saves <details> as plain text)
   > quotes and notes     -> <callout> with the note's emoji as the icon
   SVG diagrams           -> uploads
-  real photos (no spec)  -> uploads
-  illustrations (PNG/JPG with a spec in img/_source/) -> left out: Notion gets the diagrams only
+  photos, screenshots and illustrations (PNG/JPG) -> left out: Notion gets the SVG diagrams only;
+                            they stay in the EPUB and the site
   links to other chapters -> plain text (the chapters are subpages in Notion)
   <!-- comments -->, navigation and the generated map -> removed
 """
@@ -124,7 +124,8 @@ def convert(text, book_dir):
         if img:
             alt, name = img.groups()
             kind = kind_of_image(book_dir, name)
-            if kind == 'illustration':
+            if kind != 'svg':
+                # Notion keeps the SVG diagram standard; photos and illustrations stay in the EPUB and the site
                 left_out.append(name)
             else:
                 placeholder = f'UPLOAD:{name}'

@@ -1,4 +1,4 @@
-<!-- translation-of: notion.md sha256:6c1d555a213e -->
+<!-- translation-of: notion.md sha256:060885713b46 -->
 # Notion: ler seus materiais e guardar uma cópia de cada livro
 
 [English](notion.md) | **Português**
@@ -6,7 +6,7 @@
 ## Para que serve
 
 - **Modo Aprimorar:** o Syllabook lê as suas anotações de curso direto do Notion, página por página.
-- **No fim de cada livro:** ele cria uma cópia do livro no Notion, dentro de uma página que você escolher, para você fazer as suas anotações. A cópia tem o texto, as respostas como toggles e as imagens (diagramas SVG e fotos).
+- **No fim de cada livro:** ele cria uma cópia do livro no Notion, dentro de uma página que você escolher, para você fazer as suas anotações. A cópia tem o texto, as respostas como toggles e os diagramas SVG. Fotos e capturas de tela ficam no EPUB e no site.
 
 ## O que você precisa
 

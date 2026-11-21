@@ -5,7 +5,7 @@
 ## What it is for
 
 - **Improve mode:** Syllabook reads your course notes straight from Notion, page by page.
-- **At the end of every book:** it creates a copy of the book in Notion, under a page you choose, so you can take notes on it. The copy has the text, the answers as toggles and the images (SVG diagrams and photos).
+- **At the end of every book:** it creates a copy of the book in Notion, under a page you choose, so you can take notes on it. The copy has the text, the answers as toggles and the SVG diagrams. Photos and screenshots stay in the EPUB and the website.
 
 ## What you need
 
