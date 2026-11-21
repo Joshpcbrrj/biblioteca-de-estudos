@@ -6,6 +6,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-20
+
+Research-first books, tested by behavior evals and four pilots (Docker Compose, English, guitar, history of computing).
+
 ### Added
 
 - Behavior evals in `evals/` for `claude plugin eval`: eight cases (triggering, language, assessment + syllabus, adjustment, nothing before "approved", writing a chapter, improve mode, publishing without connections), run on the user's machine.
