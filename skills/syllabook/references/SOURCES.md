@@ -27,7 +27,7 @@ Anything that can change over time (commands, options, defaults, limits, version
 - Stop as soon as you have what the step asks for (`modes/CREATE.md` §3).
 - Record every source in `book.yaml` (`sources`: title, URL, checked date).
 
-**Research dossiers** (step 3 of the flow in `SKILL.md`, before writing any chapter): open every source in `book.yaml` once in this session and update its checked date; then, for each chapter, write `research/c<nn>.md` (e.g. `research/c03.md`):
+**Research dossiers** (step 3 of the flow in `SKILL.md`, before writing any chapter): open every source in `book.yaml` once in this session and update its checked date; then, for **every** chapter of the book, write `research/c<nn>.md` (e.g. `research/c03.md`), even when the user asked to write only some chapters now: the dossiers are the judgment of the whole book, made before any chapter:
 
 - the facts the chapter will state that can change over time (commands, options, defaults, limits, versions, laws), one per line, each with its link and the date checked;
 - the official examples worth adapting, the common mistakes and any open question;

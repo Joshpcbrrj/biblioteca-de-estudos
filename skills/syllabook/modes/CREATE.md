@@ -62,7 +62,8 @@ Show it in one message, in this format. Labels go in the conversation language; 
 What it is and what it is for: <1–2 sentences>
 Helps to know first: <prerequisites, or "nothing">
 How people usually learn it: <the usual path, in 1–2 sentences>
-Common mistakes and myths: <2–3 items>
+Common mistakes and myths: <2–3 items, including what the research still debates>
+Safety: <only for physical skills: injury, tools, electricity>
 Main sources: <2–4 names>
 
 📘 <Title> · <start level> → <end level> · <n> chapters · ~<h> h

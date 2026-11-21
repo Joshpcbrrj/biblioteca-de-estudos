@@ -23,6 +23,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Research dossiers: after approval, the skill opens every source and writes `research/c<nn>.md` for each chapter (facts with links and dates, examples, common mistakes, in the book language); `book.py brief` hands the chapter its dossier and `audit.py` warns when one is missing. Dossiers stay in the library but not in the EPUB, website or Notion.
 - Fact checks open the source instead of dropping a claim, and every explanation of a command must match its real output.
 - Each chapter is reread as a native reader of the book language before it is done; quality steps are never skipped to save tokens.
+- Research dossiers are written for every chapter of the book before the first one, even when the user asks for only some chapters now.
+- The assessment lists what the research still debates and, for physical skills, a safety line.
 
 ### Fixed
 
