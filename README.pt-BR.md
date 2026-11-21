@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:0405e21264c0 -->
+<!-- translation-of: README.md sha256:9d67b05bb7ba -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -41,6 +41,15 @@ Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito c
 | [`plano/`](plano/) | Plano da reformulação (temporário) |
 
 **A sua própria biblioteca:** cada pessoa guarda os livros num repositório só seu. Crie o seu a partir do [modelo de biblioteca](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, público) ou comece com um repositório vazio e deixe o Syllabook prepará-lo no primeiro livro. Este repositório guarda a skill e os arquivos de desenvolvimento dela, não livros.
+
+## Apoie o Syllabook
+
+O Syllabook é gratuito e aberto. Se ele ajuda você a aprender, você pode apoiar o desenvolvimento:
+
+| Bitcoin | Outras criptomoedas |
+| :---: | :---: |
+| <img src="docs/img/donate-bitcoin.png" alt="QR code de Bitcoin" width="180"> | <a href="https://hiddenswap.com/pay/U5SUjiUR"><img src="docs/img/donate-hiddenswap.png" alt="QR code do HiddenSwap" width="180"></a> |
+| `bc1qpavyz63u90f5y8mawj0lydn55hr3f9l9kum7mq` | [Pagar pelo HiddenSwap](https://hiddenswap.com/pay/U5SUjiUR) |
 
 ## Contribuir
 

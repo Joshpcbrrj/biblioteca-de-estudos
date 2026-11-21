@@ -41,6 +41,15 @@ Every book includes a map with links, a placement test, exercises with commented
 
 **Your own library:** every user keeps their books in a repository of their own. Create yours from the [library template](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, public), or start with an empty repository and let Syllabook set it up on the first book. This repository holds the skill and its development files, not books.
 
+## Support Syllabook
+
+Syllabook is free and open. If it helps you learn, you can support its development:
+
+| Bitcoin | Other cryptocurrencies |
+| :---: | :---: |
+| <img src="docs/img/donate-bitcoin.png" alt="Bitcoin QR code" width="180"> | <a href="https://hiddenswap.com/pay/U5SUjiUR"><img src="docs/img/donate-hiddenswap.png" alt="HiddenSwap QR code" width="180"></a> |
+| `bc1qpavyz63u90f5y8mawj0lydn55hr3f9l9kum7mq` | [Pay with HiddenSwap](https://hiddenswap.com/pay/U5SUjiUR) |
+
 ## Contributing
 
 Found an error or want to suggest a topic? Open an [issue](../../issues/new/choose). To contribute to the skill, see [CONTRIBUTING.md](CONTRIBUTING.md). This project follows a [Code of Conduct](CODE_OF_CONDUCT.md).
