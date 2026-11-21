@@ -58,6 +58,9 @@ Pick the type by the idea:
 | quantities | `bars` |
 | a summary of a part of the book | `cards` (the cheat sheet) |
 | a relation between a few things (A → B, A + B = C, wrong → right) | `scene` (icons joined by arrows or signs) |
+| a chord shape on a fretted instrument | `chord` (guitar by default; set `tuning` for bass, ukulele, cavaquinho) |
+| where notes are on the neck (scales, intervals) | `fretboard` |
+| a melody, riff or arpeggio to play | `tab` |
 
 A diagram **adds to** the text: the chapter explains, the image shows the same idea at a glance. SVG is for diagrams only; illustrations of scenes, objects or processes are §5 (a separate, later step).
 
@@ -74,6 +77,8 @@ Rules:
 - **Fixed shapes:** rectangle = action/state, diamond = decision, rounded = start/end, cylinder = database, solid arrow = flow, dashed arrow = dependency or return.
 - Alt text for every image: what it shows, in one or two sentences.
 - File names start with the chapter number: `c06-project-network.svg`.
+
+**Music diagrams** (`chord`, `fretboard`, `tab`): `diagram.py` also prints `text`, the same content as copyable text; put it right under the image, because whatever the reader plays stays as text. Circuit and pinout diagrams are not supported yet: describe them with `layers`, `boxes` or a table.
 
 **Cheat sheets** (`cards`): up to 12 cards (an icon, a numbered short title, 3–5 items of up to ~28 characters, each with its own icon when that helps, optionally a 1–3 line code snippet and a scene), in 3 columns on large screens and 2 in the `small` profile.
 

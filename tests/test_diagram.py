@@ -30,9 +30,19 @@ SPECS = {
     'cards': {'cards': [{'icon': '[]', 'title': 'Lista', 'items': ['índice começa em 0'], 'code': ['n = [1]']},
                         {'icon': 'for', 'title': 'Laço', 'items': ['um item por volta']}]},
     'scene': {'steps': [['user'], ['list'], ['sparkles']], 'ops': ['+', '='], 'label': 'Melhor saída'},
+    'chord': {'chords': [{'name': 'Em', 'frets': '022000', 'fingers': '023000'},
+                         {'name': 'F', 'frets': '133211', 'fingers': '134211',
+                          'barre': {'fret': 1, 'from': 6, 'to': 1}},
+                         {'name': 'D7', 'frets': ['x', 'x', 0, 2, 1, 2]}]},
+    'fretboard': {'frets': [5, 8], 'notes': [{'string': 6, 'fret': 5, 'label': 'A', 'root': True},
+                                              {'string': 6, 'fret': 8, 'label': 'C'},
+                                              {'string': 1, 'fret': 5, 'label': 'A',
+                                               'root': True}]},
+    'tab': {'steps': ['6:0', '4:2', '3:0', '|', '6:0 3:0']},
 }
 TEXTS = {'flow': 'Mostra a média', 'timeline': '1947', 'compare': 'Certo', 'boxes': 'notas', 'layers': 'COPY',
-         'tree': 'build', 'sequence': '2. ok', 'bars': '130 MB', 'cards': '2. Laço', 'scene': 'Melhor saída'}
+         'tree': 'build', 'sequence': '2. ok', 'bars': '130 MB', 'cards': '2. Laço', 'scene': 'Melhor saída',
+         'chord': 'Em', 'fretboard': 'A', 'tab': '2'}
 
 
 def spec(kind, **extra):
@@ -289,3 +299,62 @@ def test_a_card_scene_in_another_shape_is_an_invalid_spec():
     s['cards'][0]['scene'] = 'folder'
     with pytest.raises(ValueError, match='scene must be'):
         diagram.render(s)
+
+
+@pytest.mark.parametrize('change, problem', [
+    (lambda s: s['chords'][0].update(frets='02200'), 'one position per string'),
+    (lambda s: s['chords'][0].update(frets='0220z0'), 'one position per string'),
+    (lambda s: s['chords'][0].update(fingers='025000'), 'fingers go from 1 to 4'),
+    (lambda s: s['chords'][1].update(barre={'fret': 0, 'from': 6, 'to': 1}), 'barre'),
+    (lambda s: s['chords'][1].update(barre={'fret': 1, 'from': 7, 'to': 1}), 'barre'),
+    (lambda s: s['chords'].extend([{'name': 'E', 'frets': '022100'}] * 5), 'at most 6 chords'),
+])
+def test_chord_problems(change, problem):
+    s = spec('chord')
+    change(s)
+    assert any(problem in p for p in diagram.render(s)[2]), diagram.render(s)[2]
+
+
+@pytest.mark.parametrize('change, problem', [
+    (lambda s: s['notes'].append({'string': 6, 'fret': 12, 'label': 'E'}), 'outside frets 5-8'),
+    (lambda s: s['notes'].append({'string': 7, 'fret': 5, 'label': 'x'}), 'no string 7'),
+])
+def test_fretboard_problems(change, problem):
+    s = spec('fretboard')
+    change(s)
+    assert any(problem in p for p in diagram.render(s)[2])
+
+
+@pytest.mark.parametrize('steps', [['6-0'], ['9:0'], ['6:x']])
+def test_tab_problems(steps):
+    assert any('tab step' in p for p in diagram.render(spec('tab', steps=steps))[2])
+
+
+def test_a_four_string_tuning_draws_four_strings():
+    s = spec('chord', tuning=['G', 'C', 'E', 'A'], chords=[{'name': 'C', 'frets': '0003', 'fingers': '0003'}])
+    text, _, problems, _ = diagram.render(s)
+    assert not problems and text.count('class="string"') == 4
+
+
+def test_high_chords_start_at_their_lowest_fret():
+    s = spec('chord', chords=[{'name': 'A', 'frets': ['x', 0, 7, 6, 5, 5], 'fingers': 'x04312'}])
+    text, _, problems, _ = diagram.render(s)
+    assert not problems and '>5fr<' in text
+
+
+def test_text_version_of_each_music_type():
+    chords = diagram.text_version(spec('chord')).splitlines()
+    # one line per string, highest first, with the finger after it: the format a reader copies
+    assert chords[:3] == ['Em', 'e |--0--|', 'B |--0--|'] and 'A |--2--|  2' in chords
+    assert 'A |--x--|' in chords and 'E |--1--|  1' in chords
+    tab = diagram.text_version(spec('tab')).splitlines()
+    assert tab[0].startswith('e|') and tab[-1].startswith('E|') and '|' in tab[-1][3:]
+    assert '6:5 A*' in diagram.text_version(spec('fretboard'))
+    assert diagram.text_version(spec('flow')) is None
+
+
+def test_command_prints_the_text_version(cli, tmp_path):
+    path = tmp_path / 'acordes.yaml'
+    save(path, spec('chord'))
+    code, r = cli('diagram', path, '--out', tmp_path / 'acordes.svg')
+    assert code == 0 and r['text'].startswith('Em' + chr(10) + 'e |--0--|')

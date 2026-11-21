@@ -15,7 +15,7 @@
 
 ## Visuals
 
-Chord diagrams, the fretboard with notes, tablature, rhythm patterns, circuit schematics, breadboard layouts, pinouts, step-by-step sequences. Real images only for what something looks like (an instrument, a component), with credits.
+Chord diagrams (`chord`), the fretboard with notes (`fretboard`), tablature (`tab`), rhythm patterns, circuit schematics, breadboard layouts, pinouts, step-by-step sequences. Real images only for what something looks like (an instrument, a component), with credits.
 
 ## Safety (mandatory when there is risk)
 
