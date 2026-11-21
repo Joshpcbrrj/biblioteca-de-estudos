@@ -104,14 +104,17 @@ def test_internal_links_point_to_existing_files():
     assert not broken
 
 
-@pytest.mark.parametrize('relpath', [
-    'created-books/README.md', 'created-books/README.pt-BR.md',
-    'improved-materials/README.md', 'improved-materials/README.pt-BR.md',
-    '.github/workflows/epub.yml', '.github/workflows/site.yml', 'LICENSE', 'LICENSE-CODIGO',
-])
-def test_root_matches_the_library_skeleton(relpath):
+@pytest.mark.parametrize('relpath', ['LICENSE', 'LICENSE-CODIGO'])
+def test_root_licenses_match_the_library_skeleton(relpath):
     copy = os.path.join(SKILL, 'assets', 'library', relpath)
     assert filecmp.cmp(os.path.join(ROOT, relpath), copy, shallow=False), f'{relpath} differs from assets/library'
+
+
+def test_the_kit_repository_holds_no_library_folders():
+    # books live in each user's own library (the syllabook-library template), never here
+    leftovers = ['created-books', 'improved-materials', 'site', 'library.yaml',
+                 '.github/workflows/epub.yml', '.github/workflows/site.yml']
+    assert not [p for p in leftovers if os.path.exists(os.path.join(ROOT, p))]
 
 
 def test_yaml_files_are_valid_and_library_yaml_has_every_key():
@@ -121,8 +124,7 @@ def test_yaml_files_are_valid_and_library_yaml_has_every_key():
     files += glob.glob(os.path.join(SKILL, 'assets', '**', '*.yml'), recursive=True)
     for path in files:
         yaml.safe_load(read(path))
-    for path in (os.path.join(ROOT, 'library.yaml'), os.path.join(SKILL, 'assets', 'library', 'library.yaml')):
-        assert keys <= set(yaml.safe_load(read(path))), path
+    assert keys <= set(yaml.safe_load(read(os.path.join(SKILL, 'assets', 'library', 'library.yaml'))))
 
 
 def test_workflows_that_publish_run_only_in_the_kit_repository():

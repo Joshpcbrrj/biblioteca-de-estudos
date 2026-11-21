@@ -42,26 +42,7 @@ pytest tests/test_build.py   # only one part
 pytest -m "not slow"      # skip the tests that build a real EPUB or website
 ```
 
-There is one test file per part of the kit:
-
-| File | Tests |
-| --- | --- |
-| `test_common.py` | shared helpers, and the contract that every style file has every label the scripts use |
-| `test_book.py` | each `book.yaml` validation rule, the chapter brief and skeleton, progress and status |
-| `test_audit.py` | each audit check, per chapter and for the whole book, in both reading profiles |
-| `test_facts.py` | which sentences need a fact check |
-| `test_build.py` | the EPUB, navigation, map, zips, library lists and the website (built with Zensical) |
-| `test_diagram.py` | each diagram type in both reading profiles, each fit problem, the contact sheet |
-| `test_projects.py` | projects assembled from code blocks, evolved across chapters, run and checked; unsafe paths refused |
-| `test_ingest.py` | each input type (Markdown, folder, HTML, web address, EPUB, DOCX, PDF), Docling and its fallbacks |
-| `test_notion.py` | the conversion to Notion's format (toggles, callouts, uploads), the index page |
-| `test_install.py` | the Docling installers (shellcheck, PowerShell syntax) and the helper that edits the Claude app's settings |
-| `test_images.py` | free-license photos from Wikimedia Commons, the credits file and the application screenshots |
-| `test_icons.py`, `test_build_icons.py` | the embedded Lucide icons and the tool that picks them |
-| `test_tools.py` | the translation checker and the skill packager |
-| `test_sync_template.py` | the library template mirrors the skill's library skeleton |
-| `test_repo.py` | the skill's structure, the documentation and the library skeleton |
-| `test_workflows.py` | the library workflows (`epub.yml`, `site.yml`) run step by step, with fake `gh` and `pip` (Linux only) |
+There is one test file per part of the kit. [How the tests work](docs/testing.md) explains each file, the shared fixtures, what the tests do not cover and how to add a test.
 
 `ruff check .` also has a partner for the GitHub workflows: `actionlint .github/workflows/*.yml skills/syllabook/assets/library/.github/workflows/*.yml`. The real release and GitHub Pages deploy run in the public demo library, [syllabook-demo](https://github.com/Joshpcbrrj/syllabook-demo).
 

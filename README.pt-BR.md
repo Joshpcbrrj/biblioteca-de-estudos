@@ -1,7 +1,12 @@
-<!-- translation-of: README.md sha256:4ca629f7ac13 -->
+<!-- translation-of: README.md sha256:fe3e5f9736cf -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
+
+[![Kit tests](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml/badge.svg)](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml)
+[![Latest release](https://img.shields.io/github/v/release/Joshpcbrrj/syllabook)](https://github.com/Joshpcbrrj/syllabook/releases/latest)
+[![Content: CC BY-SA 4.0](https://img.shields.io/badge/content-CC%20BY--SA%204.0-lightgrey)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE-CODIGO)
 
 ![Syllabook: um livro aberto cujas páginas mostram a estrutura de um curso, com módulos, capítulos e gráficos](docs/img/syllabook-banner.pt-BR.jpg)
 
@@ -51,7 +56,7 @@ Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito c
 | [`docs/`](docs/README.pt-BR.md) | Documentação: como usar, integrações (GitHub, Notion, Google Drive, Docling, WSL 2), referência |
 | [`install/`](install/) | Instaladores do Docling para Windows, macOS e Linux |
 | [`evals/`](evals/README.md) | Avaliações de comportamento (`claude plugin eval`, em inglês) |
-| [`tests/`](tests/), [`tools/`](tools/) | Testes dos scripts e ferramentas de manutenção (traduções, pacote, sincronização do modelo) |
+| [`tests/`](docs/testing.pt-BR.md), [`tools/`](tools/) | Testes dos scripts ([como funcionam](docs/testing.pt-BR.md)) e ferramentas de manutenção (traduções, pacote, sincronização do modelo) |
 | [`plano/`](plano/) | Plano da reformulação (temporário) |
 
 **A sua própria biblioteca:** cada pessoa guarda os livros num repositório só seu. Crie o seu a partir do [modelo de biblioteca](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, público) ou comece com um repositório vazio e deixe o Syllabook prepará-lo no primeiro livro. Este repositório guarda a skill e os arquivos de desenvolvimento dela, não livros.
@@ -67,7 +72,7 @@ O Syllabook é gratuito e aberto. Se ele ajuda você a aprender, você pode apoi
 
 ## Contribuir
 
-Achou um erro ou quer sugerir um tema? Abra uma [issue](../../issues/new/choose). Para contribuir com a skill, veja o [CONTRIBUTING.pt-BR.md](CONTRIBUTING.pt-BR.md). Este projeto segue um [Código de Conduta](CODE_OF_CONDUCT.pt-BR.md).
+Achou um erro ou quer sugerir um tema? Abra uma [issue](../../issues/new/choose). Para contribuir com a skill, veja o [CONTRIBUTING.pt-BR.md](CONTRIBUTING.pt-BR.md) e [como os testes funcionam](docs/testing.pt-BR.md). Este projeto segue um [Código de Conduta](CODE_OF_CONDUCT.pt-BR.md).
 
 ## Licença
 

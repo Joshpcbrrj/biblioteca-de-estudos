@@ -11,6 +11,7 @@ The documentation follows the [Diátaxis](https://diataxis.fr/) model: each part
 | **Guides** | do a task: create your library, publish a finished book, continue a book | to be written |
 | **Reference** | look up a detail: folder layout, `book.yaml`, `library.yaml`, scripts | to be written |
 | **Explanation** | understand the why: how the skill works, the teaching approach, token savings | to be written |
+| [**Testing**](testing.md) | change the skill or its scripts: how the tests work and how to add one | done |
 | **Decisions** | know why the project is the way it is (decision records) | to be written |
 
 Until the rebuild is done, the full roadmap and decisions are in [`plano/PLANO.md`](../plano/PLANO.md) (in Portuguese).

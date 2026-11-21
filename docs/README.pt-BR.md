@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:ed3dcd72251f -->
+<!-- translation-of: README.md sha256:50025605dee8 -->
 # Documentação
 
 [English](README.md) | **Português**
@@ -12,6 +12,7 @@ A documentação segue o modelo [Diátaxis](https://diataxis.fr/): cada parte re
 | **Guias** | fazer uma tarefa: criar a sua biblioteca, publicar um livro pronto, continuar um livro | a escrever |
 | **Referência** | consultar um detalhe: estrutura de pastas, `book.yaml`, `library.yaml`, scripts | a escrever |
 | **Explicação** | entender o porquê: como a skill funciona, a didática, a economia de tokens | a escrever |
+| [**Testes**](testing.pt-BR.md) | mudar a skill ou os scripts: como os testes funcionam e como acrescentar um | pronta |
 | **Decisões** | saber por que o projeto é como é (registros de decisão) | a escrever |
 
 Enquanto a reformulação não termina, o roteiro completo e as decisões estão em [`plano/PLANO.md`](../plano/PLANO.md).

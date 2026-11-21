@@ -1,4 +1,4 @@
-<!-- translation-of: CONTRIBUTING.md sha256:458fce855327 -->
+<!-- translation-of: CONTRIBUTING.md sha256:2b659b064c9f -->
 # Como contribuir
 
 [English](CONTRIBUTING.md) | **Português**
@@ -43,26 +43,7 @@ pytest tests/test_build.py   # só uma parte
 pytest -m "not slow"      # pula os testes que geram um EPUB ou um site de verdade
 ```
 
-Há um arquivo de teste para cada parte do kit:
-
-| Arquivo | Testa |
-| --- | --- |
-| `test_common.py` | as funções compartilhadas, e o contrato de que todo arquivo de estilo tem todos os rótulos que os scripts usam |
-| `test_book.py` | cada regra de validação do `book.yaml`, o resumo e o esqueleto do capítulo, o progresso e o status |
-| `test_audit.py` | cada checagem da auditoria, por capítulo e no livro inteiro, nos dois perfis de leitura |
-| `test_facts.py` | quais frases precisam de checagem de fatos |
-| `test_build.py` | o EPUB, a navegação, o mapa, os zips, as listas da biblioteca e o site (gerado com o Zensical) |
-| `test_diagram.py` | cada tipo de diagrama nos dois perfis de leitura, cada problema de encaixe, a folha de contato |
-| `test_projects.py` | projetos montados a partir dos blocos de código, evoluídos entre capítulos, executados e conferidos; caminhos inseguros recusados |
-| `test_ingest.py` | cada tipo de entrada (Markdown, pasta, HTML, endereço web, EPUB, DOCX, PDF), o Docling e as alternativas a ele |
-| `test_notion.py` | a conversão para o formato do Notion (toggles, callouts, envios), a página de índice |
-| `test_install.py` | os instaladores do Docling (shellcheck, sintaxe do PowerShell) e o script que edita as configurações do app do Claude |
-| `test_images.py` | as fotos com licença livre do Wikimedia Commons, o arquivo de créditos e as capturas da aplicação |
-| `test_icons.py`, `test_build_icons.py` | os ícones do Lucide embutidos e a ferramenta que os escolhe |
-| `test_tools.py` | o verificador de traduções e o empacotador da skill |
-| `test_sync_template.py` | o modelo de biblioteca espelha o esqueleto da biblioteca da skill |
-| `test_repo.py` | a estrutura da skill, a documentação e o esqueleto da biblioteca |
-| `test_workflows.py` | os workflows da biblioteca (`epub.yml`, `site.yml`) rodando passo a passo, com `gh` e `pip` falsos (só Linux) |
+Há um arquivo de teste para cada parte do kit. [Como os testes funcionam](docs/testing.pt-BR.md) explica cada arquivo, as fixtures compartilhadas, o que os testes não cobrem e como acrescentar um teste.
 
 O `ruff check .` tem um parceiro para os workflows do GitHub: `actionlint .github/workflows/*.yml skills/syllabook/assets/library/.github/workflows/*.yml`. A release e a publicação no GitHub Pages de verdade rodam na biblioteca pública de demonstração, [syllabook-demo](https://github.com/Joshpcbrrj/syllabook-demo).
 

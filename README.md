@@ -2,6 +2,11 @@
 
 **English** | [Português](README.pt-BR.md)
 
+[![Kit tests](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml/badge.svg)](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml)
+[![Latest release](https://img.shields.io/github/v/release/Joshpcbrrj/syllabook)](https://github.com/Joshpcbrrj/syllabook/releases/latest)
+[![Content: CC BY-SA 4.0](https://img.shields.io/badge/content-CC%20BY--SA%204.0-lightgrey)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE-CODIGO)
+
 ![Syllabook: create your course on any topic. An open book whose pages show the course structure and the dynamic content structure](docs/img/syllabook-banner.jpg)
 
 **Turn any topic or study material into a book you can actually learn from.**
@@ -50,7 +55,7 @@ Every book includes a map with links, a placement test, exercises with commented
 | [`docs/`](docs/) | Documentation: how to use, integrations (GitHub, Notion, Google Drive, Docling, WSL 2), reference |
 | [`install/`](install/) | Docling installers for Windows, macOS and Linux |
 | [`evals/`](evals/README.md) | Behavior evals (`claude plugin eval`) |
-| [`tests/`](tests/), [`tools/`](tools/) | Tests of the scripts and the maintenance tools (translations, packaging, template sync) |
+| [`tests/`](docs/testing.md), [`tools/`](tools/) | Tests of the scripts ([how they work](docs/testing.md)) and the maintenance tools (translations, packaging, template sync) |
 | [`plano/`](plano/) | Rebuild plan (temporary, in Portuguese) |
 
 **Your own library:** every user keeps their books in a repository of their own. Create yours from the [library template](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, public), or start with an empty repository and let Syllabook set it up on the first book. This repository holds the skill and its development files, not books.
@@ -66,7 +71,7 @@ Syllabook is free and open. If it helps you learn, you can support its developme
 
 ## Contributing
 
-Found an error or want to suggest a topic? Open an [issue](../../issues/new/choose). To contribute to the skill, see [CONTRIBUTING.md](CONTRIBUTING.md). This project follows a [Code of Conduct](CODE_OF_CONDUCT.md).
+Found an error or want to suggest a topic? Open an [issue](../../issues/new/choose). To contribute to the skill, see [CONTRIBUTING.md](CONTRIBUTING.md) and [how the tests work](docs/testing.md). This project follows a [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
