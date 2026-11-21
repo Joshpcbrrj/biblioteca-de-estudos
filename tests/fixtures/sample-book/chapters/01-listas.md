@@ -23,6 +23,8 @@ Saída:
 
 ![A lista notas com os índices 0, 1 e 2 e os valores 7,5, 8,0 e 6,5](../img/c01-lista.svg)
 
+> 💡 **Analogia:** uma lista é uma fileira de armários numerados: cada armário guarda um valor, e o número da porta é o índice. A analogia deixa de valer aqui: armários não mudam de número, mas, quando você tira um item da lista, os seguintes passam para o índice de antes.
+
 > ⚠️ **Erro comum:** achar que o primeiro item é o de índice 1. Em Python, ele é o de índice 0.
 
 ## 🏋️ Pratique

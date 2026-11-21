@@ -105,7 +105,9 @@ Hidden answers always use this exact format, with the summary text in the book l
 
 ## 6. Analogies
 
-Use an analogy only for a concept that is both **abstract and new**. Map each part of the concept to a part of the analogy, and end with one line saying **where the analogy breaks**. A single metaphor carried through the book is better than a new one in every chapter. Never force one.
+In every chapter, look at its central new concept and ask: can the reader see it? A mechanism that works out of sight (a network that resolves names, a health check, a declarative file, a recursion, a tense) is **abstract**: give it one analogy. A concrete thing the reader handles directly (a command, a chord shape) needs none.
+
+Write it as a note with the fixed label, in the book language: `> 💡 **<Analogy label>:** ...`. Map each part of the concept to a part of the analogy (the reader must be able to name the pairs), use something from everyday life the audience knows, and end with one line saying **where the analogy breaks**. A single metaphor carried through the book is better than a new one in every chapter; one per chapter is the most. Never force one onto a concrete idea. A whole book without any analogy is a warning in `audit.py`: it usually means abstract ideas were left without one.
 
 ## 7. Review and feedback
 
@@ -121,6 +123,7 @@ Use an analogy only for a concept that is both **abstract and new**. Map each pa
 - The chapter goal is practiced in the ladder and checked in the review.
 - Every topic has why, definition, example and common mistake.
 - Each structure, flow or comparison has a diagram (unless the user chose no images).
+- The central concept was checked for an analogy (§6): abstract ones have it, with the pairs and where it breaks.
 - Content from a prerequisite book is pointed to, not taught again.
 - Every piece of code and every command was run (or is marked "not run").
 - Facts were checked against the dossier and the sources (`facts.py`), and every explanation of a command or piece of code matches its real output.

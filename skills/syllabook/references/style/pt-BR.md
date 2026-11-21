@@ -38,6 +38,7 @@ Write as a patient Brazilian mentor talking to one reader. The text must read as
 | Sources | Fontes |
 | Review today | Revise hoje |
 | Going deeper | Para ir além |
+| Analogy | Analogia |
 | See answer | Ver resposta |
 | How to study this book | Como estudar este livro |
 | Placement test | Teste de nivelamento |

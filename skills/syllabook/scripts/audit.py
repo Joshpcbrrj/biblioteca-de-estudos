@@ -154,6 +154,10 @@ def main():
                 if '<!-- TODO' in text:
                     errors.append(f'{found[0]}: TODO placeholder(s) left')
                 used.update(re.findall(r'\]\(\.\./img/([^)\s]+)\)', text))
+        chapters = [open(f, encoding='utf-8').read() for f in glob.glob(os.path.join(book_dir, 'chapters', '*.md'))]
+        if not any(f'**{lab["Analogy"]}:**' in text for text in chapters):
+            # TEACHING.md §6: abstract new ideas get an analogy; a whole book without one usually skipped them
+            warnings.append('no analogy in the whole book: check each chapter\'s central concept (TEACHING.md §6)')
         if not os.path.exists(os.path.join(book_dir, 'README.md')):
             errors.append('README.md missing (the book front page)')
         img = os.path.join(book_dir, 'img')

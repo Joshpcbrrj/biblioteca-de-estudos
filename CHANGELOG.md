@@ -18,6 +18,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Changed
 
+- Analogies: each chapter checks whether its central concept is abstract and, if so, gives it one analogy with the fixed label (`Analogia`/`Analogy`), the pairs and where it breaks. `audit.py` warns when a whole book has none (found by comparing the Docker Compose pilot, with zero analogies, with an older book).
+- stem profile: teach the secure form first and say what the default exposes (for example, ports bound to `127.0.0.1`), and mention operating-system differences in behavior, not only in commands (WSL files under `/mnt/c`). The assessment's "Safety" line covers security risks for technology topics.
+- Long books: after about 3 chapters, the skill suggests continuing in a new conversation, since each turn rereads the whole conversation (in the pilot, three chapters cost US$ 17.80 in a long conversation and US$ 5.16 in a new one).
 - Create mode: the syllabus research compares the draft with 2 or 3 reference syllabi (official documentation, a popular course, a well-reviewed book) and the assessment shows the gaps and what was done with each. Eval case 3 checks it. Notes (missing tools, research links) now go before the assessment, so the message always ends with the invitation to say "approved".
 - Google Drive guide: the connector is available on every plan (on Team and Enterprise an owner turns it on). Notion guide: the copy includes photos. README: code execution must be on in the Claude app, and a line on tested code and real images.
 - `SECURITY.md`: GitHub in Claude Code connects through `gh auth login`, not a connector; in Improve mode the original files stay private, and the improved book is published like any other.

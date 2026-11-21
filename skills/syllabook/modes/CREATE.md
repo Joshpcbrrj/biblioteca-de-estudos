@@ -48,7 +48,7 @@ Follow `references/SOURCES.md` (search in English by default, §2). The goal of 
 
 - the **usual curriculum** for the topic (university syllabi, textbooks, official documentation);
 - the **prerequisites** and the **common mistakes and myths** of beginners;
-- **how this topic is learned and practiced** by people who learn it well: the kind of practice with evidence behind it, how a self-learner can check their own answer without a teacher, the pictures that explain it best, and the safety risks;
+- **how this topic is learned and practiced** by people who learn it well: the kind of practice with evidence behind it, how a self-learner can check their own answer without a teacher, the pictures that explain it best, and the safety risks (for technology topics: what is insecure by default);
 - the **current version**, when the topic changes over time (tools, laws);
 - **2 or 3 reference syllabi** to compare against: the table of contents of the official documentation, a popular course and a well-reviewed book (or the ones the user sends). For each topic they teach that the draft syllabus lacks, decide: add it, leave it for "Next steps", or leave it out on purpose (outdated, bad practice, belongs to another book). Compare coverage and order only: never copy their structure or text, and never use a copy of unclear origin as a source;
 - 4 to 8 reliable **sources**, each with the date it was checked.
@@ -67,7 +67,7 @@ What it is and what it is for: <1–2 sentences>
 Helps to know first: <prerequisites, or "nothing">
 How people usually learn it: <the usual path, in 1–2 sentences>
 Common mistakes and myths: <2–3 items, including what the research still debates>
-Safety: <only for physical skills: injury, tools, electricity>
+Safety: <physical skills: injury, tools, electricity · technology: what is exposed by default, credentials, privileges · otherwise leave the line out>
 Main sources: <2–4 names>
 Compared with: <the 2–3 reference syllabi> · Gaps: <topics they teach that this book adds, leaves for later or leaves out, and why; or "none">
 

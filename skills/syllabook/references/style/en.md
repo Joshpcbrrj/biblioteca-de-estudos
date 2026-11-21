@@ -35,6 +35,7 @@ Write as a patient mentor talking to one reader, in plain international English.
 | Sources | Sources |
 | Review today | Review today |
 | Going deeper | Going deeper |
+| Analogy | Analogy |
 | See answer | See answer |
 | How to study this book | How to study this book |
 | Placement test | Placement test |

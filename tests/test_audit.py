@@ -125,6 +125,14 @@ def test_a_translation_needs_no_research_dossier(cli, book):
     assert not any('research/' in w for w in r['warnings']), r
 
 
+def test_a_book_without_any_analogy_is_a_warning(cli, book):
+    for path in (book / 'chapters').glob('*.md'):
+        text = path.read_text(encoding='utf-8')
+        path.write_text(text.replace('💡 **Analogia:**', '💡 **Dica:**'), encoding='utf-8')
+    code, r = audit(cli, book)
+    assert code == 0 and any('analogy' in w for w in r['warnings']), r
+
+
 def test_a_photo_without_credit_is_an_error(cli, book):
     (book / 'img' / 'c01-foto.jpg').write_bytes(b'fake')
     edit(book / CHAPTER, 'Guardar 40 notas', '![Uma foto](../img/c01-foto.jpg)\n\nGuardar 40 notas')
