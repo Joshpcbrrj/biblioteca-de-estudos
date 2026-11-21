@@ -6,6 +6,7 @@
 
 - [Which Claude plan do I need?](#which-claude-plan-do-i-need)
 - [Claude app or Claude Code?](#claude-app-or-claude-code)
+- [How do I update or remove Syllabook?](#how-do-i-update-or-remove-syllabook)
 - [How much does a book cost?](#how-much-does-a-book-cost)
 - [Can I stop and continue later?](#can-i-stop-and-continue-later)
 - [Can I use it without GitHub?](#can-i-use-it-without-github)
@@ -32,6 +33,13 @@ Both write the same book. The difference is what Claude can run while writing:
 | Best for | languages, practical skills, general knowledge | technology books |
 
 On Windows, use Claude Code inside [WSL 2](integrations/wsl.md), so Linux commands run too.
+
+## How do I update or remove Syllabook?
+
+- **Claude Code:** update with `claude plugin marketplace update syllabook`, then `claude plugin update syllabook@syllabook`, and restart Claude Code. Remove it with `claude plugin uninstall syllabook@syllabook`.
+- **Claude app:** download the new `syllabook.zip` from the [latest release](https://github.com/Joshpcbrrj/syllabook/releases/latest) and upload it in the Skills section of the settings, in place of the old one. To remove it, delete it in the same section.
+
+Your books are not touched: they live in your library, not in the skill. What changed in each version is in the [CHANGELOG](../CHANGELOG.md).
 
 ## How much does a book cost?
 

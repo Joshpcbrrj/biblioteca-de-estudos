@@ -1,4 +1,4 @@
-<!-- translation-of: faq.md sha256:037f7115bdae -->
+<!-- translation-of: faq.md sha256:5a0b8e39b6a1 -->
 # Perguntas frequentes
 
 [English](faq.md) | **Português**
@@ -7,6 +7,7 @@
 
 - [Qual plano do Claude eu preciso?](#qual-plano-do-claude-eu-preciso)
 - [App do Claude ou Claude Code?](#app-do-claude-ou-claude-code)
+- [Como atualizo ou removo o Syllabook?](#como-atualizo-ou-removo-o-syllabook)
 - [Quanto custa um livro?](#quanto-custa-um-livro)
 - [Posso parar e continuar depois?](#posso-parar-e-continuar-depois)
 - [Dá para usar sem GitHub?](#dá-para-usar-sem-github)
@@ -33,6 +34,13 @@ Os dois escrevem o mesmo livro. A diferença é o que o Claude consegue executar
 | Melhor para | idiomas, habilidades práticas, conhecimento geral | livros de tecnologia |
 
 No Windows, use o Claude Code dentro do [WSL 2](integrations/wsl.pt-BR.md), para que os comandos de Linux também rodem.
+
+## Como atualizo ou removo o Syllabook?
+
+- **Claude Code:** atualize com `claude plugin marketplace update syllabook` e depois `claude plugin update syllabook@syllabook`, e reinicie o Claude Code. Para remover: `claude plugin uninstall syllabook@syllabook`.
+- **App do Claude:** baixe o `syllabook.zip` novo da [versão mais recente](https://github.com/Joshpcbrrj/syllabook/releases/latest) e envie na seção de Skills das configurações, no lugar do antigo. Para remover, apague a skill nessa mesma seção.
+
+Os seus livros não são afetados: eles ficam na sua biblioteca, não na skill. O que mudou em cada versão está no [CHANGELOG](../CHANGELOG.md) (em inglês).
 
 ## Quanto custa um livro?
 

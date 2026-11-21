@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:0285a8fcaaee -->
+<!-- translation-of: README.md sha256:41fb2d0ed8b0 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -23,6 +23,8 @@ Syllabook é uma skill do Claude para quem estuda sozinho. Ela cria livros-curso
 - **App do Claude (claude.ai, desktop):** baixe o `syllabook.zip` da [versão mais recente](https://github.com/Joshpcbrrj/syllabook/releases/latest) e envie na seção de Skills das configurações do Claude.
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook` e depois `claude plugin install syllabook@syllabook`.
 - **No Windows, use também o WSL 2** ([guia de instalação](docs/integrations/wsl.pt-BR.md)): com o Claude Code rodando dentro do Ubuntu, a skill testa cada comando de Linux e cada exemplo de código e põe a saída real no livro.
+
+Para atualizar ou remover, veja as [perguntas frequentes](docs/faq.pt-BR.md#como-atualizo-ou-removo-o-syllabook).
 
 👀 **Veja funcionando:** a [biblioteca de demonstração](https://github.com/Joshpcbrrj/syllabook-demo) e o [site com busca](https://joshpcbrrj.github.io/syllabook-demo/) dela, gerados pelos mesmos workflows que toda biblioteca recebe.
 
@@ -84,3 +86,4 @@ Achou um erro ou quer sugerir um tema? Abra uma [issue](../../issues/new/choose)
 
 - Conteúdo (livros e documentação): [CC BY-SA 4.0](LICENSE).
 - Código (skill e scripts): [MIT](LICENSE-CODIGO).
+- Terceiros: os ícones dos diagramas vêm do [Lucide](https://lucide.dev) (licença ISC, [aviso](skills/syllabook/assets/ICONS-LICENSE.txt)); as fotos de cada livro mantêm a própria licença livre, listada no `img/CREDITS.md` do livro.

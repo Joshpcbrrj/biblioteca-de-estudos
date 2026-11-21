@@ -23,6 +23,8 @@ Syllabook is a Claude skill for self-learners. It writes course-books on any top
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook`, then `claude plugin install syllabook@syllabook`.
 - **On Windows, add WSL 2** ([installation guide](docs/integrations/wsl.md)): with Claude Code running inside Ubuntu, the skill tests every Linux command and code example and puts the real output in the book.
 
+To update or remove it, see the [FAQ](docs/faq.md#how-do-i-update-or-remove-syllabook).
+
 👀 **See it working:** the [demo library](https://github.com/Joshpcbrrj/syllabook-demo) and its [searchable website](https://joshpcbrrj.github.io/syllabook-demo/), built by the same workflows every library gets.
 
 ### 🔌 Integrations
@@ -83,3 +85,4 @@ Found an error or want to suggest a topic? Open an [issue](../../issues/new/choo
 
 - Content (books and documentation): [CC BY-SA 4.0](LICENSE).
 - Code (skill and scripts): [MIT](LICENSE-CODIGO).
+- Third parties: the diagram icons come from [Lucide](https://lucide.dev) (ISC license, [notice](skills/syllabook/assets/ICONS-LICENSE.txt)); the photos in each book keep their own free license, listed in the book's `img/CREDITS.md`.
