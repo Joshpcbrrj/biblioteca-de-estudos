@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:16f9ce594175 -->
+<!-- translation-of: README.md sha256:65acd2bcb919 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -19,7 +19,11 @@ Syllabook é uma skill do Claude para quem estuda sozinho. Ela cria livros-curso
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook` e depois `claude plugin install syllabook@syllabook`.
 - **No Windows, use também o WSL 2** ([guia de instalação](docs/integrations/wsl.pt-BR.md)): com o Claude Code rodando dentro do Ubuntu, a skill testa cada comando de Linux e cada exemplo de código e põe a saída real no livro.
 
-🔌 **Integrações** (nenhuma é obrigatória; cada uma tem um guia de instalação passo a passo):
+👀 **Veja funcionando:** a [biblioteca de demonstração](https://github.com/Joshpcbrrj/syllabook-demo) e o [site com busca](https://joshpcbrrj.github.io/syllabook-demo/) dela, gerados pelos mesmos workflows que toda biblioteca recebe.
+
+### 🔌 Integrações
+
+Nenhuma é obrigatória, e cada uma tem um guia de instalação passo a passo:
 
 - **[GitHub](docs/integrations/github.pt-BR.md)**, conector do Claude: guarda os livros no seu repositório, salva o progresso e publica.
 - **[Notion](docs/integrations/notion.pt-BR.md)**, conector do Claude: lê um material seu para aprimorar e cria uma cópia do livro para você anotar.
@@ -28,8 +32,6 @@ Syllabook é uma skill do Claude para quem estuda sozinho. Ela cria livros-curso
 - **[WSL 2](docs/integrations/wsl.pt-BR.md)**: um Linux de verdade no Windows, para a skill testar os comandos e o código dos livros.
 
 Todas, mais o GitHub Pages (site com busca), estão na [página de integrações](docs/integrations/README.pt-BR.md).
-
-👀 **Veja funcionando:** a [biblioteca de demonstração](https://github.com/Joshpcbrrj/syllabook-demo) e o [site com busca](https://joshpcbrrj.github.io/syllabook-demo/) dela, gerados pelos mesmos workflows que toda biblioteca recebe.
 
 ## O que ela faz
 

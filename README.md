@@ -18,7 +18,11 @@ Syllabook is a Claude skill for self-learners. It writes course-books on any top
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook`, then `claude plugin install syllabook@syllabook`.
 - **On Windows, add WSL 2** ([installation guide](docs/integrations/wsl.md)): with Claude Code running inside Ubuntu, the skill tests every Linux command and code example and puts the real output in the book.
 
-🔌 **Integrations** (none is required; each one has a step-by-step installation guide):
+👀 **See it working:** the [demo library](https://github.com/Joshpcbrrj/syllabook-demo) and its [searchable website](https://joshpcbrrj.github.io/syllabook-demo/), built by the same workflows every library gets.
+
+### 🔌 Integrations
+
+None is required, and each one has a step-by-step installation guide:
 
 - **[GitHub](docs/integrations/github.md)**, Claude connector: keeps the books in your repository, saves progress and publishes.
 - **[Notion](docs/integrations/notion.md)**, Claude connector: reads a material of yours to improve and creates a copy of the book for your notes.
@@ -27,8 +31,6 @@ Syllabook is a Claude skill for self-learners. It writes course-books on any top
 - **[WSL 2](docs/integrations/wsl.md)**: a real Linux on Windows, so the skill tests the books' commands and code.
 
 All of them, plus GitHub Pages (searchable website), are on the [integrations page](docs/integrations/README.md).
-
-👀 **See it working:** the [demo library](https://github.com/Joshpcbrrj/syllabook-demo) and its [searchable website](https://joshpcbrrj.github.io/syllabook-demo/), built by the same workflows every library gets.
 
 ## What it does
 
