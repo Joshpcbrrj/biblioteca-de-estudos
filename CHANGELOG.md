@@ -10,9 +10,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 - `docs/testing.md`: how the tests work (layers, fixtures, each file, how to add a test), linked from the README and CONTRIBUTING.
 - README badges: tests, latest release and licenses.
+- `docs/faq.md`: plans, cost, continuing a book, privacy, editing by hand, topics and languages, tested code, images.
 - `images.py`: real images for the books. `search` and `fetch` find and download free-license photos (public domain, CC0, CC BY, CC BY-SA) from Wikimedia Commons; `screenshot` captures the book's application running (Playwright). Each image gets its line in `img/CREDITS.md` and a caption credit; `audit.py` reports a photo or screenshot without credit as an error.
 - Donations: Pix (random key), Bitcoin and HiddenSwap QR codes in the README, and the GitHub Sponsor button.
 - WSL 2 guide (`docs/integrations/wsl.md`): install WSL, Ubuntu and Claude Code inside it, so the skill tests Linux commands on Windows. The README recommends it, and the skill points to it once per book when Linux commands cannot run on native Windows.
+
+### Changed
+
+- `SECURITY.md`: GitHub in Claude Code connects through `gh auth login`, not a connector; in Improve mode the original files stay private, and the improved book is published like any other.
 
 ### Removed
 

@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:fe3e5f9736cf -->
+<!-- translation-of: README.md sha256:67c84afbc128 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -47,6 +47,8 @@ Todas, mais o GitHub Pages (site com busca), estão na [página de integrações
 - **Fala o seu idioma:** ela deduz ou pergunta o idioma da conversa e o do livro.
 
 Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito comentado, revisões espaçadas, simulado final e glossário.
+
+❓ **Dúvidas** sobre planos, custo, privacidade ou idiomas? Veja as [perguntas frequentes](docs/faq.pt-BR.md).
 
 ## Como o repositório está organizado
 

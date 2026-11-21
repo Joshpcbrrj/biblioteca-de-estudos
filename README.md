@@ -47,6 +47,8 @@ All of them, plus GitHub Pages (searchable website), are on the [integrations pa
 
 Every book includes a map with links, a placement test, exercises with commented answers, spaced reviews, a final mock exam and a glossary.
 
+❓ **Questions** about plans, cost, privacy or languages? See the [FAQ](docs/faq.md).
+
 ## Repository layout
 
 | Folder | Contents |

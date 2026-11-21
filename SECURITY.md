@@ -12,9 +12,9 @@ You will get a first answer within 7 days. When there is a fix, it goes into the
 
 ## Practices the skill follows
 
-- It never asks you to paste tokens, passwords or keys into the chat. Connections (GitHub, Notion, Google Drive) go through Claude's connectors.
+- It never asks you to paste tokens, passwords or keys into the chat. Connections go through Claude's connectors (Notion, Google Drive, GitHub in the Claude app) or through your own login in Claude Code (`gh auth login` for GitHub).
 - It does not download instructions from the internet while running: everything it follows comes in the installed package.
-- Materials you send are used only as sources and are never published.
+- Materials you send are used only as sources: the original files are never published. In Improve mode, the improved book goes to your library like any other book.
 
 ## Supported versions
 
