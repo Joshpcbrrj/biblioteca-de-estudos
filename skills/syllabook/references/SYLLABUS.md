@@ -24,7 +24,7 @@ sources:
 approved_on: ""                      # empty while it is a draft
 edition: "1.0"
 human_review: false
-choices: {images: svg, reading: large}   # images: svg | illustrations | paid-api; reading: large | small
+choices: {images: real, reading: large}  # images: real (SVG + real images by context) | svg; reading: large | small
 concepts:                            # the concept graph
   - {id: service, name: "serviço", chapter: 1, depends: []}
   - {id: project-network, name: "rede do projeto", chapter: 6, depends: [service]}

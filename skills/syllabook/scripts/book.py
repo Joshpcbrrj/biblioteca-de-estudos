@@ -22,7 +22,8 @@ from common import (chapter_numbers, chapter_path, fail, find_book, labels, load
 REQUIRED = ['title', 'slug', 'origin', 'language', 'profiles', 'level', 'audience', 'goal',
             'sources', 'approved_on', 'concepts', 'chapters']
 PROFILES = {'stem', 'languages', 'skills', 'knowledge'}
-CHOICES = {'images': {'svg', 'illustrations', 'paid-api'}, 'reading': {'large', 'small'}}
+# images: real = SVG diagrams plus real images (photos, screenshots) where they show it better; svg = diagrams only
+CHOICES = {'images': {'real', 'svg'}, 'reading': {'large', 'small'}}
 LABEL_RE = re.compile(r'^[a-z0-9]+(-[a-z0-9]+)*$')
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 # goals must be checkable (references/SYLLABUS.md); these openings are not

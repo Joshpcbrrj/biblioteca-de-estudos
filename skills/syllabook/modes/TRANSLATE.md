@@ -45,7 +45,6 @@ Use the loop in `SKILL.md`, with these differences:
 
 - Chapter 0, placement test, mock exam, glossary and map: regenerate with `build.py` in the new language; translate their texts like a chapter.
 - **SVG diagrams:** translate the text in each spec and redraw with `diagram.py`; never edit an SVG by hand.
-- **Illustrations:** regenerate from their HTML source in `img/_source/` with the translated text.
 - **Real images:** keep them; translate captions and alt text; keep the credits.
 
 ## 6. Link and publish

@@ -55,7 +55,7 @@ At the end, ask once: "Publish the book to GitHub and create the copy in Notion?
 3. **Pages, in reading order, under the index:** chapter 0 (`notion.py 0`), each chapter (`notion.py <n>`), the mock exam (`notion.py <its number>`) and the glossary (`notion.py <its file name>`). Each command prints `title`, `content` and `uploads`:
    - upload each file in `uploads` with the Notion file tools, then replace its `placeholder` in `content` with what the upload returns (an upload is valid for about an hour, so upload right before creating the page);
    - create the page with that `title` and `content`, sending the content as printed: it is already in Notion's format (toggles, callouts, images);
-   - `left_out` lists the photos, screenshots and illustrations that stay out of Notion on purpose: Notion keeps only the SVG diagrams, and the other images stay in the EPUB and the site.
+   - `left_out` lists the photos and screenshots that stay out of Notion on purpose: Notion keeps only the SVG diagrams, and the other images stay in the EPUB and the site.
 4. If a Notion call fails, retry once with a smaller piece (half of the content, then append the rest); if it fails again, report which chapter and continue with the next.
 
 ## 5. Mode 4: publish a finished book

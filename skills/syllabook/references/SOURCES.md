@@ -75,9 +75,9 @@ Separate **fact**, **interpretation** and **legend** in the text whenever a topi
 Photos of people, events, machines, instruments, components or historical documents, and screenshots of the application the book builds:
 
 - **Photos:** `images.py search "<query>"` lists only public domain, CC0, CC BY and CC BY-SA images from Wikimedia Commons (search in English); `images.py fetch "File:<title>" --name c03-eniac` downloads one and records author, license and link in `img/CREDITS.md`. Never take a photo from a stock site or any other page.
-- **Screenshots:** after running the chapter's application, `images.py screenshot <url> --name c05-app`. Without a browser (claude.ai), ask the user for the screenshot of the running application and record it in `img/CREDITS.md` yourself. Never draw or fake a screenshot.
+- **Screenshots:** of a web page, after the step the reader just did, `images.py screenshot <url> --name c05-app`. Of a desktop application, or without a browser (claude.ai), ask the user: what to open, what must be visible, and the file name; record it in `img/CREDITS.md` yourself. Never draw or fake a screenshot.
 - Put the credit in the caption (`images.py` prints it) and write the alt text.
-- Prefer an SVG diagram when the point is a structure, not what the thing looks like.
+- Which to use, an SVG or a real image, depends on what the reader must see (`VISUALS.md` §1): how parts relate is an SVG; how a real thing looks is a real image.
 - `audit.py` reports a photo or screenshot without its line in `img/CREDITS.md` as an error.
 
 ## 8. Sensitive topics

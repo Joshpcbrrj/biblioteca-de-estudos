@@ -14,13 +14,12 @@ What changes on the way:
   <details> answers      -> <toggle> (Notion saves <details> as plain text)
   > quotes and notes     -> <callout> with the note's emoji as the icon
   SVG diagrams           -> uploads
-  photos, screenshots and illustrations (PNG/JPG) -> left out: Notion gets the SVG diagrams only;
+  photos and screenshots (PNG/JPG) -> left out: Notion gets the SVG diagrams only;
                             they stay in the EPUB and the site
   links to other chapters -> plain text (the chapters are subpages in Notion)
   <!-- comments -->, navigation and the generated map -> removed
 """
 import argparse
-import glob
 import os
 import re
 import sys
@@ -41,15 +40,6 @@ def strip_generated(text):
     for block in ('nav', 'map', 'index', 'list'):
         text = re.sub(rf'<!-- {block}:start -->.*?<!-- {block}:end -->', '', text, flags=re.S)
     return COMMENT.sub('', text)
-
-
-def kind_of_image(book_dir, name):
-    """svg | photo | illustration"""
-    stem, ext = os.path.splitext(name)
-    if ext.lower() == '.svg':
-        return 'svg'
-    has_spec = glob.glob(os.path.join(book_dir, 'img', '_source', f'{os.path.basename(stem)}.*'))
-    return 'illustration' if has_spec else 'photo'
 
 
 def callout(lines):
@@ -123,14 +113,13 @@ def convert(text, book_dir):
         img = IMAGE.match(stripped)
         if img:
             alt, name = img.groups()
-            kind = kind_of_image(book_dir, name)
-            if kind != 'svg':
-                # Notion keeps the SVG diagram standard; photos and illustrations stay in the EPUB and the site
+            if not name.lower().endswith('.svg'):
+                # Notion keeps the SVG diagram standard; photos and screenshots stay in the EPUB and the site
                 left_out.append(name)
             else:
                 placeholder = f'UPLOAD:{name}'
                 uploads.append({'placeholder': placeholder, 'file': os.path.join(book_dir, 'img', name),
-                                'kind': kind})
+                                'kind': 'svg'})
                 result.append(f'<image source="{placeholder}">{alt}</image>')
             i += 1
             continue

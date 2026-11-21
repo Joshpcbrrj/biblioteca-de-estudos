@@ -6,25 +6,25 @@
 2. The user's choices
 3. Reading profiles
 4. Diagrams (SVG)
-5. Illustrations (PNG)
-6. Real images
-7. Checking images
+5. Real images
+6. Checking images
 
 ## 1. Image families
 
 | Family | Use it for | Goes to Notion |
 | --- | --- | --- |
-| **SVG diagram** | structure, flow, comparison, sequence, timeline, memory and values, chord or circuit diagrams, cheat sheets | yes |
-| **Illustration (PNG)** | a process or an overview that an image explains better than text | no |
-| **Real image** | what something looks like: people, events, historical documents, instruments, components, and the book's application running (see `SOURCES.md` §7) | yes |
+| **SVG diagram** | what the reader cannot see: structure, logic, flow, states, comparison, sequence, timeline, memory and values, chord diagrams, cheat sheets | yes |
+| **Real image** (photo or screenshot) | a real thing or scene: a person, a place, an event, a machine, a document, an instrument, an application's screen, files open in an editor, a web page after an action | no: EPUB and website only |
 
-Before any image, write in one sentence what the reader must understand from it; that sentence is its title. If there is no such sentence, do not make the image. Whatever the reader must reproduce stays as text (`TEACHING.md` §5).
+**Choose by what the reader must see.** If the point is how parts relate or how something works inside, draw an SVG diagram. If the point is how something real looks, show the real thing: a diagram would only imitate it. When both could work and the subject is concrete, prefer the real image. Examples from a Git book: the file lifecycle (untracked, staged, committed) is an SVG; two modified files open side by side in VS Code is a screenshot; how a commit points to its parent is an SVG; the GitHub page of a pull request is a screenshot. In a history book, Alan Turing is a photo, never a drawing; the timeline of his work is an SVG.
+
+Before any image, write in one sentence what the reader must understand from it; that sentence is its title. If there is no such sentence, do not make the image. Whatever the reader must reproduce (code, commands, chords) stays as text, even next to a screenshot (`TEACHING.md` §5).
 
 ## 2. The user's choices
 
 Asked once, right after approval, and stored in `book.yaml` (`choices`):
 
-- **Images:** `svg` (SVG diagrams only; the default on the free plan) · `illustrations` (SVG + illustrations from HTML templates) · `paid-api` (SVG + illustrations from a paid image API; needs the user's key set up outside the chat and network access to the provider; never text generated inside the image).
+- **Images:** `real` (SVG diagrams plus real images where they show it better; the default) · `svg` (SVG diagrams only, for a reader who wants no photos or screenshots).
 - **Reading:** `large` (monitors and 10" or larger color e-readers; the default) · `small` (6–7" grayscale e-readers such as Kindle or Kobo).
 
 ## 3. Reading profiles
@@ -62,7 +62,7 @@ Pick the type by the idea:
 | where notes are on the neck (scales, intervals) | `fretboard` |
 | a melody, riff or arpeggio to play | `tab` |
 
-A diagram **adds to** the text: the chapter explains, the image shows the same idea at a glance. SVG is for diagrams only; illustrations of scenes, objects or processes are §5 (a separate, later step).
+A diagram **adds to** the text: the chapter explains, the image shows the same idea at a glance. SVG is for diagrams only; a real scene or object is a real image (§5), never drawn.
 
 Rules:
 
@@ -82,20 +82,18 @@ Rules:
 
 **Cheat sheets** (`cards`): up to 12 cards (an icon, a numbered short title, 3–5 items of up to ~28 characters, each with its own icon when that helps, optionally a 1–3 line code snippet and a scene), in 3 columns on large screens and 2 in the `small` profile.
 
-## 5. Illustrations (PNG)
+## 5. Real images
 
-Only with `choices.images` = `illustrations` or `paid-api`.
+Only with `choices.images` = `real`. Where they come from (details in `SOURCES.md` §7):
 
-- **HTML templates:** `python scripts/illustrate.py <spec.yaml>` fills an HTML template from `assets/` and renders a PNG at 2×. Text in the image is always correct because it is real text. The spec goes to `img/_source/`.
-- **Paid API:** only for imagery without text (a scene, an object); any labels are added by the template on top. Never send the user's materials to the API.
-- Color and icons always carry meaning; no decorative scenes (a diagram's `scene` in §4 is a relation drawn with icons, not an illustration).
+- **Photos** of people, places, events, machines and documents: free-license images from Wikimedia Commons (`images.py search` and `fetch`).
+- **Screenshots of a web page** (the book's application, a GitHub page): `images.py screenshot <url>`, taken after the step the reader just did.
+- **Screenshots of a desktop application** (an editor, a terminal window, a settings screen) that `images.py` cannot open: ask the user for it, saying exactly what to open, what must be visible and the file name (`img/c03-vscode-diff.png`); then record it in `img/CREDITS.md`. If the user declines, use text or an SVG instead and say so.
 
-## 6. Real images
+Never draw, generate or fake a real image. Each one has its caption with the credit, alt text, and its line in `img/CREDITS.md`. In Notion only the SVG diagrams go in (`notion.py` lists the rest in `left_out`).
 
-See `SOURCES.md` §7: `images.py` finds free-license photos on Wikimedia Commons and takes screenshots of the running application; credits go in `img/CREDITS.md` and in the caption.
+## 6. Checking images
 
-## 7. Checking images
-
-- `diagram.py` and `illustrate.py` report text overflowing boxes, overlaps and size limits: fix the spec until they report nothing.
+- `diagram.py` reports text overflowing boxes, overlaps and size limits: fix the spec until it reports nothing.
 - When you need to look, run `python scripts/diagram.py --sheet <chapter>`: one contact sheet with all the chapter's images (a PNG when a converter is available), instead of opening each one.
 - Check that every value shown is right (run the code, redo the calculation).

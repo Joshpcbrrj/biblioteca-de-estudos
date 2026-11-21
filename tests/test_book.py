@@ -35,6 +35,7 @@ ERRORS = [
     ('unknown profile', lambda d: d.update(profiles=['cooking']), 'profiles:'),
     ('level without end', lambda d: d.update(level={'start': 'iniciante'}), 'level:'),
     ('bad image choice', lambda d: d['choices'].update(images='photos'), 'choices.images'),
+    ('retired illustrations choice', lambda d: d['choices'].update(images='illustrations'), 'choices.images'),
     ('bad reading choice', lambda d: d['choices'].update(reading='tiny'), 'choices.reading'),
     ('source without url', lambda d: d['sources'][0].pop('url'), 'needs title and url'),
     ('source date', lambda d: d['sources'][0].update(checked='ontem'), 'checked must be'),
@@ -75,6 +76,12 @@ WARNINGS = [
                                                 promise={'goal': 1, 'audience': 1, 'level': 1, 'sequence': 1}),
      'above the ~20% limit'),
 ]
+
+
+@pytest.mark.parametrize('images', ['real', 'svg'])
+def test_image_choices_real_images_by_context_or_diagrams_only(cli, tmp_path, images):
+    code, r = validate_with(cli, tmp_path, lambda d: d['choices'].update(images=images))
+    assert code == 0 and r['ok'], r
 
 
 @pytest.mark.parametrize('case, change, message', WARNINGS, ids=[w[0] for w in WARNINGS])
