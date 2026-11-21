@@ -68,8 +68,10 @@ def test_a_one_line_answer_that_looks_like_a_list_is_escaped(book):
 def test_pack_splits_in_parts_by_the_upload_limit(book, tmp_path, monkeypatch):
     monkeypatch.setattr(build, 'GITHUB_UPLOAD_LIMIT', 3)
     zips = build.pack(str(book), load(book / 'book.yaml'), str(tmp_path))
-    assert len(zips) == 3 and [z['files'] for z in zips] == [3, 3, 3]
-    assert zips[0]['zip'].endswith('python-do-zero-teste-part1-of-3.zip')
+    total = sum(len(files) for _, _, files in os.walk(book))
+    # every file goes in exactly one part, and no part goes over the limit
+    assert sum(z['files'] for z in zips) == total and all(z['files'] <= 3 for z in zips) and len(zips) >= 2
+    assert zips[0]['zip'].endswith(f'python-do-zero-teste-part1-of-{len(zips)}.zip')
     names = zipfile.ZipFile(zips[0]['zip']).namelist()
     assert all(n.startswith('created-books/python-do-zero-teste/') for n in names)
 

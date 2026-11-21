@@ -19,6 +19,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Chapters point to prerequisite books instead of teaching their content again, and each structure, flow or comparison gets a diagram.
 - The images and reading choices are always asked, even when the user says to go straight to writing.
 - Checkpoint and final zips are written outside the library repository, so they are never committed with the book.
+- Research in English by default (most documentation and references), with sources in the book language when they are the best for the topic.
+- Research dossiers: after approval, the skill opens every source and writes `research/c<nn>.md` for each chapter (facts with links and dates, examples, common mistakes, in the book language); `book.py brief` hands the chapter its dossier and `audit.py` warns when one is missing. Dossiers stay in the library but not in the EPUB, website or Notion.
+- Fact checks open the source instead of dropping a claim, and every explanation of a command must match its real output.
+- Each chapter is reread as a native reader of the book language before it is done; quality steps are never skipped to save tokens.
 
 ### Fixed
 

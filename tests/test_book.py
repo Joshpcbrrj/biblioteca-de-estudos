@@ -180,3 +180,14 @@ def test_status_next_step(cli, book, change, step):
     save(book / 'book.yaml', data)
     code, r = cli('book', 'status', '--book', book)
     assert step in r['next_step'], r
+
+
+def test_brief_includes_the_chapters_research_dossier(cli, book):
+    code, r = cli('book', 'brief', 1, '--book', book)
+    assert r['research']['file'] == 'research/c01.md' and 'índice é 0' in r['research']['notes']
+
+
+def test_brief_says_when_the_research_dossier_is_missing(cli, book):
+    os.remove(book / 'research' / 'c02.md')
+    code, r = cli('book', 'brief', 2, '--book', book)
+    assert code == 0 and r['research'] == {'file': 'research/c02.md', 'missing': True}

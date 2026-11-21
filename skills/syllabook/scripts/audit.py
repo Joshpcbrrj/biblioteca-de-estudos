@@ -15,7 +15,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import READING, chapter_numbers, chapter_path, find_book, labels, load_yaml, out, slugify
+from common import READING, chapter_numbers, chapter_path, find_book, labels, load_yaml, out, research_path, slugify
 
 # blocks that hold program output or data, not code: no comment required
 NO_COMMENT_LANGS = {'', 'text', 'txt', 'output', 'console', 'plaintext', 'json', 'csv', 'markdown', 'md', 'diff'}
@@ -119,6 +119,9 @@ def main():
             continue
         used.update(audit_chapter(file, n, lab, limits, language, errors, warnings))
         ch = next((c for c in data['chapters'] if c['n'] == n), {})
+        if not data.get('translation_of') and not os.path.exists(research_path(book_dir, n)):
+            # a translation reuses the original's research; every other chapter is written from its dossier
+            warnings.append(f'chapter {n}: no research dossier (research/c{n:02d}.md)')
         if data.get('origin') == 'improved' and not ch.get('sources_original'):
             errors.append(f'chapter {n}: does not say where it comes from in the original (sources_original)')
 

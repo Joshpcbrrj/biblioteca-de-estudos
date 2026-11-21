@@ -17,7 +17,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (chapter_numbers, chapter_path, fail, find_book, labels, load_yaml, out,
-                    remember, save_yaml, slugify)
+                    remember, research_path, save_yaml, slugify)
 
 REQUIRED = ['title', 'slug', 'origin', 'language', 'profiles', 'level', 'audience', 'goal',
             'sources', 'approved_on', 'concepts', 'chapters']
@@ -197,6 +197,13 @@ def cmd_brief(args):
         'review_today': review,
         'sources': [{'title': s['title'], 'url': s['url']} for s in data.get('sources') or []],
     }
+    dossier = research_path(book_dir, n)
+    rel = os.path.relpath(dossier, book_dir).replace(os.sep, '/')
+    if os.path.exists(dossier):
+        with open(dossier, encoding='utf-8') as f:
+            brief['research'] = {'file': rel, 'notes': f.read()}
+    else:
+        brief['research'] = {'file': rel, 'missing': True}
     if ch.get('sources_original'):
         brief['original_sections'] = ch['sources_original']
     if data.get('translation_of'):

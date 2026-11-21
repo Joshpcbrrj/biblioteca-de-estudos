@@ -42,7 +42,7 @@ Pick the profile from the topic and read only that one (at most 2 when the topic
 
 ## 3. Research
 
-Follow `references/SOURCES.md`. The goal of the research, and nothing beyond it:
+Follow `references/SOURCES.md` (search in English by default, §2). The goal of the research, and nothing beyond it:
 
 - the **usual curriculum** for the topic (university syllabi, textbooks, official documentation);
 - the **prerequisites** and the **common mistakes and myths** of beginners;

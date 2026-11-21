@@ -121,6 +121,7 @@ Use an analogy only for a concept that is both **abstract and new**. Map each pa
 - Each structure, flow or comparison has a diagram (unless the user chose no images).
 - Content from a prerequisite book is pointed to, not taught again.
 - Every piece of code and every command was run (or is marked "not run").
-- Facts were checked (`facts.py`).
+- Facts were checked against the dossier and the sources (`facts.py`), and every explanation of a command or piece of code matches its real output.
+- The text reads as written in the book language, never translated (its style file).
 - No concept is used before it is taught (the brief lists which you may use).
 - `audit.py` passes.

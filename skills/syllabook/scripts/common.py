@@ -139,5 +139,10 @@ def chapter_path(book_dir, n):
     return found[0] if found else None
 
 
+def research_path(book_dir, n):
+    """The chapter's research dossier: notes with the facts, links and checked dates (SOURCES.md §2)."""
+    return os.path.join(book_dir, 'research', f'c{n:02d}.md')
+
+
 def chapter_numbers(data):
     return [c['n'] for c in data.get('chapters', []) if isinstance(c, dict) and 'n' in c]

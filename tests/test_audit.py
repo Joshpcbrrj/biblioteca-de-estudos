@@ -108,3 +108,18 @@ def test_improved_book_chapters_must_say_where_they_come_from(cli, book):
     save(book / 'book.yaml', data)
     code, r = audit(cli, book, 1)
     assert code == 1 and any('sources_original' in e for e in r['errors'])
+
+
+def test_a_chapter_without_its_research_dossier_is_a_warning(cli, book):
+    os.remove(book / 'research' / 'c01.md')
+    code, r = audit(cli, book, 1)
+    assert code == 0 and any('research/c01.md' in w for w in r['warnings']), r
+
+
+def test_a_translation_needs_no_research_dossier(cli, book):
+    os.remove(book / 'research' / 'c01.md')
+    data = load(book / 'book.yaml')
+    data['translation_of'] = 'python-do-zero-en'
+    save(book / 'book.yaml', data)
+    code, r = audit(cli, book, 1)
+    assert not any('research/' in w for w in r['warnings']), r

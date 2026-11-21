@@ -22,9 +22,18 @@ Anything that can change over time (commands, options, defaults, limits, version
 
 ## 2. Research
 
+- **Search in English by default**, whatever the book language: it has the most documentation, courses and references. Add sources in the book language when they are the best for the topic (the country's laws, school curricula or exams, the grammar of the book language, official documentation translated by the project itself).
 - Search with a specific question; read only the part of a page that answers it.
 - Stop as soon as you have what the step asks for (`modes/CREATE.md` §3).
-- Record every source in `book.yaml` (`sources`: title, URL, checked date). Chapters reuse them and do not research the topic again; a chapter searches only to confirm a specific fact that is missing.
+- Record every source in `book.yaml` (`sources`: title, URL, checked date).
+
+**Research dossiers** (step 3 of the flow in `SKILL.md`, before writing any chapter): open every source in `book.yaml` once in this session and update its checked date; then, for each chapter, write `research/c<nn>.md` (e.g. `research/c03.md`):
+
+- the facts the chapter will state that can change over time (commands, options, defaults, limits, versions, laws), one per line, each with its link and the date checked;
+- the official examples worth adapting, the common mistakes and any open question;
+- short notes **in the book language**, not prose to translate; commands, options, error messages and short quotations stay in their original form.
+
+Look across the whole book while you do it: if chapter 8 needs something chapter 3 should prepare, note it in both dossiers. The dossiers stay in the library (they show where each fact came from and help update the book) but are not part of the EPUB, the website or Notion. Chapters are written from their dossier and search again only for a fact it does not have.
 
 ## 3. The user's materials
 
@@ -45,8 +54,9 @@ Books, PDFs, EPUBs, Notion pages or Drive files the user sends:
 
 For each chapter, `facts.py <n>` lists the sentences with dates, numbers, names and quotations. For each one:
 
-1. Find it in the recorded sources (or confirm it with one new search).
-2. If it holds, keep it; if it does not, fix it; if it cannot be checked, remove it or say clearly that it is uncertain.
+1. Find it in the chapter's dossier; if it is not there, open the source page (or search once) and add it to the dossier.
+2. If it holds, keep it; if it does not, fix it. Remove it, or say clearly that it is uncertain, only after looking for it and not finding it.
+3. When the text says what a command or piece of code does, its real output in the chapter must show it (for example, the name a container really gets). If the output disagrees, the text is wrong.
 
 Separate **fact**, **interpretation** and **legend** in the text whenever a topic has popular stories or debate ("The popular version says...; the records show..."). This is mandatory in the `knowledge` profile.
 

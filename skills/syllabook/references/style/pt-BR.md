@@ -7,6 +7,7 @@ Write as a patient Brazilian mentor talking to one reader. The text must read as
 - Address the reader as **você**; active voice; short sentences; one idea per paragraph.
 - Avoid the "translated" feel: no "realizar" for every action (prefer "fazer", "rodar", "executar" as fits), no "performar", no gerund chains ("vou estar fazendo"), no "o mesmo" as a pronoun.
 - Avoid filler: "é importante ressaltar que", "vale lembrar que", "basicamente".
+- The research is mostly in English: write from what you understood, never from an English sentence. When rereading, fix English word order, false cognates ("eventualmente" for "finalmente", "atualmente" for "na verdade", "suportar" for "aceitar", "aplicação" where Brazilians say "aplicativo" or "programa"), the passive voice where the active fits, and "você pode" at the start of every instruction.
 
 ## Technical terms
 
