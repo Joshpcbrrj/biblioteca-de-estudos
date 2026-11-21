@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:f9f162f29666 -->
+<!-- translation-of: README.md sha256:73e793305209 -->
 # Integrações
 
 [English](README.md) | **Português**
@@ -24,7 +24,7 @@ Tudo o que se conecta ou se instala à parte da skill. Nenhuma é obrigatória: 
 | --- | --- | --- | --- |
 | GitHub | acesso ao repositório com permissão de escrita | acesso ao repositório com permissão de escrita | `git` + `gh auth login` |
 | Notion | conector | conector | servidor MCP do Notion (`claude mcp add`) |
-| Google Drive | conector (Pro, Max, Team, Enterprise) | conector (Pro, Max, Team, Enterprise) | baixar os arquivos |
+| Google Drive | conector (qualquer plano) | conector (qualquer plano) | baixar os arquivos |
 | Docling | servidor MCP local | não disponível: converta no seu computador e anexe | linha de comando |
 | GitHub Pages | — | — | — |
 | WSL 2 | — | — | Claude Code instalado dentro do Ubuntu |

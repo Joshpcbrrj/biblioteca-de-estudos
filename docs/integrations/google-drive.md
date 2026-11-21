@@ -9,7 +9,7 @@ When you create or improve a book, Syllabook can search your Google Drive for re
 ## What you need
 
 - A Google account.
-- The Claude app or claude.ai on a plan that offers the Google Drive connector (Anthropic lists it for Pro, Max, Team and Enterprise; on Team and Enterprise an admin turns it on first).
+- The Claude app or claude.ai, on any plan. On Team and Enterprise, an owner turns the Google Workspace connectors on for the organization first.
 
 ## Step by step
 
@@ -29,4 +29,4 @@ Ask Claude to "search my Google Drive for <a topic>". It should list file names 
 | --- | --- |
 | Tables or images of a PDF come out wrong | The connector reads text only. Download the PDF and convert it with Docling ([guide](docling.md)) |
 | A large Doc or Sheet is cut off | Exports above about 10 MB are not read whole. Split the file, or download it |
-| Google Drive is not in the connectors list | Your plan or your organization does not offer it. Download the files instead |
+| Google Drive is not in the connectors list | On Team and Enterprise, an owner has not turned it on yet: ask them, or download the files |

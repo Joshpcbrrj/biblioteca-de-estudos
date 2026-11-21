@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:41fb2d0ed8b0 -->
+<!-- translation-of: README.md sha256:bf4699785af2 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -20,7 +20,7 @@ Syllabook é uma skill do Claude para quem estuda sozinho. Ela cria livros-curso
 
 ## Instalar
 
-- **App do Claude (claude.ai, desktop):** baixe o `syllabook.zip` da [versão mais recente](https://github.com/Joshpcbrrj/syllabook/releases/latest) e envie na seção de Skills das configurações do Claude.
+- **App do Claude (claude.ai, desktop):** baixe o `syllabook.zip` da [versão mais recente](https://github.com/Joshpcbrrj/syllabook/releases/latest) e envie na seção de Skills das configurações do Claude. A execução de código precisa estar ligada (**Configurações → Capacidades**).
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook` e depois `claude plugin install syllabook@syllabook`.
 - **No Windows, use também o WSL 2** ([guia de instalação](docs/integrations/wsl.pt-BR.md)): com o Claude Code rodando dentro do Ubuntu, a skill testa cada comando de Linux e cada exemplo de código e põe a saída real no livro.
 
@@ -46,6 +46,7 @@ Todas, mais o GitHub Pages (site com busca), estão na [página de integrações
 - **Aprimora um material seu.** Notion, PDF, EPUB, DOCX, Google Drive, texto ou link. Ela mantém a proposta do original, corrige, completa o que falta e reescreve para facilitar o estudo, a revisão e a pesquisa.
 - **Traduz um livro** para outro idioma, adaptando exemplos e termos para os novos leitores.
 - **Funciona para áreas diferentes:** programação e matemática, idiomas, habilidades práticas (música, eletrônica...) e conhecimento geral (como a história da computação).
+- **Testa o que ensina:** executa cada comando e cada trecho de código e mostra a saída real; as imagens são diagramas feitos a partir do conteúdo e fotos com licença livre.
 - **Fala o seu idioma:** ela deduz ou pergunta o idioma da conversa e o do livro.
 
 Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito comentado, revisões espaçadas, simulado final e glossário.

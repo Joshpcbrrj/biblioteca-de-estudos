@@ -23,7 +23,7 @@ Everything that is connected or installed separately from the skill. None of the
 | --- | --- | --- | --- |
 | GitHub | repository access with write permission | repository access with write permission | `git` + `gh auth login` |
 | Notion | connector | connector | Notion's MCP server (`claude mcp add`) |
-| Google Drive | connector (Pro, Max, Team, Enterprise) | connector (Pro, Max, Team, Enterprise) | download the files |
+| Google Drive | connector (any plan) | connector (any plan) | download the files |
 | Docling | local MCP server | not available: convert on your computer and attach | command line |
 | GitHub Pages | — | — | — |
 | WSL 2 | — | — | Claude Code installed inside Ubuntu |

@@ -1,4 +1,4 @@
-<!-- translation-of: google-drive.md sha256:2717bf01f932 -->
+<!-- translation-of: google-drive.md sha256:48cc2685018a -->
 # Google Drive: usar os seus arquivos como fonte
 
 [English](google-drive.md) | **Português**
@@ -10,7 +10,7 @@ Ao criar ou aprimorar um livro, o Syllabook pode buscar no seu Google Drive mate
 ## O que você precisa
 
 - Uma conta Google.
-- O app do Claude ou o claude.ai num plano que ofereça o conector do Google Drive (a Anthropic o lista para Pro, Max, Team e Enterprise; no Team e no Enterprise, um administrador o ativa antes).
+- O app do Claude ou o claude.ai, em qualquer plano. No Team e no Enterprise, um administrador liga antes os conectores do Google Workspace para a organização.
 
 ## Passo a passo
 
@@ -30,4 +30,4 @@ Peça ao Claude para "buscar no meu Google Drive sobre <um tema>". Devem aparece
 | --- | --- |
 | Tabelas ou imagens de um PDF saem erradas | O conector lê só o texto. Baixe o PDF e converta com o Docling ([guia](docling.pt-BR.md)) |
 | Um Documento ou Planilha grande vem cortado | Exportações acima de cerca de 10 MB não são lidas inteiras. Divida o arquivo ou baixe-o |
-| O Google Drive não aparece na lista de conectores | O seu plano ou a sua organização não o oferece. Baixe os arquivos |
+| O Google Drive não aparece na lista de conectores | No Team e no Enterprise, um administrador ainda não o ligou: peça a ele, ou baixe os arquivos |

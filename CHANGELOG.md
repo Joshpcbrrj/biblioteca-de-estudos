@@ -18,6 +18,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Changed
 
+- Google Drive guide: the connector is available on every plan (on Team and Enterprise an owner turns it on). Notion guide: the copy includes photos. README: code execution must be on in the Claude app, and a line on tested code and real images.
 - `SECURITY.md`: GitHub in Claude Code connects through `gh auth login`, not a connector; in Improve mode the original files stay private, and the improved book is published like any other.
 
 ### Removed

@@ -19,7 +19,7 @@ Syllabook is a Claude skill for self-learners. It writes course-books on any top
 
 ## Install
 
-- **Claude app (claude.ai, desktop):** download `syllabook.zip` from the [latest release](https://github.com/Joshpcbrrj/syllabook/releases/latest) and upload it in the Skills section of Claude's settings.
+- **Claude app (claude.ai, desktop):** download `syllabook.zip` from the [latest release](https://github.com/Joshpcbrrj/syllabook/releases/latest) and upload it in the Skills section of Claude's settings. Code execution must be on (**Settings → Capabilities**).
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook`, then `claude plugin install syllabook@syllabook`.
 - **On Windows, add WSL 2** ([installation guide](docs/integrations/wsl.md)): with Claude Code running inside Ubuntu, the skill tests every Linux command and code example and puts the real output in the book.
 
@@ -45,6 +45,7 @@ All of them, plus GitHub Pages (searchable website), are on the [integrations pa
 - **Improves your study material.** Notion, PDF, EPUB, DOCX, Google Drive, plain text or a link. It keeps the purpose of the original, fixes errors, fills gaps and rewrites it for study, review and research.
 - **Translates a book** into another language, adapting examples and terms to the new readers.
 - **Works across fields:** programming and math, languages, practical skills (music, electronics...) and general knowledge (such as the history of computing).
+- **Tests what it teaches:** it runs every command and piece of code and shows the real output; images are diagrams drawn from the content and photos with a free license.
 - **Speaks your language:** it detects or asks the language of the conversation and of the book.
 
 Every book includes a map with links, a placement test, exercises with commented answers, spaced reviews, a final mock exam and a glossary.
