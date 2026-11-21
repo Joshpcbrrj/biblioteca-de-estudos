@@ -16,6 +16,7 @@ Syllabook is a Claude skill for self-learners. It writes course-books on any top
 
 - **Claude app (claude.ai, desktop):** download `syllabook.zip` from the [latest release](https://github.com/Joshpcbrrj/syllabook/releases/latest) and upload it in the Skills section of Claude's settings.
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook`, then `claude plugin install syllabook@syllabook`.
+- **On Windows, add WSL 2** ([guide](docs/integrations/wsl.md)): with Claude Code running inside Ubuntu, the skill tests every Linux command and code example and puts the real output in the book.
 
 👀 **See it working:** the [demo library](https://github.com/Joshpcbrrj/syllabook-demo) and its [searchable website](https://joshpcbrrj.github.io/syllabook-demo/), built by the same workflows every library gets.
 
@@ -36,7 +37,7 @@ Every book includes a map with links, a placement test, exercises with commented
 | [`created-books/`](created-books/) | Books written from a syllabus |
 | [`improved-materials/`](improved-materials/) | Improved study materials |
 | [`site/`](site/) | Source of the searchable website (GitHub Pages) that shows every book |
-| [`docs/`](docs/) | Documentation: how to use, integrations (GitHub, Notion, Google Drive, Docling), reference |
+| [`docs/`](docs/) | Documentation: how to use, integrations (GitHub, Notion, Google Drive, Docling, WSL 2), reference |
 | [`plano/`](plano/) | Rebuild plan (temporary, in Portuguese) |
 
 **Your own library:** every user keeps their books in a repository of their own. Create yours from the [library template](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, public), or start with an empty repository and let Syllabook set it up on the first book. This repository holds the skill and its development files, not books.

@@ -13,6 +13,9 @@ Everything that is connected or installed separately from the skill. None of the
 | **Google Drive** | Find your documents and files to use as sources | when you have materials to use | [google-drive.md](google-drive.md) |
 | **Docling** | Convert PDF, DOCX, PPTX and other documents to text, keeping tables and structure | when you send documents | [docling.md](docling.md) |
 | **GitHub Pages** | Publish the searchable website with every book | after the first publication | [github-pages.md](github-pages.md) |
+| **WSL 2** | A real Linux on Windows, so the skill runs Linux commands and shows their real output | on Windows, whenever a book has code or commands | [wsl.md](wsl.md) |
+
+**On Windows, install WSL 2.** Without it, Linux commands in a book (bash, apt, Docker) cannot be tested: you run them yourself or they are marked "not run". It is also the only way to get Claude Code's sandbox on Windows.
 
 ## Where each one works
 
@@ -23,6 +26,7 @@ Everything that is connected or installed separately from the skill. None of the
 | Google Drive | connector (Pro, Max, Team, Enterprise) | connector (Pro, Max, Team, Enterprise) | download the files |
 | Docling | local MCP server | not available: convert on your computer and attach | command line |
 | GitHub Pages | — | — | — |
+| WSL 2 | — | — | Claude Code installed inside Ubuntu |
 
 Without any of them, on any plan: the zip to download always works, and GitHub Pages is free for public repositories.
 

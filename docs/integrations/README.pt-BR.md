@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:d994c4d7f4ee -->
+<!-- translation-of: README.md sha256:f9f162f29666 -->
 # Integrações
 
 [English](README.md) | **Português**
@@ -14,6 +14,9 @@ Tudo o que se conecta ou se instala à parte da skill. Nenhuma é obrigatória: 
 | **Google Drive** | Buscar documentos e arquivos seus para usar como fonte | quando você tiver materiais para usar | [google-drive.pt-BR.md](google-drive.pt-BR.md) |
 | **Docling** | Converter PDF, DOCX, PPTX e outros documentos para texto, com tabelas e estrutura | quando você mandar documentos | [docling.pt-BR.md](docling.pt-BR.md) |
 | **GitHub Pages** | Publicar o site com busca de todos os livros | depois da primeira publicação | [github-pages.pt-BR.md](github-pages.pt-BR.md) |
+| **WSL 2** | Um Linux de verdade no Windows, para a skill rodar comandos de Linux e mostrar a saída real | no Windows, sempre que o livro tiver código ou comandos | [wsl.pt-BR.md](wsl.pt-BR.md) |
+
+**No Windows, instale o WSL 2.** Sem ele, os comandos de Linux de um livro (bash, apt, Docker) não podem ser testados: você os roda por conta própria ou eles saem marcados como "não executado". Ele também é o único jeito de ter a sandbox do Claude Code no Windows.
 
 ## Onde cada uma funciona
 
@@ -24,6 +27,7 @@ Tudo o que se conecta ou se instala à parte da skill. Nenhuma é obrigatória: 
 | Google Drive | conector (Pro, Max, Team, Enterprise) | conector (Pro, Max, Team, Enterprise) | baixar os arquivos |
 | Docling | servidor MCP local | não disponível: converta no seu computador e anexe | linha de comando |
 | GitHub Pages | — | — | — |
+| WSL 2 | — | — | Claude Code instalado dentro do Ubuntu |
 
 Sem nenhuma delas, em qualquer plano: o zip para baixar sempre funciona, e o GitHub Pages é grátis em repositórios públicos.
 

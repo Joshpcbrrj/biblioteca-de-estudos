@@ -106,7 +106,7 @@ They live in `scripts/`, install what they need and print short JSON with only w
 
 1. `book.py brief <n>`: use only the brief (goal, topics, concepts already taught and new ones, previous chapter's summary, sources, profile, choices, the topic guide and the chapter's research dossier). If the brief says the guide or the dossier is missing, write it first.
 2. Write the chapter in the file it created, following `TEACHING.md`, the profile adapted by the topic guide, and the style file.
-3. Run every piece of code and every command, in this order: in the session; on the user's computer, if it is linked to the app; **guided run** (give the commands, the user runs them and pastes only the lines you ask for, and you use the real output); if the user declines, mark it "not run" with a warning. Redo every calculation.
+3. Run every piece of code and every command, in this order: in the session; on the user's computer, if it is linked to the app; **guided run** (give the commands, the user runs them and pastes only the lines you ask for, and you use the real output); if the user declines, mark it "not run" with a warning. Redo every calculation. On native Windows, when Linux commands cannot run, recommend WSL 2 once per book, with the guide: https://github.com/Joshpcbrrj/syllabook/blob/main/docs/integrations/wsl.md
 4. `facts.py <n>`: check each listed sentence against the dossier and the sources (`SOURCES.md` §5), and check that every explanation of a command or piece of code matches its real output.
 5. Reread the chapter once as a native reader of the book language, following its style file: fix any sentence that sounds translated. Never skip this step, not even to save tokens.
 6. `audit.py <n>`: fix the errors it reports; repeat until there are none.

@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:7ae7b93dd16f -->
+<!-- translation-of: README.md sha256:0e2ff0aab8ae -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -17,6 +17,7 @@ Syllabook é uma skill do Claude para quem estuda sozinho. Ela cria livros-curso
 
 - **App do Claude (claude.ai, desktop):** baixe o `syllabook.zip` da [versão mais recente](https://github.com/Joshpcbrrj/syllabook/releases/latest) e envie na seção de Skills das configurações do Claude.
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook` e depois `claude plugin install syllabook@syllabook`.
+- **No Windows, use também o WSL 2** ([guia](docs/integrations/wsl.pt-BR.md)): com o Claude Code rodando dentro do Ubuntu, a skill testa cada comando de Linux e cada exemplo de código e põe a saída real no livro.
 
 👀 **Veja funcionando:** a [biblioteca de demonstração](https://github.com/Joshpcbrrj/syllabook-demo) e o [site com busca](https://joshpcbrrj.github.io/syllabook-demo/) dela, gerados pelos mesmos workflows que toda biblioteca recebe.
 
@@ -37,7 +38,7 @@ Cada livro traz mapa com links, teste de nivelamento, exercícios com gabarito c
 | [`created-books/`](created-books/README.pt-BR.md) | Livros feitos a partir de uma ementa |
 | [`improved-materials/`](improved-materials/README.pt-BR.md) | Materiais de estudo aprimorados |
 | [`site/`](site/README.pt-BR.md) | Fonte do site com busca (GitHub Pages) que mostra todos os livros |
-| [`docs/`](docs/README.pt-BR.md) | Documentação: como usar, integrações (GitHub, Notion, Google Drive, Docling), referência |
+| [`docs/`](docs/README.pt-BR.md) | Documentação: como usar, integrações (GitHub, Notion, Google Drive, Docling, WSL 2), referência |
 | [`plano/`](plano/) | Plano da reformulação (temporário) |
 
 **A sua própria biblioteca:** cada pessoa guarda os livros num repositório só seu. Crie o seu a partir do [modelo de biblioteca](https://github.com/Joshpcbrrj/syllabook-library) (**Use this template → Create a new repository**, público) ou comece com um repositório vazio e deixe o Syllabook prepará-lo no primeiro livro. Este repositório guarda a skill e os arquivos de desenvolvimento dela, não livros.
