@@ -1,12 +1,9 @@
-<!-- translation-of: README.md sha256:bf4699785af2 -->
+<!-- translation-of: README.md sha256:8aa03a7f65e3 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
 
-[![Kit tests](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml/badge.svg)](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml)
-[![Latest release](https://img.shields.io/github/v/release/Joshpcbrrj/syllabook)](https://github.com/Joshpcbrrj/syllabook/releases/latest)
-[![Content: CC BY-SA 4.0](https://img.shields.io/badge/content-CC%20BY--SA%204.0-lightgrey)](LICENSE)
-[![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE-CODIGO)
+[![Kit tests](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml/badge.svg)](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml) [![Latest release](https://img.shields.io/github/v/release/Joshpcbrrj/syllabook)](https://github.com/Joshpcbrrj/syllabook/releases/latest) [![Content: CC BY-SA 4.0](https://img.shields.io/badge/content-CC%20BY--SA%204.0-lightgrey)](LICENSE) [![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE-CODIGO)
 
 ![Syllabook: um livro aberto cujas páginas mostram a estrutura de um curso, com módulos, capítulos e gráficos](docs/img/syllabook-banner.pt-BR.jpg)
 

@@ -2,10 +2,7 @@
 
 **English** | [Português](README.pt-BR.md)
 
-[![Kit tests](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml/badge.svg)](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml)
-[![Latest release](https://img.shields.io/github/v/release/Joshpcbrrj/syllabook)](https://github.com/Joshpcbrrj/syllabook/releases/latest)
-[![Content: CC BY-SA 4.0](https://img.shields.io/badge/content-CC%20BY--SA%204.0-lightgrey)](LICENSE)
-[![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE-CODIGO)
+[![Kit tests](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml/badge.svg)](https://github.com/Joshpcbrrj/syllabook/actions/workflows/tests.yml) [![Latest release](https://img.shields.io/github/v/release/Joshpcbrrj/syllabook)](https://github.com/Joshpcbrrj/syllabook/releases/latest) [![Content: CC BY-SA 4.0](https://img.shields.io/badge/content-CC%20BY--SA%204.0-lightgrey)](LICENSE) [![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE-CODIGO)
 
 ![Syllabook: create your course on any topic. An open book whose pages show the course structure and the dynamic content structure](docs/img/syllabook-banner.jpg)
 
