@@ -1,4 +1,4 @@
-<!-- translation-of: README.md sha256:0e2ff0aab8ae -->
+<!-- translation-of: README.md sha256:81d7f6dbbb36 -->
 # <img src="docs/img/syllabook-icon.svg" alt="" height="40"> Syllabook
 
 [English](README.md) | **Português**
@@ -17,7 +17,9 @@ Syllabook é uma skill do Claude para quem estuda sozinho. Ela cria livros-curso
 
 - **App do Claude (claude.ai, desktop):** baixe o `syllabook.zip` da [versão mais recente](https://github.com/Joshpcbrrj/syllabook/releases/latest) e envie na seção de Skills das configurações do Claude.
 - **Claude Code:** `claude plugin marketplace add Joshpcbrrj/syllabook` e depois `claude plugin install syllabook@syllabook`.
-- **No Windows, use também o WSL 2** ([guia](docs/integrations/wsl.pt-BR.md)): com o Claude Code rodando dentro do Ubuntu, a skill testa cada comando de Linux e cada exemplo de código e põe a saída real no livro.
+- **No Windows, use também o WSL 2** ([guia de instalação](docs/integrations/wsl.pt-BR.md)): com o Claude Code rodando dentro do Ubuntu, a skill testa cada comando de Linux e cada exemplo de código e põe a saída real no livro.
+
+🔌 **Integrações:** [GitHub, Notion, Google Drive, Docling, GitHub Pages e WSL 2](docs/integrations/README.pt-BR.md), cada uma com um guia de instalação passo a passo. Nenhuma é obrigatória.
 
 👀 **Veja funcionando:** a [biblioteca de demonstração](https://github.com/Joshpcbrrj/syllabook-demo) e o [site com busca](https://joshpcbrrj.github.io/syllabook-demo/) dela, gerados pelos mesmos workflows que toda biblioteca recebe.
 
